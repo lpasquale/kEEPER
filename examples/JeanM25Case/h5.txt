@@ -1,0 +1,11 @@
+%%% An employee receives an email in which
+%%% another employee asks for the document
+%%% and answers by attaching the document
+hypothesis(h5,T,TR):-
+    trace(TR),
+    time(T),
+    email(E1),
+    email(E2),
+    emp(P1),
+    emp(P2),
+    happens(answerEmailE2E(E1,E2,m57plan,P1,P2),T,TR).

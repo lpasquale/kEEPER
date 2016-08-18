@@ -1,0 +1,12 @@
+happens(send_anon_email(b1,ip1,ip2,r2),2,tr1).
+happens(exchange_msg(b1,ip1,ip2,r1),1,tr1).
+happens(set_cookie(aamy,ip2,ip1,r1),0,tr1).
+happens(send_anon_email(b1,ip1,ip2,r2),2,tr2).
+happens(exchange_msg(b1,ip1,ip2,r2),1,tr2).
+happens(set_cookie(aamy,ip2,ip1,r1),0,tr2).
+happens(send_anon_email(b1,ip1,ip1,r1),2,tr3).
+happens(exchange_msg(b1,ip1,ip2,r1),1,tr3).
+happens(set_cookie(aamy,ip2,ip1,r1),0,tr3).
+happens(send_anon_email(b1,ip1,ip1,r1),2,tr4).
+happens(exchange_msg(b1,ip1,ip2,r2),1,tr4).
+happens(set_cookie(aamy,ip2,ip1,r1),0,tr4).

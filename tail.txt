@@ -1,0 +1,7 @@
+#minimize [happens(A,T,TR): pe(A):time(T):trace(TR) @ 1].
+0{happens(A,T,TR): pe(A):time(T):trace(TR)}.
+
+
+
+#hide.
+#show pr_happens/3.

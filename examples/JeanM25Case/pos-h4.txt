@@ -1,0 +1,8 @@
+happens(send_email_ext2ext(e1,m57plan,abob,atuck,m1),1,tr1).
+happens(sys_login(jean,pwdJean,m1),0,tr1).
+happens(send_email_ext2ext(e1,m57plan,atuck,abob,m1),1,tr2).
+happens(sys_login(jean,pwdJean,m1),0,tr2).
+happens(send_email_ext2ext(e1,m57plan,abob,atuck,m2),1,tr3).
+happens(sys_login(alison,pwdAlison,m2),0,tr3).
+happens(send_email_ext2ext(e1,m57plan,atuck,abob,m2),1,tr4).
+happens(sys_login(alison,pwdAlison,m2),0,tr4).

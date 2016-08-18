@@ -1,0 +1,82 @@
+% --*** Domain-independent Axioms ***---
+
+clipped(T1, F, T2,TR):-
+trace(TR),
+time(T1),
+time(T2),
+fluent(F),
+time(T),
+T1<=T,
+T<T2,
+event(E),
+happens(E, T,TR),
+terminates(E, F, T).
+
+declipped(T1, F, T2,TR):-
+trace(TR),
+time(T1),
+time(T2),
+fluent(F),
+time(T),
+T1<=T,
+T<T2,
+event(E),
+happens(E, T,TR),
+initiates(E, F, T).
+
+
+holdsAt(F, T2,TR):-
+trace(TR),
+time(T2),
+fluent(F),
+time(T1),
+T1<T2,
+event(E),
+happens(E, T1,TR),
+initiates(E, F, T1),
+not clipped(T1, F, T2,TR).
+
+holdsAt(F, T2,TR):-
+trace(TR),
+fluent(F),
+time(T2),
+initially(F),
+not clipped(0, F, T2,TR).
+
+neg_holdsAt(F, T,TR):-
+trace(TR),
+fluent(F),
+time(T),
+not holdsAt(F, T,TR).
+
+holdsAt_between(T1, F,T2,TR):-
+trace(TR),
+time(T2),
+fluent(F),
+time(T1),
+T1<T2,
+holdsAt(F, T1,TR),
+holdsAt(F, T2,TR),
+not clipped(T1, F, T2,TR).
+
+neg_holdsAt_between(T1, F,  T2,TR):-
+trace(TR),
+time(T2),
+fluent(F),
+time(T1),
+T1<T2,
+neg_holdsAt(F, T1,TR),
+neg_holdsAt(F, T2,TR),
+not declipped(T1, F, T2,TR).
+
+pr_happens(A,T,TR):-
+    trace(TR),
+    time(T),
+    pe(A),
+    happens(A,T,TR).
+
+co_happens(A,T,TR):-
+    trace(TR),
+    time(T),
+    ce(A),
+    happens(A,T,TR).

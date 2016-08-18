@@ -1,0 +1,21 @@
+% ----- * Heuristics for Minimal Histories * -----
+
+nothing_happens_between(T1, T2,TR):-
+trace(TR),
+time(T2),
+time(T1),
+time(T),
+T1<T,
+T<T2,
+not anything_happens(T,TR).
+
+anything_happens(T,TR):-
+trace(TR),
+pe(A),
+time(T),
+happens(A,T,TR).
+
+
+:- time(T1), time(T2), pe(A1), pe(A2), trace(TR),
+happens(A1,T1,TR), happens(A2,T2,TR),
+nothing_happens_between(T1,T2,TR).

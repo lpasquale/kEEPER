@@ -1,0 +1,10 @@
+hypothesis(h1,T,TR):-
+trace(TR),
+time(T),
+email(E),
+faddr(S),
+acad(P),
+happens(fakeHarassEmailSent(E,S,P),T,TR).
+
+
+

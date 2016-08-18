@@ -1,0 +1,8 @@
+happens(send_anon_email(b1,ip1,ip2,r2),1,tr1).
+happens(send_anon_email(b1,ip2,ip1,r1),1,tr2).
+happens(send_anon_email(b1,ip2,ip1,r2),1,tr3).
+happens(send_anon_email(b1,ip2,ip2,r1),1,tr4).
+happens(send_anon_email(b1,ip2,ip2,r2),1,tr5).
+happens(send_anon_email(b1,ip1,ip2,r1),1,tr6).
+happens(send_anon_email(b1,ip1,ip1,r2),1,tr7).
+happens(send_anon_email(b1,ip1,ip1,r1),1,tr8).

@@ -1,0 +1,15 @@
+%%%The document is sent via email from an employee to
+%%% an external address
+hypothesis(h2,T,TR):-
+    trace(TR),
+    time(T),
+    email(E),
+    time(T1),
+    email(E1),
+    emp(P),
+    extAddr(S),
+    T1 < T,
+    T1 >= 0,
+    happens(emailSentE2Ext(E,m57plan,P,S),T,TR),
+    not happens(recEmailReqExt2E(E1,m57plan,S,P),T1,TR).
+

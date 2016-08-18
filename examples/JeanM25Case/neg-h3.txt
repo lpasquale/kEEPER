@@ -1,0 +1,4 @@
+happens(send_email_ext2ext(e1,m57plan,abob,abob,m1),1,tr5).
+happens(send_email_ext2ext(e1,m57plan,atuck,atuck,m1),1,tr6).
+happens(send_email_ext2ext(e1,m57plan,abob,abob,m2),1,tr7).
+happens(send_email_ext2ext(e1,m57plan,atuck,atuck,m2),1,tr8).

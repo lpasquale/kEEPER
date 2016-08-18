@@ -1,0 +1,10 @@
+hypothesis(h7,T,TR):-
+    trace(TR),
+    time(T),
+    st(S),
+    comp(C),
+    emp(P),
+    time(T1),
+    holdsAt(mounted(S,C),T,TR),
+    happens(copy(P,m57plan,C),T,TR).
+    %holdsAt(possess(P,S),T1).

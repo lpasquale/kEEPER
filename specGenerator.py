@@ -1,0 +1,570 @@
+#!/usr/bin/python
+
+import sys
+import termios
+import os.path
+import subprocess
+import numpy as np
+
+
+import time as t
+import itertools
+
+
+e='environment.txt'
+d='domain_ind_axioms.txt'
+he='heuristics.txt'
+t1='tail.txt'
+t2='tail2.txt'
+s='spec.txt'
+sver='spec-ver.txt'
+p='pos.txt'
+n='neg.txt'
+r='req.txt'
+relEvents= set()
+clasp = ''
+gringo = ''
+xhail = ''
+
+def main():
+    try:
+        if len(sys.argv) < 2:
+            raise InputError("Input Error", "Insufficient number of parameters")
+    except InputError as ie:
+        print ("Input Error: ", ie.msg)
+        sys.exit(0)
+    hypNum = sys.argv[2]
+    time = sys.argv[1]
+    histories = history_iden(time,hypNum)
+    pres_histories = spec_verification(time,hypNum)
+    if len(histories) < 1:
+        print ("hypothesis h"+hypNum+" is not supported in the environment")
+    else:
+        print ("hypothesis h"+hypNum+" is supported by the following primitive histories")
+        for i in range(len(histories)):
+            print(histories[i])
+    if len(pres_histories) > 0:
+        print ("The following preservation histories are not covered")
+        for i in range(len(pres_histories)):
+            print(pres_histories[i])
+        spec_generation(time,hypNum)
+
+#Base class for exceptions in this module.
+class Error(Exception):
+    pass
+
+class InputError(Error):
+    def __init__(self, expr, msg):
+        self.msg = msg
+
+
+def spec_generation(time,hypNum):
+    try:
+        if not os.path.isfile(r):
+            raise InputError("Input Error","Req file missing")
+    except InputError as ie:
+        print ("Input Error: ", ie.msg)
+        sys.exit(0)
+
+    start = t.time()
+    print ("*****************************************")
+    print ("   Spec Generation   ")
+    print ("*****************************************")
+    
+    env = open(e, 'r')
+    sg = open('Spec-Learn-h'+hypNum+'.lp', 'a')
+    sg.write("time(0.."+time+").\n\n")
+    
+    for i in range(int(int(time)+1)):
+        sg.write("next("+str(i)+","+str(int(i)+1)+").\n")
+    sg.write(env.read())
+    hyp = open('h'+hypNum+'.txt', 'r')
+    sg.write("hyp(h"+hypNum+").\n\n")
+    sg.write(hyp.read())
+    sg.write("\nhypothesis(h"+hypNum+",TR):-\n")
+    sg.write("\ttrace(TR),\n")
+    sg.write("\ttime(T),\n")
+    sg.write("\thypothesis(h"+hypNum+",T,TR).\n")
+    sg.write("\n% ----- * Satisfaction Argument E /\ H is  consistent * -----\n\n")
+    sg.write(":- trace(TR), pos(TR), not hypothesis(h"+hypNum+",TR).\n\n")
+    sg.write("% ----- * Satisfaction Argument E /\ !H is consistent (if needed)*  -----\n\n")
+    sg.write(":- trace(TR), neg(TR), hypothesis(h"+hypNum+",TR).\n\n")
+    sg.write("%-------")
+    ax = open(d, 'r')
+    sg.write(ax.read())
+    sg.write("\n\n\n")
+    print("Please, make sure your provided  positive histories ")
+    posNum = input("How many positive histories did you provide? ")
+    termios.tcflush(sys.stdin, termios.TCIOFLUSH)
+    negNum = input("How many negative histories did you provide? ")
+    
+    if(int(posNum) < 1):
+        print ("Insufficient number of positive histories provided")
+        exit(0)
+    else:
+        sg.write("%-------\n")
+        sg.write("trace(")
+        for i in range(int(posNum)+int(negNum)):
+            if i > 0:
+                sg.write(";")
+            sg.write("tr"+str(i+1))
+        sg.write(").\n")
+        sg.write("pos(")
+        for i in range(int(posNum)):
+            if i > 0:
+                sg.write(";")
+            sg.write("tr"+str(i+1))
+        sg.write(").\n\n")
+        if int(negNum) > 0:
+            sg.write("neg(")
+            for i in range(int(negNum)):
+                if i > 0:
+                    sg.write(";")
+                sg.write("tr"+str(i+1+int(posNum)))
+            sg.write(").\n\n")
+    pos = open(p, 'r')
+    sg.write(pos.read())
+    sg.write("\n\n")
+    
+    if int(negNum) > 0:
+        neg = open(n, 'r')
+        sg.write(neg.read())
+        sg.write("\n\n")
+    heuristics = open(he, 'r')
+    sg.write(heuristics.read())
+    sg.write("\n\n\n")
+    sg.write("clock(0.."+str(int(time)+1)+").\n\n")
+    spec = open(s, 'r')
+    sg.write(spec.read())
+    sg.write("\n\n\n")
+    req = open(r,'r')
+    sg.write(req.read())
+    sg.write("\n\n\n")
+    sg.write("example(")
+    for i in range(int(posNum) + int(negNum)):
+        if i > 0:
+            sg.write(";")
+        sg.write("ex"+str(i+1))
+    sg.write(").\n\n")
+    pres_traces = get_pres_traces(posNum)
+    print ("\n\n Pres Traces:\n")
+    print (pres_traces)
+    neg_pres_traces = []
+    if int(negNum) > 0:
+        neg_pres_traces = get_neg_pres_traces(posNum,negNum)
+        print ("\n\n Negative Pres Traces:\n")
+        print (neg_pres_traces)
+    for i in range(int(posNum)):
+        sg.write("ex"+str(i+1)+":-\n")
+        for j in range(len(pres_traces[i])):
+            if j > 0:
+                sg.write(",\n")
+            sg.write("\t"+pres_traces[i][j])
+        sg.write(".\n\n")
+    for i in range(int(posNum)):
+        sg.write("#example ex"+str(i + 1)+".\n")
+    for i in range(int(negNum)):
+        sg.write("ex"+str(i+1 + int(posNum))+":-\n")
+        for j in range(len(neg_pres_traces[i])):
+            if j > 0:
+                sg.write(",\n")
+            sg.write("\t"+neg_pres_traces[i][j])
+        sg.write(".\n\n")
+    for i in range(int(negNum)):
+        sg.write("#example not ex"+str(i + 1 + int(posNum))+".\n")
+
+    events = get_prim_evs()
+    write_models(sg, events)
+    sg.close()
+    
+    for line in open("conf.txt").readlines():
+        if "clasp" in line:
+            if "\n" in line:
+                clasp = line[6:line.find("\n")]
+            else:
+                clasp = line[6:]
+
+        if "gringo" in line:
+            if "\n" in line:
+                gringo = line[7:line.find("\n")]
+            else:
+                gringo = line[7:]
+        if "xhail" in line:
+            if "\n" in line:
+                xhail = line[6:line.find("\n")]
+            else:
+                xhail = line[6:]
+
+    bashCmd = "java -jar "+xhail+" -a  -b  -f  -m  -c "+clasp+" -g "+gringo +" Spec-Learn-h"+hypNum+".lp > out3"
+
+    os.system(bashCmd)
+    elapsed = t.time() - start
+    print ("Specification generated in in "+ str(elapsed) +" seconds")
+    uncFound = False
+    print("\n\nSpecification:\n")
+    for line in reversed(open("out3").readlines()):
+        if "uncovered" in line:
+            uncFound = True
+        else:
+            if "hypothesis:" in line and uncFound:
+                break
+            else:
+                if not "hypothesis:" in line and uncFound:
+                    print (line[line.find("rtrig"):])
+
+
+
+def write_models(sg, events):
+    print (relEvents)
+    sg.write("\n\n")
+    sg.write("% ----- * Specification Language * -----\n\n")
+    
+    # writing modeh
+    for i in events:
+        sg.write("#modeh rtrig(preserve(")
+        sg.write(i+"(")
+        k=0
+        for j in events[i]:
+            if k > 0:
+                sg.write(",")
+            sg.write("+"+j)
+            k += 1
+        sg.write("),+clock), +time, +trace).\n")
+
+    sg.write("\n")
+
+    # writing modeb receive
+    for i in events:
+        sg.write("#modeb happens(receive(")
+        sg.write(i+"(")
+        k=0
+        for j in events[i]:
+            if k > 0:
+                sg.write(",")
+            sg.write("+"+j)
+            k += 1
+        sg.write("),+clock), +time, +trace).\n")
+    sg.write("\n")
+
+    # writing modeb happens_pred
+    for i in events:
+        lst = list(itertools.product([0, 1], repeat=len(events[i])))
+        sg.write("\n")
+        for conf in lst:
+            k=0
+            sg.write("#modeb happens_pred(preserve("+i+"(")
+            for j in events[i]:
+                if k > 0:
+                    sg.write(",")
+                if conf[k] == 0:
+                    sg.write("-")
+                else:
+                    sg.write("+")
+                sg.write(j)
+                k += 1
+            sg.write("),+clock), +time, +trace).\n")
+    sg.write("\n")
+
+    # writing modeb happens_prev
+    for i in events:
+        lst = list(itertools.product([0, 1], repeat=len(events[i])))
+        sg.write("\n")
+        for conf in lst:
+            k=0
+            sg.write("#modeb happens_prev(preserve("+i+"(")
+            for j in events[i]:
+                if k > 0:
+                    sg.write(",")
+                if conf[k] == 0:
+                    sg.write("-")
+                else:
+                    sg.write("+")
+                sg.write(j)
+                k += 1
+            sg.write("),+clock), +time, +trace).\n")
+    sg.write("\n")
+
+    # writing modeb not_happens_pred
+    for i in events:
+        lst = list(itertools.product([0, 1], repeat=len(events[i])))
+        sg.write("\n")
+        for conf in lst:
+            k=0
+            sg.write("#modeb not_happens_pred(preserve("+i+"(")
+            for j in events[i]:
+                if k > 0:
+                    sg.write(",")
+                if conf[k] == 0:
+                    sg.write("-")
+                else:
+                    sg.write("+")
+                sg.write(j)
+                k += 1
+            sg.write("),+clock), +time, +trace).\n")
+    sg.write("\n\n")
+
+
+
+
+def get_prim_evs():
+    params = []
+    events = {}
+    event = ""
+    try:
+        evFound=False
+        zeroParams = True
+        for line in open(e).readlines():
+            if  line.startswith("pe(")  and not evFound and not "." in line:
+                
+                line = line[line.find("pe(")+3:]
+                
+                
+                event = line[:line.find("(")]
+                if event in relEvents:
+                    evFound = True
+            
+
+            else:
+                if "pe(" in line and evFound:
+                    raise InputError("Input Error","Primitive events in the Environment Definition wrongly specified ")
+                else:
+                    if evFound:
+                        if line not in ['\n', '\r\n']:
+                            
+                            if zeroParams:
+                                params = []
+                            for p in line.split(" "):
+                                
+                                st= p[:p.find("(")]
+                                if st != "":
+                                    params.append(st)
+                                if zeroParams:
+                                    zeroParams = False
+                            if "." in line:
+                                evFound = False
+                                zeroParams = True
+                                events[event]= params
+    except InputError as ie:
+        print ("Input Error: ", ie.msg)
+        sys.exit(0)
+
+    return events
+        
+
+def get_pres_traces(posNum):
+    pres_traces = []
+    for i in range(int(posNum)):
+        list = []
+        for line in open(p).readlines():
+            if ",tr"+str(i +1)+")." in line:
+                eventName = line[line.find("happens")+8:]
+                eventName = eventName[:eventName.find("(")]
+                relEvents.add(eventName)
+                newline1= line.replace("happens","op_happens(preserve")
+                
+                if not ".\n" in newline1:
+                    newline1= newline1.replace(",tr"+str(i +1)+").","")
+                else:
+                    newline1= newline1.replace(",tr"+str(i +1)+").\n","")
+                ti = newline1[newline1.rfind(",")+1:]
+                newline1 = newline1+"),"+ti+",tr"+str(i+1)+")"
+                list.append(newline1)
+        pres_traces.append(list)
+    return pres_traces
+
+def get_neg_pres_traces(posNum, negNum):
+    pres_traces = []
+    for i in range(int(negNum)):
+        list = []
+        for line in open(n).readlines():
+            if ",tr"+str(i +1+ int(posNum))+")." in line:
+                newline1= line.replace("happens","op_happens(preserve")
+                if not ".\n" in newline1:
+                    newline1= newline1.replace(",tr"+str(i +1+ int(posNum))+").","")
+                else:
+                    newline1= newline1.replace(",tr"+str(i +1 + int(posNum))+").\n","")
+
+                ti = newline1[newline1.rfind(",")+1:]
+                newline1 = newline1+"),"+ti+",tr"+str(i+1+ int(posNum))+")"
+                list.append(newline1)
+        pres_traces.append(list)
+    return pres_traces
+
+
+def spec_verification(time,hypNum):
+    try:
+        if not os.path.isfile(s):
+            raise InputError("Input Error","Spec file missing")
+        if not os.path.isfile(t2):
+            raise InputError("Input Error","Optimisation extension file missing")
+    except InputError as ie:
+        print ("Input Error: ", ie.msg)
+        sys.exit(0)
+
+
+    start = t.time()
+    print ("*****************************************")
+    print ("   Spec Verification ")
+    print ("*****************************************")
+
+    env = open(e, 'r')
+    sv = open('Spec-Ver-h'+hypNum+'.lp', 'a')
+
+    
+    sv.write("time(0.."+str(time)+").\n\n")
+    sv.write("trace(tr1).\n\n")
+    sv.write(env.read())
+    hyp = open('h'+hypNum+'.txt', 'r')
+    sv.write("hyp(h"+hypNum+").\n\n")
+    sv.write(hyp.read())
+    sv.write("\nhypothesis(h"+hypNum+",TR):-\n")
+    sv.write("\ttrace(TR),\n")
+    sv.write("\ttime(T),\n")
+    sv.write("\thypothesis(h"+hypNum+",T,TR).\n")
+    sv.write(":- trace(TR), not hypothesis(h"+hypNum+",TR).\n\n")
+    ax = open(d, 'r')
+    sv.write(ax.read())
+    sv.write("\n\n\n")
+    heuristics = open(he, 'r')
+    sv.write(heuristics.read())
+    sv.write("\n\n\n")
+    sv.write("clock(0.."+str(int(time)+1)+").\n\n")
+    spec = open(sver, 'r')
+    sv.write(spec.read())
+    sv.write("\n\n\n")
+    tail2 = open(t2,'r')
+    sv.write(tail2.read())
+    sv.close()
+    bashCmd1 = "clingo --opt-all -n 0 Spec-Ver-h"+hypNum+".lp > out2"
+    os.system(bashCmd1)
+    elapsed = t.time() - start
+    opt=""
+    i=0
+    pres_histories = np.chararray(())
+    firstOptFound = False
+    secondOptFound = False
+
+    for line in reversed(open("out2").readlines()):
+        if "Optimization: " in line and not firstOptFound :
+            opt= line.rstrip()
+            firstOptFound = True
+            continue
+        if "Optimization: " in line and firstOptFound :
+            if line.rstrip() == opt :
+                secondOptFound = True
+                continue
+            else:
+                break
+        if secondOptFound :
+            array = np.asarray(line.rstrip().split())
+            if i==0:
+                pres_histories = np.empty((0,len(array)), np.chararray)
+                i += 1
+
+            array = array.reshape(len(array),1)
+            array = array.transpose()
+            pres_histories = np.concatenate((pres_histories, array), axis=0)
+            secondOptFound = False
+
+    print ("Preservation histories not covered identified in "+ str(elapsed) +" seconds")
+    return pres_histories
+
+
+
+
+
+
+
+def history_iden(time,hypNum):
+    try:
+        
+        if not os.path.isfile(e):
+            raise InputError("Input Error","Environment definition missing")
+        if not os.path.isfile('h'+hypNum+'.txt'):
+            raise InputError("Input Error","Hypotheses definition missing")
+        if not os.path.isfile(d):
+            raise InputError("Input Error","Domain independent axioms missing")
+        if not os.path.isfile(he):
+            raise InputError("Input Error","Heuristics for minimal history missing")
+        if not os.path.isfile(t1):
+            raise InputError("Input Error","Optimisation extension file missing")
+    except InputError as ie:
+        print ("Input Error: ", ie.msg)
+        sys.exit(0)
+    start = t.time()
+    print ("*****************************************")
+    print ("   Primitive histories identification")
+    print ("*****************************************")
+
+
+    env = open(e, 'r')
+    hi = open('history_iden-h'+hypNum+'.lp', 'a')
+    time = sys.argv[1]
+
+    hi.write("time(0.."+str(time)+").\n\n")
+    hi.write("trace(tr1).\n\n")
+    hi.write(env.read())
+    hyp = open('h'+hypNum+'.txt', 'r')
+    hi.write("hyp(h"+hypNum+").\n\n")
+    hi.write(hyp.read())
+    hi.write("\nhypothesis(h"+hypNum+",TR):-\n")
+    hi.write("\ttrace(TR),\n")
+    hi.write("\ttime(T),\n")
+    hi.write("\thypothesis(h"+hypNum+",T,TR).\n")
+    hi.write(":- trace(TR), not hypothesis(h"+hypNum+",TR).\n\n")
+    ax = open(d, 'r')
+    hi.write(ax.read())
+    hi.write("\n\n\n")
+    heuristics = open(he, 'r')
+    hi.write(heuristics.read())
+    hi.write("\n\n\n")
+    tail = open(t1, 'r')
+    hi.write(tail.read())
+    hi.write("\n")
+    hi.close()
+    bashCmd1 = "clingo --opt-all -n 0 history_iden-h"+hypNum+".lp > out1"
+    os.system(bashCmd1)
+    elapsed = t.time() - start
+    out1 = open('out1','r')
+    opt=""
+    i=0
+    j=0
+    histories = np.chararray(())
+    firstOptFound = False
+    secondOptFound = False
+    for line in reversed(open("out1").readlines()):
+        if "Optimization: " in line and not firstOptFound :
+            opt= line.rstrip()
+            firstOptFound = True
+            continue
+        if "Optimization: " in line and firstOptFound :
+            if line.rstrip() == opt :
+                secondOptFound = True
+                continue
+            else:
+                break
+        if secondOptFound :
+            array = np.asarray(line.rstrip().split())
+            if i==0:
+                histories = np.empty((0,len(array)), np.chararray)
+                i += 1
+            array = array.reshape(len(array),1)
+    
+            array = array.transpose()
+
+            histories = np.concatenate((histories, array), axis=0)
+            secondOptFound = False
+
+    print ("Histories identified in "+ str(elapsed) +" seconds")
+    return histories
+
+
+
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+

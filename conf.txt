@@ -1,0 +1,3 @@
+clasp=/Users/liliana/clasp-3.0.3/clasp
+gringo=/Users/liliana/gringo/gringo
+xhail=/usr/local/xhail-0.5.1/xhail.jar

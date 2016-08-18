@@ -1,0 +1,11 @@
+%%% An employee receives an email from an external address
+%%% asking for the document. The employee subsequently answers
+%%% by attaching the document
+hypothesis(h6,T,TR):-
+    trace(TR),
+    time(T),
+    email(E1),
+    email(E2),
+    emp(P),
+    extAddr(S),
+    happens(answerEmailE2Ext(E1,E2,m57plan,P,S),T,TR).
