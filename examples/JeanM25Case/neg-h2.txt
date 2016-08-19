@@ -1,4 +1,1 @@
-happens(send_email_e2ext(e1,m57plan,ajean,abob,m1),1,tr5).
-happens(send_email_e2ext(e1,m57plan,ajean,atuck,m1),1,tr6).
-happens(send_email_e2ext(e1,m57plan,aalison,abob,m2),1,tr7).
-happens(send_email_e2ext(e1,m57plan,aalison,atuck,m2),1,tr8).
+happens(send_email_e2ext(e1,m57plan,ajean,abob,m1),1,tr2).
