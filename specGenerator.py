@@ -22,6 +22,8 @@ p='pos.txt'
 n='neg.txt'
 r='req.txt'
 relEvents= set()
+relPosTraces = set()
+relNegTraces = set()
 clasp = ''
 gringo = ''
 xhail = ''
@@ -36,18 +38,29 @@ def main():
     hypNum = sys.argv[2]
     time = sys.argv[1]
     histories = history_iden(time,hypNum)
-    pres_histories = spec_verification(time,hypNum)
     if len(histories) < 1:
         print ("hypothesis h"+hypNum+" is not supported in the environment")
     else:
         print ("hypothesis h"+hypNum+" is supported by the following primitive histories")
+        pos =  open(p, 'w')
         for i in range(len(histories)):
             print(histories[i])
-    if len(pres_histories) > 0:
-        print ("The following preservation histories are not covered")
-        for i in range(len(pres_histories)):
-            print(pres_histories[i])
+            for j in range(len(histories[i])):
+                prim_ev = histories[i][j]
+                if i == 0:
+                    pos.write(prim_ev[3:]+".\n")
+                else:
+                    pos.write(prim_ev[3:prim_ev.rfind("tr")]+"tr"+str(i +1)+").\n")
+        pos.close()
+        pres_histories = spec_verification(time,hypNum)
+        if len(pres_histories) > 0:
+            print ("The following preservation histories are not covered")
+            for i in range(len(pres_histories)):
+                print(pres_histories[i])
+    
         spec_generation(time,hypNum)
+        
+
 
 #Base class for exceptions in this module.
 class Error(Exception):
@@ -94,39 +107,69 @@ def spec_generation(time,hypNum):
     sg.write(ax.read())
     sg.write("\n\n\n")
     print("Please, make sure your provided  positive histories ")
-    posNum = input("How many positive histories did you provide? ")
+    input("Confirm that you provided examples of positive and (possibly negative) histories")
     termios.tcflush(sys.stdin, termios.TCIOFLUSH)
-    negNum = input("How many negative histories did you provide? ")
     
-    if(int(posNum) < 1):
+
+    if not os.path.isfile(p):
         print ("Insufficient number of positive histories provided")
         exit(0)
-    else:
-        sg.write("%-------\n")
-        sg.write("trace(")
-        for i in range(int(posNum)+int(negNum)):
-            if i > 0:
-                sg.write(";")
-            sg.write("tr"+str(i+1))
-        sg.write(").\n")
-        sg.write("pos(")
-        for i in range(int(posNum)):
-            if i > 0:
-                sg.write(";")
-            sg.write("tr"+str(i+1))
+
+    sg.write("%-------\n")
+    for line in open(p).readlines():
+        if line in ['\n', '\r\n']:
+            continue
+        trace = line[line.rfind(",tr")+1:line.rfind(").")]
+        if not trace in relPosTraces:
+            relPosTraces.add(trace)
+
+    if os.path.isfile(n):
+        for line in open(n).readlines():
+            if line in ['\n', '\r\n']:
+                continue
+            trace = line[line.rfind(",tr")+1:line.rfind(").")]
+            if not trace in relNegTraces:
+                relNegTraces.add(trace)
+
+    i = 0
+    sg.write("trace(")
+    for tr in relPosTraces:
+        if i > 0:
+            sg.write(";")
+        sg.write(tr)
+        i += 1
+
+    for tr in relNegTraces:
+        sg.write(";")
+        sg.write(tr)
+
+    sg.write(").\n")
+    i = 0
+    sg.write("pos(")
+    for tr in relPosTraces:
+        if i > 0:
+            sg.write(";")
+        sg.write(tr)
+        i += 1
+    if len(relPosTraces) > 0:
         sg.write(").\n\n")
-        if int(negNum) > 0:
-            sg.write("neg(")
-            for i in range(int(negNum)):
-                if i > 0:
-                    sg.write(";")
-                sg.write("tr"+str(i+1+int(posNum)))
-            sg.write(").\n\n")
+
+    j = 0
+    print (relNegTraces)
+    if len(relNegTraces) > 0:
+        sg.write("neg(")
+        for tr in relNegTraces:
+            if j > 0:
+                sg.write(";")
+            sg.write(tr)
+            j += 1
+        sg.write(").\n\n")
+
     pos = open(p, 'r')
     sg.write(pos.read())
     sg.write("\n\n")
     
-    if int(negNum) > 0:
+    if len(relNegTraces) > 0:
         neg = open(n, 'r')
         sg.write(neg.read())
         sg.write("\n\n")
@@ -141,37 +184,39 @@ def spec_generation(time,hypNum):
     sg.write(req.read())
     sg.write("\n\n\n")
     sg.write("example(")
-    for i in range(int(posNum) + int(negNum)):
+
+    for i in range(len(relPosTraces) + len(relNegTraces)):
         if i > 0:
             sg.write(";")
         sg.write("ex"+str(i+1))
     sg.write(").\n\n")
-    pres_traces = get_pres_traces(posNum)
+
+    pres_traces = get_pres_traces()
     print ("\n\n Pres Traces:\n")
     print (pres_traces)
     neg_pres_traces = []
-    if int(negNum) > 0:
-        neg_pres_traces = get_neg_pres_traces(posNum,negNum)
+    if len(relNegTraces) > 0:
+        neg_pres_traces = get_neg_pres_traces()
         print ("\n\n Negative Pres Traces:\n")
         print (neg_pres_traces)
-    for i in range(int(posNum)):
+    for i in range(len(relPosTraces)):
         sg.write("ex"+str(i+1)+":-\n")
         for j in range(len(pres_traces[i])):
             if j > 0:
                 sg.write(",\n")
             sg.write("\t"+pres_traces[i][j])
         sg.write(".\n\n")
-    for i in range(int(posNum)):
+    for i in range(len(relPosTraces)):
         sg.write("#example ex"+str(i + 1)+".\n")
-    for i in range(int(negNum)):
-        sg.write("ex"+str(i+1 + int(posNum))+":-\n")
+    for i in range(len(relNegTraces)):
+        sg.write("ex"+str(i+1 + int(len(relPosTraces)))+":-\n")
         for j in range(len(neg_pres_traces[i])):
             if j > 0:
                 sg.write(",\n")
             sg.write("\t"+neg_pres_traces[i][j])
         sg.write(".\n\n")
-    for i in range(int(negNum)):
-        sg.write("#example not ex"+str(i + 1 + int(posNum))+".\n")
+    for i in range(len(relNegTraces)):
+        sg.write("#example not ex"+str(i + 1 + len(relPosTraces))+".\n")
 
     events = get_prim_evs()
     write_models(sg, events)
@@ -198,8 +243,8 @@ def spec_generation(time,hypNum):
     bashCmd = "java -jar "+xhail+" -a  -b  -f  -m  -c "+clasp+" -g "+gringo +" Spec-Learn-h"+hypNum+".lp > out3"
 
     os.system(bashCmd)
-    elapsed = t.time() - start
-    print ("Specification generated in in "+ str(elapsed) +" seconds")
+    #elapsed = t.time() - start
+    #print ("Specification generated in in "+ str(elapsed) +" seconds")
     uncFound = False
     print("\n\nSpecification:\n")
     for line in reversed(open("out3").readlines()):
@@ -351,41 +396,41 @@ def get_prim_evs():
     return events
         
 
-def get_pres_traces(posNum):
+def get_pres_traces():
     pres_traces = []
-    for i in range(int(posNum)):
+    for tr in relPosTraces:
         list = []
         for line in open(p).readlines():
-            if ",tr"+str(i +1)+")." in line:
+            if ","+tr+")." in line:
                 eventName = line[line.find("happens")+8:]
                 eventName = eventName[:eventName.find("(")]
                 relEvents.add(eventName)
                 newline1= line.replace("happens","op_happens(preserve")
                 
                 if not ".\n" in newline1:
-                    newline1= newline1.replace(",tr"+str(i +1)+").","")
+                    newline1= newline1.replace(","+tr+").","")
                 else:
-                    newline1= newline1.replace(",tr"+str(i +1)+").\n","")
+                    newline1= newline1.replace(","+tr+").\n","")
                 ti = newline1[newline1.rfind(",")+1:]
-                newline1 = newline1+"),"+ti+",tr"+str(i+1)+")"
+                newline1 = newline1+"),"+ti+","+tr+")"
                 list.append(newline1)
         pres_traces.append(list)
     return pres_traces
 
-def get_neg_pres_traces(posNum, negNum):
+def get_neg_pres_traces():
     pres_traces = []
-    for i in range(int(negNum)):
+    for tr in relNegTraces:
         list = []
         for line in open(n).readlines():
-            if ",tr"+str(i +1+ int(posNum))+")." in line:
+            if ","+tr+")." in line:
                 newline1= line.replace("happens","op_happens(preserve")
                 if not ".\n" in newline1:
-                    newline1= newline1.replace(",tr"+str(i +1+ int(posNum))+").","")
+                    newline1= newline1.replace(","+tr+").","")
                 else:
-                    newline1= newline1.replace(",tr"+str(i +1 + int(posNum))+").\n","")
+                    newline1= newline1.replace(","+tr+").\n","")
 
                 ti = newline1[newline1.rfind(",")+1:]
-                newline1 = newline1+"),"+ti+",tr"+str(i+1+ int(posNum))+")"
+                newline1 = newline1+"),"+ti+","+tr+")"
                 list.append(newline1)
         pres_traces.append(list)
     return pres_traces
