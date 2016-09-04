@@ -1,0 +1,27 @@
+% ----- * Forensic Readiness Requirements * -----
+
+:- pe(A), time(T), trace(TR),happens(A,T,TR), pos(TR),
+    not happens(preserve(A,T), T,TR).
+
+:- pe(A), trace(TR), time(T),happens(preserve(A,T),T,TR),
+    not happens(A, T,TR).
+
+:- pe(A), trace(TR), clock(TS),
+    neg(TR),
+    not at_least_one_nrtrig(TR).
+
+nrtrig(preserve(A,TS),T,TR):-
+    pe(A), time(T),trace(TR), clock(TS),
+    happens(receive(A,TS),T,TR),
+    not rtrig(preserve(A,TS),T,TR).
+
+at_least_one_nrtrig(TR):-
+    pe(A), time(T),trace(TR), clock(TS),
+    nrtrig(preserve(A,TS),T,TR).
+
+
+op_happens(A,T,TR):-
+    trace(TR),
+    time(T),
+    op(A),
+    happens(A,T,TR).
