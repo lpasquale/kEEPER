@@ -53,7 +53,7 @@ An example configuration can look like the following. <br>
 <tt>python3.5 specGenerator.py 6 1</tt> </li>
 
 <li>While running, our tool requires the user to provide as input potential positive and negative histories. <br> 
-The user should do so by editing files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the directory where the environment description is placed. Note that in the examples directories (<tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>) we also provide examples of positive and negative histories for each hypothesis. For example, for hypothesis h2 of the harassment scenario, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively. The same applies to the other hypotheses and to the other examples. The content of these files could/should be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted. </li>
+The user should do so by editing files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the directory where the environment description is placed. Note that in the examples directories (<tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>) we also provide examples of positive and negative histories for each hypothesis. For example, for hypothesis h2 of the harassment scenario, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively, which are placed in directory <tt>HarassmentScenario</tt>. The same applies to the other hypotheses and examples.<br> The content of these files could be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted. </li>
 </ul>
 
 
