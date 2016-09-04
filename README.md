@@ -17,7 +17,7 @@ The picture shows the outputs of our prototype for the running example described
 Requirements
 ------------
 This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper (directories <tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
-To run these examples, the application prototype must be configured properly .
+To run these examples, the application prototype must be configured properly.
 The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
 
 ### Prerequisites
@@ -27,15 +27,18 @@ Our prototype delegates some of the reasoning tasks it performs to an external *
 
 The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
 These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.
-In particular, we use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tool would lead to errors.
+We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tool would lead to errors.
 
-The Inductive Logic Programming System that we use is XHAIL. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
+The Inductive Logic Programming System that we use is *XHAIL*. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
 
-Running the examples
----------------------
-Place files specGenerator.py and conf.txt in the same directory.
+### Running the examples
 
-Place the file environment.txt and h1.txt, h2.txt,... also including additional files in the addFiles directory. in a specific target directory.
+To run the examples, please follow the following steps:
+<ul>
+<li> Place files <tt>specGenerator.py</tt> and <tt>conf.txt</tt> in the same directory. </li>
+
+<li> Place the environment description (<tt>environment.txt</tt>), the hypotheses (<tt>h1.txt</tt>, <tt>h2.txt</tt>,...) and the additional files (in directory <tt>AddFiles</tt> in a specific target directory.</li>
+</ul>
 
 Configure the conf.txt file by identifying the directory in which the inputs and the additional files necessary to generate a specification are placed, and the path to clingo, clasp and gringo commands and xhail.jar library.
 An example configuration can look like the following.
