@@ -16,7 +16,7 @@ The picture shows the outputs of our prototype for the running example described
 
 Requirements
 ------------
-This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), sme additional file necessary to support the specification generation (in directory <tt>AddFiles</tt>), and the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper (directories <tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
+This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), some additional files necessary to support the specification generation (inside directory <tt>AddFiles</tt>), and the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper (directories <tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
 To run these examples, the application prototype must be configured properly.
 The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
 
