@@ -1,5 +1,5 @@
-dir=/Users/liliana/webpage/running
-clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo
-clasp=/Users/liliana/clasp-3.0.3/clasp
-gringo=/Users/liliana/gringo/gringo
-xhail=/usr/local/xhail-0.5.1/xhail.jar
+dir=<Path to the directory in which the environment description and the hypotheses are placed>
+clingo=<Path to clingo command>
+clasp=<Path to clasp command>
+gringo=<Path to gringo command>
+xhail=<Path to XHAIL .jar library>
