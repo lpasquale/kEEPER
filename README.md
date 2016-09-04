@@ -8,3 +8,4 @@ First, our prototype checks whether the hypothesis is supportable within the env
 Second, it generates a set of potential logs covering the potential positive histories identified in the previous step.
 Finally, it asks the user to select a set of positive histories in the file <tt>pos.txt</tt> and to input a set of negative histories in the file <tt>neg.txt</tt>. Our prototype synthesizes a specification that prescribes to preserve logs that cover the positive histories and do not cover the negative ones.
 
+![**XHAIL** output](https://github.com/lpasquale/minorityReport/blob/master/img/tool.png "**XHAIL**")
