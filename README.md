@@ -16,7 +16,7 @@ The picture shows the outputs of our prototype for the running example described
 
 Requirements
 ------------
-This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper (directories <tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
+This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), sme additional file necessary to support the specification generation (in directory <tt>AddFiles</tt>), and the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper (directories <tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
 To run these examples, the application prototype must be configured properly.
 The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
 
@@ -50,7 +50,7 @@ An example configuration can look like the following. <br><br>
 <tt>xhail=/usr/local/xhail-0.5.1/xhail.jar</tt> </li>
 
 <li>run <tt>specGenerator.py</tt> by providing as input the maximum number of consecutive time instant desired for a history and the hypothesis number. For example, the following runs our prototype by requiring potential primitive histories to span 6 time instant and to consider hypothesis 1 (<tt>h1.txt</tt>).<br>
-<tt>python3.5 specGenerator.py 6 1<tt></li>
+<tt>python3.5 specGenerator.py 6 1</tt> </li>
 
 <li>When required to provide as input positive and negative potential histories, it is necessary to edit files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the target directory. Examples of positive and negative histories are provided for each hypothesis. For example, for hypothesis h2 of both the harassment and exfiltration scenarios, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively. The same applies to the other hypotheses. The content of these files could/should be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted.  </li>
 </ul>
