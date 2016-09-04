@@ -16,14 +16,13 @@ The picture shows the outputs of our prototype for the running example described
 
 Requirements
 ------------
-This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>)the inputs (environment and hypotheses) associated with the running example (directory <tt>RunningExample</tt>) and the two case studies described in the paper (directories <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
-To run these examples, the application prototype must be properly configured.
+This repository contains the source code of our prototype (file <tt>specGenerator.py</tt>), a configuration file (<tt>conf.txt</tt>), the inputs (environment and hypotheses) associated with the running example (directory <tt>RunningExample</tt>) and the two case studies described in the paper (directories <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>, respectively).
+To run these examples, the application prototype must be configured properly .
 The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
 
 ### Prerequisites
 
 The **Minority Report** prototype is a *Python* application, requiring Python 3.5 to be installed on the target machine to run it. 
-
 Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to an **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
 The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
