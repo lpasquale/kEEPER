@@ -12,3 +12,11 @@ Finally, it asks the user to select a set of positive histories in the file <tt>
 ![**XHAIL** output](https://github.com/lpasquale/minorityReport/blob/master/img/tool.png "**XHAIL**")
 
 The picture shows the outputs of our prototype for the running example described in the paper. In particular, it shows the potential positive histories, the log histories covering the potential primitive histories and the synthesized specification.
+
+Requirements
+------------
+This repository contains the source code of our prototype, the inputs (environment and hypotheses) associated with the running example and the two case studies described in the paper.
+To run these examples, the application prototype must be properly configured.
+The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
+
+
