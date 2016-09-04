@@ -41,20 +41,24 @@ To run the examples, please follow the following steps:
 
 <li> Edit file <tt>conf.txt</tt>. dir should point to the directory in which the environment description is placed. The other entries should point to the <tt>clingo</tt>, <tt>clasp</tt> and <tt>gringo</tt> commands and the <tt>xhail.jar</tt> library.
 
-An example configuration can look like the following.
+An example configuration can look like the following. <br><br>
 
-<tt>dir=/Users/liliana/webpage/running</tt>
-<tt>clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo</tt>
-<tt>clasp=/Users/liliana/clasp-3.0.3/clasp</tt>
-<tt>gringo=/Users/liliana/gringo/gringo</tt>
+<tt>dir=/Users/liliana/webpage/running</tt><br>
+<tt>clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo</tt><br>
+<tt>clasp=/Users/liliana/clasp-3.0.3/clasp</tt><br>
+<tt>gringo=/Users/liliana/gringo/gringo</tt><br>
 <tt>xhail=/usr/local/xhail-0.5.1/xhail.jar</tt> </li>
 
+<li>run <tt>specGenerator.py</tt> by providing as input the maximum number of consecutive time instant desired for a history and the hypothesis number. For example, the following runs our prototype by requiring potential primitive histories to span 6 time instant and to consider hypothesis 1 (<tt>h1.txt</tt>).<br>
+<tt>python3.5 specGenerator.py 6 1<tt></li>
+
+<li>When required to provide as input positive and negative potential histories, it is necessary to edit files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the target directory. Examples of positive and negative histories are provided for each hypothesis. For example, for hypothesis h2 of both the harassment and exfiltration scenarios, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively. The same applies to the other hypotheses. The content of these files could/should be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted.  </li>
 </ul>
 
 
 
-run .specGenerator.py by providing as input the maximum length desired for a history and the hypothesis number
 
-dhcp-c101a4a2:MR liliana$ python3.5 specGenerator.py 6 1
 
-When required to provide as input positive and negative potential histories make sure to edit files pos.txt and neg.txt in the target directory. Examples of positive and negative histories are provided for each hypothesis included in the examples.
+
+
+
