@@ -22,7 +22,7 @@ The following sections describe the steps required to use the our prototype to s
 
 ### Prerequisites
 
-Our prototype is a *Python* application, requiring Python 3.5 to be installed on the target machine to run it. 
+Our prototype is a *Python* application requiring Python 3.5 to be installed on the target machine to run it. <br>
 Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to an **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
 The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
