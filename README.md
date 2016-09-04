@@ -23,17 +23,27 @@ The following sections describe the steps required to use the **Minority Report*
 
 The **Minority Report** prototype is a *Python* application, requiring Python 3.5 to be installed on the target machine to run it. 
 
-Our prototype delegates some of the reasoning tasks it performs to an external *ASP* engine (Clingo) and to a **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
+Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to a **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
-he *ASP* platform that we have chosen to use is *Clingo*/*Clingo*/*Clasp*.
+The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
 In particular, we recommend to use Clingo v3.0.5, Gringo v3.05 and Clasp v3.0.3.
 These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO), more information is available on the [web site](http://potassco.sourceforge.net) of the project.
 
-You can download sources from the official web site, but you can also conveniently find compiled binaries on [SourceForge](http://sourceforge.net/projects/potassco/) in the *Files* section. 
-You need to repeat the following steps for *Clingo*, *Gringo*, and *Clasp* 
-Enter *Clingo*'s (*Gringo*'s,*Clasp*'s) folder and then the folder for the most recent version among those of the 3rd major release.
-Now select the package that is appropriate for your system and the download should start in a few seconds.
-Further instructions are provided within the package.
-Please take note of the folder where the binaries will sit as it will be needed later.
+The Inductive Logic Programming System that we use is XHAIL. This is an open source tool; more information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
+
+Running the examples
+---------------------
+Place files specGenerator.py and conf.txt in the same directory.
+
+Place the file environment.txt and h1.txt, h2.txt,... also including additional files
+
+Configure the conf.txt file by identifying the directory in which the inputs and the additional files necessary to generate a specification are placed, and the path to clingo, clasp and gringo commands and xhail.jar library.
+An example configuration can look like the following.
+
+dir=/Users/liliana/webpage/running
+clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo
+clasp=/Users/liliana/clasp-3.0.3/clasp
+gringo=/Users/liliana/gringo/gringo
+xhail=/usr/local/xhail-0.5.1/xhail.jar
 
 
