@@ -37,17 +37,21 @@ To run the examples, please follow the following steps:
 <ul>
 <li> Place files <tt>specGenerator.py</tt> and <tt>conf.txt</tt> in the same directory. </li>
 
-<li> Place the environment description (<tt>environment.txt</tt>), the hypotheses (<tt>h1.txt</tt>, <tt>h2.txt</tt>,...) and the additional files (in directory <tt>AddFiles</tt> in a specific target directory.</li>
-</ul>
+<li> Place the environment description (<tt>environment.txt</tt>), the hypotheses (<tt>h1.txt</tt>, <tt>h2.txt</tt>,...) and the additional files (in directory <tt>AddFiles</tt>) in the same directory. This directory could be the same in which files <tt>specGenerator.py</tt> and <tt>conf.txt</tt> are placed (although it does not have to be). </li>
 
-Configure the conf.txt file by identifying the directory in which the inputs and the additional files necessary to generate a specification are placed, and the path to clingo, clasp and gringo commands and xhail.jar library.
+<li> Edit file <tt>conf.txt</tt>. dir should point to the directory in which the environment description is placed. The other entries should point to the <tt>clingo</tt>, <tt>clasp</tt> and <tt>gringo</tt> commands and the <tt>xhail.jar</tt> library.
+
 An example configuration can look like the following.
 
-dir=/Users/liliana/webpage/running
-clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo
-clasp=/Users/liliana/clasp-3.0.3/clasp
-gringo=/Users/liliana/gringo/gringo
-xhail=/usr/local/xhail-0.5.1/xhail.jar
+<tt>dir=/Users/liliana/webpage/running</tt>
+<tt>clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo</tt>
+<tt>clasp=/Users/liliana/clasp-3.0.3/clasp</tt>
+<tt>gringo=/Users/liliana/gringo/gringo</tt>
+<tt>xhail=/usr/local/xhail-0.5.1/xhail.jar</tt> </li>
+
+</ul>
+
+
 
 run .specGenerator.py by providing as input the maximum length desired for a history and the hypothesis number
 
