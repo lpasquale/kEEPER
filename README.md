@@ -19,4 +19,21 @@ This repository contains the source code of our prototype, the inputs (environme
 To run these examples, the application prototype must be properly configured.
 The following sections describe the steps required to use the **Minority Report** prototype to synthesize preservation specifications.
 
+### Prerequisites
+
+The **Minority Report** prototype is a *Python* application, requiring Python 3.5 to be installed on the target machine to run it. 
+
+Our prototype delegates some of the reasoning tasks it performs to an external *ASP* engine (Clingo) and to a **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
+
+he *ASP* platform that we have chosen to use is *Clingo*/*Clingo*/*Clasp*.
+In particular, we recommend to use Clingo v3.0.5, Gringo v3.05 and Clasp v3.0.3.
+These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO), more information is available on the [web site](http://potassco.sourceforge.net) of the project.
+
+You can download sources from the official web site, but you can also conveniently find compiled binaries on [SourceForge](http://sourceforge.net/projects/potassco/) in the *Files* section. 
+You need to repeat the following steps for *Clingo*, *Gringo*, and *Clasp* 
+Enter *Clingo*'s (*Gringo*'s,*Clasp*'s) folder and then the folder for the most recent version among those of the 3rd major release.
+Now select the package that is appropriate for your system and the download should start in a few seconds.
+Further instructions are provided within the package.
+Please take note of the folder where the binaries will sit as it will be needed later.
+
 
