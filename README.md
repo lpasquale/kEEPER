@@ -25,9 +25,9 @@ The following sections describe the steps required to use the our prototype to s
 Our prototype is a *Python* application requiring Python 3.5 to be installed on the target machine to run it. <br>
 Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to an **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
-The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
-These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.
-We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tool would lead to errors.
+The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.<br>
+These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.<br>
+We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tools would lead to errors.
 
 The Inductive Logic Programming System that we use is *XHAIL*. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
 
