@@ -1,2 +1,0 @@
-happens(send_email_ext2ext(e1,m57plan,abob,atuck,m1),1,tr1).
-happens(sys_login(jean,pwdJean,m1),0,tr1).
