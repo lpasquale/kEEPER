@@ -52,7 +52,8 @@ An example configuration can look like the following. <br>
 <li>run <tt>specGenerator.py</tt> providing as input the maximum time window for a history and the hypothesis number. <br> For example, the following command runs our prototype, setting the maximum time window to 6 and considering hypothesis 1 (represented in file <tt>h1.txt</tt>).<br>
 <tt>python3.5 specGenerator.py 6 1</tt> </li>
 
-<li>When required to provide as input positive and negative potential histories, it is necessary to edit files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the target directory. Examples of positive and negative histories are provided for each hypothesis. For example, for hypothesis h2 of both the harassment and exfiltration scenarios, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively. The same applies to the other hypotheses. The content of these files could/should be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted.  </li>
+<li>While running, our tool requires the user to provide as input potential positive and negative histories. <br> 
+The user should do so by editing files <tt>pos.txt</tt> and <tt>neg.txt</tt> in the directory where the environment description is placed. Together with the environment descrition, in the examples directories (<tt>RunningExample</tt>, <tt>HarassmentScenario</tt> and <tt>ExfiltrationScenario</tt>) we also provide examples of positive and negative histories for each hypothesis. For example, for hypothesis h2 of the harassment scenario, examples of positive and negative potential histories are in files <tt>pos-h2.txt</tt> and <tt>neg-h2.txt</tt>, respectively. The same applies to the other hypotheses. The content of these files could/should be copied in files <tt>pos.txt</tt> and <tt>neg.txt</tt> when prompted. </li>
 </ul>
 
 
