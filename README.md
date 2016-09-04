@@ -27,7 +27,8 @@ Our prototype delegates some of the reasoning tasks it performs to an external *
 
 The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.<br>
 These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.<br>
-We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tools would lead to errors.
+We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tools would lead to errors.<br>
+Morevoer, the PATH Environment Variable should point to Clingo, Gringo and Clasp target folders.
 
 The Inductive Logic Programming System that we use is *XHAIL*. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
 
@@ -39,10 +40,9 @@ To run the examples, please follow the following steps:
 
 <li> Place the environment description (<tt>environment.txt</tt>), the hypotheses (<tt>h1.txt</tt>, <tt>h2.txt</tt>,...) and the additional files (in directory <tt>AddFiles</tt>) in the same directory. This directory could be the same in which files <tt>specGenerator.py</tt> and <tt>conf.txt</tt> are placed (although it does not have to be). </li>
 
-<li> Edit file <tt>conf.txt</tt>. dir should point to the directory in which the environment description is placed. The other entries should point to the <tt>clingo</tt>, <tt>clasp</tt> and <tt>gringo</tt> commands and the <tt>xhail.jar</tt> library.
+<li> Edit file <tt>conf.txt</tt>.<br> In particular, <tt>dir</tt> should point to the directory in which the environment description is placed. The other entries should point to the <tt>clingo</tt>, <tt>clasp</tt> and <tt>gringo</tt> commands and the <tt>xhail.jar</tt> library.
 
-An example configuration can look like the following. <br><br>
-
+An example configuration can look like the following. <br>
 <tt>dir=/Users/liliana/webpage/running</tt><br>
 <tt>clingo=/Users/liliana/clingo-3.0.5-macos-10.8.3/clingo</tt><br>
 <tt>clasp=/Users/liliana/clasp-3.0.3/clasp</tt><br>
