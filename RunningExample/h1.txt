@@ -1,0 +1,7 @@
+hypothesis(h1,T,TR):-
+	trace(TR),
+	time(T),
+	emp(E),
+    	st(S),
+    	holdsAt(mounted(S,m1),T,TR),
+	happens(copy(E,doc,m1),T,TR).

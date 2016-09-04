@@ -1,0 +1,405 @@
+% ****************** Environment Description ******************
+
+% ********* Context Description *********
+
+% ***** Types and Instances *****
+
+% Room r01 is a location
+loc(r01).
+
+% cctv1 is a cctv camera 
+cam(cctv1).
+
+% nfc1 is a nfs reader
+read(nfc1).
+
+% m1, m2 and m3 are computers
+comp(m1;m2;m3).
+
+% doc is a file
+fi(doc).
+
+% alice and bob are employees
+emp(alice;bob).
+
+% usb1 is an external storage device
+st(usb1).
+
+% ***** Context Relations *****
+
+% A location is access-controlled by a nfc reader
+
+fluent(isAccessControlledBy(L,R)):- 
+	loc(L), read(R).
+
+% A location is surveilled by a camera
+
+fluent(isMonitoredBy(L,C)):-
+	loc(L), cam(C).
+
+%A desktop is in a specific location
+
+fluent(isLocatedIn(C,L)):-
+	comp(C), loc(L).
+
+% An employee is in a location
+
+fluent(in(E,L)):-
+	emp(E), loc(L).
+
+% An employee is logged to a machine
+
+fluent(logged(E,C)):-
+	emp(E), comp(C).
+
+
+% An employee has a badge to access to a specific location
+
+fluent(hasBadge(E,L)):-
+	emp(E), loc(L).
+
+% An employee has the permission to log to a machine
+
+fluent(hasPermission(E,C)):-
+	emp(E), comp(C).
+
+% A file is stored on a machine
+
+fluent(isStoredIn(F,C)):-
+	fi(F), comp(C).
+
+% A storage device is mounted on a computer by an employee
+
+fluent(mounted(S,C)):-
+	st(S), comp(C).
+
+
+% ********* Behaviour Description *********
+
+% ***** Primitive Events *****
+
+event(V):- 
+	pe(V).
+
+% A storage device is mounted several times on a computer
+
+pe(highMountCounts(S, C)):- 
+	st(S), comp(C).
+
+% A system log indicates that a file stored on a computer is copied by an employee
+
+pe(sys_copy(E, F, C)):-
+	emp(E), fi(F), comp(C).
+
+% A system log indicates that a storage device is mounted on a computer
+
+pe(sys_Mount(S, C)):-
+	st(S), comp(C).
+
+% A system log indicates that a storage device is unmounted from a computer
+
+pe(sys_Unmount(S, C)):-
+	st(S), comp(C).
+
+% A system log indicates that an employee performed the login to a computer
+
+pe(sys_Login(E, C)):-
+	emp(E), comp(C).
+
+% A system log indicates that an employee performed the logout from a computer
+
+pe(sys_Logout(E, C)):-
+	emp(E), comp(C).
+
+% A nfc reader is reading a card tag associated with an employee
+
+pe(swipeCard(E, R)):-
+	emp(E), read(R).
+
+% A camera recording indicates an employee accessing a location
+
+pe(cctvAccess(E, L, C)):-
+	emp(E), loc(L), cam(C).
+
+% A camera recording indicates an employee exiting a location
+
+pe(cctvExit(E, L, C)):-
+	emp(E), loc(L), cam(C).
+
+
+% ***** Complex Events *****
+
+event(V):- 
+	ce(V).
+
+%An employee enters in a location
+
+ce(enter(E,L)):-
+	emp(E), loc(L).
+
+%An employee exits from a location
+
+ce(exit(E,L)):-
+	emp(E), loc(L).
+
+
+%An employee mounts a storage device on a computer
+
+ce(mount(S,C)):-
+	st(S), comp(C).
+
+%An employee unmounts a storage device from a computer
+
+ce(unMount(S,C)):-
+	st(S), comp(C).
+
+%An employee logins to a computer
+
+ce(login(E,C)):-
+	emp(E), comp(C).
+
+%An employee logouts from a computer
+
+ce(logout(E,C)):-
+	emp(E), comp(C).
+
+%An employee copies a file on a computer
+
+ce(copy(E,F,C)):-
+	emp(E), fi(F), comp(C).
+
+
+% ***** Composite Definitions ***** 
+
+% An employee enters a location if, while she is outside the location, 
+% she swipes her card on the nfc reader controlling access to the location and subsequently 
+% a cctv records her access to the location.
+
+happens(enter(E,L),T2,TR):-
+	trace(TR),
+	emp(E), 
+	loc(L),
+	cam(C),
+	read(R),
+	time(T1),
+	time(T2),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T1,TR), 
+	happens(swipeCard(E,R),T1,TR),
+	holdsAt(isAccessControlledBy(L,R),T2,TR),
+	happens(cctvAccess(E,L,C),T2,TR),
+	holdsAt(isMonitoredBy(L,C),T2,TR),
+	neg_holdsAt_between(T1, in(E,L),T2,TR). 
+
+
+% An employee enters a location if, while she is outside the location, 
+% a cctv records her access to the location and subsequently 
+% she swipes her card on the nfc reader controlling access to the location. 
+
+happens(enter(E,L),T2,TR):-
+	trace(TR),
+	emp(E), 
+	loc(L),
+	cam(C),
+	read(R),
+	time(T1),
+	time(T2),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T2,TR),  
+	happens(swipeCard(E,R),T2,TR),
+	holdsAt(isAccessControlledBy(L,R),T1,TR),
+	happens(cctvAccess(E,L,C),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	neg_holdsAt_between(T1, in(E,L),T2,TR). 
+
+
+% An employee enters a location if, while she is outside the location, 
+% a cctv records her access to the location and at the same time 
+% she swipes her card on the nfc reader controlling access to the location. 
+
+happens(enter(E,L),T2,TR):-
+	trace(TR),
+	emp(E), 
+	loc(L),
+	cam(C),
+	read(R),
+	time(T1),
+	time(T2),
+	T1==T2,
+	holdsAt(hasBadge(E,L),T2,TR), 
+	not holdsAt(in(E,L),T2,TR), 
+	happens(swipeCard(E,R),T2,TR),
+	holdsAt(isAccessControlledBy(L,R),T1,TR),
+	happens(cctvAccess(E,L,C),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR). 
+
+
+% An employee exits a location if, while she is inside the location, 
+% she swipes her card on the nfc reader controlling access to the location and subsequently 
+% a cctv records her access to the location.
+
+happens(exit(E,L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	time(T1),
+	time(T2),
+	read(R),
+	cam(C),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T1,TR),
+	happens(swipeCard(E,R),T1,TR),
+	holdsAt(isAccessControlledBy(L,R),T2,TR),
+	happens(cctvExit(E,L,C),T2,TR),
+	holdsAt(isMonitoredBy(L,C),T2,TR),
+	holdsAt_between(T1, in(E,L),T2,TR). 
+
+
+% An employee exits a location if, while she is inside the location, 
+% a cctv records her exit from the location and subsequently 
+% she swipes her card on the nfc reader controlling access to the location. 
+
+happens(exit(E,L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	time(T1),
+	time(T2),
+	read(R),
+	cam(C),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T2,TR),
+	happens(swipeCard(E,R),T2,TR),
+	holdsAt(isAccessControlledBy(L,R),T1,TR),
+	happens(cctvExit(E,L,C),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	holdsAt_between(T1, in(E,L),T2,TR). 
+
+
+% An employee exits a location if, while she is inside the location, 
+% a cctv records her exit from the location and at the same time 
+% she swipes her card on the nfc reader controlling access to the location. 
+
+happens(exit(E,L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	time(T1),
+	time(T2),
+	read(R),
+	cam(C),
+	T1==T2,
+	holdsAt(hasBadge(E,L),T2,TR),
+	holdsAt(in(E,L),T2,TR),
+	happens(swipeCard(E,R),T2,TR),
+	holdsAt(isAccessControlledBy(L,R),T1,TR),
+	happens(cctvExit(E,L,C),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR). 
+
+% An employee logins to a computer if the system log of the computer indicates that
+% the employee has performed the login and she is authorised to access the computer, 
+% and there is at least an employee in the location where the computer is placed. 
+
+happens(login(E,C),T,TR):-
+	trace(TR),
+	emp(E),
+	comp(C),
+	loc(L),
+	time(T),
+	happens(sys_Login(E,C),T,TR), 
+	emp(E2),
+	holdsAt(in(E2,L),T,TR), 
+	holdsAt(isLocatedIn(C,L),T,TR), 
+	holdsAt(hasPermission(E,C),T,TR). 
+
+% An employee logouts from a computer if she is logged on the computer and
+% the system log of the computer indicates that
+% the employee has performed the logout 
+
+happens(logout(E,C),T,TR):-
+	trace(TR),
+	emp(E),
+	comp(C),
+	time(T),
+	happens(sys_Logout(E,C),T,TR),
+	holdsAt(logged(E,C),T,TR). 
+
+% A storage device is mounted on a computer if it is currently not mounted,
+% the system log of the computer indicates that the device is mounted
+% and there is an employee logged on the computer
+
+happens(mount(S,C),T,TR):-
+	trace(TR),
+	time(T), comp(C), st(S), emp(E),
+	happens(sys_Mount(S,C),T,TR),
+	not holdsAt(mounted(S,C),T,TR),
+	holdsAt(logged(E,C),T,TR).
+
+% A storage device is unmounted from a computer if it is currently mounted,
+% and the system log of the computer indicates that the device is unmounted
+
+happens(unMount(S,C),T,TR):-
+	trace(TR),
+	time(T), comp(C), st(S),
+	happens(sys_Unmount(S,C),T,TR),
+	holdsAt(mounted(S,C),T,TR). 
+
+% A file is copied on a computer by an employee if 
+% the system log of the computer indicates that the file was copied, 
+% the file is stored on the computer,
+% and the employee is logged to the computer.
+
+happens(copy(E,F,C),T,TR):-
+	trace(TR),
+	time(T), fi(F), comp(C), emp(E),
+	happens(sys_copy(E,F,C),T,TR),
+	holdsAt(isStoredIn(F,C),T,TR),
+	holdsAt(logged(E,C),T,TR). 
+
+
+% +++ Context Relation Definitions +++
+
+% If an employee enters in a location, s/he is the location
+
+initiates(enter(E,L),in(E,L), T):-
+	emp(E), loc(L), time(T).
+
+
+%If an employee mounts a storage on a computer, the storage is mounted on the computer by an employee
+
+initiates(mount(S,C),mounted(S,C), T):-
+	st(S), comp(C), time (T).
+
+%If an employee logins to a computer, she is logged to the computer
+
+initiates(login(E,C),logged(E,C), T):-
+	emp(E), comp(C), time(T).
+
+%If an employee exits a location, she is no longer inside the location
+
+terminates(exit(E,L),in(E,L), T):-
+	emp(E), loc(L), time(T).
+
+%If a storage device is unmounted from a computer, it is no longer mounted on the computer
+
+terminates(unMount(S,C),mounted(S,C), T):-
+	st(S), comp(C), time(T).
+
+% If an employee logouts from a computer, she is no longer logged to the computer
+
+terminates(logout(E,C),logged(E,C), T):-
+	emp(E), comp(C), time(T).
+
+
+% Initial state
+
+initially(isMonitoredBy(r01, cctv1)).
+initially(isAccessControlledBy(r01, nfc1)).
+initially(isLocatedIn(m1, r01)).
+initially(isStoredIn(doc, m1)).
+initially(hasBadge(alice, r01)).
+initially(hasPermission(alice, m1)).
+initially(hasPermission(alice, m3)).
+initially(hasBadge(bob, r01)).
+initially(hasPermission(bob, m1)).
+initially(hasPermission(bob, m2)).

@@ -1,0 +1,5 @@
+happens(swipeCard(alice,nfc1),0,tr1).
+happens(cctvAccess(alice,r01,cctv1),0,tr1).
+happens(sys_Login(alice,m1),1,tr1).
+happens(sys_Mount(usb1,m1),2,tr1).
+happens(sys_copy(alice,doc,m1),3,tr1).
