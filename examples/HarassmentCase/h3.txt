@@ -1,7 +1,0 @@
-hypothesis(h3,T,TR):-
-    time(T),
-    trace(TR),
-    email(E),
-    sendIp(A),
-    happens(sendAnonHarassEmail(E,A),T,TR).
-
