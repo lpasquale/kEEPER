@@ -7,7 +7,7 @@ Our prototype takes as input a description of the environment (file <tt>environm
 
 First, our prototype checks whether the hypothesis is supportable within the environment, and if so generates a set of potential positive histories (stored in file <tt>pos.txt</tt>) illustrating the sequences of events that may occur within the environment that also satisfy the hypothesis. 
 Second, the prototype generates a set of potential logs covering the potential positive histories identified in the previous step.
-Finally, it asks the user to select a set of positive histories in the file <tt>pos.txt</tt> and to input a set of negative histories in the file <tt>neg.txt</tt>. Our prototype synthesizes a specification that prescribes to preserve logs that cover the positive histories and do not cover the negative ones.
+Finally, it asks the user to select a set of positive histories (in the file <tt>pos.txt</tt>) and to input a set of negative histories (in the file <tt>neg.txt</tt>). Our prototype synthesizes a specification that prescribes to preserve logs that cover the positive histories and do not cover the negative ones.
 
 
 ![**XHAIL** output](https://github.com/lpasquale/minorityReport/blob/master/img/tool.png "**XHAIL**")
@@ -24,13 +24,13 @@ The following sections describe the steps required to use the **Minority Report*
 
 The **Minority Report** prototype is a *Python* application, requiring Python 3.5 to be installed on the target machine to run it. 
 
-Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to a **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
+Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to an **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
 The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.
-In particular, we recommend to use Clingo v3.0.5, Gringo v3.05 and Clasp v3.0.3.
-These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO), more information is available on the [web site](http://potassco.sourceforge.net) of the project.
+These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.
+In particular, we use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tool would lead to errors.
 
-The Inductive Logic Programming System that we use is XHAIL. This is an open source tool; more information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
+The Inductive Logic Programming System that we use is XHAIL. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
 
 Running the examples
 ---------------------
