@@ -1,0 +1,11 @@
+% An email previously received by employee P1 from P2 is answered by also including 
+% an attachment A
+
+hypothesis(h3,T,TR):-
+    trace(TR),
+    time(T),
+    email(E1),
+    email(E2),
+    emp(P1),
+    emp(P2),
+    happens(answerEmailE2E(E1,E2,m57plan,P1,P2),T,TR).
