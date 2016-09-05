@@ -1,0 +1,12 @@
+% A potentially harassing anonymous  email is sent to an academic
+% from a student P1
+
+hypothesis(h2,T,TR):-
+    time(T),
+    email(E),
+    stud(P1),
+    trace(TR),
+    happens(sendAnonHarassEmail(E,P1),T,TR).
+
+
+
