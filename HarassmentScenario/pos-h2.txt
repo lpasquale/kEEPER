@@ -1,0 +1,3 @@
+happens(send_anon_email(b1,ip1,ip2,r2),2,tr1).
+happens(exchange_msg(b1,ip1,ip2,r1),1,tr1).
+happens(set_cookie(aamy,ip2,ip1,r1),0,tr1).
