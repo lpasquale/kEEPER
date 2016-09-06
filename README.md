@@ -9,10 +9,19 @@ First, our prototype checks whether the hypothesis is supportable within the env
 Second, the prototype generates a set of potential logs that correspond to the potential positive histories, identified in the previous step, that should be covered by the preservation specification.
 Finally, it asks the user to select a set of positive histories (in the file <tt>pos.txt</tt>) and to input a set of negative histories (in the file <tt>neg.txt</tt>). Our prototype synthesizes a specification that covers the positive histories and does not cover the negative ones.
 
+The pictures below show excerpt of the output of our prototype for the running example described in the paper.  
 
-![**XHAIL** output](https://github.com/lpasquale/minorityReport/blob/master/img/tool.png "**XHAIL**")
+![**Histories Identification** output](https://github.com/lpasquale/minorityReport/blob/master/img/histories.png "**Histories Identification**")
 
-The picture shows the outputs of our prototype for the running example described in the paper. In particular, it shows the potential positive histories, the log histories covering the potential primitive histories and the synthesized specification.
+The first picture identifies the potential positive histories.
+
+![**Specification verification** output](https://github.com/lpasquale/minorityReport/blob/master/img/logs.png "**Specification verification**")
+
+The second picture shows the logs that correspond to the potential positive histories and should be covered by the preservation specification.
+
+![**Specification synthesis** output](https://github.com/lpasquale/minorityReport/blob/master/img/spec-generation.png "**Specification synthesis**")
+
+The third picture shows the synthesised preservation specification.
 
 Requirements
 ------------
