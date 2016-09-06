@@ -1,4 +1,0 @@
-happens(swipeCard(alice,nfc1),0,tr2).
-happens(cctvAccess(alice,r01,cctv1),0,tr2).
-happens(sys_Login(alice,m1),1,tr2).
-happens(sys_copy(alice,doc,m1),2,tr2).
