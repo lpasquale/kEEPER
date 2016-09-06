@@ -6,8 +6,8 @@ Our prototype (<tt>specGeneratory.py</tt>) generates a preservation specificatio
 Our prototype takes as input a description of the environment (file <tt>environment.txt</tt>) in which an incident may occur, and the speculative hypotheses about such incidents (files <tt>h1.txt</tt>, <tt>h2.txt</tt>,...). 
 
 First, our prototype checks whether the hypothesis is supportable within the environment, and if so generates a set of potential positive histories (stored in file <tt>pos.txt</tt>) illustrating the sequences of events that may occur within the environment that also satisfy the hypothesis. 
-Second, the prototype generates a set of potential logs covering the potential positive histories identified in the previous step.
-Finally, it asks the user to select a set of positive histories (in the file <tt>pos.txt</tt>) and to input a set of negative histories (in the file <tt>neg.txt</tt>). Our prototype synthesizes a specification that prescribes to preserve logs that cover the positive histories and do not cover the negative ones.
+Second, the prototype generates a set of potential logs that correspond to the potential positive histories, identified in the previous step, that should be covered by the preservation specification.
+Finally, it asks the user to select a set of positive histories (in the file <tt>pos.txt</tt>) and to input a set of negative histories (in the file <tt>neg.txt</tt>). Our prototype synthesizes a specification that covers the positive histories and does not cover the negative ones.
 
 
 ![**XHAIL** output](https://github.com/lpasquale/minorityReport/blob/master/img/tool.png "**XHAIL**")
@@ -25,12 +25,13 @@ The following sections describe the steps required to use the our prototype to s
 Our prototype is a *Python* application requiring Python 3.5 to be installed on the target machine to run it. <br>
 Our prototype delegates some of the reasoning tasks it performs to an external **ASP** engine (Clingo) and to an **Inductive Logic Programming** (XHAIL) system which are therefore required to make it work properly. 
 
-The *ASP* platform that we have chosen to use is *Clingo*/*Gringo*/*Clasp*.<br>
-These tools are part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install them is available on the [web site](http://potassco.sourceforge.net) of the project.<br>
-We use version 3 of Clingo, Gringo, and Clasp. Usage of higher versions of these tools would lead to errors.<br>
-Morevoer, the PATH Environment Variable should point to Clingo, Gringo and Clasp target folders.
+The *ASP* platform that we have chosen to use is *Clingo*.<br>
+This tool is part of the *Potsdam Answer Set Solving Collection* (POTASSCO); more information about how to obtain and install it is available on the [web site](http://potassco.sourceforge.net) of the project.<br>
+We use version 3 of Clingo. Usage of higher versions of this tool would lead to errors.<br>
+Morevoer, the PATH Environment Variable should point to Clingo target folder.
 
-The Inductive Logic Programming System that we use is *XHAIL*. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. 
+The Inductive Logic Programming System that we use is *XHAIL*. More information about how to obtain and install XHAIL is available on the [web site](https://github.com/stefano-bragaglia/XHAIL) of the project. <br>
+Note that XHAIL requires *Gringo* and *Clasp* to be installed. These tools are also part of the *Potsdam Answer Set Solving Collection* (POTASSCO). The PATH Environment Variable should point to Gringo/Clasp target folders.
 
 ### Running the examples
 
