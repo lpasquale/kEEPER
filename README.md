@@ -11,9 +11,9 @@ Finally, it asks the user to select a set of positive histories (in the file <tt
 
 Excerpts of the output of our prototype for the running example described in the paper are shown below.<br>
 
-<tt>*****************************************
-   Histories identification
-*****************************************
+*****************************************<br>
+   Histories identification<br>
+*****************************************<br>
 Hypothesis h1 is supported by the following primitive histories
 ['pr_happens(swipeCard(alice,nfc1),0,tr1)'
  'pr_happens(cctvAccess(alice,r01,cctv1),0,tr1)'
@@ -39,9 +39,9 @@ Hypothesis h1 is supported by the following primitive histories
  'pr_happens(sys_Mount(usb1,m1),2,tr1)'
  'pr_happens(sys_copy(alice,doc,m1),3,tr1)']
 
-*****************************************
-   Spec Verification 
-*****************************************
+*****************************************<br>
+   Spec Verification <br>
+*****************************************<br>
 
 The following logs should be covered by the preservation specification 
 ['op_happens(preserve(sys_copy(bob,doc,m1),3),3,tr1)'
