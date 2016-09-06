@@ -9,16 +9,98 @@ First, our prototype checks whether the hypothesis is supportable within the env
 Second, the prototype generates a set of potential logs that correspond to the potential positive histories, identified in the previous step, that should be covered by the preservation specification.
 Finally, it asks the user to select a set of positive histories (in the file <tt>pos.txt</tt>) and to input a set of negative histories (in the file <tt>neg.txt</tt>). Our prototype synthesizes a specification that covers the positive histories and does not cover the negative ones.
 
-The pictures below show excerpt of the output of our prototype for the running example described in the paper.  
-![**Histories Identification** output](https://github.com/lpasquale/minorityReport/blob/master/img/histories.png "**Histories Identification**")
+Excerpts of the output of our prototype for the running example described in the paper are shown below.<br>
 
-The first picture identifies the potential positive histories.
-![**Specification verification** output](https://github.com/lpasquale/minorityReport/blob/master/img/logs.png "**Specification verification**")
+<tt>*****************************************
+   Histories identification
+*****************************************
+Hypothesis h1 is supported by the following primitive histories
+['pr_happens(swipeCard(alice,nfc1),0,tr1)'
+ 'pr_happens(cctvAccess(alice,r01,cctv1),0,tr1)'
+ 'pr_happens(sys_Login(bob,m1),1,tr1)'
+ 'pr_happens(sys_Mount(usb1,m1),2,tr1)'
+ 'pr_happens(sys_copy(bob,doc,m1),3,tr1)']
 
-The second picture shows the logs that correspond to the potential positive histories and should be covered by the preservation specification.
-![**Specification synthesis** output](https://github.com/lpasquale/minorityReport/blob/master/img/spec-generation.png "**Specification synthesis**")
+['pr_happens(swipeCard(bob,nfc1),0,tr1)'
+ 'pr_happens(cctvAccess(bob,r01,cctv1),0,tr1)'
+ 'pr_happens(sys_Login(bob,m1),1,tr1)'
+ 'pr_happens(sys_Mount(usb1,m1),2,tr1)'
+ 'pr_happens(sys_copy(bob,doc,m1),3,tr1)']
 
-The third picture shows the synthesised preservation specification.
+['pr_happens(swipeCard(bob,nfc1),0,tr1)'
+ 'pr_happens(cctvAccess(bob,r01,cctv1),0,tr1)'
+ 'pr_happens(sys_Login(alice,m1),1,tr1)'
+ 'pr_happens(sys_Mount(usb1,m1),2,tr1)'
+ 'pr_happens(sys_copy(alice,doc,m1),3,tr1)']
+
+['pr_happens(swipeCard(alice,nfc1),0,tr1)'
+ 'pr_happens(cctvAccess(alice,r01,cctv1),0,tr1)'
+ 'pr_happens(sys_Login(alice,m1),1,tr1)'
+ 'pr_happens(sys_Mount(usb1,m1),2,tr1)'
+ 'pr_happens(sys_copy(alice,doc,m1),3,tr1)']
+
+*****************************************
+   Spec Verification 
+*****************************************
+
+The following logs should be covered by the preservation specification 
+['op_happens(preserve(sys_copy(bob,doc,m1),3),3,tr1)'
+ 'op_happens(receive(sys_copy(bob,doc,m1),3),3,tr1)'
+ 'op_happens(preserve(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(receive(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(preserve(sys_Login(bob,m1),1),1,tr1)'
+ 'op_happens(receive(sys_Login(bob,m1),1),1,tr1)'
+ 'op_happens(preserve(cctvAccess(alice,r01,cctv1),0),0,tr1)'
+ 'op_happens(preserve(swipeCard(alice,nfc1),0),0,tr1)'
+ 'op_happens(receive(cctvAccess(alice,r01,cctv1),0),0,tr1)'
+ 'op_happens(receive(swipeCard(alice,nfc1),0),0,tr1)']
+
+['op_happens(preserve(sys_copy(bob,doc,m1),3),3,tr1)'
+ 'op_happens(receive(sys_copy(bob,doc,m1),3),3,tr1)'
+ 'op_happens(preserve(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(receive(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(preserve(sys_Login(bob,m1),1),1,tr1)'
+ 'op_happens(receive(sys_Login(bob,m1),1),1,tr1)'
+ 'op_happens(preserve(cctvAccess(bob,r01,cctv1),0),0,tr1)'
+ 'op_happens(preserve(swipeCard(bob,nfc1),0),0,tr1)'
+ 'op_happens(receive(cctvAccess(bob,r01,cctv1),0),0,tr1)'
+ 'op_happens(receive(swipeCard(bob,nfc1),0),0,tr1)']
+
+['op_happens(preserve(sys_copy(alice,doc,m1),3),3,tr1)'
+ 'op_happens(receive(sys_copy(alice,doc,m1),3),3,tr1)'
+ 'op_happens(preserve(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(receive(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(preserve(sys_Login(alice,m1),1),1,tr1)'
+ 'op_happens(receive(sys_Login(alice,m1),1),1,tr1)'
+ 'op_happens(preserve(cctvAccess(bob,r01,cctv1),0),0,tr1)'
+ 'op_happens(preserve(swipeCard(bob,nfc1),0),0,tr1)'
+ 'op_happens(receive(cctvAccess(bob,r01,cctv1),0),0,tr1)'
+ 'op_happens(receive(swipeCard(bob,nfc1),0),0,tr1)']
+
+['op_happens(preserve(sys_copy(alice,doc,m1),3),3,tr1)'
+ 'op_happens(receive(sys_copy(alice,doc,m1),3),3,tr1)'
+ 'op_happens(preserve(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(receive(sys_Mount(usb1,m1),2),2,tr1)'
+ 'op_happens(preserve(sys_Login(alice,m1),1),1,tr1)'
+ 'op_happens(receive(sys_Login(alice,m1),1),1,tr1)'
+ 'op_happens(preserve(cctvAccess(alice,r01,cctv1),0),0,tr1)'
+ 'op_happens(preserve(swipeCard(alice,nfc1),0),0,tr1)'
+ 'op_happens(receive(cctvAccess(alice,r01,cctv1),0),0,tr1)'
+ 'op_happens(receive(swipeCard(alice,nfc1),0),0,tr1)']
+
+
+Specification:
+
+rtrig(preserve(sys_copy(V1,V2,V3),V4),V4,V5):-happens_prev(preserve(sys_Login(V1,V3),V4),V4,V5),happens_pred(preserve(sys_Mount(V6,V3),V4),V4,V5),emp(V1),comp(V3),clock(V4),trace(V5),st(V6).
+
+rtrig(preserve(swipeCard(V1,V2),V3),V3,V4):-happens(receive(swipeCard(V1,V2),V3),V3,V4),emp(V1),read(V2),clock(V3),trace(V4).
+
+rtrig(preserve(sys_Login(V1,V2),V3),V3,V4):-happens(receive(sys_Login(V1,V2),V3),V3,V4),emp(V1),comp(V2),clock(V3),trace(V4).
+
+rtrig(preserve(cctvAccess(V1,V2,V3),V4),V4,V5):-happens(receive(cctvAccess(V1,V2,V3),V4),V4,V5),emp(V1),loc(V2),cam(V3),clock(V4),trace(V5).
+
+rtrig(preserve(sys_Mount(V1,V2),V3),V3,V4):-happens(receive(sys_Mount(V1,V2),V3),V3,V4),st(V1),comp(V2),clock(V3),trace(V4).</tt>
+
 
 Requirements
 ------------
