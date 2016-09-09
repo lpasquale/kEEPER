@@ -9,5 +9,5 @@ When prompted to input positive and negative traces, press <Enter>
 
 ————————————————————————————————————————————————————————————
 
-The generated specification is in file spec-h1.txt
+The generated specification is in spec/spec-h1.txt
 
