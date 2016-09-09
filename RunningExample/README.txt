@@ -5,5 +5,5 @@ To generate a specification associated with hypothesis 1 run the following comma
 >> python specGenerator.py 6 1
 
 
-When prompted to input positive and negative traces, copy the content of file neg-h1.txt in neg.txt and press <Enter>
+When prompted to input positive and negative traces press <Enter>
 
