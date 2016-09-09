@@ -1,0 +1,23 @@
+rtrig(preserve(exchange_msg(V1,V2,V3,V4),V5),V5,V6):-
+	happens_prev(preserve(send_anon_email(V1,V3,V2,V9),V5),V5,V6),
+	happens(receive(exchange_msg(V1,V2,V3,V4),V5),V5,V6),browser(V1),
+	recIp(V3),sendIp(V2),rout(V9),clock(V5),trace(V6),rout(V4).
+
+rtrig(preserve(set_cookie(V1,V2,V3,V4),V5),V5,V6):-
+	happens(receive(set_cookie(V1,V2,V3,V4),V5),V5,V6),
+	addr(V1),sendIp(V2),recIp(V3),rout(V4),clock(V5),trace(V6).
+
+rtrig(preserve(send_anon_email(V1,V2,V3,V4),V5),V5,V6):-
+	happens_prev(preserve(set_cookie(V10,V3,V2,V4),V5),V5,V6),
+	happens_pred(preserve(exchange_msg(V1,V2,V3,V7),V5),V5,V6),
+	addr(V10),recIp(V3),sendIp(V2),rout(V4),clock(V5),trace(V6),browser(V1),rout(V7).
+
+rtrig(preserve(send_anon_email(V1,V2,V3,V4),V5),V5,V6):-	
+	happens_pred(preserve(set_cookie(V7,V2,V3,V4),V5),V5,V6),
+	happens(receive(send_anon_email(V1,V2,V3,V4),V5),V5,V6),addr(V7),
+	sendIp(V2),recIp(V3),rout(V4),clock(V5),trace(V6),browser(V1).
+
+rtrig(preserve(send_email(V1,V2,V3,V4,V5),V6),V6,V7):-
+	happens(receive(send_email(V1,V2,V3,V4,V5),V6),V6,V7),
+	email(V1),sendAddr(V2),recAddr(V3),ip(V4),rout(V5),clock(V6),trace(V7).
+  
