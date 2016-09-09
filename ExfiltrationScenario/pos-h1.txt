@@ -1,0 +1,4 @@
+happens(send_email_e2e(e1,m57plan,ajean,ajean,m1),1,tr1).
+happens(sys_login(jean,pwdJean,m1),0,tr1).
+happens(send_email_ext2e(e1,m57plan,atuck,ajean,m1),1,tr2).
+happens(sys_login(jean,pwdJean,m1),0,tr2).
