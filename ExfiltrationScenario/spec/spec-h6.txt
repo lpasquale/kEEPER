@@ -1,0 +1,17 @@
+    
+rtrig(preserve(sys_login(V1,V2,V3),V4),V4,V5):-
+	happens(receive(sys_login(V1,V2,V3),V4),V4,V5),
+	emp(V1),pwd(V2),comp(V3),clock(V4),trace(V5).
+    
+
+rtrig(preserve(web_connection(V1,V2,V3),V4),V4,V5):-
+	happens_prev(preserve(sys_login(V6,V7,V3),V4),V4,V5),
+	happens(receive(web_connection(V1,V2,V3),V4),V4,V5),
+	emp(V6),pwd(V7),comp(V3),clock(V4),trace(V5),browser(V1),url(V2).
+    
+
+rtrig(preserve(sys_install(V1,V2),V3),V3,V4):-
+	happens(receive(sys_install(V1,V2),V3),V3,V4),
+	happens_pred(preserve(web_connection(V5,V6,V2),V3),V3,V4),
+	app(V1),comp(V2),clock(V3),trace(V4),browser(V5),url(V6).
+ 

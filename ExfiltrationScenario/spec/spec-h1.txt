@@ -1,0 +1,15 @@
+rtrig(preserve(send_email_e2e(V1,V2,V3,V3,V4),V5),V5,V6):-	
+	happens(receive(send_email_e2e(V1,V2,V3,V3,V4),V5),V5,V6),
+	happens_pred(preserve(sys_login(V7,V8,V4),V5),V5,V6),email(V1),fi(V2),
+	sendAddr(V3),comp(V4),clock(V5),trace(V6),emp(V7),pwd(V8).
+    
+rtrig(preserve(sys_login(V1,V2,V3),V4),V4,V5):-
+	happens(receive(sys_login(V1,V2,V3),V4),V4,V5),
+	emp(V1),pwd(V2),comp(V3),clock(V4),trace(V5).
+    
+rtrig(preserve(send_email_ext2e(V1,V2,V3,V4,V5),V6),V6,V7):-	
+	happens_prev(preserve(sys_login(V8,V9,V5),V6),V6,V7),
+	happens(receive(send_email_ext2e(V1,V2,V3,V4,V5),V6),V6,V7),
+	emp(V8),pwd(V9),comp(V5),clock(V6),trace(V7),email(V1),fi(V2),
+	extAddr(V3),addr(V4).
+  
