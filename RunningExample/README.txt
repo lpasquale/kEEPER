@@ -7,3 +7,7 @@ To generate a specification associated with hypothesis 1 run the following comma
 
 When prompted to input positive and negative traces press <Enter>
 
+————————————————————————————————————————————————————————————
+
+The generated specification is in file spec.txt
+
