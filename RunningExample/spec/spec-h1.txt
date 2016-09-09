@@ -1,4 +1,0 @@
-rtrig(preserve(send_fake_email(V1,V2,V3,V4,V5),V6),V6,V7):-
-	happens(receive(send_fake_email(V1,V2,V3,V4,V5),V6),V6,V7),
-	email(V1),faddr(V2),addr(V3),ip(V4),rout(V5),clock(V6),trace(V7).
- 
