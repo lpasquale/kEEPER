@@ -22,3 +22,11 @@ To generate a specification associated with hypothesis 3 run the following comma
 
 When prompted to input positive and negative traces, just press <Enter>
 
+————————————————————————————————————————————————————————————
+
+The specification generated for hypothesis h1 is in spec/spec-h1.txt
+
+The specification generated for hypothesis h2 is in spec/spec-h2.txt
+
+The specification generated for hypothesis h3 is in spec/spec-h3.txt
+
