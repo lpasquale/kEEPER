@@ -1,3 +1,0 @@
-happens(send_email_e2e(e1,m57plan,ajean,ajean,m1),1,tr3).
-
-happens(send_email_ext2e(e1,m57plan,atuck,ajean,m1),1,tr4).
