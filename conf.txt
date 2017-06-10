@@ -1,5 +1,0 @@
-dir=<Path to the directory in which the environment description and the hypotheses are placed>
-clingo=<Path to clingo command>
-clasp=<Path to clasp command>
-gringo=<Path to gringo command>
-xhail=<Path to XHAIL .jar library>
