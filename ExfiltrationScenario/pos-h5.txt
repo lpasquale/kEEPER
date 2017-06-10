@@ -1,3 +1,0 @@
-happens(sys_copy(jean,m57plan,m1),2,tr1).
-happens(sys_mount(usb1,m1),1,tr1).
-happens(sys_login(jean,pwdJean,m1),0,tr1).
