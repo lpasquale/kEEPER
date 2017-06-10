@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Category related to the command for generating the txt file"
+            id="org.eclipse.kEEPER.plugin.txtconverter.category"
+            name="Generate TXT category">
+      </category>
+      <command
+            categoryId="org.eclipse.kEEPER.plugin.txtconverter.category"
+            id="org.eclipse.kEEPER.plugin.txtconverter.generateTxt"
+            description="Command related to the txt generation"
+            name="Generate TXT command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.eclipse.kEEPER.plugin.txtconverter.generateTxt"
+               icon="icons/txtlogo.jpg"
+               label="Gen Encoding"
+               mnemonic="O"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
+                     <or>
+                        <instanceof
+                              value="org.eclipse.core.resources.IResource">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="default">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value=".eventModel">
+                        </test>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="txtconverter.ConvertHandler"
+            commandId="org.eclipse.kEEPER.plugin.txtconverter.generateTxt">
+      </handler>
+   </extension>
+
+</plugin>

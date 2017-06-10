@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.kEEPER.plugin.hypothesis.diagram plug-in
+
+# Common issues
+org.eclipse.kEEPER.plugin.hypothesis.diagram/debug=false
+
+# Visual IDs
+org.eclipse.kEEPER.plugin.hypothesis.diagram/debug/visualID=false

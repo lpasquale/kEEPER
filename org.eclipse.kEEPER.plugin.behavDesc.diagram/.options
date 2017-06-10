@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.kEEPER.plugin.behavDesc.diagram plug-in
+
+# Common issues
+org.eclipse.kEEPER.plugin.behavDesc.diagram/debug=false
+
+# Visual IDs
+org.eclipse.kEEPER.plugin.behavDesc.diagram/debug/visualID=false
