@@ -2,7 +2,7 @@
 
 
 #minimize [happens(A,T,TR): pe(A):time(T):trace(TR) @ 1].
-7{happens(A,T,TR): pe(A):time(T):trace(TR)}7.
+0{happens(A,T,TR): pe(A):time(T):trace(TR)}7.
 
 #minimize [rtrig(preserve(A,T),T,TR): pe(A):time(T):trace(TR) @ 1].
 0{rtrig(preserve(A,T),T,TR): pe(A):time(T):trace(TR)}.
