@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces
+      visualID="2001"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Hypothesis') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'hypothesis')"/>
+  <nodeTraces
+      visualID="2002"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Happens') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'happens')"/>
+  <nodeTraces
+      visualID="2003"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'HoldsAt') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'holdsAts')"/>
+  <nodeTraces
+      visualID="2004"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'HoldsAtBetween') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'holdsAtBetweens')"/>
+</trace:TraceModel>

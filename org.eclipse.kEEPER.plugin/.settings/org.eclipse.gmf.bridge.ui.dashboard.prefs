@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.eclipse.kEEPER.plugin/model/model.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.eclipse.kEEPER.plugin/model/model.ecore
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.eclipse.kEEPER.plugin/model/hypothesis/hypothesis.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.eclipse.kEEPER.plugin/model/hypothesis/hypothesis.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.eclipse.kEEPER.plugin/model/hypothesis/hypothesis.gmftool
