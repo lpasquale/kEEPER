@@ -62,8 +62,9 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType PrimitiveEvent_2005 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEvent_2005"); //$NON-NLS-1$
+	public static final IElementType PrimitiveEvent_2011 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEvent_2011"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
@@ -81,8 +82,8 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType ComplexEvent_2010 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEvent_2010"); //$NON-NLS-1$
+	public static final IElementType ComplexEvent_2012 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEvent_2012"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -146,7 +147,7 @@ public class ModelElementTypes {
 
 			elements.put(Environment_1000, ModelPackage.eINSTANCE.getEnvironment());
 
-			elements.put(PrimitiveEvent_2005, ModelPackage.eINSTANCE.getPrimitiveEvent());
+			elements.put(PrimitiveEvent_2011, ModelPackage.eINSTANCE.getPrimitiveEvent());
 
 			elements.put(Agent_2007, ModelPackage.eINSTANCE.getAgent());
 
@@ -154,7 +155,7 @@ public class ModelElementTypes {
 
 			elements.put(Parameter_2009, ModelPackage.eINSTANCE.getParameter());
 
-			elements.put(ComplexEvent_2010, ModelPackage.eINSTANCE.getComplexEvent());
+			elements.put(ComplexEvent_2012, ModelPackage.eINSTANCE.getComplexEvent());
 
 			elements.put(PrimitiveEventAgent_4001, ModelPackage.eINSTANCE.getPrimitiveEvent_Agent());
 
@@ -181,11 +182,11 @@ public class ModelElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
-			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2005);
+			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2011);
 			KNOWN_ELEMENT_TYPES.add(Agent_2007);
 			KNOWN_ELEMENT_TYPES.add(Observer_2008);
 			KNOWN_ELEMENT_TYPES.add(Parameter_2009);
-			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2010);
+			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2012);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
 			KNOWN_ELEMENT_TYPES.add(ComplexEventAgent_4004);
 			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
@@ -202,7 +203,7 @@ public class ModelElementTypes {
 		case EnvironmentEditPart.VISUAL_ID:
 			return Environment_1000;
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return PrimitiveEvent_2005;
+			return PrimitiveEvent_2011;
 		case AgentEditPart.VISUAL_ID:
 			return Agent_2007;
 		case ObserverEditPart.VISUAL_ID:
@@ -210,7 +211,7 @@ public class ModelElementTypes {
 		case ParameterEditPart.VISUAL_ID:
 			return Parameter_2009;
 		case ComplexEventEditPart.VISUAL_ID:
-			return ComplexEvent_2010;
+			return ComplexEvent_2012;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return PrimitiveEventAgent_4001;
 		case ComplexEventAgentEditPart.VISUAL_ID:

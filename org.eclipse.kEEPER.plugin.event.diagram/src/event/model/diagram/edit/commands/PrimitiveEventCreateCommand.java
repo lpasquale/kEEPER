@@ -55,7 +55,7 @@ public class PrimitiveEventCreateCommand extends EditElementCommand {
 		PrimitiveEvent newElement = ModelFactory.eINSTANCE.createPrimitiveEvent();
 
 		Environment owner = (Environment) getElementToEdit();
-		owner.getPrimitiveEvents().add(newElement);
+		owner.getEvents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

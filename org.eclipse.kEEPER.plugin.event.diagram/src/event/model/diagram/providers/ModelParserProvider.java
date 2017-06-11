@@ -30,18 +30,18 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser primitiveEventName_5003Parser;
+	private IParser primitiveEventName_5010Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getPrimitiveEventName_5003Parser() {
-		if (primitiveEventName_5003Parser == null) {
+	private IParser getPrimitiveEventName_5010Parser() {
+		if (primitiveEventName_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getEvent_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			primitiveEventName_5003Parser = parser;
+			primitiveEventName_5010Parser = parser;
 		}
-		return primitiveEventName_5003Parser;
+		return primitiveEventName_5010Parser;
 	}
 
 	/**
@@ -98,18 +98,18 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser complexEventName_5009Parser;
+	private IParser complexEventName_5011Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getComplexEventName_5009Parser() {
-		if (complexEventName_5009Parser == null) {
+	private IParser getComplexEventName_5011Parser() {
+		if (complexEventName_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getEvent_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			complexEventName_5009Parser = parser;
+			complexEventName_5011Parser = parser;
 		}
-		return complexEventName_5009Parser;
+		return complexEventName_5011Parser;
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PrimitiveEventNameEditPart.VISUAL_ID:
-			return getPrimitiveEventName_5003Parser();
+			return getPrimitiveEventName_5010Parser();
 		case AgentNameEditPart.VISUAL_ID:
 			return getAgentName_5005Parser();
 		case ObserverNameEditPart.VISUAL_ID:
@@ -126,7 +126,7 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 		case ParameterNameEditPart.VISUAL_ID:
 			return getParameterName_5007Parser();
 		case ComplexEventNameEditPart.VISUAL_ID:
-			return getComplexEventName_5009Parser();
+			return getComplexEventName_5011Parser();
 		}
 		return null;
 	}

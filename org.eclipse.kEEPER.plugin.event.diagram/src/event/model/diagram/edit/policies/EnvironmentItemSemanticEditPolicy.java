@@ -31,7 +31,7 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (ModelElementTypes.PrimitiveEvent_2005 == req.getElementType()) {
+		if (ModelElementTypes.PrimitiveEvent_2011 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveEventCreateCommand(req));
 		}
 		if (ModelElementTypes.Agent_2007 == req.getElementType()) {
@@ -43,7 +43,7 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		if (ModelElementTypes.Parameter_2009 == req.getElementType()) {
 			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
-		if (ModelElementTypes.ComplexEvent_2010 == req.getElementType()) {
+		if (ModelElementTypes.ComplexEvent_2012 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

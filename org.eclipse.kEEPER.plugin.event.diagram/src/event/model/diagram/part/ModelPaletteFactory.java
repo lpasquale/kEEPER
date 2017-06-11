@@ -86,9 +86,9 @@ public class ModelPaletteFactory {
 	private ToolEntry createPrimitiveEvent4CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PrimitiveEvent4CreationTool_title,
 				Messages.PrimitiveEvent4CreationTool_desc,
-				Collections.singletonList(ModelElementTypes.PrimitiveEvent_2005));
+				Collections.singletonList(ModelElementTypes.PrimitiveEvent_2011));
 		entry.setId("createPrimitiveEvent4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEvent_2005));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEvent_2011));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -98,9 +98,9 @@ public class ModelPaletteFactory {
 	*/
 	private ToolEntry createComplexEvent5CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ComplexEvent5CreationTool_title, null,
-				Collections.singletonList(ModelElementTypes.ComplexEvent_2010));
+				Collections.singletonList(ModelElementTypes.ComplexEvent_2012));
 		entry.setId("createComplexEvent5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.ComplexEvent_2010));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.ComplexEvent_2012));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

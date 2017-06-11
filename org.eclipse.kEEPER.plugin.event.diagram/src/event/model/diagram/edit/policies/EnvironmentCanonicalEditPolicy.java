@@ -71,9 +71,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_PrimitiveEvents());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Events());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Parameters());
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_ComplexEvents());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -260,7 +259,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case PrimitiveEventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getPrimitiveEvent_2005ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getPrimitiveEvent_2011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -288,7 +287,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case ComplexEventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getComplexEvent_2010ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getComplexEvent_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

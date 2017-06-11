@@ -12,6 +12,7 @@ import model.Parameter;
 import model.ModelFactory;
 import model.PrimitiveEvent;
 import model.impl.ComplexEventImpl;
+import model.impl.PrimitiveEventImpl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -99,18 +100,17 @@ public class Transformer {
 				writer.printf("pe("+ env.getEvents().get(i).getName());
 				writeEventParameters(env.getEvents().get(i), writer);
 				writer.printf("):-\n\t");
-				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
-					if (j != env.getEvents().get(i).getParameters().size()-1)
-						writer.printf("%s(%c),", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
-					else
-						writer.printf("%s(%c).\n", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
-				}
 				
-			
+				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), env.getEvents().get(i).getAgent().getType().getName().charAt(0));
+				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
+					writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+				}
+				writer.printf(", %s(%c).", ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName(), ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName().charAt(0));
+
 			}
 		} // Primitive events
 		
-		writer.println("\n% ***** Complex Events *****\n");		
+		writer.println("\n\n% ***** Complex Events *****\n");		
 		writer.printf("event(V):-\nce(V)\n\n");
 		// Creating list of complex events
 		for (int i = 0; i < env.getEvents().size(); i++){
@@ -119,12 +119,17 @@ public class Transformer {
 				
 				writeEventParameters(env.getEvents().get(i), writer);
 				writer.printf("):-\n\t");
+				
+				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), env.getEvents().get(i).getAgent().getType().getName().charAt(0));
+
 				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
-					if (j != env.getEvents().get(i).getParameters().size()-1)
-						writer.printf("%s(%c),", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+					if (j != env.getEvents().get(i).getParameters().size() - 1){
+						writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+					}
 					else
-						writer.printf("%s(%c).\n", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+						writer.printf(", %s(%c).", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
 				}
+				
 			}
 		} // Complex events
 		// Events
@@ -319,13 +324,21 @@ public class Transformer {
 	
 	private void writeEventParameters(Event ev, PrintWriter writer){
 		writer.printf("(");
+		System.out.println(ev.getName());
+		System.out.println("Event2 --> " + ev.getName() + ev.getAgent().getName() + ev.getAgent().getType().getName());
+		writer.printf("%c", ev.getAgent().getType().getName().charAt(0));
 		for (int j = 0; j < ev.getParameters().size(); j++){
-			System.out.println("Parametro: "+ ev.getParameters().get(j));
-			if (j != ev.getParameters().size()-1)
-				writer.printf("%c,", ev.getParameters().get(j).getType().getName().charAt(0));
-			else
-				writer.printf("%c)", ev.getParameters().get(j).getType().getName().charAt(0));
+			writer.printf(",%c", ev.getParameters().get(j).getType().getName().charAt(0));
 		}	
+		
+		if (ev instanceof PrimitiveEventImpl){
+			writer.printf(",%c)", (((PrimitiveEvent) ev).getObserver().getType().getName().charAt(0)));
+
+		}
+		else 
+			writer.printf(")");
+		
+		//writer.printf("%c)", ev.getObserver().getType().getName().charAt(0));
 	}
 	
 	private void writeInstances(ContextRelation cr, PrintWriter writer){

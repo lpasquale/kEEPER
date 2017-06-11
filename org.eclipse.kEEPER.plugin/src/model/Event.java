@@ -66,4 +66,7 @@ public interface Event extends EObject {
 	 */
 	EList<Parameter> getParameters();
 
+	Agent getAgent();
+
+
 } // Event

@@ -207,7 +207,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		}
 		switch (visualID) {
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return createPrimitiveEvent_2005(domainElement, containerView, index, persisted, preferencesHint);
+			return createPrimitiveEvent_2011(domainElement, containerView, index, persisted, preferencesHint);
 		case AgentEditPart.VISUAL_ID:
 			return createAgent_2007(domainElement, containerView, index, persisted, preferencesHint);
 		case ObserverEditPart.VISUAL_ID:
@@ -215,7 +215,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		case ParameterEditPart.VISUAL_ID:
 			return createParameter_2009(domainElement, containerView, index, persisted, preferencesHint);
 		case ComplexEventEditPart.VISUAL_ID:
-			return createComplexEvent_2010(domainElement, containerView, index, persisted, preferencesHint);
+			return createComplexEvent_2012(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -245,7 +245,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createPrimitiveEvent_2005(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createPrimitiveEvent_2011(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -273,7 +273,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5003 = createLabel(node, ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
+		Node label5010 = createLabel(node, ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -403,7 +403,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createComplexEvent_2010(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createComplexEvent_2012(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -431,7 +431,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5009 = createLabel(node, ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
+		Node label5011 = createLabel(node, ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
 		return node;
 	}
 

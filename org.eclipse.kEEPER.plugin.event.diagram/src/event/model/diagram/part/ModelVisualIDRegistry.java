@@ -254,10 +254,10 @@ public class ModelVisualIDRegistry {
 		switch (visualID) {
 		case EnvironmentEditPart.VISUAL_ID:
 			return false;
-		case PrimitiveEventEditPart.VISUAL_ID:
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
+		case PrimitiveEventEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
 			return true;
 		default:

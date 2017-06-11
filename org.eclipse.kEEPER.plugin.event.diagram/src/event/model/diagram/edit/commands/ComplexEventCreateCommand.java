@@ -55,7 +55,7 @@ public class ComplexEventCreateCommand extends EditElementCommand {
 		ComplexEvent newElement = ModelFactory.eINSTANCE.createComplexEvent();
 
 		Environment owner = (Environment) getElementToEdit();
-		owner.getComplexEvents().add(newElement);
+		owner.getEvents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

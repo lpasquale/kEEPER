@@ -33,7 +33,7 @@ public class ComplexEventItemSemanticEditPolicy extends ModelBaseItemSemanticEdi
 	* @generated
 	*/
 	public ComplexEventItemSemanticEditPolicy() {
-		super(ModelElementTypes.ComplexEvent_2010);
+		super(ModelElementTypes.ComplexEvent_2012);
 	}
 
 	/**

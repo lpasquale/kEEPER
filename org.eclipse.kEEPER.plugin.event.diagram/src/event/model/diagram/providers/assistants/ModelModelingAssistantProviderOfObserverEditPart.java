@@ -52,10 +52,10 @@ public class ModelModelingAssistantProviderOfObserverEditPart extends ModelModel
 	public List<IElementType> doGetTypesForSource(ObserverEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
-			types.add(ModelElementTypes.ComplexEvent_2010);
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
+			types.add(ModelElementTypes.ComplexEvent_2012);
 		} else if (relationshipType == ModelElementTypes.PrimitiveEventObserver_4002) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
 		}
 		return types;
 	}

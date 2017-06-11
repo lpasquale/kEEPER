@@ -53,12 +53,12 @@ public class ModelModelingAssistantProviderOfAgentEditPart extends ModelModeling
 	public List<IElementType> doGetTypesForSource(AgentEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.PrimitiveEventAgent_4001) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
 		} else if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
-			types.add(ModelElementTypes.ComplexEvent_2010);
+			types.add(ModelElementTypes.ComplexEvent_2012);
 		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
-			types.add(ModelElementTypes.ComplexEvent_2010);
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
+			types.add(ModelElementTypes.ComplexEvent_2012);
 		}
 		return types;
 	}

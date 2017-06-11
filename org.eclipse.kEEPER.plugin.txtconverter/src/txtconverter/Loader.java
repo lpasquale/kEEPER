@@ -32,6 +32,7 @@ import model.ModelFactory;
 import model.ModelPackage;
 import model.Parameter;
 import model.Type;
+import model.impl.ComplexEventImpl;
 import model.impl.EnvironmentImpl;
 
 
@@ -102,7 +103,7 @@ public class Loader {
 		env.setHypothesis(env5.getHypothesis());
 				
 		// Verification
-		/*
+		
 		for (int i = 0; i < env.getInstances().size(); i++){
 			System.out.println("Instance: " + env.getInstances().get(i).getName() + "  Type: " + env.getInstances().get(i).getType().getName());
 		}
@@ -114,20 +115,31 @@ public class Loader {
 				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName());				
 		}
 		for (int i = 0; i < env.getEvents().size(); i++){
-			if (env.getEvents().get(i) instanceof ComplexEvent){
+			System.out.println("Event --> "+ env.getEvents().get(i).toString() + env.getEvents().get(i).getAgent());
+			
+			if (env.getEvents().get(i) instanceof ComplexEventImpl){
 				ComplexEvent ce = (ComplexEvent) env.getEvents().get(i);
-				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAts().size(); j++){
-					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAt: " + ce.getBehaviouralDescriptions().getHoldsAts().get(j).getContextRelation().getName());
+				System.out.println("Sono dentro");
+				for (int j = 0; j < ce.getBehaviouralDescriptions().size(); j++){
+					System.out.println("Sono dentro " + ce.getBehaviouralDescriptions().size());
+
+					for (int k = 0; k < ce.getBehaviouralDescriptions().get(j).getHoldsAts().size(); k++){
+						System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAt: " + ce.getBehaviouralDescriptions().get(j).getHoldsAts().get(k).getContextRelation().getName());
+					}
 				}
-				for (int j = 0; j < ce.getBehaviouralDescriptions().getHappens().size(); j++){
-					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getEvent().getName());
+				for (int j = 0; j < ce.getBehaviouralDescriptions().size(); j++){
+					for (int k = 0; k < ce.getBehaviouralDescriptions().get(j).getHappens().size(); k++){
+						System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().get(j).getHappens().get(k).getEvent().getName());
+					}
 				}
-				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAtBetweens().size(); j++){
-					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().getHoldsAtBetweens().get(j).getContextRelation().getName());
+				for (int j = 0; j < ce.getBehaviouralDescriptions().size(); j++){
+					for (int k = 0; k < ce.getBehaviouralDescriptions().get(j).getHoldsAtBetweens().size(); k++){
+						System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().get(j).getHoldsAtBetweens().get(k).getContextRelation().getName());
+					}
 				}
 			}
 		}
-		
+		/*
 		for (int i = 0; i < env.getInitials().size(); i++){
 			System.out.println("Context relation: "+ env.getInitials().get(i).getContextRelation().getName() + " --> true");
 		}

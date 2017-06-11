@@ -34,7 +34,7 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2010;
+	public static final int VISUAL_ID = 2012;
 
 	/**
 	* @generated

@@ -57,7 +57,7 @@ public class ComplexEventNameEditPart extends CompartmentEditPart implements ITe
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5011;
 
 	/**
 	* @generated
@@ -292,7 +292,7 @@ public class ComplexEventNameEditPart extends CompartmentEditPart implements ITe
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.ComplexEvent_2010, getParserElement(),
+			parser = ModelParserProvider.getParser(ModelElementTypes.ComplexEvent_2012, getParserElement(),
 					ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.ComplexEventNameEditPart.VISUAL_ID));
 		}
 		return parser;

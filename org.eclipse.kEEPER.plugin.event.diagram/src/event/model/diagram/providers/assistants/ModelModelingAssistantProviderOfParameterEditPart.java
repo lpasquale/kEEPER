@@ -51,8 +51,8 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 	public List<IElementType> doGetTypesForSource(ParameterEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
-			types.add(ModelElementTypes.ComplexEvent_2010);
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
+			types.add(ModelElementTypes.ComplexEvent_2012);
 		}
 		return types;
 	}

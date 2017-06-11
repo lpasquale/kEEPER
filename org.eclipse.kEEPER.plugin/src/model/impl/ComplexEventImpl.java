@@ -7,6 +7,7 @@ import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
+import model.Observer;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -72,7 +73,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * @ordered
 	 */
 	protected Agent agent;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,7 +142,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		}
 		return agent;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -259,5 +260,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		result.append(')');
 		return result.toString();
 	}
+
 
 } //ComplexEventImpl

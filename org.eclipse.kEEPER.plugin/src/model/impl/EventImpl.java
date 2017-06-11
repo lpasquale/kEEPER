@@ -113,13 +113,6 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 		if (parameters == null) {
 			parameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ModelPackage.EVENT__PARAMETERS);
 		}
-		if (this instanceof PrimitiveEventImpl){
-			parameters.add(((PrimitiveEventImpl) this).getAgent());
-			parameters.add(((PrimitiveEventImpl) this).getObserver());
-		}
-		if (this instanceof ComplexEventImpl){
-			parameters.add(((ComplexEventImpl) this).getAgent());
-		}
 		return parameters;
 	}
 

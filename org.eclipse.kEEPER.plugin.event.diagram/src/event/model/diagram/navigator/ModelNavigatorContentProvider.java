@@ -255,28 +255,6 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case PrimitiveEventEditPart.VISUAL_ID: {
-			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			ModelNavigatorGroup outgoinglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_PrimitiveEvent_2005_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(PrimitiveEventAgentEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(EventParametersEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(PrimitiveEventObserverEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case AgentEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -334,11 +312,33 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case PrimitiveEventEditPart.VISUAL_ID: {
+			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			ModelNavigatorGroup outgoinglinks = new ModelNavigatorGroup(
+					Messages.NavigatorGroupName_PrimitiveEvent_2011_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(PrimitiveEventAgentEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(EventParametersEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(PrimitiveEventObserverEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case ComplexEventEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			ModelNavigatorGroup outgoinglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_ComplexEvent_2010_outgoinglinks,
+					Messages.NavigatorGroupName_ComplexEvent_2012_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),

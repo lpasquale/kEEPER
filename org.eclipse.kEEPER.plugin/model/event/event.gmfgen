@@ -28,7 +28,7 @@
     <domainDiagramElement
         href="../model.genmodel#//model/Environment"/>
     <topLevelNodes
-        visualID="2005"
+        visualID="2011"
         editPartClassName="PrimitiveEventEditPart"
         itemSemanticEditPolicyClassName="PrimitiveEventItemSemanticEditPolicy"
         canonicalEditPolicyClassName="PrimitiveEventCanonicalEditPolicy"
@@ -51,12 +51,12 @@
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/primitiveEvents"/>
+            href="../model.genmodel#//model/Environment/events"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/primitiveEvents"/>
+            href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
       <labels
-          visualID="5003"
+          visualID="5010"
           editPartClassName="PrimitiveEventNameEditPart"
           itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -204,7 +204,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2010"
+        visualID="2012"
         editPartClassName="ComplexEventEditPart"
         itemSemanticEditPolicyClassName="ComplexEventItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ComplexEventCanonicalEditPolicy"
@@ -227,12 +227,12 @@
         <metaClass
             href="../model.genmodel#//model/ComplexEvent"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/complexEvents"/>
+            href="../model.genmodel#//model/Environment/events"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/complexEvents"/>
+            href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
       <labels
-          visualID="5009"
+          visualID="5011"
           editPartClassName="ComplexEventNameEditPart"
           itemSemanticEditPolicyClassName="ComplexEventNameItemSemanticEditPolicy"
           elementIcon="true">

@@ -36,7 +36,7 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	* @generated
 	*/
 	public PrimitiveEventItemSemanticEditPolicy() {
-		super(ModelElementTypes.PrimitiveEvent_2005);
+		super(ModelElementTypes.PrimitiveEvent_2011);
 	}
 
 	/**
