@@ -2,13 +2,18 @@ package behavDesc.model.diagram.edit.parts;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
@@ -18,6 +23,7 @@ import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -40,8 +46,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
@@ -90,22 +98,28 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private View view;
 	
 	private BehaviouralDescription bd;
+	
+	private String domainFilePath;
 
 	/**
 	* @generated NOT
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
-		
+		System.out.println("Constructor of BehaviouralDescriptorEditPart");
 		
 		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getActiveEditor();
-		System.out.println("EDITOR: "+ activeEditor);
+		System.out.println("activeEditor: "+ activeEditor);
 		
 		if (activeEditor instanceof ModelDiagramEditor){
 			editor = (ModelDiagramEditor) activeEditor;
-		//	editor =  (ModelDiagramEditor) ((ModelDiagramEditor) activeEditor).getEditingDomain();
-			System.out.println("Editor: " + editor +" ActiveEditor:     " +activeEditor);
+			Resource diagram =  editor.getDiagram().eResource();
+			String path = ((Resource) diagram).getURI().toPlatformString(true);
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+			domainFilePath = workspaceResource.getLocation().removeLastSegments(1).toString();
+			System.out.println(domainFilePath);
+			System.out.println("editor: " + editor + " activeEditor:     " + activeEditor);
 		}
 		
 		this.view = view;
@@ -190,7 +204,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
-		System.out.println("Loop?");
 	/*	SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), bd,
 				ModelPackage.eINSTANCE.getBehaviouralDescription_TimeInstants(), ((BehaviouralDescriptionFigure) shape).getTimeInstants());
 		SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
@@ -259,6 +272,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
+			
+			// Proceed only if the user has already set up the number of time instants
+			if (bd.getTimeInstants() == 0){
+				MessageDialog.openError(null, "Error", "You must define the number of time instants before!");
+				return;
+			}
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
 			dialog.setElements(
 					new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });

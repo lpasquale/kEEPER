@@ -138,6 +138,13 @@ public class Transformer {
 		// BEHAVIOURAL DESCRIPTIONS OUTPUT ALGORITHM
 		
 		writer.println("\n\n% ***** Composite Definitions *****\n");
+		
+		// TODO: Better version of the algorithm
+	/*	for (int i = 0; i < env.getEvents().size(); i++){
+			if (env.getEvents().get(i) instanceof ComplexEvent){
+				for (int j = 0; j < (((ComplexEvent) (env.getEvents().get(i))).getBehaviouralDescriptions().size()); j++){
+		*/	
+		
 		for (int i = 0; i < env.getBehavDescriptions().size(); i++){
 			ComplexEvent event = new ComplexEventImpl(); //Because it is a complexEvent for sure
 			writer.printf("happens("+ env.getBehavDescriptions().get(i).getName());
@@ -145,9 +152,9 @@ public class Transformer {
 				if (env.getEvents().get(j).getName().equals(env.getBehavDescriptions().get(i).getName())){
 					event = (ComplexEvent) env.getEvents().get(j); //Casting to ComplexEvent because for sure is a complex event
 				}	
-			}
+			} 
 			//writer.printf("happens("+ event.getName());
-			writeEventParameters(event, writer);
+			writeEventParameters(env.getEvents().get(i), writer);
 			
 			// Computing the maximum time between context relations and events of a specified complex event and
 			// memorizing the integer found in the arraylist for later computations
@@ -242,6 +249,7 @@ public class Transformer {
 					}
 				}
 			}
+			
 			
 			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){				
 				writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());

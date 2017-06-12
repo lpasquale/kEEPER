@@ -67,25 +67,9 @@ public class BehaviouralDescriptionFigure extends Shape{
 			this.r = r;
 			this.bd = bd;
 			// Input the number of time instants 
-			System.out.println(bd.getTimeInstants());
 			if(bd.getTimeInstants() != 0){
 				timeInstants = bd.getTimeInstants();
-			/*	System.out.println("Dentro l'if");
-				InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {
-
-		        public String isValid(final String s) {
-		            if (s.getBytes().length > 1024) {
-		                return "Value too long!";
-		            }
-		            return null;
-		        }
-		    });
-			inputDialog.open();	
-			
-			String time = inputDialog.getValue();
-			this.timeInstants = Integer.parseInt(time);
-		*/	}
-			
+			}
 		}
 		
 		@Override
@@ -124,7 +108,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        }
 	        
 	        if (!bd.getHappens().isEmpty()){
-	        	System.out.println("Creating point for events");
 	        	for (int i = 0; i < bd.getHappens().size(); i++){
 	        		graphics.setForegroundColor(new Color(null, 0, 0, 255));
 	        		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
@@ -137,7 +120,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        }
 	        
 	        if (!bd.getHoldsAts().isEmpty()){
-		        System.out.println("Creating point for CR");
 		        for (int i = 0; i < bd.getHoldsAts().size(); i++){
 		        	
 		        	if (bd.getHoldsAts().get(i).isIsHolding())
@@ -154,7 +136,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        }
 	        
 	        if (!bd.getHoldsAtBetweens().isEmpty()){
-		        System.out.println("Creating rectangle for CR");
 		        for (int i = 0; i < bd.getHoldsAtBetweens().size(); i++){
 		        	
 		        	if (bd.getHoldsAtBetweens().get(i).isIsHolding())
@@ -175,11 +156,8 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	graphics.drawPolygon(points);
 		        	Point label = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
 	        		graphics.drawString(bd.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
-
 		        }
-
-	        }
-	        
+	        }   
 	    } 
 
 	    @Override

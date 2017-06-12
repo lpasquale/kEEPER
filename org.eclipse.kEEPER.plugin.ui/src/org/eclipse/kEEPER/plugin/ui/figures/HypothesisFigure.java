@@ -32,28 +32,12 @@ public class HypothesisFigure extends Shape {
 	 */
 	public HypothesisFigure(RectangleFigure r, Hypothesis h) {
 		System.out.println("Hypothesis Constructor!");
-		// behavDesc = (BehaviouralDescription) eObject;
 		this.r = r;
 		this.h = h;
 		
 		if(h.getTimeInstants() != 0){
 			timeInstants = h.getTimeInstants();
 		}
-		// Input the number of time instants 
-		/*InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {
-
-	        public String isValid(final String s) {
-	            if (s.getBytes().length > 1024) {
-	                return "Value too long!";
-	            }
-	            return null;
-	        }
-	    });
-		inputDialog.open();	
-		
-		String time = inputDialog.getValue();
-		timeInstants = Integer.parseInt(time);
-		*/
 	}
 	
 	@Override

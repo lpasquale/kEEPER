@@ -22,6 +22,10 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.PlatformUI;
+
+import contextRelation.model.diagram.part.ModelDiagramEditor;
 
 /**
  * @generated
@@ -37,6 +41,10 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure contentPane;
+	
+	private IEditorPart activeEditor; 
+	
+	private ModelDiagramEditor editor;
 
 	/**
 	* @generated
@@ -48,6 +56,12 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	*/
 	public ContextRelationEditPart(View view) {
 		super(view);
+		System.out.println("Constructor of ContextRelationEditPart");
+		
+		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+				.getActiveEditor();
+		System.out.println("activeEditor: "+ activeEditor);
+		
 	}
 
 	/**
