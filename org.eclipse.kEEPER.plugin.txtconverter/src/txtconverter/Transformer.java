@@ -154,7 +154,7 @@ public class Transformer {
 				}	
 			} 
 			//writer.printf("happens("+ event.getName());
-			writeEventParameters(env.getEvents().get(i), writer);
+			writeEventParameters(event, writer);
 			
 			// Computing the maximum time between context relations and events of a specified complex event and
 			// memorizing the integer found in the arraylist for later computations
@@ -333,7 +333,10 @@ public class Transformer {
 	private void writeEventParameters(Event ev, PrintWriter writer){
 		writer.printf("(");
 		System.out.println(ev.getName());
-		System.out.println("Event2 --> " + ev.getName() + ev.getAgent().getName() + ev.getAgent().getType().getName());
+		System.out.println("Event2 --> " + ev.getName() + 
+				ev.getAgent().
+				getName() + 
+				ev.getAgent().getType().getName());
 		writer.printf("%c", ev.getAgent().getType().getName().charAt(0));
 		for (int j = 0; j < ev.getParameters().size(); j++){
 			writer.printf(",%c", ev.getParameters().get(j).getType().getName().charAt(0));

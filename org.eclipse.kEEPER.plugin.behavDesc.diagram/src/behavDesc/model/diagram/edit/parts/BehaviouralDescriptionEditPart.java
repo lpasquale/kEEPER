@@ -55,6 +55,10 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
@@ -89,8 +93,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
-	private IEditorPart activeEditor; 
-	
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
@@ -99,31 +101,44 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	
 	private BehaviouralDescription bd;
 	
-	private String domainFilePath;
+	private String editFilesPath, diagramFileName;
 
 	/**
 	* @generated NOT
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
+		System.out.println("TITLE view: " + view.eResource().getURI().lastSegment());
 		System.out.println("Constructor of BehaviouralDescriptorEditPart");
-		
-		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-				.getActiveEditor();
-		System.out.println("activeEditor: "+ activeEditor);
-		
-		if (activeEditor instanceof ModelDiagramEditor){
-			editor = (ModelDiagramEditor) activeEditor;
-			Resource diagram =  editor.getDiagram().eResource();
-			String path = ((Resource) diagram).getURI().toPlatformString(true);
-			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
-			domainFilePath = workspaceResource.getLocation().removeLastSegments(1).toString();
-			System.out.println(domainFilePath);
-			System.out.println("editor: " + editor + " activeEditor:     " + activeEditor);
+		// Variables essentials to get the workbench of THIS behavioural description
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+
+		// Initializing the editor
+		for (int i = 0; i < editorPart.length; i++){
+			if (editorPart[i].getEditor(true) instanceof behavDesc.model.diagram.part.ModelDiagramEditor){
+				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())){
+					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
+				}					
+				System.out.println("Editor: " + editor);
+			}
 		}
+		
+		// Variables essentials to get the path of the diagram file
+		Resource diagram =  editor.getDiagram().eResource();
+		String path = ((Resource) diagram).getURI().toPlatformString(true);
+		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+		diagramFileName = workspaceResource.getLocation().lastSegment();
+		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
 		
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
+		
+		System.out.println("FileName: " + diagramFileName + "  Domain File path: " + editFilesPath);
+		System.out.println("Final editor: " + editor);
 	}
 
 	/**

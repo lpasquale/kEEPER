@@ -4,10 +4,14 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -32,6 +36,10 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
@@ -77,22 +85,35 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	
 	private Hypothesis h;
 
+	private String editFilesPath, diagramFileName;
 	/**
 	* @generated NOT
 	*/
 	public HypothesisEditPart(View view) {
 		super(view);
-		
-		
-		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-				.getActiveEditor();
-		System.out.println("EDITOR: "+ activeEditor);
-		
-		if (activeEditor instanceof ModelDiagramEditor){
-			editor = (ModelDiagramEditor) activeEditor;
-		//	editor =  (ModelDiagramEditor) ((ModelDiagramEditor) activeEditor).getEditingDomain();
-			System.out.println("Editor: " + editor +"     " +activeEditor);
-		}
+		// Variables essentials to get the workbench of THIS hypothesis description
+				IWorkbench workbench = PlatformUI.getWorkbench();
+				IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+				IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+				IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+
+				// Initializing the editor
+				for (int i = 0; i < editorPart.length; i++){
+					if (editorPart[i].getEditor(true) instanceof hypothesis.model.diagram.part.ModelDiagramEditor){
+						System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+						if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())){
+							editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
+						}					
+						System.out.println("Editor: " + editor);
+					}
+				}
+				
+				// Variables essentials to get the path of the diagram file
+				Resource diagram =  editor.getDiagram().eResource();
+				String path = ((Resource) diagram).getURI().toPlatformString(true);
+				IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+				diagramFileName = workspaceResource.getLocation().lastSegment();
+				editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
 		
 		this.view = view;
 		this.h = (Hypothesis) view.getElement();
