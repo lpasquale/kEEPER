@@ -153,6 +153,7 @@ public class Transformer {
 		*/	
 		
 		for (int i = 0; i < env.getBehavDescriptions().size(); i++){
+			System.out.println("BEHAV DESC: " + env.getBehavDescriptions().get(i).getName());
 			ComplexEvent event = new ComplexEventImpl(); //Because it is a complexEvent for sure
 			writer.printf("happens("+ env.getBehavDescriptions().get(i).getName());
 			for (int j = 0; j < env.getEvents().size(); j++){
@@ -161,7 +162,10 @@ public class Transformer {
 				}	
 			} 
 			//writer.printf("happens("+ event.getName());
-			writeEventParameters(event, writer);
+			if (event != null){
+				writeEventParameters(event, writer);
+			}
+			
 			
 			// Computing the maximum time between context relations and events of a specified complex event and
 			// memorizing the integer found in the arraylist for later computations
