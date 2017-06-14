@@ -262,8 +262,16 @@ public class Transformer {
 			}
 			
 			
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){				
-				writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){
+				HoldsAt h = env.getBehavDescriptions().get(i).getHoldsAts().get(j);
+				if (h.isIsHolding()){
+					writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+
+				}
+				else if (!h.isIsHolding()){
+					writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+
+				}
 				writeContextRelationParameters(env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation(), writer);
 				writer.printf(",T"+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getTime() +",TR)");
 				if (j < env.getBehavDescriptions().get(i).getHoldsAts().size() - 1)
@@ -310,6 +318,64 @@ public class Transformer {
 			writer.println();
 			
 		} // Behavioural Descriptions 
+		
+		// INITIATES OUTPUT ALGORITHM
+		
+		writer.println("\n\n% +++ Context Relation Definitions +++\n");
+		for (int i = 0; i < env.getContextRelations().size(); i++){
+			if (env.getContextRelations().get(i).getInitialComplexEvent() != null){
+				writer.printf("initiates("+ env.getContextRelations().get(i).getInitialComplexEvent().getName());
+				writeEventParameters(env.getContextRelations().get(i).getInitialComplexEvent(),writer);
+				writer.printf(",");
+				writer.printf(env.getContextRelations().get(i).getName());
+				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
+				writer.printf(", T):-\n");
+				
+				HashSet<Type> crTypes = new HashSet<Type>();
+				for (int n = 0; n < env.getContextRelations().get(i).getInitialComplexEvent().getParameters().size(); n++){
+					crTypes.add(env.getContextRelations().get(i).getInitialComplexEvent().getParameters().get(n).getType());
+				}
+				for (int n = 0; n < env.getContextRelations().get(i).getParameters().size(); n++){
+					crTypes.add(env.getContextRelations().get(i).getParameters().get(n).getType());
+				}
+				
+				Iterator<Type> iter = crTypes.iterator();
+				while(iter.hasNext()){
+					Type type = iter.next();
+					writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+				}
+				writer.printf(", time(T).\n");
+				
+			}
+			
+			if (env.getContextRelations().get(i).getEndingComplexEvent() != null){
+				writer.printf("terminates("+ env.getContextRelations().get(i).getEndingComplexEvent().getName());
+				writeEventParameters(env.getContextRelations().get(i).getEndingComplexEvent(),writer);
+				writer.printf(",");
+				writer.printf(env.getContextRelations().get(i).getName());
+				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
+				writer.printf(", T):-\n");
+				
+				HashSet<Type> crTypes = new HashSet<Type>();
+				for (int n = 0; n < env.getContextRelations().get(i).getEndingComplexEvent().getParameters().size(); n++){
+					crTypes.add(env.getContextRelations().get(i).getEndingComplexEvent().getParameters().get(n).getType());
+				}
+				for (int n = 0; n < env.getContextRelations().get(i).getParameters().size(); n++){
+					crTypes.add(env.getContextRelations().get(i).getParameters().get(n).getType());
+				}
+				
+				Iterator<Type> iter = crTypes.iterator();
+				while(iter.hasNext()){
+					Type type = iter.next();
+					writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+				}
+				writer.printf(" time(T).\n");
+				
+			}
+				
+				
+				
+		} writer.println();
 		
 		
 		// INITIAL STATES OUTPUT ALGORITHM
