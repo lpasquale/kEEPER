@@ -79,19 +79,23 @@ public class Loader {
 		Resource r3 = rs.createResource(URI.createFileURI(filePath +"/default.eventModel"));
 		Resource r4 = rs.createResource(URI.createFileURI(filePath +"/default.bdModel"));	
 		Resource r5 = rs.createResource(URI.createFileURI(filePath +"/default.hypothesisModel"));		
+		Resource r6 = rs.createResource(URI.createFileURI(filePath +"/default.initialModel"));		
 
 		r1.load(null);
 		r2.load(null);
 		r3.load(null);
 		r4.load(null);
 		r5.load(null);
+		r6.load(null);
+		
 		//EcoreUtil.resolveAll(rs); 
 		
 		Environment env1 = (Environment) r1.getContents().get(0);
 		Environment env2 = (Environment) r2.getContents().get(0);
 		Environment env3 = (Environment) r3.getContents().get(0);
 		Environment env4 = (Environment) r4.getContents().get(0);	
-		Environment env5 = (Environment) r5.getContents().get(0);	
+		Environment env5 = (Environment) r5.getContents().get(0);
+		Environment env6 = (Environment) r6.getContents().get(0);	
 
 						
 		env.setTypes(env1.getTypes());
@@ -100,6 +104,7 @@ public class Loader {
 		env.setEvents(env3.getEvents());
 		env.setBehavDescriptions(env4.getBehavDescriptions());
 		env.setHypothesis(env5.getHypothesis());
+		env.setInitials(env6.getInitials());
 				
 		// Verification
 		
@@ -134,6 +139,9 @@ public class Loader {
 				}
 				System.out.println();
 			}
+		}
+		for (int i = 0; i < env.getInitials().size(); i++){
+			System.out.println("Initial--> " + env.getInitials().get(i).getContextRelation().getName() + "  " + env.getInitials().get(i).getContextRelation().getParameters().get(0).getInstance());
 		}
 		/*
 		for (int i = 0; i < env.getInitials().size(); i++){

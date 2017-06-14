@@ -81,9 +81,9 @@ public class Transformer {
 			writer.printf("):-\n\t");
 			for (int j = 0; j < env.getContextRelations().get(i).getParameters().size(); j++){
 				if (j != env.getContextRelations().get(i).getParameters().size()-1)
-					writer.printf("%s(%c), ", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0));
+					writer.printf("%s(%c), ", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));
 				else
-					writer.printf("%s(%c).\n", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0));				
+					writer.printf("%s(%c).\n", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));				
 			}
 		} // Context Relations
 		
@@ -101,11 +101,11 @@ public class Transformer {
 				writeEventParameters(env.getEvents().get(i), writer);
 				writer.printf("):-\n\t");
 				
-				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), env.getEvents().get(i).getAgent().getType().getName().charAt(0));
+				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), Character.toUpperCase(env.getEvents().get(i).getAgent().getType().getName().charAt(0)));
 				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
-					writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+					writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), Character.toUpperCase(env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0)));
 				}
-				writer.printf(", %s(%c).", ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName(), ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName().charAt(0));
+				writer.printf(", %s(%c).", ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName(), Character.toUpperCase(((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName().charAt(0)));
 				writer.println();
 				writer.println();
 				if (i == env.getEvents().size() -1)
@@ -124,14 +124,14 @@ public class Transformer {
 				writeEventParameters(env.getEvents().get(i), writer);
 				writer.printf("):-\n\t");
 				
-				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), env.getEvents().get(i).getAgent().getType().getName().charAt(0));
+				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), Character.toUpperCase(env.getEvents().get(i).getAgent().getType().getName().charAt(0)));
 
 				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
 					if (j != env.getEvents().get(i).getParameters().size() - 1){
-						writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+						writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), Character.toUpperCase(env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0)));
 					}
 					else
-						writer.printf(", %s(%c).", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+						writer.printf(", %s(%c).", env.getEvents().get(i).getParameters().get(j).getType().getName(), Character.toUpperCase(env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0)));
 				}
 				if (i == env.getEvents().size() -1)
 					writer.println();
@@ -244,7 +244,7 @@ public class Transformer {
 			while(iter.hasNext()){
 				Type type = iter.next();
 			//	System.out.println(type.toString());
-				writer.println("\t"+type.getName()+"("+type.getName().charAt(0)+"),");
+				writer.println("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
 			}
 			
 			// Writing all time instants
@@ -326,7 +326,7 @@ public class Transformer {
 		writer.println();
 		writer.println("% Version 3");
 		Calendar rightNow = Calendar.getInstance();
-		writer.println("Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE));
+		writer.println("% Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE));
 		writer.close();
 
 	}
@@ -335,9 +335,9 @@ public class Transformer {
 		writer.printf("(");
 		for (int j = 0; j < cr.getParameters().size(); j++){
 			if (j != cr.getParameters().size()-1)
-				writer.printf("%c,", cr.getParameters().get(j).getType().getName().charAt(0));
+				writer.printf("%c,", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));
 			else
-				writer.printf("%c)", cr.getParameters().get(j).getType().getName().charAt(0));	
+				writer.printf("%c)", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));	
 		}
 	}
 	
@@ -348,13 +348,13 @@ public class Transformer {
 				ev.getAgent().
 				getName() + 
 				ev.getAgent().getType().getName());
-		writer.printf("%c", ev.getAgent().getType().getName().charAt(0));
+		writer.printf("%c", Character.toUpperCase(ev.getAgent().getType().getName().charAt(0)));
 		for (int j = 0; j < ev.getParameters().size(); j++){
-			writer.printf(",%c", ev.getParameters().get(j).getType().getName().charAt(0));
+			writer.printf(",%c", Character.toUpperCase(ev.getParameters().get(j).getType().getName().charAt(0)));
 		}	
 		
 		if (ev instanceof PrimitiveEventImpl){
-			writer.printf(",%c)", (((PrimitiveEvent) ev).getObserver().getType().getName().charAt(0)));
+			writer.printf(",%c)", Character.toUpperCase((((PrimitiveEvent) ev).getObserver().getType().getName().charAt(0))));
 
 		}
 		else 
