@@ -351,7 +351,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private Happens happensSelected() {
 		try {
 			// Parsing event file
-			LoadEvents loadEvents = new LoadEvents();
+			LoadEvents loadEvents = new LoadEvents(editFilesPath + "/default.eventModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
@@ -425,7 +425,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private HoldsAt holdsAtSelected(boolean isHolding) {
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation();
+			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -510,7 +510,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation();
+			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,

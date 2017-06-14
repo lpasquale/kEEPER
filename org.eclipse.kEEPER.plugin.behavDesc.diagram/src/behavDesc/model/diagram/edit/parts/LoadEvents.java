@@ -28,11 +28,10 @@ public class LoadEvents {
 	private Environment env;
 	private String path;
 	
-	public LoadEvents() throws IOException{
+	public LoadEvents(String path) throws IOException{
 		
 		System.out.println("I'm in loadEvents");
-		path = System.getProperty("user.dir");
-	    System.out.println("PATHH: "+ path);
+		this.path = path;
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
 		
@@ -43,7 +42,7 @@ public class LoadEvents {
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
 
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.eventModel"));
+		Resource r1 = rs.createResource(URI.createFileURI(path));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 

@@ -25,11 +25,12 @@ public class LoadContextRelation {
 	private ModelPackage modelPackage;
 	private ModelFactory modelFactory;
 	private Environment env;
-	private IPath path;
+	private String path;
 	
-	public LoadContextRelation() throws IOException{
+	public LoadContextRelation(String path) throws IOException{
 		
 		System.out.println("I'm in LoadContextRelation");
+		this.path = path;
 
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
@@ -40,7 +41,7 @@ public class LoadContextRelation {
 
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationmodel"));
+		Resource r1 = rs.createResource(URI.createFileURI(path));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 
