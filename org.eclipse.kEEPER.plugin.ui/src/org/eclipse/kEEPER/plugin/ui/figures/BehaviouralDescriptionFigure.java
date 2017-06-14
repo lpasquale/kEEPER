@@ -40,7 +40,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 		 */
 		public BehaviouralDescriptionFigure(RectangleFigure r, BehaviouralDescription bd) {
 			System.out.println("BehaviouralDescription Constructor!");
-			// behavDesc = (BehaviouralDescription) eObject;
 			this.r = r;
 			this.bd = bd;
 			// Input the number of time instants 
@@ -51,7 +50,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 		
 		@Override
 	    protected void fillShape(Graphics graphics) {
-		//	System.out.println("I'm in fillShape()");
 	        graphics.pushState();       
 	        graphics.setFillRule(SWT.FILL_WINDING);
 	        graphics.popState();

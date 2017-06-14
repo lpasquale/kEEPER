@@ -43,7 +43,6 @@ public class HypothesisFigure extends Shape {
 	
 	@Override
     protected void fillShape(Graphics graphics) {
-	//	System.out.println("I'm in fillShape()");
         graphics.pushState();       
         graphics.setFillRule(SWT.FILL_WINDING);
         graphics.popState();
@@ -66,6 +65,7 @@ public class HypothesisFigure extends Shape {
     		graphics.drawString(h.getName(), label);
         }
         // Creating main line
+        graphics.setForegroundColor(new Color(null, 129, 23, 45));
         for (int i = -2; i < 3; i++){
         	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
         }
@@ -80,7 +80,6 @@ public class HypothesisFigure extends Shape {
         }
         graphics.setFont(new Font(null, "Arial", 10, 1));
         if (!h.getHappens().isEmpty()){
-        	System.out.println("Creating point for events");
         	for (int i = 0; i < h.getHappens().size(); i++){
         		graphics.setForegroundColor(new Color(null, 0, 0, 255));
         		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
@@ -92,7 +91,6 @@ public class HypothesisFigure extends Shape {
         }
         
         if (!h.getHoldsAts().isEmpty()){
-	        System.out.println("Creating point for CR");
 	        for (int i = 0; i < h.getHoldsAts().size(); i++){
 	        	
 	        	if (h.getHoldsAts().get(i).isIsHolding())
@@ -109,7 +107,6 @@ public class HypothesisFigure extends Shape {
         }
         
         if (!h.getHoldsAtBetweens().isEmpty()){
-	        System.out.println("Creating rectangle for CR");
 	        for (int i = 0; i < h.getHoldsAtBetweens().size(); i++){
 	        	
 	        	if (h.getHoldsAtBetweens().get(i).isIsHolding())
