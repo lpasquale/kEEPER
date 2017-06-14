@@ -463,7 +463,7 @@ public class Transformer {
 				while(iter.hasNext()){
 					Type type = iter.next();
 				//	System.out.println(type.toString());
-					writer2.println("\t"+type.getName()+"("+type.getName().charAt(0)+"),");
+					writer2.println("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
 				}
 				
 				// Writing all time instants
