@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.ContextRelationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
- *   <li>{@link model.impl.ContextRelationImpl#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,26 +108,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ComplexEvent endingComplexEvent;
-
-	/**
-	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TIME_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected int time = TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,27 +263,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTime() {
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTime(int newTime) {
-		int oldTime = time;
-		time = newTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__TIME, oldTime, time));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -320,8 +278,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				if (resolve) return getEndingComplexEvent();
 				return basicGetEndingComplexEvent();
-			case ModelPackage.CONTEXT_RELATION__TIME:
-				return getTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -351,9 +307,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)newValue);
 				return;
-			case ModelPackage.CONTEXT_RELATION__TIME:
-				setTime((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -381,9 +334,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)null);
 				return;
-			case ModelPackage.CONTEXT_RELATION__TIME:
-				setTime(TIME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,8 +356,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return initialComplexEvent != null;
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				return endingComplexEvent != null;
-			case ModelPackage.CONTEXT_RELATION__TIME:
-				return time != TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -426,8 +374,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		result.append(name);
 		result.append(", value: ");
 		result.append(value);
-		result.append(", time: ");
-		result.append(time);
 		result.append(')');
 		return result.toString();
 	}

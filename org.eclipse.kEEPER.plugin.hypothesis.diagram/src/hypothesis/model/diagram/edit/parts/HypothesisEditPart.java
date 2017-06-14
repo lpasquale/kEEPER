@@ -396,7 +396,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	private HoldsAt holdsAtSelected(boolean isHolding) {
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -481,7 +481,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,

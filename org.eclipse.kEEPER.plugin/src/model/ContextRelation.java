@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.ContextRelation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
- *   <li>{@link model.ContextRelation#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getContextRelation()
@@ -147,31 +146,5 @@ public interface ContextRelation extends EObject {
 	 * @generated
 	 */
 	void setEndingComplexEvent(ComplexEvent value);
-
-	/**
-	 * Returns the value of the '<em><b>Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Time</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time</em>' attribute.
-	 * @see #setTime(int)
-	 * @see model.ModelPackage#getContextRelation_Time()
-	 * @model required="true"
-	 * @generated
-	 */
-	int getTime();
-
-	/**
-	 * Sets the value of the '{@link model.ContextRelation#getTime <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time</em>' attribute.
-	 * @see #getTime()
-	 * @generated
-	 */
-	void setTime(int value);
 
 } // ContextRelation

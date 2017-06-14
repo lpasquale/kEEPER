@@ -65,7 +65,6 @@ public class ContextRelationItemProvider
 			addParametersPropertyDescriptor(object);
 			addInitialComplexEventPropertyDescriptor(object);
 			addEndingComplexEventPropertyDescriptor(object);
-			addTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -181,28 +180,6 @@ public class ContextRelationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContextRelation_time_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContextRelation_time_feature", "_UI_ContextRelation_type"),
-				 ModelPackage.Literals.CONTEXT_RELATION__TIME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns ContextRelation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,7 +219,6 @@ public class ContextRelationItemProvider
 		switch (notification.getFeatureID(ContextRelation.class)) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
 			case ModelPackage.CONTEXT_RELATION__VALUE:
-			case ModelPackage.CONTEXT_RELATION__TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

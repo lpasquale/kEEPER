@@ -7,8 +7,6 @@ import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
-import model.Observer;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,7 +24,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link model.impl.ComplexEventImpl#getTime <em>Time</em>}</li>
  *   <li>{@link model.impl.ComplexEventImpl#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
  *   <li>{@link model.impl.ComplexEventImpl#getAgent <em>Agent</em>}</li>
  * </ul>
@@ -34,26 +31,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class ComplexEventImpl extends EventImpl implements ComplexEvent {
-	/**
-	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TIME_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected int time = TIME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getBehaviouralDescriptions() <em>Behavioural Descriptions</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -91,27 +68,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.COMPLEX_EVENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTime() {
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTime(int newTime) {
-		int oldTime = time;
-		time = newTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__TIME, oldTime, time));
 	}
 
 	/**
@@ -172,8 +128,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__TIME:
-				return getTime();
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				return getBehaviouralDescriptions();
 			case ModelPackage.COMPLEX_EVENT__AGENT:
@@ -192,9 +146,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__TIME:
-				setTime((Integer)newValue);
-				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				getBehaviouralDescriptions().clear();
 				getBehaviouralDescriptions().addAll((Collection<? extends BehaviouralDescription>)newValue);
@@ -214,9 +165,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__TIME:
-				setTime(TIME_EDEFAULT);
-				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				getBehaviouralDescriptions().clear();
 				return;
@@ -235,30 +183,12 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__TIME:
-				return time != TIME_EDEFAULT;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				return behaviouralDescriptions != null && !behaviouralDescriptions.isEmpty();
 			case ModelPackage.COMPLEX_EVENT__AGENT:
 				return agent != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (time: ");
-		result.append(time);
-		result.append(')');
-		return result.toString();
 	}
 
 

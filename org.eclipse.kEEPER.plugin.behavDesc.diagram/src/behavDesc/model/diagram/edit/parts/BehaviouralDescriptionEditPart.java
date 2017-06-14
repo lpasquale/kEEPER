@@ -441,7 +441,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		try {
 			// Parsing event file
 			LoadContextRelation loadContextRelations = new LoadContextRelation(
-					editFilesPath + "/default.contextRelationmodel");
+					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -527,7 +527,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		try {
 			// Parsing event file
 			LoadContextRelation loadContextRelations = new LoadContextRelation(
-					editFilesPath + "/default.contextRelationmodel");
+					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,

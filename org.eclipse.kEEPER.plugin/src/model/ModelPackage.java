@@ -259,22 +259,13 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_RELATION__TIME = 5;
-
-	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 6;
+	int CONTEXT_RELATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -424,22 +415,13 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__PARAMETERS = EVENT__PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_EVENT__TIME = EVENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = EVENT_FEATURE_COUNT + 1;
+	int COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Agent</b></em>' reference.
@@ -448,7 +430,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT__AGENT = EVENT_FEATURE_COUNT + 2;
+	int COMPLEX_EVENT__AGENT = EVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Complex Event</em>' class.
@@ -457,7 +439,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 3;
+	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Complex Event</em>' class.
@@ -717,40 +699,22 @@ public interface ModelPackage extends EPackage {
 	int INITIALLY = 11;
 
 	/**
-	 * The feature id for the '<em><b>Holds Ats</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIALLY__HOLDS_ATS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Holds At Betweens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIALLY__HOLDS_AT_BETWEENS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Happens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIALLY__HAPPENS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIALLY__CONTEXT_RELATION = 3;
+	int INITIALLY__CONTEXT_RELATION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY__INSTANCES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Initially</em>' class.
@@ -759,7 +723,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INITIALLY_FEATURE_COUNT = 4;
+	int INITIALLY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Initially</em>' class.
@@ -1318,17 +1282,6 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_EndingComplexEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.ContextRelation#getTime <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time</em>'.
-	 * @see model.ContextRelation#getTime()
-	 * @see #getContextRelation()
-	 * @generated
-	 */
-	EAttribute getContextRelation_Time();
-
-	/**
 	 * Returns the meta object for class '{@link model.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1401,17 +1354,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComplexEvent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.ComplexEvent#getTime <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time</em>'.
-	 * @see model.ComplexEvent#getTime()
-	 * @see #getComplexEvent()
-	 * @generated
-	 */
-	EAttribute getComplexEvent_Time();
 
 	/**
 	 * Returns the meta object for the reference list '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}'.
@@ -1640,39 +1582,6 @@ public interface ModelPackage extends EPackage {
 	EClass getInitially();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.Initially#getHoldsAts <em>Holds Ats</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Holds Ats</em>'.
-	 * @see model.Initially#getHoldsAts()
-	 * @see #getInitially()
-	 * @generated
-	 */
-	EReference getInitially_HoldsAts();
-
-	/**
-	 * Returns the meta object for the reference list '{@link model.Initially#getHoldsAtBetweens <em>Holds At Betweens</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Holds At Betweens</em>'.
-	 * @see model.Initially#getHoldsAtBetweens()
-	 * @see #getInitially()
-	 * @generated
-	 */
-	EReference getInitially_HoldsAtBetweens();
-
-	/**
-	 * Returns the meta object for the reference list '{@link model.Initially#getHappens <em>Happens</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Happens</em>'.
-	 * @see model.Initially#getHappens()
-	 * @see #getInitially()
-	 * @generated
-	 */
-	EReference getInitially_Happens();
-
-	/**
 	 * Returns the meta object for the reference '{@link model.Initially#getContextRelation <em>Context Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1682,6 +1591,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInitially_ContextRelation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Initially#getInstances <em>Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Instances</em>'.
+	 * @see model.Initially#getInstances()
+	 * @see #getInitially()
+	 * @generated
+	 */
+	EReference getInitially_Instances();
 
 	/**
 	 * Returns the meta object for class '{@link model.Environment <em>Environment</em>}'.
@@ -2114,14 +2034,6 @@ public interface ModelPackage extends EPackage {
 		EReference CONTEXT_RELATION__ENDING_COMPLEX_EVENT = eINSTANCE.getContextRelation_EndingComplexEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTEXT_RELATION__TIME = eINSTANCE.getContextRelation_Time();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2182,14 +2094,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPLEX_EVENT = eINSTANCE.getComplexEvent();
-
-		/**
-		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPLEX_EVENT__TIME = eINSTANCE.getComplexEvent_Time();
 
 		/**
 		 * The meta object literal for the '<em><b>Behavioural Descriptions</b></em>' reference list feature.
@@ -2370,36 +2274,20 @@ public interface ModelPackage extends EPackage {
 		EClass INITIALLY = eINSTANCE.getInitially();
 
 		/**
-		 * The meta object literal for the '<em><b>Holds Ats</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INITIALLY__HOLDS_ATS = eINSTANCE.getInitially_HoldsAts();
-
-		/**
-		 * The meta object literal for the '<em><b>Holds At Betweens</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INITIALLY__HOLDS_AT_BETWEENS = eINSTANCE.getInitially_HoldsAtBetweens();
-
-		/**
-		 * The meta object literal for the '<em><b>Happens</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INITIALLY__HAPPENS = eINSTANCE.getInitially_Happens();
-
-		/**
 		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference INITIALLY__CONTEXT_RELATION = eINSTANCE.getInitially_ContextRelation();
+
+		/**
+		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INITIALLY__INSTANCES = eINSTANCE.getInitially_Instances();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.EnvironmentImpl <em>Environment</em>}' class.

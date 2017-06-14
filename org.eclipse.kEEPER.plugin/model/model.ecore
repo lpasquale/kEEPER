@@ -22,7 +22,6 @@
         eType="#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialComplexEvent" eType="#//ComplexEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endingComplexEvent" eType="#//ComplexEvent"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -34,7 +33,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="observer" eType="#//Observer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviouralDescriptions"
         upperBound="-1" eType="#//BehaviouralDescription"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
@@ -67,14 +65,10 @@
         eType="#//ContextRelation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Initially">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAts" upperBound="-1"
-        eType="#//HoldsAt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAtBetweens" upperBound="-1"
-        eType="#//HoldsAtBetween"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="happens" upperBound="-1"
-        eType="#//Happens"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
         eType="#//ContextRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//Instance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Environment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"

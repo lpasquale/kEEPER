@@ -57,78 +57,10 @@ public class InitiallyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHoldsAtsPropertyDescriptor(object);
-			addHoldsAtBetweensPropertyDescriptor(object);
-			addHappensPropertyDescriptor(object);
 			addContextRelationPropertyDescriptor(object);
+			addInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Holds Ats feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHoldsAtsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Initially_holdsAts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Initially_holdsAts_feature", "_UI_Initially_type"),
-				 ModelPackage.Literals.INITIALLY__HOLDS_ATS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Holds At Betweens feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHoldsAtBetweensPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Initially_holdsAtBetweens_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Initially_holdsAtBetweens_feature", "_UI_Initially_type"),
-				 ModelPackage.Literals.INITIALLY__HOLDS_AT_BETWEENS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Happens feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHappensPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Initially_happens_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Initially_happens_feature", "_UI_Initially_type"),
-				 ModelPackage.Literals.INITIALLY__HAPPENS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -145,6 +77,28 @@ public class InitiallyItemProvider
 				 getString("_UI_Initially_contextRelation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Initially_contextRelation_feature", "_UI_Initially_type"),
 				 ModelPackage.Literals.INITIALLY__CONTEXT_RELATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Initially_instances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Initially_instances_feature", "_UI_Initially_type"),
+				 ModelPackage.Literals.INITIALLY__INSTANCES,
 				 true,
 				 false,
 				 true,

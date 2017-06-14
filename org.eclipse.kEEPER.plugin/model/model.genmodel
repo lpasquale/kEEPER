@@ -27,7 +27,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/initialComplexEvent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/endingComplexEvent"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ContextRelation/time"/>
     </genClasses>
     <genClasses image="false" ecoreClass="model.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Event/name"/>
@@ -38,7 +37,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//PrimitiveEvent/observer"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ComplexEvent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ComplexEvent/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ComplexEvent/behaviouralDescriptions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ComplexEvent/agent"/>
     </genClasses>
@@ -65,10 +63,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//HoldsAtBetween/contextRelation"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Initially">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/holdsAts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/holdsAtBetweens"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/happens"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/contextRelation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/instances"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Environment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/types"/>
