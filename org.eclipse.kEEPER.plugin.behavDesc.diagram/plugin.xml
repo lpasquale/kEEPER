@@ -520,5 +520,6 @@
       <?gmfgen generated="true"?>
    </extension>
 
+
    <!-- optionally, specify keybindings -->
 </plugin>

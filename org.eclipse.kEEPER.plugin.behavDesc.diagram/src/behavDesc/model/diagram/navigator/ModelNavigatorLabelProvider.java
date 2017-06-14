@@ -1,5 +1,8 @@
 package behavDesc.model.diagram.navigator;
 
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;

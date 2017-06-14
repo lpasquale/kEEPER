@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure;
@@ -275,6 +276,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				Happens newHappens = happensSelected();
 				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
+				getPrimaryShape().repaint();
 
 			} // Happens
 				break;
@@ -283,6 +285,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				HoldsAt newHoldsAt = holdsAtSelected(true);
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
+				getPrimaryShape().repaint();
 			} // Holds at
 				break;
 
@@ -290,6 +293,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				HoldsAt newHoldsAt = holdsAtSelected(false);
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
+				getPrimaryShape().repaint();
 
 			} // Holds at
 				break;
@@ -297,6 +301,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(true);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
+				getPrimaryShape().repaint();
 			} // Holds at between
 				break;
 
@@ -304,6 +309,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(false);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
+				getPrimaryShape().repaint();
 			} // Not holds at between
 				break;
 
@@ -499,6 +505,9 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int[] timeSelectedArray = createMultipleTimeInstantsDialog();
+			if (timeSelectedArray == null)
+				return null;
+			
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					hypothesis.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004,
@@ -596,9 +605,15 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		timeInstantDialog.setMultipleSelection(true);
 		timeInstantDialog.setTitle("Select TWO time instants");
 		// user pressed cancel
-		if (timeInstantDialog.open() != Window.OK) {
-			return null;
-		}
+		do{
+			if (timeInstantDialog.open() != Window.OK) {
+				return null;
+			}
+			else if (timeInstantDialog.getResult().length < 2){
+				MessageDialog.openError(null, "Error", "You must select two time instants in order to create a \"Holds At Between\" predicate");
+			}
+		}while(timeInstantDialog.getResult().length < 2);
+		
 		String timeSelection1 = (String) timeInstantDialog.getResult()[0];
 		String timeSelection2 = (String) timeInstantDialog.getResult()[1];
 		System.out.println("time selected: " + timeSelection1);

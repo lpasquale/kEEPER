@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,10 +17,12 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -28,19 +31,27 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
@@ -98,9 +109,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private TransactionalEditingDomain editingDomain;
 
 	private View view;
-	
+
 	private BehaviouralDescription bd;
-	
+
 	private String editFilesPath, diagramFileName;
 
 	/**
@@ -117,26 +128,26 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
 
 		// Initializing the editor
-		for (int i = 0; i < editorPart.length; i++){
-			if (editorPart[i].getEditor(true) instanceof behavDesc.model.diagram.part.ModelDiagramEditor){
+		for (int i = 0; i < editorPart.length; i++) {
+			if (editorPart[i].getEditor(true) instanceof behavDesc.model.diagram.part.ModelDiagramEditor) {
 				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
-				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())){
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())) {
 					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
-				}					
+				}
 				System.out.println("Editor: " + editor);
 			}
 		}
-		
+
 		// Variables essentials to get the path of the diagram file
-		Resource diagram =  editor.getDiagram().eResource();
+		Resource diagram = editor.getDiagram().eResource();
 		String path = ((Resource) diagram).getURI().toPlatformString(true);
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
 		diagramFileName = workspaceResource.getLocation().lastSegment();
 		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
-		
+
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
-		
+
 		System.out.println("FileName: " + diagramFileName + "  Domain File path: " + editFilesPath);
 		System.out.println("Final editor: " + editor);
 	}
@@ -183,7 +194,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure createNodeShape(RectangleFigure r) {
 		return primaryShape = new BehaviouralDescriptionFigure(r, bd);
-		
+
 	}
 
 	/**
@@ -219,12 +230,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
-	/*	SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), bd,
-				ModelPackage.eINSTANCE.getBehaviouralDescription_TimeInstants(), ((BehaviouralDescriptionFigure) shape).getTimeInstants());
-		SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
-		editor.getDiagramEditDomain().getDiagramCommandStack()
-				.execute(new ICommandProxy(propertyOperation));
-*/
+		/*	SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), bd,
+					ModelPackage.eINSTANCE.getBehaviouralDescription_TimeInstants(), ((BehaviouralDescriptionFigure) shape).getTimeInstants());
+			SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
+			editor.getDiagramEditDomain().getDiagramCommandStack()
+					.execute(new ICommandProxy(propertyOperation));
+		*/
 		return figure;
 	}
 
@@ -287,9 +298,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
-			
+
 			// Proceed only if the user has already set up the number of time instants
-			if (bd.getTimeInstants() == 0){
+			if (bd.getTimeInstants() == 0) {
 				MessageDialog.openError(null, "Error", "You must define the number of time instants before!");
 				return;
 			}
@@ -309,7 +320,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				Happens newHappens = happensSelected();
 				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
-
+				getPrimaryShape().repaint();
 			} // Happens
 				break;
 
@@ -317,6 +328,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				HoldsAt newHoldsAt = holdsAtSelected(true);
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
+				getPrimaryShape().repaint();
 			} // Holds at
 				break;
 
@@ -324,6 +336,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				HoldsAt newHoldsAt = holdsAtSelected(false);
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
+				getPrimaryShape().repaint();
 
 			} // Holds at
 				break;
@@ -331,6 +344,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(true);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
+				getPrimaryShape().repaint();
 			} // Holds at between
 				break;
 
@@ -338,6 +352,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(false);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
+				getPrimaryShape().repaint();
 			} // Not holds at between
 				break;
 
@@ -395,7 +410,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 							.execute(new ICommandProxy(behavDescOperation));
 
 					// Setting the property of Happens
-					
+
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
 							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
 					SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
@@ -425,7 +440,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private HoldsAt holdsAtSelected(boolean isHolding) {
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(
+					editFilesPath + "/default.contextRelationmodel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -510,7 +526,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationmodel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(
+					editFilesPath + "/default.contextRelationmodel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -524,6 +541,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			showContextRelationsDialog.setElements(contextRelationsNameArray);
 			showContextRelationsDialog.setMultipleSelection(false);
 			showContextRelationsDialog.setTitle("Select a Context Relation");
+
 			// User pressed cancel
 			if (showContextRelationsDialog.open() != Window.OK) {
 				return null;
@@ -534,6 +552,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int[] timeSelectedArray = createMultipleTimeInstantsDialog();
+			if (timeSelectedArray == null)
+				return null;
+
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004,
@@ -550,7 +571,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAtBetween = (HoldsAtBetweenImpl) cra.resolve();
 
-					// Setting the happens EReference of the Behavioural Description
+					// Setting the holdsAtBetween EReference of the Behavioural Description
 					SetRequest setRequestHoldsAtBetween = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAtBetweens(), newHoldsAtBetween);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAtBetween);
@@ -601,7 +622,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[bd.getTimeInstants()];
-		System.out.println("NUMBERS: "+ bd.getTimeInstants());
+		System.out.println("NUMBERS: " + bd.getTimeInstants());
 		for (int i = 0; i < bd.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
@@ -632,9 +653,15 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		timeInstantDialog.setMultipleSelection(true);
 		timeInstantDialog.setTitle("Select TWO time instants");
 		// user pressed cancel
-		if (timeInstantDialog.open() != Window.OK) {
-			return null;
-		}
+		do {
+			if (timeInstantDialog.open() != Window.OK) {
+				return null;
+			} else if (timeInstantDialog.getResult().length < 2) {
+				MessageDialog.openError(null, "Error",
+						"You must select two time instants in order to create a \"Holds At Between\" predicate");
+			}
+		} while (timeInstantDialog.getResult().length < 2);
+
 		String timeSelection1 = (String) timeInstantDialog.getResult()[0];
 		String timeSelection2 = (String) timeInstantDialog.getResult()[1];
 		System.out.println("time selected: " + timeSelection1);

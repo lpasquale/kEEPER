@@ -10,6 +10,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 
 import model.Happens;
 import model.HoldsAt;
@@ -51,16 +52,19 @@ public class HypothesisFigure extends Shape {
 	@Override
     protected void outlineShape(Graphics graphics) {  
 
-        ArrayList<RectangleFigure> sr = new ArrayList<RectangleFigure>();
         int mainWidth = r.getSize().width();
         int mainHeight = r.getSize().height();
         int mainX = r.getLocation().x;
         int mainY = r.getLocation().y;
-        int k = 10;
         int length = mainWidth/(h.getTimeInstants()+1);
-        //System.out.println("A:" + mainWidth +" B:" +  mainHeight +" C:" +  mainX + " D:" + mainY );
-        graphics.setForegroundColor(new Color(null, 129, 23, 45));
         
+        // Creating title of the behavioural description
+        graphics.setForegroundColor(new Color(null, 0, 0, 0));
+        graphics.setFont(new Font(null, "Arial", 15, 1));
+        if (h.getName() != null){
+    		Point label = new Point(mainX + 6, mainY + 10);
+    		graphics.drawString(h.getName(), label);
+        }
         // Creating main line
         for (int i = -2; i < 3; i++){
         	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
@@ -74,7 +78,7 @@ public class HypothesisFigure extends Shape {
         	graphics.drawLine(p1, p2);
 
         }
-        
+        graphics.setFont(new Font(null, "Arial", 10, 1));
         if (!h.getHappens().isEmpty()){
         	System.out.println("Creating point for events");
         	for (int i = 0; i < h.getHappens().size(); i++){

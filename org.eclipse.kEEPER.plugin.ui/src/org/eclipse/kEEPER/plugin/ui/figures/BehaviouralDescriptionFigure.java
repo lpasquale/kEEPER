@@ -1,38 +1,19 @@
 package org.eclipse.kEEPER.plugin.ui.figures;
 
-import java.awt.Component;
 
 
-import java.awt.EventQueue;
-import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 //import javax.swing.JDialog;
 //import javax.swing.JFrame;
 //import javax.swing.JOptionPane;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Figure;
-import org.eclipse.draw2d.FreeformLayout;
-import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.LineBorder;
-import org.eclipse.draw2d.MouseEvent;
-import org.eclipse.draw2d.MouseListener;
-import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
-import org.eclipse.draw2d.ToolbarLayout;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
-import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.dialogs.IInputValidator;
-import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
@@ -40,10 +21,6 @@ import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
-
-import org.eclipse.emf.common.util.EList;
-
-
 
 import org.eclipse.draw2d.Graphics;
 
@@ -83,17 +60,22 @@ public class BehaviouralDescriptionFigure extends Shape{
 		@Override
 	    protected void outlineShape(Graphics graphics) {  
 
-	        ArrayList<RectangleFigure> sr = new ArrayList<RectangleFigure>();
 	        int mainWidth = r.getSize().width();
 	        int mainHeight = r.getSize().height();
 	        int mainX = r.getLocation().x;
 	        int mainY = r.getLocation().y;
-	        int k = 10;
 	        int length = mainWidth/(bd.getTimeInstants()+1);
-	        //System.out.println("A:" + mainWidth +" B:" +  mainHeight +" C:" +  mainX + " D:" + mainY );
-	        graphics.setForegroundColor(new Color(null, 129, 23, 45));
-	        
+	       
+	        // Creating title of the behavioural description
+	        graphics.setForegroundColor(new Color(null, 0, 0, 0));
+	        graphics.setFont(new Font(null, "Arial", 15, 1));
+	        if (bd.getName() != null){
+        		Point label = new Point(mainX + 6, mainY + 10);
+        		graphics.drawString(bd.getName(), label);
+	        }
+	       
 	        // Creating main line
+	        graphics.setForegroundColor(new Color(null, 129, 23, 45));
 	        for (int i = -2; i < 3; i++){
 	        	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
 	        }
@@ -106,7 +88,7 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        	graphics.drawLine(p1, p2);
 
 	        }
-	        
+	        graphics.setFont(new Font(null, "Arial", 10, 1));
 	        if (!bd.getHappens().isEmpty()){
 	        	for (int i = 0; i < bd.getHappens().size(); i++){
 	        		graphics.setForegroundColor(new Color(null, 0, 0, 255));

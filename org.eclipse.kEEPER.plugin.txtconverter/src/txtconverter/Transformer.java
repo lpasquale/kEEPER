@@ -106,11 +106,15 @@ public class Transformer {
 					writer.printf(", %s(%c)", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
 				}
 				writer.printf(", %s(%c).", ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName(), ((PrimitiveEvent) env.getEvents().get(i)).getObserver().getType().getName().charAt(0));
-
+				writer.println();
+				writer.println();
+				if (i == env.getEvents().size() -1)
+					writer.println();
 			}
+
 		} // Primitive events
 		
-		writer.println("\n\n% ***** Complex Events *****\n");		
+		writer.println("% ***** Complex Events *****\n");		
 		writer.printf("event(V):-\nce(V)\n\n");
 		// Creating list of complex events
 		for (int i = 0; i < env.getEvents().size(); i++){
@@ -129,7 +133,10 @@ public class Transformer {
 					else
 						writer.printf(", %s(%c).", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
 				}
-				
+				if (i == env.getEvents().size() -1)
+					writer.println();
+				writer.println();
+				writer.println();
 			}
 		} // Complex events
 		// Events
@@ -137,7 +144,7 @@ public class Transformer {
 		
 		// BEHAVIOURAL DESCRIPTIONS OUTPUT ALGORITHM
 		
-		writer.println("\n\n% ***** Composite Definitions *****\n");
+		writer.println("% ***** Composite Definitions *****\n");
 		
 		// TODO: Better version of the algorithm
 	/*	for (int i = 0; i < env.getEvents().size(); i++){
