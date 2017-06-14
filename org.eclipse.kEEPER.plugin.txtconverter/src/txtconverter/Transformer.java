@@ -92,7 +92,7 @@ public class Transformer {
 		
 		writer.println("\n\n% ********* Behaviour Description *********\n");
 		writer.println("% ***** Primitive Events *****\n");
-		writer.println("event(V):-\n\tpe(V)\n\n");
+		writer.println("event(V):-\n\tpe(V).\n\n");
 		// Creating list of primitive events
 		for (int i = 0; i < env.getEvents().size(); i++){
 			if (env.getEvents().get(i) instanceof PrimitiveEvent){
@@ -115,7 +115,7 @@ public class Transformer {
 		} // Primitive events
 		
 		writer.println("% ***** Complex Events *****\n");		
-		writer.printf("event(V):-\nce(V)\n\n");
+		writer.printf("event(V):-\nce(V).\n\n");
 		// Creating list of complex events
 		for (int i = 0; i < env.getEvents().size(); i++){
 			if (env.getEvents().get(i) instanceof ComplexEvent){

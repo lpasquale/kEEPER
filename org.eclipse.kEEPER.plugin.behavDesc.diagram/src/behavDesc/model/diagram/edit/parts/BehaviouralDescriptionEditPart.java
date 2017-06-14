@@ -481,7 +481,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAt = (HoldsAtImpl) cra.resolve();
 
-					// Setting the happens EReference of the Behavioural Description
+					// Setting the HoldsAt EReference of the Behavioural Description
 					SetRequest setRequestHoldsAt = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAts(), newHoldsAt);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAt);
