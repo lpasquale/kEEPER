@@ -41,9 +41,9 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure contentPane;
-	
-	private IEditorPart activeEditor; 
-	
+
+	private IEditorPart activeEditor;
+
 	private ModelDiagramEditor editor;
 
 	/**
@@ -56,12 +56,6 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	*/
 	public ContextRelationEditPart(View view) {
 		super(view);
-		System.out.println("Constructor of ContextRelationEditPart");
-		
-		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-				.getActiveEditor();
-		System.out.println("activeEditor: "+ activeEditor);
-		
 	}
 
 	/**

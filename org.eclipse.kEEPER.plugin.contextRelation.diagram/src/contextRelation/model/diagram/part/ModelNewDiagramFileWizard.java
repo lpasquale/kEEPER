@@ -77,7 +77,7 @@ public class ModelNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(contextRelation.model.diagram.part.ModelDiagramEditorUtil
-				.getUniqueFileName(filePath, fileName, "contextRelationmodel_diagram")); //$NON-NLS-1$
+				.getUniqueFileName(filePath, fileName, "contextRelationModel_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				contextRelation.model.diagram.part.Messages.ModelNewDiagramFileWizard_RootSelectionPageName);
