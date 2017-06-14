@@ -2,6 +2,11 @@ package txtconverter;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,7 +73,16 @@ public class Loader {
 		
 		/************ SECOND VERSION ALGORITHM **********/
 		Environment env = new EnvironmentImpl();
-		
+		Path path1 = Paths.get(filePath + "/default.bdModel");
+		Path path2 = Paths.get(filePath + "/default.hypothesisModel");
+		Charset charset = StandardCharsets.UTF_8;
+		String content1 = new String(Files.readAllBytes(path1), charset);
+		String content2 = new String(Files.readAllBytes(path2), charset);
+		content1 = content1.replaceAll("file:" + filePath +"/", "");
+		content2 = content2.replaceAll("file:" + filePath +"/", "");
+		Files.write(path1, content1.getBytes(charset));
+		Files.write(path2, content2.getBytes(charset));
+
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap()
 		.put(Resource.Factory.Registry.DEFAULT_EXTENSION,new XMIResourceFactoryImpl());
 
