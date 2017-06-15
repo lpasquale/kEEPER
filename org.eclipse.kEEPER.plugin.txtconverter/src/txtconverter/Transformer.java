@@ -369,12 +369,8 @@ public class Transformer {
 					Type type = iter.next();
 					writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
 				}
-				writer.printf(" time(T).\n");
-				
+				writer.printf(" time(T).\n");	
 			}
-				
-				
-				
 		} writer.println();
 		
 		

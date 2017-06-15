@@ -80,33 +80,53 @@ public class HypothesisFigure extends Shape {
         }
         graphics.setFont(new Font(null, "Arial", 10, 1));
         if (!h.getHappens().isEmpty()){
+        	Integer[] occupiedLayers = new Integer[h.getTimeInstants()];
+    		for (int j = 0; j < occupiedLayers.length; j++){
+    			occupiedLayers[j] = 1;
+    		}
         	for (int i = 0; i < h.getHappens().size(); i++){
         		graphics.setForegroundColor(new Color(null, 0, 0, 255));
         		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
-        		Point ovalStartingPoint = new Point(mainX + length*h.getHappens().get(i).getTime() -3 , mainY + mainHeight/2 - 20);
-        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-        		Point label = new Point(mainX + length*h.getHappens().get(i).getTime() -3 -10, mainY + mainHeight/2 - 20 - 10);
+        		int k = occupiedLayers[h.getHappens().get(i).getTime()-1];
+        		int l = h.getHappens().get(i).getEvent().getName().length(); // String length of the name of the associated event
+        		Point ovalStartingPoint = new Point(mainX + length*h.getHappens().get(i).getTime() -2 , mainY + mainHeight/2 - 20*k);
+        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 4, 4);
+        		Point label = new Point(mainX + length*h.getHappens().get(i).getTime() -3 -l*2, mainY + mainHeight/2 - 20*k - 11);
         		graphics.drawString(h.getHappens().get(i).getEvent().getName(), label);
+        		occupiedLayers[h.getHappens().get(i).getTime()-1]++;
+
         	}
         }
         
+        Integer[] bottomOccupiedLayers = new Integer[h.getTimeInstants()];
+        for (int j = 0; j < bottomOccupiedLayers.length; j++){
+        	bottomOccupiedLayers[j] = 1;
+		}
         if (!h.getHoldsAts().isEmpty()){
+        	
 	        for (int i = 0; i < h.getHoldsAts().size(); i++){
 	        	
 	        	if (h.getHoldsAts().get(i).isIsHolding())
 	        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
 	        	else
 	        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
-	        	
-	        	Point ovalStartingPoint = new Point(mainX + length*h.getHoldsAts().get(i).getTime() -3 , mainY + mainHeight/2 + 20);
-	        	graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-	        	Point label = new Point(mainX + length*h.getHoldsAts().get(i).getTime() -3 -10, mainY + mainHeight/2 + 20 + 7);
+        		int k = bottomOccupiedLayers[h.getHoldsAts().get(i).getTime()-1];
+        		int l = h.getHoldsAts().get(i).getContextRelation().getName().length(); // String length of the name of the associated context relation
+	        	PointList pointList = new PointList();
+	        	pointList.addPoint(mainX + length*h.getHoldsAts().get(i).getTime() -2 , mainY + mainHeight/2 + 20*k);
+	        	pointList.addPoint(mainX + length*h.getHoldsAts().get(i).getTime() -2 , mainY + mainHeight/2 + 20*k + 4);
+	        	pointList.addPoint(mainX + length*h.getHoldsAts().get(i).getTime() -2 + 4 , mainY + mainHeight/2 + 20*k + 4);
+	        	pointList.addPoint(mainX + length*h.getHoldsAts().get(i).getTime() -2 + 4 , mainY + mainHeight/2 + 20*k);
+	        	graphics.drawPolygon(pointList);
+	        	Point label = new Point(mainX + length*h.getHoldsAts().get(i).getTime() -3 -l*2, mainY + mainHeight/2 + 20*k + 7);
         		graphics.drawString(h.getHoldsAts().get(i).getContextRelation().getName(), label);
+        		bottomOccupiedLayers[h.getHoldsAts().get(i).getTime()-1]++;
 	        }
 
         }
         
         if (!h.getHoldsAtBetweens().isEmpty()){
+        	int max = 0;
 	        for (int i = 0; i < h.getHoldsAtBetweens().size(); i++){
 	        	
 	        	if (h.getHoldsAtBetweens().get(i).isIsHolding())
@@ -114,10 +134,21 @@ public class HypothesisFigure extends Shape {
 	        	else
 	        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 	        	
-	        	Point rectangleP1 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 40);
-	        	Point rectangleP2 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 45);
-	        	Point rectangleP3 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 45);
-	        	Point rectangleP4 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 40);
+	        	for (int j = h.getHoldsAtBetweens().get(i).getInitialTime(); j <= h.getHoldsAtBetweens().get(i).getEndingTime(); j++){
+	        		
+	        		if (bottomOccupiedLayers[j-1] > max)
+	        			max = bottomOccupiedLayers[j-1];
+	        	}
+	        	for (int j = h.getHoldsAtBetweens().get(i).getInitialTime(); j <= h.getHoldsAtBetweens().get(i).getEndingTime(); j++){
+
+	        			bottomOccupiedLayers[j-1] = max +1;
+	        	}
+        		int k = max;
+
+	        	Point rectangleP1 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 20*k);
+	        	Point rectangleP2 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 20*k + 5 );
+	        	Point rectangleP3 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 20*k + 5);
+	        	Point rectangleP4 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 20*k);
 	        	PointList points = new PointList();
 	        	points.addPoint(rectangleP1);
 	        	points.addPoint(rectangleP2);
@@ -125,21 +156,11 @@ public class HypothesisFigure extends Shape {
 	        	points.addPoint(rectangleP4);
 	        	
 	        	graphics.drawPolygon(points);
-	        	Point label = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
+	        	Point label = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +20*k + 5 + 5);
         		graphics.drawString(h.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
-
 	        }
-
         }
-        
-      /* PointList pointList = new PointList();
-        pointList.addPoint(new Point(mainX+2,mainY+13));
-        pointList.addPoint(new Point(mainX+10,mainY+23));
-        pointList.addPoint(new Point(mainX+22,mainY+31));
-        pointList.addPoint(new Point(mainX+23,mainY+36));
-
-        graphics.drawPolygon(pointList); */
-    } 
+    }
 
     @Override
     public void paintFigure(Graphics graphics) {

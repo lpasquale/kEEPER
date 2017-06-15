@@ -86,36 +86,55 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        	graphics.drawLine(p1, p2);
 
 	        }
-	        graphics.setFont(new Font(null, "Arial", 10, 1));
+	        graphics.setFont(new Font(null, "Arial", 9, 1));
 	        if (!bd.getHappens().isEmpty()){
+	        	Integer[] occupiedLayers = new Integer[bd.getTimeInstants()];
+        		for (int j = 0; j < occupiedLayers.length; j++){
+        			occupiedLayers[j] = 1;
+        		}
 	        	for (int i = 0; i < bd.getHappens().size(); i++){
 	        		graphics.setForegroundColor(new Color(null, 0, 0, 255));
 	        		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
-	        		Point ovalStartingPoint = new Point(mainX + length*bd.getHappens().get(i).getTime() -3 , mainY + mainHeight/2 - 20);
-	        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-	        		Point label = new Point(mainX + length*bd.getHappens().get(i).getTime() -3 -10, mainY + mainHeight/2 - 20 - 10);
+	        		int k = occupiedLayers[bd.getHappens().get(i).getTime()-1];
+	        		int l = bd.getHappens().get(i).getEvent().getName().length(); // String length of the name of the associated event
+	        		Point ovalStartingPoint = new Point(mainX + length*bd.getHappens().get(i).getTime() -2 , mainY + mainHeight/2 - 20*k);
+	        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 4, 4);
+	        		Point label = new Point(mainX + length*bd.getHappens().get(i).getTime() -3 -l*2, mainY + mainHeight/2 - 20*k - 11);
 	        		graphics.drawString(bd.getHappens().get(i).getEvent().getName(), label);
+	        		occupiedLayers[bd.getHappens().get(i).getTime()-1]++;
+
 	        	}
 	        	
 	        }
-	        
+	        Integer[] bottomOccupiedLayers = new Integer[bd.getTimeInstants()];
+	        for (int j = 0; j < bottomOccupiedLayers.length; j++){
+	        	bottomOccupiedLayers[j] = 1;
+    		}
 	        if (!bd.getHoldsAts().isEmpty()){
+	        	
 		        for (int i = 0; i < bd.getHoldsAts().size(); i++){
 		        	
 		        	if (bd.getHoldsAts().get(i).isIsHolding())
 		        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
-		        	
-		        	Point ovalStartingPoint = new Point(mainX + length*bd.getHoldsAts().get(i).getTime() -3 , mainY + mainHeight/2 + 20);
-		        	graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-		        	Point label = new Point(mainX + length*bd.getHoldsAts().get(i).getTime() -3 -10, mainY + mainHeight/2 + 20 + 7);
+	        		int k = bottomOccupiedLayers[bd.getHoldsAts().get(i).getTime()-1];
+	        		int l = bd.getHoldsAts().get(i).getContextRelation().getName().length(); // String length of the name of the associated context relation
+		        	PointList pointList = new PointList();
+		        	pointList.addPoint(mainX + length*bd.getHoldsAts().get(i).getTime() -2 , mainY + mainHeight/2 + 20*k);
+		        	pointList.addPoint(mainX + length*bd.getHoldsAts().get(i).getTime() -2 , mainY + mainHeight/2 + 20*k + 4);
+		        	pointList.addPoint(mainX + length*bd.getHoldsAts().get(i).getTime() -2 + 4 , mainY + mainHeight/2 + 20*k + 4);
+		        	pointList.addPoint(mainX + length*bd.getHoldsAts().get(i).getTime() -2 + 4 , mainY + mainHeight/2 + 20*k);
+		        	graphics.drawPolygon(pointList);
+		        	Point label = new Point(mainX + length*bd.getHoldsAts().get(i).getTime() -3 -l*2, mainY + mainHeight/2 + 20*k + 7);
 	        		graphics.drawString(bd.getHoldsAts().get(i).getContextRelation().getName(), label);
+	        		bottomOccupiedLayers[bd.getHoldsAts().get(i).getTime()-1]++;
 		        }
 
 	        }
 	        
 	        if (!bd.getHoldsAtBetweens().isEmpty()){
+	        	int max = 0;
 		        for (int i = 0; i < bd.getHoldsAtBetweens().size(); i++){
 		        	
 		        	if (bd.getHoldsAtBetweens().get(i).isIsHolding())
@@ -123,10 +142,21 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 		        	
-		        	Point rectangleP1 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 40);
-		        	Point rectangleP2 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 45);
-		        	Point rectangleP3 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 45);
-		        	Point rectangleP4 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 40);
+		        	for (int j = bd.getHoldsAtBetweens().get(i).getInitialTime(); j <= bd.getHoldsAtBetweens().get(i).getEndingTime(); j++){
+		        		
+		        		if (bottomOccupiedLayers[j-1] > max)
+		        			max = bottomOccupiedLayers[j-1];
+		        	}
+		        	for (int j = bd.getHoldsAtBetweens().get(i).getInitialTime(); j <= bd.getHoldsAtBetweens().get(i).getEndingTime(); j++){
+
+		        			bottomOccupiedLayers[j-1] = max +1;
+		        	}
+	        		int k = max;
+
+		        	Point rectangleP1 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 20*k);
+		        	Point rectangleP2 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 20*k + 5 );
+		        	Point rectangleP3 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 20*k + 5);
+		        	Point rectangleP4 = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 20*k);
 		        	PointList points = new PointList();
 		        	points.addPoint(rectangleP1);
 		        	points.addPoint(rectangleP2);
@@ -134,11 +164,11 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	points.addPoint(rectangleP4);
 		        	
 		        	graphics.drawPolygon(points);
-		        	Point label = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
+		        	Point label = new Point(mainX + length*bd.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +20*k + 5 + 5);
 	        		graphics.drawString(bd.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
 		        }
 	        }   
-	    } 
+	    }
 
 	    @Override
 	    public void paintFigure(Graphics graphics) {

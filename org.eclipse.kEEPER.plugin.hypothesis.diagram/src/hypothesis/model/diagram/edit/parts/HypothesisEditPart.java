@@ -192,7 +192,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		figure.setLayoutManager(new StackLayout());
 		RectangleFigure r = new RectangleFigure();
 		r.setLineWidth(5);
-		r.setSize(200, 140);
+		r.setSize(270, 210);
 		figure.add(r);
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
@@ -260,6 +260,11 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
+			// Proceed only if the user has already set up the number of time instants
+			if (h.getTimeInstants() == 0) {
+				MessageDialog.openError(null, "Error", "You must define the number of time instants before!");
+				return;
+			}
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
 			dialog.setElements(
 					new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });

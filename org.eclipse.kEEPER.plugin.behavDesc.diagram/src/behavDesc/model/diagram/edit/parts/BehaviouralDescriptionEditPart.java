@@ -225,7 +225,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		figure.setLayoutManager(new StackLayout());
 		RectangleFigure r = new RectangleFigure();
 		r.setLineWidth(5);
-		r.setSize(200, 140);
+		r.setSize(270, 210);
 		figure.add(r);
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
