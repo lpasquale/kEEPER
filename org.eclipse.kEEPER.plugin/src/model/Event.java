@@ -2,6 +2,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -65,6 +67,10 @@ public interface Event extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
+	
+	ArrayList<Parameter> getCorrectedParams();
+	
+	void setCorrectedParams();
 
 	Agent getAgent();
 

@@ -2,11 +2,14 @@
  */
 package model.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
+import model.Parameter;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -189,6 +192,18 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				return agent != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	@Override
+	public ArrayList<Parameter> getCorrectedParams() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setCorrectedParams() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

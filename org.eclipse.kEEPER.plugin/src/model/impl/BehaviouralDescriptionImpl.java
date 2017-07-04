@@ -3,6 +3,8 @@
 package model.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import model.BehaviouralDescription;
 import model.Happens;
@@ -109,9 +111,10 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected int timeInstants = TIME_INSTANTS_EDEFAULT;
-	
 
 	
+    protected Map<String, Integer> m = new HashMap<String, Integer>();
+
 	//private ModelDiagramEditor editor;
 
 	/**
@@ -198,7 +201,6 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	public int getTimeInstants() {
 		return timeInstants;
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

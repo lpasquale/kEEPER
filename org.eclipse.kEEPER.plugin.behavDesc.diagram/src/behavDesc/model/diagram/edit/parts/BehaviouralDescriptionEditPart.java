@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JOptionPane;
 
@@ -65,6 +66,8 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbench;
@@ -75,14 +78,25 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
 
 import behavDesc.model.diagram.part.ModelDiagramEditor;
+import model.Agent;
 import model.BehaviouralDescription;
+import model.ComplexEvent;
+import model.Event;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.ModelPackage;
+import model.Observer;
+import model.Parameter;
+import model.impl.AgentImpl;
+import model.impl.ComplexEventImpl;
+import model.impl.EventImpl;
 import model.impl.HappensImpl;
 import model.impl.HoldsAtBetweenImpl;
 import model.impl.HoldsAtImpl;
+import model.impl.ObserverImpl;
+import model.impl.ParameterImpl;
+import model.impl.PrimitiveEventImpl;
 
 /**
  * @generated
@@ -148,6 +162,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 
+		
+		
 		System.out.println("FileName: " + diagramFileName + "  Domain File path: " + editFilesPath);
 		System.out.println("Final editor: " + editor);
 	}
@@ -321,7 +337,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
 				getPrimaryShape().repaint();
-			} // Happens
+				} // Happens
 				break;
 
 			case "Holds at": {
@@ -329,7 +345,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
-			} // Holds at
+				} // Holds at
 				break;
 
 			case "Not Holds at": {
@@ -338,14 +354,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
 
-			} // Holds at
+				} // Holds at
 				break;
 			case "Holds at between": {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(true);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
-			} // Holds at between
+				} // Holds at between
 				break;
 
 			case "Not holds at between": {
@@ -353,7 +369,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
-			} // Not holds at between
+				} // Not holds at between
 				break;
 
 			}
@@ -367,7 +383,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		try {
 			// Parsing event file
 			LoadEvents loadEvents = new LoadEvents(editFilesPath + "/default.eventModel");
-
+			
+			Display display = PlatformUI.getWorkbench().getDisplay();
+			Shell shell = new Shell(display);
+			
+			Event ev = null;
+			
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
 			String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
@@ -383,11 +404,39 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			}
 
 			String eventSelected = (String) showEventsDialog.getResult()[0];
+			
 			System.out.println("event selected: " + eventSelected);
-
+			int index = 0;
+			do{
+				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(index).getName())){
+					ev = loadEvents.getEnvironment().getEvents().get(index);
+				}
+				index++;
+			}while ((index < loadEvents.getEnvironment().getEvents().size()) && ev == null);
+			
+			// Requests to the user if he/she wants to use the same parameters or new ones
+			MessageDialog dialog = new MessageDialog(shell, 
+					"Parameter Selection", 
+					null,
+					"Do you want to use the predefined parameters?", 
+					MessageDialog.QUESTION, 
+					new String[] { "Same parameters","Choose new parameters"}, 
+					0);
+			int result = dialog.open();
+			System.out.println("REsult: " + result);
+			// If the user chooses to create new parameter(s)
+			if (result == 1) {
+				
+				handlingEventParameters(ev, shell);
+				
+			}
+			
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int timeSelection = createSingleTimeInstantsDialog();
-
+			
+			if (timeSelection == -1)
+				return null;
+			
 			// Creating Happens
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002, editor.getDiagramEditPart());
@@ -402,15 +451,16 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHappens = (HappensImpl) cra.resolve();
+					
 					// Setting the happens EReference of the Behavioural Description
 					SetRequest setRequestHappens = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_Happens(), newHappens);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHappens);
 					editor.getDiagramEditDomain().getDiagramCommandStack()
 							.execute(new ICommandProxy(behavDescOperation));
+					
 
 					// Setting the property of Happens
-
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
 							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
 					SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
@@ -426,6 +476,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 							ModelPackage.eINSTANCE.getHappens_Event(), loadEvents.getEnvironment().getEvents().get(i));
 					SetValueCommand operation = new SetValueCommand(setRequestEvent);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+
 				}
 			}
 
@@ -465,7 +516,10 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int timeSelection = createSingleTimeInstantsDialog();
-
+			
+			if (timeSelection == -1)
+				return null;
+			
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003, editor.getDiagramEditPart());
@@ -673,5 +727,80 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		;
 
 		return timeSelectedArray;
+	}
+	
+	private void handlingEventParameters(Event ev, Shell shell){
+		
+		ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
+		
+		ElementListSelectionDialog parametersSelection = new ElementListSelectionDialog(null, new LabelProvider());
+	
+		ArrayList<String> param = new ArrayList<String>();
+		
+		System.out.println("Evento selezionato: " + ev);
+	
+		param.add(ev.getAgent().getType().getName());
+		
+		for (int i = 0; i < ev.getParameters().size(); i++){
+			System.out.println("Param " + ev.getParameters().get(i).getType().getName());
+			
+			param.add(ev.getParameters().get(i).getType().getName());
+		}
+		if (ev instanceof PrimitiveEventImpl){
+			param.add(((PrimitiveEventImpl)ev).getObserver().getType().getName());
+		}
+
+		parametersSelection.setElements(param.toArray());
+		parametersSelection.setMultipleSelection(true);
+		parametersSelection.setTitle("Select the parameters of the event you want to create");
+		parametersSelection.open();
+		
+		
+		EventParametersDialog dialog = new EventParametersDialog(parametersSelection.getResult(), shell);
+		dialog.create();
+		if (dialog.open() == Window.OK) {
+			
+			// Handling result
+			// Loop for each parameter the user wants to change
+			 Iterator it = dialog.getMap().entrySet().iterator();
+			 
+			 while (it.hasNext()) {
+				 Map.Entry entry = (Map.Entry)it.next();
+			    // Stampa a schermo la coppia chiave-valore;
+				 if (((String)entry.getKey()).equals(ev.getAgent().getType().getName())){
+						Agent newAgent = new AgentImpl();
+						newAgent.setType(ev.getAgent().getType());
+						newAgent.setNewNumber((int) entry.getValue());
+						newParameters.add(newAgent);
+				 }
+				 for (int j = 0; j < ev.getParameters().size(); j++){
+					 if (((String)entry.getKey()).equals(ev.getParameters().get(j).getType().getName())){
+							// Creation of new parameter
+							Parameter newParam = new ParameterImpl();
+							newParam.setType(ev.getParameters().get(j).getType());
+							newParam.setNewNumber((int) entry.getValue());
+							newParameters.add(newParam);
+					 }
+				 }
+
+				 if (ev instanceof PrimitiveEventImpl){
+					 if (((String)entry.getKey()).equals(((PrimitiveEventImpl)ev).getObserver().getType().getName())){
+						Observer newObserver = new ObserverImpl();
+						newObserver.setType(((PrimitiveEventImpl) ev).getObserver().getType());
+						newObserver.setNewNumber((int) entry.getValue());
+						newParameters.add(newObserver);
+					 }
+				 }
+				 
+
+			    }
+			for (int i = 0; i < newParameters.size(); i++){
+				System.out.println(newParameters.get(i).getType().getName() + "  " +newParameters.get(i).getNewNumber());
+
+			}
+			System.out.println(newParameters);
+			
+		}
+
 	}
 }

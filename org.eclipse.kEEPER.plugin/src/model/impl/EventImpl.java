@@ -2,6 +2,7 @@
  */
 package model.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import model.Event;
@@ -64,6 +65,9 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	protected EList<Parameter> parameters;
 
+	
+	protected ArrayList<Parameter> correctedParams; 
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +119,14 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 		}
 		return parameters;
 	}
+	
+	public ArrayList<Parameter> getCorrectedParam(){
+		return correctedParams;
+	}
 
+	public void setCorrectedParam(ArrayList<Parameter> c){
+		correctedParams = c;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

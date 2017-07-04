@@ -20,7 +20,7 @@ public class ObserverImpl extends ParameterImpl implements Observer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObserverImpl() {
+	public ObserverImpl() {
 		super();
 	}
 

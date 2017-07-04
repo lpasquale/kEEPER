@@ -52,6 +52,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 */
 	protected int number = NUMBER_EDEFAULT;
 
+	protected int newNumber;
+	
 	/**
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -97,7 +99,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterImpl() {
+	public ParameterImpl() {
 		super();
 	}
 
@@ -132,6 +134,14 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__NUMBER, oldNumber, number));
 	}
 
+	public void setNewNumber(int newNumber) {
+		this.newNumber = newNumber;
+	}
+	
+	public int getNewNumber(){
+		return newNumber;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

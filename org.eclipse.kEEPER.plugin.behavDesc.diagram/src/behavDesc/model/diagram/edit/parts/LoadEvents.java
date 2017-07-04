@@ -19,7 +19,9 @@ import model.Environment;
 import model.Event;
 import model.ModelFactory;
 import model.ModelPackage;
+import model.PrimitiveEvent;
 import model.impl.EnvironmentImpl;
+import model.impl.PrimitiveEventImpl;
 
 public class LoadEvents {
 	
@@ -46,6 +48,14 @@ public class LoadEvents {
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 
+		// Removing all primitive events. We only need complex events here for the behavioural description
+		for (int i = 0; i < env.getEvents().size(); i++){
+			if (env.getEvents().get(i) instanceof PrimitiveEventImpl){
+				env.getEvents().remove(i);
+				System.out.println("Element  " +env.getEvents().get(i).getName() + " removed");
+				i--;	
+			}
+		}
 		System.out.println(env.toString());
 		System.out.println(env.getEvents().size());
 		
