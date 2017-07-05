@@ -76,15 +76,18 @@ public class Transformer {
 		writer.println("\n\n% **** Context Relations ****\n");
 		//Creating list of Context Relations
 		for (int i = 0; i < env.getContextRelations().size(); i++){
-			writer.printf("fluent(%s", env.getContextRelations().get(i).getName());
-			writeContextRelationParameters(env.getContextRelations().get(i), writer);
-			writer.printf("):-\n\t");
-			for (int j = 0; j < env.getContextRelations().get(i).getParameters().size(); j++){
-				if (j != env.getContextRelations().get(i).getParameters().size()-1)
-					writer.printf("%s(%c), ", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));
-				else
-					writer.printf("%s(%c).\n", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));				
+			if (!env.getContextRelations().get(i).isFlag()){
+				writer.printf("fluent(%s", env.getContextRelations().get(i).getName());
+				writeContextRelationParameters(env.getContextRelations().get(i), writer);
+				writer.printf("):-\n\t");
+				for (int j = 0; j < env.getContextRelations().get(i).getParameters().size(); j++){
+					if (j != env.getContextRelations().get(i).getParameters().size()-1)
+						writer.printf("%s(%c), ", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));
+					else
+						writer.printf("%s(%c).\n", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),Character.toUpperCase(env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0)));				
+				}
 			}
+			
 		} // Context Relations
 		
 		
@@ -95,10 +98,10 @@ public class Transformer {
 		writer.println("event(V):-\n\tpe(V).\n\n");
 		// Creating list of primitive events
 		for (int i = 0; i < env.getEvents().size(); i++){
-			if (env.getEvents().get(i) instanceof PrimitiveEvent){
+			if ((env.getEvents().get(i) instanceof PrimitiveEvent)&&(!env.getEvents().get(i).isFlag())){
 				System.out.println("Primitive event");
 				writer.printf("pe("+ env.getEvents().get(i).getName());
-				writeEventParameters(env.getEvents().get(i), writer);
+				writeEventParameters(env.getEvents().get(i), writer, false);
 				writer.printf("):-\n\t");
 				
 				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), Character.toUpperCase(env.getEvents().get(i).getAgent().getType().getName().charAt(0)));
@@ -118,10 +121,10 @@ public class Transformer {
 		writer.printf("event(V):-\nce(V).\n\n");
 		// Creating list of complex events
 		for (int i = 0; i < env.getEvents().size(); i++){
-			if (env.getEvents().get(i) instanceof ComplexEvent){
+			if ((env.getEvents().get(i) instanceof ComplexEvent)&&(!env.getEvents().get(i).isFlag())){
 				writer.printf("ce("+ env.getEvents().get(i).getName());
 				
-				writeEventParameters(env.getEvents().get(i), writer);
+				writeEventParameters(env.getEvents().get(i), writer, false);
 				writer.printf("):-\n\t");
 				
 				writer.printf("%s(%c)", env.getEvents().get(i).getAgent().getType().getName(), Character.toUpperCase(env.getEvents().get(i).getAgent().getType().getName().charAt(0)));
@@ -163,7 +166,7 @@ public class Transformer {
 			} 
 			//writer.printf("happens("+ event.getName());
 			if (event != null){
-				writeEventParameters(event, writer);
+				writeEventParameters(event, writer, false);
 			}
 			
 			
@@ -222,35 +225,53 @@ public class Transformer {
 			writer.println("\ttrace(TR),");
 			
 			// Memorizing all the types of events and context relations related to the behavioural description
-			HashSet<Type> behTypes = new HashSet<Type>();
+			//HashSet<Parameter> behTypes = new HashSet<Parameter>();
+			ArrayList<Parameter> behTypes = new ArrayList<Parameter>();
 			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAts().size(); n++){
 				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAts().get(n).getContextRelation().getParameters().size(); m++){
-					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m).getType());
-				};
+					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m));
+				}
 			}
 			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); n++){
 				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().size(); m++){
-					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m).getType());
-				};
+					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m));
+				}
 			}
 			for (int n = 0; n < env.getBehavDescriptions().get(i).getHappens().size(); n++){
+					behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getEvent().getAgent());
 				for (int m = 0; m < env.getBehavDescriptions().get(i).getHappens().get(n).getEvent().getParameters().size(); m++){
-					behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getEvent().getParameters().get(m).getType());
-				};
+					behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getEvent().getParameters().get(m));
+				}
+				if  (env.getBehavDescriptions().get(i).getHappens().get(n).getEvent() instanceof PrimitiveEventImpl){
+					behTypes.add((((PrimitiveEventImpl)env.getBehavDescriptions().get(i).getHappens().get(n).getEvent()).getObserver()));
+				}
 			}
+			
+			// Removing doubles
+			for (int j = 0; j < behTypes.size(); j++){
+				int h = 0;
+				while (h < behTypes.size()){
+					if ((behTypes.get(j).getType().getName().equals(behTypes.get(h).getType().getName()))&&(h!=j) && (behTypes.get(j).getNumber() == behTypes.get(h).getNumber())){
+						behTypes.remove(h);
+						h--;
+					}
+					h++;
+				}
+			} 
 			// Writing all the types on file
-			Iterator<Type> iter = behTypes.iterator();
+			Iterator<Parameter> iter = behTypes.iterator();
 			System.out.println(iter.hasNext());
 			while(iter.hasNext()){
-				Type type = iter.next();
+				Parameter param = iter.next();
 			//	System.out.println(type.toString());
-				writer.println("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+				writer.println("\t"+param.getType().getName()+"("+Character.toUpperCase(param.getType().getName().charAt(0)) + ((param.getNumber() > 0) ? param.getNumber() + ")," : "),"));
 			}
 			
 			// Writing all time instants
 			for (int j = 0; j < times.size(); j++){
 				writer.println("\ttime(T"+times.get(j)+"),");				
 			}
+			
 			
 			// Writing all the time constraints
 			for (int j = 0; j < times.size(); j++){
@@ -261,15 +282,25 @@ public class Transformer {
 				}
 			}
 			
+			// Writing all the predicates
 			
+			// HOLDS AT
 			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){
 				HoldsAt h = env.getBehavDescriptions().get(i).getHoldsAts().get(j);
 				if (h.isIsHolding()){
-					writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
-
+					if (!env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().isFlag())
+						writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					else{
+						System.out.println("Trying to REPLACE THE DIGITS");
+						writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName().replaceAll("\\d", ""));
+						System.out.println(env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					}
 				}
 				else if (!h.isIsHolding()){
-					writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					if (!env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().isFlag())
+						writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					else
+						writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName().replaceAll("\\d", ""));
 
 				}
 				writeContextRelationParameters(env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation(), writer);
@@ -283,9 +314,17 @@ public class Transformer {
 						writer.printf(",\n");
 				}
 			}
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHappens().size(); j++){				
-				writer.printf("\thappens("+env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().getName());
-				writeEventParameters(env.getBehavDescriptions().get(i).getHappens().get(j).getEvent(), writer);
+			
+			// HAPPENS
+			for (int j = 0; j < env.getBehavDescriptions().get(i).getHappens().size(); j++){
+				if (!env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().isFlag())
+					writer.printf("\thappens("+env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().getName());
+				else{
+					System.out.println("Trying to REPLACE THE DIGITS");
+					writer.printf("\thappens("+env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().getName().replaceAll("\\d", ""));
+				}
+
+				writeEventParameters(env.getBehavDescriptions().get(i).getHappens().get(j).getEvent(), writer, true);
 				writer.printf(",T"+env.getBehavDescriptions().get(i).getHappens().get(j).getTime() +",TR)");
 				if (j < env.getBehavDescriptions().get(i).getHappens().size() - 1)
 					writer.printf(",\n");
@@ -296,13 +335,25 @@ public class Transformer {
 						writer.printf(",\n");
 				}
 			}
+			
+			// HOLDS AT BETWEEN
 			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); j++){
 				HoldsAtBetween h = env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(j);
 				if (h.isIsHolding()){
-					writer.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					if (!env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(j).getContextRelation().isFlag())
+						writer.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					else{
+						System.out.println("Trying to REPLACE THE DIGITS");
+						writer.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName().replaceAll("\\d", ""));
+					}
 				}
 				else if (!h.isIsHolding()){
-					writer.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					if (!env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(j).getContextRelation().isFlag())
+						writer.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					else{
+						System.out.println("Trying to REPLACE THE DIGITS");
+						writer.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName().replaceAll("\\d", ""));
+					}
 				}
 				writeContextRelationParameters(h.getContextRelation(), writer);
 				writer.printf(",T"+h.getEndingTime() +",TR)");
@@ -325,7 +376,7 @@ public class Transformer {
 		for (int i = 0; i < env.getContextRelations().size(); i++){
 			if (env.getContextRelations().get(i).getInitialComplexEvent() != null){
 				writer.printf("initiates("+ env.getContextRelations().get(i).getInitialComplexEvent().getName());
-				writeEventParameters(env.getContextRelations().get(i).getInitialComplexEvent(),writer);
+				writeEventParameters(env.getContextRelations().get(i).getInitialComplexEvent(),writer, false);
 				writer.printf(",");
 				writer.printf(env.getContextRelations().get(i).getName());
 				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
@@ -350,7 +401,7 @@ public class Transformer {
 			
 			if (env.getContextRelations().get(i).getEndingComplexEvent() != null){
 				writer.printf("terminates("+ env.getContextRelations().get(i).getEndingComplexEvent().getName());
-				writeEventParameters(env.getContextRelations().get(i).getEndingComplexEvent(),writer);
+				writeEventParameters(env.getContextRelations().get(i).getEndingComplexEvent(),writer, false);
 				writer.printf(",");
 				writer.printf(env.getContextRelations().get(i).getName());
 				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
@@ -396,21 +447,71 @@ public class Transformer {
 	private void writeContextRelationParameters(ContextRelation cr, PrintWriter writer){
 		writer.printf("(");
 		for (int j = 0; j < cr.getParameters().size(); j++){
-			if (j != cr.getParameters().size()-1)
-				writer.printf("%c,", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));
-			else
-				writer.printf("%c)", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));	
+			
+			if (cr.getParameters().get(j).getNumber() == 0){
+				System.out.println("NUMBER IS ZERO");
+				if (j != cr.getParameters().size()-1)
+					writer.printf("%c,", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));
+				else
+					writer.printf("%c)", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)));	
+			}
+			else{
+				System.out.println("NUMBER IS NOT ZERO");
+				if (j != cr.getParameters().size()-1)
+					writer.printf("%c%d,", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)), cr.getParameters().get(j).getNumber());
+				else
+					writer.printf("%c%d)", Character.toUpperCase(cr.getParameters().get(j).getType().getName().charAt(0)), cr.getParameters().get(j).getNumber());
+			}
+			
 		}
 	}
 	
-	private void writeEventParameters(Event ev, PrintWriter writer){
+	/*
+	 * Write the parameters of the event on file
+	 * If the flag is true it means that one or more parameters of that event have been modified by the user while creating the predicate (Ex. E2, E3, ..)
+	 */
+	private void writeEventParameters(Event ev, PrintWriter writer, boolean flag){
 		writer.printf("(");
 		System.out.println(ev.getName());
 		System.out.println("Event2 --> " + ev.getName() + 
 				ev.getAgent().
 				getName() + 
 				ev.getAgent().getType().getName());
-		writer.printf("%c", Character.toUpperCase(ev.getAgent().getType().getName().charAt(0)));
+		if (ev.getAgent().getNumber() == 0)
+			writer.printf("%c", Character.toUpperCase(ev.getAgent().getType().getName().charAt(0)));
+		else
+			writer.printf("%c%d", Character.toUpperCase(ev.getAgent().getType().getName().charAt(0)), ev.getAgent().getNumber());
+
+		for (int j = 0; j < ev.getParameters().size(); j++){
+			if (ev.getParameters().get(j).getNumber() == 0)
+				writer.printf(",%c", Character.toUpperCase(ev.getParameters().get(j).getType().getName().charAt(0)));
+			else
+				writer.printf(",%c%d", Character.toUpperCase(ev.getParameters().get(j).getType().getName().charAt(0)), ev.getParameters().get(j).getNumber());
+
+		}	
+		
+		if (ev instanceof PrimitiveEventImpl){
+			if (((PrimitiveEvent) ev).getObserver().getNumber() == 0)
+				writer.printf(",%c)", Character.toUpperCase((((PrimitiveEvent) ev).getObserver().getType().getName().charAt(0))));
+			else
+				writer.printf(",%c%d)", Character.toUpperCase((((PrimitiveEvent) ev).getObserver().getType().getName().charAt(0))), ((PrimitiveEvent) ev).getObserver().getNumber());
+
+		}
+		else 
+			writer.printf(")");
+		
+		//writer.printf("%c)", ev.getObserver().getType().getName().charAt(0));
+	}
+	
+/*	private void writeModifiedEventParameters(Happens h, PrintWriter writer){
+		writer.printf("(");
+		for (int j = 0; j < h.getEvent().getCorrectedParams().size(); j++){
+			writer.printf("%c", Character.toUpperCase(h.getEvent().getCorrectedParams().get(j).getType().getName().charAt(0)));
+			writer.printf("%c", h.getEvent().getCorrectedParams().get(j).getNewNumber());
+		}	
+		
+		
+		writer.printf("%c", Character.toUpperCase(h.getEvent().getCorrectgetAgent().getType().getName().charAt(0)));
 		for (int j = 0; j < ev.getParameters().size(); j++){
 			writer.printf(",%c", Character.toUpperCase(ev.getParameters().get(j).getType().getName().charAt(0)));
 		}	
@@ -421,10 +522,8 @@ public class Transformer {
 		}
 		else 
 			writer.printf(")");
-		
-		//writer.printf("%c)", ev.getObserver().getType().getName().charAt(0));
 	}
-	
+	*/
 	private void writeInstances(ContextRelation cr, PrintWriter writer){
 		writer.printf("(");
 		for (int j = 0; j < cr.getParameters().size(); j++){
@@ -503,29 +602,47 @@ public class Transformer {
 				writer2.println("\ttrace(TR),");
 				
 				// Memorizing all the types of events and context relations related to the hypothesis
-				HashSet<Type> behTypes = new HashSet<Type>();
+				ArrayList<Parameter> behTypes = new ArrayList<Parameter>();
 				for (int n = 0; n < env.getHypothesis().get(i).getHoldsAts().size(); n++){
 					for (int m = 0; m < env.getHypothesis().get(i).getHoldsAts().get(n).getContextRelation().getParameters().size(); m++){
-						behTypes.add(env.getHypothesis().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m).getType());
+						behTypes.add(env.getHypothesis().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m));
 					};
 				}
 				for (int n = 0; n < env.getHypothesis().get(i).getHoldsAtBetweens().size(); n++){
 					for (int m = 0; m < env.getHypothesis().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().size(); m++){
-						behTypes.add(env.getHypothesis().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m).getType());
+						behTypes.add(env.getHypothesis().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m));
 					};
 				}
 				for (int n = 0; n < env.getHypothesis().get(i).getHappens().size(); n++){
+					behTypes.add(env.getHypothesis().get(i).getHappens().get(n).getEvent().getAgent());
 					for (int m = 0; m < env.getHypothesis().get(i).getHappens().get(n).getEvent().getParameters().size(); m++){
-						behTypes.add(env.getHypothesis().get(i).getHappens().get(n).getEvent().getParameters().get(m).getType());
-					};
+						behTypes.add(env.getHypothesis().get(i).getHappens().get(n).getEvent().getParameters().get(m));
+					}
+					if  (env.getHypothesis().get(i).getHappens().get(n).getEvent() instanceof PrimitiveEventImpl){
+						behTypes.add((((PrimitiveEventImpl)env.getHypothesis().get(i).getHappens().get(n).getEvent()).getObserver()));
+					}
 				}
+				
+				// Removing doubles
+				for (int j = 0; j < behTypes.size(); j++){
+					int h = 0;
+					while (h < behTypes.size()){
+						if ((behTypes.get(j).getType().getName().equals(behTypes.get(h).getType().getName()))&&(h!=j) && (behTypes.get(j).getNumber() == behTypes.get(h).getNumber())){
+							behTypes.remove(h);
+							h--;
+						}
+						h++;
+					}
+				} 
 				// Writing all the types on file
-				Iterator<Type> iter = behTypes.iterator();
-				System.out.println(iter.hasNext());
+				Iterator<Parameter> iter = behTypes.iterator();
+				//System.out.println(iter.hasNext());
 				while(iter.hasNext()){
-					Type type = iter.next();
+					Parameter param = iter.next();
 				//	System.out.println(type.toString());
-					writer2.println("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+					writer2.println("\t"+param.getType().getName()+"("+Character.toUpperCase(param.getType().getName().charAt(0)) + ((param.getNumber() > 0) ? param.getNumber() + ")," : "),"));
+
+					//writer2.println("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
 				}
 				
 				// Writing all time instants
@@ -542,8 +659,25 @@ public class Transformer {
 					}
 				}
 				
-				for (int j = 0; j < env.getHypothesis().get(i).getHoldsAts().size(); j++){				
-					writer2.printf("\tholdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName());
+				for (int j = 0; j < env.getHypothesis().get(i).getHoldsAts().size(); j++){		
+					
+					HoldsAt h = env.getHypothesis().get(i).getHoldsAts().get(j);
+
+					if (h.isIsHolding()){
+						if (!env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().isFlag())
+							writer2.printf("\tholdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName());
+						else{
+							System.out.println("Trying to REPLACE THE DIGITS");
+							writer2.printf("\tholdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName().replaceAll("\\d", ""));
+						}
+					}
+					else if (!h.isIsHolding()){
+						if (!env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().isFlag())
+							writer2.printf("\tnot holdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName());
+						else
+							writer2.printf("\tnot holdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName().replaceAll("\\d", ""));
+					}
+					
 					writeContextRelationParameters(env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation(), writer2);
 					writer2.printf(",T"+env.getHypothesis().get(i).getHoldsAts().get(j).getTime() +",TR)");
 					if (j < env.getHypothesis().get(i).getHoldsAts().size() - 1)
@@ -555,9 +689,19 @@ public class Transformer {
 							writer2.printf(",\n");
 					}
 				}
-				for (int j = 0; j < env.getHypothesis().get(i).getHappens().size(); j++){				
-					writer2.printf("\thappens("+env.getHypothesis().get(i).getHappens().get(j).getEvent().getName());
-					writeEventParameters(env.getHypothesis().get(i).getHappens().get(j).getEvent(), writer2);
+				
+				// HAPPENS
+				
+				for (int j = 0; j < env.getHypothesis().get(i).getHappens().size(); j++){	
+					
+					if (!env.getHypothesis().get(i).getHappens().get(j).getEvent().isFlag())
+						writer2.printf("\thappens("+env.getHypothesis().get(i).getHappens().get(j).getEvent().getName());
+					else{
+						System.out.println("Trying to REPLACE THE DIGITS");
+						writer2.printf("\thappens("+env.getHypothesis().get(i).getHappens().get(j).getEvent().getName().replaceAll("\\d", ""));
+					}
+					
+					writeEventParameters(env.getHypothesis().get(i).getHappens().get(j).getEvent(), writer2, false);
 					writer2.printf(",T"+env.getHypothesis().get(i).getHappens().get(j).getTime() +",TR)");
 					if (j < env.getHypothesis().get(i).getHappens().size() - 1)
 						writer2.printf(",\n");
@@ -568,13 +712,26 @@ public class Transformer {
 							writer2.printf(",\n");
 					}
 				}
+				
+				// HOLDS AT BETWEEN
 				for (int j = 0; j < env.getHypothesis().get(i).getHoldsAtBetweens().size(); j++){
 					HoldsAtBetween h = env.getHypothesis().get(i).getHoldsAtBetweens().get(j);
-					if (h.isIsHolding()){
-						writer2.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					
+					if (h.isIsHolding()){						
+						if (!env.getHypothesis().get(i).getHoldsAtBetweens().get(j).getContextRelation().isFlag())
+							writer2.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+						else{
+							System.out.println("Trying to REPLACE THE DIGITS");
+							writer2.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName().replaceAll("\\d", ""));
+						}
 					}
 					else if (!h.isIsHolding()){
-						writer2.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+						if (!env.getHypothesis().get(i).getHoldsAtBetweens().get(j).getContextRelation().isFlag())
+							writer2.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+						else{
+							System.out.println("Trying to REPLACE THE DIGITS");
+							writer2.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName().replaceAll("\\d", ""));
+						}
 					}
 					writeContextRelationParameters(h.getContextRelation(), writer2);
 					writer2.printf(",T"+h.getEndingTime() +",TR)");
