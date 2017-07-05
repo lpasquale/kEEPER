@@ -64,6 +64,7 @@ public interface Happens extends EObject {
 	 */
 	Event getEvent();
 
+	
 	/**
 	 * Sets the value of the '{@link model.Happens#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -73,5 +74,10 @@ public interface Happens extends EObject {
 	 * @generated
 	 */
 	void setEvent(Event value);
-
+	
+	
+	boolean haveParametersChanged();
+	
+	void setParametersChanged(boolean flag);
+	
 } // Happens

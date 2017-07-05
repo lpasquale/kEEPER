@@ -5,6 +5,9 @@ package model.impl;
 import model.Event;
 import model.Happens;
 import model.ModelPackage;
+import model.Parameter;
+
+import java.util.ArrayList;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -58,6 +61,10 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * @ordered
 	 */
 	protected Event event;
+	
+	protected ArrayList<Parameter> correctedParam;
+	
+	protected boolean parametersChanged;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,6 +94,20 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 		return time;
 	}
 
+	public ArrayList<Parameter> getCorrectedParam() {
+		return correctedParam;
+	}
+
+	public void setCorrectedParam(ArrayList<Parameter> correctedParam) {
+		this.correctedParam = correctedParam;
+	}
+	
+	public boolean haveParametersChanged(){
+		return parametersChanged;
+	}
+	public void setParametersChanged(boolean flag){
+		parametersChanged = flag;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

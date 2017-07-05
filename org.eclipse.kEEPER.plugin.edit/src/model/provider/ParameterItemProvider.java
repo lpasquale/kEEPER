@@ -60,28 +60,29 @@ public class ParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNumberPropertyDescriptor(object);
+			addPositionPropertyDescriptor(object);
 			addInstancePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addNumberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Number feature.
+	 * This adds a property descriptor for the Position feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNumberPropertyDescriptor(Object object) {
+	protected void addPositionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Parameter_number_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_number_feature", "_UI_Parameter_type"),
-				 ModelPackage.Literals.PARAMETER__NUMBER,
+				 getString("_UI_Parameter_position_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_position_feature", "_UI_Parameter_type"),
+				 ModelPackage.Literals.PARAMETER__POSITION,
 				 true,
 				 false,
 				 false,
@@ -157,6 +158,28 @@ public class ParameterItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Number feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNumberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Parameter_number_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_number_feature", "_UI_Parameter_type"),
+				 ModelPackage.Literals.PARAMETER__NUMBER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Parameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,8 +217,9 @@ public class ParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Parameter.class)) {
-			case ModelPackage.PARAMETER__NUMBER:
+			case ModelPackage.PARAMETER__POSITION:
 			case ModelPackage.PARAMETER__NAME:
+			case ModelPackage.PARAMETER__NUMBER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

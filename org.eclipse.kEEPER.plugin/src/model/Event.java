@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link model.Event#getName <em>Name</em>}</li>
  *   <li>{@link model.Event#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link model.Event#isFlag <em>Flag</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEvent()
@@ -68,9 +69,35 @@ public interface Event extends EObject {
 	 */
 	EList<Parameter> getParameters();
 	
+	/**
+	 * Returns the value of the '<em><b>Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Flag</em>' attribute.
+	 * @see #setFlag(boolean)
+	 * @see model.ModelPackage#getEvent_Flag()
+	 * @model
+	 * @generated
+	 */
+	boolean isFlag();
+
+	/**
+	 * Sets the value of the '{@link model.Event#isFlag <em>Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Flag</em>' attribute.
+	 * @see #isFlag()
+	 * @generated
+	 */
+	void setFlag(boolean value);
+
 	ArrayList<Parameter> getCorrectedParams();
 	
-	void setCorrectedParams();
+	void setCorrectedParams(ArrayList<Parameter> c);
 
 	Agent getAgent();
 

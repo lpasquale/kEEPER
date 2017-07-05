@@ -150,13 +150,13 @@ public interface ModelPackage extends EPackage {
 	int PARAMETER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NUMBER = 0;
+	int PARAMETER__POSITION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -186,13 +186,22 @@ public interface ModelPackage extends EPackage {
 	int PARAMETER__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NUMBER = 4;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 4;
+	int PARAMETER_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -259,13 +268,22 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__FLAG = 5;
+
+	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 5;
+	int CONTEXT_RELATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -305,13 +323,22 @@ public interface ModelPackage extends EPackage {
 	int EVENT__PARAMETERS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__FLAG = 2;
+
+	/**
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = 2;
+	int EVENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Event</em>' class.
@@ -349,6 +376,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_EVENT__PARAMETERS = EVENT__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_EVENT__FLAG = EVENT__FLAG;
 
 	/**
 	 * The feature id for the '<em><b>Agent</b></em>' reference.
@@ -413,6 +449,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_EVENT__PARAMETERS = EVENT__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT__FLAG = EVENT__FLAG;
 
 	/**
 	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference list.
@@ -917,13 +962,13 @@ public interface ModelPackage extends EPackage {
 	int OBSERVER = 13;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER__NUMBER = PARAMETER__NUMBER;
+	int OBSERVER__POSITION = PARAMETER__POSITION;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -951,6 +996,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBSERVER__NAME = PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__NUMBER = PARAMETER__NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Observer</em>' class.
@@ -981,13 +1035,13 @@ public interface ModelPackage extends EPackage {
 	int AGENT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__NUMBER = PARAMETER__NUMBER;
+	int AGENT__POSITION = PARAMETER__POSITION;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -1015,6 +1069,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int AGENT__NAME = PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__NUMBER = PARAMETER__NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Agent</em>' class.
@@ -1173,15 +1236,15 @@ public interface ModelPackage extends EPackage {
 	EClass getParameter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.Parameter#getNumber <em>Number</em>}'.
+	 * Returns the meta object for the attribute '{@link model.Parameter#getPosition <em>Position</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see model.Parameter#getNumber()
+	 * @return the meta object for the attribute '<em>Position</em>'.
+	 * @see model.Parameter#getPosition()
 	 * @see #getParameter()
 	 * @generated
 	 */
-	EAttribute getParameter_Number();
+	EAttribute getParameter_Position();
 
 	/**
 	 * Returns the meta object for the reference '{@link model.Parameter#getInstance <em>Instance</em>}'.
@@ -1215,6 +1278,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Parameter#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see model.Parameter#getNumber()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Number();
 
 	/**
 	 * Returns the meta object for class '{@link model.ContextRelation <em>Context Relation</em>}'.
@@ -1282,6 +1356,17 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_EndingComplexEvent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link model.ContextRelation#isFlag <em>Flag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Flag</em>'.
+	 * @see model.ContextRelation#isFlag()
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	EAttribute getContextRelation_Flag();
+
+	/**
 	 * Returns the meta object for class '{@link model.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1312,6 +1397,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEvent_Parameters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Event#isFlag <em>Flag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Flag</em>'.
+	 * @see model.Event#isFlag()
+	 * @see #getEvent()
+	 * @generated
+	 */
+	EAttribute getEvent_Flag();
 
 	/**
 	 * Returns the meta object for class '{@link model.PrimitiveEvent <em>Primitive Event</em>}'.
@@ -1952,12 +2048,12 @@ public interface ModelPackage extends EPackage {
 		EClass PARAMETER = eINSTANCE.getParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARAMETER__NUMBER = eINSTANCE.getParameter_Number();
+		EAttribute PARAMETER__POSITION = eINSTANCE.getParameter_Position();
 
 		/**
 		 * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
@@ -1982,6 +2078,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__NUMBER = eINSTANCE.getParameter_Number();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ContextRelationImpl <em>Context Relation</em>}' class.
@@ -2034,6 +2138,14 @@ public interface ModelPackage extends EPackage {
 		EReference CONTEXT_RELATION__ENDING_COMPLEX_EVENT = eINSTANCE.getContextRelation_EndingComplexEvent();
 
 		/**
+		 * The meta object literal for the '<em><b>Flag</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_RELATION__FLAG = eINSTANCE.getContextRelation_Flag();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2058,6 +2170,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EVENT__PARAMETERS = eINSTANCE.getEvent_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Flag</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT__FLAG = eINSTANCE.getEvent_Flag();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.PrimitiveEventImpl <em>Primitive Event</em>}' class.

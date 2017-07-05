@@ -224,7 +224,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	}
 
 	@Override
-	public void setCorrectedParams() {
+	public void setCorrectedParams(ArrayList<Parameter> c) {
 		// TODO Auto-generated method stub
 		
 	}

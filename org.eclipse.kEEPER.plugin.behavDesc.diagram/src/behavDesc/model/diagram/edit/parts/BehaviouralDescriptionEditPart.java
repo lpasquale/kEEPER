@@ -88,6 +88,7 @@ import model.HoldsAtBetween;
 import model.ModelPackage;
 import model.Observer;
 import model.Parameter;
+import model.PrimitiveEvent;
 import model.impl.AgentImpl;
 import model.impl.ComplexEventImpl;
 import model.impl.EventImpl;
@@ -415,7 +416,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			}while ((index < loadEvents.getEnvironment().getEvents().size()) && ev == null);
 			
 			// Requests to the user if he/she wants to use the same parameters or new ones
-			MessageDialog dialog = new MessageDialog(shell, 
+	/*		MessageDialog dialog = new MessageDialog(shell, 
 					"Parameter Selection", 
 					null,
 					"Do you want to use the predefined parameters?", 
@@ -424,13 +425,15 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					0);
 			int result = dialog.open();
 			System.out.println("REsult: " + result);
+			
 			// If the user chooses to create new parameter(s)
+			ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
 			if (result == 1) {
 				
-				handlingEventParameters(ev, shell);
+				newParameters = handlingEventParameters(ev, shell);
 				
 			}
-			
+			*/
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int timeSelection = createSingleTimeInstantsDialog();
 			
@@ -729,7 +732,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		return timeSelectedArray;
 	}
 	
-	private void handlingEventParameters(Event ev, Shell shell){
+/*	private ArrayList<Parameter> handlingEventParameters(Event ev, Shell shell){
 		
 		ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
 		
@@ -739,17 +742,17 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		
 		System.out.println("Evento selezionato: " + ev);
 	
-		param.add(ev.getAgent().getType().getName());
+		param.add(ev.getAgent().getName());
 		
 		for (int i = 0; i < ev.getParameters().size(); i++){
 			System.out.println("Param " + ev.getParameters().get(i).getType().getName());
 			
-			param.add(ev.getParameters().get(i).getType().getName());
+			param.add(ev.getParameters().get(i).getName());
 		}
 		if (ev instanceof PrimitiveEventImpl){
-			param.add(((PrimitiveEventImpl)ev).getObserver().getType().getName());
+			param.add(((PrimitiveEventImpl)ev).getObserver().getName());
 		}
-
+		
 		parametersSelection.setElements(param.toArray());
 		parametersSelection.setMultipleSelection(true);
 		parametersSelection.setTitle("Select the parameters of the event you want to create");
@@ -760,47 +763,59 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		dialog.create();
 		if (dialog.open() == Window.OK) {
 			
-			// Handling result
-			// Loop for each parameter the user wants to change
-			 Iterator it = dialog.getMap().entrySet().iterator();
-			 
-			 while (it.hasNext()) {
-				 Map.Entry entry = (Map.Entry)it.next();
-			    // Stampa a schermo la coppia chiave-valore;
-				 if (((String)entry.getKey()).equals(ev.getAgent().getType().getName())){
-						Agent newAgent = new AgentImpl();
-						newAgent.setType(ev.getAgent().getType());
-						newAgent.setNewNumber((int) entry.getValue());
-						newParameters.add(newAgent);
-				 }
-				 for (int j = 0; j < ev.getParameters().size(); j++){
-					 if (((String)entry.getKey()).equals(ev.getParameters().get(j).getType().getName())){
-							// Creation of new parameter
-							Parameter newParam = new ParameterImpl();
-							newParam.setType(ev.getParameters().get(j).getType());
-							newParam.setNewNumber((int) entry.getValue());
-							newParameters.add(newParam);
-					 }
-				 }
-
-				 if (ev instanceof PrimitiveEventImpl){
-					 if (((String)entry.getKey()).equals(((PrimitiveEventImpl)ev).getObserver().getType().getName())){
-						Observer newObserver = new ObserverImpl();
-						newObserver.setType(((PrimitiveEventImpl) ev).getObserver().getType());
-						newObserver.setNewNumber((int) entry.getValue());
-						newParameters.add(newObserver);
-					 }
-				 }
-				 
-
-			    }
+			// Creating the new Agent
+			Agent newAgent = new AgentImpl();
+			newAgent.setName(ev.getAgent().getName());
+			newAgent.setPosition(ev.getAgent().getPosition());
+			newAgent.setType(ev.getAgent().getType());
+			newParameters.add(newAgent);
+			
+			// Creating the new parameters
+			for (int i = 0; i < ev.getParameters().size(); i++){
+				Parameter newParameter = new ParameterImpl();
+				newParameter.setName(ev.getParameters().get(i).getName());
+				newParameter.setPosition(ev.getParameters().get(i).getPosition());
+				newParameter.setType(ev.getParameters().get(i).getType());
+				newParameters.add(newParameter);
+			}
+			
+			if (ev instanceof PrimitiveEventImpl){
+				// Creating the new Observer
+				Observer newObserver = new ObserverImpl();
+				newObserver.setName(((PrimitiveEvent) ev).getObserver().getName());
+				newObserver.setPosition(((PrimitiveEvent) ev).getObserver().getPosition());
+				newObserver.setType(((PrimitiveEvent) ev).getObserver().getType());
+				newParameters.add(newObserver);
+			}
+			
 			for (int i = 0; i < newParameters.size(); i++){
-				System.out.println(newParameters.get(i).getType().getName() + "  " +newParameters.get(i).getNewNumber());
+				System.out.println("Parameter: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
 
 			}
-			System.out.println(newParameters);
+		
+			System.out.println(dialog.getMap());
 			
-		}
+			// Handling result
+			// Loop for each parameter the user wants to change			
+			for (int i = 0; i < newParameters.size(); i++){
+				Iterator it = dialog.getMap().entrySet().iterator();
+				while (it.hasNext()) {
+					Map.Entry entry = (Map.Entry)it.next();
+					// Compare the keys of the map with the names of the new parameters in the list newParameters
+					if (((String)entry.getKey()).equals(newParameters.get(i).getName())){
+						newParameters.get(i).setNewNumber((int) entry.getValue());
+					} 
+				}
+			}
+			
+			// Verification
+			for (int i = 0; i < newParameters.size(); i++){
+				System.out.println("Parameter_NEW: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
 
+			}	
+		}
+		
+		return newParameters;
 	}
+*/
 }

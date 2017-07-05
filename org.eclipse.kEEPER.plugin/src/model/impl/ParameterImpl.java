@@ -23,34 +23,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link model.impl.ParameterImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link model.impl.ParameterImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link model.impl.ParameterImpl#getInstance <em>Instance</em>}</li>
  *   <li>{@link model.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link model.impl.ParameterImpl#getName <em>Name</em>}</li>
+ *   <li>{@link model.impl.ParameterImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getPosition()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final int POSITION_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getPosition()
 	 * @generated
 	 * @ordered
 	 */
-	protected int number = NUMBER_EDEFAULT;
+	protected int position = POSITION_EDEFAULT;
 
 	protected int newNumber;
 	
@@ -95,6 +96,26 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int number = NUMBER_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,8 +139,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNumber() {
-		return number;
+	public int getPosition() {
+		return position;
 	}
 
 	/**
@@ -127,11 +148,11 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
-		number = newNumber;
+	public void setPosition(int newPosition) {
+		int oldPosition = position;
+		position = newPosition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__POSITION, oldPosition, position));
 	}
 
 	public void setNewNumber(int newNumber) {
@@ -244,11 +265,32 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumber(int newNumber) {
+		int oldNumber = number;
+		number = newNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__NUMBER, oldNumber, number));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.PARAMETER__NUMBER:
-				return getNumber();
+			case ModelPackage.PARAMETER__POSITION:
+				return getPosition();
 			case ModelPackage.PARAMETER__INSTANCE:
 				if (resolve) return getInstance();
 				return basicGetInstance();
@@ -257,6 +299,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return basicGetType();
 			case ModelPackage.PARAMETER__NAME:
 				return getName();
+			case ModelPackage.PARAMETER__NUMBER:
+				return getNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,8 +313,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.PARAMETER__NUMBER:
-				setNumber((Integer)newValue);
+			case ModelPackage.PARAMETER__POSITION:
+				setPosition((Integer)newValue);
 				return;
 			case ModelPackage.PARAMETER__INSTANCE:
 				setInstance((Instance)newValue);
@@ -280,6 +324,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case ModelPackage.PARAMETER__NAME:
 				setName((String)newValue);
+				return;
+			case ModelPackage.PARAMETER__NUMBER:
+				setNumber((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,8 +340,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.PARAMETER__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
+			case ModelPackage.PARAMETER__POSITION:
+				setPosition(POSITION_EDEFAULT);
 				return;
 			case ModelPackage.PARAMETER__INSTANCE:
 				setInstance((Instance)null);
@@ -304,6 +351,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case ModelPackage.PARAMETER__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case ModelPackage.PARAMETER__NUMBER:
+				setNumber(NUMBER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -317,14 +367,16 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.PARAMETER__NUMBER:
-				return number != NUMBER_EDEFAULT;
+			case ModelPackage.PARAMETER__POSITION:
+				return position != POSITION_EDEFAULT;
 			case ModelPackage.PARAMETER__INSTANCE:
 				return instance != null;
 			case ModelPackage.PARAMETER__TYPE:
 				return type != null;
 			case ModelPackage.PARAMETER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ModelPackage.PARAMETER__NUMBER:
+				return number != NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -339,10 +391,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
-		result.append(number);
+		result.append(" (position: ");
+		result.append(position);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", number: ");
+		result.append(number);
 		result.append(')');
 		return result.toString();
 	}

@@ -267,7 +267,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getParameter_Number() {
+	public EAttribute getParameter_Position() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -296,6 +296,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EAttribute getParameter_Name() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Number() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -357,6 +366,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getContextRelation_Flag() {
+		return (EAttribute)contextRelationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEvent() {
 		return eventEClass;
 	}
@@ -377,6 +395,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EReference getEvent_Parameters() {
 		return (EReference)eventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvent_Flag() {
+		return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -883,10 +910,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(instanceEClass, INSTANCE__TYPE);
 
 		parameterEClass = createEClass(PARAMETER);
-		createEAttribute(parameterEClass, PARAMETER__NUMBER);
+		createEAttribute(parameterEClass, PARAMETER__POSITION);
 		createEReference(parameterEClass, PARAMETER__INSTANCE);
 		createEReference(parameterEClass, PARAMETER__TYPE);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
+		createEAttribute(parameterEClass, PARAMETER__NUMBER);
 
 		contextRelationEClass = createEClass(CONTEXT_RELATION);
 		createEAttribute(contextRelationEClass, CONTEXT_RELATION__NAME);
@@ -894,10 +922,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(contextRelationEClass, CONTEXT_RELATION__PARAMETERS);
 		createEReference(contextRelationEClass, CONTEXT_RELATION__INITIAL_COMPLEX_EVENT);
 		createEReference(contextRelationEClass, CONTEXT_RELATION__ENDING_COMPLEX_EVENT);
+		createEAttribute(contextRelationEClass, CONTEXT_RELATION__FLAG);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__NAME);
 		createEReference(eventEClass, EVENT__PARAMETERS);
+		createEAttribute(eventEClass, EVENT__FLAG);
 
 		primitiveEventEClass = createEClass(PRIMITIVE_EVENT);
 		createEReference(primitiveEventEClass, PRIMITIVE_EVENT__AGENT);
@@ -1005,10 +1035,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getInstance_Type(), this.getType(), null, "type", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParameter_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Position(), ecorePackage.getEInt(), "position", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Instance(), this.getInstance(), null, "instance", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Type(), this.getType(), null, "type", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contextRelationEClass, ContextRelation.class, "ContextRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextRelation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1016,10 +1047,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getContextRelation_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_InitialComplexEvent(), this.getComplexEvent(), null, "initialComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_EndingComplexEvent(), this.getComplexEvent(), null, "endingComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextRelation_Flag(), ecorePackage.getEBoolean(), "flag", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEvent_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvent_Flag(), ecorePackage.getEBoolean(), "flag", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primitiveEventEClass, PrimitiveEvent.class, "PrimitiveEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPrimitiveEvent_Agent(), this.getAgent(), null, "agent", null, 0, 1, PrimitiveEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

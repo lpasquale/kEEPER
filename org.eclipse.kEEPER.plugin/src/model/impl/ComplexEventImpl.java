@@ -201,7 +201,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	}
 
 	@Override
-	public void setCorrectedParams() {
+	public void setCorrectedParams(ArrayList<Parameter> c) {
 		// TODO Auto-generated method stub
 		
 	}

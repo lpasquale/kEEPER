@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.ContextRelationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
+ *   <li>{@link model.impl.ContextRelationImpl#isFlag <em>Flag</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,6 +109,26 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ComplexEvent endingComplexEvent;
+
+	/**
+	 * The default value of the '{@link #isFlag() <em>Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isFlag()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean FLAG_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isFlag() <em>Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isFlag()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean flag = FLAG_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,6 +284,27 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isFlag() {
+		return flag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFlag(boolean newFlag) {
+		boolean oldFlag = flag;
+		flag = newFlag;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__FLAG, oldFlag, flag));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -278,6 +320,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				if (resolve) return getEndingComplexEvent();
 				return basicGetEndingComplexEvent();
+			case ModelPackage.CONTEXT_RELATION__FLAG:
+				return isFlag();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,6 +351,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)newValue);
 				return;
+			case ModelPackage.CONTEXT_RELATION__FLAG:
+				setFlag((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -334,6 +381,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)null);
 				return;
+			case ModelPackage.CONTEXT_RELATION__FLAG:
+				setFlag(FLAG_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -356,6 +406,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return initialComplexEvent != null;
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				return endingComplexEvent != null;
+			case ModelPackage.CONTEXT_RELATION__FLAG:
+				return flag != FLAG_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,6 +426,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		result.append(name);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", flag: ");
+		result.append(flag);
 		result.append(')');
 		return result.toString();
 	}
