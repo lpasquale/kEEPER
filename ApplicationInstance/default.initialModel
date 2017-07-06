@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <initials>
+    <contextRelation href="default.contextRelationModel#//@contextRelations.1"/>
+  </initials>
+  <initials>
+    <contextRelation href="default.contextRelationModel#//@contextRelations.5"/>
+  </initials>
+</org.eclipse.minorityReportPlugin:Environment>

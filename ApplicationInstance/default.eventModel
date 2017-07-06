@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="highMountCounts_agent">
+    <type href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="highMountCounts_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="sys_copy_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="3" name="sys_copy_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters number="2" name="sys_copy_param1">
+    <type href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="sys_Mount_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="sys_Mount_agent">
+    <type href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="sys_Unmount_agent">
+    <type href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="sys_Unmount_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="sys_Login_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="sys_Login_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="sys_Logout_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="sys_Logout_obs">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="swipeCard_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="2" name="swipeCard_obs">
+    <type href="default.typeInstanceModel#//@types.2"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="cctvAccess_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="3" name="cctvAccess_obs">
+    <type href="default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters number="2" name="cctvAccess_param2">
+    <type href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="cctvExit_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Observer" number="3" name="cctvExit_obs">
+    <type href="default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters number="2" name="cctvExit_param2">
+    <type href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="enter_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters number="2" name="enter_param2">
+    <type href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="exit_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters number="2" name="exit_param2">
+    <type href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="mount_agent">
+    <type href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters number="2" name="mount_param2">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="unMount_agent">
+    <type href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters number="2" name="unMount_param2">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="login_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters number="2" name="login_param2">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="logout_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters number="2" name="logout_param2">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:Agent" number="1" name="copy_agent">
+    <type href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters number="2" name="copy_param2">
+    <type href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters number="3" name="copy_param3">
+    <type href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="highMountCounts" agent="//@parameters.0" observer="//@parameters.1"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_copy" parameters="//@parameters.4" agent="//@parameters.2" observer="//@parameters.3"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Mount" agent="//@parameters.6" observer="//@parameters.5"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Unmount" agent="//@parameters.7" observer="//@parameters.8"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Login" agent="//@parameters.9" observer="//@parameters.10"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Logout" agent="//@parameters.11" observer="//@parameters.12"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="swipeCard" agent="//@parameters.13" observer="//@parameters.14"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="cctvAccess" parameters="//@parameters.17" agent="//@parameters.15" observer="//@parameters.16"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="cctvExit" parameters="//@parameters.20" agent="//@parameters.18" observer="//@parameters.19"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="enter" parameters="//@parameters.22" agent="//@parameters.21"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="exit" parameters="//@parameters.24" agent="//@parameters.23"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="mount" parameters="//@parameters.26" agent="//@parameters.25"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="unMount" parameters="//@parameters.28" agent="//@parameters.27"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="login" parameters="//@parameters.30" agent="//@parameters.29"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="logout" parameters="//@parameters.32" agent="//@parameters.31"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="copy" parameters="//@parameters.34 //@parameters.35" agent="//@parameters.33"/>
+</org.eclipse.minorityReportPlugin:Environment>
