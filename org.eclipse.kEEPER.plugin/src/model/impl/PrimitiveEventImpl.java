@@ -5,10 +5,7 @@ package model.impl;
 import model.Agent;
 import model.ModelPackage;
 import model.Observer;
-import model.Parameter;
 import model.PrimitiveEvent;
-
-import java.util.ArrayList;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -215,18 +212,6 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 				return observer != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	@Override
-	public ArrayList<Parameter> getCorrectedParams() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setCorrectedParams(ArrayList<Parameter> c) {
-		// TODO Auto-generated method stub
-		
 	}
 
 } //PrimitiveEventImpl

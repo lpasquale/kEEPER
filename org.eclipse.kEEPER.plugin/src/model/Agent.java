@@ -13,5 +13,5 @@ package model;
  * @model
  * @generated
  */
-public interface Agent extends Parameter {
+public interface Agent extends Type {
 } // Agent

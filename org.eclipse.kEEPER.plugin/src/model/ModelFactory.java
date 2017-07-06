@@ -40,15 +40,6 @@ public interface ModelFactory extends EFactory {
 	Instance createInstance();
 
 	/**
-	 * Returns a new object of class '<em>Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter</em>'.
-	 * @generated
-	 */
-	Parameter createParameter();
-
-	/**
 	 * Returns a new object of class '<em>Context Relation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +121,24 @@ public interface ModelFactory extends EFactory {
 	Environment createEnvironment();
 
 	/**
+	 * Returns a new object of class '<em>Observer Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Observer Param</em>'.
+	 * @generated
+	 */
+	ObserverParam createObserverParam();
+
+	/**
+	 * Returns a new object of class '<em>Agent Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agent Param</em>'.
+	 * @generated
+	 */
+	AgentParam createAgentParam();
+
+	/**
 	 * Returns a new object of class '<em>Observer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +164,15 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	Hypothesis createHypothesis();
+
+	/**
+	 * Returns a new object of class '<em>General Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>General Param</em>'.
+	 * @generated
+	 */
+	GeneralParam createGeneralParam();
 
 	/**
 	 * Returns the package supported by this factory.

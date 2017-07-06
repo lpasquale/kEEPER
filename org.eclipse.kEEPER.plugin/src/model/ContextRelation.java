@@ -16,11 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link model.ContextRelation#getName <em>Name</em>}</li>
- *   <li>{@link model.ContextRelation#isValue <em>Value</em>}</li>
  *   <li>{@link model.ContextRelation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
- *   <li>{@link model.ContextRelation#isFlag <em>Flag</em>}</li>
+ *   <li>{@link model.ContextRelation#isValue <em>Value</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getContextRelation()
@@ -147,31 +146,5 @@ public interface ContextRelation extends EObject {
 	 * @generated
 	 */
 	void setEndingComplexEvent(ComplexEvent value);
-
-	/**
-	 * Returns the value of the '<em><b>Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Flag</em>' attribute.
-	 * @see #setFlag(boolean)
-	 * @see model.ModelPackage#getContextRelation_Flag()
-	 * @model
-	 * @generated
-	 */
-	boolean isFlag();
-
-	/**
-	 * Sets the value of the '{@link model.ContextRelation#isFlag <em>Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Flag</em>' attribute.
-	 * @see #isFlag()
-	 * @generated
-	 */
-	void setFlag(boolean value);
 
 } // ContextRelation

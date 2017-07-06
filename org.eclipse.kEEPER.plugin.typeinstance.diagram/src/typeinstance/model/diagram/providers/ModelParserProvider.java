@@ -16,6 +16,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import model.ModelPackage;
 import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 import typeinstance.model.diagram.parsers.MessageFormatParser;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
@@ -27,35 +29,35 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser instanceName_5001Parser;
+	private IParser instanceName_5003Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getInstanceName_5001Parser() {
-		if (instanceName_5001Parser == null) {
+	private IParser getInstanceName_5003Parser() {
+		if (instanceName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getInstance_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			instanceName_5001Parser = parser;
+			instanceName_5003Parser = parser;
 		}
-		return instanceName_5001Parser;
+		return instanceName_5003Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser typeName_5002Parser;
+	private IParser typeName_5004Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getTypeName_5002Parser() {
-		if (typeName_5002Parser == null) {
+	private IParser getTypeName_5004Parser() {
+		if (typeName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			typeName_5002Parser = parser;
+			typeName_5004Parser = parser;
 		}
-		return typeName_5002Parser;
+		return typeName_5004Parser;
 	}
 
 	/**
@@ -63,10 +65,10 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case InstanceNameEditPart.VISUAL_ID:
-			return getInstanceName_5001Parser();
-		case TypeNameEditPart.VISUAL_ID:
-			return getTypeName_5002Parser();
+		case WrappingLabelEditPart.VISUAL_ID:
+			return getInstanceName_5003Parser();
+		case WrappingLabel2EditPart.VISUAL_ID:
+			return getTypeName_5004Parser();
 		}
 		return null;
 	}

@@ -13,7 +13,7 @@ import model.ModelFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AgentTest extends ParameterTest {
+public class AgentTest extends TypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

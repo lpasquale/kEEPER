@@ -120,16 +120,28 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createEnvironmentAdapter();
 			}
 			@Override
-			public Adapter caseObserver(Observer object) {
-				return createObserverAdapter();
+			public Adapter caseObserverParam(ObserverParam object) {
+				return createObserverParamAdapter();
+			}
+			@Override
+			public Adapter caseAgentParam(AgentParam object) {
+				return createAgentParamAdapter();
+			}
+			@Override
+			public Adapter caseHypothesis(Hypothesis object) {
+				return createHypothesisAdapter();
+			}
+			@Override
+			public Adapter caseGeneralParam(GeneralParam object) {
+				return createGeneralParamAdapter();
 			}
 			@Override
 			public Adapter caseAgent(Agent object) {
 				return createAgentAdapter();
 			}
 			@Override
-			public Adapter caseHypothesis(Hypothesis object) {
-				return createHypothesisAdapter();
+			public Adapter caseObserver(Observer object) {
+				return createObserverAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -334,6 +346,34 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link model.ObserverParam <em>Observer Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.ObserverParam
+	 * @generated
+	 */
+	public Adapter createObserverParamAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.AgentParam <em>Agent Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.AgentParam
+	 * @generated
+	 */
+	public Adapter createAgentParamAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link model.Observer <em>Observer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -372,6 +412,20 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHypothesisAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.GeneralParam <em>General Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.GeneralParam
+	 * @generated
+	 */
+	public Adapter createGeneralParamAdapter() {
 		return null;
 	}
 

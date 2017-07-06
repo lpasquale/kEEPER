@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ObserverImpl extends ParameterImpl implements Observer {
+public class ObserverImpl extends TypeImpl implements Observer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObserverImpl() {
+	protected ObserverImpl() {
 		super();
 	}
 

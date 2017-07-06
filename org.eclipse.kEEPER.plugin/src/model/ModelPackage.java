@@ -168,31 +168,13 @@ public interface ModelPackage extends EPackage {
 	int PARAMETER__INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__TYPE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__NUMBER = 4;
+	int PARAMETER__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -201,7 +183,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 5;
+	int PARAMETER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -232,22 +214,13 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_RELATION__VALUE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__PARAMETERS = 2;
+	int CONTEXT_RELATION__PARAMETERS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Initial Complex Event</b></em>' reference.
@@ -256,7 +229,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = 3;
+	int CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Ending Complex Event</b></em>' reference.
@@ -265,16 +238,16 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 4;
+	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Flag</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__FLAG = 5;
+	int CONTEXT_RELATION__VALUE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
@@ -283,7 +256,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 6;
+	int CONTEXT_RELATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -314,22 +287,13 @@ public interface ModelPackage extends EPackage {
 	int EVENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__PARAMETERS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT__FLAG = 2;
+	int EVENT__TYPES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Event</em>' class.
@@ -338,7 +302,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = 3;
+	int EVENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Event</em>' class.
@@ -369,22 +333,13 @@ public interface ModelPackage extends EPackage {
 	int PRIMITIVE_EVENT__NAME = EVENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_EVENT__PARAMETERS = EVENT__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_EVENT__FLAG = EVENT__FLAG;
+	int PRIMITIVE_EVENT__TYPES = EVENT__TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Agent</b></em>' reference.
@@ -442,22 +397,13 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__NAME = EVENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT__PARAMETERS = EVENT__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_EVENT__FLAG = EVENT__FLAG;
+	int COMPLEX_EVENT__TYPES = EVENT__TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference list.
@@ -952,14 +898,14 @@ public interface ModelPackage extends EPackage {
 	int ENVIRONMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
+	 * The meta object id for the '{@link model.impl.ObserverParamImpl <em>Observer Param</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see model.impl.ObserverImpl
-	 * @see model.impl.ModelPackageImpl#getObserver()
+	 * @see model.impl.ObserverParamImpl
+	 * @see model.impl.ModelPackageImpl#getObserverParam()
 	 * @generated
 	 */
-	int OBSERVER = 13;
+	int OBSERVER_PARAM = 13;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' attribute.
@@ -968,7 +914,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER__POSITION = PARAMETER__POSITION;
+	int OBSERVER_PARAM__POSITION = PARAMETER__POSITION;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -977,16 +923,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER__INSTANCE = PARAMETER__INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVER__TYPE = PARAMETER__TYPE;
+	int OBSERVER_PARAM__INSTANCE = PARAMETER__INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -995,34 +932,108 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER__NAME = PARAMETER__NAME;
+	int OBSERVER_PARAM__NAME = PARAMETER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Observer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER__NUMBER = PARAMETER__NUMBER;
+	int OBSERVER_PARAM__OBSERVER = PARAMETER_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Observer</em>' class.
+	 * The number of structural features of the '<em>Observer Param</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+	int OBSERVER_PARAM_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Observer</em>' class.
+	 * The number of operations of the '<em>Observer Param</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+	int OBSERVER_PARAM_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.AgentParamImpl <em>Agent Param</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.AgentParamImpl
+	 * @see model.impl.ModelPackageImpl#getAgentParam()
+	 * @generated
+	 */
+	int AGENT_PARAM = 14;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM__POSITION = PARAMETER__POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM__INSTANCE = PARAMETER__INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM__NAME = PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM__AGENT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Agent Param</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Agent Param</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_PARAM_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.ObserverImpl
+	 * @see model.impl.ModelPackageImpl#getObserver()
+	 * @generated
+	 */
+	int OBSERVER = 18;
 
 	/**
 	 * The meta object id for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.
@@ -1032,71 +1043,7 @@ public interface ModelPackage extends EPackage {
 	 * @see model.impl.ModelPackageImpl#getAgent()
 	 * @generated
 	 */
-	int AGENT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Position</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__POSITION = PARAMETER__POSITION;
-
-	/**
-	 * The feature id for the '<em><b>Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__INSTANCE = PARAMETER__INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__TYPE = PARAMETER__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__NAME = PARAMETER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__NUMBER = PARAMETER__NUMBER;
-
-	/**
-	 * The number of structural features of the '<em>Agent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Agent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
-
+	int AGENT = 17;
 
 	/**
 	 * The meta object id for the '{@link model.impl.HypothesisImpl <em>Hypothesis</em>}' class.
@@ -1170,6 +1117,125 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYPOTHESIS_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.GeneralParamImpl <em>General Param</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.GeneralParamImpl
+	 * @see model.impl.ModelPackageImpl#getGeneralParam()
+	 * @generated
+	 */
+	int GENERAL_PARAM = 16;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM__POSITION = PARAMETER__POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM__INSTANCE = PARAMETER__INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM__NAME = PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>General Param</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM__GENERAL_PARAM = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>General Param</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>General Param</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_PARAM_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__NAME = TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__NAME = TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1258,17 +1324,6 @@ public interface ModelPackage extends EPackage {
 	EReference getParameter_Instance();
 
 	/**
-	 * Returns the meta object for the reference '{@link model.Parameter#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see model.Parameter#getType()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EReference getParameter_Type();
-
-	/**
 	 * Returns the meta object for the attribute '{@link model.Parameter#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1278,17 +1333,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.Parameter#getNumber <em>Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see model.Parameter#getNumber()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Number();
 
 	/**
 	 * Returns the meta object for class '{@link model.ContextRelation <em>Context Relation</em>}'.
@@ -1356,17 +1400,6 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_EndingComplexEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.ContextRelation#isFlag <em>Flag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Flag</em>'.
-	 * @see model.ContextRelation#isFlag()
-	 * @see #getContextRelation()
-	 * @generated
-	 */
-	EAttribute getContextRelation_Flag();
-
-	/**
 	 * Returns the meta object for class '{@link model.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1388,26 +1421,15 @@ public interface ModelPackage extends EPackage {
 	EAttribute getEvent_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.Event#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the reference list '{@link model.Event#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
-	 * @see model.Event#getParameters()
+	 * @return the meta object for the reference list '<em>Types</em>'.
+	 * @see model.Event#getTypes()
 	 * @see #getEvent()
 	 * @generated
 	 */
-	EReference getEvent_Parameters();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.Event#isFlag <em>Flag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Flag</em>'.
-	 * @see model.Event#isFlag()
-	 * @see #getEvent()
-	 * @generated
-	 */
-	EAttribute getEvent_Flag();
+	EReference getEvent_Types();
 
 	/**
 	 * Returns the meta object for class '{@link model.PrimitiveEvent <em>Primitive Event</em>}'.
@@ -1886,6 +1908,48 @@ public interface ModelPackage extends EPackage {
 	EReference getEnvironment_Hypothesis();
 
 	/**
+	 * Returns the meta object for class '{@link model.ObserverParam <em>Observer Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Observer Param</em>'.
+	 * @see model.ObserverParam
+	 * @generated
+	 */
+	EClass getObserverParam();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.ObserverParam#getObserver <em>Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Observer</em>'.
+	 * @see model.ObserverParam#getObserver()
+	 * @see #getObserverParam()
+	 * @generated
+	 */
+	EReference getObserverParam_Observer();
+
+	/**
+	 * Returns the meta object for class '{@link model.AgentParam <em>Agent Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agent Param</em>'.
+	 * @see model.AgentParam
+	 * @generated
+	 */
+	EClass getAgentParam();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.AgentParam#getAgent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Agent</em>'.
+	 * @see model.AgentParam#getAgent()
+	 * @see #getAgentParam()
+	 * @generated
+	 */
+	EReference getAgentParam_Agent();
+
+	/**
 	 * Returns the meta object for class '{@link model.Observer <em>Observer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1969,6 +2033,27 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHypothesis_TimeInstants();
+
+	/**
+	 * Returns the meta object for class '{@link model.GeneralParam <em>General Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>General Param</em>'.
+	 * @see model.GeneralParam
+	 * @generated
+	 */
+	EClass getGeneralParam();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.GeneralParam#getGeneralParam <em>General Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>General Param</em>'.
+	 * @see model.GeneralParam#getGeneralParam()
+	 * @see #getGeneralParam()
+	 * @generated
+	 */
+	EReference getGeneralParam_GeneralParam();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2064,28 +2149,12 @@ public interface ModelPackage extends EPackage {
 		EReference PARAMETER__INSTANCE = eINSTANCE.getParameter_Instance();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__NUMBER = eINSTANCE.getParameter_Number();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ContextRelationImpl <em>Context Relation</em>}' class.
@@ -2138,14 +2207,6 @@ public interface ModelPackage extends EPackage {
 		EReference CONTEXT_RELATION__ENDING_COMPLEX_EVENT = eINSTANCE.getContextRelation_EndingComplexEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Flag</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTEXT_RELATION__FLAG = eINSTANCE.getContextRelation_Flag();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2164,20 +2225,12 @@ public interface ModelPackage extends EPackage {
 		EAttribute EVENT__NAME = eINSTANCE.getEvent_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT__PARAMETERS = eINSTANCE.getEvent_Parameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Flag</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EVENT__FLAG = eINSTANCE.getEvent_Flag();
+		EReference EVENT__TYPES = eINSTANCE.getEvent_Types();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.PrimitiveEventImpl <em>Primitive Event</em>}' class.
@@ -2548,6 +2601,42 @@ public interface ModelPackage extends EPackage {
 		EReference ENVIRONMENT__HYPOTHESIS = eINSTANCE.getEnvironment_Hypothesis();
 
 		/**
+		 * The meta object literal for the '{@link model.impl.ObserverParamImpl <em>Observer Param</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.ObserverParamImpl
+		 * @see model.impl.ModelPackageImpl#getObserverParam()
+		 * @generated
+		 */
+		EClass OBSERVER_PARAM = eINSTANCE.getObserverParam();
+
+		/**
+		 * The meta object literal for the '<em><b>Observer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVER_PARAM__OBSERVER = eINSTANCE.getObserverParam_Observer();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.AgentParamImpl <em>Agent Param</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.AgentParamImpl
+		 * @see model.impl.ModelPackageImpl#getAgentParam()
+		 * @generated
+		 */
+		EClass AGENT_PARAM = eINSTANCE.getAgentParam();
+
+		/**
+		 * The meta object literal for the '<em><b>Agent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT_PARAM__AGENT = eINSTANCE.getAgentParam_Agent();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2616,6 +2705,24 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HYPOTHESIS__TIME_INSTANTS = eINSTANCE.getHypothesis_TimeInstants();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.GeneralParamImpl <em>General Param</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.GeneralParamImpl
+		 * @see model.impl.ModelPackageImpl#getGeneralParam()
+		 * @generated
+		 */
+		EClass GENERAL_PARAM = eINSTANCE.getGeneralParam();
+
+		/**
+		 * The meta object literal for the '<em><b>General Param</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERAL_PARAM__GENERAL_PARAM = eINSTANCE.getGeneralParam_GeneralParam();
 
 	}
 

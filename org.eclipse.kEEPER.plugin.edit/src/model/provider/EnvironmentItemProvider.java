@@ -185,23 +185,33 @@ public class EnvironmentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__TYPES,
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__TYPES,
+				 ModelFactory.eINSTANCE.createObserver()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__INSTANCES,
 				 ModelFactory.eINSTANCE.createInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
-				 ModelFactory.eINSTANCE.createParameter()));
+				 ModelFactory.eINSTANCE.createObserverParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgentParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createGeneralParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -246,47 +256,47 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createParameter()));
+				 ModelFactory.eINSTANCE.createObserverParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgentParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createGeneralParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createParameter()));
+				 ModelFactory.eINSTANCE.createObserverParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgentParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createGeneralParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createParameter()));
+				 ModelFactory.eINSTANCE.createObserverParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgentParam()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createGeneralParam()));
 
 		newChildDescriptors.add
 			(createChildParameter

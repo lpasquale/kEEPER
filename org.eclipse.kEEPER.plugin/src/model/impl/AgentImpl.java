@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AgentImpl extends ParameterImpl implements Agent {
+public class AgentImpl extends TypeImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AgentImpl() {
+	protected AgentImpl() {
 		super();
 	}
 

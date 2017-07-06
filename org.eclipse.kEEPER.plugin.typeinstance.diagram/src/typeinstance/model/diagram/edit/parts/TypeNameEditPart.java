@@ -236,7 +236,7 @@ public class TypeNameEditPart extends CompartmentEditPart implements ITextAwareE
 	* @generated
 	*/
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**

@@ -146,23 +146,44 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.OBSERVER: {
-				Observer observer = (Observer)theEObject;
-				T result = caseObserver(observer);
-				if (result == null) result = caseParameter(observer);
+			case ModelPackage.OBSERVER_PARAM: {
+				ObserverParam observerParam = (ObserverParam)theEObject;
+				T result = caseObserverParam(observerParam);
+				if (result == null) result = caseParameter(observerParam);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.AGENT: {
-				Agent agent = (Agent)theEObject;
-				T result = caseAgent(agent);
-				if (result == null) result = caseParameter(agent);
+			case ModelPackage.AGENT_PARAM: {
+				AgentParam agentParam = (AgentParam)theEObject;
+				T result = caseAgentParam(agentParam);
+				if (result == null) result = caseParameter(agentParam);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModelPackage.HYPOTHESIS: {
 				Hypothesis hypothesis = (Hypothesis)theEObject;
 				T result = caseHypothesis(hypothesis);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.GENERAL_PARAM: {
+				GeneralParam generalParam = (GeneralParam)theEObject;
+				T result = caseGeneralParam(generalParam);
+				if (result == null) result = caseParameter(generalParam);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.AGENT: {
+				Agent agent = (Agent)theEObject;
+				T result = caseAgent(agent);
+				if (result == null) result = caseType(agent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.OBSERVER: {
+				Observer observer = (Observer)theEObject;
+				T result = caseObserver(observer);
+				if (result == null) result = caseType(observer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -366,6 +387,36 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Observer Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Observer Param</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObserverParam(ObserverParam object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Agent Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Agent Param</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAgentParam(AgentParam object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Observer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -407,6 +458,21 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHypothesis(Hypothesis object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>General Param</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>General Param</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeneralParam(GeneralParam object) {
 		return null;
 	}
 

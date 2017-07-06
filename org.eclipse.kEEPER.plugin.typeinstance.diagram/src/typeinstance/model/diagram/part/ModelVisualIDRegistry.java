@@ -14,6 +14,8 @@ import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -159,9 +161,15 @@ public class ModelVisualIDRegistry {
 			if (InstanceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case TypeEditPart.VISUAL_ID:
 			if (TypeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

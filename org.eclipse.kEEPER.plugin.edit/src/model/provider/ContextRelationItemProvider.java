@@ -61,11 +61,10 @@ public class ContextRelationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
 			addInitialComplexEventPropertyDescriptor(object);
 			addEndingComplexEventPropertyDescriptor(object);
-			addFlagPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -181,28 +180,6 @@ public class ContextRelationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Flag feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFlagPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContextRelation_flag_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContextRelation_flag_feature", "_UI_ContextRelation_type"),
-				 ModelPackage.Literals.CONTEXT_RELATION__FLAG,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns ContextRelation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,7 +219,6 @@ public class ContextRelationItemProvider
 		switch (notification.getFeatureID(ContextRelation.class)) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
 			case ModelPackage.CONTEXT_RELATION__VALUE:
-			case ModelPackage.CONTEXT_RELATION__FLAG:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

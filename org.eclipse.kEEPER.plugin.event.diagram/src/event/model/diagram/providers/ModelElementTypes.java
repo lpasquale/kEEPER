@@ -161,8 +161,6 @@ public class ModelElementTypes {
 
 			elements.put(ComplexEventAgent_4004, ModelPackage.eINSTANCE.getComplexEvent_Agent());
 
-			elements.put(EventParameters_4003, ModelPackage.eINSTANCE.getEvent_Parameters());
-
 			elements.put(PrimitiveEventObserver_4002, ModelPackage.eINSTANCE.getPrimitiveEvent_Observer());
 		}
 		return (ENamedElement) elements.get(type);

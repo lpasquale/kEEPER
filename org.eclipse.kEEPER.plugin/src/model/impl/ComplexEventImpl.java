@@ -4,6 +4,7 @@ package model.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
@@ -13,10 +14,12 @@ import model.Parameter;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -53,13 +56,13 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * @ordered
 	 */
 	protected Agent agent;
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComplexEventImpl() {
+	protected ComplexEventImpl() {
 		super();
 	}
 
@@ -101,7 +104,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		}
 		return agent;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,18 +196,5 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		}
 		return super.eIsSet(featureID);
 	}
-
-	@Override
-	public ArrayList<Parameter> getCorrectedParams() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setCorrectedParams(ArrayList<Parameter> c) {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 } //ComplexEventImpl

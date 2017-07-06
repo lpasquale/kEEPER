@@ -21,7 +21,13 @@
             xsi:type="gmfgraph:Label"
             name="TypeNameFigure"
             text="---Name of type---"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="TypeTitle"
+            text="&lt;&lt;Type>>"/>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
@@ -36,7 +42,13 @@
             xsi:type="gmfgraph:Label"
             name="InstanceNameFigure"
             text="---Name of instance---"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="InstanceTitle"
+            text="&lt;&lt;Instance>>"/>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
@@ -60,9 +72,19 @@
   <labels
       name="TypeName"
       figure="TypeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="TypeTitle"
+      figure="TypeFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="InstanceName"
+      figure="InstanceFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="InstanceTitle"
       figure="InstanceFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>

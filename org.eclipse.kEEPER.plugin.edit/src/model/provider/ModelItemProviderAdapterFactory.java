@@ -118,29 +118,6 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link model.Parameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterItemProvider parameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link model.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParameterAdapter() {
-		if (parameterItemProvider == null) {
-			parameterItemProvider = new ParameterItemProvider(this);
-		}
-
-		return parameterItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link model.ContextRelation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,6 +325,52 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link model.ObserverParam} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObserverParamItemProvider observerParamItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.ObserverParam}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createObserverParamAdapter() {
+		if (observerParamItemProvider == null) {
+			observerParamItemProvider = new ObserverParamItemProvider(this);
+		}
+
+		return observerParamItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.AgentParam} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AgentParamItemProvider agentParamItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.AgentParam}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAgentParamAdapter() {
+		if (agentParamItemProvider == null) {
+			agentParamItemProvider = new AgentParamItemProvider(this);
+		}
+
+		return agentParamItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link model.Observer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,6 +437,29 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		}
 
 		return hypothesisItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.GeneralParam} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralParamItemProvider generalParamItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.GeneralParam}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralParamAdapter() {
+		if (generalParamItemProvider == null) {
+			generalParamItemProvider = new GeneralParamItemProvider(this);
+		}
+
+		return generalParamItemProvider;
 	}
 
 	/**
@@ -517,7 +563,6 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	public void dispose() {
 		if (typeItemProvider != null) typeItemProvider.dispose();
 		if (instanceItemProvider != null) instanceItemProvider.dispose();
-		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (contextRelationItemProvider != null) contextRelationItemProvider.dispose();
 		if (primitiveEventItemProvider != null) primitiveEventItemProvider.dispose();
 		if (complexEventItemProvider != null) complexEventItemProvider.dispose();
@@ -527,9 +572,12 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		if (holdsAtBetweenItemProvider != null) holdsAtBetweenItemProvider.dispose();
 		if (initiallyItemProvider != null) initiallyItemProvider.dispose();
 		if (environmentItemProvider != null) environmentItemProvider.dispose();
-		if (observerItemProvider != null) observerItemProvider.dispose();
-		if (agentItemProvider != null) agentItemProvider.dispose();
+		if (observerParamItemProvider != null) observerParamItemProvider.dispose();
+		if (agentParamItemProvider != null) agentParamItemProvider.dispose();
 		if (hypothesisItemProvider != null) hypothesisItemProvider.dispose();
+		if (generalParamItemProvider != null) generalParamItemProvider.dispose();
+		if (agentItemProvider != null) agentItemProvider.dispose();
+		if (observerItemProvider != null) observerItemProvider.dispose();
 	}
 
 }

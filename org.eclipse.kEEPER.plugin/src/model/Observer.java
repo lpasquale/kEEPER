@@ -13,5 +13,5 @@ package model;
  * @model
  * @generated
  */
-public interface Observer extends Parameter {
+public interface Observer extends Type {
 } // Observer

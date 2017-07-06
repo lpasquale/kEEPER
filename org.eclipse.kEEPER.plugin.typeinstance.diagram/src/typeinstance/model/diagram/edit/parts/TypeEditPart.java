@@ -1,7 +1,9 @@
 package typeinstance.model.diagram.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -19,7 +21,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.runtime.notation.impl.ImageImpl;
+import org.eclipse.gmf.tooling.runtime.draw2d.CenterLayout;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
 
 import typeinstance.model.diagram.edit.policies.TypeItemSemanticEditPolicy;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
@@ -103,7 +109,11 @@ public class TypeEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof TypeNameEditPart) {
-			((TypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeNameFigure());
+			((TypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeTitle());
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeNameFigure());
 			return true;
 		}
 		return false;
@@ -114,6 +124,9 @@ public class TypeEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof TypeNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel2EditPart) {
 			return true;
 		}
 		return false;
@@ -245,8 +258,12 @@ public class TypeEditPart extends ShapeNodeEditPart {
 	public class TypeFigure extends RectangleFigure {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private WrappingLabel fFigureTypeTitle;
+		/**
+			 * @generated
+			 */
 		private WrappingLabel fFigureTypeNameFigure;
 
 		/**
@@ -269,21 +286,33 @@ public class TypeEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureTypeNameFigure = new WrappingLabel();
-
 			fFigureTypeNameFigure.setText("---Name of type---");
+			fFigureTypeNameFigure.setAlignment(PositionConstants.CENTER);
 
-			this.add(fFigureTypeNameFigure);
+			fFigureTypeTitle = new WrappingLabel();
+			fFigureTypeTitle.setText("<<Type>>");
+			fFigureTypeTitle.setAlignment(PositionConstants.CENTER);
+
+			this.add(fFigureTypeTitle, BorderLayout.CENTER);
+			this.add(fFigureTypeNameFigure, BorderLayout.CENTER);
 
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public WrappingLabel getFigureTypeTitle() {
+			return fFigureTypeTitle;
+		}
+
+		/**
+			 * @generated
+			 */
 		public WrappingLabel getFigureTypeNameFigure() {
 			return fFigureTypeNameFigure;
 		}

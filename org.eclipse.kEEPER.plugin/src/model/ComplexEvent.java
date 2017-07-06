@@ -4,7 +4,6 @@ package model;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Complex Event</b></em>'.
@@ -28,7 +27,7 @@ public interface ComplexEvent extends Event {
 	 * The list contents are of type {@link model.BehaviouralDescription}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Behavioural Descriptions</em>' reference isn't clear,
+	 * If the meaning of the '<em>Behavioural Descriptions</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -55,6 +54,14 @@ public interface ComplexEvent extends Event {
 	 */
 	Agent getAgent();
 
-	void setAgent(Agent target);
+	/**
+	 * Sets the value of the '{@link model.ComplexEvent#getAgent <em>Agent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Agent</em>' reference.
+	 * @see #getAgent()
+	 * @generated
+	 */
+	void setAgent(Agent value);
 
 } // ComplexEvent

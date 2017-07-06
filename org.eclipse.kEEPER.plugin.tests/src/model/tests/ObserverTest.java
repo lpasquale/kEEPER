@@ -13,7 +13,7 @@ import model.Observer;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObserverTest extends ParameterTest {
+public class ObserverTest extends TypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

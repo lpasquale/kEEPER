@@ -236,7 +236,7 @@ public class InstanceNameEditPart extends CompartmentEditPart implements ITextAw
 	* @generated
 	*/
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**

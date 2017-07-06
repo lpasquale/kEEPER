@@ -13,6 +13,11 @@
       <domainMetaElement
           href="../model.ecore#//Instance"/>
       <labelMappings
+          readOnly="true">
+        <diagramLabel
+            href="typeinstance.gmfgraph#InstanceTitle"/>
+      </labelMappings>
+      <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="typeinstance.gmfgraph#InstanceName"/>
@@ -32,6 +37,11 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Type"/>
+      <labelMappings
+          readOnly="true">
+        <diagramLabel
+            href="typeinstance.gmfgraph#TypeTitle"/>
+      </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping"
           editorPattern="">

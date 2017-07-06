@@ -47,6 +47,8 @@ import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
 import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -249,6 +251,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node, ModelVisualIDRegistry.getType(InstanceNameEditPart.VISUAL_ID));
+		Node label5003 = createLabel(node, ModelVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -286,6 +289,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5002 = createLabel(node, ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
+		Node label5004 = createLabel(node, ModelVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		return node;
 	}
 

@@ -1,7 +1,9 @@
 package typeinstance.model.diagram.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -103,7 +105,11 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InstanceNameEditPart) {
-			((InstanceNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNameFigure());
+			((InstanceNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceTitle());
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNameFigure());
 			return true;
 		}
 		return false;
@@ -114,6 +120,9 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InstanceNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -245,8 +254,12 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	public class InstanceFigure extends RectangleFigure {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private WrappingLabel fFigureInstanceTitle;
+		/**
+			 * @generated
+			 */
 		private WrappingLabel fFigureInstanceNameFigure;
 
 		/**
@@ -269,21 +282,33 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureInstanceNameFigure = new WrappingLabel();
-
 			fFigureInstanceNameFigure.setText("---Name of instance---");
+			fFigureInstanceNameFigure.setAlignment(PositionConstants.CENTER);
 
-			this.add(fFigureInstanceNameFigure);
+			fFigureInstanceTitle = new WrappingLabel();
+			fFigureInstanceTitle.setText("<<Instance>>");
+			fFigureInstanceTitle.setAlignment(PositionConstants.CENTER);
+
+			this.add(fFigureInstanceTitle, BorderLayout.CENTER);
+			this.add(fFigureInstanceNameFigure, BorderLayout.CENTER);
 
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public WrappingLabel getFigureInstanceTitle() {
+			return fFigureInstanceTitle;
+		}
+
+		/**
+			 * @generated
+			 */
 		public WrappingLabel getFigureInstanceNameFigure() {
 			return fFigureInstanceNameFigure;
 		}

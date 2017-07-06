@@ -9,6 +9,7 @@ import model.Event;
 import model.ModelPackage;
 import model.Parameter;
 
+import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -29,8 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link model.impl.EventImpl#getName <em>Name</em>}</li>
- *   <li>{@link model.impl.EventImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link model.impl.EventImpl#isFlag <em>Flag</em>}</li>
+ *   <li>{@link model.impl.EventImpl#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,35 +57,14 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameters()
+	 * @see #getTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> parameters;
-
-	
-	/**
-	 * The default value of the '{@link #isFlag() <em>Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean FLAG_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isFlag() <em>Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFlag()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean flag = FLAG_EDEFAULT;
+	protected EList<Type> types;
 
 	protected ArrayList<Parameter> correctedParams; 
 	
@@ -134,41 +113,13 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ModelPackage.EVENT__PARAMETERS);
+	public EList<Type> getTypes() {
+		if (types == null) {
+			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.EVENT__TYPES);
 		}
-		return parameters;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isFlag() {
-		return flag;
+		return types;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFlag(boolean newFlag) {
-		boolean oldFlag = flag;
-		flag = newFlag;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.EVENT__FLAG, oldFlag, flag));
-	}
-
-	public ArrayList<Parameter> getCorrectedParam(){
-		return correctedParams;
-	}
-
-	public void setCorrectedParam(ArrayList<Parameter> c){
-		correctedParams = c;
-	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,10 +130,8 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case ModelPackage.EVENT__NAME:
 				return getName();
-			case ModelPackage.EVENT__PARAMETERS:
-				return getParameters();
-			case ModelPackage.EVENT__FLAG:
-				return isFlag();
+			case ModelPackage.EVENT__TYPES:
+				return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,12 +148,9 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 			case ModelPackage.EVENT__NAME:
 				setName((String)newValue);
 				return;
-			case ModelPackage.EVENT__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case ModelPackage.EVENT__FLAG:
-				setFlag((Boolean)newValue);
+			case ModelPackage.EVENT__TYPES:
+				getTypes().clear();
+				getTypes().addAll((Collection<? extends Type>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,11 +167,8 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 			case ModelPackage.EVENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ModelPackage.EVENT__PARAMETERS:
-				getParameters().clear();
-				return;
-			case ModelPackage.EVENT__FLAG:
-				setFlag(FLAG_EDEFAULT);
+			case ModelPackage.EVENT__TYPES:
+				getTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -241,10 +184,8 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case ModelPackage.EVENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ModelPackage.EVENT__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case ModelPackage.EVENT__FLAG:
-				return flag != FLAG_EDEFAULT;
+			case ModelPackage.EVENT__TYPES:
+				return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,8 +202,6 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", flag: ");
-		result.append(flag);
 		result.append(')');
 		return result.toString();
 	}

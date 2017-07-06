@@ -106,7 +106,7 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HoldsAtBetweenImpl() {
+	protected HoldsAtBetweenImpl() {
 		super();
 	}
 

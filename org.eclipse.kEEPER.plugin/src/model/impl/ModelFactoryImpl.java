@@ -58,7 +58,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 			case ModelPackage.TYPE: return createType();
 			case ModelPackage.INSTANCE: return createInstance();
-			case ModelPackage.PARAMETER: return createParameter();
 			case ModelPackage.CONTEXT_RELATION: return createContextRelation();
 			case ModelPackage.PRIMITIVE_EVENT: return createPrimitiveEvent();
 			case ModelPackage.COMPLEX_EVENT: return createComplexEvent();
@@ -68,9 +67,12 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.HOLDS_AT_BETWEEN: return createHoldsAtBetween();
 			case ModelPackage.INITIALLY: return createInitially();
 			case ModelPackage.ENVIRONMENT: return createEnvironment();
-			case ModelPackage.OBSERVER: return createObserver();
-			case ModelPackage.AGENT: return createAgent();
+			case ModelPackage.OBSERVER_PARAM: return createObserverParam();
+			case ModelPackage.AGENT_PARAM: return createAgentParam();
 			case ModelPackage.HYPOTHESIS: return createHypothesis();
+			case ModelPackage.GENERAL_PARAM: return createGeneralParam();
+			case ModelPackage.AGENT: return createAgent();
+			case ModelPackage.OBSERVER: return createObserver();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -94,16 +96,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Instance createInstance() {
 		InstanceImpl instance = new InstanceImpl();
 		return instance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Parameter createParameter() {
-		ParameterImpl parameter = new ParameterImpl();
-		return parameter;
 	}
 
 	/**
@@ -201,6 +193,26 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ObserverParam createObserverParam() {
+		ObserverParamImpl observerParam = new ObserverParamImpl();
+		return observerParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgentParam createAgentParam() {
+		AgentParamImpl agentParam = new AgentParamImpl();
+		return agentParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Observer createObserver() {
 		ObserverImpl observer = new ObserverImpl();
 		return observer;
@@ -224,6 +236,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Hypothesis createHypothesis() {
 		HypothesisImpl hypothesis = new HypothesisImpl();
 		return hypothesis;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneralParam createGeneralParam() {
+		GeneralParamImpl generalParam = new GeneralParamImpl();
+		return generalParam;
 	}
 
 	/**
