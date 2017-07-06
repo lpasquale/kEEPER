@@ -634,6 +634,7 @@ public class Transformer {
 						h++;
 					}
 				} 
+				
 				// Writing all the types on file
 				Iterator<Parameter> iter = behTypes.iterator();
 				//System.out.println(iter.hasNext());
