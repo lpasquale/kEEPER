@@ -293,27 +293,27 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Agent_2007_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Observer_2008_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Parameter_2009_incominglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_PrimitiveEvent_2011_outgoinglinks;
 
 	/**
 	* @generated
 	*/
 	public static String NavigatorGroupName_ComplexEvent_2012_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Agent_2013_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Observer_2014_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Type_2015_incominglinks;
 
 	/**
 	* @generated
@@ -338,22 +338,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_EventParameters_4003_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_EventParameters_4003_source;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_ComplexEventAgent_4004_target;
 
 	/**
 	* @generated
 	*/
 	public static String NavigatorGroupName_ComplexEventAgent_4004_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_EventTypes_4005_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_EventTypes_4005_source;
 
 	/**
 	* @generated

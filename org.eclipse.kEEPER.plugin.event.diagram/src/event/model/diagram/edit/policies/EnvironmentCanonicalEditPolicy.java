@@ -35,8 +35,8 @@ import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ParameterEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.part.ModelDiagramUpdater;
 import event.model.diagram.part.ModelLinkDescriptor;
 import event.model.diagram.part.ModelNodeDescriptor;
@@ -72,7 +72,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Events());
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Parameters());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Types());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -109,7 +109,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PrimitiveEventEditPart.VISUAL_ID:
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
-		case ParameterEditPart.VISUAL_ID:
+		case TypeEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
 			return true;
 		}
@@ -266,21 +266,21 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case AgentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getAgent_2007ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getAgent_2013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ObserverEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getObserver_2008ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getObserver_2014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ParameterEditPart.VISUAL_ID: {
+		case TypeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getParameter_2009ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getType_2015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

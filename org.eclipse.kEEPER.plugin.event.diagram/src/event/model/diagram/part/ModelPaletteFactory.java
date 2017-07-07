@@ -5,10 +5,8 @@ import java.util.Collections;
 
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
-import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 import event.model.diagram.providers.ModelElementTypes;
@@ -45,7 +43,7 @@ public class ModelPaletteFactory {
 	*/
 	private ToolEntry createAgentPrimitiveEvent1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.AgentPrimitiveEvent1CreationTool_title, null,
-				Collections.singletonList(ModelElementTypes.Agent_2007));
+				Collections.singletonList(ModelElementTypes.Agent_2013));
 		entry.setId("createAgentPrimitiveEvent1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ModelDiagramEditorPlugin
 				.findImageDescriptor("/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/agent.gif")); //$NON-NLS-1$
@@ -59,7 +57,7 @@ public class ModelPaletteFactory {
 	private ToolEntry createObserverPrimitiveEvent2CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ObserverPrimitiveEvent2CreationTool_title,
 				Messages.ObserverPrimitiveEvent2CreationTool_desc,
-				Collections.singletonList(ModelElementTypes.Observer_2008));
+				Collections.singletonList(ModelElementTypes.Observer_2014));
 		entry.setId("createObserverPrimitiveEvent2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ModelDiagramEditorPlugin
 				.findImageDescriptor("/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/observer.ico")); //$NON-NLS-1$
@@ -73,9 +71,9 @@ public class ModelPaletteFactory {
 	private ToolEntry createGenericparameterPrimitiveEvent3CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				Messages.GenericparameterPrimitiveEvent3CreationTool_title, null,
-				Collections.singletonList(ModelElementTypes.Parameter_2009));
+				Collections.singletonList(ModelElementTypes.Type_2015));
 		entry.setId("createGenericparameterPrimitiveEvent3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Parameter_2009));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Type_2015));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -7,14 +7,14 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import event.model.diagram.edit.parts.ParameterEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.providers.ModelElementTypes;
 import event.model.diagram.providers.ModelModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class ModelModelingAssistantProviderOfParameterEditPart extends ModelModelingAssistantProvider {
+public class ModelModelingAssistantProviderOfTypeEditPart extends ModelModelingAssistantProvider {
 
 	/**
 	* @generated
@@ -23,15 +23,15 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((ParameterEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((TypeEditPart) targetEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnTarget(ParameterEditPart target) {
+	public List<IElementType> doGetRelTypesOnTarget(TypeEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(ModelElementTypes.EventParameters_4003);
+		types.add(ModelElementTypes.EventTypes_4005);
 		return types;
 	}
 
@@ -42,15 +42,15 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource((ParameterEditPart) targetEditPart, relationshipType);
+		return doGetTypesForSource((TypeEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetTypesForSource(ParameterEditPart target, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(TypeEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == ModelElementTypes.EventParameters_4003) {
+		if (relationshipType == ModelElementTypes.EventTypes_4005) {
 			types.add(ModelElementTypes.PrimitiveEvent_2011);
 			types.add(ModelElementTypes.ComplexEvent_2012);
 		}

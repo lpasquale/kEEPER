@@ -55,7 +55,7 @@ public class AgentCreateCommand extends EditElementCommand {
 		Agent newElement = ModelFactory.eINSTANCE.createAgent();
 
 		Environment owner = (Environment) getElementToEdit();
-		owner.getParameters().add(newElement);
+		owner.getTypes().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

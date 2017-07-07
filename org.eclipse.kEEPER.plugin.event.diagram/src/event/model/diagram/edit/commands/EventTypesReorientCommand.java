@@ -11,12 +11,12 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
 import model.Event;
-import model.Parameter;
+import model.Type;
 
 /**
  * @generated
  */
-public class EventParametersReorientCommand extends EditElementCommand {
+public class EventTypesReorientCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -41,7 +41,7 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public EventParametersReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public EventTypesReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -69,10 +69,10 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Parameter && newEnd instanceof Event)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Event)) {
 			return false;
 		}
-		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventParameters_4003(getNewSource(),
+		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventTypes_4005(getNewSource(),
 				getOldTarget());
 	}
 
@@ -80,10 +80,10 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Parameter && newEnd instanceof Parameter)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
-		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventParameters_4003(getOldSource(),
+		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventTypes_4005(getOldSource(),
 				getNewTarget());
 	}
 
@@ -107,8 +107,8 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getParameters().remove(getOldTarget());
-		getNewSource().getParameters().add(getOldTarget());
+		getOldSource().getTypes().remove(getOldTarget());
+		getNewSource().getTypes().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -116,8 +116,8 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getParameters().remove(getOldTarget());
-		getOldSource().getParameters().add(getNewTarget());
+		getOldSource().getTypes().remove(getOldTarget());
+		getOldSource().getTypes().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -138,14 +138,14 @@ public class EventParametersReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Parameter getOldTarget() {
-		return (Parameter) oldEnd;
+	protected Type getOldTarget() {
+		return (Type) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected Parameter getNewTarget() {
-		return (Parameter) newEnd;
+	protected Type getNewTarget() {
+		return (Type) newEnd;
 	}
 }

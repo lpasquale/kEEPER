@@ -28,7 +28,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/parameters"/>
+        href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Agent"/>
@@ -38,7 +38,7 @@
         <diagramLabel
             href="event.gmfgraph#AgentLabel"/>
         <features
-            href="../model.ecore#//Parameter/name"/>
+            href="../model.ecore#//Type/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -49,7 +49,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/parameters"/>
+        href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Observer"/>
@@ -58,7 +58,7 @@
         <diagramLabel
             href="event.gmfgraph#ObserverLabel"/>
         <features
-            href="../model.ecore#//Parameter/name"/>
+            href="../model.ecore#//Type/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -69,16 +69,16 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/parameters"/>
+        href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Parameter"/>
+          href="../model.ecore#//Type"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="event.gmfgraph#AddParamLabel"/>
         <features
-            href="../model.ecore#//Parameter/name"/>
+            href="../model.ecore#//Type/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -126,7 +126,7 @@
         href="event.gmfgraph#PEAddParamConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../model.ecore#//Event/parameters"/>
+        href="../model.ecore#//Event/types"/>
   </links>
   <links>
     <diagramLink

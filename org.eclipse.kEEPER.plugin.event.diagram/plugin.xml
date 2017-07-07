@@ -217,8 +217,8 @@
       <viewProvider class="event.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Event Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2011,2007,2008,2009,2012"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4003,4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2011,2013,2014,2015,2012"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005,4002"/>
       </viewProvider>
    </extension>
 
@@ -230,13 +230,13 @@
             <method name="getType()" value="Event Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2011,2007,2008,2009,2012"/>
+            <method name="getType()" value="2011,2013,2014,2015,2012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4004,4003,4002"/>
+            <method name="getType()" value="4001,4004,4005,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5010,5005,5008,5007,5011"/>
+            <method name="getType()" value="5010,5012,5013,5014,5011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -260,18 +260,18 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfAgentEditPart">
          <Priority name="Lowest"/>
-         <object class="event.model.diagram.edit.parts.AgentEditPart" id="Agent_2007"/>
-         <context elements="Agent_2007"/>
+         <object class="event.model.diagram.edit.parts.AgentEditPart" id="Agent_2013"/>
+         <context elements="Agent_2013"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfObserverEditPart">
          <Priority name="Lowest"/>
-         <object class="event.model.diagram.edit.parts.ObserverEditPart" id="Observer_2008"/>
-         <context elements="Observer_2008"/>
+         <object class="event.model.diagram.edit.parts.ObserverEditPart" id="Observer_2014"/>
+         <context elements="Observer_2014"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfParameterEditPart">
+            <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfTypeEditPart">
          <Priority name="Lowest"/>
-         <object class="event.model.diagram.edit.parts.ParameterEditPart" id="Parameter_2009"/>
-         <context elements="Parameter_2009"/>
+         <object class="event.model.diagram.edit.parts.TypeEditPart" id="Type_2015"/>
+         <context elements="Type_2015"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfComplexEventEditPart">
          <Priority name="Lowest"/>
@@ -320,32 +320,32 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.kEEPER.plugin.event.diagram.Agent_2007"
-               name="%metatype.name.Agent_2007"
+               id="org.eclipse.kEEPER.plugin.event.diagram.Agent_2013"
+               name="%metatype.name.Agent_2013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Agent"
                edithelper="event.model.diagram.edit.helpers.AgentEditHelper">
-            <param name="semanticHint" value="2007"/>
+            <param name="semanticHint" value="2013"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.kEEPER.plugin.event.diagram.Observer_2008"
-               name="%metatype.name.Observer_2008"
+               id="org.eclipse.kEEPER.plugin.event.diagram.Observer_2014"
+               name="%metatype.name.Observer_2014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Observer"
                edithelper="event.model.diagram.edit.helpers.ObserverEditHelper">
-            <param name="semanticHint" value="2008"/>
+            <param name="semanticHint" value="2014"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.kEEPER.plugin.event.diagram.Parameter_2009"
-               name="%metatype.name.Parameter_2009"
+               id="org.eclipse.kEEPER.plugin.event.diagram.Type_2015"
+               name="%metatype.name.Type_2015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Parameter"
-               edithelper="event.model.diagram.edit.helpers.ParameterEditHelper">
-            <param name="semanticHint" value="2009"/>
+               eclass="Type"
+               edithelper="event.model.diagram.edit.helpers.TypeEditHelper">
+            <param name="semanticHint" value="2015"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
@@ -378,11 +378,11 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <specializationType
-               id="org.eclipse.kEEPER.plugin.event.diagram.EventParameters_4003"
-               name="%metatype.name.EventParameters_4003"
+               id="org.eclipse.kEEPER.plugin.event.diagram.EventTypes_4005"
+               name="%metatype.name.EventTypes_4005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4003"/>
+            <param name="semanticHint" value="4005"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
@@ -408,13 +408,13 @@
       <binding context="org.eclipse.kEEPER.plugin.event.diagram.TypeContext">
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Environment_1000"/>
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEvent_2011"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Agent_2007"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Observer_2008"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Parameter_2009"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Agent_2013"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Observer_2014"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.Type_2015"/>
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.ComplexEvent_2012"/>
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEventAgent_4001"/>
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.ComplexEventAgent_4004"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.EventParameters_4003"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.EventTypes_4005"/>
          <elementType ref="org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEventObserver_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

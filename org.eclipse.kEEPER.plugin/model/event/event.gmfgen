@@ -40,13 +40,8 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="PrimitiveEventEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="PrimitiveEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.green);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventName.setText(&quot;---Primitive Event Name---&quot;);&#xA;&#xA;this.add(fFigurePrimitiveEventName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventName() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
@@ -56,6 +51,7 @@
             href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
       <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5010"
           editPartClassName="PrimitiveEventNameEditPart"
           itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
@@ -63,9 +59,9 @@
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePrimitiveEventName"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="PrimitiveEventNameFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -75,7 +71,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2007"
+        visualID="2013"
         editPartClassName="AgentEditPart"
         itemSemanticEditPolicyClassName="AgentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="AgentCanonicalEditPolicy"
@@ -93,13 +89,13 @@
         <metaClass
             href="../model.genmodel#//model/Agent"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5005"
+          visualID="5012"
           editPartClassName="AgentNameEditPart"
           itemSemanticEditPolicyClassName="AgentNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -114,12 +110,12 @@
             parser="//@labelParsers/@implementations.0"
             viewPattern="">
           <metaFeatures
-              href="../model.genmodel#//model/Parameter/name"/>
+              href="../model.genmodel#//model/Type/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2008"
+        visualID="2014"
         editPartClassName="ObserverEditPart"
         itemSemanticEditPolicyClassName="ObserverItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ObserverCanonicalEditPolicy"
@@ -137,13 +133,13 @@
         <metaClass
             href="../model.genmodel#//model/Observer"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5008"
+          visualID="5013"
           editPartClassName="ObserverNameEditPart"
           itemSemanticEditPolicyClassName="ObserverNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -157,38 +153,38 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../model.genmodel#//model/Parameter/name"/>
+              href="../model.genmodel#//model/Type/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2009"
-        editPartClassName="ParameterEditPart"
-        itemSemanticEditPolicyClassName="ParameterItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
-        createCommandClassName="ParameterCreateCommand">
+        visualID="2015"
+        editPartClassName="TypeEditPart"
+        itemSemanticEditPolicyClassName="TypeItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="TypeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="TypeGraphicalNodeEditPolicy"
+        createCommandClassName="TypeCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ParameterEditHelper"/>
+          editHelperClassName="TypeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
-            href="../model.genmodel#//model/Parameter"/>
+            href="../model.genmodel#//model/Type"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/parameters"/>
+            href="../model.genmodel#//model/Environment/types"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5007"
-          editPartClassName="ParameterNameEditPart"
-          itemSemanticEditPolicyClassName="ParameterNameItemSemanticEditPolicy">
+          visualID="5014"
+          editPartClassName="TypeNameEditPart"
+          itemSemanticEditPolicyClassName="TypeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -199,7 +195,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../model.genmodel#//model/Parameter/name"/>
+              href="../model.genmodel#//model/Type/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -291,11 +287,11 @@
       </modelFacet>
     </links>
     <links
-        visualID="4003"
-        editPartClassName="EventParametersEditPart"
-        itemSemanticEditPolicyClassName="EventParametersItemSemanticEditPolicy"
-        createCommandClassName="EventParametersCreateCommand"
-        reorientCommandClassName="EventParametersReorientCommand">
+        visualID="4005"
+        editPartClassName="EventTypesEditPart"
+        itemSemanticEditPolicyClassName="EventTypesItemSemanticEditPolicy"
+        createCommandClassName="EventTypesCreateCommand"
+        reorientCommandClassName="EventTypesReorientCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -307,7 +303,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../model.genmodel#//model/Event/parameters"/>
+            href="../model.genmodel#//model/Event/types"/>
       </modelFacet>
     </links>
     <links

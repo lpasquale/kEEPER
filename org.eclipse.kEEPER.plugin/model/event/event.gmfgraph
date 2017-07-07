@@ -8,24 +8,6 @@
   <figures
       name="nodes">
     <descriptors
-        name="PrimitiveEventFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="PrimitiveEvent"
-          cornerWidth="30"
-          cornerHeight="20">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="green"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PrimitiveEventName"
-            text="---Primitive Event Name---"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="AddParamFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -45,7 +27,7 @@
             text="---Complex Event Name---"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <figures
@@ -62,6 +44,13 @@
       <actualFigure
           xsi:type="gmfgraph:CustomFigure"
           name="Observer"
+          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
+    </descriptors>
+    <descriptors
+        name="PrimitiveEventFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="PrimitiveEvent"
           qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
     </descriptors>
   </figures>
@@ -135,6 +124,13 @@
           name="ObserverName"
           text="NAME"/>
     </descriptors>
+    <descriptors
+        name="PrimitiveEventNameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="PrimitiveEventName"
+          text="NAME"/>
+    </descriptors>
   </figures>
   <nodes
       name="ComplexEventNode"
@@ -166,7 +162,7 @@
   <labels
       name="ComplexEventLabel"
       figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="AgentLabel"
       figure="AgentNameFigure"/>
@@ -175,8 +171,7 @@
       figure="ObserverNameFigure"/>
   <labels
       name="PrimitiveEventLabel"
-      figure="PrimitiveEventFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      figure="PrimitiveEventNameFigure"/>
   <labels
       name="AddParamLabel"
       figure="AddParamNameFigure"

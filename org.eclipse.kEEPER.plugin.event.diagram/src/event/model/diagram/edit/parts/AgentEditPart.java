@@ -6,8 +6,6 @@ import java.util.List;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
@@ -24,24 +22,15 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
 import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.lite.svg.SVGFigure;
-import org.eclipse.gmf.runtime.lite.svg.SVGUtils;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 import event.model.diagram.edit.policies.AgentItemSemanticEditPolicy;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
@@ -55,7 +44,7 @@ public class AgentEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2007;
+	public static final int VISUAL_ID = 2013;
 
 	/**
 	* @generated
@@ -72,6 +61,8 @@ public class AgentEditPart extends AbstractBorderedShapeEditPart {
 	*/
 	public AgentEditPart(View view) {
 		super(view);
+		
+		System.out.println("I CREATED AN AGENT!");
 	}
 
 	/**
@@ -126,7 +117,7 @@ public class AgentEditPart extends AbstractBorderedShapeEditPart {
 	* @generated NOT
 	*/
 	protected IFigure createNodeShape() {
-		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/agent.svg"), //$NON-NLS-1$
+		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/Agent.svg"), //$NON-NLS-1$
 				null);
 		return new ScalableImageFigure(RenderedImageFactory.getInstance(url), false, true, true);
 	}
@@ -139,12 +130,12 @@ public class AgentEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	* @generated NOT
+	* @generated
 	*/
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof AgentNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(2, -5));
+			locator.setBorderItemOffset(new Dimension(0, 0));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);

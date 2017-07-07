@@ -9,22 +9,22 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 
-import event.model.diagram.edit.policies.EventParametersItemSemanticEditPolicy;
+import event.model.diagram.edit.policies.EventTypesItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class EventParametersEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class EventTypesEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4005;
 
 	/**
 	* @generated
 	*/
-	public EventParametersEditPart(View view) {
+	public EventTypesEditPart(View view) {
 		super(view);
 	}
 
@@ -33,7 +33,7 @@ public class EventParametersEditPart extends ConnectionNodeEditPart implements I
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EventParametersItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EventTypesItemSemanticEditPolicy());
 	}
 
 	/**
@@ -57,8 +57,8 @@ public class EventParametersEditPart extends ConnectionNodeEditPart implements I
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class PEAddParamFigure extends PolylineConnectionEx {
 
 		/**

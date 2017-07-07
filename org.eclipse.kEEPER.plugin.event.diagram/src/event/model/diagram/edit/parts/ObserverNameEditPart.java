@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -38,7 +37,6 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
-import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -61,7 +59,7 @@ public class ObserverNameEditPart extends LabelEditPart implements ITextAwareEdi
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5008;
+	public static final int VISUAL_ID = 5013;
 
 	/**
 	* @generated
@@ -327,7 +325,7 @@ public class ObserverNameEditPart extends LabelEditPart implements ITextAwareEdi
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.Observer_2008, getParserElement(),
+			parser = ModelParserProvider.getParser(ModelElementTypes.Observer_2014, getParserElement(),
 					ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.ObserverNameEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -614,8 +612,8 @@ public class ObserverNameEditPart extends LabelEditPart implements ITextAwareEdi
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class ObserverNameFigure extends WrappingLabel {
 
 		/**

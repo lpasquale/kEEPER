@@ -55,7 +55,7 @@ public class ObserverCreateCommand extends EditElementCommand {
 		Observer newElement = ModelFactory.eINSTANCE.createObserver();
 
 		Environment owner = (Environment) getElementToEdit();
-		owner.getParameters().add(newElement);
+		owner.getTypes().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

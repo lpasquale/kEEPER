@@ -10,8 +10,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ParameterEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.providers.ModelElementTypes;
 import event.model.diagram.providers.ModelModelingAssistantProvider;
 
@@ -36,7 +36,7 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 	public List<IElementType> doGetRelTypesOnSource(PrimitiveEventEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ModelElementTypes.PrimitiveEventAgent_4001);
-		types.add(ModelElementTypes.EventParameters_4003);
+		types.add(ModelElementTypes.EventTypes_4005);
 		types.add(ModelElementTypes.PrimitiveEventObserver_4002);
 		return types;
 	}
@@ -62,13 +62,13 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 			types.add(ModelElementTypes.PrimitiveEventAgent_4001);
 		}
 		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
 		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+		if (targetEditPart instanceof TypeEditPart) {
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
 		if (targetEditPart instanceof ObserverEditPart) {
 			types.add(ModelElementTypes.PrimitiveEventObserver_4002);
@@ -92,13 +92,13 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 	public List<IElementType> doGetTypesForTarget(PrimitiveEventEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.PrimitiveEventAgent_4001) {
-			types.add(ModelElementTypes.Agent_2007);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.Agent_2007);
-			types.add(ModelElementTypes.Observer_2008);
-			types.add(ModelElementTypes.Parameter_2009);
+			types.add(ModelElementTypes.Agent_2013);
+		} else if (relationshipType == ModelElementTypes.EventTypes_4005) {
+			types.add(ModelElementTypes.Agent_2013);
+			types.add(ModelElementTypes.Observer_2014);
+			types.add(ModelElementTypes.Type_2015);
 		} else if (relationshipType == ModelElementTypes.PrimitiveEventObserver_4002) {
-			types.add(ModelElementTypes.Observer_2008);
+			types.add(ModelElementTypes.Observer_2014);
 		}
 		return types;
 	}

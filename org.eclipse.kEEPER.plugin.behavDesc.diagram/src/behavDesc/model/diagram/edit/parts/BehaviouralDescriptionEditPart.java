@@ -612,7 +612,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			if (timeSelectedArray == null)
 				return null;
 
-			// Creating HoldsAt
+			// Creating HoldsAtBetween
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004,
 					editor.getDiagramEditPart());

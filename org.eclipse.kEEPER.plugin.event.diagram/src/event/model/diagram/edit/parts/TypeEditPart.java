@@ -2,6 +2,7 @@ package event.model.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -19,30 +20,26 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import event.model.diagram.edit.policies.ParameterItemSemanticEditPolicy;
+import event.model.diagram.edit.policies.TypeItemSemanticEditPolicy;
 import event.model.diagram.part.ModelVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ParameterEditPart extends AbstractBorderedShapeEditPart {
+public class TypeEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2009;
+	public static final int VISUAL_ID = 2015;
 
 	/**
 	* @generated
@@ -57,7 +54,7 @@ public class ParameterEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	* @generated
 	*/
-	public ParameterEditPart(View view) {
+	public TypeEditPart(View view) {
 		super(view);
 	}
 
@@ -66,7 +63,7 @@ public class ParameterEditPart extends AbstractBorderedShapeEditPart {
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ParameterItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TypeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,7 +78,7 @@ public class ParameterEditPart extends AbstractBorderedShapeEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (ModelVisualIDRegistry.getVisualID(childView)) {
-				case ParameterNameEditPart.VISUAL_ID:
+				case TypeNameEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
@@ -124,12 +121,12 @@ public class ParameterEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	* @generated NOT
+	* @generated
 	*/
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof ParameterNameEditPart) {
+		if (borderItemEditPart instanceof TypeNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(2, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -221,7 +218,7 @@ public class ParameterEditPart extends AbstractBorderedShapeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ModelVisualIDRegistry.getType(ParameterNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
 	}
 
 }

@@ -14,10 +14,10 @@ import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
-import event.model.diagram.edit.parts.ParameterEditPart;
-import event.model.diagram.edit.parts.ParameterNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
+import event.model.diagram.edit.parts.TypeNameEditPart;
 import model.Environment;
 import model.ModelPackage;
 
@@ -132,8 +132,8 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
 				return ObserverEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
-				return ParameterEditPart.VISUAL_ID;
+			if (ModelPackage.eINSTANCE.getType().isSuperTypeOf(domainElement.eClass())) {
+				return TypeEditPart.VISUAL_ID;
 			}
 			if (ModelPackage.eINSTANCE.getComplexEvent().isSuperTypeOf(domainElement.eClass())) {
 				return ComplexEventEditPart.VISUAL_ID;
@@ -172,7 +172,7 @@ public class ModelVisualIDRegistry {
 			if (ObserverEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
+			if (TypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComplexEventEditPart.VISUAL_ID == nodeVisualID) {
@@ -194,8 +194,8 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ParameterEditPart.VISUAL_ID:
-			if (ParameterNameEditPart.VISUAL_ID == nodeVisualID) {
+		case TypeEditPart.VISUAL_ID:
+			if (TypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -254,11 +254,11 @@ public class ModelVisualIDRegistry {
 		switch (visualID) {
 		case EnvironmentEditPart.VISUAL_ID:
 			return false;
-		case AgentEditPart.VISUAL_ID:
-		case ObserverEditPart.VISUAL_ID:
-		case ParameterEditPart.VISUAL_ID:
 		case PrimitiveEventEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
+		case AgentEditPart.VISUAL_ID:
+		case ObserverEditPart.VISUAL_ID:
+		case TypeEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

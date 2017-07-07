@@ -33,7 +33,7 @@ public class ModelModelingAssistantProviderOfAgentEditPart extends ModelModeling
 		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ModelElementTypes.PrimitiveEventAgent_4001);
 		types.add(ModelElementTypes.ComplexEventAgent_4004);
-		types.add(ModelElementTypes.EventParameters_4003);
+		types.add(ModelElementTypes.EventTypes_4005);
 		return types;
 	}
 
@@ -56,7 +56,7 @@ public class ModelModelingAssistantProviderOfAgentEditPart extends ModelModeling
 			types.add(ModelElementTypes.PrimitiveEvent_2011);
 		} else if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
 			types.add(ModelElementTypes.ComplexEvent_2012);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
+		} else if (relationshipType == ModelElementTypes.EventTypes_4005) {
 			types.add(ModelElementTypes.PrimitiveEvent_2011);
 			types.add(ModelElementTypes.ComplexEvent_2012);
 		}

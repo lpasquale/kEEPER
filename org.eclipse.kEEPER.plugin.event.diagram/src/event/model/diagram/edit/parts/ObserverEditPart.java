@@ -1,9 +1,9 @@
 package event.model.diagram.edit.parts;
 
 import java.net.URL;
-
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
@@ -22,11 +22,9 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
 import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -46,7 +44,7 @@ public class ObserverEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2008;
+	public static final int VISUAL_ID = 2014;
 
 	/**
 	* @generated
@@ -117,7 +115,7 @@ public class ObserverEditPart extends AbstractBorderedShapeEditPart {
 	* @generated NOT
 	*/
 	protected IFigure createNodeShape() {
-		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/observer.svg"), //$NON-NLS-1$
+		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/Observer.svg"), //$NON-NLS-1$
 				null);
 		return new ScalableImageFigure(RenderedImageFactory.getInstance(url), false, true, true);
 	}
@@ -135,7 +133,7 @@ public class ObserverEditPart extends AbstractBorderedShapeEditPart {
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof ObserverNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(2, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);

@@ -18,12 +18,12 @@ import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.EventParametersEditPart;
+import event.model.diagram.edit.parts.EventTypesEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ParameterEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
 import model.ModelPackage;
 
@@ -64,27 +64,24 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType PrimitiveEvent_2011 = getElementType(
 			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEvent_2011"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
-	public static final IElementType Agent_2007 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Agent_2007"); //$NON-NLS-1$
+	public static final IElementType Agent_2013 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Agent_2013"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Observer_2008 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.Observer_2008"); //$NON-NLS-1$
+	public static final IElementType Observer_2014 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.Observer_2014"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Parameter_2009 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.Parameter_2009"); //$NON-NLS-1$
+	public static final IElementType Type_2015 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Type_2015"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType ComplexEvent_2012 = getElementType(
 			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEvent_2012"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
@@ -93,14 +90,13 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType EventParameters_4003 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.EventParameters_4003"); //$NON-NLS-1$
+	public static final IElementType ComplexEventAgent_4004 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEventAgent_4004"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType ComplexEventAgent_4004 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEventAgent_4004"); //$NON-NLS-1$
-
+	public static final IElementType EventTypes_4005 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.EventTypes_4005"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -149,17 +145,19 @@ public class ModelElementTypes {
 
 			elements.put(PrimitiveEvent_2011, ModelPackage.eINSTANCE.getPrimitiveEvent());
 
-			elements.put(Agent_2007, ModelPackage.eINSTANCE.getAgent());
+			elements.put(Agent_2013, ModelPackage.eINSTANCE.getAgent());
 
-			elements.put(Observer_2008, ModelPackage.eINSTANCE.getObserver());
+			elements.put(Observer_2014, ModelPackage.eINSTANCE.getObserver());
 
-			elements.put(Parameter_2009, ModelPackage.eINSTANCE.getParameter());
+			elements.put(Type_2015, ModelPackage.eINSTANCE.getType());
 
 			elements.put(ComplexEvent_2012, ModelPackage.eINSTANCE.getComplexEvent());
 
 			elements.put(PrimitiveEventAgent_4001, ModelPackage.eINSTANCE.getPrimitiveEvent_Agent());
 
 			elements.put(ComplexEventAgent_4004, ModelPackage.eINSTANCE.getComplexEvent_Agent());
+
+			elements.put(EventTypes_4005, ModelPackage.eINSTANCE.getEvent_Types());
 
 			elements.put(PrimitiveEventObserver_4002, ModelPackage.eINSTANCE.getPrimitiveEvent_Observer());
 		}
@@ -181,13 +179,13 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2011);
-			KNOWN_ELEMENT_TYPES.add(Agent_2007);
-			KNOWN_ELEMENT_TYPES.add(Observer_2008);
-			KNOWN_ELEMENT_TYPES.add(Parameter_2009);
+			KNOWN_ELEMENT_TYPES.add(Agent_2013);
+			KNOWN_ELEMENT_TYPES.add(Observer_2014);
+			KNOWN_ELEMENT_TYPES.add(Type_2015);
 			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2012);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
 			KNOWN_ELEMENT_TYPES.add(ComplexEventAgent_4004);
-			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
+			KNOWN_ELEMENT_TYPES.add(EventTypes_4005);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventObserver_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -203,19 +201,19 @@ public class ModelElementTypes {
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return PrimitiveEvent_2011;
 		case AgentEditPart.VISUAL_ID:
-			return Agent_2007;
+			return Agent_2013;
 		case ObserverEditPart.VISUAL_ID:
-			return Observer_2008;
-		case ParameterEditPart.VISUAL_ID:
-			return Parameter_2009;
+			return Observer_2014;
+		case TypeEditPart.VISUAL_ID:
+			return Type_2015;
 		case ComplexEventEditPart.VISUAL_ID:
 			return ComplexEvent_2012;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return PrimitiveEventAgent_4001;
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return ComplexEventAgent_4004;
-		case EventParametersEditPart.VISUAL_ID:
-			return EventParameters_4003;
+		case EventTypesEditPart.VISUAL_ID:
+			return EventTypes_4005;
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
 			return PrimitiveEventObserver_4002;
 		}

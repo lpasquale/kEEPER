@@ -43,11 +43,11 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case ObserverNameEditPart.VISUAL_ID:
 				return new ObserverNameEditPart(view);
 
-			case ParameterEditPart.VISUAL_ID:
-				return new ParameterEditPart(view);
+			case TypeEditPart.VISUAL_ID:
+				return new TypeEditPart(view);
 
-			case ParameterNameEditPart.VISUAL_ID:
-				return new ParameterNameEditPart(view);
+			case TypeNameEditPart.VISUAL_ID:
+				return new TypeNameEditPart(view);
 
 			case ComplexEventEditPart.VISUAL_ID:
 				return new ComplexEventEditPart(view);
@@ -61,8 +61,8 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case ComplexEventAgentEditPart.VISUAL_ID:
 				return new ComplexEventAgentEditPart(view);
 
-			case EventParametersEditPart.VISUAL_ID:
-				return new EventParametersEditPart(view);
+			case EventTypesEditPart.VISUAL_ID:
+				return new EventTypesEditPart(view);
 
 			case PrimitiveEventObserverEditPart.VISUAL_ID:
 				return new PrimitiveEventObserverEditPart(view);

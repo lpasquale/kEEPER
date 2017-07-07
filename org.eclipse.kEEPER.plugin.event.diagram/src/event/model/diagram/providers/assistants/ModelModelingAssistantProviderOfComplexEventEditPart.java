@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ParameterEditPart;
+import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.providers.ModelElementTypes;
 import event.model.diagram.providers.ModelModelingAssistantProvider;
 
@@ -36,7 +36,7 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	public List<IElementType> doGetRelTypesOnSource(ComplexEventEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(ModelElementTypes.ComplexEventAgent_4004);
-		types.add(ModelElementTypes.EventParameters_4003);
+		types.add(ModelElementTypes.EventTypes_4005);
 		return types;
 	}
 
@@ -61,13 +61,13 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 			types.add(ModelElementTypes.ComplexEventAgent_4004);
 		}
 		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
 		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
+		if (targetEditPart instanceof TypeEditPart) {
+			types.add(ModelElementTypes.EventTypes_4005);
 		}
 		return types;
 	}
@@ -88,11 +88,11 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	public List<IElementType> doGetTypesForTarget(ComplexEventEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
-			types.add(ModelElementTypes.Agent_2007);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.Agent_2007);
-			types.add(ModelElementTypes.Observer_2008);
-			types.add(ModelElementTypes.Parameter_2009);
+			types.add(ModelElementTypes.Agent_2013);
+		} else if (relationshipType == ModelElementTypes.EventTypes_4005) {
+			types.add(ModelElementTypes.Agent_2013);
+			types.add(ModelElementTypes.Observer_2014);
+			types.add(ModelElementTypes.Type_2015);
 		}
 		return types;
 	}

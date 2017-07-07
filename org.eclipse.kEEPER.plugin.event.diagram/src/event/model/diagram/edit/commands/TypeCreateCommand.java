@@ -14,17 +14,17 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import model.Environment;
 import model.ModelFactory;
-import model.Parameter;
+import model.Type;
 
 /**
  * @generated
  */
-public class ParameterCreateCommand extends EditElementCommand {
+public class TypeCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
 	*/
-	public ParameterCreateCommand(CreateElementRequest req) {
+	public TypeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -52,10 +52,10 @@ public class ParameterCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Parameter newElement = ModelFactory.eINSTANCE.createParameter();
+		Type newElement = ModelFactory.eINSTANCE.createType();
 
 		Environment owner = (Environment) getElementToEdit();
-		owner.getParameters().add(newElement);
+		owner.getTypes().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,8 +66,7 @@ public class ParameterCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(Parameter newElement, IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
+	protected void doConfigure(Type newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

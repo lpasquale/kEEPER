@@ -39,8 +39,8 @@ import model.Agent;
 import model.ComplexEvent;
 import model.Event;
 import model.Observer;
-import model.Parameter;
 import model.PrimitiveEvent;
+import model.Type;
 
 /**
  * @generated
@@ -324,19 +324,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateEventParameters_4003(Event source, Parameter target) {
-			if (source != null) {
-				if (source.getParameters().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistEventParameters_4003(source, target);
-		}
-
-		/**
-		* @generated
-		*/
 		public boolean canCreateComplexEventAgent_4004(ComplexEvent source, Agent target) {
 			if (source != null) {
 				if (source.getAgent() != null) {
@@ -348,8 +335,21 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
+		public boolean canCreateEventTypes_4005(Event source, Type target) {
+			if (source != null) {
+				if (source.getTypes().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistEventTypes_4005(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canCreatePrimitiveEventObserver_4002(PrimitiveEvent source, Observer target) {
 			if (source != null) {
 				if (source.getObserver() != null) {
@@ -370,20 +370,20 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistEventParameters_4003(Event source, Parameter target) {
+		public boolean canExistComplexEventAgent_4004(ComplexEvent source, Agent target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistComplexEventAgent_4004(ComplexEvent source, Agent target) {
+		public boolean canExistEventTypes_4005(Event source, Type target) {
 			return true;
 		}
 
 		/**
-			* @generated
-			*/
+		* @generated
+		*/
 		public boolean canExistPrimitiveEventObserver_4002(PrimitiveEvent source, Observer target) {
 			return true;
 		}

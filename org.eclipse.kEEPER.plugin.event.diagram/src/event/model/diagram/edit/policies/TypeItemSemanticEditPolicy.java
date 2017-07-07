@@ -15,22 +15,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import event.model.diagram.edit.commands.EventParametersCreateCommand;
-import event.model.diagram.edit.commands.EventParametersReorientCommand;
-import event.model.diagram.edit.parts.EventParametersEditPart;
+import event.model.diagram.edit.commands.EventTypesCreateCommand;
+import event.model.diagram.edit.commands.EventTypesReorientCommand;
+import event.model.diagram.edit.parts.EventTypesEditPart;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import event.model.diagram.providers.ModelElementTypes;
 
 /**
  * @generated
  */
-public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
+public class TypeItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public ParameterItemSemanticEditPolicy() {
-		super(ModelElementTypes.Parameter_2009);
+	public TypeItemSemanticEditPolicy() {
+		super(ModelElementTypes.Type_2015);
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParametersEditPart.VISUAL_ID) {
+			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventTypesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -75,7 +75,7 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
+		if (ModelElementTypes.EventTypes_4005 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -85,8 +85,8 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
-			return getGEFWrapper(new EventParametersCreateCommand(req, req.getSource(), req.getTarget()));
+		if (ModelElementTypes.EventTypes_4005 == req.getElementType()) {
+			return getGEFWrapper(new EventTypesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -99,8 +99,8 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case EventParametersEditPart.VISUAL_ID:
-			return getGEFWrapper(new EventParametersReorientCommand(req));
+		case EventTypesEditPart.VISUAL_ID:
+			return getGEFWrapper(new EventTypesReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

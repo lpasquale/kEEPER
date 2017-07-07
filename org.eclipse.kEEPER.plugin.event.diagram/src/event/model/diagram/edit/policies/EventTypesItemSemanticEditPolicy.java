@@ -9,13 +9,13 @@ import event.model.diagram.providers.ModelElementTypes;
 /**
  * @generated
  */
-public class EventParametersItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
+public class EventTypesItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public EventParametersItemSemanticEditPolicy() {
-		super(ModelElementTypes.EventParameters_4003);
+	public EventTypesItemSemanticEditPolicy() {
+		super(ModelElementTypes.EventTypes_4005);
 	}
 
 	/**

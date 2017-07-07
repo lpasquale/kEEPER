@@ -17,12 +17,12 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import event.model.diagram.edit.commands.ComplexEventAgentCreateCommand;
 import event.model.diagram.edit.commands.ComplexEventAgentReorientCommand;
-import event.model.diagram.edit.commands.EventParametersCreateCommand;
-import event.model.diagram.edit.commands.EventParametersReorientCommand;
+import event.model.diagram.edit.commands.EventTypesCreateCommand;
+import event.model.diagram.edit.commands.EventTypesReorientCommand;
 import event.model.diagram.edit.commands.PrimitiveEventAgentCreateCommand;
 import event.model.diagram.edit.commands.PrimitiveEventAgentReorientCommand;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
-import event.model.diagram.edit.parts.EventParametersEditPart;
+import event.model.diagram.edit.parts.EventTypesEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import event.model.diagram.providers.ModelElementTypes;
@@ -36,7 +36,7 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 	* @generated
 	*/
 	public AgentItemSemanticEditPolicy() {
-		super(ModelElementTypes.Agent_2007);
+		super(ModelElementTypes.Agent_2013);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParametersEditPart.VISUAL_ID) {
+			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventTypesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -101,7 +101,7 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 		if (ModelElementTypes.ComplexEventAgent_4004 == req.getElementType()) {
 			return null;
 		}
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
+		if (ModelElementTypes.EventTypes_4005 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -117,8 +117,8 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 		if (ModelElementTypes.ComplexEventAgent_4004 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventAgentCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
-			return getGEFWrapper(new EventParametersCreateCommand(req, req.getSource(), req.getTarget()));
+		if (ModelElementTypes.EventTypes_4005 == req.getElementType()) {
+			return getGEFWrapper(new EventTypesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -135,8 +135,8 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 			return getGEFWrapper(new PrimitiveEventAgentReorientCommand(req));
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return getGEFWrapper(new ComplexEventAgentReorientCommand(req));
-		case EventParametersEditPart.VISUAL_ID:
-			return getGEFWrapper(new EventParametersReorientCommand(req));
+		case EventTypesEditPart.VISUAL_ID:
+			return getGEFWrapper(new EventTypesReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -38,7 +37,6 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
-import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -56,12 +54,12 @@ import event.model.diagram.providers.ModelParserProvider;
 /**
  * @generated
  */
-public class ParameterNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class TypeNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5007;
+	public static final int VISUAL_ID = 5014;
 
 	/**
 	* @generated
@@ -93,14 +91,14 @@ public class ParameterNameEditPart extends LabelEditPart implements ITextAwareEd
 	*/
 	static {
 		registerSnapBackPosition(
-				ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID),
+				ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.TypeNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
 	/**
 	* @generated
 	*/
-	public ParameterNameEditPart(View view) {
+	public TypeNameEditPart(View view) {
 		super(view);
 	}
 
@@ -323,8 +321,8 @@ public class ParameterNameEditPart extends LabelEditPart implements ITextAwareEd
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.Parameter_2009, getParserElement(),
-					ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID));
+			parser = ModelParserProvider.getParser(ModelElementTypes.Type_2015, getParserElement(),
+					ModelVisualIDRegistry.getType(event.model.diagram.edit.parts.TypeNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -610,8 +608,8 @@ public class ParameterNameEditPart extends LabelEditPart implements ITextAwareEd
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class AddParamNameFigure extends WrappingLabel {
 
 		/**

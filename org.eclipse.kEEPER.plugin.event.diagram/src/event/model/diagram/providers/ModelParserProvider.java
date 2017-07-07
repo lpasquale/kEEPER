@@ -16,8 +16,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import event.model.diagram.edit.parts.AgentNameEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
-import event.model.diagram.edit.parts.ParameterNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
+import event.model.diagram.edit.parts.TypeNameEditPart;
 import event.model.diagram.parsers.MessageFormatParser;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import model.ModelPackage;
@@ -47,52 +47,52 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser agentName_5005Parser;
+	private IParser agentName_5012Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getAgentName_5005Parser() {
-		if (agentName_5005Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getParameter_Name() };
+	private IParser getAgentName_5012Parser() {
+		if (agentName_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			agentName_5005Parser = parser;
+			agentName_5012Parser = parser;
 		}
-		return agentName_5005Parser;
+		return agentName_5012Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser observerName_5008Parser;
+	private IParser observerName_5013Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getObserverName_5008Parser() {
-		if (observerName_5008Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getParameter_Name() };
+	private IParser getObserverName_5013Parser() {
+		if (observerName_5013Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			observerName_5008Parser = parser;
+			observerName_5013Parser = parser;
 		}
-		return observerName_5008Parser;
+		return observerName_5013Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser parameterName_5007Parser;
+	private IParser typeName_5014Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getParameterName_5007Parser() {
-		if (parameterName_5007Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getParameter_Name() };
+	private IParser getTypeName_5014Parser() {
+		if (typeName_5014Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parameterName_5007Parser = parser;
+			typeName_5014Parser = parser;
 		}
-		return parameterName_5007Parser;
+		return typeName_5014Parser;
 	}
 
 	/**
@@ -120,11 +120,11 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 		case PrimitiveEventNameEditPart.VISUAL_ID:
 			return getPrimitiveEventName_5010Parser();
 		case AgentNameEditPart.VISUAL_ID:
-			return getAgentName_5005Parser();
+			return getAgentName_5012Parser();
 		case ObserverNameEditPart.VISUAL_ID:
-			return getObserverName_5008Parser();
-		case ParameterNameEditPart.VISUAL_ID:
-			return getParameterName_5007Parser();
+			return getObserverName_5013Parser();
+		case TypeNameEditPart.VISUAL_ID:
+			return getTypeName_5014Parser();
 		case ComplexEventNameEditPart.VISUAL_ID:
 			return getComplexEventName_5011Parser();
 		}

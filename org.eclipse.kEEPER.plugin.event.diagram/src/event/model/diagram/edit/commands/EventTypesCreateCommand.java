@@ -9,15 +9,13 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
-import model.Agent;
 import model.Event;
-import model.Observer;
-import model.Parameter;
+import model.Type;
 
 /**
  * @generated
  */
-public class EventParametersCreateCommand extends EditElementCommand {
+public class EventTypesCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
@@ -32,14 +30,14 @@ public class EventParametersCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	public EventParametersCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+	public EventTypesCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
 	}
 
 	/**
-	* @generated NOT
+	* @generated
 	*/
 	public boolean canExecute() {
 		if (source == null && target == null) {
@@ -48,21 +46,14 @@ public class EventParametersCreateCommand extends EditElementCommand {
 		if (source != null && false == source instanceof Event) {
 			return false;
 		}
-		if (target != null && false == target instanceof Parameter) {
-			return false;
-		}
-		if (target != null && target instanceof Agent) {
-			return false;
-		}
-		if (target != null && target instanceof Observer) {
+		if (target != null && false == target instanceof Type) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canCreateEventParameters_4003(getSource(),
-				getTarget());
+		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canCreateEventTypes_4005(getSource(), getTarget());
 	}
 
 	/**
@@ -74,7 +65,7 @@ public class EventParametersCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().getParameters().add(getTarget());
+			getSource().getTypes().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 
@@ -97,7 +88,7 @@ public class EventParametersCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Parameter getTarget() {
-		return (Parameter) target;
+	protected Type getTarget() {
+		return (Type) target;
 	}
 }
