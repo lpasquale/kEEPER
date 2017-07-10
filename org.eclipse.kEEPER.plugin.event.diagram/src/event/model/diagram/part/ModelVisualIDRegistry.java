@@ -7,17 +7,17 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
-import event.model.diagram.edit.parts.AgentEditPart;
-import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
+import event.model.diagram.edit.parts.AgentReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ObserverNameEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceTypeNameEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
-import event.model.diagram.edit.parts.TypeNameEditPart;
 import model.Environment;
 import model.ModelPackage;
 
@@ -126,14 +126,14 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getPrimitiveEvent().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveEventEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getAgent().isSuperTypeOf(domainElement.eClass())) {
-				return AgentEditPart.VISUAL_ID;
+			if (ModelPackage.eINSTANCE.getAgentReference().isSuperTypeOf(domainElement.eClass())) {
+				return AgentReferenceEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
-				return ObserverEditPart.VISUAL_ID;
+			if (ModelPackage.eINSTANCE.getObserverReference().isSuperTypeOf(domainElement.eClass())) {
+				return ObserverReferenceEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getType().isSuperTypeOf(domainElement.eClass())) {
-				return TypeEditPart.VISUAL_ID;
+			if (ModelPackage.eINSTANCE.getGeneralTypeReference().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralTypeReferenceEditPart.VISUAL_ID;
 			}
 			if (ModelPackage.eINSTANCE.getComplexEvent().isSuperTypeOf(domainElement.eClass())) {
 				return ComplexEventEditPart.VISUAL_ID;
@@ -166,13 +166,13 @@ public class ModelVisualIDRegistry {
 			if (PrimitiveEventEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AgentEditPart.VISUAL_ID == nodeVisualID) {
+			if (AgentReferenceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ObserverEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObserverReferenceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (TypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (GeneralTypeReferenceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComplexEventEditPart.VISUAL_ID == nodeVisualID) {
@@ -184,18 +184,18 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AgentEditPart.VISUAL_ID:
-			if (AgentNameEditPart.VISUAL_ID == nodeVisualID) {
+		case AgentReferenceEditPart.VISUAL_ID:
+			if (AgentReferenceTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ObserverEditPart.VISUAL_ID:
-			if (ObserverNameEditPart.VISUAL_ID == nodeVisualID) {
+		case ObserverReferenceEditPart.VISUAL_ID:
+			if (ObserverReferenceTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case TypeEditPart.VISUAL_ID:
-			if (TypeNameEditPart.VISUAL_ID == nodeVisualID) {
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			if (GeneralTypeReferenceTypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -256,9 +256,9 @@ public class ModelVisualIDRegistry {
 			return false;
 		case PrimitiveEventEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
-		case AgentEditPart.VISUAL_ID:
-		case ObserverEditPart.VISUAL_ID:
-		case TypeEditPart.VISUAL_ID:
+		case AgentReferenceEditPart.VISUAL_ID:
+		case ObserverReferenceEditPart.VISUAL_ID:
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

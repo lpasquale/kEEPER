@@ -2,9 +2,9 @@
  */
 package model.impl;
 
-import model.Agent;
+import model.AgentReference;
 import model.ModelPackage;
-import model.Observer;
+import model.ObserverReference;
 import model.PrimitiveEvent;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected Agent agent;
+	protected AgentReference agent;
 
 	/**
 	 * The cached value of the '{@link #getObserver() <em>Observer</em>}' reference.
@@ -47,7 +47,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected Observer observer;
+	protected ObserverReference observer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,10 +73,10 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Agent getAgent() {
+	public AgentReference getAgent() {
 		if (agent != null && agent.eIsProxy()) {
 			InternalEObject oldAgent = (InternalEObject)agent;
-			agent = (Agent)eResolveProxy(oldAgent);
+			agent = (AgentReference)eResolveProxy(oldAgent);
 			if (agent != oldAgent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.PRIMITIVE_EVENT__AGENT, oldAgent, agent));
@@ -90,7 +90,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Agent basicGetAgent() {
+	public AgentReference basicGetAgent() {
 		return agent;
 	}
 
@@ -99,8 +99,8 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAgent(Agent newAgent) {
-		Agent oldAgent = agent;
+	public void setAgent(AgentReference newAgent) {
+		AgentReference oldAgent = agent;
 		agent = newAgent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PRIMITIVE_EVENT__AGENT, oldAgent, agent));
@@ -111,10 +111,10 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Observer getObserver() {
+	public ObserverReference getObserver() {
 		if (observer != null && observer.eIsProxy()) {
 			InternalEObject oldObserver = (InternalEObject)observer;
-			observer = (Observer)eResolveProxy(oldObserver);
+			observer = (ObserverReference)eResolveProxy(oldObserver);
 			if (observer != oldObserver) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.PRIMITIVE_EVENT__OBSERVER, oldObserver, observer));
@@ -128,7 +128,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Observer basicGetObserver() {
+	public ObserverReference basicGetObserver() {
 		return observer;
 	}
 
@@ -137,8 +137,8 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setObserver(Observer newObserver) {
-		Observer oldObserver = observer;
+	public void setObserver(ObserverReference newObserver) {
+		ObserverReference oldObserver = observer;
 		observer = newObserver;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PRIMITIVE_EVENT__OBSERVER, oldObserver, observer));
@@ -171,10 +171,10 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ModelPackage.PRIMITIVE_EVENT__AGENT:
-				setAgent((Agent)newValue);
+				setAgent((AgentReference)newValue);
 				return;
 			case ModelPackage.PRIMITIVE_EVENT__OBSERVER:
-				setObserver((Observer)newValue);
+				setObserver((ObserverReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,10 +189,10 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ModelPackage.PRIMITIVE_EVENT__AGENT:
-				setAgent((Agent)null);
+				setAgent((AgentReference)null);
 				return;
 			case ModelPackage.PRIMITIVE_EVENT__OBSERVER:
-				setObserver((Observer)null);
+				setObserver((ObserverReference)null);
 				return;
 		}
 		super.eUnset(featureID);

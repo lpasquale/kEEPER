@@ -1,0 +1,62 @@
+package event.model.diagram.providers.assistants;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
+import event.model.diagram.providers.ModelElementTypes;
+import event.model.diagram.providers.ModelModelingAssistantProvider;
+
+/**
+ * @generated
+ */
+public class ModelModelingAssistantProviderOfAgentReferenceEditPart extends ModelModelingAssistantProvider {
+
+	/**
+	* @generated
+	*/
+	@Override
+
+	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((AgentReferenceEditPart) targetEditPart);
+	}
+
+	/**
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(AgentReferenceEditPart target) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(ModelElementTypes.PrimitiveEventAgent_4001);
+		types.add(ModelElementTypes.ComplexEventAgent_4004);
+		return types;
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((AgentReferenceEditPart) targetEditPart, relationshipType);
+	}
+
+	/**
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(AgentReferenceEditPart target, IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == ModelElementTypes.PrimitiveEventAgent_4001) {
+			types.add(ModelElementTypes.PrimitiveEvent_2011);
+		} else if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
+			types.add(ModelElementTypes.ComplexEvent_2012);
+		}
+		return types;
+	}
+
+}

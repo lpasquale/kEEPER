@@ -35,12 +35,12 @@ import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import event.model.diagram.providers.ModelElementTypes;
-import model.Agent;
+import model.AgentReference;
 import model.ComplexEvent;
 import model.Event;
-import model.Observer;
+import model.GeneralTypeReference;
+import model.ObserverReference;
 import model.PrimitiveEvent;
-import model.Type;
 
 /**
  * @generated
@@ -311,7 +311,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePrimitiveEventAgent_4001(PrimitiveEvent source, Agent target) {
+		public boolean canCreatePrimitiveEventAgent_4001(PrimitiveEvent source, AgentReference target) {
 			if (source != null) {
 				if (source.getAgent() != null) {
 					return false;
@@ -324,7 +324,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateComplexEventAgent_4004(ComplexEvent source, Agent target) {
+		public boolean canCreateComplexEventAgent_4004(ComplexEvent source, AgentReference target) {
 			if (source != null) {
 				if (source.getAgent() != null) {
 					return false;
@@ -337,7 +337,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateEventTypes_4005(Event source, Type target) {
+		public boolean canCreateEventTypes_4005(Event source, GeneralTypeReference target) {
 			if (source != null) {
 				if (source.getTypes().contains(target)) {
 					return false;
@@ -350,7 +350,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreatePrimitiveEventObserver_4002(PrimitiveEvent source, Observer target) {
+		public boolean canCreatePrimitiveEventObserver_4002(PrimitiveEvent source, ObserverReference target) {
 			if (source != null) {
 				if (source.getObserver() != null) {
 					return false;
@@ -363,28 +363,28 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		* @generated
 		*/
-		public boolean canExistPrimitiveEventAgent_4001(PrimitiveEvent source, Agent target) {
+		public boolean canExistPrimitiveEventAgent_4001(PrimitiveEvent source, AgentReference target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistComplexEventAgent_4004(ComplexEvent source, Agent target) {
+		public boolean canExistComplexEventAgent_4004(ComplexEvent source, AgentReference target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistEventTypes_4005(Event source, Type target) {
+		public boolean canExistEventTypes_4005(Event source, GeneralTypeReference target) {
 			return true;
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistPrimitiveEventObserver_4002(PrimitiveEvent source, Observer target) {
+		public boolean canExistPrimitiveEventObserver_4002(PrimitiveEvent source, ObserverReference target) {
 			return true;
 		}
 	}

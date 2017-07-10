@@ -1,35 +1,63 @@
 package event.model.diagram.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
+import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
+import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
 import event.model.diagram.edit.policies.ComplexEventItemSemanticEditPolicy;
+import event.model.diagram.part.ModelDiagramEditor;
+import event.model.diagram.part.ModelDiagramEditorPlugin;
 import event.model.diagram.part.ModelVisualIDRegistry;
+import model.AgentReference;
+import model.ComplexEvent;
+import model.ModelPackage;
+import model.impl.AgentReferenceImpl;
 
 /**
  * @generated
  */
-public class ComplexEventEditPart extends ShapeNodeEditPart {
+public class ComplexEventEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	* @generated
@@ -46,11 +74,55 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
+	private ModelDiagramEditor editor;
+
+	private View view;
+
+	private ComplexEvent ce;
+
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public ComplexEventEditPart(View view) {
 		super(view);
+
+		// Variables essentials to get the workbench of THIS Primitive Event
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+
+		// Initializing the editor
+		for (int i = 0; i < editorPart.length; i++) {
+			if (editorPart[i].getEditor(true) instanceof event.model.diagram.part.ModelDiagramEditor) {
+				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())) {
+					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
+				}
+				System.out.println("Editor: " + editor);
+
+			}
+		}
+		this.view = view;
+
+		this.ce = (ComplexEvent) view.getElement();
+
+		Thread thread = new Thread() {
+			public void run() {
+				try {
+					System.out.println("Creating the agent...");
+					Thread.sleep(2000);
+					if (ce.getAgent() == null) {
+						agentCreation();
+					}
+				} catch (InterruptedException v) {
+					System.out.println(v);
+				}
+			}
+		};
+
+		thread.start();
 	}
 
 	/**
@@ -71,6 +143,18 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (ModelVisualIDRegistry.getVisualID(childView)) {
+				case ComplexEventNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -90,65 +174,33 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComplexEventFigure();
+		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(),
+				new Path("icons/ComplexEvent.svg"), //$NON-NLS-1$
+				null);
+		return new ScalableImageFigure(RenderedImageFactory.getInstance(url), false, true, true);
 	}
 
 	/**
 	* @generated
 	*/
-	public ComplexEventFigure getPrimaryShape() {
-		return (ComplexEventFigure) primaryShape;
+	public ScalableImageFigure getPrimaryShape() {
+		return (ScalableImageFigure) primaryShape;
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
-	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComplexEventNameEditPart) {
-			((ComplexEventNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureComplexEventName());
-			return true;
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof ComplexEventNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(0, 0));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComplexEventNameEditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	* @generated
-	*/
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		return getContentPane();
 	}
 
 	/**
@@ -167,7 +219,7 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 	* 
 	* @generated
 	*/
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -183,11 +235,6 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(5);
-			nodeShape.setLayoutManager(layout);
-		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -244,45 +291,37 @@ public class ComplexEventEditPart extends ShapeNodeEditPart {
 		return getChildBySemanticHint(ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
 	}
 
-	/**
-	 * @generated
-	 */
-	public class ComplexEventFigure extends RoundedRectangle {
+	public void agentCreation() {
+		// Creating Agent
+		Command cmd = editor.createAndExecuteShapeRequestCommand(
+				event.model.diagram.providers.ModelElementTypes.AgentReference_2016, editor.getDiagramEditPart());
+		editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
 
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureComplexEventName;
+		// Creating and executing the command to set the properties
+		Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+		Iterator<?> iter = results.iterator();
+		AgentReference newAgent = new AgentReferenceImpl();
+		while (iter.hasNext()) {
+			Object obj = iter.next();
+			if (obj instanceof CreateElementRequestAdapter) {
+				CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+				newAgent = (AgentReferenceImpl) cra.resolve();
 
-		/**
-		 * @generated
-		 */
-		public ComplexEventFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
-			this.setForegroundColor(ColorConstants.orange);
-			createContents();
+				// Setting the AgentReference EReference of the Primitive Event
+				System.out.println(editor.getEditingDomain());
+				System.out.println(view.getElement());
+				SetRequest setRequestAgent = new SetRequest(editor.getEditingDomain(), view.getElement(),
+						ModelPackage.eINSTANCE.getComplexEvent_Agent(), newAgent);
+				SetValueCommand agentOperation = new SetValueCommand(setRequestAgent);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(agentOperation));
+			}
 		}
 
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureComplexEventName = new WrappingLabel();
-
-			fFigureComplexEventName.setText("---Complex Event Name---");
-
-			this.add(fFigureComplexEventName);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureComplexEventName() {
-			return fFigureComplexEventName;
-		}
-
+		// Refresh the diagram (it allows to render the connection between the Event and the Parameter
+		Display.getDefault().asyncExec(new Runnable() {
+			public void run() {
+				editor.getDiagramEditPart().addNotify();
+			}
+		});
 	}
-
 }

@@ -254,12 +254,12 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	public class InstanceFigure extends RectangleFigure {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private WrappingLabel fFigureInstanceTitle;
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
 		private WrappingLabel fFigureInstanceNameFigure;
 
 		/**
@@ -287,7 +287,7 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureInstanceNameFigure = new WrappingLabel();
-			fFigureInstanceNameFigure.setText("---Name of instance---");
+			fFigureInstanceNameFigure.setText("---Name of type---");
 			fFigureInstanceNameFigure.setAlignment(PositionConstants.CENTER);
 
 			fFigureInstanceTitle = new WrappingLabel();
@@ -300,15 +300,15 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public WrappingLabel getFigureInstanceTitle() {
 			return fFigureInstanceTitle;
 		}
 
 		/**
-			 * @generated
-			 */
+		 * @generated
+		 */
 		public WrappingLabel getFigureInstanceNameFigure() {
 			return fFigureInstanceNameFigure;
 		}

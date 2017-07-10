@@ -7,11 +7,11 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
-import event.model.diagram.edit.commands.AgentCreateCommand;
+import event.model.diagram.edit.commands.AgentReferenceCreateCommand;
 import event.model.diagram.edit.commands.ComplexEventCreateCommand;
-import event.model.diagram.edit.commands.ObserverCreateCommand;
+import event.model.diagram.edit.commands.GeneralTypeReferenceCreateCommand;
+import event.model.diagram.edit.commands.ObserverReferenceCreateCommand;
 import event.model.diagram.edit.commands.PrimitiveEventCreateCommand;
-import event.model.diagram.edit.commands.TypeCreateCommand;
 import event.model.diagram.providers.ModelElementTypes;
 
 /**
@@ -33,14 +33,14 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		if (ModelElementTypes.PrimitiveEvent_2011 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveEventCreateCommand(req));
 		}
-		if (ModelElementTypes.Agent_2013 == req.getElementType()) {
-			return getGEFWrapper(new AgentCreateCommand(req));
+		if (ModelElementTypes.AgentReference_2016 == req.getElementType()) {
+			return getGEFWrapper(new AgentReferenceCreateCommand(req));
 		}
-		if (ModelElementTypes.Observer_2014 == req.getElementType()) {
-			return getGEFWrapper(new ObserverCreateCommand(req));
+		if (ModelElementTypes.ObserverReference_2017 == req.getElementType()) {
+			return getGEFWrapper(new ObserverReferenceCreateCommand(req));
 		}
-		if (ModelElementTypes.Type_2015 == req.getElementType()) {
-			return getGEFWrapper(new TypeCreateCommand(req));
+		if (ModelElementTypes.GeneralTypeReference_2018 == req.getElementType()) {
+			return getGEFWrapper(new GeneralTypeReferenceCreateCommand(req));
 		}
 		if (ModelElementTypes.ComplexEvent_2012 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventCreateCommand(req));

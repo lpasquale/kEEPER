@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
-import model.Observer;
+import model.ObserverReference;
 import model.PrimitiveEvent;
 
 /**
@@ -69,7 +69,7 @@ public class PrimitiveEventObserverReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Observer && newEnd instanceof PrimitiveEvent)) {
+		if (!(oldEnd instanceof ObserverReference && newEnd instanceof PrimitiveEvent)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistPrimitiveEventObserver_4002(getNewSource(),
@@ -80,7 +80,7 @@ public class PrimitiveEventObserverReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Observer && newEnd instanceof Observer)) {
+		if (!(oldEnd instanceof ObserverReference && newEnd instanceof ObserverReference)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistPrimitiveEventObserver_4002(getOldSource(),
@@ -137,14 +137,14 @@ public class PrimitiveEventObserverReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Observer getOldTarget() {
-		return (Observer) oldEnd;
+	protected ObserverReference getOldTarget() {
+		return (ObserverReference) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected Observer getNewTarget() {
-		return (Observer) newEnd;
+	protected ObserverReference getNewTarget() {
+		return (ObserverReference) newEnd;
 	}
 }

@@ -16,14 +16,16 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import model.Instance;
-import model.Type;
+import typeinstance.model.diagram.edit.parts.AgentEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
-import typeinstance.model.diagram.edit.parts.TypeEditPart;
-import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverEditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel3EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel4EditPart;
 import typeinstance.model.diagram.part.ModelDiagramEditorPlugin;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 import typeinstance.model.diagram.providers.ModelElementTypes;
@@ -87,9 +89,15 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case InstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Instance", //$NON-NLS-1$
 					ModelElementTypes.Instance_2005);
-		case TypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Type", //$NON-NLS-1$
-					ModelElementTypes.Type_2006);
+		case AgentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Agent", //$NON-NLS-1$
+					ModelElementTypes.Agent_2009);
+		case ObserverEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
+					ModelElementTypes.Observer_2010);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralType", //$NON-NLS-1$
+					ModelElementTypes.GeneralType_2011);
 		case InstanceTypeEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?Instance?type", //$NON-NLS-1$
 					ModelElementTypes.InstanceType_4003);
@@ -147,8 +155,12 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEnvironment_1000Text(view);
 		case InstanceEditPart.VISUAL_ID:
 			return getInstance_2005Text(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2006Text(view);
+		case AgentEditPart.VISUAL_ID:
+			return getAgent_2009Text(view);
+		case ObserverEditPart.VISUAL_ID:
+			return getObserver_2010Text(view);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2011Text(view);
 		case InstanceTypeEditPart.VISUAL_ID:
 			return getInstanceType_4003Text(view);
 		}
@@ -181,15 +193,47 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
-	private String getType_2006Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Type_2006,
+	private String getAgent_2009Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Agent_2009,
 				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
+				ModelVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getObserver_2010Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Observer_2010,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralType_2011Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.GeneralType_2011,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5013); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

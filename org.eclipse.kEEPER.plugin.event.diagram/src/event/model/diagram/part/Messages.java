@@ -243,42 +243,42 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Nodes1Group_title;
+	public static String Events1Group_title;
 
 	/**
 	* @generated
 	*/
-	public static String AgentPrimitiveEvent1CreationTool_title;
+	public static String Parameters2Group_title;
 
 	/**
 	* @generated
 	*/
-	public static String ObserverPrimitiveEvent2CreationTool_title;
+	public static String PrimitiveEvent1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ObserverPrimitiveEvent2CreationTool_desc;
+	public static String PrimitiveEvent1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String GenericparameterPrimitiveEvent3CreationTool_title;
+	public static String ComplexEvent2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String PrimitiveEvent4CreationTool_title;
+	public static String Agent1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String PrimitiveEvent4CreationTool_desc;
+	public static String Observer2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ComplexEvent5CreationTool_title;
+	public static String GenericParameter3CreationTool_title;
 
 	/**
 	* @generated
@@ -303,17 +303,17 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Agent_2013_incominglinks;
+	public static String NavigatorGroupName_AgentReference_2016_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Observer_2014_incominglinks;
+	public static String NavigatorGroupName_ObserverReference_2017_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Type_2015_incominglinks;
+	public static String NavigatorGroupName_GeneralTypeReference_2018_incominglinks;
 
 	/**
 	* @generated

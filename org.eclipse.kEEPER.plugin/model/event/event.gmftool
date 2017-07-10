@@ -8,37 +8,8 @@
       title="modelPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Nodes"
+        title="Events"
         collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Agent Primitive Event">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/obj16/agent.gif"
-            bundle="org.eclipse.minorityReportPlugin.event.diagram"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Observer Primitive Event"
-          description="">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/obj16/observer.ico"
-            bundle="org.eclipse.minorityReportPlugin.event.diagram"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Generic parameter Primitive Event">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Primitive Event"
@@ -51,6 +22,35 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Complex Event">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Parameters"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Agent">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Observer">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Generic Parameter ">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

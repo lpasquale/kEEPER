@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
 import model.Event;
-import model.Type;
+import model.GeneralTypeReference;
 
 /**
  * @generated
@@ -69,7 +69,7 @@ public class EventTypesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Type && newEnd instanceof Event)) {
+		if (!(oldEnd instanceof GeneralTypeReference && newEnd instanceof Event)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventTypes_4005(getNewSource(),
@@ -80,7 +80,7 @@ public class EventTypesReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof GeneralTypeReference && newEnd instanceof GeneralTypeReference)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistEventTypes_4005(getOldSource(),
@@ -138,14 +138,14 @@ public class EventTypesReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Type getOldTarget() {
-		return (Type) oldEnd;
+	protected GeneralTypeReference getOldTarget() {
+		return (GeneralTypeReference) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected Type getNewTarget() {
-		return (Type) newEnd;
+	protected GeneralTypeReference getNewTarget() {
+		return (GeneralTypeReference) newEnd;
 	}
 }

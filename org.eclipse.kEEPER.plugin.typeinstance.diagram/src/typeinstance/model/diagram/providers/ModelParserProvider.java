@@ -14,9 +14,9 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import model.ModelPackage;
-import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
-import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
-import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.AgentNameEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverNameEditPart;
 import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 import typeinstance.model.diagram.parsers.MessageFormatParser;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
@@ -46,18 +46,52 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser typeName_5004Parser;
+	private IParser generalTypeName_5014Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getTypeName_5004Parser() {
-		if (typeName_5004Parser == null) {
+	private IParser getGeneralTypeName_5014Parser() {
+		if (generalTypeName_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			typeName_5004Parser = parser;
+			generalTypeName_5014Parser = parser;
 		}
-		return typeName_5004Parser;
+		return generalTypeName_5014Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser agentName_5010Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAgentName_5010Parser() {
+		if (agentName_5010Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			agentName_5010Parser = parser;
+		}
+		return agentName_5010Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser observerName_5012Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getObserverName_5012Parser() {
+		if (observerName_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			observerName_5012Parser = parser;
+		}
+		return observerName_5012Parser;
 	}
 
 	/**
@@ -67,8 +101,12 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 		switch (visualID) {
 		case WrappingLabelEditPart.VISUAL_ID:
 			return getInstanceName_5003Parser();
-		case WrappingLabel2EditPart.VISUAL_ID:
-			return getTypeName_5004Parser();
+		case GeneralTypeNameEditPart.VISUAL_ID:
+			return getGeneralTypeName_5014Parser();
+		case AgentNameEditPart.VISUAL_ID:
+			return getAgentName_5010Parser();
+		case ObserverNameEditPart.VISUAL_ID:
+			return getObserverName_5012Parser();
 		}
 		return null;
 	}

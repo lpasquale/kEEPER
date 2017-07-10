@@ -2,8 +2,6 @@
  */
 package model;
 
-import java.util.ArrayList;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -54,7 +52,7 @@ public interface Event extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Types</b></em>' reference list.
-	 * The list contents are of type {@link model.Type}.
+	 * The list contents are of type {@link model.GeneralTypeReference}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Types</em>' reference list isn't clear,
@@ -66,7 +64,7 @@ public interface Event extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<Type> getTypes();
+	EList<GeneralTypeReference> getTypes();
 
 
 } // Event

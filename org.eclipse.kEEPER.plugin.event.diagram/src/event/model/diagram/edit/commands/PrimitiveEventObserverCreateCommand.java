@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
-import model.Observer;
+import model.ObserverReference;
 import model.PrimitiveEvent;
 
 /**
@@ -46,7 +46,7 @@ public class PrimitiveEventObserverCreateCommand extends EditElementCommand {
 		if (source != null && false == source instanceof PrimitiveEvent) {
 			return false;
 		}
-		if (target != null && false == target instanceof Observer) {
+		if (target != null && false == target instanceof ObserverReference) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -89,7 +89,7 @@ public class PrimitiveEventObserverCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Observer getTarget() {
-		return (Observer) target;
+	protected ObserverReference getTarget() {
+		return (ObserverReference) target;
 	}
 }

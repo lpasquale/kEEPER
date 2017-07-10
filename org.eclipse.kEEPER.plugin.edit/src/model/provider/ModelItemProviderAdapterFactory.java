@@ -72,29 +72,6 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link model.Type} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TypeItemProvider typeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link model.Type}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTypeAdapter() {
-		if (typeItemProvider == null) {
-			typeItemProvider = new TypeItemProvider(this);
-		}
-
-		return typeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link model.Instance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,6 +371,98 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link model.AgentReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AgentReferenceItemProvider agentReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.AgentReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAgentReferenceAdapter() {
+		if (agentReferenceItemProvider == null) {
+			agentReferenceItemProvider = new AgentReferenceItemProvider(this);
+		}
+
+		return agentReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.ObserverReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObserverReferenceItemProvider observerReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.ObserverReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createObserverReferenceAdapter() {
+		if (observerReferenceItemProvider == null) {
+			observerReferenceItemProvider = new ObserverReferenceItemProvider(this);
+		}
+
+		return observerReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.GeneralTypeReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralTypeReferenceItemProvider generalTypeReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.GeneralTypeReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralTypeReferenceAdapter() {
+		if (generalTypeReferenceItemProvider == null) {
+			generalTypeReferenceItemProvider = new GeneralTypeReferenceItemProvider(this);
+		}
+
+		return generalTypeReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.GeneralType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralTypeItemProvider generalTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.GeneralType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralTypeAdapter() {
+		if (generalTypeItemProvider == null) {
+			generalTypeItemProvider = new GeneralTypeItemProvider(this);
+		}
+
+		return generalTypeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link model.Agent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,7 +630,6 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
-		if (typeItemProvider != null) typeItemProvider.dispose();
 		if (instanceItemProvider != null) instanceItemProvider.dispose();
 		if (contextRelationItemProvider != null) contextRelationItemProvider.dispose();
 		if (primitiveEventItemProvider != null) primitiveEventItemProvider.dispose();
@@ -578,6 +646,10 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		if (generalParamItemProvider != null) generalParamItemProvider.dispose();
 		if (agentItemProvider != null) agentItemProvider.dispose();
 		if (observerItemProvider != null) observerItemProvider.dispose();
+		if (agentReferenceItemProvider != null) agentReferenceItemProvider.dispose();
+		if (observerReferenceItemProvider != null) observerReferenceItemProvider.dispose();
+		if (generalTypeReferenceItemProvider != null) generalTypeReferenceItemProvider.dispose();
+		if (generalTypeItemProvider != null) generalTypeItemProvider.dispose();
 	}
 
 }

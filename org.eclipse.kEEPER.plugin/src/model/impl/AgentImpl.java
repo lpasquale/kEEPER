@@ -4,7 +4,6 @@ package model.impl;
 
 import model.Agent;
 import model.ModelPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -20,7 +19,7 @@ public class AgentImpl extends TypeImpl implements Agent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AgentImpl() {
+	protected AgentImpl() {
 		super();
 	}
 

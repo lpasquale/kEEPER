@@ -13,14 +13,19 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
+import model.Agent;
 import model.Environment;
+import model.GeneralType;
 import model.Instance;
 import model.ModelPackage;
+import model.Observer;
 import model.Type;
+import typeinstance.model.diagram.edit.parts.AgentEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
-import typeinstance.model.diagram.edit.parts.TypeEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverEditPart;
 import typeinstance.model.diagram.providers.ModelElementTypes;
 
 /**
@@ -59,7 +64,15 @@ public class ModelDiagramUpdater {
 		for (Iterator<?> it = modelElement.getTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == TypeEditPart.VISUAL_ID) {
+			if (visualID == GeneralTypeEditPart.VISUAL_ID) {
+				result.add(new ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == AgentEditPart.VISUAL_ID) {
+				result.add(new ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ObserverEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -76,8 +89,12 @@ public class ModelDiagramUpdater {
 			return getEnvironment_1000ContainedLinks(view);
 		case InstanceEditPart.VISUAL_ID:
 			return getInstance_2005ContainedLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2006ContainedLinks(view);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2011ContainedLinks(view);
+		case AgentEditPart.VISUAL_ID:
+			return getAgent_2009ContainedLinks(view);
+		case ObserverEditPart.VISUAL_ID:
+			return getObserver_2010ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -89,8 +106,12 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case InstanceEditPart.VISUAL_ID:
 			return getInstance_2005IncomingLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2006IncomingLinks(view);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2011IncomingLinks(view);
+		case AgentEditPart.VISUAL_ID:
+			return getAgent_2009IncomingLinks(view);
+		case ObserverEditPart.VISUAL_ID:
+			return getObserver_2010IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -102,8 +123,12 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case InstanceEditPart.VISUAL_ID:
 			return getInstance_2005OutgoingLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2006OutgoingLinks(view);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2011OutgoingLinks(view);
+		case AgentEditPart.VISUAL_ID:
+			return getAgent_2009OutgoingLinks(view);
+		case ObserverEditPart.VISUAL_ID:
+			return getObserver_2010OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -128,7 +153,21 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2006ContainedLinks(View view) {
+	public static List<ModelLinkDescriptor> getGeneralType_2011ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getAgent_2009ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getObserver_2010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -142,8 +181,32 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2006IncomingLinks(View view) {
-		Type modelElement = (Type) view.getElement();
+	public static List<ModelLinkDescriptor> getGeneralType_2011IncomingLinks(View view) {
+		GeneralType modelElement = (GeneralType) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Instance_Type_4003(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getAgent_2009IncomingLinks(View view) {
+		Agent modelElement = (Agent) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Instance_Type_4003(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getObserver_2010IncomingLinks(View view) {
+		Observer modelElement = (Observer) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
@@ -164,7 +227,21 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2006OutgoingLinks(View view) {
+	public static List<ModelLinkDescriptor> getGeneralType_2011OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getAgent_2009OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ModelLinkDescriptor> getObserver_2010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

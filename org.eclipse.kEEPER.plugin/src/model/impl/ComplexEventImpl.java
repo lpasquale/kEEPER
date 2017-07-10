@@ -2,15 +2,11 @@
  */
 package model.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
-
-import model.Agent;
+import model.AgentReference;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
-import model.Parameter;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -55,7 +51,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected Agent agent;
+	protected AgentReference agent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,10 +89,10 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Agent getAgent() {
+	public AgentReference getAgent() {
 		if (agent != null && agent.eIsProxy()) {
 			InternalEObject oldAgent = (InternalEObject)agent;
-			agent = (Agent)eResolveProxy(oldAgent);
+			agent = (AgentReference)eResolveProxy(oldAgent);
 			if (agent != oldAgent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.COMPLEX_EVENT__AGENT, oldAgent, agent));
@@ -110,7 +106,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Agent basicGetAgent() {
+	public AgentReference basicGetAgent() {
 		return agent;
 	}
 
@@ -119,8 +115,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAgent(Agent newAgent) {
-		Agent oldAgent = agent;
+	public void setAgent(AgentReference newAgent) {
+		AgentReference oldAgent = agent;
 		agent = newAgent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__AGENT, oldAgent, agent));
@@ -157,7 +153,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				getBehaviouralDescriptions().addAll((Collection<? extends BehaviouralDescription>)newValue);
 				return;
 			case ModelPackage.COMPLEX_EVENT__AGENT:
-				setAgent((Agent)newValue);
+				setAgent((AgentReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,7 +171,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				getBehaviouralDescriptions().clear();
 				return;
 			case ModelPackage.COMPLEX_EVENT__AGENT:
-				setAgent((Agent)null);
+				setAgent((AgentReference)null);
 				return;
 		}
 		super.eUnset(featureID);

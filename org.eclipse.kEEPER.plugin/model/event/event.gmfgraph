@@ -13,22 +13,6 @@
           xsi:type="gmfgraph:Rectangle"
           name="AddParam"/>
     </descriptors>
-    <descriptors
-        name="ComplexEventFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ComplexEvent">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="orange"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ComplexEventName"
-            text="---Complex Event Name---"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-    </descriptors>
   </figures>
   <figures
       name="svg">
@@ -53,6 +37,13 @@
           name="PrimitiveEvent"
           qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
     </descriptors>
+    <descriptors
+        name="ComplexEventFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="ComplexEvent"
+          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
+    </descriptors>
   </figures>
   <figures
       name="links">
@@ -68,6 +59,9 @@
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
         name="CEAgentDecoration"/>
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
+        name="CEAddParamDecoration"/>
     <descriptors
         name="PEAgentFigure">
       <actualFigure
@@ -96,6 +90,13 @@
           name="CEAgent"
           targetDecoration="//@figures.2/@figures.3"/>
     </descriptors>
+    <descriptors
+        name="CEAddParamFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CEAddParam"
+          targetDecoration="//@figures.2/@figures.4"/>
+    </descriptors>
   </figures>
   <figures
       name="labels">
@@ -105,8 +106,6 @@
           xsi:type="gmfgraph:Label"
           name="AddParamName"
           text="NAME"/>
-      <accessors
-          figure="//@figures.3/@descriptors.0/@actualFigure"/>
     </descriptors>
     <descriptors
         name="AgentNameFigure">
@@ -114,8 +113,6 @@
           xsi:type="gmfgraph:Label"
           name="AgentName"
           text="NAME"/>
-      <accessors
-          figure="//@figures.3/@descriptors.1/@actualFigure"/>
     </descriptors>
     <descriptors
         name="ObserverNameFigure">
@@ -129,6 +126,13 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="PrimitiveEventName"
+          text="NAME"/>
+    </descriptors>
+    <descriptors
+        name="ComplexEventNameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ComplexEventName"
           text="NAME"/>
     </descriptors>
   </figures>
@@ -161,17 +165,20 @@
       figure="PEObserverFigure"/>
   <labels
       name="ComplexEventLabel"
-      figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      figure="ComplexEventNameFigure"
+      elementIcon="false"/>
   <labels
       name="AgentLabel"
-      figure="AgentNameFigure"/>
+      figure="AgentNameFigure"
+      elementIcon="false"/>
   <labels
       name="ObserverLabel"
-      figure="ObserverNameFigure"/>
+      figure="ObserverNameFigure"
+      elementIcon="false"/>
   <labels
       name="PrimitiveEventLabel"
-      figure="PrimitiveEventNameFigure"/>
+      figure="PrimitiveEventNameFigure"
+      elementIcon="false"/>
   <labels
       name="AddParamLabel"
       figure="AddParamNameFigure"

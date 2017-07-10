@@ -4,12 +4,15 @@ package model.impl;
 
 import model.Agent;
 import model.AgentParam;
+import model.AgentReference;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ContextRelation;
 import model.Environment;
 import model.Event;
 import model.GeneralParam;
+import model.GeneralType;
+import model.GeneralTypeReference;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -20,6 +23,7 @@ import model.ModelFactory;
 import model.ModelPackage;
 import model.Observer;
 import model.ObserverParam;
+import model.ObserverReference;
 import model.Parameter;
 import model.PrimitiveEvent;
 import model.Type;
@@ -149,6 +153,34 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass observerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass agentReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass observerReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass generalTypeReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass generalTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -741,7 +773,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Agents() {
+	public EReference getEnvironment_GeneralParams() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -750,7 +782,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Observers() {
+	public EReference getEnvironment_PrimitiveEvents() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -759,7 +791,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_AddParam() {
+	public EReference getEnvironment_ComplexEvents() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -768,7 +800,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_PrimitiveEvents() {
+	public EReference getEnvironment_Hypothesis() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -777,7 +809,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_ComplexEvents() {
+	public EReference getEnvironment_AgentParams() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -786,8 +818,35 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Hypothesis() {
+	public EReference getEnvironment_ObserverParams() {
 		return (EReference)environmentEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnvironment_AgentReferences() {
+		return (EReference)environmentEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnvironment_ObserverReferences() {
+		return (EReference)environmentEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnvironment_GeneralTypeReferences() {
+		return (EReference)environmentEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -833,6 +892,96 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EClass getObserver() {
 		return observerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAgentReference() {
+		return agentReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAgentReference_Reference() {
+		return (EReference)agentReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAgentReference_TypeName() {
+		return (EAttribute)agentReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getObserverReference() {
+		return observerReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObserverReference_Reference() {
+		return (EReference)observerReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getObserverReference_TypeName() {
+		return (EAttribute)observerReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeneralTypeReference() {
+		return generalTypeReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGeneralTypeReference_Reference() {
+		return (EReference)generalTypeReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeneralTypeReference_TypeName() {
+		return (EAttribute)generalTypeReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeneralType() {
+		return generalTypeEClass;
 	}
 
 	/**
@@ -1012,12 +1161,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(environmentEClass, ENVIRONMENT__HAPPENS);
 		createEReference(environmentEClass, ENVIRONMENT__HOLDS_AT_BETWEENS);
 		createEReference(environmentEClass, ENVIRONMENT__INITIALS);
-		createEReference(environmentEClass, ENVIRONMENT__AGENTS);
-		createEReference(environmentEClass, ENVIRONMENT__OBSERVERS);
-		createEReference(environmentEClass, ENVIRONMENT__ADD_PARAM);
+		createEReference(environmentEClass, ENVIRONMENT__GENERAL_PARAMS);
 		createEReference(environmentEClass, ENVIRONMENT__PRIMITIVE_EVENTS);
 		createEReference(environmentEClass, ENVIRONMENT__COMPLEX_EVENTS);
 		createEReference(environmentEClass, ENVIRONMENT__HYPOTHESIS);
+		createEReference(environmentEClass, ENVIRONMENT__AGENT_PARAMS);
+		createEReference(environmentEClass, ENVIRONMENT__OBSERVER_PARAMS);
+		createEReference(environmentEClass, ENVIRONMENT__AGENT_REFERENCES);
+		createEReference(environmentEClass, ENVIRONMENT__OBSERVER_REFERENCES);
+		createEReference(environmentEClass, ENVIRONMENT__GENERAL_TYPE_REFERENCES);
 
 		observerParamEClass = createEClass(OBSERVER_PARAM);
 		createEReference(observerParamEClass, OBSERVER_PARAM__OBSERVER);
@@ -1038,6 +1190,20 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		agentEClass = createEClass(AGENT);
 
 		observerEClass = createEClass(OBSERVER);
+
+		agentReferenceEClass = createEClass(AGENT_REFERENCE);
+		createEReference(agentReferenceEClass, AGENT_REFERENCE__REFERENCE);
+		createEAttribute(agentReferenceEClass, AGENT_REFERENCE__TYPE_NAME);
+
+		observerReferenceEClass = createEClass(OBSERVER_REFERENCE);
+		createEReference(observerReferenceEClass, OBSERVER_REFERENCE__REFERENCE);
+		createEAttribute(observerReferenceEClass, OBSERVER_REFERENCE__TYPE_NAME);
+
+		generalTypeReferenceEClass = createEClass(GENERAL_TYPE_REFERENCE);
+		createEReference(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__REFERENCE);
+		createEAttribute(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__TYPE_NAME);
+
+		generalTypeEClass = createEClass(GENERAL_TYPE);
 	}
 
 	/**
@@ -1075,9 +1241,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		generalParamEClass.getESuperTypes().add(this.getParameter());
 		agentEClass.getESuperTypes().add(this.getType());
 		observerEClass.getESuperTypes().add(this.getType());
+		generalTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1098,15 +1265,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEvent_Types(), this.getType(), null, "types", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvent_Types(), this.getGeneralTypeReference(), null, "types", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primitiveEventEClass, PrimitiveEvent.class, "PrimitiveEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimitiveEvent_Agent(), this.getAgent(), null, "agent", null, 0, 1, PrimitiveEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrimitiveEvent_Observer(), this.getObserver(), null, "observer", null, 0, 1, PrimitiveEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrimitiveEvent_Agent(), this.getAgentReference(), null, "agent", null, 0, 1, PrimitiveEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrimitiveEvent_Observer(), this.getObserverReference(), null, "observer", null, 0, 1, PrimitiveEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexEvent_BehaviouralDescriptions(), this.getBehaviouralDescription(), null, "behaviouralDescriptions", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComplexEvent_Agent(), this.getAgent(), null, "agent", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEvent_Agent(), this.getAgentReference(), null, "agent", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviouralDescriptionEClass, BehaviouralDescription.class, "BehaviouralDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviouralDescription_HoldsAts(), this.getHoldsAt(), null, "holdsAts", null, 0, -1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1145,12 +1312,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getEnvironment_Happens(), this.getHappens(), null, "happens", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_Initials(), this.getInitially(), null, "initials", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Agents(), this.getParameter(), null, "agents", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Observers(), this.getParameter(), null, "observers", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_AddParam(), this.getParameter(), null, "addParam", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_GeneralParams(), this.getGeneralParam(), null, "generalParams", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_PrimitiveEvents(), this.getPrimitiveEvent(), null, "primitiveEvents", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_ComplexEvents(), this.getComplexEvent(), null, "complexEvents", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_Hypothesis(), this.getHypothesis(), null, "hypothesis", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_AgentParams(), this.getAgentParam(), null, "agentParams", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_ObserverParams(), this.getObserverParam(), null, "observerParams", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_AgentReferences(), this.getAgentReference(), null, "agentReferences", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_ObserverReferences(), this.getObserverReference(), null, "observerReferences", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_GeneralTypeReferences(), this.getGeneralTypeReference(), null, "generalTypeReferences", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(observerParamEClass, ObserverParam.class, "ObserverParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObserverParam_Observer(), this.getObserver(), null, "observer", null, 0, 1, ObserverParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1171,6 +1341,20 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(agentReferenceEClass, AgentReference.class, "AgentReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAgentReference_Reference(), this.getAgent(), null, "reference", null, 0, 1, AgentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgentReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, AgentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(observerReferenceEClass, ObserverReference.class, "ObserverReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObserverReference_Reference(), this.getObserver(), null, "reference", null, 0, 1, ObserverReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObserverReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ObserverReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(generalTypeReferenceEClass, GeneralTypeReference.class, "GeneralTypeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGeneralTypeReference_Reference(), this.getGeneralType(), null, "reference", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeneralTypeReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(generalTypeEClass, GeneralType.class, "GeneralType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

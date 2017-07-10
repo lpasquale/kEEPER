@@ -47,12 +47,12 @@ public interface ComplexEvent extends Event {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agent</em>' reference.
-	 * @see #setAgent(Agent)
+	 * @see #setAgent(AgentReference)
 	 * @see model.ModelPackage#getComplexEvent_Agent()
 	 * @model
 	 * @generated
 	 */
-	Agent getAgent();
+	AgentReference getAgent();
 
 	/**
 	 * Sets the value of the '{@link model.ComplexEvent#getAgent <em>Agent</em>}' reference.
@@ -62,6 +62,6 @@ public interface ComplexEvent extends Event {
 	 * @see #getAgent()
 	 * @generated
 	 */
-	void setAgent(Agent value);
+	void setAgent(AgentReference value);
 
 } // ComplexEvent

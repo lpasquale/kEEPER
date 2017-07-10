@@ -26,8 +26,6 @@ public class PrimitiveEventAgentEditPart extends ConnectionNodeEditPart implemen
 	*/
 	public PrimitiveEventAgentEditPart(View view) {
 		super(view);
-		
-		System.out.println("I'm in PEAgentEditPart");
 	}
 
 	/**

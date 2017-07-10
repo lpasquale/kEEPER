@@ -59,6 +59,52 @@
           name="InstanceTypeFigure"
           targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
+    <descriptors
+        name="AgentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="AgentFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AgentNameFigure"
+            text="---Name of type---"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AgentTitle"
+            text="&lt;&lt;Agent>>"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureAgentTitle"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureAgentNameFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ObserverFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ObserverFigure">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ObserverNameFigure"
+            text="---Name of type---"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ObserverTitle"
+            text="&lt;&lt;Observer>>"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureObserverTitle"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureObserverNameFigure"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="Type"
@@ -66,6 +112,12 @@
   <nodes
       name="Instance"
       figure="InstanceFigure"/>
+  <nodes
+      name="Agent"
+      figure="AgentFigure"/>
+  <nodes
+      name="Observer"
+      figure="ObserverFigure"/>
   <connections
       name="InstanceType"
       figure="InstanceTypeFigure"/>
@@ -87,4 +139,22 @@
       name="InstanceTitle"
       figure="InstanceFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="AgentName"
+      figure="AgentFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels
+      name="AgentTitle"
+      figure="AgentFigure"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="ObserverName"
+      figure="ObserverFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels
+      name="ObserverTitle"
+      figure="ObserverFigure"
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
 </gmfgraph:Canvas>

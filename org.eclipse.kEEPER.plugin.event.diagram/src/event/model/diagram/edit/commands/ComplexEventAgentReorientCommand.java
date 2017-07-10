@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
-import model.Agent;
+import model.AgentReference;
 import model.ComplexEvent;
 
 /**
@@ -69,7 +69,7 @@ public class ComplexEventAgentReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof Agent && newEnd instanceof ComplexEvent)) {
+		if (!(oldEnd instanceof AgentReference && newEnd instanceof ComplexEvent)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistComplexEventAgent_4004(getNewSource(),
@@ -80,7 +80,7 @@ public class ComplexEventAgentReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof Agent && newEnd instanceof Agent)) {
+		if (!(oldEnd instanceof AgentReference && newEnd instanceof AgentReference)) {
 			return false;
 		}
 		return ModelBaseItemSemanticEditPolicy.getLinkConstraints().canExistComplexEventAgent_4004(getOldSource(),
@@ -137,14 +137,14 @@ public class ComplexEventAgentReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Agent getOldTarget() {
-		return (Agent) oldEnd;
+	protected AgentReference getOldTarget() {
+		return (AgentReference) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected Agent getNewTarget() {
-		return (Agent) newEnd;
+	protected AgentReference getNewTarget() {
+		return (AgentReference) newEnd;
 	}
 }

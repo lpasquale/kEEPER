@@ -76,12 +76,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/happens"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/holdsAtBetweens"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/initials"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/agents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/observers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/addParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/generalParams"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/primitiveEvents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/complexEvents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/hypothesis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/agentParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/observerParams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Environment/agentReferences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Environment/observerReferences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Environment/generalTypeReferences"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ObserverParam">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ObserverParam/observer"/>
@@ -101,5 +104,18 @@
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Agent"/>
     <genClasses ecoreClass="model.ecore#//Observer"/>
+    <genClasses ecoreClass="model.ecore#//AgentReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//AgentReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//AgentReference/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ObserverReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ObserverReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ObserverReference/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//GeneralTypeReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralTypeReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//GeneralTypeReference/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//GeneralType"/>
   </genPackages>
 </genmodel:GenModel>

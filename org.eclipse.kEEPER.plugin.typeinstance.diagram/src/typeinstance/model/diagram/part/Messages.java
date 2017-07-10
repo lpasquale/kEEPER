@@ -243,27 +243,37 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Model1Group_title;
+	public static String Nodes1Group_title;
 
 	/**
 	* @generated
 	*/
-	public static String Type1CreationTool_title;
+	public static String Agent1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Type1CreationTool_desc;
+	public static String Observer2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Instance2CreationTool_title;
+	public static String GeneralType3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Instance2CreationTool_desc;
+	public static String GeneralType3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Instance4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Instance4CreationTool_desc;
 
 	/**
 	* @generated
@@ -283,7 +293,17 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Type_2006_incominglinks;
+	public static String NavigatorGroupName_Agent_2009_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Observer_2010_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_GeneralType_2011_incominglinks;
 
 	/**
 	* @generated

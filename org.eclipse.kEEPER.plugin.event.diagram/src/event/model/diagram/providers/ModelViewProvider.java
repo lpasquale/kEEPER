@@ -42,21 +42,21 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import event.model.diagram.edit.parts.AgentEditPart;
-import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
+import event.model.diagram.edit.parts.AgentReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventTypesEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ObserverNameEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceTypeNameEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
-import event.model.diagram.edit.parts.TypeNameEditPart;
 import event.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -141,9 +141,9 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				}
 				switch (visualID) {
 				case PrimitiveEventEditPart.VISUAL_ID:
-				case AgentEditPart.VISUAL_ID:
-				case ObserverEditPart.VISUAL_ID:
-				case TypeEditPart.VISUAL_ID:
+				case AgentReferenceEditPart.VISUAL_ID:
+				case ObserverReferenceEditPart.VISUAL_ID:
+				case GeneralTypeReferenceEditPart.VISUAL_ID:
 				case ComplexEventEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
@@ -155,8 +155,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				}
 			}
 		}
-		return PrimitiveEventEditPart.VISUAL_ID == visualID || AgentEditPart.VISUAL_ID == visualID
-				|| ObserverEditPart.VISUAL_ID == visualID || TypeEditPart.VISUAL_ID == visualID
+		return PrimitiveEventEditPart.VISUAL_ID == visualID || AgentReferenceEditPart.VISUAL_ID == visualID
+				|| ObserverReferenceEditPart.VISUAL_ID == visualID || GeneralTypeReferenceEditPart.VISUAL_ID == visualID
 				|| ComplexEventEditPart.VISUAL_ID == visualID;
 	}
 
@@ -208,12 +208,12 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		switch (visualID) {
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return createPrimitiveEvent_2011(domainElement, containerView, index, persisted, preferencesHint);
-		case AgentEditPart.VISUAL_ID:
-			return createAgent_2013(domainElement, containerView, index, persisted, preferencesHint);
-		case ObserverEditPart.VISUAL_ID:
-			return createObserver_2014(domainElement, containerView, index, persisted, preferencesHint);
-		case TypeEditPart.VISUAL_ID:
-			return createType_2015(domainElement, containerView, index, persisted, preferencesHint);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return createAgentReference_2016(domainElement, containerView, index, persisted, preferencesHint);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return createObserverReference_2017(domainElement, containerView, index, persisted, preferencesHint);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return createGeneralTypeReference_2018(domainElement, containerView, index, persisted, preferencesHint);
 		case ComplexEventEditPart.VISUAL_ID:
 			return createComplexEvent_2012(domainElement, containerView, index, persisted, preferencesHint);
 		}
@@ -286,11 +286,11 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createAgent_2013(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createAgentReference_2016(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
+		node.setType(ModelVisualIDRegistry.getType(AgentReferenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -316,7 +316,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(node, ModelVisualIDRegistry.getType(AgentNameEditPart.VISUAL_ID));
+		Node label5012 = createLabel(node, ModelVisualIDRegistry.getType(AgentReferenceTypeNameEditPart.VISUAL_ID));
 		label5012.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5012 = (Location) label5012.getLayoutConstraint();
 		location5012.setX(0);
@@ -327,11 +327,11 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createObserver_2014(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createObserverReference_2017(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+		node.setType(ModelVisualIDRegistry.getType(ObserverReferenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -357,7 +357,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5013 = createLabel(node, ModelVisualIDRegistry.getType(ObserverNameEditPart.VISUAL_ID));
+		Node label5013 = createLabel(node, ModelVisualIDRegistry.getType(ObserverReferenceTypeNameEditPart.VISUAL_ID));
 		label5013.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5013 = (Location) label5013.getLayoutConstraint();
 		location5013.setX(0);
@@ -368,11 +368,11 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createType_2015(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createGeneralTypeReference_2018(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(TypeEditPart.VISUAL_ID));
+		node.setType(ModelVisualIDRegistry.getType(GeneralTypeReferenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -398,7 +398,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5014 = createLabel(node, ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
+		Node label5014 = createLabel(node,
+				ModelVisualIDRegistry.getType(GeneralTypeReferenceTypeNameEditPart.VISUAL_ID));
 		label5014.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5014 = (Location) label5014.getLayoutConstraint();
 		location5014.setX(0);
@@ -411,10 +412,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	public Node createComplexEvent_2012(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(ModelVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -422,6 +420,11 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -438,6 +441,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5011 = createLabel(node, ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
+		label5011.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5011 = (Location) label5011.getLayoutConstraint();
+		location5011.setX(0);
+		location5011.setY(5);
 		return node;
 	}
 

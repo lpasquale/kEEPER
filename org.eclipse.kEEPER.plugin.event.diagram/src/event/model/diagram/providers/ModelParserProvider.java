@@ -13,11 +13,11 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
-import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.AgentReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
-import event.model.diagram.edit.parts.ObserverNameEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceTypeNameEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
-import event.model.diagram.edit.parts.TypeNameEditPart;
 import event.model.diagram.parsers.MessageFormatParser;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import model.ModelPackage;
@@ -47,52 +47,52 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser agentName_5012Parser;
+	private IParser agentReferenceTypeName_5012Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getAgentName_5012Parser() {
-		if (agentName_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+	private IParser getAgentReferenceTypeName_5012Parser() {
+		if (agentReferenceTypeName_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getAgentReference_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			agentName_5012Parser = parser;
+			agentReferenceTypeName_5012Parser = parser;
 		}
-		return agentName_5012Parser;
+		return agentReferenceTypeName_5012Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser observerName_5013Parser;
+	private IParser observerReferenceTypeName_5013Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getObserverName_5013Parser() {
-		if (observerName_5013Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+	private IParser getObserverReferenceTypeName_5013Parser() {
+		if (observerReferenceTypeName_5013Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getObserverReference_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			observerName_5013Parser = parser;
+			observerReferenceTypeName_5013Parser = parser;
 		}
-		return observerName_5013Parser;
+		return observerReferenceTypeName_5013Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser typeName_5014Parser;
+	private IParser generalTypeReferenceTypeName_5014Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getTypeName_5014Parser() {
-		if (typeName_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+	private IParser getGeneralTypeReferenceTypeName_5014Parser() {
+		if (generalTypeReferenceTypeName_5014Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getGeneralTypeReference_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			typeName_5014Parser = parser;
+			generalTypeReferenceTypeName_5014Parser = parser;
 		}
-		return typeName_5014Parser;
+		return generalTypeReferenceTypeName_5014Parser;
 	}
 
 	/**
@@ -119,12 +119,12 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 		switch (visualID) {
 		case PrimitiveEventNameEditPart.VISUAL_ID:
 			return getPrimitiveEventName_5010Parser();
-		case AgentNameEditPart.VISUAL_ID:
-			return getAgentName_5012Parser();
-		case ObserverNameEditPart.VISUAL_ID:
-			return getObserverName_5013Parser();
-		case TypeNameEditPart.VISUAL_ID:
-			return getTypeName_5014Parser();
+		case AgentReferenceTypeNameEditPart.VISUAL_ID:
+			return getAgentReferenceTypeName_5012Parser();
+		case ObserverReferenceTypeNameEditPart.VISUAL_ID:
+			return getObserverReferenceTypeName_5013Parser();
+		case GeneralTypeReferenceTypeNameEditPart.VISUAL_ID:
+			return getGeneralTypeReferenceTypeName_5014Parser();
 		case ComplexEventNameEditPart.VISUAL_ID:
 			return getComplexEventName_5011Parser();
 		}

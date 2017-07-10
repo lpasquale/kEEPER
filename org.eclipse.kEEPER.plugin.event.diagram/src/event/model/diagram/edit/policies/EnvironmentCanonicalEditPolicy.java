@@ -31,12 +31,12 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
-import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.part.ModelDiagramUpdater;
 import event.model.diagram.part.ModelLinkDescriptor;
 import event.model.diagram.part.ModelNodeDescriptor;
@@ -72,7 +72,9 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Events());
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Types());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_AgentReferences());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_ObserverReferences());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_GeneralTypeReferences());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -107,9 +109,9 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		int visualID = ModelVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case PrimitiveEventEditPart.VISUAL_ID:
-		case AgentEditPart.VISUAL_ID:
-		case ObserverEditPart.VISUAL_ID:
-		case TypeEditPart.VISUAL_ID:
+		case AgentReferenceEditPart.VISUAL_ID:
+		case ObserverReferenceEditPart.VISUAL_ID:
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
 			return true;
 		}
@@ -264,23 +266,23 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case AgentEditPart.VISUAL_ID: {
+		case AgentReferenceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getAgent_2013ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getAgentReference_2016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ObserverEditPart.VISUAL_ID: {
+		case ObserverReferenceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getObserver_2014ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getObserverReference_2017ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case TypeEditPart.VISUAL_ID: {
+		case GeneralTypeReferenceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getType_2015ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getGeneralTypeReference_2018ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

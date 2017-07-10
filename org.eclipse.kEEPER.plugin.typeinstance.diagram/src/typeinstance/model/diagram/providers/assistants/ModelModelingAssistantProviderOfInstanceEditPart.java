@@ -8,8 +8,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
+import typeinstance.model.diagram.edit.parts.AgentEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
-import typeinstance.model.diagram.edit.parts.TypeEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverEditPart;
 import typeinstance.model.diagram.providers.ModelElementTypes;
 import typeinstance.model.diagram.providers.ModelModelingAssistantProvider;
 
@@ -54,7 +56,13 @@ public class ModelModelingAssistantProviderOfInstanceEditPart extends ModelModel
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(InstanceEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof TypeEditPart) {
+		if (targetEditPart instanceof GeneralTypeEditPart) {
+			types.add(ModelElementTypes.InstanceType_4003);
+		}
+		if (targetEditPart instanceof AgentEditPart) {
+			types.add(ModelElementTypes.InstanceType_4003);
+		}
+		if (targetEditPart instanceof ObserverEditPart) {
 			types.add(ModelElementTypes.InstanceType_4003);
 		}
 		return types;
@@ -76,7 +84,9 @@ public class ModelModelingAssistantProviderOfInstanceEditPart extends ModelModel
 	public List<IElementType> doGetTypesForTarget(InstanceEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.InstanceType_4003) {
-			types.add(ModelElementTypes.Type_2006);
+			types.add(ModelElementTypes.GeneralType_2011);
+			types.add(ModelElementTypes.Agent_2009);
+			types.add(ModelElementTypes.Observer_2010);
 		}
 		return types;
 	}

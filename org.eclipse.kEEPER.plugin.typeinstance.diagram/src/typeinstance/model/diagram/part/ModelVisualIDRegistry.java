@@ -9,12 +9,18 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import model.Environment;
 import model.ModelPackage;
+import typeinstance.model.diagram.edit.parts.AgentEditPart;
+import typeinstance.model.diagram.edit.parts.AgentNameEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
+import typeinstance.model.diagram.edit.parts.GeneralTypeNameEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
-import typeinstance.model.diagram.edit.parts.TypeEditPart;
-import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverEditPart;
+import typeinstance.model.diagram.edit.parts.ObserverNameEditPart;
 import typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel3EditPart;
+import typeinstance.model.diagram.edit.parts.WrappingLabel4EditPart;
 import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -122,8 +128,14 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getInstance().isSuperTypeOf(domainElement.eClass())) {
 				return InstanceEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getType().isSuperTypeOf(domainElement.eClass())) {
-				return TypeEditPart.VISUAL_ID;
+			if (ModelPackage.eINSTANCE.getGeneralType().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralTypeEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getAgent().isSuperTypeOf(domainElement.eClass())) {
+				return AgentEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
+				return ObserverEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -153,7 +165,13 @@ public class ModelVisualIDRegistry {
 			if (InstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (TypeEditPart.VISUAL_ID == nodeVisualID) {
+			if (GeneralTypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AgentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObserverEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -165,11 +183,27 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			break;
-		case TypeEditPart.VISUAL_ID:
-			if (TypeNameEditPart.VISUAL_ID == nodeVisualID) {
+		case GeneralTypeEditPart.VISUAL_ID:
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+			if (GeneralTypeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AgentEditPart.VISUAL_ID:
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AgentNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ObserverEditPart.VISUAL_ID:
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObserverNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -224,7 +258,9 @@ public class ModelVisualIDRegistry {
 		case EnvironmentEditPart.VISUAL_ID:
 			return false;
 		case InstanceEditPart.VISUAL_ID:
-		case TypeEditPart.VISUAL_ID:
+		case AgentEditPart.VISUAL_ID:
+		case ObserverEditPart.VISUAL_ID:
+		case GeneralTypeEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

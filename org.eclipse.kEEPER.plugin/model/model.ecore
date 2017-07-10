@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="https://github.com/mlatona/minorityReportPlugin"
     nsPrefix="org.eclipse.minorityReportPlugin">
-  <eClassifiers xsi:type="ecore:EClass" name="Type">
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instance">
@@ -25,16 +25,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-        eType="#//Type"/>
+        eType="#//GeneralTypeReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveEvent" eSuperTypes="#//Event">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="observer" eType="#//Observer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//AgentReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="observer" eType="#//ObserverReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviouralDescriptions"
         upperBound="-1" eType="#//BehaviouralDescription"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//AgentReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviouralDescription">
     <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAts" upperBound="-1"
@@ -90,18 +90,24 @@
         eType="#//HoldsAtBetween" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initials" upperBound="-1"
         eType="#//Initially" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="observers" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="addParam" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalParams" upperBound="-1"
+        eType="#//GeneralParam" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveEvents" upperBound="-1"
         eType="#//PrimitiveEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="complexEvents" upperBound="-1"
         eType="#//ComplexEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hypothesis" upperBound="-1"
         eType="#//Hypothesis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agentParams" upperBound="-1"
+        eType="#//AgentParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="observerParams" upperBound="-1"
+        eType="#//ObserverParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agentReferences" upperBound="-1"
+        eType="#//AgentReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="observerReferences" upperBound="-1"
+        eType="#//ObserverReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalTypeReferences"
+        upperBound="-1" eType="#//GeneralTypeReference" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObserverParam" eSuperTypes="#//Parameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="observer" eType="#//Observer"/>
@@ -124,4 +130,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Observer" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AgentReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObserverReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Observer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralTypeReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//GeneralType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralType" eSuperTypes="#//Type"/>
 </ecore:EPackage>

@@ -54,8 +54,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5010"
           editPartClassName="PrimitiveEventNameEditPart"
-          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
-          elementIcon="true">
+          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -71,78 +70,77 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2013"
-        editPartClassName="AgentEditPart"
-        itemSemanticEditPolicyClassName="AgentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="AgentCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="AgentGraphicalNodeEditPolicy"
-        createCommandClassName="AgentCreateCommand">
+        visualID="2016"
+        editPartClassName="AgentReferenceEditPart"
+        itemSemanticEditPolicyClassName="AgentReferenceItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AgentReferenceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="AgentReferenceGraphicalNodeEditPolicy"
+        createCommandClassName="AgentReferenceCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="AgentEditHelper"/>
+          editHelperClassName="AgentReferenceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
       <modelFacet>
         <metaClass
-            href="../model.genmodel#//model/Agent"/>
+            href="../model.genmodel#//model/AgentReference"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/agentReferences"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/agentReferences"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5012"
-          editPartClassName="AgentNameEditPart"
-          itemSemanticEditPolicyClassName="AgentNameItemSemanticEditPolicy"
-          elementIcon="true">
+          editPartClassName="AgentReferenceTypeNameEditPart"
+          itemSemanticEditPolicyClassName="AgentReferenceTypeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="AgentNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAgentName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAgentName() {&#xA;&#x9;&#x9;return fFigureAgentName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="">
+            editorPattern=""
+            editPattern="">
           <metaFeatures
-              href="../model.genmodel#//model/Type/name"/>
+              href="../model.genmodel#//model/AgentReference/typeName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2014"
-        editPartClassName="ObserverEditPart"
-        itemSemanticEditPolicyClassName="ObserverItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ObserverCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ObserverGraphicalNodeEditPolicy"
-        createCommandClassName="ObserverCreateCommand">
+        visualID="2017"
+        editPartClassName="ObserverReferenceEditPart"
+        itemSemanticEditPolicyClassName="ObserverReferenceItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ObserverReferenceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ObserverReferenceGraphicalNodeEditPolicy"
+        createCommandClassName="ObserverReferenceCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ObserverEditHelper"/>
+          editHelperClassName="ObserverReferenceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
       <modelFacet>
         <metaClass
-            href="../model.genmodel#//model/Observer"/>
+            href="../model.genmodel#//model/ObserverReference"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/observerReferences"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/observerReferences"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5013"
-          editPartClassName="ObserverNameEditPart"
-          itemSemanticEditPolicyClassName="ObserverNameItemSemanticEditPolicy"
-          elementIcon="true">
+          editPartClassName="ObserverReferenceTypeNameEditPart"
+          itemSemanticEditPolicyClassName="ObserverReferenceTypeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -151,51 +149,53 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ObserverNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ObserverNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.0"
+            viewPattern="">
           <metaFeatures
-              href="../model.genmodel#//model/Type/name"/>
+              href="../model.genmodel#//model/ObserverReference/typeName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2015"
-        editPartClassName="TypeEditPart"
-        itemSemanticEditPolicyClassName="TypeItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="TypeCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="TypeGraphicalNodeEditPolicy"
-        createCommandClassName="TypeCreateCommand">
+        visualID="2018"
+        editPartClassName="GeneralTypeReferenceEditPart"
+        itemSemanticEditPolicyClassName="GeneralTypeReferenceItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="GeneralTypeReferenceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="GeneralTypeReferenceGraphicalNodeEditPolicy"
+        createCommandClassName="GeneralTypeReferenceCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="TypeEditHelper"/>
+          editHelperClassName="GeneralTypeReferenceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
-            href="../model.genmodel#//model/Type"/>
+            href="../model.genmodel#//model/GeneralTypeReference"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/generalTypeReferences"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
+            href="../model.genmodel#//model/Environment/generalTypeReferences"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5014"
-          editPartClassName="TypeNameEditPart"
-          itemSemanticEditPolicyClassName="TypeNameItemSemanticEditPolicy">
+          editPartClassName="GeneralTypeReferenceTypeNameEditPart"
+          itemSemanticEditPolicyClassName="GeneralTypeReferenceTypeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="AddParamNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAddParamName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAddParamName() {&#xA;&#x9;&#x9;return fFigureAddParamName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.0"
+            viewPattern="">
           <metaFeatures
-              href="../model.genmodel#//model/Type/name"/>
+              href="../model.genmodel#//model/GeneralTypeReference/typeName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -212,13 +212,8 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="ComplexEventEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="ComplexEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.orange);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComplexEventName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventName.setText(&quot;---Complex Event Name---&quot;);&#xA;&#xA;this.add(fFigureComplexEventName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventName() {&#xA;&#x9;&#x9;return fFigureComplexEventName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/ComplexEvent"/>
@@ -228,16 +223,16 @@
             href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
       <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5011"
           editPartClassName="ComplexEventNameEditPart"
-          itemSemanticEditPolicyClassName="ComplexEventNameItemSemanticEditPolicy"
-          elementIcon="true">
+          itemSemanticEditPolicyClassName="ComplexEventNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureComplexEventName"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="ComplexEventNameFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -328,23 +323,8 @@
     </links>
     <palette>
       <groups
-          title="Nodes"
+          title="Events"
           collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Agent Primitive Event"
-            smallIconPath="/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/agent.gif"
-            genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Observer Primitive Event"
-            description=""
-            smallIconPath="/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/observer.ico"
-            genNodes="//@diagram/@topLevelNodes.2"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Generic parameter Primitive Event"
-            genNodes="//@diagram/@topLevelNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Primitive Event"
@@ -354,6 +334,22 @@
             xsi:type="gmfgen:ToolEntry"
             title="Complex Event"
             genNodes="//@diagram/@topLevelNodes.4"/>
+      </groups>
+      <groups
+          title="Parameters"
+          collapse="true">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Agent"
+            genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Observer"
+            genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Generic Parameter "
+            genNodes="//@diagram/@topLevelNodes.3"/>
       </groups>
     </palette>
     <preferencePages
@@ -472,30 +468,6 @@
         child="//@diagram/@links.2"
         groupName="links"
         groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.1"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.2"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.3"

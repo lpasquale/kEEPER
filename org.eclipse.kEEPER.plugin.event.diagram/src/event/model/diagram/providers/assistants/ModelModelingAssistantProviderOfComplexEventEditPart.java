@@ -8,10 +8,9 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
 import event.model.diagram.providers.ModelElementTypes;
 import event.model.diagram.providers.ModelModelingAssistantProvider;
 
@@ -57,16 +56,10 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ComplexEventEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof AgentEditPart) {
+		if (targetEditPart instanceof AgentReferenceEditPart) {
 			types.add(ModelElementTypes.ComplexEventAgent_4004);
 		}
-		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventTypes_4005);
-		}
-		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventTypes_4005);
-		}
-		if (targetEditPart instanceof TypeEditPart) {
+		if (targetEditPart instanceof GeneralTypeReferenceEditPart) {
 			types.add(ModelElementTypes.EventTypes_4005);
 		}
 		return types;
@@ -88,11 +81,9 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	public List<IElementType> doGetTypesForTarget(ComplexEventEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
-			types.add(ModelElementTypes.Agent_2013);
+			types.add(ModelElementTypes.AgentReference_2016);
 		} else if (relationshipType == ModelElementTypes.EventTypes_4005) {
-			types.add(ModelElementTypes.Agent_2013);
-			types.add(ModelElementTypes.Observer_2014);
-			types.add(ModelElementTypes.Type_2015);
+			types.add(ModelElementTypes.GeneralTypeReference_2018);
 		}
 		return types;
 	}

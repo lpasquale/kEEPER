@@ -31,23 +31,23 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case PrimitiveEventNameEditPart.VISUAL_ID:
 				return new PrimitiveEventNameEditPart(view);
 
-			case AgentEditPart.VISUAL_ID:
-				return new AgentEditPart(view);
+			case AgentReferenceEditPart.VISUAL_ID:
+				return new AgentReferenceEditPart(view);
 
-			case AgentNameEditPart.VISUAL_ID:
-				return new AgentNameEditPart(view);
+			case AgentReferenceTypeNameEditPart.VISUAL_ID:
+				return new AgentReferenceTypeNameEditPart(view);
 
-			case ObserverEditPart.VISUAL_ID:
-				return new ObserverEditPart(view);
+			case ObserverReferenceEditPart.VISUAL_ID:
+				return new ObserverReferenceEditPart(view);
 
-			case ObserverNameEditPart.VISUAL_ID:
-				return new ObserverNameEditPart(view);
+			case ObserverReferenceTypeNameEditPart.VISUAL_ID:
+				return new ObserverReferenceTypeNameEditPart(view);
 
-			case TypeEditPart.VISUAL_ID:
-				return new TypeEditPart(view);
+			case GeneralTypeReferenceEditPart.VISUAL_ID:
+				return new GeneralTypeReferenceEditPart(view);
 
-			case TypeNameEditPart.VISUAL_ID:
-				return new TypeNameEditPart(view);
+			case GeneralTypeReferenceTypeNameEditPart.VISUAL_ID:
+				return new GeneralTypeReferenceTypeNameEditPart(view);
 
 			case ComplexEventEditPart.VISUAL_ID:
 				return new ComplexEventEditPart(view);

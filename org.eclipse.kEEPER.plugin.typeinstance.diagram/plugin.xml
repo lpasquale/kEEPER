@@ -217,7 +217,7 @@
       <viewProvider class="typeinstance.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="TypeInstanceModel"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2011,2009,2010"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003"/>
       </viewProvider>
    </extension>
@@ -230,13 +230,13 @@
             <method name="getType()" value="TypeInstanceModel"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2005,2006"/>
+            <method name="getType()" value="2005,2011,2009,2010"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5003,5002,5004"/>
+            <method name="getType()" value="5001,5003,5013,5014,5009,5010,5011,5012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -258,10 +258,20 @@
          <object class="typeinstance.model.diagram.edit.parts.InstanceEditPart" id="Instance_2005"/>
          <context elements="Instance_2005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="typeinstance.model.diagram.providers.assistants.ModelModelingAssistantProviderOfTypeEditPart">
+            <modelingAssistantProvider class="typeinstance.model.diagram.providers.assistants.ModelModelingAssistantProviderOfGeneralTypeEditPart">
          <Priority name="Lowest"/>
-         <object class="typeinstance.model.diagram.edit.parts.TypeEditPart" id="Type_2006"/>
-         <context elements="Type_2006"/>
+         <object class="typeinstance.model.diagram.edit.parts.GeneralTypeEditPart" id="GeneralType_2011"/>
+         <context elements="GeneralType_2011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="typeinstance.model.diagram.providers.assistants.ModelModelingAssistantProviderOfAgentEditPart">
+         <Priority name="Lowest"/>
+         <object class="typeinstance.model.diagram.edit.parts.AgentEditPart" id="Agent_2009"/>
+         <context elements="Agent_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="typeinstance.model.diagram.providers.assistants.ModelModelingAssistantProviderOfObserverEditPart">
+         <Priority name="Lowest"/>
+         <object class="typeinstance.model.diagram.edit.parts.ObserverEditPart" id="Observer_2010"/>
+         <context elements="Observer_2010"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -299,12 +309,32 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.kEEPER.plugin.typeinstance.diagram.Type_2006"
-               name="%metatype.name.Type_2006"
+               id="org.eclipse.kEEPER.plugin.typeinstance.diagram.GeneralType_2011"
+               name="%metatype.name.GeneralType_2011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Type"
-               edithelper="typeinstance.model.diagram.edit.helpers.TypeEditHelper">
-            <param name="semanticHint" value="2006"/>
+               eclass="GeneralType"
+               edithelper="typeinstance.model.diagram.edit.helpers.GeneralTypeEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
+               id="org.eclipse.kEEPER.plugin.typeinstance.diagram.Agent_2009"
+               name="%metatype.name.Agent_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Agent"
+               edithelper="typeinstance.model.diagram.edit.helpers.AgentEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
+               id="org.eclipse.kEEPER.plugin.typeinstance.diagram.Observer_2010"
+               name="%metatype.name.Observer_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Observer"
+               edithelper="typeinstance.model.diagram.edit.helpers.ObserverEditHelper">
+            <param name="semanticHint" value="2010"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
@@ -330,7 +360,9 @@
       <binding context="org.eclipse.kEEPER.plugin.typeinstance.diagram.TypeContext">
          <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.Environment_1000"/>
          <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.Instance_2005"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.Type_2006"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.GeneralType_2011"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.Agent_2009"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.Observer_2010"/>
          <elementType ref="org.eclipse.kEEPER.plugin.typeinstance.diagram.InstanceType_4003"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

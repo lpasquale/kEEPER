@@ -21,68 +21,71 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="event.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="event.gmfgraph#PrimitiveEventNode"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/types"/>
+        href="../model.ecore#//Environment/agentReferences"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Agent"/>
+          href="../model.ecore#//AgentReference"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping"
-          viewPattern="">
+          editorPattern=""
+          editPattern="">
         <diagramLabel
             href="event.gmfgraph#AgentLabel"/>
         <features
-            href="../model.ecore#//Type/name"/>
+            href="../model.ecore#//AgentReference/typeName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="event.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
           href="event.gmfgraph#AgentNode"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/types"/>
+        href="../model.ecore#//Environment/observerReferences"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Observer"/>
+          href="../model.ecore#//ObserverReference"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="">
         <diagramLabel
             href="event.gmfgraph#ObserverLabel"/>
         <features
-            href="../model.ecore#//Type/name"/>
+            href="../model.ecore#//ObserverReference/typeName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="event.gmftool#//@palette/@tools.1/@tools.1"/>
       <diagramNode
           href="event.gmfgraph#ObserverNode"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/types"/>
+        href="../model.ecore#//Environment/generalTypeReferences"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Type"/>
+          href="../model.ecore#//GeneralTypeReference"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="">
         <diagramLabel
             href="event.gmfgraph#AddParamLabel"/>
         <features
-            href="../model.ecore#//Type/name"/>
+            href="../model.ecore#//GeneralTypeReference/typeName"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="event.gmftool#//@palette/@tools.1/@tools.2"/>
       <diagramNode
           href="event.gmfgraph#AddParamNode"/>
     </ownedChild>
@@ -102,7 +105,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="event.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="event.gmfgraph#ComplexEventNode"/>
     </ownedChild>

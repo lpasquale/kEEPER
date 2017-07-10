@@ -25,12 +25,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Environment#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.Environment#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.Environment#getInitials <em>Initials</em>}</li>
- *   <li>{@link model.Environment#getAgents <em>Agents</em>}</li>
- *   <li>{@link model.Environment#getObservers <em>Observers</em>}</li>
- *   <li>{@link model.Environment#getAddParam <em>Add Param</em>}</li>
+ *   <li>{@link model.Environment#getGeneralParams <em>General Params</em>}</li>
  *   <li>{@link model.Environment#getPrimitiveEvents <em>Primitive Events</em>}</li>
  *   <li>{@link model.Environment#getComplexEvents <em>Complex Events</em>}</li>
  *   <li>{@link model.Environment#getHypothesis <em>Hypothesis</em>}</li>
+ *   <li>{@link model.Environment#getAgentParams <em>Agent Params</em>}</li>
+ *   <li>{@link model.Environment#getObserverParams <em>Observer Params</em>}</li>
+ *   <li>{@link model.Environment#getAgentReferences <em>Agent References</em>}</li>
+ *   <li>{@link model.Environment#getObserverReferences <em>Observer References</em>}</li>
+ *   <li>{@link model.Environment#getGeneralTypeReferences <em>General Type References</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEnvironment()
@@ -199,52 +202,20 @@ public interface Environment extends EObject {
 	EList<Initially> getInitials();
 	
 	/**
-	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
-	 * The list contents are of type {@link model.Parameter}.
+	 * Returns the value of the '<em><b>General Params</b></em>' containment reference list.
+	 * The list contents are of type {@link model.GeneralParam}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Agents</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>General Params</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agents</em>' containment reference list.
-	 * @see model.ModelPackage#getEnvironment_Agents()
+	 * @return the value of the '<em>General Params</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_GeneralParams()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Parameter> getAgents();
-
-	/**
-	 * Returns the value of the '<em><b>Observers</b></em>' containment reference list.
-	 * The list contents are of type {@link model.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Observers</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Observers</em>' containment reference list.
-	 * @see model.ModelPackage#getEnvironment_Observers()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getObservers();
-
-	/**
-	 * Returns the value of the '<em><b>Add Param</b></em>' containment reference list.
-	 * The list contents are of type {@link model.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Add Param</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Add Param</em>' containment reference list.
-	 * @see model.ModelPackage#getEnvironment_AddParam()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getAddParam();
+	EList<GeneralParam> getGeneralParams();
 
 	/**
 	 * Returns the value of the '<em><b>Primitive Events</b></em>' containment reference list.
@@ -293,6 +264,86 @@ public interface Environment extends EObject {
 	 * @generated
 	 */
 	EList<Hypothesis> getHypothesis();
+
+	/**
+	 * Returns the value of the '<em><b>Agent Params</b></em>' containment reference list.
+	 * The list contents are of type {@link model.AgentParam}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agent Params</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent Params</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_AgentParams()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AgentParam> getAgentParams();
+
+	/**
+	 * Returns the value of the '<em><b>Observer Params</b></em>' containment reference list.
+	 * The list contents are of type {@link model.ObserverParam}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Observer Params</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Observer Params</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_ObserverParams()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ObserverParam> getObserverParams();
+
+	/**
+	 * Returns the value of the '<em><b>Agent References</b></em>' containment reference list.
+	 * The list contents are of type {@link model.AgentReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agent References</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent References</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_AgentReferences()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AgentReference> getAgentReferences();
+
+	/**
+	 * Returns the value of the '<em><b>Observer References</b></em>' containment reference list.
+	 * The list contents are of type {@link model.ObserverReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Observer References</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Observer References</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_ObserverReferences()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ObserverReference> getObserverReferences();
+
+	/**
+	 * Returns the value of the '<em><b>General Type References</b></em>' containment reference list.
+	 * The list contents are of type {@link model.GeneralTypeReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>General Type References</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>General Type References</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_GeneralTypeReferences()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<GeneralTypeReference> getGeneralTypeReferences();
 
 	void setTypes(EList<Type> types);
 	

@@ -22,15 +22,6 @@ public interface ModelFactory extends EFactory {
 	ModelFactory eINSTANCE = model.impl.ModelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type</em>'.
-	 * @generated
-	 */
-	Type createType();
-
-	/**
 	 * Returns a new object of class '<em>Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +137,42 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	Observer createObserver();
+
+	/**
+	 * Returns a new object of class '<em>Agent Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agent Reference</em>'.
+	 * @generated
+	 */
+	AgentReference createAgentReference();
+
+	/**
+	 * Returns a new object of class '<em>Observer Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Observer Reference</em>'.
+	 * @generated
+	 */
+	ObserverReference createObserverReference();
+
+	/**
+	 * Returns a new object of class '<em>General Type Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>General Type Reference</em>'.
+	 * @generated
+	 */
+	GeneralTypeReference createGeneralTypeReference();
+
+	/**
+	 * Returns a new object of class '<em>General Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>General Type</em>'.
+	 * @generated
+	 */
+	GeneralType createGeneralType();
 
 	/**
 	 * Returns a new object of class '<em>Agent</em>'.

@@ -8,10 +8,8 @@ import java.util.List;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -19,7 +17,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
@@ -29,14 +26,10 @@ import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdap
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
 import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
@@ -56,13 +49,12 @@ import event.model.diagram.edit.policies.PrimitiveEventItemSemanticEditPolicy;
 import event.model.diagram.part.ModelDiagramEditor;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
 import event.model.diagram.part.ModelVisualIDRegistry;
-import model.Agent;
-import model.BehaviouralDescription;
-import model.Happens;
+import model.AgentReference;
 import model.ModelPackage;
+import model.ObserverReference;
 import model.PrimitiveEvent;
-import model.impl.AgentImpl;
-import model.impl.HappensImpl;
+import model.impl.AgentReferenceImpl;
+import model.impl.ObserverReferenceImpl;
 
 /**
  * @generated
@@ -85,17 +77,17 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 	protected IFigure primaryShape;
 
 	private ModelDiagramEditor editor;
-	
+
 	private View view;
-	
+
 	private PrimitiveEvent pe;
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public PrimitiveEventEditPart(View view) {
 		super(view);
-		
+
 		// Variables essentials to get the workbench of THIS Primitive Event
 		IWorkbench workbench = PlatformUI.getWorkbench();
 		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
@@ -117,21 +109,25 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 		this.view = view;
 
 		this.pe = (PrimitiveEvent) view.getElement();
-		
+
 		Thread thread = new Thread() {
-		    public void run() {
-		        try {
-		            System.out.println("Creating the agent...");
-		            Thread.sleep(2000);
-		            agentCreation();
-		        } catch(InterruptedException v) {
-		            System.out.println(v);
-		        }
-		    }  
+			public void run() {
+				try {
+					System.out.println("Creating the agent...");
+					Thread.sleep(2000);
+					if (pe.getAgent() == null) {
+						agentCreation();
+					}
+					if (pe.getObserver() == null) {
+						observerCreation();
+					}
+				} catch (InterruptedException v) {
+					System.out.println(v);
+				}
+			}
 		};
 
 		thread.start();
-
 	}
 
 	/**
@@ -183,13 +179,14 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected IFigure createNodeShape() {
-		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/PrimitiveEvent.svg"), //$NON-NLS-1$
+		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(),
+				new Path("icons/PrimitiveEvent.svg"), //$NON-NLS-1$
 				null);
 		return new ScalableImageFigure(RenderedImageFactory.getInstance(url), false, true, true);
-	
+
 	}
 
 	/**
@@ -200,12 +197,12 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof PrimitiveEventNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-20, -20));
+			locator.setBorderItemOffset(new Dimension(0, 0));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -300,43 +297,69 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 		return getChildBySemanticHint(ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
 	}
 
-	@Override
-	public void performRequest(Request req) {
-		if (req.getType() == RequestConstants.REQ_OPEN) {
-			agentCreation();
-		}
-	}
-	public void agentCreation() {
-		// Creating Agent
+	private void agentCreation() {
+		// Creating AgentReference
 		Command cmd = editor.createAndExecuteShapeRequestCommand(
-				event.model.diagram.providers.ModelElementTypes.Agent_2013, editor.getDiagramEditPart());
+				event.model.diagram.providers.ModelElementTypes.AgentReference_2016, editor.getDiagramEditPart());
 		editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
 
 		// Creating and executing the command to set the properties
 		Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
 		Iterator<?> iter = results.iterator();
-		Agent newAgent = new AgentImpl();
+		AgentReference newAgent = new AgentReferenceImpl();
 		while (iter.hasNext()) {
 			Object obj = iter.next();
 			if (obj instanceof CreateElementRequestAdapter) {
 				CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
-				newAgent = (AgentImpl) cra.resolve();
-							
-				// Setting the Agent EReference of the Primitive Event
+				newAgent = (AgentReferenceImpl) cra.resolve();
+
+				// Setting the AgentReference EReference of the Primitive Event
 				System.out.println(editor.getEditingDomain());
 				System.out.println(view.getElement());
-				SetRequest setRequestAgent = new SetRequest(editor.getEditingDomain(), 
-						view.getElement(),
+				SetRequest setRequestAgent = new SetRequest(editor.getEditingDomain(), view.getElement(),
 						ModelPackage.eINSTANCE.getPrimitiveEvent_Agent(), newAgent);
 				SetValueCommand agentOperation = new SetValueCommand(setRequestAgent);
-				editor.getDiagramEditDomain().getDiagramCommandStack()
-						.execute(new ICommandProxy(agentOperation));
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(agentOperation));
 			}
 		}
-		
+		// Refresh the diagram (it allows to render the connection between the Event and the Parameter
 		Display.getDefault().asyncExec(new Runnable() {
-			  public void run() {
-			    editor.getDiagramEditPart().addNotify();
-			  }});	
+			public void run() {
+				editor.getDiagramEditPart().addNotify();
+			}
+		});
+
+	}
+
+	private void observerCreation() {
+		// Creating Observer
+		Command cmd = editor.createAndExecuteShapeRequestCommand(
+				event.model.diagram.providers.ModelElementTypes.ObserverReference_2017, editor.getDiagramEditPart());
+		editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
+
+		// Creating and executing the command to set the properties
+		Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+		Iterator<?> iter = results.iterator();
+		ObserverReference newObserver = new ObserverReferenceImpl();
+		while (iter.hasNext()) {
+			Object obj = iter.next();
+			if (obj instanceof CreateElementRequestAdapter) {
+				CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+				newObserver = (ObserverReferenceImpl) cra.resolve();
+
+				// Setting the ObserverReference EReference of the Primitive Event
+				SetRequest setRequestObserver = new SetRequest(editor.getEditingDomain(), view.getElement(),
+						ModelPackage.eINSTANCE.getPrimitiveEvent_Observer(), newObserver);
+				SetValueCommand observerOperation = new SetValueCommand(setRequestObserver);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(observerOperation));
+			}
+		}
+
+		// Refresh the diagram (it allows to render the connection between the Event and the Parameter
+		Display.getDefault().asyncExec(new Runnable() {
+			public void run() {
+				editor.getDiagramEditPart().addNotify();
+			}
+		});
 	}
 }

@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
 import model.Event;
-import model.Type;
+import model.GeneralTypeReference;
 
 /**
  * @generated
@@ -46,7 +46,7 @@ public class EventTypesCreateCommand extends EditElementCommand {
 		if (source != null && false == source instanceof Event) {
 			return false;
 		}
-		if (target != null && false == target instanceof Type) {
+		if (target != null && false == target instanceof GeneralTypeReference) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -88,7 +88,7 @@ public class EventTypesCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Type getTarget() {
-		return (Type) target;
+	protected GeneralTypeReference getTarget() {
+		return (GeneralTypeReference) target;
 	}
 }

@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import event.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy;
-import model.Agent;
+import model.AgentReference;
 import model.PrimitiveEvent;
 
 /**
@@ -46,7 +46,7 @@ public class PrimitiveEventAgentCreateCommand extends EditElementCommand {
 		if (source != null && false == source instanceof PrimitiveEvent) {
 			return false;
 		}
-		if (target != null && false == target instanceof Agent) {
+		if (target != null && false == target instanceof AgentReference) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -89,7 +89,7 @@ public class PrimitiveEventAgentCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected Agent getTarget() {
-		return (Agent) target;
+	protected AgentReference getTarget() {
+		return (AgentReference) target;
 	}
 }

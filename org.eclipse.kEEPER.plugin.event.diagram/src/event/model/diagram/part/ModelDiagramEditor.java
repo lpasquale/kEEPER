@@ -277,7 +277,7 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 	}
-	
+
 	public Command createAndExecuteShapeRequestCommand(IElementType type, EditPart parent) {
 
 		CreateViewRequest actionRequest = CreateViewRequestFactory.getCreateShapeRequest(type,
@@ -287,5 +287,4 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 		System.out.println("Command executed: " + command);
 		return command;
 	}
-
 }

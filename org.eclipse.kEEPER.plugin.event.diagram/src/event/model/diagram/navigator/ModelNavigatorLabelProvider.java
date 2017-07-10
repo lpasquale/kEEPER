@@ -16,21 +16,21 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import event.model.diagram.edit.parts.AgentEditPart;
-import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
+import event.model.diagram.edit.parts.AgentReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventTypesEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
-import event.model.diagram.edit.parts.ObserverNameEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceTypeNameEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
-import event.model.diagram.edit.parts.TypeNameEditPart;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import event.model.diagram.providers.ModelElementTypes;
@@ -97,15 +97,16 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case ComplexEventEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ComplexEvent", //$NON-NLS-1$
 					ModelElementTypes.ComplexEvent_2012);
-		case AgentEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Agent", //$NON-NLS-1$
-					ModelElementTypes.Agent_2013);
-		case ObserverEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
-					ModelElementTypes.Observer_2014);
-		case TypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Type", //$NON-NLS-1$
-					ModelElementTypes.Type_2015);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?AgentReference", //$NON-NLS-1$
+					ModelElementTypes.AgentReference_2016);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ObserverReference", //$NON-NLS-1$
+					ModelElementTypes.ObserverReference_2017);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralTypeReference", //$NON-NLS-1$
+					ModelElementTypes.GeneralTypeReference_2018);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?PrimitiveEvent?agent", //$NON-NLS-1$
 					ModelElementTypes.PrimitiveEventAgent_4001);
@@ -174,12 +175,12 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getPrimitiveEvent_2011Text(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2012Text(view);
-		case AgentEditPart.VISUAL_ID:
-			return getAgent_2013Text(view);
-		case ObserverEditPart.VISUAL_ID:
-			return getObserver_2014Text(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2015Text(view);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return getAgentReference_2016Text(view);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return getObserverReference_2017Text(view);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return getGeneralTypeReference_2018Text(view);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getPrimitiveEventAgent_4001Text(view);
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
@@ -234,10 +235,10 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
-	private String getAgent_2013Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Agent_2013,
+	private String getAgentReference_2016Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.AgentReference_2016,
 				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(AgentNameEditPart.VISUAL_ID));
+				ModelVisualIDRegistry.getType(AgentReferenceTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -250,10 +251,10 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
-	private String getObserver_2014Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Observer_2014,
+	private String getObserverReference_2017Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.ObserverReference_2017,
 				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(ObserverNameEditPart.VISUAL_ID));
+				ModelVisualIDRegistry.getType(ObserverReferenceTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -266,10 +267,10 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
-	private String getType_2015Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Type_2015,
+	private String getGeneralTypeReference_2018Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.GeneralTypeReference_2018,
 				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
+				ModelVisualIDRegistry.getType(GeneralTypeReferenceTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());

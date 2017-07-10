@@ -3,11 +3,15 @@
 package model.impl;
 
 import java.util.Collection;
+import model.AgentParam;
+import model.AgentReference;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ContextRelation;
 import model.Environment;
 import model.Event;
+import model.GeneralParam;
+import model.GeneralTypeReference;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -15,6 +19,8 @@ import model.Hypothesis;
 import model.Initially;
 import model.Instance;
 import model.ModelPackage;
+import model.ObserverParam;
+import model.ObserverReference;
 import model.Parameter;
 import model.PrimitiveEvent;
 import model.Type;
@@ -49,12 +55,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.impl.EnvironmentImpl#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getInitials <em>Initials</em>}</li>
- *   <li>{@link model.impl.EnvironmentImpl#getAgents <em>Agents</em>}</li>
- *   <li>{@link model.impl.EnvironmentImpl#getObservers <em>Observers</em>}</li>
- *   <li>{@link model.impl.EnvironmentImpl#getAddParam <em>Add Param</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getGeneralParams <em>General Params</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getPrimitiveEvents <em>Primitive Events</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getComplexEvents <em>Complex Events</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getHypothesis <em>Hypothesis</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getAgentParams <em>Agent Params</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getObserverParams <em>Observer Params</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getAgentReferences <em>Agent References</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getObserverReferences <em>Observer References</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getGeneralTypeReferences <em>General Type References</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,34 +170,14 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	protected EList<Initially> initials;
 
 	/**
-	 * The cached value of the '{@link #getAgents() <em>Agents</em>}' containment reference list.
+	 * The cached value of the '{@link #getGeneralParams() <em>General Params</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAgents()
+	 * @see #getGeneralParams()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> agents;
-
-	/**
-	 * The cached value of the '{@link #getObservers() <em>Observers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObservers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> observers;
-
-	/**
-	 * The cached value of the '{@link #getAddParam() <em>Add Param</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAddParam()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> addParam;
+	protected EList<GeneralParam> generalParams;
 
 	/**
 	 * The cached value of the '{@link #getPrimitiveEvents() <em>Primitive Events</em>}' containment reference list.
@@ -219,6 +208,56 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @ordered
 	 */
 	protected EList<Hypothesis> hypothesis;
+
+	/**
+	 * The cached value of the '{@link #getAgentParams() <em>Agent Params</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgentParams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AgentParam> agentParams;
+
+	/**
+	 * The cached value of the '{@link #getObserverParams() <em>Observer Params</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getObserverParams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ObserverParam> observerParams;
+
+	/**
+	 * The cached value of the '{@link #getAgentReferences() <em>Agent References</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgentReferences()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AgentReference> agentReferences;
+
+	/**
+	 * The cached value of the '{@link #getObserverReferences() <em>Observer References</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getObserverReferences()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ObserverReference> observerReferences;
+
+	/**
+	 * The cached value of the '{@link #getGeneralTypeReferences() <em>General Type References</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeneralTypeReferences()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<GeneralTypeReference> generalTypeReferences;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -372,35 +411,11 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getAgents() {
-		if (agents == null) {
-			agents = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__AGENTS);
+	public EList<GeneralParam> getGeneralParams() {
+		if (generalParams == null) {
+			generalParams = new EObjectContainmentEList<GeneralParam>(GeneralParam.class, this, ModelPackage.ENVIRONMENT__GENERAL_PARAMS);
 		}
-		return agents;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Parameter> getObservers() {
-		if (observers == null) {
-			observers = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__OBSERVERS);
-		}
-		return observers;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Parameter> getAddParam() {
-		if (addParam == null) {
-			addParam = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__ADD_PARAM);
-		}
-		return addParam;
+		return generalParams;
 	}
 
 	/**
@@ -444,6 +459,66 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AgentParam> getAgentParams() {
+		if (agentParams == null) {
+			agentParams = new EObjectContainmentEList<AgentParam>(AgentParam.class, this, ModelPackage.ENVIRONMENT__AGENT_PARAMS);
+		}
+		return agentParams;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ObserverParam> getObserverParams() {
+		if (observerParams == null) {
+			observerParams = new EObjectContainmentEList<ObserverParam>(ObserverParam.class, this, ModelPackage.ENVIRONMENT__OBSERVER_PARAMS);
+		}
+		return observerParams;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AgentReference> getAgentReferences() {
+		if (agentReferences == null) {
+			agentReferences = new EObjectContainmentEList<AgentReference>(AgentReference.class, this, ModelPackage.ENVIRONMENT__AGENT_REFERENCES);
+		}
+		return agentReferences;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ObserverReference> getObserverReferences() {
+		if (observerReferences == null) {
+			observerReferences = new EObjectContainmentEList<ObserverReference>(ObserverReference.class, this, ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES);
+		}
+		return observerReferences;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<GeneralTypeReference> getGeneralTypeReferences() {
+		if (generalTypeReferences == null) {
+			generalTypeReferences = new EObjectContainmentEList<GeneralTypeReference>(GeneralTypeReference.class, this, ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES);
+		}
+		return generalTypeReferences;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -467,18 +542,24 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return ((InternalEList<?>)getHoldsAtBetweens()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return ((InternalEList<?>)getInitials()).basicRemove(otherEnd, msgs);
-			case ModelPackage.ENVIRONMENT__AGENTS:
-				return ((InternalEList<?>)getAgents()).basicRemove(otherEnd, msgs);
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-				return ((InternalEList<?>)getObservers()).basicRemove(otherEnd, msgs);
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
-				return ((InternalEList<?>)getAddParam()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
+				return ((InternalEList<?>)getGeneralParams()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return ((InternalEList<?>)getPrimitiveEvents()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return ((InternalEList<?>)getComplexEvents()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				return ((InternalEList<?>)getHypothesis()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+				return ((InternalEList<?>)getAgentParams()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+				return ((InternalEList<?>)getObserverParams()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+				return ((InternalEList<?>)getAgentReferences()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+				return ((InternalEList<?>)getObserverReferences()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
+				return ((InternalEList<?>)getGeneralTypeReferences()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -511,18 +592,24 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return getHoldsAtBetweens();
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return getInitials();
-			case ModelPackage.ENVIRONMENT__AGENTS:
-				return getAgents();
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-				return getObservers();
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
-				return getAddParam();
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
+				return getGeneralParams();
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return getPrimitiveEvents();
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return getComplexEvents();
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				return getHypothesis();
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+				return getAgentParams();
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+				return getObserverParams();
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+				return getAgentReferences();
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+				return getObserverReferences();
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
+				return getGeneralTypeReferences();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -576,17 +663,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				getInitials().clear();
 				getInitials().addAll((Collection<? extends Initially>)newValue);
 				return;
-			case ModelPackage.ENVIRONMENT__AGENTS:
-				getAgents().clear();
-				getAgents().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-				getObservers().clear();
-				getObservers().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
-				getAddParam().clear();
-				getAddParam().addAll((Collection<? extends Parameter>)newValue);
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
+				getGeneralParams().clear();
+				getGeneralParams().addAll((Collection<? extends GeneralParam>)newValue);
 				return;
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				getPrimitiveEvents().clear();
@@ -599,6 +678,26 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				getHypothesis().clear();
 				getHypothesis().addAll((Collection<? extends Hypothesis>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+				getAgentParams().clear();
+				getAgentParams().addAll((Collection<? extends AgentParam>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+				getObserverParams().clear();
+				getObserverParams().addAll((Collection<? extends ObserverParam>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+				getAgentReferences().clear();
+				getAgentReferences().addAll((Collection<? extends AgentReference>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+				getObserverReferences().clear();
+				getObserverReferences().addAll((Collection<? extends ObserverReference>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
+				getGeneralTypeReferences().clear();
+				getGeneralTypeReferences().addAll((Collection<? extends GeneralTypeReference>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -642,14 +741,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				getInitials().clear();
 				return;
-			case ModelPackage.ENVIRONMENT__AGENTS:
-				getAgents().clear();
-				return;
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-				getObservers().clear();
-				return;
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
-				getAddParam().clear();
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
+				getGeneralParams().clear();
 				return;
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				getPrimitiveEvents().clear();
@@ -659,6 +752,21 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return;
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				getHypothesis().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+				getAgentParams().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+				getObserverParams().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+				getAgentReferences().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+				getObserverReferences().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
+				getGeneralTypeReferences().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -692,18 +800,24 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return initials != null && !initials.isEmpty();
-			case ModelPackage.ENVIRONMENT__AGENTS:
-				return agents != null && !agents.isEmpty();
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-				return observers != null && !observers.isEmpty();
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
-				return addParam != null && !addParam.isEmpty();
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
+				return generalParams != null && !generalParams.isEmpty();
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return primitiveEvents != null && !primitiveEvents.isEmpty();
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return complexEvents != null && !complexEvents.isEmpty();
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				return hypothesis != null && !hypothesis.isEmpty();
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+				return agentParams != null && !agentParams.isEmpty();
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+				return observerParams != null && !observerParams.isEmpty();
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+				return agentReferences != null && !agentReferences.isEmpty();
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+				return observerReferences != null && !observerReferences.isEmpty();
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
+				return generalTypeReferences != null && !generalTypeReferences.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -26,7 +26,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="typeinstance.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="typeinstance.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
           href="typeinstance.gmfgraph#Instance"/>
     </ownedChild>
@@ -36,7 +36,7 @@
         href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Type"/>
+          href="../model.ecore#//GeneralType"/>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -52,9 +52,63 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="typeinstance.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="typeinstance.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
           href="typeinstance.gmfgraph#Type"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Agent"/>
+      <labelMappings
+          readOnly="true">
+        <diagramLabel
+            href="typeinstance.gmfgraph#AgentTitle"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern=""
+          editorPattern="">
+        <diagramLabel
+            href="typeinstance.gmfgraph#AgentName"/>
+        <features
+            href="../model.ecore#//Type/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="typeinstance.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="typeinstance.gmfgraph#Agent"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Observer"/>
+      <labelMappings
+          readOnly="true">
+        <diagramLabel
+            href="typeinstance.gmfgraph#ObserverTitle"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern=""
+          editorPattern="">
+        <diagramLabel
+            href="typeinstance.gmfgraph#ObserverName"/>
+        <features
+            href="../model.ecore#//Type/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="typeinstance.gmftool#//@palette/@tools.0/@tools.1"/>
+      <diagramNode
+          href="typeinstance.gmfgraph#Observer"/>
     </ownedChild>
   </nodes>
   <links>

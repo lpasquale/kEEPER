@@ -14,16 +14,16 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
-import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventTypesEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
 import model.ModelPackage;
 
@@ -67,16 +67,18 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType Agent_2013 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Agent_2013"); //$NON-NLS-1$
+	public static final IElementType AgentReference_2016 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.AgentReference_2016"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Observer_2014 = getElementType(
-			"org.eclipse.kEEPER.plugin.event.diagram.Observer_2014"); //$NON-NLS-1$
+	public static final IElementType ObserverReference_2017 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.ObserverReference_2017"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Type_2015 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Type_2015"); //$NON-NLS-1$
+	public static final IElementType GeneralTypeReference_2018 = getElementType(
+			"org.eclipse.kEEPER.plugin.event.diagram.GeneralTypeReference_2018"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -145,11 +147,11 @@ public class ModelElementTypes {
 
 			elements.put(PrimitiveEvent_2011, ModelPackage.eINSTANCE.getPrimitiveEvent());
 
-			elements.put(Agent_2013, ModelPackage.eINSTANCE.getAgent());
+			elements.put(AgentReference_2016, ModelPackage.eINSTANCE.getAgentReference());
 
-			elements.put(Observer_2014, ModelPackage.eINSTANCE.getObserver());
+			elements.put(ObserverReference_2017, ModelPackage.eINSTANCE.getObserverReference());
 
-			elements.put(Type_2015, ModelPackage.eINSTANCE.getType());
+			elements.put(GeneralTypeReference_2018, ModelPackage.eINSTANCE.getGeneralTypeReference());
 
 			elements.put(ComplexEvent_2012, ModelPackage.eINSTANCE.getComplexEvent());
 
@@ -179,9 +181,9 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2011);
-			KNOWN_ELEMENT_TYPES.add(Agent_2013);
-			KNOWN_ELEMENT_TYPES.add(Observer_2014);
-			KNOWN_ELEMENT_TYPES.add(Type_2015);
+			KNOWN_ELEMENT_TYPES.add(AgentReference_2016);
+			KNOWN_ELEMENT_TYPES.add(ObserverReference_2017);
+			KNOWN_ELEMENT_TYPES.add(GeneralTypeReference_2018);
 			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2012);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
 			KNOWN_ELEMENT_TYPES.add(ComplexEventAgent_4004);
@@ -200,12 +202,12 @@ public class ModelElementTypes {
 			return Environment_1000;
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return PrimitiveEvent_2011;
-		case AgentEditPart.VISUAL_ID:
-			return Agent_2013;
-		case ObserverEditPart.VISUAL_ID:
-			return Observer_2014;
-		case TypeEditPart.VISUAL_ID:
-			return Type_2015;
+		case AgentReferenceEditPart.VISUAL_ID:
+			return AgentReference_2016;
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return ObserverReference_2017;
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return GeneralTypeReference_2018;
 		case ComplexEventEditPart.VISUAL_ID:
 			return ComplexEvent_2012;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:

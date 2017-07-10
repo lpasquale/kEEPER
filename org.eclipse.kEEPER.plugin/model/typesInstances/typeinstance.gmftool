@@ -8,10 +8,26 @@
       title="modelPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="model">
+        title="Nodes">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Type"
+          title="Agent">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Observer">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="General Type"
           description="Create new Type">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>

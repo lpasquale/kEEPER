@@ -30,12 +30,12 @@ public interface PrimitiveEvent extends Event {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agent</em>' reference.
-	 * @see #setAgent(Agent)
+	 * @see #setAgent(AgentReference)
 	 * @see model.ModelPackage#getPrimitiveEvent_Agent()
 	 * @model
 	 * @generated
 	 */
-	Agent getAgent();
+	AgentReference getAgent();
 
 	/**
 	 * Sets the value of the '{@link model.PrimitiveEvent#getAgent <em>Agent</em>}' reference.
@@ -45,7 +45,7 @@ public interface PrimitiveEvent extends Event {
 	 * @see #getAgent()
 	 * @generated
 	 */
-	void setAgent(Agent value);
+	void setAgent(AgentReference value);
 
 	/**
 	 * Returns the value of the '<em><b>Observer</b></em>' reference.
@@ -56,12 +56,12 @@ public interface PrimitiveEvent extends Event {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Observer</em>' reference.
-	 * @see #setObserver(Observer)
+	 * @see #setObserver(ObserverReference)
 	 * @see model.ModelPackage#getPrimitiveEvent_Observer()
 	 * @model
 	 * @generated
 	 */
-	Observer getObserver();
+	ObserverReference getObserver();
 
 	/**
 	 * Sets the value of the '{@link model.PrimitiveEvent#getObserver <em>Observer</em>}' reference.
@@ -71,6 +71,6 @@ public interface PrimitiveEvent extends Event {
 	 * @see #getObserver()
 	 * @generated
 	 */
-	void setObserver(Observer value);
+	void setObserver(ObserverReference value);
 
 } // PrimitiveEvent

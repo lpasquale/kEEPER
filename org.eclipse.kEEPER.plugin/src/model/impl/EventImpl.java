@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import model.Event;
+import model.GeneralTypeReference;
 import model.ModelPackage;
 import model.Parameter;
-
-import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -64,7 +63,7 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Type> types;
+	protected EList<GeneralTypeReference> types;
 
 	protected ArrayList<Parameter> correctedParams; 
 	
@@ -113,9 +112,9 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Type> getTypes() {
+	public EList<GeneralTypeReference> getTypes() {
 		if (types == null) {
-			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.EVENT__TYPES);
+			types = new EObjectResolvingEList<GeneralTypeReference>(GeneralTypeReference.class, this, ModelPackage.EVENT__TYPES);
 		}
 		return types;
 	}
@@ -150,7 +149,7 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case ModelPackage.EVENT__TYPES:
 				getTypes().clear();
-				getTypes().addAll((Collection<? extends Type>)newValue);
+				getTypes().addAll((Collection<? extends GeneralTypeReference>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

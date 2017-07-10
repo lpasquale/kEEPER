@@ -826,31 +826,13 @@ public interface ModelPackage extends EPackage {
 	int ENVIRONMENT__INITIALS = 9;
 
 	/**
-	 * The feature id for the '<em><b>Agents</b></em>' containment reference list.
+	 * The feature id for the '<em><b>General Params</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__AGENTS = 10;
-
-	/**
-	 * The feature id for the '<em><b>Observers</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT__OBSERVERS = 11;
-
-	/**
-	 * The feature id for the '<em><b>Add Param</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT__ADD_PARAM = 12;
+	int ENVIRONMENT__GENERAL_PARAMS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Primitive Events</b></em>' containment reference list.
@@ -859,7 +841,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__PRIMITIVE_EVENTS = 13;
+	int ENVIRONMENT__PRIMITIVE_EVENTS = 11;
 
 	/**
 	 * The feature id for the '<em><b>Complex Events</b></em>' containment reference list.
@@ -868,7 +850,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__COMPLEX_EVENTS = 14;
+	int ENVIRONMENT__COMPLEX_EVENTS = 12;
 
 	/**
 	 * The feature id for the '<em><b>Hypothesis</b></em>' containment reference list.
@@ -877,7 +859,52 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__HYPOTHESIS = 15;
+	int ENVIRONMENT__HYPOTHESIS = 13;
+
+	/**
+	 * The feature id for the '<em><b>Agent Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__AGENT_PARAMS = 14;
+
+	/**
+	 * The feature id for the '<em><b>Observer Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__OBSERVER_PARAMS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Agent References</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__AGENT_REFERENCES = 16;
+
+	/**
+	 * The feature id for the '<em><b>Observer References</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__OBSERVER_REFERENCES = 17;
+
+	/**
+	 * The feature id for the '<em><b>General Type References</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__GENERAL_TYPE_REFERENCES = 18;
 
 	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
@@ -886,7 +913,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 16;
+	int ENVIRONMENT_FEATURE_COUNT = 19;
 
 	/**
 	 * The number of operations of the '<em>Environment</em>' class.
@@ -1236,6 +1263,184 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBSERVER_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.AgentReferenceImpl <em>Agent Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.AgentReferenceImpl
+	 * @see model.impl.ModelPackageImpl#getAgentReference()
+	 * @generated
+	 */
+	int AGENT_REFERENCE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_REFERENCE__REFERENCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_REFERENCE__TYPE_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Agent Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_REFERENCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Agent Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_REFERENCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.ObserverReferenceImpl <em>Observer Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.ObserverReferenceImpl
+	 * @see model.impl.ModelPackageImpl#getObserverReference()
+	 * @generated
+	 */
+	int OBSERVER_REFERENCE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_REFERENCE__REFERENCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_REFERENCE__TYPE_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Observer Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_REFERENCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Observer Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_REFERENCE_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.GeneralTypeReferenceImpl <em>General Type Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.GeneralTypeReferenceImpl
+	 * @see model.impl.ModelPackageImpl#getGeneralTypeReference()
+	 * @generated
+	 */
+	int GENERAL_TYPE_REFERENCE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_REFERENCE__REFERENCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_REFERENCE__TYPE_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>General Type Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_REFERENCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>General Type Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_REFERENCE_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.GeneralTypeImpl <em>General Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.GeneralTypeImpl
+	 * @see model.impl.ModelPackageImpl#getGeneralType()
+	 * @generated
+	 */
+	int GENERAL_TYPE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE__NAME = TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>General Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>General Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERAL_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1842,37 +2047,15 @@ public interface ModelPackage extends EPackage {
 	EReference getEnvironment_Initials();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.Environment#getAgents <em>Agents</em>}'.
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getGeneralParams <em>General Params</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Agents</em>'.
-	 * @see model.Environment#getAgents()
+	 * @return the meta object for the containment reference list '<em>General Params</em>'.
+	 * @see model.Environment#getGeneralParams()
 	 * @see #getEnvironment()
 	 * @generated
 	 */
-	EReference getEnvironment_Agents();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link model.Environment#getObservers <em>Observers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Observers</em>'.
-	 * @see model.Environment#getObservers()
-	 * @see #getEnvironment()
-	 * @generated
-	 */
-	EReference getEnvironment_Observers();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link model.Environment#getAddParam <em>Add Param</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Add Param</em>'.
-	 * @see model.Environment#getAddParam()
-	 * @see #getEnvironment()
-	 * @generated
-	 */
-	EReference getEnvironment_AddParam();
+	EReference getEnvironment_GeneralParams();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link model.Environment#getPrimitiveEvents <em>Primitive Events</em>}'.
@@ -1906,6 +2089,61 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEnvironment_Hypothesis();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getAgentParams <em>Agent Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agent Params</em>'.
+	 * @see model.Environment#getAgentParams()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_AgentParams();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getObserverParams <em>Observer Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Observer Params</em>'.
+	 * @see model.Environment#getObserverParams()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_ObserverParams();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getAgentReferences <em>Agent References</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agent References</em>'.
+	 * @see model.Environment#getAgentReferences()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_AgentReferences();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getObserverReferences <em>Observer References</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Observer References</em>'.
+	 * @see model.Environment#getObserverReferences()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_ObserverReferences();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getGeneralTypeReferences <em>General Type References</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>General Type References</em>'.
+	 * @see model.Environment#getGeneralTypeReferences()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_GeneralTypeReferences();
 
 	/**
 	 * Returns the meta object for class '{@link model.ObserverParam <em>Observer Param</em>}'.
@@ -1958,6 +2196,112 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getObserver();
+
+	/**
+	 * Returns the meta object for class '{@link model.AgentReference <em>Agent Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agent Reference</em>'.
+	 * @see model.AgentReference
+	 * @generated
+	 */
+	EClass getAgentReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.AgentReference#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reference</em>'.
+	 * @see model.AgentReference#getReference()
+	 * @see #getAgentReference()
+	 * @generated
+	 */
+	EReference getAgentReference_Reference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.AgentReference#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see model.AgentReference#getTypeName()
+	 * @see #getAgentReference()
+	 * @generated
+	 */
+	EAttribute getAgentReference_TypeName();
+
+	/**
+	 * Returns the meta object for class '{@link model.ObserverReference <em>Observer Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Observer Reference</em>'.
+	 * @see model.ObserverReference
+	 * @generated
+	 */
+	EClass getObserverReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.ObserverReference#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reference</em>'.
+	 * @see model.ObserverReference#getReference()
+	 * @see #getObserverReference()
+	 * @generated
+	 */
+	EReference getObserverReference_Reference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.ObserverReference#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see model.ObserverReference#getTypeName()
+	 * @see #getObserverReference()
+	 * @generated
+	 */
+	EAttribute getObserverReference_TypeName();
+
+	/**
+	 * Returns the meta object for class '{@link model.GeneralTypeReference <em>General Type Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>General Type Reference</em>'.
+	 * @see model.GeneralTypeReference
+	 * @generated
+	 */
+	EClass getGeneralTypeReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.GeneralTypeReference#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reference</em>'.
+	 * @see model.GeneralTypeReference#getReference()
+	 * @see #getGeneralTypeReference()
+	 * @generated
+	 */
+	EReference getGeneralTypeReference_Reference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.GeneralTypeReference#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see model.GeneralTypeReference#getTypeName()
+	 * @see #getGeneralTypeReference()
+	 * @generated
+	 */
+	EAttribute getGeneralTypeReference_TypeName();
+
+	/**
+	 * Returns the meta object for class '{@link model.GeneralType <em>General Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>General Type</em>'.
+	 * @see model.GeneralType
+	 * @generated
+	 */
+	EClass getGeneralType();
 
 	/**
 	 * Returns the meta object for class '{@link model.Agent <em>Agent</em>}'.
@@ -2553,28 +2897,12 @@ public interface ModelPackage extends EPackage {
 		EReference ENVIRONMENT__INITIALS = eINSTANCE.getEnvironment_Initials();
 
 		/**
-		 * The meta object literal for the '<em><b>Agents</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>General Params</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENVIRONMENT__AGENTS = eINSTANCE.getEnvironment_Agents();
-
-		/**
-		 * The meta object literal for the '<em><b>Observers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENVIRONMENT__OBSERVERS = eINSTANCE.getEnvironment_Observers();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Param</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENVIRONMENT__ADD_PARAM = eINSTANCE.getEnvironment_AddParam();
+		EReference ENVIRONMENT__GENERAL_PARAMS = eINSTANCE.getEnvironment_GeneralParams();
 
 		/**
 		 * The meta object literal for the '<em><b>Primitive Events</b></em>' containment reference list feature.
@@ -2599,6 +2927,46 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENVIRONMENT__HYPOTHESIS = eINSTANCE.getEnvironment_Hypothesis();
+
+		/**
+		 * The meta object literal for the '<em><b>Agent Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__AGENT_PARAMS = eINSTANCE.getEnvironment_AgentParams();
+
+		/**
+		 * The meta object literal for the '<em><b>Observer Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__OBSERVER_PARAMS = eINSTANCE.getEnvironment_ObserverParams();
+
+		/**
+		 * The meta object literal for the '<em><b>Agent References</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__AGENT_REFERENCES = eINSTANCE.getEnvironment_AgentReferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Observer References</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__OBSERVER_REFERENCES = eINSTANCE.getEnvironment_ObserverReferences();
+
+		/**
+		 * The meta object literal for the '<em><b>General Type References</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__GENERAL_TYPE_REFERENCES = eINSTANCE.getEnvironment_GeneralTypeReferences();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ObserverParamImpl <em>Observer Param</em>}' class.
@@ -2645,6 +3013,94 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OBSERVER = eINSTANCE.getObserver();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.AgentReferenceImpl <em>Agent Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.AgentReferenceImpl
+		 * @see model.impl.ModelPackageImpl#getAgentReference()
+		 * @generated
+		 */
+		EClass AGENT_REFERENCE = eINSTANCE.getAgentReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT_REFERENCE__REFERENCE = eINSTANCE.getAgentReference_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGENT_REFERENCE__TYPE_NAME = eINSTANCE.getAgentReference_TypeName();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.ObserverReferenceImpl <em>Observer Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.ObserverReferenceImpl
+		 * @see model.impl.ModelPackageImpl#getObserverReference()
+		 * @generated
+		 */
+		EClass OBSERVER_REFERENCE = eINSTANCE.getObserverReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVER_REFERENCE__REFERENCE = eINSTANCE.getObserverReference_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVER_REFERENCE__TYPE_NAME = eINSTANCE.getObserverReference_TypeName();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.GeneralTypeReferenceImpl <em>General Type Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.GeneralTypeReferenceImpl
+		 * @see model.impl.ModelPackageImpl#getGeneralTypeReference()
+		 * @generated
+		 */
+		EClass GENERAL_TYPE_REFERENCE = eINSTANCE.getGeneralTypeReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERAL_TYPE_REFERENCE__REFERENCE = eINSTANCE.getGeneralTypeReference_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERAL_TYPE_REFERENCE__TYPE_NAME = eINSTANCE.getGeneralTypeReference_TypeName();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.GeneralTypeImpl <em>General Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.GeneralTypeImpl
+		 * @see model.impl.ModelPackageImpl#getGeneralType()
+		 * @generated
+		 */
+		EClass GENERAL_TYPE = eINSTANCE.getGeneralType();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.

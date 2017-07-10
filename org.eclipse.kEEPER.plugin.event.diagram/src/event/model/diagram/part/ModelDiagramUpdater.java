@@ -13,25 +13,25 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventTypesEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.providers.ModelElementTypes;
-import model.Agent;
+import model.AgentReference;
 import model.ComplexEvent;
 import model.Environment;
 import model.Event;
+import model.GeneralTypeReference;
 import model.ModelPackage;
-import model.Observer;
+import model.ObserverReference;
 import model.PrimitiveEvent;
-import model.Type;
 
 /**
  * @generated
@@ -70,18 +70,26 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getTypes().iterator(); it.hasNext();) {
-			Type childElement = (Type) it.next();
+		for (Iterator<?> it = modelElement.getAgentReferences().iterator(); it.hasNext();) {
+			AgentReference childElement = (AgentReference) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == AgentEditPart.VISUAL_ID) {
+			if (visualID == AgentReferenceEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ObserverEditPart.VISUAL_ID) {
+		}
+		for (Iterator<?> it = modelElement.getObserverReferences().iterator(); it.hasNext();) {
+			ObserverReference childElement = (ObserverReference) it.next();
+			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ObserverReferenceEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == TypeEditPart.VISUAL_ID) {
+		}
+		for (Iterator<?> it = modelElement.getGeneralTypeReferences().iterator(); it.hasNext();) {
+			GeneralTypeReference childElement = (GeneralTypeReference) it.next();
+			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == GeneralTypeReferenceEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -98,12 +106,12 @@ public class ModelDiagramUpdater {
 			return getEnvironment_1000ContainedLinks(view);
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return getPrimitiveEvent_2011ContainedLinks(view);
-		case AgentEditPart.VISUAL_ID:
-			return getAgent_2013ContainedLinks(view);
-		case ObserverEditPart.VISUAL_ID:
-			return getObserver_2014ContainedLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2015ContainedLinks(view);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return getAgentReference_2016ContainedLinks(view);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return getObserverReference_2017ContainedLinks(view);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return getGeneralTypeReference_2018ContainedLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2012ContainedLinks(view);
 		}
@@ -117,12 +125,12 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return getPrimitiveEvent_2011IncomingLinks(view);
-		case AgentEditPart.VISUAL_ID:
-			return getAgent_2013IncomingLinks(view);
-		case ObserverEditPart.VISUAL_ID:
-			return getObserver_2014IncomingLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2015IncomingLinks(view);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return getAgentReference_2016IncomingLinks(view);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return getObserverReference_2017IncomingLinks(view);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return getGeneralTypeReference_2018IncomingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2012IncomingLinks(view);
 		}
@@ -136,12 +144,12 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case PrimitiveEventEditPart.VISUAL_ID:
 			return getPrimitiveEvent_2011OutgoingLinks(view);
-		case AgentEditPart.VISUAL_ID:
-			return getAgent_2013OutgoingLinks(view);
-		case ObserverEditPart.VISUAL_ID:
-			return getObserver_2014OutgoingLinks(view);
-		case TypeEditPart.VISUAL_ID:
-			return getType_2015OutgoingLinks(view);
+		case AgentReferenceEditPart.VISUAL_ID:
+			return getAgentReference_2016OutgoingLinks(view);
+		case ObserverReferenceEditPart.VISUAL_ID:
+			return getObserverReference_2017OutgoingLinks(view);
+		case GeneralTypeReferenceEditPart.VISUAL_ID:
+			return getGeneralTypeReference_2018OutgoingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2012OutgoingLinks(view);
 		}
@@ -170,21 +178,21 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getAgent_2013ContainedLinks(View view) {
+	public static List<ModelLinkDescriptor> getAgentReference_2016ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getObserver_2014ContainedLinks(View view) {
+	public static List<ModelLinkDescriptor> getObserverReference_2017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2015ContainedLinks(View view) {
+	public static List<ModelLinkDescriptor> getGeneralTypeReference_2018ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -209,26 +217,24 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getAgent_2013IncomingLinks(View view) {
-		Agent modelElement = (Agent) view.getElement();
+	public static List<ModelLinkDescriptor> getAgentReference_2016IncomingLinks(View view) {
+		AgentReference modelElement = (AgentReference) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_ComplexEvent_Agent_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Types_4005(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getObserver_2014IncomingLinks(View view) {
-		Observer modelElement = (Observer) view.getElement();
+	public static List<ModelLinkDescriptor> getObserverReference_2017IncomingLinks(View view) {
+		ObserverReference modelElement = (ObserverReference) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Types_4005(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(modelElement, crossReferences));
 		return result;
 	}
@@ -236,8 +242,8 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2015IncomingLinks(View view) {
-		Type modelElement = (Type) view.getElement();
+	public static List<ModelLinkDescriptor> getGeneralTypeReference_2018IncomingLinks(View view) {
+		GeneralTypeReference modelElement = (GeneralTypeReference) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
@@ -267,21 +273,21 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getAgent_2013OutgoingLinks(View view) {
+	public static List<ModelLinkDescriptor> getAgentReference_2016OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getObserver_2014OutgoingLinks(View view) {
+	public static List<ModelLinkDescriptor> getObserverReference_2017OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getType_2015OutgoingLinks(View view) {
+	public static List<ModelLinkDescriptor> getGeneralTypeReference_2018OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -300,7 +306,7 @@ public class ModelDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(
-			Agent target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			AgentReference target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -316,7 +322,7 @@ public class ModelDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_ComplexEvent_Agent_4004(
-			Agent target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			AgentReference target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -331,8 +337,8 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_Event_Types_4005(Type target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_Event_Types_4005(
+			GeneralTypeReference target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -348,7 +354,7 @@ public class ModelDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(
-			Observer target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			ObserverReference target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
@@ -366,7 +372,7 @@ public class ModelDiagramUpdater {
 	private static Collection<ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(
 			PrimitiveEvent source) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		Agent destination = source.getAgent();
+		AgentReference destination = source.getAgent();
 		if (destination == null) {
 			return result;
 		}
@@ -381,7 +387,7 @@ public class ModelDiagramUpdater {
 	private static Collection<ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_ComplexEvent_Agent_4004(
 			ComplexEvent source) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		Agent destination = source.getAgent();
+		AgentReference destination = source.getAgent();
 		if (destination == null) {
 			return result;
 		}
@@ -396,7 +402,7 @@ public class ModelDiagramUpdater {
 	private static Collection<ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_Event_Types_4005(Event source) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		for (Iterator<?> destinations = source.getTypes().iterator(); destinations.hasNext();) {
-			Type destination = (Type) destinations.next();
+			GeneralTypeReference destination = (GeneralTypeReference) destinations.next();
 			result.add(new ModelLinkDescriptor(source, destination, ModelElementTypes.EventTypes_4005,
 					EventTypesEditPart.VISUAL_ID));
 		}
@@ -409,7 +415,7 @@ public class ModelDiagramUpdater {
 	private static Collection<ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(
 			PrimitiveEvent source) {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		Observer destination = source.getObserver();
+		ObserverReference destination = source.getObserver();
 		if (destination == null) {
 			return result;
 		}

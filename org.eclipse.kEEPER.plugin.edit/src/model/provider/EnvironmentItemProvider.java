@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -61,8 +62,77 @@ public class EnvironmentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAgentReferencesPropertyDescriptor(object);
+			addObserverReferencesPropertyDescriptor(object);
+			addGeneralTypeReferencesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Agent References feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAgentReferencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Environment_agentReferences_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_agentReferences_feature", "_UI_Environment_type"),
+				 ModelPackage.Literals.ENVIRONMENT__AGENT_REFERENCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Observer References feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addObserverReferencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Environment_observerReferences_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_observerReferences_feature", "_UI_Environment_type"),
+				 ModelPackage.Literals.ENVIRONMENT__OBSERVER_REFERENCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the General Type References feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGeneralTypeReferencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Environment_generalTypeReferences_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_generalTypeReferences_feature", "_UI_Environment_type"),
+				 ModelPackage.Literals.ENVIRONMENT__GENERAL_TYPE_REFERENCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -87,12 +157,12 @@ public class EnvironmentItemProvider
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HAPPENS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HOLDS_AT_BETWEENS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__INITIALS);
-			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENTS);
-			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVERS);
-			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__GENERAL_PARAMS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__COMPLEX_EVENTS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HYPOTHESIS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENT_PARAMS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVER_PARAMS);
 		}
 		return childrenFeatures;
 	}
@@ -155,12 +225,12 @@ public class EnvironmentItemProvider
 			case ModelPackage.ENVIRONMENT__HAPPENS:
 			case ModelPackage.ENVIRONMENT__HOLDS_AT_BETWEENS:
 			case ModelPackage.ENVIRONMENT__INITIALS:
-			case ModelPackage.ENVIRONMENT__AGENTS:
-			case ModelPackage.ENVIRONMENT__OBSERVERS:
-			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+			case ModelPackage.ENVIRONMENT__GENERAL_PARAMS:
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
+			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,17 +251,17 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__TYPES,
-				 ModelFactory.eINSTANCE.createType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__TYPES,
 				 ModelFactory.eINSTANCE.createAgent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__TYPES,
 				 ModelFactory.eINSTANCE.createObserver()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__TYPES,
+				 ModelFactory.eINSTANCE.createGeneralType()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -255,47 +325,7 @@ public class EnvironmentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createObserverParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createAgentParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createGeneralParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createObserverParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createAgentParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createGeneralParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createObserverParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createAgentParam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
+				(ModelPackage.Literals.ENVIRONMENT__GENERAL_PARAMS,
 				 ModelFactory.eINSTANCE.createGeneralParam()));
 
 		newChildDescriptors.add
@@ -312,6 +342,16 @@ public class EnvironmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__HYPOTHESIS,
 				 ModelFactory.eINSTANCE.createHypothesis()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENT_PARAMS,
+				 ModelFactory.eINSTANCE.createAgentParam()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__OBSERVER_PARAMS,
+				 ModelFactory.eINSTANCE.createObserverParam()));
 	}
 
 	/**
@@ -327,9 +367,9 @@ public class EnvironmentItemProvider
 
 		boolean qualify =
 			childFeature == ModelPackage.Literals.ENVIRONMENT__PARAMETERS ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__OBSERVERS ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__ADD_PARAM ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__OBSERVER_PARAMS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENT_PARAMS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__GENERAL_PARAMS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__EVENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__COMPLEX_EVENTS;

@@ -144,6 +144,22 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createObserverAdapter();
 			}
 			@Override
+			public Adapter caseAgentReference(AgentReference object) {
+				return createAgentReferenceAdapter();
+			}
+			@Override
+			public Adapter caseObserverReference(ObserverReference object) {
+				return createObserverReferenceAdapter();
+			}
+			@Override
+			public Adapter caseGeneralTypeReference(GeneralTypeReference object) {
+				return createGeneralTypeReferenceAdapter();
+			}
+			@Override
+			public Adapter caseGeneralType(GeneralType object) {
+				return createGeneralTypeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -384,6 +400,62 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createObserverAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.AgentReference <em>Agent Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.AgentReference
+	 * @generated
+	 */
+	public Adapter createAgentReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.ObserverReference <em>Observer Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.ObserverReference
+	 * @generated
+	 */
+	public Adapter createObserverReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.GeneralTypeReference <em>General Type Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.GeneralTypeReference
+	 * @generated
+	 */
+	public Adapter createGeneralTypeReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.GeneralType <em>General Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.GeneralType
+	 * @generated
+	 */
+	public Adapter createGeneralTypeAdapter() {
 		return null;
 	}
 

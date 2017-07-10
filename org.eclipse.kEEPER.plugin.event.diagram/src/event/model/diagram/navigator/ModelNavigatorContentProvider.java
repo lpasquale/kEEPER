@@ -23,16 +23,16 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
-import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.AgentReferenceEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventTypesEditPart;
-import event.model.diagram.edit.parts.ObserverEditPart;
+import event.model.diagram.edit.parts.GeneralTypeReferenceEditPart;
+import event.model.diagram.edit.parts.ObserverReferenceEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
-import event.model.diagram.edit.parts.TypeEditPart;
 import event.model.diagram.part.Messages;
 import event.model.diagram.part.ModelVisualIDRegistry;
 
@@ -226,13 +226,13 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					ModelVisualIDRegistry.getType(PrimitiveEventEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(AgentReferenceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(ObserverReferenceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(TypeEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(GeneralTypeReferenceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
@@ -296,12 +296,12 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case AgentEditPart.VISUAL_ID: {
+		case AgentReferenceEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			ModelNavigatorGroup incominglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_Agent_2013_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
+					Messages.NavigatorGroupName_AgentReference_2016_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventAgentEditPart.VISUAL_ID));
@@ -309,25 +309,19 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ComplexEventAgentEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(EventTypesEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
 			return result.toArray();
 		}
 
-		case ObserverEditPart.VISUAL_ID: {
+		case ObserverReferenceEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			ModelNavigatorGroup incominglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_Observer_2014_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
+					Messages.NavigatorGroupName_ObserverReference_2017_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(EventTypesEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventObserverEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
@@ -337,12 +331,12 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case TypeEditPart.VISUAL_ID: {
+		case GeneralTypeReferenceEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			ModelNavigatorGroup incominglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_Type_2015_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
+					Messages.NavigatorGroupName_GeneralTypeReference_2018_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(EventTypesEditPart.VISUAL_ID));
@@ -364,7 +358,7 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(AgentReferenceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventEditPart.VISUAL_ID));
@@ -389,7 +383,7 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(ObserverReferenceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventEditPart.VISUAL_ID));
@@ -414,7 +408,7 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(AgentReferenceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
@@ -437,13 +431,7 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(TypeEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(GeneralTypeReferenceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventEditPart.VISUAL_ID));
