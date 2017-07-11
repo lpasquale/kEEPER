@@ -285,7 +285,8 @@
     </links>
     <palette>
       <groups
-          title="Nodes">
+          title="Types"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Agent"
@@ -299,6 +300,10 @@
             title="General Type"
             description="Create new Type"
             genNodes="//@diagram/@topLevelNodes.1"/>
+      </groups>
+      <groups
+          title="Instance"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Instance"

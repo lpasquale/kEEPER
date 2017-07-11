@@ -369,7 +369,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getContextRelation_Value() {
-		return (EAttribute)contextRelationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)contextRelationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -377,8 +377,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContextRelation_Parameters() {
-		return (EReference)contextRelationEClass.getEStructuralFeatures().get(1);
+	public EReference getContextRelation_Types() {
+		return (EReference)contextRelationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -387,7 +387,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	public EReference getContextRelation_InitialComplexEvent() {
-		return (EReference)contextRelationEClass.getEStructuralFeatures().get(2);
+		return (EReference)contextRelationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -396,7 +396,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	public EReference getContextRelation_EndingComplexEvent() {
-		return (EReference)contextRelationEClass.getEStructuralFeatures().get(3);
+		return (EReference)contextRelationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1107,10 +1107,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		contextRelationEClass = createEClass(CONTEXT_RELATION);
 		createEAttribute(contextRelationEClass, CONTEXT_RELATION__NAME);
-		createEReference(contextRelationEClass, CONTEXT_RELATION__PARAMETERS);
 		createEReference(contextRelationEClass, CONTEXT_RELATION__INITIAL_COMPLEX_EVENT);
 		createEReference(contextRelationEClass, CONTEXT_RELATION__ENDING_COMPLEX_EVENT);
 		createEAttribute(contextRelationEClass, CONTEXT_RELATION__VALUE);
+		createEReference(contextRelationEClass, CONTEXT_RELATION__TYPES);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__NAME);
@@ -1258,10 +1258,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(contextRelationEClass, ContextRelation.class, "ContextRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextRelation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextRelation_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_InitialComplexEvent(), this.getComplexEvent(), null, "initialComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_EndingComplexEvent(), this.getComplexEvent(), null, "endingComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextRelation_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContextRelation_Types(), this.getType(), null, "types", null, 0, -1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

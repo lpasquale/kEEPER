@@ -10,57 +10,23 @@
     <descriptors
         name="ContextRelationFigure">
       <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
+          xsi:type="gmfgraph:Rectangle"
           name="ContextRelation">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="blue"/>
+        <layout
+            xsi:type="gmfgraph:FlowLayout"/>
         <children
             xsi:type="gmfgraph:Label"
             name="ContextRelationName"
-            text="---Context Relation Name here---"/>
+            text="---NAME---"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ContextRelationTitle"
+            text="&lt;&lt;Context Relation>>"/>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="ParameterFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Parameter">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ParameterName"
-            text="--- Parameter name here ---"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="InitiatesFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Initiates">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InititiatesName"
-            text=""/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="TerminatesFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Terminates">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TerminatesName"
-            text=""/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <figures
@@ -97,40 +63,15 @@
     </descriptors>
   </figures>
   <nodes
-      name="ParameterNode"
-      figure="ParameterFigure"/>
-  <nodes
-      name="InitiatesNode"
-      figure="InitiatesFigure"/>
-  <nodes
-      name="TerminatesNode"
-      figure="TerminatesFigure"/>
-  <nodes
       name="ContextrelationNode"
       figure="ContextRelationFigure"/>
-  <connections
-      name="CRParameter"
-      figure="CRParameterFigure"/>
-  <connections
-      name="CRInitiates"
-      figure="CRInitiatesFigure"/>
-  <connections
-      name="CRTerminates"
-      figure="CRTerminatesFigure"/>
   <labels
       name="ContextRelationName"
       figure="ContextRelationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="ContextRelationTitle"
+      figure="ContextRelationFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="InitiatesName"
-      figure="InitiatesFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels
-      name="ParameterName"
-      figure="ParameterFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels
-      name="TerminatesName"
-      figure="TerminatesFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

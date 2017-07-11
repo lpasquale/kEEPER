@@ -217,8 +217,7 @@
       <viewProvider class="contextRelation.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ContextRelation Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
       </viewProvider>
    </extension>
 
@@ -230,10 +229,10 @@
             <method name="getType()" value="ContextRelation Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002"/>
+            <method name="getType()" value="2001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001,5002"/>
@@ -257,11 +256,6 @@
          <Priority name="Lowest"/>
          <object class="contextRelation.model.diagram.edit.parts.ContextRelationEditPart" id="ContextRelation_2001"/>
          <context elements="ContextRelation_2001"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="contextRelation.model.diagram.providers.assistants.ModelModelingAssistantProviderOfParameterEditPart">
-         <Priority name="Lowest"/>
-         <object class="contextRelation.model.diagram.edit.parts.ParameterEditPart" id="Parameter_2002"/>
-         <context elements="Parameter_2002"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -303,25 +297,6 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <metamodelType
-               id="org.eclipse.kEEPER.plugin.contextRelation.diagram.Parameter_2002"
-               name="%metatype.name.Parameter_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Parameter"
-               edithelper="contextRelation.model.diagram.edit.helpers.ParameterEditHelper">
-            <param name="semanticHint" value="2002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <specializationType
-               id="org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelationParameters_4001"
-               name="%metatype.name.ContextRelationParameters_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4001"/>
-         </specializationType>
-      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -336,8 +311,6 @@
       <binding context="org.eclipse.kEEPER.plugin.contextRelation.diagram.TypeContext">
          <elementType ref="org.eclipse.kEEPER.plugin.contextRelation.diagram.Environment_1000"/>
          <elementType ref="org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelation_2001"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.contextRelation.diagram.Parameter_2002"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelationParameters_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

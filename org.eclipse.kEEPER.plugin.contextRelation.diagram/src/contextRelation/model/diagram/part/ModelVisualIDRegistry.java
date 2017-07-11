@@ -115,9 +115,6 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getContextRelation().isSuperTypeOf(domainElement.eClass())) {
 				return contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
-				return contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
@@ -146,17 +143,12 @@ public class ModelVisualIDRegistry {
 			if (contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID:
 			if (contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			if (contextRelation.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -211,7 +203,6 @@ public class ModelVisualIDRegistry {
 		case contextRelation.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
 			return false;
 		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID:
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

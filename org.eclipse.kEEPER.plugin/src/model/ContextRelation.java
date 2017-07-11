@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link model.ContextRelation#getName <em>Name</em>}</li>
- *   <li>{@link model.ContextRelation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
  *   <li>{@link model.ContextRelation#isValue <em>Value</em>}</li>
+ *   <li>{@link model.ContextRelation#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getContextRelation()
@@ -80,20 +80,20 @@ public interface ContextRelation extends EObject {
 	void setValue(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
-	 * The list contents are of type {@link model.Parameter}.
+	 * Returns the value of the '<em><b>Types</b></em>' reference list.
+	 * The list contents are of type {@link model.Type}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Types</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' reference list.
-	 * @see model.ModelPackage#getContextRelation_Parameters()
+	 * @return the value of the '<em>Types</em>' reference list.
+	 * @see model.ModelPackage#getContextRelation_Types()
 	 * @model
 	 * @generated
 	 */
-	EList<Parameter> getParameters();
+	EList<Type> getTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Initial Complex Event</b></em>' reference.

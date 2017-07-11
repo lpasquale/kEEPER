@@ -31,8 +31,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
-import model.ContextRelation;
-import model.Parameter;
 
 /**
  * @generated
@@ -144,7 +142,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	* @generated
 	*/
-	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {
+	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {		
 		if (req instanceof CreateRelationshipRequest) {
 			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
 		} else if (req instanceof CreateElementRequest) {
@@ -189,6 +187,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
+		System.out.println("getCreateCommand");
 		return null;
 	}
 
@@ -196,6 +195,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	* @generated
 	*/
 	protected Command getSetCommand(SetRequest req) {
+
 		return null;
 	}
 
@@ -276,52 +276,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = contextRelation.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
-				.getLinkConstraints();
-		if (cached == null) {
-			contextRelation.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
-					.setLinkConstraints(cached = new LinkConstraints());
-		}
-		return cached;
-	}
-
-	/**
-	* @generated
-	*/
-	public static class LinkConstraints {
-
-		/**
-		* @generated
-		*/
-		LinkConstraints() {
-			// use static method #getLinkConstraints() to access instance
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canCreateContextRelationParameters_4001(ContextRelation source, Parameter target) {
-			if (source != null) {
-				if (source.getParameters().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistContextRelationParameters_4001(source, target);
-		}
-
-		/**
-		* @generated
-		*/
-		public boolean canExistContextRelationParameters_4001(ContextRelation source, Parameter target) {
-			return true;
 		}
 	}
 

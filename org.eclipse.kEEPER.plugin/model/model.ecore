@@ -16,11 +16,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextRelation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialComplexEvent" eType="#//ComplexEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endingComplexEvent" eType="#//ComplexEvent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

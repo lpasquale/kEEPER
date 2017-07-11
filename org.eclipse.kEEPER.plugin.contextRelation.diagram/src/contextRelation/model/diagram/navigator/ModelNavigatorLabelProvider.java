@@ -76,12 +76,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ContextRelation", //$NON-NLS-1$
 					contextRelation.model.diagram.providers.ModelElementTypes.ContextRelation_2001);
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Parameter", //$NON-NLS-1$
-					contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002);
-		case contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?ContextRelation?parameters", //$NON-NLS-1$
-					contextRelation.model.diagram.providers.ModelElementTypes.ContextRelationParameters_4001);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -138,10 +132,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEnvironment_1000Text(view);
 		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID:
 			return getContextRelation_2001Text(view);
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getParameter_2002Text(view);
-		case contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID:
-			return getContextRelationParameters_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -170,32 +160,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 					.logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getParameter_2002Text(View view) {
-		IParser parser = contextRelation.model.diagram.providers.ModelParserProvider.getParser(
-				contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002,
-				view.getElement() != null ? view.getElement() : view,
-				contextRelation.model.diagram.part.ModelVisualIDRegistry
-						.getType(contextRelation.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			contextRelation.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
-					.logError("Parser was not found for label " + 5002); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getContextRelationParameters_4001Text(View view) {
-		return ""; //$NON-NLS-1$
 	}
 
 	/**

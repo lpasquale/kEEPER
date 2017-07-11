@@ -26,7 +26,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="typeinstance.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="typeinstance.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
           href="typeinstance.gmfgraph#Instance"/>
     </ownedChild>

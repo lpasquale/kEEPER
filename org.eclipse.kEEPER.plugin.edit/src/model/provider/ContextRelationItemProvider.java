@@ -13,7 +13,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.ecore.impl.EAttributeImpl;
+import org.eclipse.emf.ecore.impl.EReferenceImpl;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -61,10 +62,10 @@ public class ContextRelationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addParametersPropertyDescriptor(object);
 			addInitialComplexEventPropertyDescriptor(object);
 			addEndingComplexEventPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,19 +115,19 @@ public class ContextRelationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Parameters feature.
+	 * This adds a property descriptor for the Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParametersPropertyDescriptor(Object object) {
+	protected void addTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContextRelation_parameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContextRelation_parameters_feature", "_UI_ContextRelation_type"),
-				 ModelPackage.Literals.CONTEXT_RELATION__PARAMETERS,
+				 getString("_UI_ContextRelation_types_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextRelation_types_feature", "_UI_ContextRelation_type"),
+				 ModelPackage.Literals.CONTEXT_RELATION__TYPES,
 				 true,
 				 false,
 				 true,
@@ -214,6 +215,16 @@ public class ContextRelationItemProvider
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
+		System.out.println("notifyChanged");
+		System.out.println(notification);
+
+		// If the list of types have been changed update the diagram
+		if (notification.getFeature() instanceof EReferenceImpl){
+			if (((EReferenceImpl)notification.getFeature()).getName().equals("types")){
+				System.out.println("Bingo!!!!!");
+				// Update the diagram
+			}
+		}
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContextRelation.class)) {

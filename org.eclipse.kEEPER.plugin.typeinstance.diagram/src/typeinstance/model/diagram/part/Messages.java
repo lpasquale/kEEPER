@@ -243,7 +243,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Nodes1Group_title;
+	public static String Types1Group_title;
+
+	/**
+	* @generated
+	*/
+	public static String Instance2Group_title;
 
 	/**
 	* @generated
@@ -268,12 +273,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Instance4CreationTool_title;
+	public static String Instance1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Instance4CreationTool_desc;
+	public static String Instance1CreationTool_desc;
 
 	/**
 	* @generated

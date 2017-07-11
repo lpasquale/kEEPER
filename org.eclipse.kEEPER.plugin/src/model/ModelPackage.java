@@ -214,22 +214,13 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_RELATION__PARAMETERS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Initial Complex Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = 2;
+	int CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ending Complex Event</b></em>' reference.
@@ -238,7 +229,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 3;
+	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -247,7 +238,16 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION__VALUE = 4;
+	int CONTEXT_RELATION__VALUE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__TYPES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
@@ -1572,15 +1572,15 @@ public interface ModelPackage extends EPackage {
 	EAttribute getContextRelation_Value();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.ContextRelation#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the reference list '{@link model.ContextRelation#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
-	 * @see model.ContextRelation#getParameters()
+	 * @return the meta object for the reference list '<em>Types</em>'.
+	 * @see model.ContextRelation#getTypes()
 	 * @see #getContextRelation()
 	 * @generated
 	 */
-	EReference getContextRelation_Parameters();
+	EReference getContextRelation_Types();
 
 	/**
 	 * Returns the meta object for the reference '{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}'.
@@ -2527,12 +2527,12 @@ public interface ModelPackage extends EPackage {
 		EAttribute CONTEXT_RELATION__VALUE = eINSTANCE.getContextRelation_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTEXT_RELATION__PARAMETERS = eINSTANCE.getContextRelation_Parameters();
+		EReference CONTEXT_RELATION__TYPES = eINSTANCE.getContextRelation_Types();
 
 		/**
 		 * The meta object literal for the '<em><b>Initial Complex Event</b></em>' reference feature.

@@ -4,6 +4,7 @@ package contextRelation.model.diagram.part;
 import java.util.Collections;
 
 import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
@@ -26,10 +27,10 @@ public class ModelPaletteFactory {
 	* @generated
 	*/
 	private PaletteContainer createNodes1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(contextRelation.model.diagram.part.Messages.Nodes1Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				contextRelation.model.diagram.part.Messages.Nodes1Group_title);
 		paletteContainer.setId("createNodes1Group"); //$NON-NLS-1$
 		paletteContainer.add(createContextRelation1CreationTool());
-		paletteContainer.add(createParameter2CreationTool());
 		return paletteContainer;
 	}
 
@@ -43,20 +44,6 @@ public class ModelPaletteFactory {
 		entry.setId("createContextRelation1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(contextRelation.model.diagram.providers.ModelElementTypes
 				.getImageDescriptor(contextRelation.model.diagram.providers.ModelElementTypes.ContextRelation_2001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createParameter2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				contextRelation.model.diagram.part.Messages.Parameter2CreationTool_title, null,
-				Collections.singletonList(contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002));
-		entry.setId("createParameter2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(contextRelation.model.diagram.providers.ModelElementTypes
-				.getImageDescriptor(contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

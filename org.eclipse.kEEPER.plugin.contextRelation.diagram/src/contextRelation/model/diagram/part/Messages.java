@@ -253,37 +253,7 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Parameter2CreationTool_title;
-
-	/**
-	* @generated
-	*/
 	public static String CommandName_OpenDiagram;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Environment_1000_links;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ContextRelation_2001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Parameter_2002_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ContextRelationParameters_4001_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_ContextRelationParameters_4001_source;
 
 	/**
 	* @generated

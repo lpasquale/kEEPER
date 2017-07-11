@@ -59,11 +59,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	private contextRelation.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
-
-	/**
-	* @generated
-	*/
 	private contextRelation.model.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -89,7 +84,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		linkConstraints = null;
 		initializers = null;
 		instance = null;
 		super.stop(context);
@@ -203,21 +197,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new contextRelation.model.diagram.part.ModelDocumentProvider();
 		}
 		return documentProvider;
-	}
-
-	/**
-	* @generated
-	*/
-	public contextRelation.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return linkConstraints;
-	}
-
-	/**
-	* @generated
-	*/
-	public void setLinkConstraints(
-			contextRelation.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints lc) {
-		this.linkConstraints = lc;
 	}
 
 	/**

@@ -16,7 +16,6 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
@@ -208,86 +207,11 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 		case contextRelation.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID: {
 			LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem> result = new LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			contextRelation.model.diagram.navigator.ModelNavigatorGroup links = new contextRelation.model.diagram.navigator.ModelNavigatorGroup(
-					contextRelation.model.diagram.part.Messages.NavigatorGroupName_Environment_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					contextRelation.model.diagram.part.ModelVisualIDRegistry
 							.getType(contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry
-							.getType(contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry.getType(
-							contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID: {
-			LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem> result = new LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			contextRelation.model.diagram.navigator.ModelNavigatorGroup outgoinglinks = new contextRelation.model.diagram.navigator.ModelNavigatorGroup(
-					contextRelation.model.diagram.part.Messages.NavigatorGroupName_ContextRelation_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry.getType(
-							contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID: {
-			LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem> result = new LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			contextRelation.model.diagram.navigator.ModelNavigatorGroup incominglinks = new contextRelation.model.diagram.navigator.ModelNavigatorGroup(
-					contextRelation.model.diagram.part.Messages.NavigatorGroupName_Parameter_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry.getType(
-							contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID: {
-			LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem> result = new LinkedList<contextRelation.model.diagram.navigator.ModelAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			contextRelation.model.diagram.navigator.ModelNavigatorGroup target = new contextRelation.model.diagram.navigator.ModelNavigatorGroup(
-					contextRelation.model.diagram.part.Messages.NavigatorGroupName_ContextRelationParameters_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			contextRelation.model.diagram.navigator.ModelNavigatorGroup source = new contextRelation.model.diagram.navigator.ModelNavigatorGroup(
-					contextRelation.model.diagram.part.Messages.NavigatorGroupName_ContextRelationParameters_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry
-							.getType(contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					contextRelation.model.diagram.part.ModelVisualIDRegistry
-							.getType(contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
 			return result.toArray();
 		}
 		}

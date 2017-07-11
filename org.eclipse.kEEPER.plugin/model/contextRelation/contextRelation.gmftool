@@ -8,18 +8,11 @@
       title="contextRelationPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Nodes">
+        title="Nodes"
+        collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Context Relation">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Parameter">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

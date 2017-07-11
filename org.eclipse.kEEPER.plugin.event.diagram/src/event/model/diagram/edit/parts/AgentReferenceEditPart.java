@@ -4,13 +4,22 @@ import java.net.URL;
 
 import java.util.Collections;
 import java.util.List;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -20,12 +29,14 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.internal.runtime.lite.svg.Activator;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
 import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
@@ -33,6 +44,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.IEditorReference;
@@ -247,4 +260,36 @@ public class AgentReferenceEditPart extends AbstractBorderedShapeEditPart {
 		return getChildBySemanticHint(ModelVisualIDRegistry.getType(AgentReferenceTypeNameEditPart.VISUAL_ID));
 	}
 
+	/**
+	 * @generated NOT
+	 
+	@Override
+	public void activate() {
+		super.activate();
+		
+		AbstractEMFOperation emfOp = new AbstractEMFOperation(getEditingDomain(), "Location setting") {
+	
+			@Override
+			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				Location lc = (Location) ((Node) getModel()).getLayoutConstraint();
+				lc.setX(10);
+				lc.setY(200);
+				return Status.OK_STATUS;
+			}
+	
+		};
+	
+		IStatus status;
+	
+		try {
+			status = OperationHistoryFactory.getOperationHistory().execute(emfOp, null, null);
+		} catch (ExecutionException e) {
+			status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Setting location failed", e);
+		}
+	
+		if (status.getCode() == IStatus.WARNING || status.getCode() == IStatus.ERROR) {
+			Activator.getDefault().getLog().log(status);
+		}
+	}
+	*/
 }

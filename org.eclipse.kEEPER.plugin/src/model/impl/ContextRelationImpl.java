@@ -7,8 +7,7 @@ import java.util.Collection;
 import model.ComplexEvent;
 import model.ContextRelation;
 import model.ModelPackage;
-import model.Parameter;
-
+import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -30,10 +29,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link model.impl.ContextRelationImpl#getName <em>Name</em>}</li>
- *   <li>{@link model.impl.ContextRelationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#isValue <em>Value</em>}</li>
+ *   <li>{@link model.impl.ContextRelationImpl#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,16 +57,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> parameters;
 
 	/**
 	 * The cached value of the '{@link #getInitialComplexEvent() <em>Initial Complex Event</em>}' reference.
@@ -108,6 +97,16 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected boolean value = VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Type> types;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,11 +174,11 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ModelPackage.CONTEXT_RELATION__PARAMETERS);
+	public EList<Type> getTypes() {
+		if (types == null) {
+			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.CONTEXT_RELATION__TYPES);
 		}
-		return parameters;
+		return types;
 	}
 
 	/**
@@ -268,8 +267,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
 				return getName();
-			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
-				return getParameters();
 			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
 				if (resolve) return getInitialComplexEvent();
 				return basicGetInitialComplexEvent();
@@ -278,6 +275,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return basicGetEndingComplexEvent();
 			case ModelPackage.CONTEXT_RELATION__VALUE:
 				return isValue();
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+				return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,10 +293,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__NAME:
 				setName((String)newValue);
 				return;
-			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
 				setInitialComplexEvent((ComplexEvent)newValue);
 				return;
@@ -306,6 +301,10 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case ModelPackage.CONTEXT_RELATION__VALUE:
 				setValue((Boolean)newValue);
+				return;
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+				getTypes().clear();
+				getTypes().addAll((Collection<? extends Type>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -322,9 +321,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
-				getParameters().clear();
-				return;
 			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
 				setInitialComplexEvent((ComplexEvent)null);
 				return;
@@ -333,6 +329,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case ModelPackage.CONTEXT_RELATION__VALUE:
 				setValue(VALUE_EDEFAULT);
+				return;
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+				getTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -348,14 +347,14 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
 				return initialComplexEvent != null;
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				return endingComplexEvent != null;
 			case ModelPackage.CONTEXT_RELATION__VALUE:
 				return value != VALUE_EDEFAULT;
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+				return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

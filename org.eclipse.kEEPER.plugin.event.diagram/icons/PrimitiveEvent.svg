@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" baseProfile="tiny" id="Livello_1"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 425.2 425.2"
-	 overflow="scroll" xml:space="preserve">
-<circle fill="none" stroke="#000000" stroke-width="25" stroke-miterlimit="10" cx="212.2" cy="213.8" r="195.9"/>
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 419.8 419.8"
+	 xml:space="preserve">
+<title>Tavola disegno 1</title>
+<circle fill="none" stroke="#000000" stroke-width="25" stroke-miterlimit="10" cx="209.9" cy="209.9" r="197.4"/>
+<rect x="65" y="117" fill="none" width="272" height="193"/>
+<text transform="matrix(1 0 0 1 73.0015 294.488)" font-family="'MyriadPro-Regular'" font-size="250px">PE</text>
 </svg>

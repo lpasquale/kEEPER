@@ -27,9 +27,6 @@ public class EnvironmentItemSemanticEditPolicy
 		if (contextRelation.model.diagram.providers.ModelElementTypes.ContextRelation_2001 == req.getElementType()) {
 			return getGEFWrapper(new contextRelation.model.diagram.edit.commands.ContextRelationCreateCommand(req));
 		}
-		if (contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002 == req.getElementType()) {
-			return getGEFWrapper(new contextRelation.model.diagram.edit.commands.ParameterCreateCommand(req));
-		}
 		return super.getCreateCommand(req);
 	}
 

@@ -23,37 +23,19 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser contextRelationName_5001Parser;
+	private IParser contextRelationName_5002Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getContextRelationName_5001Parser() {
-		if (contextRelationName_5001Parser == null) {
+	private IParser getContextRelationName_5002Parser() {
+		if (contextRelationName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getContextRelation_Name() };
 			contextRelation.model.diagram.parsers.MessageFormatParser parser = new contextRelation.model.diagram.parsers.MessageFormatParser(
 					features);
-			contextRelationName_5001Parser = parser;
+			contextRelationName_5002Parser = parser;
 		}
-		return contextRelationName_5001Parser;
-	}
-
-	/**
-	* @generated
-	*/
-	private IParser parameterName_5002Parser;
-
-	/**
-	* @generated
-	*/
-	private IParser getParameterName_5002Parser() {
-		if (parameterName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getParameter_Name() };
-			contextRelation.model.diagram.parsers.MessageFormatParser parser = new contextRelation.model.diagram.parsers.MessageFormatParser(
-					features);
-			parameterName_5002Parser = parser;
-		}
-		return parameterName_5002Parser;
+		return contextRelationName_5002Parser;
 	}
 
 	/**
@@ -61,10 +43,8 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart.VISUAL_ID:
-			return getContextRelationName_5001Parser();
-		case contextRelation.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID:
-			return getParameterName_5002Parser();
+		case contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID:
+			return getContextRelationName_5002Parser();
 		}
 		return null;
 	}

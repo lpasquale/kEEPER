@@ -1,31 +1,30 @@
 package contextRelation.model.diagram.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
+import java.util.ArrayList;
+
+import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.PlatformUI;
 
-import contextRelation.model.diagram.part.ModelDiagramEditor;
+import model.ContextRelation;
 
 /**
  * @generated
@@ -42,20 +41,23 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure contentPane;
 
-	private IEditorPart activeEditor;
-
-	private ModelDiagramEditor editor;
-
 	/**
 	* @generated
 	*/
 	protected IFigure primaryShape;
 
+	/*
+	 * @generated NOT
+	 */
+	private ContextRelation cr;
+
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public ContextRelationEditPart(View view) {
 		super(view);
+		this.cr = (ContextRelation) view.getElement();
+		
 	}
 
 	/**
@@ -74,17 +76,14 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
-				}
-				return result;
+		FlowLayoutEditPolicy lep = new FlowLayoutEditPolicy() {
+
+			protected Command createAddCommand(EditPart child, EditPart after) {
+				return null;
 			}
 
-			protected Command getMoveChildrenCommand(Request request) {
+			protected Command createMoveChildCommand(EditPart child, EditPart after) {
 				return null;
 			}
 
@@ -115,6 +114,11 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart) {
 			((contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureContextRelationTitle());
+			return true;
+		}
+		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) {
+			((contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureContextRelationName());
 			return true;
 		}
@@ -126,6 +130,9 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) {
 			return true;
 		}
 		return false;
@@ -255,33 +262,72 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ContextRelationFigure extends RoundedRectangle {
+	public class ContextRelationFigure extends RectangleFigure {
 
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureContextRelationTitle;
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureContextRelationName;
 
+		private ArrayList<WrappingLabel> fFigureContextRelationTypes;
+
 		/**
 		 * @generated
 		 */
 		public ContextRelationFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
-			this.setForegroundColor(ColorConstants.blue);
+			
+			FlowLayout layoutThis = new FlowLayout();
+			layoutThis.setStretchMinorAxis(false);
+			layoutThis.setMinorAlignment(FlowLayout.ALIGN_LEFTTOP);
+
+			layoutThis.setMajorAlignment(FlowLayout.ALIGN_LEFTTOP);
+			layoutThis.setMajorSpacing(5);
+			layoutThis.setMinorSpacing(5);
+			layoutThis.setHorizontal(true);
+
+			this.setLayoutManager(layoutThis);
+
 			createContents();
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		private void createContents() {
+			fFigureContextRelationName = new WrappingLabel();
+			fFigureContextRelationName.setText("---NAME---");
+			fFigureContextRelationName.setAlignment(PositionConstants.CENTER);
+
+
+			fFigureContextRelationTitle = new WrappingLabel();
+			fFigureContextRelationTitle.setText("<<Context Relation>>");
+			fFigureContextRelationTitle.setAlignment(PositionConstants.CENTER);
+			
+			fFigureContextRelationTypes = new ArrayList<WrappingLabel>();
+
+			for (int i = 0; i < cr.getTypes().size(); i++) {
+				WrappingLabel temp = new WrappingLabel();
+				temp.setText(cr.getTypes().get(i).getName());
+				temp.setAlignment(PositionConstants.LEFT);
+				fFigureContextRelationTypes.add(temp);
+			}
+
+			this.add(fFigureContextRelationTitle);
+			this.add(fFigureContextRelationName);
+			for (int i = 0; i < fFigureContextRelationTypes.size(); i++) {
+				this.add(fFigureContextRelationTypes.get(i));
+			}
 		}
 
 		/**
 		 * @generated
 		 */
-		private void createContents() {
-
-			fFigureContextRelationName = new WrappingLabel();
-
-			fFigureContextRelationName.setText("---Context Relation Name here---");
-
-			this.add(fFigureContextRelationName);
-
+		public WrappingLabel getFigureContextRelationTitle() {
+			return fFigureContextRelationTitle;
 		}
 
 		/**

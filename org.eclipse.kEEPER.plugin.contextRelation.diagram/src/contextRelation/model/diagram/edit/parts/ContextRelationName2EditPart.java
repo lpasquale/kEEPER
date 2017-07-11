@@ -47,7 +47,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ParameterNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ContextRelationName2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	* @generated
@@ -82,7 +82,7 @@ public class ParameterNameEditPart extends CompartmentEditPart implements ITextA
 	/**
 	* @generated
 	*/
-	public ParameterNameEditPart(View view) {
+	public ContextRelationName2EditPart(View view) {
 		super(view);
 	}
 
@@ -188,11 +188,7 @@ public class ParameterNameEditPart extends CompartmentEditPart implements ITextA
 	* @generated
 	*/
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return contextRelation.model.diagram.providers.ModelElementTypes.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**
@@ -289,9 +285,9 @@ public class ParameterNameEditPart extends CompartmentEditPart implements ITextA
 	public IParser getParser() {
 		if (parser == null) {
 			parser = contextRelation.model.diagram.providers.ModelParserProvider.getParser(
-					contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002, getParserElement(),
+					contextRelation.model.diagram.providers.ModelElementTypes.ContextRelation_2001, getParserElement(),
 					contextRelation.model.diagram.part.ModelVisualIDRegistry
-							.getType(contextRelation.model.diagram.edit.parts.ParameterNameEditPart.VISUAL_ID));
+							.getType(contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

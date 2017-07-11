@@ -53,17 +53,6 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType ContextRelation_2001 = getElementType(
 			"org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelation_2001"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType Parameter_2002 = getElementType(
-			"org.eclipse.kEEPER.plugin.contextRelation.diagram.Parameter_2002"); //$NON-NLS-1$
-
-	/**
-	* @generated
-	*/
-	public static final IElementType ContextRelationParameters_4001 = getElementType(
-			"org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelationParameters_4001"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -106,10 +95,6 @@ public class ModelElementTypes {
 			elements.put(Environment_1000, ModelPackage.eINSTANCE.getEnvironment());
 
 			elements.put(ContextRelation_2001, ModelPackage.eINSTANCE.getContextRelation());
-
-			elements.put(Parameter_2002, ModelPackage.eINSTANCE.getParameter());
-
-			elements.put(ContextRelationParameters_4001, ModelPackage.eINSTANCE.getContextRelation_Parameters());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -129,8 +114,6 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(ContextRelation_2001);
-			KNOWN_ELEMENT_TYPES.add(Parameter_2002);
-			KNOWN_ELEMENT_TYPES.add(ContextRelationParameters_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -144,10 +127,6 @@ public class ModelElementTypes {
 			return Environment_1000;
 		case contextRelation.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID:
 			return ContextRelation_2001;
-		case contextRelation.model.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return Parameter_2002;
-		case contextRelation.model.diagram.edit.parts.ContextRelationParametersEditPart.VISUAL_ID:
-			return ContextRelationParameters_4001;
 		}
 		return null;
 	}

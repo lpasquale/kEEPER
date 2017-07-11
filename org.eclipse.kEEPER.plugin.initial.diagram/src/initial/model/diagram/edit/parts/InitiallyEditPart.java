@@ -1,12 +1,17 @@
 package initial.model.diagram.edit.parts;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
@@ -18,8 +23,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
 import initial.model.diagram.edit.policies.InitiallyItemSemanticEditPolicy;
+import initial.model.diagram.part.ModelDiagramEditor;
+import model.Initially;
 
 /**
  * @generated
@@ -40,12 +52,39 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure primaryShape;
+	
+	protected String editFilesPath;
+	
+	private ModelDiagramEditor editor;
+	
+	protected Initially in;
 
 	/**
 	* @generated
 	*/
 	public InitiallyEditPart(View view) {
 		super(view);
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+
+		// Initializing the editor
+		for (int i = 0; i < editorPart.length; i++) {
+			if (editorPart[i].getEditor(true) instanceof ModelDiagramEditor) {
+				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())) {
+					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
+				}
+				System.out.println("Editor: " + editor);
+			}
+		}
+		Resource diagram = editor.getDiagram().eResource();
+		String path = ((Resource) diagram).getURI().toPlatformString(true);
+		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
+		
+		this.in = (Initially) view.getElement();
 	}
 
 	/**
@@ -216,6 +255,17 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 			return fFigureInitialName;
 		}
 
+	}
+	
+	@Override
+	public void performRequest(Request req){
+		if (req.getType() == RequestConstants.REQ_OPEN) {
+			
+			InstancesDialog id = new InstancesDialog(null, this.in.getContextRelation(), editFilesPath + "/default.typeInstanceModel");
+			id.open();
+			// Creating the dialog
+			
+		}
 	}
 
 }
