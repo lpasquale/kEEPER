@@ -15,9 +15,11 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramEditorPlugin;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
+import model.Instance;
 
 /**
  * @generated
@@ -77,6 +79,9 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case InitiallyEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Initially", //$NON-NLS-1$
 					ModelElementTypes.Initially_2001);
+		case InstanceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Instance", //$NON-NLS-1$
+					ModelElementTypes.Instance_2002);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -131,6 +136,8 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEnvironment_1000Text(view);
 		case InitiallyEditPart.VISUAL_ID:
 			return getInitially_2001Text(view);
+		case InstanceEditPart.VISUAL_ID:
+			return getInstance_2002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -147,6 +154,19 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	*/
 	private String getInitially_2001Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getInstance_2002Text(View view) {
+		Instance domainModelElement = (Instance) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

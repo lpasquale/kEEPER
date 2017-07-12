@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: initial.model.diagram.part.ModelDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: initial.model.diagram.edit.parts, 
+Export-Package: initial.model.diagram.edit.parts,
  initial.model.diagram.part,
  initial.model.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
@@ -38,3 +38,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: typeinstance.model.diagram.providers

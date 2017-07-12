@@ -20,7 +20,16 @@
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="InstanceFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="Instance"/>
+    </descriptors>
   </figures>
+  <nodes
+      name="InstanceNode"
+      figure="InstanceFigure"/>
   <nodes
       name="InitialNode"
       figure="InitialFigure"/>

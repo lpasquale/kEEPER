@@ -85,7 +85,7 @@ public class HoldsAtImpl extends MinimalEObjectImpl.Container implements HoldsAt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HoldsAtImpl() {
+	public HoldsAtImpl() {
 		super();
 	}
 

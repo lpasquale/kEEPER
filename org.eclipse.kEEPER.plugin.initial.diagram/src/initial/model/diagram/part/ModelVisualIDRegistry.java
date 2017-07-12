@@ -9,6 +9,7 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.InstanceEditPart;
 import model.Environment;
 import model.ModelPackage;
 
@@ -117,6 +118,9 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getInitially().isSuperTypeOf(domainElement.eClass())) {
 				return InitiallyEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getInstance().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -143,6 +147,9 @@ public class ModelVisualIDRegistry {
 		switch (containerVisualID) {
 		case EnvironmentEditPart.VISUAL_ID:
 			if (InitiallyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -197,6 +204,7 @@ public class ModelVisualIDRegistry {
 		case EnvironmentEditPart.VISUAL_ID:
 			return false;
 		case InitiallyEditPart.VISUAL_ID:
+		case InstanceEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -71,7 +71,7 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HappensImpl() {
+	public HappensImpl() {
 		super();
 	}
 

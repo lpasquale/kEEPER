@@ -27,6 +27,9 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case InitiallyEditPart.VISUAL_ID:
 				return new InitiallyEditPart(view);
+
+			case InstanceEditPart.VISUAL_ID:
+				return new InstanceEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

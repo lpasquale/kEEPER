@@ -3,10 +3,12 @@ package initial.model.diagram.edit.policies;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -23,6 +25,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramUpdater;
 import initial.model.diagram.part.ModelNodeDescriptor;
 import initial.model.diagram.part.ModelVisualIDRegistry;
@@ -32,6 +35,11 @@ import model.ModelPackage;
  * @generated
  */
 public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
+
+	/**
+	* @generated
+	*/
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
 	* @generated
@@ -48,8 +56,13 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return ModelPackage.eINSTANCE.getEnvironment_Initials();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Initials());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Instances());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -79,7 +92,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	private boolean isMyDiagramElement(View view) {
-		return InitiallyEditPart.VISUAL_ID == ModelVisualIDRegistry.getVisualID(view);
+		int visualID = ModelVisualIDRegistry.getVisualID(view);
+		return visualID == InitiallyEditPart.VISUAL_ID || visualID == InstanceEditPart.VISUAL_ID;
 	}
 
 	/**

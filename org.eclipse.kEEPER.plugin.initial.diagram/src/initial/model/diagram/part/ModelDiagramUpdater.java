@@ -10,8 +10,10 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.InstanceEditPart;
 import model.Environment;
 import model.Initially;
+import model.Instance;
 
 /**
  * @generated
@@ -46,6 +48,14 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getInstances().iterator(); it.hasNext();) {
+			Instance childElement = (Instance) it.next();
+			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == InstanceEditPart.VISUAL_ID) {
+				result.add(new ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -58,6 +68,8 @@ public class ModelDiagramUpdater {
 			return getEnvironment_1000ContainedLinks(view);
 		case InitiallyEditPart.VISUAL_ID:
 			return getInitially_2001ContainedLinks(view);
+		case InstanceEditPart.VISUAL_ID:
+			return getInstance_2002ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -69,6 +81,8 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case InitiallyEditPart.VISUAL_ID:
 			return getInitially_2001IncomingLinks(view);
+		case InstanceEditPart.VISUAL_ID:
+			return getInstance_2002IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -80,6 +94,8 @@ public class ModelDiagramUpdater {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
 		case InitiallyEditPart.VISUAL_ID:
 			return getInitially_2001OutgoingLinks(view);
+		case InstanceEditPart.VISUAL_ID:
+			return getInstance_2002OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -99,6 +115,13 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getInstance_2002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getInitially_2001IncomingLinks(View view) {
@@ -106,9 +129,23 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getInstance_2002IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getInitially_2001OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getInstance_2002OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

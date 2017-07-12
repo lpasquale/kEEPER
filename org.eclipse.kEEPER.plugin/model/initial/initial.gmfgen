@@ -51,6 +51,30 @@
             href="../model.genmodel#//model/Environment/initials"/>
       </modelFacet>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2002"
+        editPartClassName="InstanceEditPart"
+        itemSemanticEditPolicyClassName="InstanceItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="InstanceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InstanceGraphicalNodeEditPolicy"
+        createCommandClassName="InstanceCreateCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="InstanceEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/Instance"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/instances"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/instances"/>
+      </modelFacet>
+    </topLevelNodes>
     <palette>
       <groups
           title="Nodes">
@@ -99,6 +123,9 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.1"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>

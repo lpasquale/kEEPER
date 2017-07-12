@@ -18,6 +18,16 @@
           href="initial.gmfgraph#InitialNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/instances"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Instance"/>
+      <diagramNode
+          href="initial.gmfgraph#InstanceNode"/>
+    </ownedChild>
+  </nodes>
   <diagram>
     <diagramCanvas
         href="initial.gmfgraph#default"/>

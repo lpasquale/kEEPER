@@ -217,7 +217,7 @@
       <viewProvider class="initial.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Initial Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002"/>
       </viewProvider>
    </extension>
 
@@ -229,7 +229,7 @@
             <method name="getType()" value="Initial Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001"/>
+            <method name="getType()" value="2001,2002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
@@ -256,6 +256,11 @@
          <Priority name="Lowest"/>
          <object class="initial.model.diagram.edit.parts.InitiallyEditPart" id="Initially_2001"/>
          <context elements="Initially_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="initial.model.diagram.edit.parts.InstanceEditPart" id="Instance_2002"/>
+         <context elements="Instance_2002"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -290,6 +295,16 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
+               id="org.eclipse.kEEPER.plugin.initial.diagram.Instance_2002"
+               name="%metatype.name.Instance_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Instance"
+               edithelper="initial.model.diagram.edit.helpers.InstanceEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -304,6 +319,7 @@
       <binding context="org.eclipse.kEEPER.plugin.initial.diagram.TypeContext">
          <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Environment_1000"/>
          <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Initially_2001"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Instance_2002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
