@@ -2,6 +2,7 @@
  */
 package model;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link model.Happens#getTime <em>Time</em>}</li>
  *   <li>{@link model.Happens#getEvent <em>Event</em>}</li>
+ *   <li>{@link model.Happens#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getHappens()
@@ -76,6 +78,22 @@ public interface Happens extends EObject {
 	void setEvent(Event value);
 	
 	
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * The list contents are of type {@link model.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' reference list.
+	 * @see model.ModelPackage#getHappens_Parameters()
+	 * @model
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
+
 	boolean haveParametersChanged();
 	
 	void setParametersChanged(boolean flag);

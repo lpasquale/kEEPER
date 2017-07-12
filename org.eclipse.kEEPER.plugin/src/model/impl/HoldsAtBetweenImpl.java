@@ -2,17 +2,21 @@
  */
 package model.impl;
 
+import java.util.Collection;
 import model.ContextRelation;
 import model.HoldsAtBetween;
 import model.ModelPackage;
 
+import model.Parameter;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link model.impl.HoldsAtBetweenImpl#getEndingTime <em>Ending Time</em>}</li>
  *   <li>{@link model.impl.HoldsAtBetweenImpl#isIsHolding <em>Is Holding</em>}</li>
  *   <li>{@link model.impl.HoldsAtBetweenImpl#getContextRelation <em>Context Relation</em>}</li>
+ *   <li>{@link model.impl.HoldsAtBetweenImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +105,16 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected ContextRelation contextRelation;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,6 +241,18 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ModelPackage.HOLDS_AT_BETWEEN__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -238,6 +265,8 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 			case ModelPackage.HOLDS_AT_BETWEEN__CONTEXT_RELATION:
 				if (resolve) return getContextRelation();
 				return basicGetContextRelation();
+			case ModelPackage.HOLDS_AT_BETWEEN__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,6 +276,7 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -261,6 +291,10 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case ModelPackage.HOLDS_AT_BETWEEN__CONTEXT_RELATION:
 				setContextRelation((ContextRelation)newValue);
+				return;
+			case ModelPackage.HOLDS_AT_BETWEEN__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,6 +320,9 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 			case ModelPackage.HOLDS_AT_BETWEEN__CONTEXT_RELATION:
 				setContextRelation((ContextRelation)null);
 				return;
+			case ModelPackage.HOLDS_AT_BETWEEN__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -306,6 +343,8 @@ public class HoldsAtBetweenImpl extends MinimalEObjectImpl.Container implements 
 				return isHolding != IS_HOLDING_EDEFAULT;
 			case ModelPackage.HOLDS_AT_BETWEEN__CONTEXT_RELATION:
 				return contextRelation != null;
+			case ModelPackage.HOLDS_AT_BETWEEN__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

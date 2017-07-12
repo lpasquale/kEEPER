@@ -63,6 +63,7 @@ public class HoldsAtItemProvider
 			addTimePropertyDescriptor(object);
 			addIsHoldingPropertyDescriptor(object);
 			addContextRelationPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,28 @@ public class HoldsAtItemProvider
 				 getString("_UI_HoldsAt_contextRelation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HoldsAt_contextRelation_feature", "_UI_HoldsAt_type"),
 				 ModelPackage.Literals.HOLDS_AT__CONTEXT_RELATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HoldsAt_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HoldsAt_parameters_feature", "_UI_HoldsAt_type"),
+				 ModelPackage.Literals.HOLDS_AT__PARAMETERS,
 				 true,
 				 false,
 				 true,

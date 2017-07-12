@@ -64,6 +64,7 @@ public class HoldsAtBetweenItemProvider
 			addEndingTimePropertyDescriptor(object);
 			addIsHoldingPropertyDescriptor(object);
 			addContextRelationPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -148,6 +149,28 @@ public class HoldsAtBetweenItemProvider
 				 getString("_UI_HoldsAtBetween_contextRelation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HoldsAtBetween_contextRelation_feature", "_UI_HoldsAtBetween_type"),
 				 ModelPackage.Literals.HOLDS_AT_BETWEEN__CONTEXT_RELATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HoldsAtBetween_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HoldsAtBetween_parameters_feature", "_UI_HoldsAtBetween_type"),
+				 ModelPackage.Literals.HOLDS_AT_BETWEEN__PARAMETERS,
 				 true,
 				 false,
 				 true,

@@ -9,13 +9,16 @@ import model.Parameter;
 
 import java.util.ArrayList;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link model.impl.HappensImpl#getTime <em>Time</em>}</li>
  *   <li>{@link model.impl.HappensImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link model.impl.HappensImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +66,16 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 */
 	protected Event event;
 	
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
+
 	protected ArrayList<Parameter> correctedParam;
 	
 	protected boolean parametersChanged;
@@ -163,6 +177,18 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ModelPackage.HAPPENS__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -171,6 +197,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 			case ModelPackage.HAPPENS__EVENT:
 				if (resolve) return getEvent();
 				return basicGetEvent();
+			case ModelPackage.HAPPENS__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,6 +208,7 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -188,6 +217,10 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 				return;
 			case ModelPackage.HAPPENS__EVENT:
 				setEvent((Event)newValue);
+				return;
+			case ModelPackage.HAPPENS__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -207,6 +240,9 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 			case ModelPackage.HAPPENS__EVENT:
 				setEvent((Event)null);
 				return;
+			case ModelPackage.HAPPENS__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -223,6 +259,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 				return time != TIME_EDEFAULT;
 			case ModelPackage.HAPPENS__EVENT:
 				return event != null;
+			case ModelPackage.HAPPENS__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

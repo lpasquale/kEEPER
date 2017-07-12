@@ -62,6 +62,7 @@ public class HappensItemProvider
 
 			addTimePropertyDescriptor(object);
 			addEventPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,6 +103,28 @@ public class HappensItemProvider
 				 getString("_UI_Happens_event_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Happens_event_feature", "_UI_Happens_type"),
 				 ModelPackage.Literals.HAPPENS__EVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Happens_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Happens_parameters_feature", "_UI_Happens_type"),
+				 ModelPackage.Literals.HAPPENS__PARAMETERS,
 				 true,
 				 false,
 				 true,

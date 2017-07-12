@@ -471,7 +471,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 							.execute(new ICommandProxy(propertyOperation));
 				}
 			}
-
+		
 			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
 			for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
 				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(i).getName())) {
@@ -482,7 +482,16 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 				}
 			}
-
+			
+			// TODO: Creating the dynamic parameters HERE
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens);
+			dpd.open();
+			//Handling cancel and ok button
+			
+			
+			
+			
+			
 			return newHappens;
 
 		} catch (IOException e) {

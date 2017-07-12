@@ -552,13 +552,22 @@ public interface ModelPackage extends EPackage {
 	int HOLDS_AT__CONTEXT_RELATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT__PARAMETERS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Holds At</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOLDS_AT_FEATURE_COUNT = 3;
+	int HOLDS_AT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Holds At</em>' class.
@@ -598,13 +607,22 @@ public interface ModelPackage extends EPackage {
 	int HAPPENS__EVENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAPPENS__PARAMETERS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Happens</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAPPENS_FEATURE_COUNT = 2;
+	int HAPPENS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Happens</em>' class.
@@ -662,13 +680,22 @@ public interface ModelPackage extends EPackage {
 	int HOLDS_AT_BETWEEN__CONTEXT_RELATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN__PARAMETERS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Holds At Between</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOLDS_AT_BETWEEN_FEATURE_COUNT = 4;
+	int HOLDS_AT_BETWEEN_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Holds At Between</em>' class.
@@ -1809,6 +1836,17 @@ public interface ModelPackage extends EPackage {
 	EReference getHoldsAt_ContextRelation();
 
 	/**
+	 * Returns the meta object for the reference list '{@link model.HoldsAt#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see model.HoldsAt#getParameters()
+	 * @see #getHoldsAt()
+	 * @generated
+	 */
+	EReference getHoldsAt_Parameters();
+
+	/**
 	 * Returns the meta object for class '{@link model.Happens <em>Happens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1839,6 +1877,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHappens_Event();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Happens#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see model.Happens#getParameters()
+	 * @see #getHappens()
+	 * @generated
+	 */
+	EReference getHappens_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link model.HoldsAtBetween <em>Holds At Between</em>}'.
@@ -1893,6 +1942,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHoldsAtBetween_ContextRelation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.HoldsAtBetween#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see model.HoldsAtBetween#getParameters()
+	 * @see #getHoldsAtBetween()
+	 * @generated
+	 */
+	EReference getHoldsAtBetween_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link model.Initially <em>Initially</em>}'.
@@ -2713,6 +2773,14 @@ public interface ModelPackage extends EPackage {
 		EReference HOLDS_AT__CONTEXT_RELATION = eINSTANCE.getHoldsAt_ContextRelation();
 
 		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOLDS_AT__PARAMETERS = eINSTANCE.getHoldsAt_Parameters();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.HappensImpl <em>Happens</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2737,6 +2805,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HAPPENS__EVENT = eINSTANCE.getHappens_Event();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAPPENS__PARAMETERS = eINSTANCE.getHappens_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.HoldsAtBetweenImpl <em>Holds At Between</em>}' class.
@@ -2779,6 +2855,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOLDS_AT_BETWEEN__CONTEXT_RELATION = eINSTANCE.getHoldsAtBetween_ContextRelation();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOLDS_AT_BETWEEN__PARAMETERS = eINSTANCE.getHoldsAtBetween_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.InitiallyImpl <em>Initially</em>}' class.

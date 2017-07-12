@@ -2,6 +2,7 @@
  */
 package model;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.HoldsAt#getTime <em>Time</em>}</li>
  *   <li>{@link model.HoldsAt#isIsHolding <em>Is Holding</em>}</li>
  *   <li>{@link model.HoldsAt#getContextRelation <em>Context Relation</em>}</li>
+ *   <li>{@link model.HoldsAt#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getHoldsAt()
@@ -100,5 +102,21 @@ public interface HoldsAt extends EObject {
 	 * @generated
 	 */
 	void setContextRelation(ContextRelation value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * The list contents are of type {@link model.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' reference list.
+	 * @see model.ModelPackage#getHoldsAt_Parameters()
+	 * @model
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
 
 } // HoldsAt

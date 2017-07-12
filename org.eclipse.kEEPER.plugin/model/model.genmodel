@@ -50,16 +50,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAt/time"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAt/isHolding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//HoldsAt/contextRelation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//HoldsAt/parameters"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Happens">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Happens/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Happens/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Happens/parameters"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//HoldsAtBetween">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAtBetween/initialTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAtBetween/endingTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAtBetween/isHolding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//HoldsAtBetween/contextRelation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//HoldsAtBetween/parameters"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Initially">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Initially/contextRelation"/>

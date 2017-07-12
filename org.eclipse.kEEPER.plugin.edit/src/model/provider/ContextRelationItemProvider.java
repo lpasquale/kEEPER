@@ -13,8 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.impl.EAttributeImpl;
-import org.eclipse.emf.ecore.impl.EReferenceImpl;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -215,16 +213,6 @@ public class ContextRelationItemProvider
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		System.out.println("notifyChanged");
-		System.out.println(notification);
-
-		// If the list of types have been changed update the diagram
-		if (notification.getFeature() instanceof EReferenceImpl){
-			if (((EReferenceImpl)notification.getFeature()).getName().equals("types")){
-				System.out.println("Bingo!!!!!");
-				// Update the diagram
-			}
-		}
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContextRelation.class)) {
