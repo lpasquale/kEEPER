@@ -250,13 +250,22 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__TYPES = 4;
 
 	/**
+	 * The feature id for the '<em><b>Type Names</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__TYPE_NAMES = 5;
+
+	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 5;
+	int CONTEXT_RELATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -1610,6 +1619,17 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_Types();
 
 	/**
+	 * Returns the meta object for the attribute '{@link model.ContextRelation#getTypeNames <em>Type Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Names</em>'.
+	 * @see model.ContextRelation#getTypeNames()
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	EAttribute getContextRelation_TypeNames();
+
+	/**
 	 * Returns the meta object for the reference '{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2593,6 +2613,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTEXT_RELATION__TYPES = eINSTANCE.getContextRelation_Types();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Names</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_RELATION__TYPE_NAMES = eINSTANCE.getContextRelation_TypeNames();
 
 		/**
 		 * The meta object literal for the '<em><b>Initial Complex Event</b></em>' reference feature.

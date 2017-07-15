@@ -148,12 +148,12 @@ public class HappensItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		Happens happens = (Happens)object;
-		return getString("_UI_Happens_type") + " " + happens.getTime();
+		return getString("_UI_Happens_type") + " " + happens.getEvent().getName();
 	}
 	
 

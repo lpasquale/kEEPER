@@ -40,7 +40,7 @@ public class AgentParamImpl extends ParameterImpl implements AgentParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AgentParamImpl() {
+	public AgentParamImpl() {
 		super();
 	}
 

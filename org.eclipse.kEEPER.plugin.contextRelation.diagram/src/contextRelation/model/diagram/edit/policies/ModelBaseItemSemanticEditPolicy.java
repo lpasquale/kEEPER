@@ -142,7 +142,7 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	* @generated
 	*/
-	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {		
+	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {
 		if (req instanceof CreateRelationshipRequest) {
 			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
 		} else if (req instanceof CreateElementRequest) {
@@ -187,7 +187,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		System.out.println("getCreateCommand");
 		return null;
 	}
 
@@ -195,7 +194,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	* @generated
 	*/
 	protected Command getSetCommand(SetRequest req) {
-
 		return null;
 	}
 

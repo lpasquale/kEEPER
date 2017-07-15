@@ -32,9 +32,18 @@
           xsi:type="gmfgraph:InvisibleRectangle"
           name="holdsAtBetween"/>
     </descriptors>
+    <descriptors
+        name="ParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="Parameter"/>
+    </descriptors>
   </figures>
   <figures
       name="links"/>
+  <nodes
+      name="ParameterNode"
+      figure="ParameterFigure"/>
   <nodes
       name="BehavDescNode"
       figure="behavDescFigure"/>

@@ -124,6 +124,24 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getHoldsAtBetween().isSuperTypeOf(domainElement.eClass())) {
 				return behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getAgentParam().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getObserverParam().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getGeneralParam().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getAgent().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getGeneralType().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -159,6 +177,24 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -216,6 +252,12 @@ public class ModelVisualIDRegistry {
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

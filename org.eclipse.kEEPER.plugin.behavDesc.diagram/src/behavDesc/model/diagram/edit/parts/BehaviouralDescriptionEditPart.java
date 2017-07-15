@@ -163,8 +163,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 
-		
-		
 		System.out.println("FileName: " + diagramFileName + "  Domain File path: " + editFilesPath);
 		System.out.println("Final editor: " + editor);
 	}
@@ -338,7 +336,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
 				getPrimaryShape().repaint();
-				} // Happens
+			} // Happens
 				break;
 
 			case "Holds at": {
@@ -346,7 +344,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
-				} // Holds at
+			} // Holds at
 				break;
 
 			case "Not Holds at": {
@@ -355,14 +353,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
 
-				} // Holds at
+			} // Holds at
 				break;
 			case "Holds at between": {
 				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(true);
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
-				} // Holds at between
+			} // Holds at between
 				break;
 
 			case "Not holds at between": {
@@ -370,7 +368,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
-				} // Not holds at between
+			} // Not holds at between
 				break;
 
 			}
@@ -384,12 +382,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		try {
 			// Parsing event file
 			LoadEvents loadEvents = new LoadEvents(editFilesPath + "/default.eventModel");
-			
+
 			Display display = PlatformUI.getWorkbench().getDisplay();
 			Shell shell = new Shell(display);
-			
+
 			Event ev = null;
-			
+
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
 			String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
@@ -405,41 +403,22 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			}
 
 			String eventSelected = (String) showEventsDialog.getResult()[0];
-			
+
 			System.out.println("event selected: " + eventSelected);
 			int index = 0;
-			do{
-				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(index).getName())){
+			do {
+				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(index).getName())) {
 					ev = loadEvents.getEnvironment().getEvents().get(index);
 				}
 				index++;
-			}while ((index < loadEvents.getEnvironment().getEvents().size()) && ev == null);
-			
-			// Requests to the user if he/she wants to use the same parameters or new ones
-	/*		MessageDialog dialog = new MessageDialog(shell, 
-					"Parameter Selection", 
-					null,
-					"Do you want to use the predefined parameters?", 
-					MessageDialog.QUESTION, 
-					new String[] { "Same parameters","Choose new parameters"}, 
-					0);
-			int result = dialog.open();
-			System.out.println("REsult: " + result);
-			
-			// If the user chooses to create new parameter(s)
-			ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
-			if (result == 1) {
-				
-				newParameters = handlingEventParameters(ev, shell);
-				
-			}
-			*/
+			} while ((index < loadEvents.getEnvironment().getEvents().size()) && ev == null);
+
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int timeSelection = createSingleTimeInstantsDialog();
-			
+
 			if (timeSelection == -1)
 				return null;
-			
+
 			// Creating Happens
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002, editor.getDiagramEditPart());
@@ -454,14 +433,13 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHappens = (HappensImpl) cra.resolve();
-					
+
 					// Setting the happens EReference of the Behavioural Description
 					SetRequest setRequestHappens = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_Happens(), newHappens);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHappens);
 					editor.getDiagramEditDomain().getDiagramCommandStack()
 							.execute(new ICommandProxy(behavDescOperation));
-					
 
 					// Setting the property of Happens
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
@@ -471,7 +449,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 							.execute(new ICommandProxy(propertyOperation));
 				}
 			}
-		
+
 			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
 			for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
 				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(i).getName())) {
@@ -482,16 +460,26 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 				}
 			}
-			
+
 			// TODO: Creating the dynamic parameters HERE
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens);
-			dpd.open();
-			//Handling cancel and ok button
-			
-			
-			
-			
-			
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath);
+
+			if (dpd.open() != Window.OK) {
+				return null;
+			}
+
+			System.out.println("SONO IN BDEDITPART!");
+			if (newHappens.getParameters().isEmpty()) {
+				for (int i = 0; i < dpd.getResults().size(); i++) {
+
+				}
+			} else {
+				for (int i = 0; i < dpd.getResults().size(); i++) {
+					// Add the parameters that are new
+
+				}
+			}
+
 			return newHappens;
 
 		} catch (IOException e) {
@@ -528,10 +516,10 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 			// Creating third dialog where the user inputs the time instant where to place the event
 			int timeSelection = createSingleTimeInstantsDialog();
-			
+
 			if (timeSelection == -1)
 				return null;
-			
+
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003, editor.getDiagramEditPart());
@@ -740,91 +728,91 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 		return timeSelectedArray;
 	}
-	
-/*	private ArrayList<Parameter> handlingEventParameters(Event ev, Shell shell){
-		
-		ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
-		
-		ElementListSelectionDialog parametersSelection = new ElementListSelectionDialog(null, new LabelProvider());
-	
-		ArrayList<String> param = new ArrayList<String>();
-		
-		System.out.println("Evento selezionato: " + ev);
-	
-		param.add(ev.getAgent().getName());
-		
-		for (int i = 0; i < ev.getParameters().size(); i++){
-			System.out.println("Param " + ev.getParameters().get(i).getType().getName());
+
+	/*	private ArrayList<Parameter> handlingEventParameters(Event ev, Shell shell){
 			
-			param.add(ev.getParameters().get(i).getName());
-		}
-		if (ev instanceof PrimitiveEventImpl){
-			param.add(((PrimitiveEventImpl)ev).getObserver().getName());
-		}
-		
-		parametersSelection.setElements(param.toArray());
-		parametersSelection.setMultipleSelection(true);
-		parametersSelection.setTitle("Select the parameters of the event you want to create");
-		parametersSelection.open();
-		
-		
-		EventParametersDialog dialog = new EventParametersDialog(parametersSelection.getResult(), shell);
-		dialog.create();
-		if (dialog.open() == Window.OK) {
+			ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
 			
-			// Creating the new Agent
-			Agent newAgent = new AgentImpl();
-			newAgent.setName(ev.getAgent().getName());
-			newAgent.setPosition(ev.getAgent().getPosition());
-			newAgent.setType(ev.getAgent().getType());
-			newParameters.add(newAgent);
+			ElementListSelectionDialog parametersSelection = new ElementListSelectionDialog(null, new LabelProvider());
+		
+			ArrayList<String> param = new ArrayList<String>();
 			
-			// Creating the new parameters
+			System.out.println("Evento selezionato: " + ev);
+		
+			param.add(ev.getAgent().getName());
+			
 			for (int i = 0; i < ev.getParameters().size(); i++){
-				Parameter newParameter = new ParameterImpl();
-				newParameter.setName(ev.getParameters().get(i).getName());
-				newParameter.setPosition(ev.getParameters().get(i).getPosition());
-				newParameter.setType(ev.getParameters().get(i).getType());
-				newParameters.add(newParameter);
+				System.out.println("Param " + ev.getParameters().get(i).getType().getName());
+				
+				param.add(ev.getParameters().get(i).getName());
 			}
-			
 			if (ev instanceof PrimitiveEventImpl){
-				// Creating the new Observer
-				Observer newObserver = new ObserverImpl();
-				newObserver.setName(((PrimitiveEvent) ev).getObserver().getName());
-				newObserver.setPosition(((PrimitiveEvent) ev).getObserver().getPosition());
-				newObserver.setType(((PrimitiveEvent) ev).getObserver().getType());
-				newParameters.add(newObserver);
+				param.add(((PrimitiveEventImpl)ev).getObserver().getName());
 			}
 			
-			for (int i = 0; i < newParameters.size(); i++){
-				System.out.println("Parameter: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
-
-			}
-		
-			System.out.println(dialog.getMap());
+			parametersSelection.setElements(param.toArray());
+			parametersSelection.setMultipleSelection(true);
+			parametersSelection.setTitle("Select the parameters of the event you want to create");
+			parametersSelection.open();
 			
-			// Handling result
-			// Loop for each parameter the user wants to change			
-			for (int i = 0; i < newParameters.size(); i++){
-				Iterator it = dialog.getMap().entrySet().iterator();
-				while (it.hasNext()) {
-					Map.Entry entry = (Map.Entry)it.next();
-					// Compare the keys of the map with the names of the new parameters in the list newParameters
-					if (((String)entry.getKey()).equals(newParameters.get(i).getName())){
-						newParameters.get(i).setNewNumber((int) entry.getValue());
-					} 
+			
+			EventParametersDialog dialog = new EventParametersDialog(parametersSelection.getResult(), shell);
+			dialog.create();
+			if (dialog.open() == Window.OK) {
+				
+				// Creating the new Agent
+				Agent newAgent = new AgentImpl();
+				newAgent.setName(ev.getAgent().getName());
+				newAgent.setPosition(ev.getAgent().getPosition());
+				newAgent.setType(ev.getAgent().getType());
+				newParameters.add(newAgent);
+				
+				// Creating the new parameters
+				for (int i = 0; i < ev.getParameters().size(); i++){
+					Parameter newParameter = new ParameterImpl();
+					newParameter.setName(ev.getParameters().get(i).getName());
+					newParameter.setPosition(ev.getParameters().get(i).getPosition());
+					newParameter.setType(ev.getParameters().get(i).getType());
+					newParameters.add(newParameter);
 				}
+				
+				if (ev instanceof PrimitiveEventImpl){
+					// Creating the new Observer
+					Observer newObserver = new ObserverImpl();
+					newObserver.setName(((PrimitiveEvent) ev).getObserver().getName());
+					newObserver.setPosition(((PrimitiveEvent) ev).getObserver().getPosition());
+					newObserver.setType(((PrimitiveEvent) ev).getObserver().getType());
+					newParameters.add(newObserver);
+				}
+				
+				for (int i = 0; i < newParameters.size(); i++){
+					System.out.println("Parameter: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
+	
+				}
+			
+				System.out.println(dialog.getMap());
+				
+				// Handling result
+				// Loop for each parameter the user wants to change			
+				for (int i = 0; i < newParameters.size(); i++){
+					Iterator it = dialog.getMap().entrySet().iterator();
+					while (it.hasNext()) {
+						Map.Entry entry = (Map.Entry)it.next();
+						// Compare the keys of the map with the names of the new parameters in the list newParameters
+						if (((String)entry.getKey()).equals(newParameters.get(i).getName())){
+							newParameters.get(i).setNewNumber((int) entry.getValue());
+						} 
+					}
+				}
+				
+				// Verification
+				for (int i = 0; i < newParameters.size(); i++){
+					System.out.println("Parameter_NEW: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
+	
+				}	
 			}
 			
-			// Verification
-			for (int i = 0; i < newParameters.size(); i++){
-				System.out.println("Parameter_NEW: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
-
-			}	
+			return newParameters;
 		}
-		
-		return newParameters;
-	}
-*/
+	*/
 }

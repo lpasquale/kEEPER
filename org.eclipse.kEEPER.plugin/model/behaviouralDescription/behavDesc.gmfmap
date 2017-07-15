@@ -48,6 +48,70 @@
           href="behavDesc.gmfgraph#HoldsAtBetween"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/parameters"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//AgentParam"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/parameters"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//ObserverParam"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/parameters"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//GeneralParam"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Agent"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//GeneralType"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Observer"/>
+      <diagramNode
+          href="behavDesc.gmfgraph#ParameterNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+  </nodes>
   <diagram>
     <diagramCanvas
         href="behavDesc.gmfgraph#default"/>

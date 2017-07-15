@@ -65,6 +65,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Happens());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAts());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAtBetweens());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Parameters());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Types());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -102,6 +104,12 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

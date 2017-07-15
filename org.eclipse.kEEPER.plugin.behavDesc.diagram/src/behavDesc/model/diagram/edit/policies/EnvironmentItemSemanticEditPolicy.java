@@ -36,6 +36,24 @@ public class EnvironmentItemSemanticEditPolicy
 		if (behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004 == req.getElementType()) {
 			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.HoldsAtBetweenCreateCommand(req));
 		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.AgentParam_2005 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.AgentParamCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.ObserverParam_2006 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.ObserverParamCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.GeneralParam_2007 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.GeneralParamCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.Agent_2008 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.AgentCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.GeneralType_2009 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.GeneralTypeCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.Observer_2010 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.ObserverCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 

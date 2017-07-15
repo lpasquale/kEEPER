@@ -31,6 +31,7 @@ public class ModelTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ModelTests("model Tests");
+		suite.addTestSuite(ContextRelationTest.class);
 		return suite;
 	}
 

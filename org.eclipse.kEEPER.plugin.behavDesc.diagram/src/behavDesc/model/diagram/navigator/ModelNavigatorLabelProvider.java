@@ -16,10 +16,16 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import model.Agent;
+import model.AgentParam;
 import model.BehaviouralDescription;
+import model.GeneralParam;
+import model.GeneralType;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+import model.Observer;
+import model.ObserverParam;
 
 /**
  * @generated
@@ -90,6 +96,24 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAtBetween", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004);
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?AgentParam", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.AgentParam_2005);
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ObserverParam", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.ObserverParam_2006);
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralParam", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.GeneralParam_2007);
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Agent", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.Agent_2008);
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralType", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.GeneralType_2009);
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.Observer_2010);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -152,6 +176,18 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getHoldsAt_2003Text(view);
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004Text(view);
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+			return getAgentParam_2005Text(view);
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+			return getObserverParam_2006Text(view);
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+			return getGeneralParam_2007Text(view);
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+			return getAgent_2008Text(view);
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2009Text(view);
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
+			return getObserver_2010Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -215,6 +251,90 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		} else {
 			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
 					.logError("No domain element for view with visualID = " + 2004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAgentParam_2005Text(View view) {
+		AgentParam domainModelElement = (AgentParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getObserverParam_2006Text(View view) {
+		ObserverParam domainModelElement = (ObserverParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralParam_2007Text(View view) {
+		GeneralParam domainModelElement = (GeneralParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2007); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAgent_2008Text(View view) {
+		Agent domainModelElement = (Agent) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralType_2009Text(View view) {
+		GeneralType domainModelElement = (GeneralType) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2009); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getObserver_2010Text(View view) {
+		Observer domainModelElement = (Observer) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

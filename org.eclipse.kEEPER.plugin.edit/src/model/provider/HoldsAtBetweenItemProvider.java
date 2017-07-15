@@ -194,12 +194,12 @@ public class HoldsAtBetweenItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		HoldsAtBetween holdsAtBetween = (HoldsAtBetween)object;
-		return getString("_UI_HoldsAtBetween_type") + " " + holdsAtBetween.getInitialTime();
+		return getString("_UI_HoldsAtBetween_type") + " " + holdsAtBetween.getContextRelation().getName();
 	}
 	
 

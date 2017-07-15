@@ -225,6 +225,30 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					behavDesc.model.diagram.part.ModelVisualIDRegistry
 							.getType(behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 		}

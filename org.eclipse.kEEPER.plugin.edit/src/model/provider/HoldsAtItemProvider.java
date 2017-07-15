@@ -171,12 +171,12 @@ public class HoldsAtItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		HoldsAt holdsAt = (HoldsAt)object;
-		return getString("_UI_HoldsAt_type") + " " + holdsAt.getTime();
+		return getString("_UI_HoldsAt_type") + " " + holdsAt.getContextRelation().getName();
 	}
 	
 

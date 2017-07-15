@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -33,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#isValue <em>Value</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link model.impl.ContextRelationImpl#getTypeNames <em>Type Names</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,6 +109,26 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	protected EList<Type> types;
 
 	/**
+	 * The default value of the '{@link #getTypeNames() <em>Type Names</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeNames()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_NAMES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTypeNames() <em>Type Names</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeNames()
+	 * @generated
+	 * @ordered
+	 */
+	protected String typeNames = TYPE_NAMES_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -179,6 +199,33 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.CONTEXT_RELATION__TYPES);
 		}
 		return types;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTypeNames() {
+		
+		return typeNames;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeNames() {
+		String oldTypeNames = typeNames;
+		if (!getTypes().isEmpty())
+			typeNames = getTypes().get(0).getName();
+		if (getTypes().isEmpty()){
+			typeNames = null;
+		}
+		//String oldTypeNames = typeNames;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__TYPE_NAMES, oldTypeNames, typeNames));
 	}
 
 	/**
@@ -277,6 +324,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return isValue();
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				return getTypes();
+			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
+				return getTypeNames();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,6 +354,10 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
 				getTypes().addAll((Collection<? extends Type>)newValue);
+				setTypeNames();
+				return;
+			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
+				setTypeNames();
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,6 +385,10 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
+				setTypeNames();
+				return;
+			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
+				setTypeNames();
 				return;
 		}
 		super.eUnset(featureID);
@@ -355,6 +412,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return value != VALUE_EDEFAULT;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				return types != null && !types.isEmpty();
+			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
+				return TYPE_NAMES_EDEFAULT == null ? typeNames != null : !TYPE_NAMES_EDEFAULT.equals(typeNames);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -373,8 +432,11 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		result.append(name);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", typeNames: ");
+		result.append(typeNames);
 		result.append(')');
 		return result.toString();
 	}
+
 
 } //ContextRelationImpl

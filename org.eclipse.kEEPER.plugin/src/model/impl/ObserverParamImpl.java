@@ -40,7 +40,7 @@ public class ObserverParamImpl extends ParameterImpl implements ObserverParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObserverParamImpl() {
+	public ObserverParamImpl() {
 		super();
 	}
 

@@ -40,7 +40,7 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GeneralParamImpl() {
+	public GeneralParamImpl() {
 		super();
 	}
 

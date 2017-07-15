@@ -64,6 +64,7 @@ public class ContextRelationItemProvider
 			addEndingComplexEventPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 			addTypesPropertyDescriptor(object);
+			addTypeNamesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,28 @@ public class ContextRelationItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type Names feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypeNamesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextRelation_typeNames_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextRelation_typeNames_feature", "_UI_ContextRelation_type"),
+				 ModelPackage.Literals.CONTEXT_RELATION__TYPE_NAMES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -218,6 +241,8 @@ public class ContextRelationItemProvider
 		switch (notification.getFeatureID(ContextRelation.class)) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
 			case ModelPackage.CONTEXT_RELATION__VALUE:
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

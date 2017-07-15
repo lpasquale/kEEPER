@@ -1,5 +1,7 @@
 package contextRelation.model.diagram.edit.parts;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
 import org.eclipse.draw2d.FlowLayout;
@@ -10,6 +12,8 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
@@ -22,8 +26,18 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
+import contextRelation.model.diagram.part.ModelDiagramEditor;
 import model.ContextRelation;
 
 /**
@@ -46,6 +60,8 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
+	private ModelDiagramEditor editor;
+
 	/*
 	 * @generated NOT
 	 */
@@ -57,7 +73,37 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 	public ContextRelationEditPart(View view) {
 		super(view);
 		this.cr = (ContextRelation) view.getElement();
+		// Variables essentials to get the workbench of THIS Primitive Event
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+
+		// Initializing the editor
+		for (int i = 0; i < editorPart.length; i++) {
+			if (editorPart[i].getEditor(true) instanceof ModelDiagramEditor) {
+				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())) {
+					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
+				}
+				System.out.println("Editor: " + editor);
+
+			}
+		}
+		/*	Thread thread = new Thread("New Thread") {
+				public void run(){
+					while(true){
+						contentPane.repaint();
+			        }
+			        	
+				}
+			};
 		
+		
+			   thread.start();
+			*/
+
 	}
 
 	/**
@@ -133,6 +179,9 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationTypeNamesEditPart) {
 			return true;
 		}
 		return false;
@@ -259,6 +308,13 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 				.getType(contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart.VISUAL_ID));
 	}
 
+	@Override
+	public void performRequest(Request req) {
+		if (req.getType() == RequestConstants.REQ_OPEN) {
+			System.out.println("Double click!");
+		}
+	}
+
 	/**
 	 * @generated
 	 */
@@ -274,12 +330,12 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		private WrappingLabel fFigureContextRelationName;
 
 		private ArrayList<WrappingLabel> fFigureContextRelationTypes;
-
+		
 		/**
 		 * @generated
 		 */
 		public ContextRelationFigure() {
-			
+
 			FlowLayout layoutThis = new FlowLayout();
 			layoutThis.setStretchMinorAxis(false);
 			layoutThis.setMinorAlignment(FlowLayout.ALIGN_LEFTTOP);
@@ -295,13 +351,13 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated NOT
+		 * @generated
 		 */
 		private void createContents() {
+
 			fFigureContextRelationName = new WrappingLabel();
 			fFigureContextRelationName.setText("---NAME---");
 			fFigureContextRelationName.setAlignment(PositionConstants.CENTER);
-
 
 			fFigureContextRelationTitle = new WrappingLabel();
 			fFigureContextRelationTitle.setText("<<Context Relation>>");
@@ -321,11 +377,13 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 			for (int i = 0; i < fFigureContextRelationTypes.size(); i++) {
 				this.add(fFigureContextRelationTypes.get(i));
 			}
+
+
 		}
 
 		/**
-		 * @generated
-		 */
+				 * @generated
+				 */
 		public WrappingLabel getFigureContextRelationTitle() {
 			return fFigureContextRelationTitle;
 		}

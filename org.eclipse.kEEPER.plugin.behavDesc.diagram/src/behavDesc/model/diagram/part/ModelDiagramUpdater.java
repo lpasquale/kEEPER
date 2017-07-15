@@ -19,6 +19,8 @@ import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.ModelPackage;
+import model.Parameter;
+import model.Type;
 
 /**
  * @generated
@@ -78,6 +80,38 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getParameters().iterator(); it.hasNext();) {
+			Parameter childElement = (Parameter) it.next();
+			int visualID = behavDesc.model.diagram.part.ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getTypes().iterator(); it.hasNext();) {
+			Type childElement = (Type) it.next();
+			int visualID = behavDesc.model.diagram.part.ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -96,6 +130,18 @@ public class ModelDiagramUpdater {
 			return getHoldsAt_2003ContainedLinks(view);
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+			return getAgentParam_2005ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+			return getObserverParam_2006ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+			return getGeneralParam_2007ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+			return getAgent_2008ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2009ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
+			return getObserver_2010ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -113,6 +159,18 @@ public class ModelDiagramUpdater {
 			return getHoldsAt_2003IncomingLinks(view);
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+			return getAgentParam_2005IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+			return getObserverParam_2006IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+			return getGeneralParam_2007IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+			return getAgent_2008IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2009IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
+			return getObserver_2010IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -130,6 +188,18 @@ public class ModelDiagramUpdater {
 			return getHoldsAt_2003OutgoingLinks(view);
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentParamEditPart.VISUAL_ID:
+			return getAgentParam_2005OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
+			return getObserverParam_2006OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
+			return getGeneralParam_2007OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
+			return getAgent_2008OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2009OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
+			return getObserver_2010OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -172,6 +242,49 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgentParam_2005ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserverParam_2006ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralParam_2007ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgent_2008ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserver_2010ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001IncomingLinks(
@@ -202,6 +315,48 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgentParam_2005IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserverParam_2006IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralParam_2007IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgent_2008IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserver_2010IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001OutgoingLinks(
@@ -228,6 +383,48 @@ public class ModelDiagramUpdater {
 	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAtBetween_2004OutgoingLinks(
 			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgentParam_2005OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserverParam_2006OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralParam_2007OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgent_2008OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserver_2010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
