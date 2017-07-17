@@ -33,6 +33,8 @@ public class LoadEvents {
 	public LoadEvents(String path) throws IOException{
 		
 		System.out.println("I'm in loadEvents");
+		System.out.println(path);
+
 		this.path = path;
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;

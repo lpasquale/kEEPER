@@ -1,6 +1,7 @@
 package behavDesc.model.diagram.edit.parts;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,6 +16,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
@@ -62,6 +64,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
@@ -127,7 +130,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 	private BehaviouralDescription bd;
 
-	private String editFilesPath, diagramFileName;
+	private String editFilesPath, diagramFileName, diagramFilePath;
 
 	/**
 	* @generated NOT
@@ -159,7 +162,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
 		diagramFileName = workspaceResource.getLocation().lastSegment();
 		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
-
+		diagramFilePath = workspaceResource.getLocation().toString();
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 
@@ -461,25 +464,13 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			// TODO: Creating the dynamic parameters HERE
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath);
+			
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath, diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
 				return null;
 			}
-
-			System.out.println("SONO IN BDEDITPART!");
-			if (newHappens.getParameters().isEmpty()) {
-				for (int i = 0; i < dpd.getResults().size(); i++) {
-
-				}
-			} else {
-				for (int i = 0; i < dpd.getResults().size(); i++) {
-					// Add the parameters that are new
-
-				}
-			}
-
+			
 			return newHappens;
 
 		} catch (IOException e) {
@@ -567,6 +558,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAt, editor, editFilesPath, diagramFilePath);
+
+			if (dpd.open() != Window.OK) {
+				return null;
+			}
+			
 			return newHoldsAt;
 
 		} catch (IOException e) {
@@ -659,6 +656,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
+			}
+			
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAtBetween, editor, editFilesPath, diagramFilePath);
+
+			if (dpd.open() != Window.OK) {
+				return null;
 			}
 
 			return newHoldsAtBetween;

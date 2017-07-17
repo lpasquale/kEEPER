@@ -22,6 +22,8 @@ public class LoadParameters {
 public LoadParameters(String path) throws IOException{
 		
 		System.out.println("I'm in loadParameters");
+		System.out.println(path);
+
 		this.path = path;
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;

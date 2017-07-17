@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -13,6 +15,8 @@ import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -52,16 +56,17 @@ public class DynamicParametersDialog extends Dialog{
 	private HoldsAtBetween newHoldsAtBetween = null;
 	private Listener listener;
 	private ModelDiagramEditor editor;
-	private String editFilesPath;
+	private String editFilesPath, diagramFilePath;
 	
 	private ArrayList<List> lists = new ArrayList<List>();
 	private ArrayList<String> results = new ArrayList<String>();
 	
-	protected DynamicParametersDialog(Shell parentShell, BehaviouralDescription bd, Object newPredicate, ModelDiagramEditor editor, String editFilesPath) {
+	protected DynamicParametersDialog(Shell parentShell, BehaviouralDescription bd, Object newPredicate, ModelDiagramEditor editor, String editFilesPath, String diagramFilePath) {
 		super(parentShell);
 		this.bd = bd;
 		this.editor = editor;
 		this.editFilesPath= editFilesPath;
+		this.diagramFilePath = diagramFilePath;
 		
 		if (newPredicate instanceof Happens)
 			this.newHappens = (Happens) newPredicate;
@@ -81,7 +86,14 @@ public class DynamicParametersDialog extends Dialog{
 	            	   
 	            	   System.out.println(l.getSelection());
 	            	   
-	            	   l.add("It works!");
+	            	   //TODO: Create Input Validator
+	            	  InputDialog id = new InputDialog(parentShell, "Name of parameter", "Enter name", null, null);
+	            	  
+	            	  if (id.open()!= Window.OK){
+	            		  return;
+	            	  }
+	            	  l.add(id.getValue());
+	            	  
 	              }
 	             
 	            }
@@ -120,7 +132,264 @@ public class DynamicParametersDialog extends Dialog{
     
     
     private void createEventMainContent() throws IOException{ 
+    	diagramFilePath = diagramFilePath.replace("_diagram", "");
+	    LoadParameters loadParameters = new LoadParameters(diagramFilePath);
+	    System.out.println(diagramFilePath);
 	    
+	    if (newHappens.getEvent() instanceof PrimitiveEvent){
+	    	PrimitiveEvent ev = (PrimitiveEvent) newHappens.getEvent();
+	    	
+	    	// List of the AGENT PARAMETERS
+	    	Composite agentComp = new Composite(composite, SWT.NONE);
+	    	agentComp.setLayout(new GridLayout(1, true));
+	    	agentComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	Group agentGroup = new Group(agentComp, SWT.NONE);
+	    	agentGroup.setText("Select a parameter");
+	    	agentGroup.setLayout(new GridLayout(1, false));
+	    	agentGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	List agentList = new List(agentGroup, SWT.BORDER);
+	    	agentList.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	// Looking for parameters for the agent type
+	    	for (int i = 0; i < loadParameters.getEnvironment().getParameters().size(); i++){
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof AgentParam){
+	    			if (((AgentParam)loadParameters.getEnvironment().getParameters().get(i)).getAgent().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof ObserverParam){
+	    			if (((ObserverParam)loadParameters.getEnvironment().getParameters().get(i)).getObserver().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof GeneralParam){
+	    			if (((GeneralParam)loadParameters.getEnvironment().getParameters().get(i)).getGeneralParam().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    	}
+	    	
+	    	// Removing double values
+	    	//TODO: Fix bug that occurs at the last index 
+	    	List temp = agentList;
+	    	for (int i = 0; i < agentList.getItems().length; i++){
+	    		for (int j = 0; j < temp.getItems().length; j++){
+	    			if ((i != j) && (agentList.getItems()[i].equals(temp.getItems()[j]))){
+	    				temp.remove(j);
+	    				j--;
+	    			}
+	    		}
+	    	}
+	    	agentList = temp;
+	    	lists.add(agentList);
+
+	        Button agentButton = new Button(agentComp, SWT.PUSH);
+	        agentButton.setText("Add Parameter");
+	        agentButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
+	        agentButton.addListener(SWT.Selection, listener);
+	    	
+	        // List of the GENERAL PARAMETERS
+	    	for (int j = 0; j < newHappens.getEvent().getTypes().size(); j++){
+	    		Composite paramComp = new Composite(composite, SWT.NONE);
+		    	paramComp.setLayout(new GridLayout(1, true));
+		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	Group paramGroup = new Group(paramComp, SWT.NONE);
+		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setLayout(new GridLayout(1, false));
+		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	List paramList = new List(paramGroup, SWT.BORDER);
+		    	paramList.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	// Looking for parameters for the general type
+		    	for (int i = 0; i < loadParameters.getEnvironment().getParameters().size(); i++){
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof AgentParam){
+		    			if (((AgentParam)loadParameters.getEnvironment().getParameters().get(i)).getAgent().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    		
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof ObserverParam){
+		    			if (((ObserverParam)loadParameters.getEnvironment().getParameters().get(i)).getObserver().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    		
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof GeneralParam){
+		    			if (((GeneralParam)loadParameters.getEnvironment().getParameters().get(i)).getGeneralParam().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    	}
+		    	Button paramButton = new Button(paramComp, SWT.PUSH);
+			    paramButton.setText("Add Parameter");
+			    paramButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
+			    paramButton.addListener(SWT.Selection, listener);
+			    List temp2 = paramList;
+		    	for (int i = 0; i < agentList.getItems().length; i++){
+		    		for (int m = 0; m < temp2.getItems().length; m++){
+		    			if ((i != m) && (agentList.getItems()[i].equals(temp2.getItems()[m]))){
+		    				temp2.remove(m);
+		    				m--;
+		    			}
+		    		}
+		    	}
+		    	paramList = temp2;
+			    lists.add(paramList);
+		    	
+	    	}
+	    	
+	    	// List of the OBSERVER PARAMETERS
+	    	Composite observerComp = new Composite(composite, SWT.NONE);
+	    	observerComp.setLayout(new GridLayout(1, true));
+	    	observerComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	Group observerGroup = new Group(observerComp, SWT.NONE);
+	    	observerGroup.setText("Select a parameter");
+	    	observerGroup.setLayout(new GridLayout(1, false));
+	    	observerGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	List observerList = new List(observerGroup, SWT.BORDER);
+	    	observerList.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	// Looking for parameters for the observer type
+	    	for (int i = 0; i < loadParameters.getEnvironment().getParameters().size(); i++){
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof AgentParam){
+	    			if (((AgentParam)loadParameters.getEnvironment().getParameters().get(i)).getAgent().getName().equals(ev.getObserver().getReference().getName())){
+	    				observerList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof ObserverParam){
+	    			if (((ObserverParam)loadParameters.getEnvironment().getParameters().get(i)).getObserver().getName().equals(ev.getObserver().getReference().getName())){
+	    				observerList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof GeneralParam){
+	    			if (((GeneralParam)loadParameters.getEnvironment().getParameters().get(i)).getGeneralParam().getName().equals(ev.getObserver().getReference().getName())){
+	    				observerList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    	}
+	    	Button observerButton = new Button(observerComp, SWT.PUSH);
+		    observerButton.setText("Add Parameter");
+		    observerButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
+		    observerButton.addListener(SWT.Selection, listener);
+		    
+		    List temp3 = observerList;
+	    	for (int i = 0; i < agentList.getItems().length; i++){
+	    		for (int j = 0; j < temp3.getItems().length; j++){
+	    			if ((i != j) && (agentList.getItems()[i].equals(temp3.getItems()[j]))){
+	    				temp3.remove(j);
+	    				j--;
+	    			}
+	    		}
+	    	}
+	    	observerList = temp3;
+		    lists.add(observerList);
+	    	
+	    	
+	    } // Primitive Event
+	    if (newHappens.getEvent() instanceof ComplexEvent){
+	    	ComplexEvent ev = (ComplexEvent) newHappens.getEvent();
+	    	
+	    	// List of the AGENT PARAMETERS
+	    	Composite agentComp = new Composite(composite, SWT.NONE);
+	    	agentComp.setLayout(new GridLayout(1, true));
+	    	agentComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	Group agentGroup = new Group(agentComp, SWT.NONE);
+	    	agentGroup.setText("Select a parameter");
+	    	agentGroup.setLayout(new GridLayout(1, false));
+	    	agentGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	List agentList = new List(agentGroup, SWT.BORDER);
+	    	agentList.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+	    	// Looking for parameters for the agent type
+	    	for (int i = 0; i < loadParameters.getEnvironment().getParameters().size(); i++){
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof AgentParam){
+	    			if (((AgentParam)loadParameters.getEnvironment().getParameters().get(i)).getAgent().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof ObserverParam){
+	    			if (((ObserverParam)loadParameters.getEnvironment().getParameters().get(i)).getObserver().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    		
+	    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof GeneralParam){
+	    			if (((GeneralParam)loadParameters.getEnvironment().getParameters().get(i)).getGeneralParam().getName().equals(ev.getAgent().getReference().getName())){
+	    				agentList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+	    			}
+	    		}
+	    	}
+	    	List temp = agentList;
+	    	for (int i = 0; i < agentList.getItems().length; i++){
+	    		for (int j = 0; j < temp.getItems().length; j++){
+	    			if ((i != j) && (agentList.getItems()[i].equals(temp.getItems()[j]))){
+	    				temp.remove(j);
+	    				j--;
+	    			}
+	    		}
+	    	}
+	    	agentList = temp;
+	    	lists.add(agentList);
+
+	        Button agentButton = new Button(agentComp, SWT.PUSH);
+	        agentButton.setText("Add Parameter");
+	        agentButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
+	        agentButton.addListener(SWT.Selection, listener);
+	    	
+	        // List of the GENERAL PARAMETERS
+	    	for (int j = 0; j < newHappens.getEvent().getTypes().size(); j++){
+	    		Composite paramComp = new Composite(composite, SWT.NONE);
+		    	paramComp.setLayout(new GridLayout(1, true));
+		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	Group paramGroup = new Group(paramComp, SWT.NONE);
+		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setLayout(new GridLayout(1, false));
+		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	List paramList = new List(paramGroup, SWT.BORDER);
+		    	paramList.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		    	// Looking for parameters for the general type
+		    	for (int i = 0; i < loadParameters.getEnvironment().getParameters().size(); i++){
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof AgentParam){
+		    			if (((AgentParam)loadParameters.getEnvironment().getParameters().get(i)).getAgent().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    		
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof ObserverParam){
+		    			if (((ObserverParam)loadParameters.getEnvironment().getParameters().get(i)).getObserver().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    		
+		    		if (loadParameters.getEnvironment().getParameters().get(i) instanceof GeneralParam){
+		    			if (((GeneralParam)loadParameters.getEnvironment().getParameters().get(i)).getGeneralParam().getName().equals(ev.getTypes().get(j).getReference().getName())){
+		    				paramList.add(loadParameters.getEnvironment().getParameters().get(i).getName());
+		    			}
+		    		}
+		    	}
+		    	Button paramButton = new Button(paramComp, SWT.PUSH);
+			    paramButton.setText("Add Parameter");
+			    paramButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
+			    paramButton.addListener(SWT.Selection, listener);
+			    List temp2 = paramList;
+		    	for (int i = 0; i < agentList.getItems().length; i++){
+		    		for (int m = 0; m < temp2.getItems().length; m++){
+		    			if ((i != m) && (agentList.getItems()[i].equals(temp2.getItems()[m]))){
+		    				temp2.remove(m);
+		    				m--;
+		    			}
+		    		}
+		    	}
+		    	paramList = temp2;
+			    lists.add(paramList);
+		    	
+	    	} 
+	    
+	    } // Complex event
+	    
+	  
+	    /*
 	    if (newHappens.getEvent() instanceof PrimitiveEvent){
 	    	PrimitiveEvent ev = (PrimitiveEvent) newHappens.getEvent();
 	    	
@@ -502,14 +771,23 @@ public class DynamicParametersDialog extends Dialog{
 			    
 			    lists.add(paramList);
 		    	
-		    }
+		    } 
 
-	    }
+	    } */
 
     }
 	    
     private void createCrMainContent() throws IOException{ 
 
+    	if (newHoldsAt != null){
+    		System.out.println("NEW HOLDS AT");
+
+    	}
+    	
+    	if (newHoldsAtBetween != null){
+    		
+    		System.out.println("NEW HOLDS AT BETWEEN");
+    	}
     }
     
     public ArrayList<String> getResults(){
@@ -524,15 +802,24 @@ public class DynamicParametersDialog extends Dialog{
     	if (newHappens != null){    		
     		if (newHappens.getEvent() instanceof PrimitiveEvent){   			
     			try{
-    				createDynamicHappensParameter(1, results.get(0));        		
+    				createDynamicHappensParameter(1, results.get(0), 1);        		
         			for (int i = 1; i < results.size() - 1; i++ ){
-            			createDynamicHappensParameter(3, results.get(i));
+            			createDynamicHappensParameter(3, results.get(i), i+1);
         			}
-        			createDynamicHappensParameter(2, results.get(results.size()-1));
-        			System.out.println("I finished");
+        			createDynamicHappensParameter(2, results.get(results.size()-1), results.size());
+        			System.out.println("I finished to save the Primitive Event");
     			}catch(IOException e ){	
     			}
-
+    		}
+    		if (newHappens.getEvent() instanceof ComplexEvent){   			
+    			try{
+    				createDynamicHappensParameter(1, results.get(0), 1);        		
+        			for (int i = 1; i < results.size(); i++){
+            			createDynamicHappensParameter(3, results.get(i), i+1);
+        			}
+        			System.out.println("I finished to save the Complex Event");
+    			}catch(IOException e ){	
+    			}
     		}
     	}
     	
@@ -543,12 +830,31 @@ public class DynamicParametersDialog extends Dialog{
      * 2: observerparam
      * 3: generalparam
      */
-    private void createDynamicHappensParameter(int number, String param) throws IOException{
+    private void createDynamicHappensParameter(int number, String param, int position) throws IOException{
     	
     	LoadParameters loadParam = new LoadParameters(editFilesPath + "/default.typeInstanceModel");
+    	diagramFilePath = diagramFilePath.replace("_diagram", "");
+	    LoadParameters loadDynParam = new LoadParameters(diagramFilePath);
+
+  /*  	// Check if the dynamic parameter already exists
+    	for (int i = 0; i < loadDynParam.getEnvironment().getParameters().size(); i++){
+    		if (loadDynParam.getEnvironment().getParameters().get(i).getName().equals(param)){
+    			// Linking the newHappens with the already existing parameter
+				SetRequest setRequestParameter = new SetRequest(editor.getEditingDomain(), newHappens,
+						ModelPackage.eINSTANCE.getHappens_Parameters(), loadDynParam.getEnvironment().getParameters().get(i));
+				SetValueCommand paramOperation = new SetValueCommand(setRequestParameter);
+				editor.getDiagramEditDomain().getDiagramCommandStack()
+						.execute(new ICommandProxy(paramOperation));
+				System.out.println("I did it");
+				System.out.println("This one: "+loadDynParam.getEnvironment().getParameters().get(i).getName() + " is equal to this one: " + param);
+
+    			return;
+    		}
+    	} */
     	
     	switch(number){
 	    	case 1:{
+
 	    		// Creating AgentParam and Agent
     			Command cmd = editor.createAndExecuteShapeRequestCommand(
     					behavDesc.model.diagram.providers.ModelElementTypes.AgentParam_2005, editor.getDiagramEditPart());
@@ -580,6 +886,12 @@ public class DynamicParametersDialog extends Dialog{
         					SetValueCommand agentNameOperation = new SetValueCommand(setRequestAgentName);
         					editor.getDiagramEditDomain().getDiagramCommandStack()
         							.execute(new ICommandProxy(agentNameOperation));
+        					
+        					SetRequest setRequestAgentPosition = new SetRequest(editor.getEditingDomain(), newAgent,
+        							ModelPackage.eINSTANCE.getParameter_Position(), position);
+        					SetValueCommand agentPositionOperation = new SetValueCommand(setRequestAgentPosition);
+        					editor.getDiagramEditDomain().getDiagramCommandStack()
+        							.execute(new ICommandProxy(agentPositionOperation));
         					
     					}
     					
@@ -649,12 +961,19 @@ public class DynamicParametersDialog extends Dialog{
         					editor.getDiagramEditDomain().getDiagramCommandStack()
         							.execute(new ICommandProxy(observerNameOperation));
         					
+        					//TODO: assign position
+        					SetRequest setRequestObserverPosition = new SetRequest(editor.getEditingDomain(), newObserver,
+        							ModelPackage.eINSTANCE.getParameter_Position(), position);
+        					SetValueCommand observerPositionOperation = new SetValueCommand(setRequestObserverPosition);
+        					editor.getDiagramEditDomain().getDiagramCommandStack()
+        							.execute(new ICommandProxy(observerPositionOperation));
+        					
     					}
     					
     				}
     			}
     			
-    			// Looking for the Agent the user decided to associate to the AgentParam
+    			// Looking for the Observer the user decided to associate to the ObserverParam
     			for (int i = 0; i < loadParam.getEnvironment().getTypes().size(); i++) {
     				if (newHappens.getEvent() instanceof PrimitiveEvent){
     					if (((PrimitiveEvent) newHappens.getEvent()).getObserver().getReference().getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
@@ -674,10 +993,6 @@ public class DynamicParametersDialog extends Dialog{
 	    	} break;
 	    	
 	    	case 3:{
-	    		System.out.println(newHappens.getParameters().size());
-	    		for (int j = 0; j < newHappens.getParameters().size(); j++){
-	    			System.out.println(newHappens.getParameters().get(j));
-	    		
 		    		// Creating GeneralParam and GeneralType
 	    			Command cmd = editor.createAndExecuteShapeRequestCommand(
 	    					behavDesc.model.diagram.providers.ModelElementTypes.GeneralParam_2007, editor.getDiagramEditPart());
@@ -704,12 +1019,17 @@ public class DynamicParametersDialog extends Dialog{
 	        					editor.getDiagramEditDomain().getDiagramCommandStack()
 	        							.execute(new ICommandProxy(paramOperation));
 	        					
-	        					SetRequest setRequestParamName = new SetRequest(editor.getEditingDomain(), newHappens,
+	        					SetRequest setRequestParamName = new SetRequest(editor.getEditingDomain(), newParam,
 	        							ModelPackage.eINSTANCE.getParameter_Name(), param);
 	        					SetValueCommand paramNameOperation = new SetValueCommand(setRequestParamName);
 	        					editor.getDiagramEditDomain().getDiagramCommandStack()
 	        							.execute(new ICommandProxy(paramNameOperation));
-	        					
+
+	        					SetRequest setRequestParamPosition = new SetRequest(editor.getEditingDomain(), newParam,
+	        							ModelPackage.eINSTANCE.getParameter_Position(), position);
+	        					SetValueCommand paramPositionOperation = new SetValueCommand(setRequestParamPosition);
+	        					editor.getDiagramEditDomain().getDiagramCommandStack()
+	        							.execute(new ICommandProxy(paramPositionOperation));
 	    					}
 	    					
 	    				}
@@ -719,7 +1039,7 @@ public class DynamicParametersDialog extends Dialog{
 	    			for (int i = 0; i < loadParam.getEnvironment().getTypes().size(); i++) {
 	    				for (int m = 0; m < newHappens.getEvent().getTypes().size(); m++){
 	    					if (newHappens.getEvent().getTypes().get(m).getReference().getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
-	    						SetRequest setRequestParamParam = new SetRequest(editor.getEditingDomain(), newHappens,
+	    						SetRequest setRequestParamParam = new SetRequest(editor.getEditingDomain(), newParam,
 	        							ModelPackage.eINSTANCE.getGeneralParam_GeneralParam(), loadParam.getEnvironment().getTypes().get(i));
 	        					SetValueCommand paramParamOperation = new SetValueCommand(setRequestParamParam);
 	        					editor.getDiagramEditDomain().getDiagramCommandStack()
@@ -728,7 +1048,7 @@ public class DynamicParametersDialog extends Dialog{
     					}			
 	    			}
 
-	    		} // FOR
+	    	
 	    		
 	    	} break;
 	    		
