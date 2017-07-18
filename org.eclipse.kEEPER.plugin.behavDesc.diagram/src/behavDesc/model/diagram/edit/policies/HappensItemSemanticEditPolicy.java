@@ -14,6 +14,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
+import model.impl.HappensImpl;
+
 /**
  * @generated
  */
@@ -32,6 +34,13 @@ public class HappensItemSemanticEditPolicy
 	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
+	//	System.out.println("I'm gonna destroy happens");
+	//	System.out.println(req.getElementToDestroy());
+	//	System.out.println(((HappensImpl)req.getElementToDestroy()).getParameters().size());
+	/*	for (int i = 0; i < ((HappensImpl)req.getElementToDestroy()).getParameters().size(); i++){
+			DestroyElementRequest req2 = new DestroyElementRequest(((HappensImpl)req.getElementToDestroy()).getParameters().get(i), false);
+		}
+		*/
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$

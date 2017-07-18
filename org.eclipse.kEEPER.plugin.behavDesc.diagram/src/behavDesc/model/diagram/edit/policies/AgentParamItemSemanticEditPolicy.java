@@ -25,6 +25,8 @@ public class AgentParamItemSemanticEditPolicy
 	* @generated
 	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		System.out.println("Destroying AgentParam");
+		System.out.println(req.getElementToDestroy());
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);

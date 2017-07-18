@@ -43,25 +43,25 @@ public class GeneralParamItemProvider extends ParameterItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGeneralParamPropertyDescriptor(object);
+			addGeneralTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the General Param feature.
+	 * This adds a property descriptor for the General Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGeneralParamPropertyDescriptor(Object object) {
+	protected void addGeneralTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_GeneralParam_generalParam_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GeneralParam_generalParam_feature", "_UI_GeneralParam_type"),
-				 ModelPackage.Literals.GENERAL_PARAM__GENERAL_PARAM,
+				 getString("_UI_GeneralParam_generalType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GeneralParam_generalType_feature", "_UI_GeneralParam_type"),
+				 ModelPackage.Literals.GENERAL_PARAM__GENERAL_TYPE,
 				 true,
 				 false,
 				 true,

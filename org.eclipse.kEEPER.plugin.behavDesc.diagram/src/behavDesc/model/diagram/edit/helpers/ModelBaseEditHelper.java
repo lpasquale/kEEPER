@@ -7,4 +7,5 @@ import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
  */
 public class ModelBaseEditHelper extends GeneratedEditHelperBase {
 
+
 }

@@ -134,7 +134,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeInstants" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralParam" eSuperTypes="#//Parameter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generalParam" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalType" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Observer" eSuperTypes="#//Type"/>

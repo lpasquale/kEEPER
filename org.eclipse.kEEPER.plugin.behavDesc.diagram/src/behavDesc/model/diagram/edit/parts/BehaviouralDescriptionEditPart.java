@@ -55,8 +55,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -163,6 +166,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		diagramFileName = workspaceResource.getLocation().lastSegment();
 		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
 		diagramFilePath = workspaceResource.getLocation().toString();
+		
+	
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 
@@ -336,9 +341,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			switch (predicateSelected) {
 			case "Happens": {
 				Happens newHappens = happensSelected();
-				if (newHappens != null)
+				if (newHappens != null){
 					getPrimaryShape().setHappens(newHappens);
+					System.out.println("It's not NULL");
+				}
+				System.out.println("It's NULL");
+
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Happens
 				break;
 
@@ -347,6 +357,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Holds at
 				break;
 
@@ -355,7 +366,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
-
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Holds at
 				break;
 			case "Holds at between": {
@@ -363,6 +374,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Holds at between
 				break;
 
@@ -371,6 +383,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Not holds at between
 				break;
 
@@ -468,6 +481,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath, diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
+				System.out.println("About to destroy the Happens...");
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHappens, false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
+				System.out.println("happens Destroyed!");
+
 				return null;
 			}
 			
@@ -561,6 +580,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAt, editor, editFilesPath, diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAt, false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
 				return null;
 			}
 			
@@ -661,6 +683,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAtBetween, editor, editFilesPath, diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAtBetween, false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
 				return null;
 			}
 

@@ -19,22 +19,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link model.impl.GeneralParamImpl#getGeneralParam <em>General Param</em>}</li>
+ *   <li>{@link model.impl.GeneralParamImpl#getGeneralType <em>General Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	/**
-	 * The cached value of the '{@link #getGeneralParam() <em>General Param</em>}' reference.
+	 * The cached value of the '{@link #getGeneralType() <em>General Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGeneralParam()
+	 * @see #getGeneralType()
 	 * @generated
 	 * @ordered
 	 */
-	protected Type generalParam;
-
+	protected Type generalType;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,16 +58,16 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type getGeneralParam() {
-		if (generalParam != null && generalParam.eIsProxy()) {
-			InternalEObject oldGeneralParam = (InternalEObject)generalParam;
-			generalParam = (Type)eResolveProxy(oldGeneralParam);
-			if (generalParam != oldGeneralParam) {
+	public Type getGeneralType() {
+		if (generalType != null && generalType.eIsProxy()) {
+			InternalEObject oldGeneralType = (InternalEObject)generalType;
+			generalType = (Type)eResolveProxy(oldGeneralType);
+			if (generalType != oldGeneralType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.GENERAL_PARAM__GENERAL_PARAM, oldGeneralParam, generalParam));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.GENERAL_PARAM__GENERAL_TYPE, oldGeneralType, generalType));
 			}
 		}
-		return generalParam;
+		return generalType;
 	}
 
 	/**
@@ -76,8 +75,8 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type basicGetGeneralParam() {
-		return generalParam;
+	public Type basicGetGeneralType() {
+		return generalType;
 	}
 
 	/**
@@ -85,11 +84,11 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGeneralParam(Type newGeneralParam) {
-		Type oldGeneralParam = generalParam;
-		generalParam = newGeneralParam;
+	public void setGeneralType(Type newGeneralType) {
+		Type oldGeneralType = generalType;
+		generalType = newGeneralType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.GENERAL_PARAM__GENERAL_PARAM, oldGeneralParam, generalParam));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.GENERAL_PARAM__GENERAL_TYPE, oldGeneralType, generalType));
 	}
 
 	/**
@@ -100,9 +99,9 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.GENERAL_PARAM__GENERAL_PARAM:
-				if (resolve) return getGeneralParam();
-				return basicGetGeneralParam();
+			case ModelPackage.GENERAL_PARAM__GENERAL_TYPE:
+				if (resolve) return getGeneralType();
+				return basicGetGeneralType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,8 +114,8 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.GENERAL_PARAM__GENERAL_PARAM:
-				setGeneralParam((Type)newValue);
+			case ModelPackage.GENERAL_PARAM__GENERAL_TYPE:
+				setGeneralType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,8 +129,8 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.GENERAL_PARAM__GENERAL_PARAM:
-				setGeneralParam((Type)null);
+			case ModelPackage.GENERAL_PARAM__GENERAL_TYPE:
+				setGeneralType((Type)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,8 +144,8 @@ public class GeneralParamImpl extends ParameterImpl implements GeneralParam {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.GENERAL_PARAM__GENERAL_PARAM:
-				return generalParam != null;
+			case ModelPackage.GENERAL_PARAM__GENERAL_TYPE:
+				return generalType != null;
 		}
 		return super.eIsSet(featureID);
 	}

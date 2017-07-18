@@ -120,7 +120,7 @@ public interface ContextRelation extends EObject {
 	 * @see #getTypeNames()
 	 * @generated
 	 */
-	void setTypeNames();
+	void setTypeNames(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Initial Complex Event</b></em>' reference.

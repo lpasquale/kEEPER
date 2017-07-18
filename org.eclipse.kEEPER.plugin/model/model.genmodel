@@ -104,7 +104,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/timeInstants"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//GeneralParam">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralParam/generalParam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralParam/generalType"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Agent"/>
     <genClasses ecoreClass="model.ecore#//Observer"/>

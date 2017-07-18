@@ -1097,7 +1097,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGeneralParam_GeneralParam() {
+	public EReference getGeneralParam_GeneralType() {
 		return (EReference)generalParamEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1225,7 +1225,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(hypothesisEClass, HYPOTHESIS__TIME_INSTANTS);
 
 		generalParamEClass = createEClass(GENERAL_PARAM);
-		createEReference(generalParamEClass, GENERAL_PARAM__GENERAL_PARAM);
+		createEReference(generalParamEClass, GENERAL_PARAM__GENERAL_TYPE);
 
 		agentEClass = createEClass(AGENT);
 
@@ -1380,7 +1380,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getHypothesis_TimeInstants(), ecorePackage.getEInt(), "timeInstants", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalParamEClass, GeneralParam.class, "GeneralParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGeneralParam_GeneralParam(), this.getType(), null, "generalParam", null, 0, 1, GeneralParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGeneralParam_GeneralType(), this.getType(), null, "generalType", null, 0, 1, GeneralParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

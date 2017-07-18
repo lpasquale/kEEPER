@@ -1220,13 +1220,13 @@ public interface ModelPackage extends EPackage {
 	int GENERAL_PARAM__NAME = PARAMETER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>General Param</b></em>' reference.
+	 * The feature id for the '<em><b>General Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERAL_PARAM__GENERAL_PARAM = PARAMETER_FEATURE_COUNT + 0;
+	int GENERAL_PARAM__GENERAL_TYPE = PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>General Param</em>' class.
@@ -2469,15 +2469,15 @@ public interface ModelPackage extends EPackage {
 	EClass getGeneralParam();
 
 	/**
-	 * Returns the meta object for the reference '{@link model.GeneralParam#getGeneralParam <em>General Param</em>}'.
+	 * Returns the meta object for the reference '{@link model.GeneralParam#getGeneralType <em>General Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>General Param</em>'.
-	 * @see model.GeneralParam#getGeneralParam()
+	 * @return the meta object for the reference '<em>General Type</em>'.
+	 * @see model.GeneralParam#getGeneralType()
 	 * @see #getGeneralParam()
 	 * @generated
 	 */
-	EReference getGeneralParam_GeneralParam();
+	EReference getGeneralParam_GeneralType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3285,12 +3285,12 @@ public interface ModelPackage extends EPackage {
 		EClass GENERAL_PARAM = eINSTANCE.getGeneralParam();
 
 		/**
-		 * The meta object literal for the '<em><b>General Param</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>General Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GENERAL_PARAM__GENERAL_PARAM = eINSTANCE.getGeneralParam_GeneralParam();
+		EReference GENERAL_PARAM__GENERAL_TYPE = eINSTANCE.getGeneralParam_GeneralType();
 
 	}
 

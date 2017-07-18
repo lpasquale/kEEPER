@@ -19,7 +19,7 @@ public class AgentImpl extends TypeImpl implements Agent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AgentImpl() {
+	protected AgentImpl() {
 		super();
 	}
 

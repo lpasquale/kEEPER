@@ -207,7 +207,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public String getTypeNames() {
-		
 		return typeNames;
 	}
 
@@ -216,14 +215,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypeNames() {
+	public void setTypeNames(String newTypeNames) {
 		String oldTypeNames = typeNames;
-		if (!getTypes().isEmpty())
-			typeNames = getTypes().get(0).getName();
-		if (getTypes().isEmpty()){
-			typeNames = null;
-		}
-		//String oldTypeNames = typeNames;
+		typeNames = newTypeNames;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__TYPE_NAMES, oldTypeNames, typeNames));
 	}
@@ -354,10 +348,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
 				getTypes().addAll((Collection<? extends Type>)newValue);
-				setTypeNames();
 				return;
 			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				setTypeNames();
+				setTypeNames((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,10 +378,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
-				setTypeNames();
 				return;
 			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				setTypeNames();
+				setTypeNames(TYPE_NAMES_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
