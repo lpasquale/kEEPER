@@ -31,9 +31,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID:
 				return new contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart(view);
-
-			case contextRelation.model.diagram.edit.parts.ContextRelationTypeNamesEditPart.VISUAL_ID:
-				return new contextRelation.model.diagram.edit.parts.ContextRelationTypeNamesEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

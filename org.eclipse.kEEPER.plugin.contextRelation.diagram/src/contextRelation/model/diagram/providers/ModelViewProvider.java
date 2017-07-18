@@ -238,8 +238,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				.getType(contextRelation.model.diagram.edit.parts.ContextRelationNameEditPart.VISUAL_ID));
 		Node label5002 = createLabel(node, contextRelation.model.diagram.part.ModelVisualIDRegistry
 				.getType(contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID));
-		Node label5003 = createLabel(node, contextRelation.model.diagram.part.ModelVisualIDRegistry
-				.getType(contextRelation.model.diagram.edit.parts.ContextRelationTypeNamesEditPart.VISUAL_ID));
 		return node;
 	}
 

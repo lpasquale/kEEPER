@@ -23,12 +23,9 @@
             name="ContextRelationTitle"
             text="&lt;&lt;Context Relation>>"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="ContextRelationTypes"
-            text="--- Types ---"/>
+            xsi:type="gmfgraph:Polyline"
+            name="segment"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
@@ -75,13 +72,9 @@
       name="ContextRelationName"
       figure="ContextRelationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
-  <labels
-      name="ContextRelationTitle"
-      figure="ContextRelationFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
-      name="ContextRelationTypes"
+      name="ContextRelationTitle"
       figure="ContextRelationFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -181,9 +182,6 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationTypeNamesEditPart) {
-			return true;
-		}
 		return false;
 	}
 
@@ -329,8 +327,8 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		 */
 		private WrappingLabel fFigureContextRelationName;
 
-		private ArrayList<WrappingLabel> fFigureContextRelationTypes;
-		
+		private ArrayList<WrappingLabel> fFigureContextRelationTypes = new ArrayList<WrappingLabel>();
+
 		/**
 		 * @generated
 		 */
@@ -355,29 +353,32 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+		
+			
 			fFigureContextRelationName = new WrappingLabel();
 			fFigureContextRelationName.setText("---NAME---");
 			fFigureContextRelationName.setAlignment(PositionConstants.CENTER);
+
 
 			fFigureContextRelationTitle = new WrappingLabel();
 			fFigureContextRelationTitle.setText("<<Context Relation>>");
 			fFigureContextRelationTitle.setAlignment(PositionConstants.CENTER);
 			
-			fFigureContextRelationTypes = new ArrayList<WrappingLabel>();
-
 			for (int i = 0; i < cr.getTypes().size(); i++) {
 				WrappingLabel temp = new WrappingLabel();
 				temp.setText(cr.getTypes().get(i).getName());
 				temp.setAlignment(PositionConstants.LEFT);
 				fFigureContextRelationTypes.add(temp);
 			}
-
+			
 			this.add(fFigureContextRelationTitle);
 			this.add(fFigureContextRelationName);
 			for (int i = 0; i < fFigureContextRelationTypes.size(); i++) {
 				this.add(fFigureContextRelationTypes.get(i));
 			}
 
+			PolylineShape segment0 = new PolylineShape();
+			this.add(segment0);
 
 		}
 

@@ -341,12 +341,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			switch (predicateSelected) {
 			case "Happens": {
 				Happens newHappens = happensSelected();
-				if (newHappens != null){
+				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
-					System.out.println("It's not NULL");
-				}
-				System.out.println("It's NULL");
-
 				getPrimaryShape().repaint();
 				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Happens
