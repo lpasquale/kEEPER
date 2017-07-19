@@ -100,7 +100,7 @@ public class GeneralParamEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(0, 0);
 		return result;
 	}
 
