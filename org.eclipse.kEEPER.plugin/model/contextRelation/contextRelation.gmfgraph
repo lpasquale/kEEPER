@@ -17,11 +17,15 @@
         <children
             xsi:type="gmfgraph:Label"
             name="ContextRelationName"
-            text="---NAME---"/>
+            text="-- Insert name of Context Relation --"/>
         <children
             xsi:type="gmfgraph:Label"
             name="ContextRelationTitle"
             text="&lt;&lt;Context Relation>>"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ContextRelationTypes"
+            text="Define the types..."/>
         <children
             xsi:type="gmfgraph:Polyline"
             name="segment"/>
@@ -29,40 +33,9 @@
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-  </figures>
-  <figures
-      name="links">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="CRParameter"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="CRInitiates"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="CRTerminates"/>
-    <descriptors
-        name="CRParameterFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="CRParameter"
-          targetDecoration="//@figures.1/@figures.0"/>
-    </descriptors>
-    <descriptors
-        name="CRInitiatesFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="CRInitiates"
-          targetDecoration="//@figures.1/@figures.1"/>
-    </descriptors>
-    <descriptors
-        name="CRTerminatesFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="CRTerminates"
-          targetDecoration="//@figures.1/@figures.2"/>
     </descriptors>
   </figures>
   <nodes
@@ -70,6 +43,11 @@
       figure="ContextRelationFigure"/>
   <labels
       name="ContextRelationName"
+      figure="ContextRelationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels
+      name="ContextRelationTypes"
       figure="ContextRelationFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>

@@ -151,6 +151,9 @@ public class ModelVisualIDRegistry {
 			if (contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (contextRelation.model.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		}
 		return false;

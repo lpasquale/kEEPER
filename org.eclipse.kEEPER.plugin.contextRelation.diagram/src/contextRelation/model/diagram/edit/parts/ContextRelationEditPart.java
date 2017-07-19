@@ -169,6 +169,11 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureContextRelationName());
 			return true;
 		}
+		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.WrappingLabelEditPart) {
+			((contextRelation.model.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureContextRelationTypes());
+			return true;
+		}
 		return false;
 	}
 
@@ -180,6 +185,9 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof contextRelation.model.diagram.edit.parts.WrappingLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -327,7 +335,7 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		 */
 		private WrappingLabel fFigureContextRelationName;
 
-		private ArrayList<WrappingLabel> fFigureContextRelationTypes = new ArrayList<WrappingLabel>();
+		private WrappingLabel fFigureContextRelationTypes;
 
 		/**
 		 * @generated
@@ -353,31 +361,24 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-		
-			
 			fFigureContextRelationName = new WrappingLabel();
-			fFigureContextRelationName.setText("---NAME---");
+			fFigureContextRelationName.setText("-- Insert name of Context Relation --");
 			fFigureContextRelationName.setAlignment(PositionConstants.CENTER);
-
 
 			fFigureContextRelationTitle = new WrappingLabel();
 			fFigureContextRelationTitle.setText("<<Context Relation>>");
 			fFigureContextRelationTitle.setAlignment(PositionConstants.CENTER);
-			
-			for (int i = 0; i < cr.getTypes().size(); i++) {
-				WrappingLabel temp = new WrappingLabel();
-				temp.setText(cr.getTypes().get(i).getName());
-				temp.setAlignment(PositionConstants.LEFT);
-				fFigureContextRelationTypes.add(temp);
-			}
-			
+
 			this.add(fFigureContextRelationTitle);
 			this.add(fFigureContextRelationName);
-			for (int i = 0; i < fFigureContextRelationTypes.size(); i++) {
-				this.add(fFigureContextRelationTypes.get(i));
-			}
+
+			fFigureContextRelationTypes = new WrappingLabel();
+			fFigureContextRelationTypes.setText("Define the types...");
+
+			this.add(fFigureContextRelationTypes);
 
 			PolylineShape segment0 = new PolylineShape();
+
 			this.add(segment0);
 
 		}
@@ -390,8 +391,15 @@ public class ContextRelationEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public WrappingLabel getFigureContextRelationTypes() {
+			return fFigureContextRelationTypes;
+		}
+
+		/**
+			 * @generated
+			 */
 		public WrappingLabel getFigureContextRelationName() {
 			return fFigureContextRelationName;
 		}

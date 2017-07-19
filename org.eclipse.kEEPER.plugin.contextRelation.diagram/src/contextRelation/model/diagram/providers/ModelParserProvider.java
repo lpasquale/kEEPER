@@ -41,10 +41,27 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
+	private contextRelation.model.diagram.parsers.ContextRelationLabelExpressionLabelParser contextRelationLabel_5003Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContextRelationLabel_5003Parser() {
+		if (contextRelationLabel_5003Parser == null) {
+			contextRelationLabel_5003Parser = new contextRelation.model.diagram.parsers.ContextRelationLabelExpressionLabelParser();
+		}
+		return contextRelationLabel_5003Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case contextRelation.model.diagram.edit.parts.ContextRelationName2EditPart.VISUAL_ID:
 			return getContextRelationName_5002Parser();
+		case contextRelation.model.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getContextRelationLabel_5003Parser();
 		}
 		return null;
 	}

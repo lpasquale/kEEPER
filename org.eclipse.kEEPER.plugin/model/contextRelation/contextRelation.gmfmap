@@ -22,6 +22,15 @@
         <features
             href="../model.ecore#//ContextRelation/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="contextRelation.gmfgraph#ContextRelationTypes"/>
+        <viewExpression
+            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((ContextRelation) self).getTypes().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"
+            language="java"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="contextRelation.gmftool#//@palette/@tools.0/@tools.0"/>
