@@ -60,7 +60,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="PrimitiveEventNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Type of parameter&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -96,21 +96,17 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5012"
           editPartClassName="AgentReferenceTypeNameEditPart"
-          itemSemanticEditPolicyClassName="AgentReferenceTypeNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AgentReferenceTypeNameItemSemanticEditPolicy"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="AgentNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Type of parameter&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
-            editorPattern=""
-            editPattern="">
-          <metaFeatures
-              href="../model.genmodel#//model/AgentReference/typeName"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -140,20 +136,17 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5013"
           editPartClassName="ObserverReferenceTypeNameEditPart"
-          itemSemanticEditPolicyClassName="ObserverReferenceTypeNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ObserverReferenceTypeNameItemSemanticEditPolicy"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="ObserverNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ObserverNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ObserverNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ObserverNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ObserverNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Type of parameter&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
-            viewPattern="">
-          <metaFeatures
-              href="../model.genmodel#//model/ObserverReference/typeName"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -183,7 +176,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5014"
           editPartClassName="GeneralTypeReferenceTypeNameEditPart"
-          itemSemanticEditPolicyClassName="GeneralTypeReferenceTypeNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="GeneralTypeReferenceTypeNameItemSemanticEditPolicy"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -191,12 +185,8 @@
             className="AddParamNameFigure"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
-            viewPattern="">
-          <metaFeatures
-              href="../model.genmodel#//model/GeneralTypeReference/typeName"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -556,11 +546,44 @@
   </propertySheet>
   <domainGenModel
       href="../model.genmodel#/"/>
+  <expressionProviders>
+    <providers
+        xsi:type="gmfgen:GenJavaExpressionProvider"
+        injectExpressionBody="true">
+      <expressions
+          body="if (((AgentReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((AgentReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"/>
+      <expressions
+          body="if (((ObserverReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((ObserverReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"/>
+      <expressions
+          body="if (((GeneralTypeReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((GeneralTypeReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"/>
+    </providers>
+  </expressionProviders>
   <labelParsers
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.1/@labels.0/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+      <expressionContext
+          href="../model.genmodel#//model/AgentReference"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.2/@labels.0/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+      <expressionContext
+          href="../model.genmodel#//model/ObserverReference"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.3/@labels.0/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.2">
+      <expressionContext
+          href="../model.genmodel#//model/GeneralTypeReference"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">

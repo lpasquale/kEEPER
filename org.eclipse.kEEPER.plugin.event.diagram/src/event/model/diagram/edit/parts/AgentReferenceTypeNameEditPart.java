@@ -265,7 +265,7 @@ public class AgentReferenceTypeNameEditPart extends LabelEditPart implements ITe
 	* @generated
 	*/
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -617,7 +617,7 @@ public class AgentReferenceTypeNameEditPart extends LabelEditPart implements ITe
 		 * @generated
 		 */
 		public AgentNameFigure() {
-			this.setText("NAME");
+			this.setText("Type of parameter");
 		}
 
 	}

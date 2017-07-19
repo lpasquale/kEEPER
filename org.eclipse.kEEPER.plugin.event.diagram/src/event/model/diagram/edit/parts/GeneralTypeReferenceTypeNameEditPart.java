@@ -267,7 +267,7 @@ public class GeneralTypeReferenceTypeNameEditPart extends LabelEditPart
 	* @generated
 	*/
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**

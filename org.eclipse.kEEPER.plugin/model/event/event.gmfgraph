@@ -112,21 +112,21 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="AgentName"
-          text="NAME"/>
+          text="Type of parameter"/>
     </descriptors>
     <descriptors
         name="ObserverNameFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="ObserverName"
-          text="NAME"/>
+          text="Type of parameter"/>
     </descriptors>
     <descriptors
         name="PrimitiveEventNameFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="PrimitiveEventName"
-          text="NAME"/>
+          text="Type of parameter"/>
     </descriptors>
     <descriptors
         name="ComplexEventNameFigure">

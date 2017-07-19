@@ -18,7 +18,10 @@ import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.GeneralTypeReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.ObserverReferenceTypeNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
+import event.model.diagram.parsers.AgentReferenceLabelExpressionLabelParser;
+import event.model.diagram.parsers.GeneralTypeReferenceLabelExpressionLabelParser;
 import event.model.diagram.parsers.MessageFormatParser;
+import event.model.diagram.parsers.ObserverReferenceLabelExpressionLabelParser;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import model.ModelPackage;
 
@@ -47,52 +50,46 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser agentReferenceTypeName_5012Parser;
+	private AgentReferenceLabelExpressionLabelParser agentReferenceLabel_5012Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getAgentReferenceTypeName_5012Parser() {
-		if (agentReferenceTypeName_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getAgentReference_TypeName() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			agentReferenceTypeName_5012Parser = parser;
+	private IParser getAgentReferenceLabel_5012Parser() {
+		if (agentReferenceLabel_5012Parser == null) {
+			agentReferenceLabel_5012Parser = new AgentReferenceLabelExpressionLabelParser();
 		}
-		return agentReferenceTypeName_5012Parser;
+		return agentReferenceLabel_5012Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser observerReferenceTypeName_5013Parser;
+	private ObserverReferenceLabelExpressionLabelParser observerReferenceLabel_5013Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getObserverReferenceTypeName_5013Parser() {
-		if (observerReferenceTypeName_5013Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getObserverReference_TypeName() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			observerReferenceTypeName_5013Parser = parser;
+	private IParser getObserverReferenceLabel_5013Parser() {
+		if (observerReferenceLabel_5013Parser == null) {
+			observerReferenceLabel_5013Parser = new ObserverReferenceLabelExpressionLabelParser();
 		}
-		return observerReferenceTypeName_5013Parser;
+		return observerReferenceLabel_5013Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser generalTypeReferenceTypeName_5014Parser;
+	private GeneralTypeReferenceLabelExpressionLabelParser generalTypeReferenceLabel_5014Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getGeneralTypeReferenceTypeName_5014Parser() {
-		if (generalTypeReferenceTypeName_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getGeneralTypeReference_TypeName() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			generalTypeReferenceTypeName_5014Parser = parser;
+	private IParser getGeneralTypeReferenceLabel_5014Parser() {
+		if (generalTypeReferenceLabel_5014Parser == null) {
+			generalTypeReferenceLabel_5014Parser = new GeneralTypeReferenceLabelExpressionLabelParser();
 		}
-		return generalTypeReferenceTypeName_5014Parser;
+		return generalTypeReferenceLabel_5014Parser;
 	}
 
 	/**
@@ -120,11 +117,11 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 		case PrimitiveEventNameEditPart.VISUAL_ID:
 			return getPrimitiveEventName_5010Parser();
 		case AgentReferenceTypeNameEditPart.VISUAL_ID:
-			return getAgentReferenceTypeName_5012Parser();
+			return getAgentReferenceLabel_5012Parser();
 		case ObserverReferenceTypeNameEditPart.VISUAL_ID:
-			return getObserverReferenceTypeName_5013Parser();
+			return getObserverReferenceLabel_5013Parser();
 		case GeneralTypeReferenceTypeNameEditPart.VISUAL_ID:
-			return getGeneralTypeReferenceTypeName_5014Parser();
+			return getGeneralTypeReferenceLabel_5014Parser();
 		case ComplexEventNameEditPart.VISUAL_ID:
 			return getComplexEventName_5011Parser();
 		}

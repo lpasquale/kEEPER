@@ -791,15 +791,14 @@ public class DynamicParametersDialog extends Dialog{
 	    			
 	    			// Looking for the Type the user decided to associate to the GeneralParam
 	    			for (int i = 0; i < loadParam.getEnvironment().getTypes().size(); i++) {
-	    				for (int m = 0; m < newHappens.getEvent().getTypes().size(); m++){
-	    					if (newHappens.getEvent().getTypes().get(m).getReference().getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
+	    					if (newHappens.getEvent().getTypes().get(position-2).getReference().getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
 	    						SetRequest setRequestParamParam = new SetRequest(editor.getEditingDomain(), newParam,
 	        							ModelPackage.eINSTANCE.getGeneralParam_GeneralType(), loadParam.getEnvironment().getTypes().get(i));
 	        					SetValueCommand paramParamOperation = new SetValueCommand(setRequestParamParam);
 	        					editor.getDiagramEditDomain().getDiagramCommandStack()
 	        							.execute(new ICommandProxy(paramParamOperation));
 	    					}
-    					}			
+    							
 	    			}
 
 	    	
@@ -855,12 +854,14 @@ public class DynamicParametersDialog extends Dialog{
 				
 			}
 		}
-		//TODO: fix link to same types even if the parameters have different types
+		//FIXME: fix link to same types even if the parameters have different types
 		// Looking for the Type the user decided to associate to the GeneralParam
 		for (int i = 0; i < loadParam.getEnvironment().getTypes().size(); i++) {
-			for (int m = 0; m < newHoldsAt.getContextRelation().getTypes().size(); m++){
-				if (newHoldsAt.getContextRelation().getTypes().get(m).getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
-					System.out.println(newHoldsAt.getContextRelation().getTypes().get(m).getName() + loadParam.getEnvironment().getTypes().get(i).getName());
+			System.out.println(loadParam.getEnvironment().getTypes().get(i));
+			System.out.println("Ciclo: " + i + newHoldsAt.getParameters());
+		
+				if (newHoldsAt.getContextRelation().getTypes().get(position-1).getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
+					System.out.println(newHoldsAt.getContextRelation().getTypes().get(position-1).getName() + loadParam.getEnvironment().getTypes().get(i).getName());
 					
 					SetRequest setRequestParamParam = new SetRequest(editor.getEditingDomain(), newParam,
 							ModelPackage.eINSTANCE.getGeneralParam_GeneralType(), loadParam.getEnvironment().getTypes().get(i));
@@ -868,7 +869,7 @@ public class DynamicParametersDialog extends Dialog{
 					editor.getDiagramEditDomain().getDiagramCommandStack()
 							.execute(new ICommandProxy(paramParamOperation));
 				}
-			}			
+						
 		}
 		
     }
@@ -921,8 +922,7 @@ public class DynamicParametersDialog extends Dialog{
 		
 		// Looking for the Type the user decided to associate to the GeneralParam
 		for (int i = 0; i < loadParam.getEnvironment().getTypes().size(); i++) {
-			for (int m = 0; m < newHoldsAtBetween.getContextRelation().getTypes().size(); m++){
-				if (newHoldsAtBetween.getContextRelation().getTypes().get(m).getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
+				if (newHoldsAtBetween.getContextRelation().getTypes().get(position-1).getName().equals(loadParam.getEnvironment().getTypes().get(i).getName())){
 					SetRequest setRequestParamParam = new SetRequest(editor.getEditingDomain(), newParam,
 							ModelPackage.eINSTANCE.getGeneralParam_GeneralType(), loadParam.getEnvironment().getTypes().get(i));
 					SetValueCommand paramParamOperation = new SetValueCommand(setRequestParamParam);
@@ -932,7 +932,7 @@ public class DynamicParametersDialog extends Dialog{
 			}			
 		}
     }
-}
+
     
 
     

@@ -149,6 +149,7 @@ public class AgentReferenceItemProvider
 
 		switch (notification.getFeatureID(AgentReference.class)) {
 			case ModelPackage.AGENT_REFERENCE__TYPE_NAME:
+			case ModelPackage.AGENT_REFERENCE__REFERENCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

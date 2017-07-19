@@ -265,7 +265,7 @@ public class ObserverReferenceTypeNameEditPart extends LabelEditPart
 	* @generated
 	*/
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -617,7 +617,7 @@ public class ObserverReferenceTypeNameEditPart extends LabelEditPart
 		 * @generated
 		 */
 		public ObserverNameFigure() {
-			this.setText("NAME");
+			this.setText("Type of parameter");
 		}
 
 	}

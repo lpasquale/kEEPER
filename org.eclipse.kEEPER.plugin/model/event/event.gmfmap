@@ -33,13 +33,13 @@
       <domainMetaElement
           href="../model.ecore#//AgentReference"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping"
-          editorPattern=""
-          editPattern="">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="event.gmfgraph#AgentLabel"/>
-        <features
-            href="../model.ecore#//AgentReference/typeName"/>
+        <viewExpression
+            body="if (((AgentReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((AgentReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"
+            language="java"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -55,12 +55,13 @@
       <domainMetaElement
           href="../model.ecore#//ObserverReference"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping"
-          viewPattern="">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="event.gmfgraph#ObserverLabel"/>
-        <features
-            href="../model.ecore#//ObserverReference/typeName"/>
+        <viewExpression
+            body="if (((ObserverReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((ObserverReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"
+            language="java"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -76,12 +77,13 @@
       <domainMetaElement
           href="../model.ecore#//GeneralTypeReference"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping"
-          viewPattern="">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="event.gmfgraph#AddParamLabel"/>
-        <features
-            href="../model.ecore#//GeneralTypeReference/typeName"/>
+        <viewExpression
+            body="if (((GeneralTypeReference) self).getReference() != null){&#xA;&#x9;&#x9;&#x9;return ((GeneralTypeReference) self).getReference().getName();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;return null;"
+            language="java"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
