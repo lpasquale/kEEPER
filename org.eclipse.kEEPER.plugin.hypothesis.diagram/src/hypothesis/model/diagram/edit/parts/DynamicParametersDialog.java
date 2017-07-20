@@ -90,7 +90,7 @@ public class DynamicParametersDialog extends Dialog{
 	            	   System.out.println(l.getSelection());
 	            	   
 	            	   //TODO: Create Input Validator
-	            	  InputDialog id = new InputDialog(parentShell, "Name of parameter", "Enter name", null, null);
+	            	  InputDialog id = new InputDialog(parentShell, "Name of parameter", "Enter name of parameter", null, null);
 	            	  
 	            	  if (id.open()!= Window.OK){
 	            		  return;
@@ -164,7 +164,7 @@ public class DynamicParametersDialog extends Dialog{
 	    	agentComp.setLayout(new GridLayout(1, true));
 	    	agentComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	Group agentGroup = new Group(agentComp, SWT.NONE);
-	    	agentGroup.setText("Select a parameter");
+	    	agentGroup.setText("Select a parameter \n(type " + ev.getAgent().getReference().getName()+")"+"\n Ex: " + Character.toUpperCase(ev.getAgent().getReference().getName().charAt(0)) + ", " + Character.toUpperCase(ev.getAgent().getReference().getName().charAt(0)) + "2,...");
 	    	agentGroup.setLayout(new GridLayout(1, false));
 	    	agentGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	List agentList = new List(agentGroup, SWT.BORDER);
@@ -213,7 +213,7 @@ public class DynamicParametersDialog extends Dialog{
 		    	paramComp.setLayout(new GridLayout(1, true));
 		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	Group paramGroup = new Group(paramComp, SWT.NONE);
-		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setText("Select a parameter \n(type " + newHappens.getEvent().getTypes().get(j).getReference().getName() + ")"+"\n Ex: " + Character.toUpperCase(ev.getTypes().get(j).getReference().getName().charAt(0)) + ", " + Character.toUpperCase(ev.getTypes().get(j).getReference().getName().charAt(0)) + "2,...");
 		    	paramGroup.setLayout(new GridLayout(1, false));
 		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	List paramList = new List(paramGroup, SWT.BORDER);
@@ -262,7 +262,7 @@ public class DynamicParametersDialog extends Dialog{
 	    	observerComp.setLayout(new GridLayout(1, true));
 	    	observerComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	Group observerGroup = new Group(observerComp, SWT.NONE);
-	    	observerGroup.setText("Select a parameter");
+	    	observerGroup.setText("Select a parameter \n(type " + ev.getObserver().getReference().getName() + ")"+"\n Ex: " + Character.toUpperCase(ev.getObserver().getReference().getName().charAt(0)) + ", " + Character.toUpperCase(ev.getObserver().getReference().getName().charAt(0)) + "2,...");
 	    	observerGroup.setLayout(new GridLayout(1, false));
 	    	observerGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	List observerList = new List(observerGroup, SWT.BORDER);
@@ -314,7 +314,7 @@ public class DynamicParametersDialog extends Dialog{
 	    	agentComp.setLayout(new GridLayout(1, true));
 	    	agentComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	Group agentGroup = new Group(agentComp, SWT.NONE);
-	    	agentGroup.setText("Select a parameter");
+	    	agentGroup.setText("Select a parameter \n(type " + ev.getAgent().getReference().getName() + ")"+"\n Ex: " + Character.toUpperCase(ev.getAgent().getReference().getName().charAt(0)) + ", " + Character.toUpperCase(ev.getAgent().getReference().getName().charAt(0)) + "2,...");
 	    	agentGroup.setLayout(new GridLayout(1, false));
 	    	agentGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 	    	List agentList = new List(agentGroup, SWT.BORDER);
@@ -361,7 +361,7 @@ public class DynamicParametersDialog extends Dialog{
 		    	paramComp.setLayout(new GridLayout(1, true));
 		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	Group paramGroup = new Group(paramComp, SWT.NONE);
-		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setText("Select a parameter \n(type " + ev.getTypes().get(j).getReference().getName() + ")" +"\n Ex: " + Character.toUpperCase(ev.getTypes().get(j).getReference().getName().charAt(0)) + ", " + Character.toUpperCase(ev.getTypes().get(j).getReference().getName().charAt(0)) + "2,...");
 		    	paramGroup.setLayout(new GridLayout(1, false));
 		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	List paramList = new List(paramGroup, SWT.BORDER);
@@ -422,7 +422,7 @@ public class DynamicParametersDialog extends Dialog{
 		    	paramComp.setLayout(new GridLayout(1, true));
 		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	Group paramGroup = new Group(paramComp, SWT.NONE);
-		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setText("Select a parameter \n(type " + newHoldsAt.getContextRelation().getTypes().get(j).getName() + ")" +"\n Ex: " + Character.toUpperCase(newHoldsAt.getContextRelation().getTypes().get(j).getName().charAt(0)) + ", " + Character.toUpperCase(newHoldsAt.getContextRelation().getTypes().get(j).getName().charAt(0)) + "2,...");
 		    	paramGroup.setLayout(new GridLayout(1, false));
 		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	List paramList = new List(paramGroup, SWT.BORDER);
@@ -480,7 +480,7 @@ public class DynamicParametersDialog extends Dialog{
 		    	paramComp.setLayout(new GridLayout(1, true));
 		    	paramComp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	Group paramGroup = new Group(paramComp, SWT.NONE);
-		    	paramGroup.setText("Select a parameter");
+		    	paramGroup.setText("Select a parameter \n(type " + newHoldsAtBetween.getContextRelation().getTypes().get(j).getName() + ")" +"\n Ex: " + Character.toUpperCase(newHoldsAtBetween.getContextRelation().getTypes().get(j).getName().charAt(0)) + ", " + Character.toUpperCase(newHoldsAtBetween.getContextRelation().getTypes().get(j).getName().charAt(0)) + "2,...");
 		    	paramGroup.setLayout(new GridLayout(1, false));
 		    	paramGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    	List paramList = new List(paramGroup, SWT.BORDER);

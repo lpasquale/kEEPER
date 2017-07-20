@@ -127,16 +127,16 @@ public class Loader {
 		}
 		for (int i = 0; i < env.getContextRelations().size(); i++){
 			if (env.getContextRelations().get(i).getInitialComplexEvent() != null && env.getContextRelations().get(i).getEndingComplexEvent() != null)
-				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName() +
+				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getTypes().get(0).getName() +
 						"  Initial Event: " + env.getContextRelations().get(i).getInitialComplexEvent().getName() +"  Ending Event: " + env.getContextRelations().get(i).getEndingComplexEvent().getName());
 			else
-				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName());				
+				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getTypes().get(0).getName());				
 		}
-		for (int i = 0; i < env.getEvents().size(); i++){
+		/*for (int i = 0; i < env.getEvents().size(); i++){
 			System.out.println("Event --> "+ env.getEvents().get(i).toString() + "\nAgent: " + env.getEvents().get(i).getAgent() + "  Type: " + env.getEvents().get(i).getAgent().getType().getName());
 			if (env.getEvents().get(i) instanceof ComplexEventImpl){
 				ComplexEvent ce = (ComplexEvent) env.getEvents().get(i);
-				for (int j = 0; j < ce.getParameters().size(); j++){
+				for (int j = 0; j < ce.getTypes().size(); j++){
 					System.out.println("Parameter " + (i+1) + ": " + ce.getParameters().get(j)+ "  Type: " + ce.getParameters().get(j).getType().getName());
 				}
 				for (int j = 0; j < ce.getBehaviouralDescriptions().size(); j++){
@@ -153,15 +153,11 @@ public class Loader {
 				}
 				System.out.println();
 			}
-		}
+		} */
 		for (int i = 0; i < env.getInitials().size(); i++){
-			System.out.println("Initial--> " + env.getInitials().get(i).getContextRelation().getName() + "  " + env.getInitials().get(i).getContextRelation().getParameters().get(0).getInstance());
+			System.out.println("Initial--> " + env.getInitials().get(i).getContextRelation().getName() + "  " + env.getInitials().get(i).getInstances().get(0));
 		}
-		/*
-		for (int i = 0; i < env.getInitials().size(); i++){
-			System.out.println("Context relation: "+ env.getInitials().get(i).getContextRelation().getName() + " --> true");
-		}
-*/
+
 		return env; 
 	} //parseFiles()
 	

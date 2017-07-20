@@ -58,7 +58,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComplexEventImpl() {
+	public ComplexEventImpl() {
 		super();
 	}
 
