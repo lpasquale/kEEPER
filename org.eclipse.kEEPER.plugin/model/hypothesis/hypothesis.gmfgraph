@@ -12,7 +12,7 @@
       <actualFigure
           xsi:type="gmfgraph:CustomFigure"
           name="Hypothesis"
-          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.HypothesisFigure"/>
+          qualifiedClassName="org.eclipse.kEEPER.ui.figures.HypothesisFigure"/>
     </descriptors>
     <descriptors
         name="happensFigure">
@@ -32,9 +32,16 @@
           xsi:type="gmfgraph:InvisibleRectangle"
           name="holdsAtBetween"/>
     </descriptors>
+    <descriptors
+        name="ParameterFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="Parameter"/>
+    </descriptors>
   </figures>
-  <figures
-      name="links"/>
+  <nodes
+      name="ParameterNode"
+      figure="ParameterFigure"/>
   <nodes
       name="HypothesisNode"
       figure="HypothesisFigure"/>

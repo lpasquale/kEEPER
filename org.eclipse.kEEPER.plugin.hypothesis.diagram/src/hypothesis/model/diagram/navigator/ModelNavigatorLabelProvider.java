@@ -13,18 +13,30 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import hypothesis.model.diagram.edit.parts.AgentEditPart;
+import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
 import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverParamEditPart;
 import hypothesis.model.diagram.part.ModelDiagramEditorPlugin;
 import hypothesis.model.diagram.part.ModelVisualIDRegistry;
 import hypothesis.model.diagram.providers.ModelElementTypes;
+import model.Agent;
+import model.AgentParam;
+import model.GeneralParam;
+import model.GeneralType;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.Hypothesis;
+import model.Observer;
+import model.ObserverParam;
 
 /**
  * @generated
@@ -93,6 +105,24 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAtBetween", //$NON-NLS-1$
 					ModelElementTypes.HoldsAtBetween_2004);
+		case AgentParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?AgentParam", //$NON-NLS-1$
+					ModelElementTypes.AgentParam_2005);
+		case GeneralParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralParam", //$NON-NLS-1$
+					ModelElementTypes.GeneralParam_2006);
+		case ObserverParamEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ObserverParam", //$NON-NLS-1$
+					ModelElementTypes.ObserverParam_2007);
+		case AgentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Agent", //$NON-NLS-1$
+					ModelElementTypes.Agent_2008);
+		case ObserverEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
+					ModelElementTypes.Observer_2009);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralType", //$NON-NLS-1$
+					ModelElementTypes.GeneralType_2010);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -153,6 +183,18 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getHoldsAt_2003Text(view);
 		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004Text(view);
+		case AgentParamEditPart.VISUAL_ID:
+			return getAgentParam_2005Text(view);
+		case GeneralParamEditPart.VISUAL_ID:
+			return getGeneralParam_2006Text(view);
+		case ObserverParamEditPart.VISUAL_ID:
+			return getObserverParam_2007Text(view);
+		case AgentEditPart.VISUAL_ID:
+			return getAgent_2008Text(view);
+		case ObserverEditPart.VISUAL_ID:
+			return getObserver_2009Text(view);
+		case GeneralTypeEditPart.VISUAL_ID:
+			return getGeneralType_2010Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -212,6 +254,84 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return String.valueOf(domainModelElement.getInitialTime());
 		} else {
 			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAgentParam_2005Text(View view) {
+		AgentParam domainModelElement = (AgentParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralParam_2006Text(View view) {
+		GeneralParam domainModelElement = (GeneralParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getObserverParam_2007Text(View view) {
+		ObserverParam domainModelElement = (ObserverParam) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2007); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAgent_2008Text(View view) {
+		Agent domainModelElement = (Agent) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getObserver_2009Text(View view) {
+		Observer domainModelElement = (Observer) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2009); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralType_2010Text(View view) {
+		GeneralType domainModelElement = (GeneralType) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

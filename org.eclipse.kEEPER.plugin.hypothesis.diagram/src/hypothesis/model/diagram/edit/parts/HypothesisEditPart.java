@@ -26,7 +26,9 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -46,7 +48,6 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 import hypothesis.model.diagram.edit.policies.HypothesisItemSemanticEditPolicy;
 import hypothesis.model.diagram.part.ModelDiagramEditor;
-import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -76,46 +77,48 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
-	private IEditorPart activeEditor; 
-	
+	private IEditorPart activeEditor;
+
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
 
 	private View view;
-	
+
 	private Hypothesis h;
 
-	private String editFilesPath, diagramFileName;
+	private String editFilesPath, diagramFileName, diagramFilePath;
+
 	/**
 	* @generated NOT
 	*/
 	public HypothesisEditPart(View view) {
 		super(view);
 		// Variables essentials to get the workbench of THIS hypothesis description
-				IWorkbench workbench = PlatformUI.getWorkbench();
-				IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-				IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
-				IEditorReference[] editorPart = workbenchPage.getEditorReferences();
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+		IWorkbenchPage workbenchPage = workbenchWindow.getActivePage();
+		IEditorReference[] editorPart = workbenchPage.getEditorReferences();
 
-				// Initializing the editor
-				for (int i = 0; i < editorPart.length; i++){
-					if (editorPart[i].getEditor(true) instanceof hypothesis.model.diagram.part.ModelDiagramEditor){
-						System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
-						if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())){
-							editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
-						}					
-						System.out.println("Editor: " + editor);
-					}
+		// Initializing the editor
+		for (int i = 0; i < editorPart.length; i++) {
+			if (editorPart[i].getEditor(true) instanceof hypothesis.model.diagram.part.ModelDiagramEditor) {
+				System.out.println("Title: " + editorPart[i].getEditor(true).getTitle());
+				if (editorPart[i].getEditor(true).getTitle().equals(view.eResource().getURI().lastSegment())) {
+					editor = (ModelDiagramEditor) editorPart[i].getEditor(true);
 				}
-				
-				// Variables essentials to get the path of the diagram file
-				Resource diagram =  editor.getDiagram().eResource();
-				String path = ((Resource) diagram).getURI().toPlatformString(true);
-				IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
-				diagramFileName = workspaceResource.getLocation().lastSegment();
-				editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
-		
+				System.out.println("Editor: " + editor);
+			}
+		}
+
+		// Variables essentials to get the path of the diagram file
+		Resource diagram = editor.getDiagram().eResource();
+		String path = ((Resource) diagram).getURI().toPlatformString(true);
+		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+		diagramFileName = workspaceResource.getLocation().lastSegment();
+		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
+		diagramFilePath = workspaceResource.getLocation().toString();
+
 		this.view = view;
 		this.h = (Hypothesis) view.getElement();
 	}
@@ -156,7 +159,6 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		return lep;
 	}
 
-
 	/**
 	* @generated NOT
 	*/
@@ -167,8 +169,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure getPrimaryShape() {
-		return (org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure) primaryShape;
+	public HypothesisFigure getPrimaryShape() {
+		return (HypothesisFigure) primaryShape;
 	}
 
 	/**
@@ -282,6 +284,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				if (newHappens != null)
 					getPrimaryShape().setHappens(newHappens);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 
 			} // Happens
 				break;
@@ -291,6 +294,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Holds at
 				break;
 
@@ -299,6 +303,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				if (newHoldsAt != null)
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 
 			} // Holds at
 				break;
@@ -307,6 +312,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Holds at between
 				break;
 
@@ -315,6 +321,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				if (newHoldsAtBetween != null)
 					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 				getPrimaryShape().repaint();
+				editor.doSave(editor.getDocumentProvider().getProgressMonitor());
 			} // Not holds at between
 				break;
 
@@ -389,6 +396,20 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
 			}
+		
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHappens, editor, editFilesPath,
+					diagramFilePath);
+
+			if (dpd.open() != Window.OK) {
+				System.out.println("About to destroy the Happens...");
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHappens,
+						false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
+				System.out.println("happens Destroyed!");
+
+				return null;
+			}
 
 			return newHappens;
 
@@ -401,7 +422,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	private HoldsAt holdsAtSelected(boolean isHolding) {
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationModel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(
+					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -473,6 +495,16 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				}
 			}
 
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHoldsAt, editor, editFilesPath,
+					diagramFilePath);
+
+			if (dpd.open() != Window.OK) {
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAt,
+						false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
+				return null;
+			}
 			return newHoldsAt;
 
 		} catch (IOException e) {
@@ -486,7 +518,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 
 		try {
 			// Parsing event file
-			LoadContextRelation loadContextRelations = new LoadContextRelation(editFilesPath + "/default.contextRelationModel");
+			LoadContextRelation loadContextRelations = new LoadContextRelation(
+					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
 			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
@@ -512,7 +545,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 			int[] timeSelectedArray = createMultipleTimeInstantsDialog();
 			if (timeSelectedArray == null)
 				return null;
-			
+
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
 					hypothesis.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004,
@@ -564,6 +597,16 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
 			}
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHoldsAtBetween, editor,
+					editFilesPath, diagramFilePath);
+
+			if (dpd.open() != Window.OK) {
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(),
+						newHoldsAtBetween, false);
+				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
+				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
+				return null;
+			}
 
 			return newHoldsAtBetween;
 
@@ -610,15 +653,15 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		timeInstantDialog.setMultipleSelection(true);
 		timeInstantDialog.setTitle("Select TWO time instants");
 		// user pressed cancel
-		do{
+		do {
 			if (timeInstantDialog.open() != Window.OK) {
 				return null;
+			} else if (timeInstantDialog.getResult().length < 2) {
+				MessageDialog.openError(null, "Error",
+						"You must select two time instants in order to create a \"Holds At Between\" predicate");
 			}
-			else if (timeInstantDialog.getResult().length < 2){
-				MessageDialog.openError(null, "Error", "You must select two time instants in order to create a \"Holds At Between\" predicate");
-			}
-		}while(timeInstantDialog.getResult().length < 2);
-		
+		} while (timeInstantDialog.getResult().length < 2);
+
 		String timeSelection1 = (String) timeInstantDialog.getResult()[0];
 		String timeSelection2 = (String) timeInstantDialog.getResult()[1];
 		System.out.println("time selected: " + timeSelection1);

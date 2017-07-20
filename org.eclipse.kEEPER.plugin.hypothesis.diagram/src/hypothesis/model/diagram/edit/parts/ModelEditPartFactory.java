@@ -36,6 +36,24 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case HoldsAtBetweenEditPart.VISUAL_ID:
 				return new HoldsAtBetweenEditPart(view);
+
+			case AgentParamEditPart.VISUAL_ID:
+				return new AgentParamEditPart(view);
+
+			case GeneralParamEditPart.VISUAL_ID:
+				return new GeneralParamEditPart(view);
+
+			case ObserverParamEditPart.VISUAL_ID:
+				return new ObserverParamEditPart(view);
+
+			case AgentEditPart.VISUAL_ID:
+				return new AgentEditPart(view);
+
+			case ObserverEditPart.VISUAL_ID:
+				return new ObserverEditPart(view);
+
+			case GeneralTypeEditPart.VISUAL_ID:
+				return new GeneralTypeEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

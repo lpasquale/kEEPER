@@ -166,13 +166,10 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		diagramFileName = workspaceResource.getLocation().lastSegment();
 		editFilesPath = workspaceResource.getLocation().removeLastSegments(1).toString();
 		diagramFilePath = workspaceResource.getLocation().toString();
-		
-	
+
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 
-		System.out.println("FileName: " + diagramFileName + "  Domain File path: " + editFilesPath);
-		System.out.println("Final editor: " + editor);
 	}
 
 	/**
@@ -321,7 +318,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
-
 			// Proceed only if the user has already set up the number of time instants
 			if (bd.getTimeInstants() == 0) {
 				MessageDialog.openError(null, "Error", "You must define the number of time instants before!");
@@ -473,19 +469,20 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath, diagramFilePath);
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHappens, editor, editFilesPath,
+					diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
 				System.out.println("About to destroy the Happens...");
-				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHappens, false);
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHappens,
+						false);
 				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
 				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
 				System.out.println("happens Destroyed!");
 
 				return null;
 			}
-			
+
 			return newHappens;
 
 		} catch (IOException e) {
@@ -573,15 +570,17 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAt, editor, editFilesPath, diagramFilePath);
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAt, editor, editFilesPath,
+					diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
-				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAt, false);
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAt,
+						false);
 				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
 				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
 				return null;
 			}
-			
+
 			return newHoldsAt;
 
 		} catch (IOException e) {
@@ -675,11 +674,13 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
 			}
-			
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAtBetween, editor, editFilesPath, diagramFilePath);
+
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, bd, newHoldsAtBetween, editor,
+					editFilesPath, diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
-				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(), newHoldsAtBetween, false);
+				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(),
+						newHoldsAtBetween, false);
 				DestroyElementCommand destroy = new DestroyElementCommand(destroyRequest);
 				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(destroy));
 				return null;
@@ -752,91 +753,4 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 		return timeSelectedArray;
 	}
-
-	/*	private ArrayList<Parameter> handlingEventParameters(Event ev, Shell shell){
-			
-			ArrayList<Parameter> newParameters = new ArrayList<Parameter>();
-			
-			ElementListSelectionDialog parametersSelection = new ElementListSelectionDialog(null, new LabelProvider());
-		
-			ArrayList<String> param = new ArrayList<String>();
-			
-			System.out.println("Evento selezionato: " + ev);
-		
-			param.add(ev.getAgent().getName());
-			
-			for (int i = 0; i < ev.getParameters().size(); i++){
-				System.out.println("Param " + ev.getParameters().get(i).getType().getName());
-				
-				param.add(ev.getParameters().get(i).getName());
-			}
-			if (ev instanceof PrimitiveEventImpl){
-				param.add(((PrimitiveEventImpl)ev).getObserver().getName());
-			}
-			
-			parametersSelection.setElements(param.toArray());
-			parametersSelection.setMultipleSelection(true);
-			parametersSelection.setTitle("Select the parameters of the event you want to create");
-			parametersSelection.open();
-			
-			
-			EventParametersDialog dialog = new EventParametersDialog(parametersSelection.getResult(), shell);
-			dialog.create();
-			if (dialog.open() == Window.OK) {
-				
-				// Creating the new Agent
-				Agent newAgent = new AgentImpl();
-				newAgent.setName(ev.getAgent().getName());
-				newAgent.setPosition(ev.getAgent().getPosition());
-				newAgent.setType(ev.getAgent().getType());
-				newParameters.add(newAgent);
-				
-				// Creating the new parameters
-				for (int i = 0; i < ev.getParameters().size(); i++){
-					Parameter newParameter = new ParameterImpl();
-					newParameter.setName(ev.getParameters().get(i).getName());
-					newParameter.setPosition(ev.getParameters().get(i).getPosition());
-					newParameter.setType(ev.getParameters().get(i).getType());
-					newParameters.add(newParameter);
-				}
-				
-				if (ev instanceof PrimitiveEventImpl){
-					// Creating the new Observer
-					Observer newObserver = new ObserverImpl();
-					newObserver.setName(((PrimitiveEvent) ev).getObserver().getName());
-					newObserver.setPosition(((PrimitiveEvent) ev).getObserver().getPosition());
-					newObserver.setType(((PrimitiveEvent) ev).getObserver().getType());
-					newParameters.add(newObserver);
-				}
-				
-				for (int i = 0; i < newParameters.size(); i++){
-					System.out.println("Parameter: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
-	
-				}
-			
-				System.out.println(dialog.getMap());
-				
-				// Handling result
-				// Loop for each parameter the user wants to change			
-				for (int i = 0; i < newParameters.size(); i++){
-					Iterator it = dialog.getMap().entrySet().iterator();
-					while (it.hasNext()) {
-						Map.Entry entry = (Map.Entry)it.next();
-						// Compare the keys of the map with the names of the new parameters in the list newParameters
-						if (((String)entry.getKey()).equals(newParameters.get(i).getName())){
-							newParameters.get(i).setNewNumber((int) entry.getValue());
-						} 
-					}
-				}
-				
-				// Verification
-				for (int i = 0; i < newParameters.size(); i++){
-					System.out.println("Parameter_NEW: " + newParameters.get(i) + "  newNumber: " + newParameters.get(i).getNewNumber());
-	
-				}	
-			}
-			
-			return newParameters;
-		}
-	*/
 }

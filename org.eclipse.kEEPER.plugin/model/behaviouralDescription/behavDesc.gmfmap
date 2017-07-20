@@ -108,10 +108,6 @@
           href="behavDesc.gmfgraph#ParameterNode"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/types"/>
-  </nodes>
   <diagram>
     <diagramCanvas
         href="behavDesc.gmfgraph#default"/>

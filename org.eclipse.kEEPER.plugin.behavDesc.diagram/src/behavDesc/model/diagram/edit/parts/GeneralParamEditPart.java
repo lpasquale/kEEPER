@@ -97,7 +97,7 @@ public class GeneralParamEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(0, 0);

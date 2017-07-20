@@ -39,8 +39,6 @@
           name="Parameter"/>
     </descriptors>
   </figures>
-  <figures
-      name="links"/>
   <nodes
       name="ParameterNode"
       figure="ParameterFigure"/>

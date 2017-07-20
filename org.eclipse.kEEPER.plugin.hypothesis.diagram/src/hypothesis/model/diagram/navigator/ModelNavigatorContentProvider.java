@@ -22,11 +22,17 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
+import hypothesis.model.diagram.edit.parts.AgentEditPart;
+import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
 import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverParamEditPart;
 import hypothesis.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -224,6 +230,24 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(HoldsAtBetweenEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(AgentParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(GeneralParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(ObserverParamEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(GeneralTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}

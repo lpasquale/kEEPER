@@ -1,32 +1,25 @@
-package behavDesc.model.diagram.edit.policies;
+package hypothesis.model.diagram.edit.policies;
 
-import java.util.Iterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import model.impl.HappensImpl;
+import hypothesis.model.diagram.providers.ModelElementTypes;
 
 /**
  * @generated
  */
-public class HappensItemSemanticEditPolicy
-		extends behavDesc.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy {
+public class ObserverParamItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public HappensItemSemanticEditPolicy() {
-		super(behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002);
+	public ObserverParamItemSemanticEditPolicy() {
+		super(ModelElementTypes.ObserverParam_2007);
 	}
 
 	/**

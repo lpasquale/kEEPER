@@ -100,7 +100,7 @@ public class HoldsAtEditPart extends ShapeNodeEditPart {
 	* @generated NOT
 	*/
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(1, 1);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(0, 0);
 		return result;
 	}
 

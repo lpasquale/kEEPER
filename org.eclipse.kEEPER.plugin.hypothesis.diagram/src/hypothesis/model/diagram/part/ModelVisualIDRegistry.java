@@ -7,11 +7,17 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
+import hypothesis.model.diagram.edit.parts.AgentEditPart;
+import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
 import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverParamEditPart;
 import model.Environment;
 import model.ModelPackage;
 
@@ -129,6 +135,24 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getHoldsAtBetween().isSuperTypeOf(domainElement.eClass())) {
 				return HoldsAtBetweenEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getAgentParam().isSuperTypeOf(domainElement.eClass())) {
+				return AgentParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getGeneralParam().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getObserverParam().isSuperTypeOf(domainElement.eClass())) {
+				return ObserverParamEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getAgent().isSuperTypeOf(domainElement.eClass())) {
+				return AgentEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
+				return ObserverEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getGeneralType().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralTypeEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -164,6 +188,24 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (HoldsAtBetweenEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AgentParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GeneralParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObserverParamEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AgentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObserverEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GeneralTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -221,6 +263,12 @@ public class ModelVisualIDRegistry {
 		case HappensEditPart.VISUAL_ID:
 		case HoldsAtEditPart.VISUAL_ID:
 		case HoldsAtBetweenEditPart.VISUAL_ID:
+		case AgentParamEditPart.VISUAL_ID:
+		case GeneralParamEditPart.VISUAL_ID:
+		case ObserverParamEditPart.VISUAL_ID:
+		case AgentEditPart.VISUAL_ID:
+		case ObserverEditPart.VISUAL_ID:
+		case GeneralTypeEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

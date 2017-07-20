@@ -24,10 +24,16 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
+import hypothesis.model.diagram.edit.parts.AgentEditPart;
+import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
+import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
 import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverEditPart;
+import hypothesis.model.diagram.edit.parts.ObserverParamEditPart;
 import hypothesis.model.diagram.part.ModelDiagramUpdater;
 import hypothesis.model.diagram.part.ModelNodeDescriptor;
 import hypothesis.model.diagram.part.ModelVisualIDRegistry;
@@ -65,6 +71,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Happens());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAts());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAtBetweens());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Parameters());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Types());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -102,6 +110,12 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case HappensEditPart.VISUAL_ID:
 		case HoldsAtEditPart.VISUAL_ID:
 		case HoldsAtBetweenEditPart.VISUAL_ID:
+		case AgentParamEditPart.VISUAL_ID:
+		case GeneralParamEditPart.VISUAL_ID:
+		case ObserverParamEditPart.VISUAL_ID:
+		case AgentEditPart.VISUAL_ID:
+		case ObserverEditPart.VISUAL_ID:
+		case GeneralTypeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

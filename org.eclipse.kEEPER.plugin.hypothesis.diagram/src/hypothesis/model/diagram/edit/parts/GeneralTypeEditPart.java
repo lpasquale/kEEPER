@@ -18,17 +18,17 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import hypothesis.model.diagram.edit.policies.HappensItemSemanticEditPolicy;
+import hypothesis.model.diagram.edit.policies.GeneralTypeItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class HappensEditPart extends ShapeNodeEditPart {
+public class GeneralTypeEditPart extends ShapeNodeEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2002;
+	public static final int VISUAL_ID = 2010;
 
 	/**
 	* @generated
@@ -43,7 +43,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public HappensEditPart(View view) {
+	public GeneralTypeEditPart(View view) {
 		super(view);
 	}
 
@@ -52,7 +52,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new HappensItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new GeneralTypeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -98,10 +98,10 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated NOT
+	* @generated
 	*/
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(0, 0);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 

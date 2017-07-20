@@ -294,7 +294,7 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	public Command createAndExecuteShapeRequestCommand(IElementType type, EditPart parent) {
-		
+
 		CreateViewRequest actionRequest = CreateViewRequestFactory.getCreateShapeRequest(type,
 				PreferencesHint.USE_DEFAULTS);
 		org.eclipse.gef.commands.Command command = parent.getCommand(actionRequest);
