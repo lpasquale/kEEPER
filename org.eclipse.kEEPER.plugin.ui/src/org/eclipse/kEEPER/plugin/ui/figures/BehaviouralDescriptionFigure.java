@@ -18,9 +18,11 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
 import model.BehaviouralDescription;
+import model.ComplexEvent;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+import model.PrimitiveEvent;
 
 import org.eclipse.draw2d.Graphics;
 
@@ -93,12 +95,22 @@ public class BehaviouralDescriptionFigure extends Shape{
         			occupiedLayers[j] = 1;
         		}
 	        	for (int i = 0; i < bd.getHappens().size(); i++){
-	        		graphics.setForegroundColor(new Color(null, 0, 0, 255));
+	        		graphics.setForegroundColor(new Color(null, 0, 0, 0));
 	        		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
 	        		int k = occupiedLayers[bd.getHappens().get(i).getTime()-1];
 	        		int l = bd.getHappens().get(i).getEvent().getName().length(); // String length of the name of the associated event
-	        		Point ovalStartingPoint = new Point(mainX + length*bd.getHappens().get(i).getTime() -2 , mainY + mainHeight/2 - 20*k);
-	        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 4, 4);
+	        		
+	        		if (bd.getHappens().get(i).getEvent() instanceof PrimitiveEvent){
+	        			Point ovalStartingPoint = new Point(mainX + length*bd.getHappens().get(i).getTime() -2 , mainY + mainHeight/2 - 20*k);
+		        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 4, 4);
+	        		}
+	        		if (bd.getHappens().get(i).getEvent() instanceof ComplexEvent){
+	        			Point ovalStartingPoint1 = new Point(mainX + length*bd.getHappens().get(i).getTime() -2 , mainY + mainHeight/2 - 20*k);
+		        		graphics.drawOval(ovalStartingPoint1.x, ovalStartingPoint1.y, 4, 4);
+		        		Point ovalStartingPoint2 = new Point(mainX + length*bd.getHappens().get(i).getTime() -4 , mainY + mainHeight/2 - 20*k -2);
+		        		graphics.drawOval(ovalStartingPoint2.x, ovalStartingPoint2.y, 8, 8);
+	        		}
+
 	        		Point label = new Point(mainX + length*bd.getHappens().get(i).getTime() -3 -l*2, mainY + mainHeight/2 - 20*k - 11);
 	        		graphics.drawString(bd.getHappens().get(i).getEvent().getName(), label);
 	        		occupiedLayers[bd.getHappens().get(i).getTime()-1]++;
@@ -115,7 +127,7 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        for (int i = 0; i < bd.getHoldsAts().size(); i++){
 		        	
 		        	if (bd.getHoldsAts().get(i).isIsHolding())
-		        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
+		        		graphics.setForegroundColor(new Color(null, 0, 170, 28));
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 	        		int k = bottomOccupiedLayers[bd.getHoldsAts().get(i).getTime()-1];
@@ -138,7 +150,7 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        for (int i = 0; i < bd.getHoldsAtBetweens().size(); i++){
 		        	
 		        	if (bd.getHoldsAtBetweens().get(i).isIsHolding())
-		        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
+		        		graphics.setForegroundColor(new Color(null, 0, 170, 28));
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 		        	
