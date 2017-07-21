@@ -23,6 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -68,10 +69,18 @@ public class Transformer {
 		writer.println("% ********* Context Description *********\n");
 		writer.println("% ***** Types and Instances *****\n");
 		
-		// Creating list of types-instances
+		// Creating list of types-instances checking duplicates
 		for (int i = 0; i < env.getInstances().size(); i++){
-			writer.println(env.getInstances().get(i).getType().getName() + "(" + 
-			env.getInstances().get(i).getName() + ")" + ".");		
+			int counter = 0;
+			for (int j = 0; j < i; j++){
+				if ((env.getInstances().get(i).getName().equals(env.getInstances().get(j).getName())) && (j!=i)){
+					counter++;
+				}
+			}
+			if (counter == 0)
+				writer.println(env.getInstances().get(i).getType().getName() + "(" + 
+					env.getInstances().get(i).getName() + ")" + ".");
+			
 		}
 		
 		
