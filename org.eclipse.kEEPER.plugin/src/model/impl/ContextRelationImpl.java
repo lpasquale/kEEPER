@@ -30,9 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.ContextRelationImpl#getName <em>Name</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
- *   <li>{@link model.impl.ContextRelationImpl#isValue <em>Value</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getTypes <em>Types</em>}</li>
- *   <li>{@link model.impl.ContextRelationImpl#getTypeNames <em>Type Names</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +77,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	protected ComplexEvent endingComplexEvent;
 
 	/**
-	 * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean VALUE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean value = VALUE_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,26 +85,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<Type> types;
-
-	/**
-	 * The default value of the '{@link #getTypeNames() <em>Type Names</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypeNames()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_NAMES_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTypeNames() <em>Type Names</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypeNames()
-	 * @generated
-	 * @ordered
-	 */
-	protected String typeNames = TYPE_NAMES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,53 +131,11 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(boolean newValue) {
-		boolean oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Type> getTypes() {
 		if (types == null) {
 			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.CONTEXT_RELATION__TYPES);
 		}
 		return types;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTypeNames() {
-		return typeNames;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTypeNames(String newTypeNames) {
-		String oldTypeNames = typeNames;
-		typeNames = newTypeNames;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__TYPE_NAMES, oldTypeNames, typeNames));
 	}
 
 	/**
@@ -314,12 +230,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				if (resolve) return getEndingComplexEvent();
 				return basicGetEndingComplexEvent();
-			case ModelPackage.CONTEXT_RELATION__VALUE:
-				return isValue();
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				return getTypes();
-			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				return getTypeNames();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,15 +254,9 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)newValue);
 				return;
-			case ModelPackage.CONTEXT_RELATION__VALUE:
-				setValue((Boolean)newValue);
-				return;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
 				getTypes().addAll((Collection<? extends Type>)newValue);
-				return;
-			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				setTypeNames((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,14 +279,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				setEndingComplexEvent((ComplexEvent)null);
 				return;
-			case ModelPackage.CONTEXT_RELATION__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				getTypes().clear();
-				return;
-			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				setTypeNames(TYPE_NAMES_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -400,12 +300,8 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return initialComplexEvent != null;
 			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
 				return endingComplexEvent != null;
-			case ModelPackage.CONTEXT_RELATION__VALUE:
-				return value != VALUE_EDEFAULT;
 			case ModelPackage.CONTEXT_RELATION__TYPES:
 				return types != null && !types.isEmpty();
-			case ModelPackage.CONTEXT_RELATION__TYPE_NAMES:
-				return TYPE_NAMES_EDEFAULT == null ? typeNames != null : !TYPE_NAMES_EDEFAULT.equals(typeNames);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -422,10 +318,6 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", value: ");
-		result.append(value);
-		result.append(", typeNames: ");
-		result.append(typeNames);
 		result.append(')');
 		return result.toString();
 	}
