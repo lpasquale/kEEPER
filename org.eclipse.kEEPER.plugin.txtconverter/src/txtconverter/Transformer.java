@@ -61,7 +61,7 @@ public class Transformer {
 		
 	}
 	
-	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
+	public boolean createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 	    
 		PrintWriter writer = new PrintWriter(directoryPath +"/environment.txt", "UTF-8");
 		
@@ -431,6 +431,7 @@ public class Transformer {
 		Calendar rightNow = Calendar.getInstance();
 		writer.println("% Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE)); 
 		writer.close();
+		return true;
 	}
 
 	
@@ -479,7 +480,7 @@ public class Transformer {
 		}	
 	}
 			
-	public void createHypothesisFiles(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
+	public boolean createHypothesisFiles(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 		
 		for (int i = 0; i < env.getHypothesis().size(); i++){
 			
@@ -668,7 +669,7 @@ public class Transformer {
 				writer2.close();
 
 			} // Behavioural Descriptions 
-
+		return true;
 		}
 	
 	private void writeHoldsAtDynParameters(HoldsAt h, PrintWriter writer){

@@ -16,6 +16,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -51,8 +52,17 @@ public class ConvertHandler extends AbstractHandler implements IHandler {
 			Transformer transform = new Transformer(path.toString());
 			Environment env;
 			env = transform.getLoader().parseFiles();
-			transform.createTxtFile(env);	
-			transform.createHypothesisFiles(env);
+			Validator validator = new Validator(env);
+			boolean isValid = validator.validate();
+			if (isValid){
+				boolean envCreated = transform.createTxtFile(env);
+				if (envCreated)
+					MessageDialog.openInformation(null, "Gen Encoding", "Environment created successfully!");
+
+				boolean hypCreated = transform.createHypothesisFiles(env);
+				if (hypCreated)
+					MessageDialog.openInformation(null, "Gen Encoding", "Hypotheses created successfully!");
+			}
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
