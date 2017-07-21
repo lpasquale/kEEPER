@@ -1,8 +1,5 @@
 package behavDesc.model.diagram.navigator;
 
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -20,7 +17,6 @@ import model.Agent;
 import model.AgentParam;
 import model.BehaviouralDescription;
 import model.GeneralParam;
-import model.GeneralType;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -108,9 +104,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Agent", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.Agent_2008);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralType", //$NON-NLS-1$
-					behavDesc.model.diagram.providers.ModelElementTypes.GeneralType_2009);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.Observer_2010);
@@ -184,8 +177,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getGeneralParam_2007Text(view);
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return getAgent_2008Text(view);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2009Text(view);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return getObserver_2010Text(view);
 		}
@@ -307,20 +298,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		} else {
 			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
 					.logError("No domain element for view with visualID = " + 2008); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getGeneralType_2009Text(View view) {
-		GeneralType domainModelElement = (GeneralType) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
-					.logError("No domain element for view with visualID = " + 2009); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

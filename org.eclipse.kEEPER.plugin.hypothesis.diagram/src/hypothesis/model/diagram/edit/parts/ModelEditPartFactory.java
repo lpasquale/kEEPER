@@ -51,9 +51,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case ObserverEditPart.VISUAL_ID:
 				return new ObserverEditPart(view);
-
-			case GeneralTypeEditPart.VISUAL_ID:
-				return new GeneralTypeEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

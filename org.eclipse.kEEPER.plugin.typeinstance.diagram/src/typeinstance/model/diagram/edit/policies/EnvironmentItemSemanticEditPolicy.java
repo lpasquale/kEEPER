@@ -8,9 +8,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 import typeinstance.model.diagram.edit.commands.AgentCreateCommand;
-import typeinstance.model.diagram.edit.commands.GeneralTypeCreateCommand;
 import typeinstance.model.diagram.edit.commands.InstanceCreateCommand;
 import typeinstance.model.diagram.edit.commands.ObserverCreateCommand;
+import typeinstance.model.diagram.edit.commands.TypeCreateCommand;
 import typeinstance.model.diagram.providers.ModelElementTypes;
 
 /**
@@ -32,14 +32,14 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		if (ModelElementTypes.Instance_2005 == req.getElementType()) {
 			return getGEFWrapper(new InstanceCreateCommand(req));
 		}
-		if (ModelElementTypes.GeneralType_2011 == req.getElementType()) {
-			return getGEFWrapper(new GeneralTypeCreateCommand(req));
-		}
 		if (ModelElementTypes.Agent_2009 == req.getElementType()) {
 			return getGEFWrapper(new AgentCreateCommand(req));
 		}
 		if (ModelElementTypes.Observer_2010 == req.getElementType()) {
 			return getGEFWrapper(new ObserverCreateCommand(req));
+		}
+		if (ModelElementTypes.Type_2012 == req.getElementType()) {
+			return getGEFWrapper(new TypeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

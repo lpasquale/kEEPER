@@ -93,16 +93,6 @@
         href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//GeneralType"/>
-      <diagramNode
-          href="behavDesc.gmfgraph#ParameterNode"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/types"/>
-    <ownedChild>
-      <domainMetaElement
           href="../model.ecore#//Observer"/>
       <diagramNode
           href="behavDesc.gmfgraph#ParameterNode"/>

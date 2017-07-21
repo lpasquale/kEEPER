@@ -1,4 +1,4 @@
-package hypothesis.model.diagram.edit.commands;
+package typeinstance.model.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -13,18 +13,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import model.Environment;
-import model.GeneralType;
 import model.ModelFactory;
+import model.Type;
 
 /**
  * @generated
  */
-public class GeneralTypeCreateCommand extends EditElementCommand {
+public class TypeCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
 	*/
-	public GeneralTypeCreateCommand(CreateElementRequest req) {
+	public TypeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -52,7 +52,7 @@ public class GeneralTypeCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		GeneralType newElement = ModelFactory.eINSTANCE.createGeneralType();
+		Type newElement = ModelFactory.eINSTANCE.createType();
 
 		Environment owner = (Environment) getElementToEdit();
 		owner.getTypes().add(newElement);
@@ -66,8 +66,7 @@ public class GeneralTypeCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(GeneralType newElement, IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
+	protected void doConfigure(Type newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

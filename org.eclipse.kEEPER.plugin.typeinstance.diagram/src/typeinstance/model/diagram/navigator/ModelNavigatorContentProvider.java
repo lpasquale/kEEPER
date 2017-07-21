@@ -25,10 +25,10 @@ import org.eclipse.ui.navigator.ICommonContentProvider;
 
 import typeinstance.model.diagram.edit.parts.AgentEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
-import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
 import typeinstance.model.diagram.edit.parts.ObserverEditPart;
+import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.part.Messages;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
@@ -222,13 +222,13 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(GeneralTypeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(TypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(InstanceTypeEditPart.VISUAL_ID));
@@ -287,11 +287,11 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case GeneralTypeEditPart.VISUAL_ID: {
+		case TypeEditPart.VISUAL_ID: {
 			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			ModelNavigatorGroup incominglinks = new ModelNavigatorGroup(
-					Messages.NavigatorGroupName_GeneralType_2011_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_Type_2012_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -312,13 +312,13 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(GeneralTypeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(AgentEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(TypeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));

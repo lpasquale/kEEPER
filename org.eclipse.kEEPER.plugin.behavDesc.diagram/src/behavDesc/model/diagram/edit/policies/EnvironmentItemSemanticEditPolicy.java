@@ -48,9 +48,6 @@ public class EnvironmentItemSemanticEditPolicy
 		if (behavDesc.model.diagram.providers.ModelElementTypes.Agent_2008 == req.getElementType()) {
 			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.AgentCreateCommand(req));
 		}
-		if (behavDesc.model.diagram.providers.ModelElementTypes.GeneralType_2009 == req.getElementType()) {
-			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.GeneralTypeCreateCommand(req));
-		}
 		if (behavDesc.model.diagram.providers.ModelElementTypes.Observer_2010 == req.getElementType()) {
 			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.ObserverCreateCommand(req));
 		}

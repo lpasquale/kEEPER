@@ -53,55 +53,41 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType BehaviouralDescription_2001 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescription_2001"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType Happens_2002 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.Happens_2002"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType HoldsAt_2003 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAt_2003"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType HoldsAtBetween_2004 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAtBetween_2004"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType AgentParam_2005 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.AgentParam_2005"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType ObserverParam_2006 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.ObserverParam_2006"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType GeneralParam_2007 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.GeneralParam_2007"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType Agent_2008 = getElementType(
 			"org.eclipse.kEEPER.plugin.behavDesc.diagram.Agent_2008"); //$NON-NLS-1$
-
-	/**
-	* @generated
-	*/
-	public static final IElementType GeneralType_2009 = getElementType(
-			"org.eclipse.kEEPER.plugin.behavDesc.diagram.GeneralType_2009"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
@@ -164,8 +150,6 @@ public class ModelElementTypes {
 
 			elements.put(Agent_2008, ModelPackage.eINSTANCE.getAgent());
 
-			elements.put(GeneralType_2009, ModelPackage.eINSTANCE.getGeneralType());
-
 			elements.put(Observer_2010, ModelPackage.eINSTANCE.getObserver());
 		}
 		return (ENamedElement) elements.get(type);
@@ -193,7 +177,6 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ObserverParam_2006);
 			KNOWN_ELEMENT_TYPES.add(GeneralParam_2007);
 			KNOWN_ELEMENT_TYPES.add(Agent_2008);
-			KNOWN_ELEMENT_TYPES.add(GeneralType_2009);
 			KNOWN_ELEMENT_TYPES.add(Observer_2010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -222,8 +205,6 @@ public class ModelElementTypes {
 			return GeneralParam_2007;
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return Agent_2008;
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return GeneralType_2009;
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return Observer_2010;
 		}

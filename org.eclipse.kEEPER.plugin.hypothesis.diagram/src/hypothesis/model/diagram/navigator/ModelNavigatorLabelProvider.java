@@ -17,7 +17,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -30,7 +29,6 @@ import hypothesis.model.diagram.providers.ModelElementTypes;
 import model.Agent;
 import model.AgentParam;
 import model.GeneralParam;
-import model.GeneralType;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -120,9 +118,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case ObserverEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Observer", //$NON-NLS-1$
 					ModelElementTypes.Observer_2009);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?GeneralType", //$NON-NLS-1$
-					ModelElementTypes.GeneralType_2010);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -193,8 +188,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getAgent_2008Text(view);
 		case ObserverEditPart.VISUAL_ID:
 			return getObserver_2009Text(view);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2010Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -319,19 +312,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return domainModelElement.getName();
 		} else {
 			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2009); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getGeneralType_2010Text(View view) {
-		GeneralType domainModelElement = (GeneralType) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

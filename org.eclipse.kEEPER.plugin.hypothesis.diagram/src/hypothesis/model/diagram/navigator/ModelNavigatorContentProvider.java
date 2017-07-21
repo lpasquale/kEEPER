@@ -26,7 +26,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -245,9 +244,6 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(GeneralTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}

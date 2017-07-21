@@ -10,7 +10,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import hypothesis.model.diagram.edit.commands.AgentCreateCommand;
 import hypothesis.model.diagram.edit.commands.AgentParamCreateCommand;
 import hypothesis.model.diagram.edit.commands.GeneralParamCreateCommand;
-import hypothesis.model.diagram.edit.commands.GeneralTypeCreateCommand;
 import hypothesis.model.diagram.edit.commands.HappensCreateCommand;
 import hypothesis.model.diagram.edit.commands.HoldsAtBetweenCreateCommand;
 import hypothesis.model.diagram.edit.commands.HoldsAtCreateCommand;
@@ -61,9 +60,6 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		}
 		if (ModelElementTypes.Observer_2009 == req.getElementType()) {
 			return getGEFWrapper(new ObserverCreateCommand(req));
-		}
-		if (ModelElementTypes.GeneralType_2010 == req.getElementType()) {
-			return getGEFWrapper(new GeneralTypeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

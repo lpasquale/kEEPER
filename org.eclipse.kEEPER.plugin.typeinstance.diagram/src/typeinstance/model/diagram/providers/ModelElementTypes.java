@@ -17,10 +17,10 @@ import org.eclipse.swt.graphics.Image;
 import model.ModelPackage;
 import typeinstance.model.diagram.edit.parts.AgentEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
-import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
 import typeinstance.model.diagram.edit.parts.ObserverEditPart;
+import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.part.ModelDiagramEditorPlugin;
 
 /**
@@ -63,11 +63,6 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType GeneralType_2011 = getElementType(
-			"org.eclipse.kEEPER.plugin.typeinstance.diagram.GeneralType_2011"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
 	public static final IElementType Agent_2009 = getElementType(
 			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Agent_2009"); //$NON-NLS-1$
 	/**
@@ -75,6 +70,11 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType Observer_2010 = getElementType(
 			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Observer_2010"); //$NON-NLS-1$
+	/**
+	* @generated
+	*/
+	public static final IElementType Type_2012 = getElementType(
+			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Type_2012"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -123,11 +123,11 @@ public class ModelElementTypes {
 
 			elements.put(Instance_2005, ModelPackage.eINSTANCE.getInstance());
 
-			elements.put(GeneralType_2011, ModelPackage.eINSTANCE.getGeneralType());
-
 			elements.put(Agent_2009, ModelPackage.eINSTANCE.getAgent());
 
 			elements.put(Observer_2010, ModelPackage.eINSTANCE.getObserver());
+
+			elements.put(Type_2012, ModelPackage.eINSTANCE.getType());
 
 			elements.put(InstanceType_4003, ModelPackage.eINSTANCE.getInstance_Type());
 		}
@@ -149,9 +149,9 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(Instance_2005);
-			KNOWN_ELEMENT_TYPES.add(GeneralType_2011);
 			KNOWN_ELEMENT_TYPES.add(Agent_2009);
 			KNOWN_ELEMENT_TYPES.add(Observer_2010);
+			KNOWN_ELEMENT_TYPES.add(Type_2012);
 			KNOWN_ELEMENT_TYPES.add(InstanceType_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -166,12 +166,12 @@ public class ModelElementTypes {
 			return Environment_1000;
 		case InstanceEditPart.VISUAL_ID:
 			return Instance_2005;
-		case GeneralTypeEditPart.VISUAL_ID:
-			return GeneralType_2011;
 		case AgentEditPart.VISUAL_ID:
 			return Agent_2009;
 		case ObserverEditPart.VISUAL_ID:
 			return Observer_2010;
+		case TypeEditPart.VISUAL_ID:
+			return Type_2012;
 		case InstanceTypeEditPart.VISUAL_ID:
 			return InstanceType_4003;
 		}

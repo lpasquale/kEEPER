@@ -136,9 +136,6 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getAgent().isSuperTypeOf(domainElement.eClass())) {
 				return behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getGeneralType().isSuperTypeOf(domainElement.eClass())) {
-				return behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID;
-			}
 			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
 				return behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID;
 			}
@@ -189,9 +186,6 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID == nodeVisualID) {
@@ -256,7 +250,6 @@ public class ModelVisualIDRegistry {
 		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return true;
 		default:

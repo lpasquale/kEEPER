@@ -34,9 +34,9 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 import model.ModelPackage;
 import typeinstance.model.diagram.edit.parts.AgentEditPart;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
-import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
 import typeinstance.model.diagram.edit.parts.ObserverEditPart;
+import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.part.ModelDiagramUpdater;
 import typeinstance.model.diagram.part.ModelLinkDescriptor;
 import typeinstance.model.diagram.part.ModelNodeDescriptor;
@@ -106,9 +106,9 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		int visualID = ModelVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case InstanceEditPart.VISUAL_ID:
-		case GeneralTypeEditPart.VISUAL_ID:
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
+		case TypeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -262,13 +262,6 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case GeneralTypeEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getGeneralType_2011ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
 		case AgentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ModelDiagramUpdater.getAgent_2009ContainedLinks(view));
@@ -279,6 +272,13 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ObserverEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ModelDiagramUpdater.getObserver_2010ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case TypeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ModelDiagramUpdater.getType_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

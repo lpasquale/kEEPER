@@ -7,14 +7,14 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import typeinstance.model.diagram.edit.parts.GeneralTypeEditPart;
+import typeinstance.model.diagram.edit.parts.TypeEditPart;
 import typeinstance.model.diagram.providers.ModelElementTypes;
 import typeinstance.model.diagram.providers.ModelModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class ModelModelingAssistantProviderOfGeneralTypeEditPart extends ModelModelingAssistantProvider {
+public class ModelModelingAssistantProviderOfTypeEditPart extends ModelModelingAssistantProvider {
 
 	/**
 	* @generated
@@ -23,13 +23,13 @@ public class ModelModelingAssistantProviderOfGeneralTypeEditPart extends ModelMo
 
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((GeneralTypeEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((TypeEditPart) targetEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnTarget(GeneralTypeEditPart target) {
+	public List<IElementType> doGetRelTypesOnTarget(TypeEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(ModelElementTypes.InstanceType_4003);
 		return types;
@@ -42,13 +42,13 @@ public class ModelModelingAssistantProviderOfGeneralTypeEditPart extends ModelMo
 
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource((GeneralTypeEditPart) targetEditPart, relationshipType);
+		return doGetTypesForSource((TypeEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetTypesForSource(GeneralTypeEditPart target, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(TypeEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.InstanceType_4003) {
 			types.add(ModelElementTypes.Instance_2005);

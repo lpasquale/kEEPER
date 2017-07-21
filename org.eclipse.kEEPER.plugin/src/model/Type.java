@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see model.ModelPackage#getType()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Type extends EObject {

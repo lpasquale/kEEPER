@@ -98,16 +98,6 @@
           href="hypothesis.gmfgraph#ParameterNode"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/types"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../model.ecore#//GeneralType"/>
-      <diagramNode
-          href="hypothesis.gmfgraph#ParameterNode"/>
-    </ownedChild>
-  </nodes>
   <diagram>
     <diagramCanvas
         href="hypothesis.gmfgraph#default"/>

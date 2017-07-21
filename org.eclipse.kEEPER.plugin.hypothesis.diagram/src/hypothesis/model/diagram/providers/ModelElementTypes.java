@@ -18,7 +18,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -80,42 +79,31 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType HoldsAtBetween_2004 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.HoldsAtBetween_2004"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType AgentParam_2005 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.AgentParam_2005"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType GeneralParam_2006 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.GeneralParam_2006"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType ObserverParam_2007 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.ObserverParam_2007"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType Agent_2008 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.Agent_2008"); //$NON-NLS-1$
-
 	/**
 	* @generated
 	*/
 	public static final IElementType Observer_2009 = getElementType(
 			"org.eclipse.kEEPER.plugin.hypothesis.diagram.Observer_2009"); //$NON-NLS-1$
-
-	/**
-	* @generated
-	*/
-	public static final IElementType GeneralType_2010 = getElementType(
-			"org.eclipse.kEEPER.plugin.hypothesis.diagram.GeneralType_2010"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -174,8 +162,6 @@ public class ModelElementTypes {
 			elements.put(Agent_2008, ModelPackage.eINSTANCE.getAgent());
 
 			elements.put(Observer_2009, ModelPackage.eINSTANCE.getObserver());
-
-			elements.put(GeneralType_2010, ModelPackage.eINSTANCE.getGeneralType());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -203,7 +189,6 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ObserverParam_2007);
 			KNOWN_ELEMENT_TYPES.add(Agent_2008);
 			KNOWN_ELEMENT_TYPES.add(Observer_2009);
-			KNOWN_ELEMENT_TYPES.add(GeneralType_2010);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -233,8 +218,6 @@ public class ModelElementTypes {
 			return Agent_2008;
 		case ObserverEditPart.VISUAL_ID:
 			return Observer_2009;
-		case GeneralTypeEditPart.VISUAL_ID:
-			return GeneralType_2010;
 		}
 		return null;
 	}

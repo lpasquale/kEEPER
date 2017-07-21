@@ -57,7 +57,7 @@ public class WrappingLabel2EditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5013;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	* @generated
@@ -292,7 +292,7 @@ public class WrappingLabel2EditPart extends CompartmentEditPart implements IText
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.GeneralType_2011, getParserElement(),
+			parser = ModelParserProvider.getParser(ModelElementTypes.Type_2012, getParserElement(),
 					ModelVisualIDRegistry
 							.getType(typeinstance.model.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 		}

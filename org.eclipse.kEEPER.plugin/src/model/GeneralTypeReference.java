@@ -31,12 +31,12 @@ public interface GeneralTypeReference extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reference</em>' reference.
-	 * @see #setReference(GeneralType)
+	 * @see #setReference(Type)
 	 * @see model.ModelPackage#getGeneralTypeReference_Reference()
 	 * @model
 	 * @generated
 	 */
-	GeneralType getReference();
+	Type getReference();
 
 	/**
 	 * Sets the value of the '{@link model.GeneralTypeReference#getReference <em>Reference</em>}' reference.
@@ -46,7 +46,7 @@ public interface GeneralTypeReference extends EObject {
 	 * @see #getReference()
 	 * @generated
 	 */
-	void setReference(GeneralType value);
+	void setReference(Type value);
 
 	/**
 	 * Returns the value of the '<em><b>Type Name</b></em>' attribute.

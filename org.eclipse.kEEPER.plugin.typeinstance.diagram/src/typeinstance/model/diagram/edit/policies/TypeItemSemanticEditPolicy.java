@@ -24,13 +24,13 @@ import typeinstance.model.diagram.providers.ModelElementTypes;
 /**
  * @generated
  */
-public class GeneralTypeItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
+public class TypeItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public GeneralTypeItemSemanticEditPolicy() {
-		super(ModelElementTypes.GeneralType_2011);
+	public TypeItemSemanticEditPolicy() {
+		super(ModelElementTypes.Type_2012);
 	}
 
 	/**

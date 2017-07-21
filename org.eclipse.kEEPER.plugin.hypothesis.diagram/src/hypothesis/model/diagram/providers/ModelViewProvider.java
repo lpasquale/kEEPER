@@ -38,7 +38,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -75,10 +74,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -137,7 +136,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				case ObserverParamEditPart.VISUAL_ID:
 				case AgentEditPart.VISUAL_ID:
 				case ObserverEditPart.VISUAL_ID:
-				case GeneralTypeEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -152,7 +150,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				|| HoldsAtEditPart.VISUAL_ID == visualID || HoldsAtBetweenEditPart.VISUAL_ID == visualID
 				|| AgentParamEditPart.VISUAL_ID == visualID || GeneralParamEditPart.VISUAL_ID == visualID
 				|| ObserverParamEditPart.VISUAL_ID == visualID || AgentEditPart.VISUAL_ID == visualID
-				|| ObserverEditPart.VISUAL_ID == visualID || GeneralTypeEditPart.VISUAL_ID == visualID;
+				|| ObserverEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -219,8 +217,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			return createAgent_2008(domainElement, containerView, index, persisted, preferencesHint);
 		case ObserverEditPart.VISUAL_ID:
 			return createObserver_2009(domainElement, containerView, index, persisted, preferencesHint);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return createGeneralType_2010(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -535,42 +531,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(ModelVisualIDRegistry.getType(ObserverEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-		return node;
-	}
-
-	/**
-	* @generated
-	*/
-	public Node createGeneralType_2010(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(GeneralTypeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);

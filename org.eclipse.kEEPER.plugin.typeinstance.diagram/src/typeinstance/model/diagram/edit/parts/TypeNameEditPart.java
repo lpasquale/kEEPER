@@ -52,12 +52,12 @@ import typeinstance.model.diagram.providers.ModelParserProvider;
 /**
  * @generated
  */
-public class GeneralTypeNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class TypeNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5014;
+	public static final int VISUAL_ID = 5016;
 
 	/**
 	* @generated
@@ -87,7 +87,7 @@ public class GeneralTypeNameEditPart extends CompartmentEditPart implements ITex
 	/**
 	* @generated
 	*/
-	public GeneralTypeNameEditPart(View view) {
+	public TypeNameEditPart(View view) {
 		super(view);
 	}
 
@@ -288,9 +288,8 @@ public class GeneralTypeNameEditPart extends CompartmentEditPart implements ITex
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.GeneralType_2011, getParserElement(),
-					ModelVisualIDRegistry
-							.getType(typeinstance.model.diagram.edit.parts.GeneralTypeNameEditPart.VISUAL_ID));
+			parser = ModelParserProvider.getParser(ModelElementTypes.Type_2012, getParserElement(),
+					ModelVisualIDRegistry.getType(typeinstance.model.diagram.edit.parts.TypeNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

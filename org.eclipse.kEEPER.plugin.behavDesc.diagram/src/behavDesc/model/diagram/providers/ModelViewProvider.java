@@ -1,6 +1,5 @@
 package behavDesc.model.diagram.providers;
 
-import java.util.ArrayList;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -21,21 +20,15 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.notation.Connector;
-import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
-import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
@@ -69,10 +62,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -134,7 +127,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
 				case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
 				case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
-				case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
 				case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != behavDesc.model.diagram.part.ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
@@ -154,7 +146,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				|| behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID == visualID
 				|| behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID == visualID
 				|| behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID == visualID
-				|| behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID == visualID
 				|| behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID == visualID;
 	}
 
@@ -222,8 +213,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			return createGeneralParam_2007(domainElement, containerView, index, persisted, preferencesHint);
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return createAgent_2008(domainElement, containerView, index, persisted, preferencesHint);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return createGeneralType_2009(domainElement, containerView, index, persisted, preferencesHint);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return createObserver_2010(domainElement, containerView, index, persisted, preferencesHint);
 		}
@@ -512,43 +501,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(behavDesc.model.diagram.part.ModelVisualIDRegistry
 				.getType(behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-		return node;
-	}
-
-	/**
-	* @generated
-	*/
-	public Node createGeneralType_2009(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(behavDesc.model.diagram.part.ModelVisualIDRegistry
-				.getType(behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);

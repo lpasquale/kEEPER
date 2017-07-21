@@ -118,6 +118,5 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralTypeReference/reference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//GeneralTypeReference/typeName"/>
     </genClasses>
-    <genClasses ecoreClass="model.ecore#//GeneralType"/>
   </genPackages>
 </genmodel:GenModel>

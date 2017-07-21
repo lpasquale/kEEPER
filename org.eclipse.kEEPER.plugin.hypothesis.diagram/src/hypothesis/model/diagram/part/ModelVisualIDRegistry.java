@@ -11,7 +11,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -150,9 +149,6 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getObserver().isSuperTypeOf(domainElement.eClass())) {
 				return ObserverEditPart.VISUAL_ID;
 			}
-			if (ModelPackage.eINSTANCE.getGeneralType().isSuperTypeOf(domainElement.eClass())) {
-				return GeneralTypeEditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
@@ -203,9 +199,6 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (ObserverEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (GeneralTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -268,7 +261,6 @@ public class ModelVisualIDRegistry {
 		case ObserverParamEditPart.VISUAL_ID:
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
-		case GeneralTypeEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

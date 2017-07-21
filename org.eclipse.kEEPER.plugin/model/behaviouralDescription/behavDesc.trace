@@ -28,9 +28,6 @@
       visualID="2008"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Agent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'types')"/>
   <nodeTraces
-      visualID="2009"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'GeneralType') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'types')"/>
-  <nodeTraces
       visualID="2010"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Observer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'types')"/>
 </trace:TraceModel>

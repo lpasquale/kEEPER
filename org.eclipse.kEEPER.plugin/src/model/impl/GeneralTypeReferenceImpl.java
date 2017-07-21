@@ -2,9 +2,9 @@
  */
 package model.impl;
 
-import model.GeneralType;
 import model.GeneralTypeReference;
 import model.ModelPackage;
+import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -36,7 +36,7 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 * @ordered
 	 */
-	protected GeneralType reference;
+	protected Type reference;
 
 	/**
 	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
@@ -81,10 +81,10 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GeneralType getReference() {
+	public Type getReference() {
 		if (reference != null && reference.eIsProxy()) {
 			InternalEObject oldReference = (InternalEObject)reference;
-			reference = (GeneralType)eResolveProxy(oldReference);
+			reference = (Type)eResolveProxy(oldReference);
 			if (reference != oldReference) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.GENERAL_TYPE_REFERENCE__REFERENCE, oldReference, reference));
@@ -98,7 +98,7 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GeneralType basicGetReference() {
+	public Type basicGetReference() {
 		return reference;
 	}
 
@@ -107,8 +107,8 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReference(GeneralType newReference) {
-		GeneralType oldReference = reference;
+	public void setReference(Type newReference) {
+		Type oldReference = reference;
 		reference = newReference;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.GENERAL_TYPE_REFERENCE__REFERENCE, oldReference, reference));
@@ -161,7 +161,7 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ModelPackage.GENERAL_TYPE_REFERENCE__REFERENCE:
-				setReference((GeneralType)newValue);
+				setReference((Type)newValue);
 				return;
 			case ModelPackage.GENERAL_TYPE_REFERENCE__TYPE_NAME:
 				setTypeName((String)newValue);
@@ -179,7 +179,7 @@ public class GeneralTypeReferenceImpl extends MinimalEObjectImpl.Container imple
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ModelPackage.GENERAL_TYPE_REFERENCE__REFERENCE:
-				setReference((GeneralType)null);
+				setReference((Type)null);
 				return;
 			case ModelPackage.GENERAL_TYPE_REFERENCE__TYPE_NAME:
 				setTypeName(TYPE_NAME_EDEFAULT);

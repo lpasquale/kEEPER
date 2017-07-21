@@ -47,9 +47,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.AgentEditPart(view);
 
-			case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-				return new behavDesc.model.diagram.edit.parts.GeneralTypeEditPart(view);
-
 			case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.ObserverEditPart(view);
 			}

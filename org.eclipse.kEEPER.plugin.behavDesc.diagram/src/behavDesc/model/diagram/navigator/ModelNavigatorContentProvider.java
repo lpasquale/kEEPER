@@ -16,7 +16,6 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
@@ -240,10 +239,6 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					behavDesc.model.diagram.part.ModelVisualIDRegistry
 							.getType(behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					behavDesc.model.diagram.part.ModelVisualIDRegistry
-							.getType(behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					behavDesc.model.diagram.part.ModelVisualIDRegistry

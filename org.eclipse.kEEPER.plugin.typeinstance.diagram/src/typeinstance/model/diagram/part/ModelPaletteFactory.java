@@ -5,7 +5,6 @@ import java.util.Collections;
 
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
-import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
@@ -78,9 +77,9 @@ public class ModelPaletteFactory {
 	*/
 	private ToolEntry createGeneralType3CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.GeneralType3CreationTool_title,
-				Messages.GeneralType3CreationTool_desc, Collections.singletonList(ModelElementTypes.GeneralType_2011));
+				Messages.GeneralType3CreationTool_desc, Collections.singletonList(ModelElementTypes.Type_2012));
 		entry.setId("createGeneralType3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.GeneralType_2011));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Type_2012));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

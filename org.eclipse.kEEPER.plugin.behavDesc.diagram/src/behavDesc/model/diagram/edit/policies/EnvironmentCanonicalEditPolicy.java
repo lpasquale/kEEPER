@@ -2,14 +2,13 @@ package behavDesc.model.diagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Set;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -19,18 +18,12 @@ import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 import model.ModelPackage;
 
 /**
@@ -108,7 +101,6 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case behavDesc.model.diagram.edit.parts.ObserverParamEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.GeneralParamEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return true;
 		}

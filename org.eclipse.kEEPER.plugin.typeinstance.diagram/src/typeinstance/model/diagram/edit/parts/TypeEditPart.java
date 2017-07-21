@@ -1,6 +1,5 @@
 package typeinstance.model.diagram.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
@@ -23,18 +22,18 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import typeinstance.model.diagram.edit.policies.GeneralTypeItemSemanticEditPolicy;
+import typeinstance.model.diagram.edit.policies.TypeItemSemanticEditPolicy;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
 /**
  * @generated
  */
-public class GeneralTypeEditPart extends ShapeNodeEditPart {
+public class TypeEditPart extends ShapeNodeEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2011;
+	public static final int VISUAL_ID = 2012;
 
 	/**
 	* @generated
@@ -49,7 +48,7 @@ public class GeneralTypeEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public GeneralTypeEditPart(View view) {
+	public TypeEditPart(View view) {
 		super(view);
 	}
 
@@ -58,7 +57,7 @@ public class GeneralTypeEditPart extends ShapeNodeEditPart {
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new GeneralTypeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TypeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -108,8 +107,8 @@ public class GeneralTypeEditPart extends ShapeNodeEditPart {
 			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeTitle());
 			return true;
 		}
-		if (childEditPart instanceof GeneralTypeNameEditPart) {
-			((GeneralTypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeNameFigure());
+		if (childEditPart instanceof TypeNameEditPart) {
+			((TypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureTypeNameFigure());
 			return true;
 		}
 		return false;
@@ -122,7 +121,7 @@ public class GeneralTypeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof WrappingLabel2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof GeneralTypeNameEditPart) {
+		if (childEditPart instanceof TypeNameEditPart) {
 			return true;
 		}
 		return false;
@@ -293,10 +292,9 @@ public class GeneralTypeEditPart extends ShapeNodeEditPart {
 			fFigureTypeTitle = new WrappingLabel();
 			fFigureTypeTitle.setText("<<Type>>");
 			fFigureTypeTitle.setAlignment(PositionConstants.CENTER);
-
-			this.add(fFigureTypeTitle, BorderLayout.CENTER);
-			this.add(fFigureTypeNameFigure, BorderLayout.CENTER);
-
+			
+			this.add(fFigureTypeTitle);
+			this.add(fFigureTypeNameFigure);
 		}
 
 		/**

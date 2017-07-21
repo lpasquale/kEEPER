@@ -27,7 +27,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -115,7 +114,6 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ObserverParamEditPart.VISUAL_ID:
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
-		case GeneralTypeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

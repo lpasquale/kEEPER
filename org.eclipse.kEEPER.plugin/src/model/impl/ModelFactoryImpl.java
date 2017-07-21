@@ -56,6 +56,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ModelPackage.TYPE: return createType();
 			case ModelPackage.INSTANCE: return createInstance();
 			case ModelPackage.CONTEXT_RELATION: return createContextRelation();
 			case ModelPackage.PRIMITIVE_EVENT: return createPrimitiveEvent();
@@ -75,10 +76,19 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.AGENT_REFERENCE: return createAgentReference();
 			case ModelPackage.OBSERVER_REFERENCE: return createObserverReference();
 			case ModelPackage.GENERAL_TYPE_REFERENCE: return createGeneralTypeReference();
-			case ModelPackage.GENERAL_TYPE: return createGeneralType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type createType() {
+		TypeImpl type = new TypeImpl();
+		return type;
 	}
 
 	/**
@@ -239,16 +249,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public GeneralTypeReference createGeneralTypeReference() {
 		GeneralTypeReferenceImpl generalTypeReference = new GeneralTypeReferenceImpl();
 		return generalTypeReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GeneralType createGeneralType() {
-		GeneralTypeImpl generalType = new GeneralTypeImpl();
-		return generalType;
 	}
 
 	/**

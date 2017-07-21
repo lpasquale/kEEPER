@@ -12,7 +12,6 @@ import hypothesis.model.diagram.edit.parts.AgentEditPart;
 import hypothesis.model.diagram.edit.parts.AgentParamEditPart;
 import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import hypothesis.model.diagram.edit.parts.GeneralParamEditPart;
-import hypothesis.model.diagram.edit.parts.GeneralTypeEditPart;
 import hypothesis.model.diagram.edit.parts.HappensEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
 import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
@@ -111,10 +110,6 @@ public class ModelDiagramUpdater {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == GeneralTypeEditPart.VISUAL_ID) {
-				result.add(new ModelNodeDescriptor(childElement, visualID));
-				continue;
-			}
 		}
 		return result;
 	}
@@ -144,8 +139,6 @@ public class ModelDiagramUpdater {
 			return getAgent_2008ContainedLinks(view);
 		case ObserverEditPart.VISUAL_ID:
 			return getObserver_2009ContainedLinks(view);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2010ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -173,8 +166,6 @@ public class ModelDiagramUpdater {
 			return getAgent_2008IncomingLinks(view);
 		case ObserverEditPart.VISUAL_ID:
 			return getObserver_2009IncomingLinks(view);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2010IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -202,8 +193,6 @@ public class ModelDiagramUpdater {
 			return getAgent_2008OutgoingLinks(view);
 		case ObserverEditPart.VISUAL_ID:
 			return getObserver_2009OutgoingLinks(view);
-		case GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2010OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -279,13 +268,6 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<ModelLinkDescriptor> getGeneralType_2010ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getHypothesis_2001IncomingLinks(View view) {
@@ -349,13 +331,6 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<ModelLinkDescriptor> getGeneralType_2010IncomingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getHypothesis_2001OutgoingLinks(View view) {
@@ -415,13 +390,6 @@ public class ModelDiagramUpdater {
 	* @generated
 	*/
 	public static List<ModelLinkDescriptor> getObserver_2009OutgoingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ModelLinkDescriptor> getGeneralType_2010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

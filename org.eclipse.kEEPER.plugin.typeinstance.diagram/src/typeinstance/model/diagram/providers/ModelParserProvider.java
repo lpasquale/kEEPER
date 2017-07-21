@@ -15,8 +15,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import model.ModelPackage;
 import typeinstance.model.diagram.edit.parts.AgentNameEditPart;
-import typeinstance.model.diagram.edit.parts.GeneralTypeNameEditPart;
 import typeinstance.model.diagram.edit.parts.ObserverNameEditPart;
+import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
 import typeinstance.model.diagram.edit.parts.WrappingLabelEditPart;
 import typeinstance.model.diagram.parsers.MessageFormatParser;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
@@ -41,23 +41,6 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 			instanceName_5003Parser = parser;
 		}
 		return instanceName_5003Parser;
-	}
-
-	/**
-	* @generated
-	*/
-	private IParser generalTypeName_5014Parser;
-
-	/**
-	* @generated
-	*/
-	private IParser getGeneralTypeName_5014Parser() {
-		if (generalTypeName_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			generalTypeName_5014Parser = parser;
-		}
-		return generalTypeName_5014Parser;
 	}
 
 	/**
@@ -97,16 +80,33 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
+	private IParser typeName_5016Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getTypeName_5016Parser() {
+		if (typeName_5016Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getType_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			typeName_5016Parser = parser;
+		}
+		return typeName_5016Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case WrappingLabelEditPart.VISUAL_ID:
 			return getInstanceName_5003Parser();
-		case GeneralTypeNameEditPart.VISUAL_ID:
-			return getGeneralTypeName_5014Parser();
 		case AgentNameEditPart.VISUAL_ID:
 			return getAgentName_5010Parser();
 		case ObserverNameEditPart.VISUAL_ID:
 			return getObserverName_5012Parser();
+		case TypeNameEditPart.VISUAL_ID:
+			return getTypeName_5016Parser();
 		}
 		return null;
 	}

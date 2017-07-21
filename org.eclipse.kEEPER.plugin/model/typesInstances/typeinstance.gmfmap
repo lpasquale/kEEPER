@@ -36,32 +36,6 @@
         href="../model.ecore#//Environment/types"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//GeneralType"/>
-      <labelMappings
-          readOnly="true">
-        <diagramLabel
-            href="typeinstance.gmfgraph#TypeTitle"/>
-      </labelMappings>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping"
-          editorPattern="">
-        <diagramLabel
-            href="typeinstance.gmfgraph#TypeName"/>
-        <features
-            href="../model.ecore#//Type/name"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="typeinstance.gmftool#//@palette/@tools.0/@tools.2"/>
-      <diagramNode
-          href="typeinstance.gmfgraph#Type"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/types"/>
-    <ownedChild>
-      <domainMetaElement
           href="../model.ecore#//Agent"/>
       <labelMappings
           readOnly="true">
@@ -109,6 +83,31 @@
           href="typeinstance.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="typeinstance.gmfgraph#Observer"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/types"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Type"/>
+      <labelMappings
+          readOnly="true">
+        <diagramLabel
+            href="typeinstance.gmfgraph#TypeTitle"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="typeinstance.gmfgraph#TypeName"/>
+        <features
+            href="../model.ecore#//Type/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="typeinstance.gmftool#//@palette/@tools.0/@tools.2"/>
+      <diagramNode
+          href="typeinstance.gmfgraph#Type"/>
     </ownedChild>
   </nodes>
   <links>

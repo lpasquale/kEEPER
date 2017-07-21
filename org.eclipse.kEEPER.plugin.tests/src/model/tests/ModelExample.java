@@ -5,9 +5,10 @@ package model.tests;
 import java.io.File;
 import java.io.IOException;
 
-import model.Instance;
 import model.ModelFactory;
 import model.ModelPackage;
+import model.Type;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 
@@ -59,7 +60,7 @@ public class ModelExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.model"));
-				Instance root = ModelFactory.eINSTANCE.createInstance();
+				Type root = ModelFactory.eINSTANCE.createType();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

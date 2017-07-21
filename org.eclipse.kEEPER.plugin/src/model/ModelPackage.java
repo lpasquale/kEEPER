@@ -1424,44 +1424,6 @@ public interface ModelPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link model.impl.GeneralTypeImpl <em>General Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see model.impl.GeneralTypeImpl
-	 * @see model.impl.ModelPackageImpl#getGeneralType()
-	 * @generated
-	 */
-	int GENERAL_TYPE = 22;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERAL_TYPE__NAME = TYPE__NAME;
-
-	/**
-	 * The number of structural features of the '<em>General Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>General Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERAL_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link model.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2334,16 +2296,6 @@ public interface ModelPackage extends EPackage {
 	EAttribute getGeneralTypeReference_TypeName();
 
 	/**
-	 * Returns the meta object for class '{@link model.GeneralType <em>General Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>General Type</em>'.
-	 * @see model.GeneralType
-	 * @generated
-	 */
-	EClass getGeneralType();
-
-	/**
 	 * Returns the meta object for class '{@link model.Agent <em>Agent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3147,16 +3099,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GENERAL_TYPE_REFERENCE__TYPE_NAME = eINSTANCE.getGeneralTypeReference_TypeName();
-
-		/**
-		 * The meta object literal for the '{@link model.impl.GeneralTypeImpl <em>General Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see model.impl.GeneralTypeImpl
-		 * @see model.impl.ModelPackageImpl#getGeneralType()
-		 * @generated
-		 */
-		EClass GENERAL_TYPE = eINSTANCE.getGeneralType();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.

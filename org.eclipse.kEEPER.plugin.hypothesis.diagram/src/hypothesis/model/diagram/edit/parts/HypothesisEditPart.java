@@ -158,7 +158,6 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		};
 		return lep;
 	}
-
 	/**
 	* @generated NOT
 	*/
@@ -396,7 +395,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
 			}
-		
+
 			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHappens, editor, editFilesPath,
 					diagramFilePath);
 
@@ -597,8 +596,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
 			}
-			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHoldsAtBetween, editor,
-					editFilesPath, diagramFilePath);
+			DynamicParametersDialog dpd = new DynamicParametersDialog(null, h, newHoldsAtBetween, editor, editFilesPath,
+					diagramFilePath);
 
 			if (dpd.open() != Window.OK) {
 				DestroyElementRequest destroyRequest = new DestroyElementRequest(editor.getEditingDomain(),

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="https://github.com/mlatona/minorityReportPlugin"
     nsPrefix="org.eclipse.minorityReportPlugin">
-  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Type">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instance">
@@ -144,8 +144,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralTypeReference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//GeneralType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralType" eSuperTypes="#//Type"/>
 </ecore:EPackage>

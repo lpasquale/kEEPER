@@ -251,17 +251,17 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__TYPES,
+				 ModelFactory.eINSTANCE.createType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__TYPES,
 				 ModelFactory.eINSTANCE.createAgent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__TYPES,
 				 ModelFactory.eINSTANCE.createObserver()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__TYPES,
-				 ModelFactory.eINSTANCE.createGeneralType()));
 
 		newChildDescriptors.add
 			(createChildParameter

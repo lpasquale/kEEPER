@@ -242,30 +242,6 @@
             href="../model.genmodel#//model/Environment/types"/>
       </modelFacet>
     </topLevelNodes>
-    <topLevelNodes
-        visualID="2010"
-        editPartClassName="GeneralTypeEditPart"
-        itemSemanticEditPolicyClassName="GeneralTypeItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="GeneralTypeCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="GeneralTypeGraphicalNodeEditPolicy"
-        createCommandClassName="GeneralTypeCreateCommand">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="GeneralTypeEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/GeneralType"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Environment/types"/>
-      </modelFacet>
-    </topLevelNodes>
     <palette>
       <groups
           title="Nodes">
@@ -338,9 +314,6 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.8"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.9"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet

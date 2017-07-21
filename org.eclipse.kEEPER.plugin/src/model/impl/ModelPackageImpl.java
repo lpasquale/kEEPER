@@ -11,7 +11,6 @@ import model.ContextRelation;
 import model.Environment;
 import model.Event;
 import model.GeneralParam;
-import model.GeneralType;
 import model.GeneralTypeReference;
 import model.Happens;
 import model.HoldsAt;
@@ -174,13 +173,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass generalTypeReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass generalTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -998,15 +990,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGeneralType() {
-		return generalTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAgent() {
 		return agentEClass;
 	}
@@ -1222,8 +1205,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		generalTypeReferenceEClass = createEClass(GENERAL_TYPE_REFERENCE);
 		createEReference(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__REFERENCE);
 		createEAttribute(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__TYPE_NAME);
-
-		generalTypeEClass = createEClass(GENERAL_TYPE);
 	}
 
 	/**
@@ -1261,10 +1242,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		generalParamEClass.getESuperTypes().add(this.getParameter());
 		agentEClass.getESuperTypes().add(this.getType());
 		observerEClass.getESuperTypes().add(this.getType());
-		generalTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1373,10 +1353,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getObserverReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ObserverReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalTypeReferenceEClass, GeneralTypeReference.class, "GeneralTypeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGeneralTypeReference_Reference(), this.getGeneralType(), null, "reference", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGeneralTypeReference_Reference(), this.getType(), null, "reference", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeneralTypeReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(generalTypeEClass, GeneralType.class, "GeneralType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -34,15 +34,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);
 
-			case GeneralTypeEditPart.VISUAL_ID:
-				return new GeneralTypeEditPart(view);
-
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new WrappingLabel2EditPart(view);
-
-			case GeneralTypeNameEditPart.VISUAL_ID:
-				return new GeneralTypeNameEditPart(view);
-
 			case AgentEditPart.VISUAL_ID:
 				return new AgentEditPart(view);
 
@@ -60,6 +51,15 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case ObserverNameEditPart.VISUAL_ID:
 				return new ObserverNameEditPart(view);
+
+			case TypeEditPart.VISUAL_ID:
+				return new TypeEditPart(view);
+
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
+
+			case TypeNameEditPart.VISUAL_ID:
+				return new TypeNameEditPart(view);
 
 			case InstanceTypeEditPart.VISUAL_ID:
 				return new InstanceTypeEditPart(view);

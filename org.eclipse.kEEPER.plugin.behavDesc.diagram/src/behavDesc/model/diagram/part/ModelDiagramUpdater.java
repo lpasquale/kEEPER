@@ -103,10 +103,6 @@ public class ModelDiagramUpdater {
 				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID) {
-				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
-				continue;
-			}
 			if (visualID == behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID) {
 				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
 				continue;
@@ -138,8 +134,6 @@ public class ModelDiagramUpdater {
 			return getGeneralParam_2007ContainedLinks(view);
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return getAgent_2008ContainedLinks(view);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2009ContainedLinks(view);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return getObserver_2010ContainedLinks(view);
 		}
@@ -167,8 +161,6 @@ public class ModelDiagramUpdater {
 			return getGeneralParam_2007IncomingLinks(view);
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return getAgent_2008IncomingLinks(view);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2009IncomingLinks(view);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return getObserver_2010IncomingLinks(view);
 		}
@@ -196,8 +188,6 @@ public class ModelDiagramUpdater {
 			return getGeneralParam_2007OutgoingLinks(view);
 		case behavDesc.model.diagram.edit.parts.AgentEditPart.VISUAL_ID:
 			return getAgent_2008OutgoingLinks(view);
-		case behavDesc.model.diagram.edit.parts.GeneralTypeEditPart.VISUAL_ID:
-			return getGeneralType_2009OutgoingLinks(view);
 		case behavDesc.model.diagram.edit.parts.ObserverEditPart.VISUAL_ID:
 			return getObserver_2010OutgoingLinks(view);
 		}
@@ -273,13 +263,6 @@ public class ModelDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserver_2010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -345,13 +328,6 @@ public class ModelDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009IncomingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getObserver_2010IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -411,13 +387,6 @@ public class ModelDiagramUpdater {
 	* @generated
 	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getAgent_2008OutgoingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getGeneralType_2009OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
