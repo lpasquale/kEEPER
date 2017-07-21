@@ -235,7 +235,7 @@
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="5001,5002,5003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -487,6 +487,13 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="initial.model.diagram.providers.ModelParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

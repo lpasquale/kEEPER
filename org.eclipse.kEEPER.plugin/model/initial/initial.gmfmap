@@ -11,6 +11,28 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Initially"/>
+      <labelMappings>
+        <diagramLabel
+            href="initial.gmfgraph#InitialTitleLabel"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="initial.gmfgraph#InitialNameLabel"/>
+        <viewExpression
+            body="String s=&quot;&quot;;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (((Initially) self).getContextRelation() != null){&#xA;&#x9;&#x9;&#x9;s = ((Initially) self).getContextRelation().getName();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return s;"
+            language="java"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="initial.gmfgraph#InitialInstancesNameLabel"/>
+        <viewExpression
+            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"
+            language="java"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="initial.gmftool#//@palette/@tools.0/@tools.0"/>

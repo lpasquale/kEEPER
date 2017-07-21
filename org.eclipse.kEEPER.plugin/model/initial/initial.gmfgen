@@ -41,7 +41,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="InitialFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInitialName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInitialName.setText(&quot;--Name here--&quot;);&#xA;&#xA;this.add(fFigureInitialName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInitialName() {&#xA;&#x9;&#x9;return fFigureInitialName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInstancesName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInitialTitle; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInitialName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInitialName.setText(&quot;--Context Relation name--&quot;);&#xA;&#xA;this.add(fFigureInitialName);&#xA;&#xA;&#xA;&#xA;fFigureInitialTitle = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInitialTitle.setText(&quot;&lt;&lt;Initial>>&quot;);&#xA;&#xA;this.add(fFigureInitialTitle);&#xA;&#xA;&#xA;&#xA;fFigureInstancesName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInstancesName.setText(&quot;Define the instances...&quot;);&#xA;&#xA;this.add(fFigureInstancesName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInstancesName() {&#xA;&#x9;&#x9;return fFigureInstancesName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInitialTitle() {&#xA;&#x9;&#x9;return fFigureInitialTitle;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInitialName() {&#xA;&#x9;&#x9;return fFigureInitialName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/Initially"/>
@@ -50,6 +50,49 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/initials"/>
       </modelFacet>
+      <labels
+          visualID="5001"
+          editPartClassName="WrappingLabelEditPart"
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureInitialTitle"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            parser="//@labelParsers/@implementations.0"/>
+      </labels>
+      <labels
+          visualID="5002"
+          editPartClassName="WrappingLabel2EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureInitialName"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"/>
+      </labels>
+      <labels
+          visualID="5003"
+          editPartClassName="WrappingLabel3EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureInstancesName"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2002"
@@ -65,7 +108,7 @@
           editHelperClassName="InstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/Instance"/>
@@ -149,6 +192,36 @@
   </propertySheet>
   <domainGenModel
       href="../model.genmodel#/"/>
+  <expressionProviders>
+    <providers
+        xsi:type="gmfgen:GenJavaExpressionProvider"
+        injectExpressionBody="true">
+      <expressions
+          body="String s=&quot;&quot;;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (((Initially) self).getContextRelation() != null){&#xA;&#x9;&#x9;&#x9;s = ((Initially) self).getContextRelation().getName();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return s;"/>
+      <expressions
+          body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"/>
+    </providers>
+  </expressionProviders>
+  <labelParsers
+      extensibleViaService="true">
+    <implementations
+        xsi:type="gmfgen:ExternalParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+      <expressionContext
+          href="../model.genmodel#//model/Initially"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+      <expressionContext
+          href="../model.genmodel#//model/Initially"/>
+    </implementations>
+  </labelParsers>
   <contextMenus
       context="//@diagram">
     <items

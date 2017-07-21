@@ -35,7 +35,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.kEEPER.plugin;visibility:=reexport,
  org.eclipse.kEEPER.plugin.edit;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport
+ org.eclipse.gef;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: typeinstance.model.diagram.providers

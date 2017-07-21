@@ -8,6 +8,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -22,9 +23,11 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
@@ -42,6 +45,7 @@ import org.eclipse.ui.PlatformUI;
 
 import initial.model.diagram.edit.policies.InitiallyItemSemanticEditPolicy;
 import initial.model.diagram.part.ModelDiagramEditor;
+import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
 import model.Initially;
 import model.Instance;
@@ -159,6 +163,68 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialTitle());
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialName());
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel3EditPart) {
+			((WrappingLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstancesName());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	* @generated
+	*/
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabel3EditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	* @generated
+	*/
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	* @generated
+	*/
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	* @generated
+	*/
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		return getContentPane();
+	}
+
+	/**
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
@@ -188,6 +254,11 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -238,13 +309,28 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
+	* @generated
+	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(ModelVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated NOT
 	 */
 	public class InitialFigure extends RectangleFigure {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private WrappingLabel fFigureInstancesName;
+		/**
+			* @generated
+			*/
+		private WrappingLabel fFigureInitialTitle;
+		/**
+			 * @generated
+			 */
 		private WrappingLabel fFigureInitialName;
 
 		/**
@@ -255,21 +341,45 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureInitialName = new WrappingLabel();
+			fFigureInitialName.setText("--Context Relation name--");
+			fFigureInitialName.setAlignment(PositionConstants.CENTER);
 
-			fFigureInitialName.setText("--Name here--");
+			fFigureInitialTitle = new WrappingLabel();
+			fFigureInitialTitle.setText("<<Initial>>");
+			fFigureInitialTitle.setAlignment(PositionConstants.CENTER);
 
+			fFigureInstancesName = new WrappingLabel();
+			fFigureInstancesName.setText("Define the instances...");
+			fFigureInstancesName.setAlignment(PositionConstants.CENTER);
+
+			this.add(fFigureInitialTitle);
 			this.add(fFigureInitialName);
+			this.add(fFigureInstancesName);
 
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public WrappingLabel getFigureInstancesName() {
+			return fFigureInstancesName;
+		}
+
+		/**
+			* @generated
+			*/
+		public WrappingLabel getFigureInitialTitle() {
+			return fFigureInitialTitle;
+		}
+
+		/**
+			 * @generated
+			 */
 		public WrappingLabel getFigureInitialName() {
 			return fFigureInitialName;
 		}

@@ -1,5 +1,8 @@
 package initial.model.diagram.navigator;
 
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -16,9 +19,11 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.edit.parts.WrappingLabelEditPart;
 import initial.model.diagram.part.ModelDiagramEditorPlugin;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
+import initial.model.diagram.providers.ModelParserProvider;
 import model.Instance;
 
 /**
@@ -153,7 +158,16 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	* @generated
 	*/
 	private String getInitially_2001Text(View view) {
-		return ""; //$NON-NLS-1$
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Initially_2001,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

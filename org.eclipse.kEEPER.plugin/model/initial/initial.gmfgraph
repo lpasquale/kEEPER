@@ -15,8 +15,20 @@
         <children
             xsi:type="gmfgraph:Label"
             name="InitialName"
-            text="--Name here--"/>
+            text="--Context Relation name--"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="InitialTitle"
+            text="&lt;&lt;Initial>>"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="InstancesName"
+            text="Define the instances..."/>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
@@ -34,7 +46,18 @@
       name="InitialNode"
       figure="InitialFigure"/>
   <labels
-      name="InitialLabel"
+      name="InitialNameLabel"
       figure="InitialFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels
+      name="InitialTitleLabel"
+      figure="InitialFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="InitialInstancesNameLabel"
+      figure="InitialFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

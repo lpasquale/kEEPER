@@ -10,6 +10,9 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.edit.parts.WrappingLabel2EditPart;
+import initial.model.diagram.edit.parts.WrappingLabel3EditPart;
+import initial.model.diagram.edit.parts.WrappingLabelEditPart;
 import model.Environment;
 import model.ModelPackage;
 
@@ -150,6 +153,17 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (InstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InitiallyEditPart.VISUAL_ID:
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -1,6 +1,7 @@
 package initial.model.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -87,14 +88,14 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure createNodeShape() {
-		return primaryShape = new RoundedRectangle();
+		return primaryShape = new RectangleFigure();
 	}
 
 	/**
 	* @generated
 	*/
-	public RoundedRectangle getPrimaryShape() {
-		return (RoundedRectangle) primaryShape;
+	public RectangleFigure getPrimaryShape() {
+		return (RectangleFigure) primaryShape;
 	}
 
 	/**
