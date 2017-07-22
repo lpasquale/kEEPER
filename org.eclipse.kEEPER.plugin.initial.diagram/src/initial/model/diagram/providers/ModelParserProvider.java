@@ -14,7 +14,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import initial.model.diagram.edit.parts.WrappingLabel2EditPart;
 import initial.model.diagram.edit.parts.WrappingLabel3EditPart;
-import initial.model.diagram.parsers.InitiallyLabelExpressionLabelParser;
+import initial.model.diagram.parsers.InitiallyInstancesLabelExpressionLabelParser;
+import initial.model.diagram.parsers.InitiallyNameLabelExpressionLabelParser;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -25,14 +26,14 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private InitiallyLabelExpressionLabelParser initiallyLabel_5002Parser;
+	private InitiallyNameLabelExpressionLabelParser initiallyLabel_5002Parser;
 
 	/**
 	* @generated
 	*/
 	private IParser getInitiallyLabel_5002Parser() {
 		if (initiallyLabel_5002Parser == null) {
-			initiallyLabel_5002Parser = new InitiallyLabelExpressionLabelParser();
+			initiallyLabel_5002Parser = new InitiallyNameLabelExpressionLabelParser();
 		}
 		return initiallyLabel_5002Parser;
 	}
@@ -40,14 +41,14 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private InitiallyLabelExpressionLabelParser initiallyLabel_5003Parser;
+	private InitiallyInstancesLabelExpressionLabelParser initiallyLabel_5003Parser;
 
 	/**
 	* @generated
 	*/
 	private IParser getInitiallyLabel_5003Parser() {
 		if (initiallyLabel_5003Parser == null) {
-			initiallyLabel_5003Parser = new InitiallyLabelExpressionLabelParser();
+			initiallyLabel_5003Parser = new InitiallyInstancesLabelExpressionLabelParser();
 		}
 		return initiallyLabel_5003Parser;
 	}

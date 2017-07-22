@@ -30,7 +30,7 @@
         <diagramLabel
             href="initial.gmfgraph#InitialInstancesNameLabel"/>
         <viewExpression
-            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"
+            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;   &quot;;&#xA;}&#xA;return s;"
             language="java"/>
       </labelMappings>
       <tool

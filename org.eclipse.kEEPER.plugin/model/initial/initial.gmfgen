@@ -199,7 +199,7 @@
       <expressions
           body="String s=&quot;&quot;;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (((Initially) self).getContextRelation() != null){&#xA;&#x9;&#x9;&#x9;s = ((Initially) self).getContextRelation().getName();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return s;"/>
       <expressions
-          body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"/>
+          body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;   &quot;;&#xA;}&#xA;return s;"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -210,6 +210,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        className="InitiallyNameLabelExpressionLabelParser"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../model.genmodel#//model/Initially"/>
@@ -217,6 +218,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.2/@modelFacet"
+        className="InitiallyInstancesLabelExpressionLabelParser"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../model.genmodel#//model/Initially"/>

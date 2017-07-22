@@ -25,11 +25,11 @@ import model.Initially;
 /**
  * @generated
  */
-public class InitiallyLabelExpressionLabelParser implements IParser {
+public class InitiallyInstancesLabelExpressionLabelParser implements IParser {
 	/**
 	* @generated
 	*/
-	public InitiallyLabelExpressionLabelParser() {
+	public InitiallyInstancesLabelExpressionLabelParser() {
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class InitiallyLabelExpressionLabelParser implements IParser {
 	private String evaluatePrintExpression(EObject self) {
 		String s = "";
 		for (int i = 0; i < ((Initially) self).getInstances().size(); i++) {
-			s = s + "  - " + ((Initially) self).getInstances().get(i).getName() + "\n";
+			s = s + "  - " + ((Initially) self).getInstances().get(i).getName() + "   ";
 		}
 		return s;
 	}
