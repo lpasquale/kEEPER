@@ -34,6 +34,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.HypothesisImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.HypothesisImpl#getName <em>Name</em>}</li>
  *   <li>{@link model.impl.HypothesisImpl#getTimeInstants <em>Time Instants</em>}</li>
+ *   <li>{@link model.impl.HypothesisImpl#isAny <em>Any</em>}</li>
+ *   <li>{@link model.impl.HypothesisImpl#getFirstTimeInstant <em>First Time Instant</em>}</li>
+ *   <li>{@link model.impl.HypothesisImpl#getSecondTimeInstant <em>Second Time Instant</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,11 +113,71 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 	protected int timeInstants = TIME_INSTANTS_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isAny() <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAny()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ANY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAny() <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAny()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean any = ANY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFirstTimeInstant() <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int FIRST_TIME_INSTANT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getFirstTimeInstant() <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected int firstTimeInstant = FIRST_TIME_INSTANT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSecondTimeInstant() <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SECOND_TIME_INSTANT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSecondTimeInstant() <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected int secondTimeInstant = SECOND_TIME_INSTANT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HypothesisImpl() {
+	public HypothesisImpl() {
 		super();
 	}
 
@@ -211,6 +274,69 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isAny() {
+		return any;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAny(boolean newAny) {
+		boolean oldAny = any;
+		any = newAny;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HYPOTHESIS__ANY, oldAny, any));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getFirstTimeInstant() {
+		return firstTimeInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstTimeInstant(int newFirstTimeInstant) {
+		int oldFirstTimeInstant = firstTimeInstant;
+		firstTimeInstant = newFirstTimeInstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT, oldFirstTimeInstant, firstTimeInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getSecondTimeInstant() {
+		return secondTimeInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSecondTimeInstant(int newSecondTimeInstant) {
+		int oldSecondTimeInstant = secondTimeInstant;
+		secondTimeInstant = newSecondTimeInstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT, oldSecondTimeInstant, secondTimeInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -224,6 +350,12 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 				return getName();
 			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
 				return getTimeInstants();
+			case ModelPackage.HYPOTHESIS__ANY:
+				return isAny();
+			case ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT:
+				return getFirstTimeInstant();
+			case ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT:
+				return getSecondTimeInstant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,6 +387,15 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
 				setTimeInstants((Integer)newValue);
 				return;
+			case ModelPackage.HYPOTHESIS__ANY:
+				setAny((Boolean)newValue);
+				return;
+			case ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT:
+				setFirstTimeInstant((Integer)newValue);
+				return;
+			case ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT:
+				setSecondTimeInstant((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -282,6 +423,15 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
 				setTimeInstants(TIME_INSTANTS_EDEFAULT);
 				return;
+			case ModelPackage.HYPOTHESIS__ANY:
+				setAny(ANY_EDEFAULT);
+				return;
+			case ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT:
+				setFirstTimeInstant(FIRST_TIME_INSTANT_EDEFAULT);
+				return;
+			case ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT:
+				setSecondTimeInstant(SECOND_TIME_INSTANT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +454,12 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
 				return timeInstants != TIME_INSTANTS_EDEFAULT;
+			case ModelPackage.HYPOTHESIS__ANY:
+				return any != ANY_EDEFAULT;
+			case ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT:
+				return firstTimeInstant != FIRST_TIME_INSTANT_EDEFAULT;
+			case ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT:
+				return secondTimeInstant != SECOND_TIME_INSTANT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,6 +478,12 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 		result.append(name);
 		result.append(", timeInstants: ");
 		result.append(timeInstants);
+		result.append(", any: ");
+		result.append(any);
+		result.append(", firstTimeInstant: ");
+		result.append(firstTimeInstant);
+		result.append(", secondTimeInstant: ");
+		result.append(secondTimeInstant);
 		result.append(')');
 		return result.toString();
 	}

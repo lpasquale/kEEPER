@@ -72,7 +72,7 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventImpl() {
+	public EventImpl() {
 		super();
 	}
 

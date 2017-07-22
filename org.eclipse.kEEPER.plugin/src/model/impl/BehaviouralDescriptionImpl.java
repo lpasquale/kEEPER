@@ -37,6 +37,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getName <em>Name</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getTimeInstants <em>Time Instants</em>}</li>
+ *   <li>{@link model.impl.BehaviouralDescriptionImpl#getSecondTimeInstant <em>Second Time Instant</em>}</li>
+ *   <li>{@link model.impl.BehaviouralDescriptionImpl#getFirstTimeInstant <em>First Time Instant</em>}</li>
+ *   <li>{@link model.impl.BehaviouralDescriptionImpl#isAny <em>Any</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,7 +116,67 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	protected int timeInstants = TIME_INSTANTS_EDEFAULT;
 
 	
-    protected Map<String, Integer> m = new HashMap<String, Integer>();
+    /**
+	 * The default value of the '{@link #getSecondTimeInstant() <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SECOND_TIME_INSTANT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSecondTimeInstant() <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected int secondTimeInstant = SECOND_TIME_INSTANT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFirstTimeInstant() <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int FIRST_TIME_INSTANT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getFirstTimeInstant() <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected int firstTimeInstant = FIRST_TIME_INSTANT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAny() <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAny()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ANY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAny() <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAny()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean any = ANY_EDEFAULT;
+
+				protected Map<String, Integer> m = new HashMap<String, Integer>();
 
 	//private ModelDiagramEditor editor;
 
@@ -122,7 +185,7 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BehaviouralDescriptionImpl() {
+	public BehaviouralDescriptionImpl() {
 		super();
 	}
 
@@ -215,7 +278,70 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	
-/*	public ModelDiagramEditor getEditor(){
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getSecondTimeInstant() {
+		return secondTimeInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSecondTimeInstant(int newSecondTimeInstant) {
+		int oldSecondTimeInstant = secondTimeInstant;
+		secondTimeInstant = newSecondTimeInstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT, oldSecondTimeInstant, secondTimeInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getFirstTimeInstant() {
+		return firstTimeInstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstTimeInstant(int newFirstTimeInstant) {
+		int oldFirstTimeInstant = firstTimeInstant;
+		firstTimeInstant = newFirstTimeInstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT, oldFirstTimeInstant, firstTimeInstant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isAny() {
+		return any;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAny(boolean newAny) {
+		boolean oldAny = any;
+		any = newAny;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BEHAVIOURAL_DESCRIPTION__ANY, oldAny, any));
+	}
+
+	/*	public ModelDiagramEditor getEditor(){
 		return editor;
 	}
 
@@ -241,6 +367,12 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return getName();
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
 				return getTimeInstants();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT:
+				return getSecondTimeInstant();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT:
+				return getFirstTimeInstant();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__ANY:
+				return isAny();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,6 +404,15 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
 				setTimeInstants((Integer)newValue);
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT:
+				setSecondTimeInstant((Integer)newValue);
+				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT:
+				setFirstTimeInstant((Integer)newValue);
+				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__ANY:
+				setAny((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -299,6 +440,15 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
 				setTimeInstants(TIME_INSTANTS_EDEFAULT);
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT:
+				setSecondTimeInstant(SECOND_TIME_INSTANT_EDEFAULT);
+				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT:
+				setFirstTimeInstant(FIRST_TIME_INSTANT_EDEFAULT);
+				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__ANY:
+				setAny(ANY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -321,6 +471,12 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
 				return timeInstants != TIME_INSTANTS_EDEFAULT;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT:
+				return secondTimeInstant != SECOND_TIME_INSTANT_EDEFAULT;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT:
+				return firstTimeInstant != FIRST_TIME_INSTANT_EDEFAULT;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__ANY:
+				return any != ANY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -339,6 +495,12 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 		result.append(name);
 		result.append(", timeInstants: ");
 		result.append(timeInstants);
+		result.append(", secondTimeInstant: ");
+		result.append(secondTimeInstant);
+		result.append(", firstTimeInstant: ");
+		result.append(firstTimeInstant);
+		result.append(", any: ");
+		result.append(any);
 		result.append(')');
 		return result.toString();
 	}

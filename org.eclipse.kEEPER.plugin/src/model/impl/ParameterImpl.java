@@ -86,7 +86,7 @@ public abstract class ParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterImpl() {
+	public ParameterImpl() {
 		super();
 	}
 

@@ -91,7 +91,7 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContextRelationImpl() {
+	public ContextRelationImpl() {
 		super();
 	}
 

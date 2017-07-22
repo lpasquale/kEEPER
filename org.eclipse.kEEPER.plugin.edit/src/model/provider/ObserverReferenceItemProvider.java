@@ -7,8 +7,6 @@ import java.util.Collection;
 import java.util.List;
 
 import model.ModelPackage;
-
-import model.ObserverReference;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,9 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link model.ObserverReference} object.
@@ -61,7 +57,6 @@ public class ObserverReferenceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addReferencePropertyDescriptor(object);
-			addTypeNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,28 +84,6 @@ public class ObserverReferenceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypeNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ObserverReference_typeName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ObserverReference_typeName_feature", "_UI_ObserverReference_type"),
-				 ModelPackage.Literals.OBSERVER_REFERENCE__TYPE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns ObserverReference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,10 +102,7 @@ public class ObserverReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ObserverReference)object).getTypeName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ObserverReference_type") :
-			getString("_UI_ObserverReference_type") + " " + label;
+		return getString("_UI_ObserverReference_type");
 	}
 	
 
@@ -146,12 +116,6 @@ public class ObserverReferenceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ObserverReference.class)) {
-			case ModelPackage.OBSERVER_REFERENCE__TYPE_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

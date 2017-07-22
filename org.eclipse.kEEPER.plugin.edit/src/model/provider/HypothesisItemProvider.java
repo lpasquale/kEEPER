@@ -65,6 +65,9 @@ public class HypothesisItemProvider
 			addHoldsAtBetweensPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addTimeInstantsPropertyDescriptor(object);
+			addAnyPropertyDescriptor(object);
+			addFirstTimeInstantPropertyDescriptor(object);
+			addSecondTimeInstantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -180,6 +183,72 @@ public class HypothesisItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Any feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Hypothesis_any_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Hypothesis_any_feature", "_UI_Hypothesis_type"),
+				 ModelPackage.Literals.HYPOTHESIS__ANY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the First Time Instant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFirstTimeInstantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Hypothesis_firstTimeInstant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Hypothesis_firstTimeInstant_feature", "_UI_Hypothesis_type"),
+				 ModelPackage.Literals.HYPOTHESIS__FIRST_TIME_INSTANT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Second Time Instant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecondTimeInstantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Hypothesis_secondTimeInstant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Hypothesis_secondTimeInstant_feature", "_UI_Hypothesis_type"),
+				 ModelPackage.Literals.HYPOTHESIS__SECOND_TIME_INSTANT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Hypothesis.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,6 +288,9 @@ public class HypothesisItemProvider
 		switch (notification.getFeatureID(Hypothesis.class)) {
 			case ModelPackage.HYPOTHESIS__NAME:
 			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
+			case ModelPackage.HYPOTHESIS__ANY:
+			case ModelPackage.HYPOTHESIS__FIRST_TIME_INSTANT:
+			case ModelPackage.HYPOTHESIS__SECOND_TIME_INSTANT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

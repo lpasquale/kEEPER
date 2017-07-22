@@ -57,7 +57,7 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InitiallyImpl() {
+	public InitiallyImpl() {
 		super();
 	}
 

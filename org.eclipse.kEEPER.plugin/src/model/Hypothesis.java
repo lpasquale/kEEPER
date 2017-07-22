@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Hypothesis#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.Hypothesis#getName <em>Name</em>}</li>
  *   <li>{@link model.Hypothesis#getTimeInstants <em>Time Instants</em>}</li>
+ *   <li>{@link model.Hypothesis#isAny <em>Any</em>}</li>
+ *   <li>{@link model.Hypothesis#getFirstTimeInstant <em>First Time Instant</em>}</li>
+ *   <li>{@link model.Hypothesis#getSecondTimeInstant <em>Second Time Instant</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getHypothesis()
@@ -126,5 +129,83 @@ public interface Hypothesis extends EObject {
 	 * @generated
 	 */
 	void setTimeInstants(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Any</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Any</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Any</em>' attribute.
+	 * @see #setAny(boolean)
+	 * @see model.ModelPackage#getHypothesis_Any()
+	 * @model
+	 * @generated
+	 */
+	boolean isAny();
+
+	/**
+	 * Sets the value of the '{@link model.Hypothesis#isAny <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Any</em>' attribute.
+	 * @see #isAny()
+	 * @generated
+	 */
+	void setAny(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>First Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First Time Instant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Time Instant</em>' attribute.
+	 * @see #setFirstTimeInstant(int)
+	 * @see model.ModelPackage#getHypothesis_FirstTimeInstant()
+	 * @model
+	 * @generated
+	 */
+	int getFirstTimeInstant();
+
+	/**
+	 * Sets the value of the '{@link model.Hypothesis#getFirstTimeInstant <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Time Instant</em>' attribute.
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 */
+	void setFirstTimeInstant(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Second Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Second Time Instant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Second Time Instant</em>' attribute.
+	 * @see #setSecondTimeInstant(int)
+	 * @see model.ModelPackage#getHypothesis_SecondTimeInstant()
+	 * @model
+	 * @generated
+	 */
+	int getSecondTimeInstant();
+
+	/**
+	 * Sets the value of the '{@link model.Hypothesis#getSecondTimeInstant <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Second Time Instant</em>' attribute.
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 */
+	void setSecondTimeInstant(int value);
 
 } // Hypothesis

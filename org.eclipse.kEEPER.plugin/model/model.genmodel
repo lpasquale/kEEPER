@@ -4,7 +4,7 @@
     editorDirectory="/org.eclipse.kEEPER.plugin.editor/src" modelPluginID="org.eclipse.kEEPER.plugin"
     modelName="Model" modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    editPluginID="org.eclipse.kEEPER.plugin.edit" editorPluginID="org.eclipse.kEEPER.plugin.editor"
+    publicConstructors="true" editPluginID="org.eclipse.kEEPER.plugin.edit" editorPluginID="org.eclipse.kEEPER.plugin.editor"
     operationReflection="true" importOrganizing="true">
   <foreignModel>model.ecore</foreignModel>
   <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="model.ecore#/">
@@ -44,6 +44,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//BehaviouralDescription/holdsAtBetweens"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/timeInstants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/secondTimeInstant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/firstTimeInstant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/any"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//HoldsAt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAt/time"/>
@@ -100,6 +103,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Hypothesis/holdsAtBetweens"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/timeInstants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/firstTimeInstant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Hypothesis/secondTimeInstant"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//GeneralParam">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralParam/generalType"/>
@@ -108,15 +114,12 @@
     <genClasses ecoreClass="model.ecore#//Observer"/>
     <genClasses ecoreClass="model.ecore#//AgentReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//AgentReference/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//AgentReference/typeName"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ObserverReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ObserverReference/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ObserverReference/typeName"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//GeneralTypeReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//GeneralTypeReference/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//GeneralTypeReference/typeName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

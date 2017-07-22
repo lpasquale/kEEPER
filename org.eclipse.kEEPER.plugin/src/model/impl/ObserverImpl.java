@@ -20,7 +20,7 @@ public class ObserverImpl extends TypeImpl implements Observer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObserverImpl() {
+	public ObserverImpl() {
 		super();
 	}
 

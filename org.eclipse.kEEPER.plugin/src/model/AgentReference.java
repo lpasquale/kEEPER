@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link model.AgentReference#getReference <em>Reference</em>}</li>
- *   <li>{@link model.AgentReference#getTypeName <em>Type Name</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getAgentReference()
@@ -47,31 +46,5 @@ public interface AgentReference extends EObject {
 	 * @generated
 	 */
 	void setReference(Agent value);
-
-	/**
-	 * Returns the value of the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type Name</em>' attribute.
-	 * @see #setTypeName(String)
-	 * @see model.ModelPackage#getAgentReference_TypeName()
-	 * @model
-	 * @generated
-	 */
-	String getTypeName();
-
-	/**
-	 * Sets the value of the '{@link model.AgentReference#getTypeName <em>Type Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Name</em>' attribute.
-	 * @see #getTypeName()
-	 * @generated
-	 */
-	void setTypeName(String value);
 
 } // AgentReference

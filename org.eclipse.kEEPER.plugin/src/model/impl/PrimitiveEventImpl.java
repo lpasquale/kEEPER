@@ -54,7 +54,7 @@ public class PrimitiveEventImpl extends EventImpl implements PrimitiveEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PrimitiveEventImpl() {
+	public PrimitiveEventImpl() {
 		super();
 	}
 

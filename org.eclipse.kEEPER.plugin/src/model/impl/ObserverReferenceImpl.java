@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link model.impl.ObserverReferenceImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link model.impl.ObserverReferenceImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,25 +37,6 @@ public class ObserverReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected Observer reference;
-
-	/**
-	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypeName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypeName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String typeName = TYPE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,35 +100,12 @@ public class ObserverReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTypeName() {
-		return typeName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTypeName(String newTypeName) {
-		String oldTypeName = typeName;
-		typeName = newTypeName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.OBSERVER_REFERENCE__TYPE_NAME, oldTypeName, typeName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.OBSERVER_REFERENCE__REFERENCE:
 				if (resolve) return getReference();
 				return basicGetReference();
-			case ModelPackage.OBSERVER_REFERENCE__TYPE_NAME:
-				return getTypeName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,9 +120,6 @@ public class ObserverReferenceImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ModelPackage.OBSERVER_REFERENCE__REFERENCE:
 				setReference((Observer)newValue);
-				return;
-			case ModelPackage.OBSERVER_REFERENCE__TYPE_NAME:
-				setTypeName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,9 +136,6 @@ public class ObserverReferenceImpl extends MinimalEObjectImpl.Container implemen
 			case ModelPackage.OBSERVER_REFERENCE__REFERENCE:
 				setReference((Observer)null);
 				return;
-			case ModelPackage.OBSERVER_REFERENCE__TYPE_NAME:
-				setTypeName(TYPE_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,26 +150,8 @@ public class ObserverReferenceImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ModelPackage.OBSERVER_REFERENCE__REFERENCE:
 				return reference != null;
-			case ModelPackage.OBSERVER_REFERENCE__TYPE_NAME:
-				return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (typeName: ");
-		result.append(typeName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ObserverReferenceImpl

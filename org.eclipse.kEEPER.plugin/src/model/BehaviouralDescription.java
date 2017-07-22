@@ -22,6 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.BehaviouralDescription#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getName <em>Name</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getTimeInstants <em>Time Instants</em>}</li>
+ *   <li>{@link model.BehaviouralDescription#getSecondTimeInstant <em>Second Time Instant</em>}</li>
+ *   <li>{@link model.BehaviouralDescription#getFirstTimeInstant <em>First Time Instant</em>}</li>
+ *   <li>{@link model.BehaviouralDescription#isAny <em>Any</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getBehaviouralDescription()
@@ -132,6 +135,84 @@ public interface BehaviouralDescription extends EObject {
 	 * @generated
 	 */
 	void setTimeInstants(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Second Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Second Time Instant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Second Time Instant</em>' attribute.
+	 * @see #setSecondTimeInstant(int)
+	 * @see model.ModelPackage#getBehaviouralDescription_SecondTimeInstant()
+	 * @model
+	 * @generated
+	 */
+	int getSecondTimeInstant();
+
+	/**
+	 * Sets the value of the '{@link model.BehaviouralDescription#getSecondTimeInstant <em>Second Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Second Time Instant</em>' attribute.
+	 * @see #getSecondTimeInstant()
+	 * @generated
+	 */
+	void setSecondTimeInstant(int value);
+
+	/**
+	 * Returns the value of the '<em><b>First Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First Time Instant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Time Instant</em>' attribute.
+	 * @see #setFirstTimeInstant(int)
+	 * @see model.ModelPackage#getBehaviouralDescription_FirstTimeInstant()
+	 * @model
+	 * @generated
+	 */
+	int getFirstTimeInstant();
+
+	/**
+	 * Sets the value of the '{@link model.BehaviouralDescription#getFirstTimeInstant <em>First Time Instant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Time Instant</em>' attribute.
+	 * @see #getFirstTimeInstant()
+	 * @generated
+	 */
+	void setFirstTimeInstant(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Any</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Any</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Any</em>' attribute.
+	 * @see #setAny(boolean)
+	 * @see model.ModelPackage#getBehaviouralDescription_Any()
+	 * @model
+	 * @generated
+	 */
+	boolean isAny();
+
+	/**
+	 * Sets the value of the '{@link model.BehaviouralDescription#isAny <em>Any</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Any</em>' attribute.
+	 * @see #isAny()
+	 * @generated
+	 */
+	void setAny(boolean value);
 
 
 } // BehaviouralDescription

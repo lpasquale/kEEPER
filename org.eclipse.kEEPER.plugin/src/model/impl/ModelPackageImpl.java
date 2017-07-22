@@ -522,6 +522,33 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBehaviouralDescription_SecondTimeInstant() {
+		return (EAttribute)behaviouralDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBehaviouralDescription_FirstTimeInstant() {
+		return (EAttribute)behaviouralDescriptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBehaviouralDescription_Any() {
+		return (EAttribute)behaviouralDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHoldsAt() {
 		return holdsAtEClass;
 	}
@@ -927,15 +954,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAgentReference_TypeName() {
-		return (EAttribute)agentReferenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getObserverReference() {
 		return observerReferenceEClass;
 	}
@@ -954,15 +972,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObserverReference_TypeName() {
-		return (EAttribute)observerReferenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGeneralTypeReference() {
 		return generalTypeReferenceEClass;
 	}
@@ -974,15 +983,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EReference getGeneralTypeReference_Reference() {
 		return (EReference)generalTypeReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGeneralTypeReference_TypeName() {
-		return (EAttribute)generalTypeReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1046,6 +1046,33 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EAttribute getHypothesis_TimeInstants() {
 		return (EAttribute)hypothesisEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHypothesis_Any() {
+		return (EAttribute)hypothesisEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHypothesis_FirstTimeInstant() {
+		return (EAttribute)hypothesisEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHypothesis_SecondTimeInstant() {
+		return (EAttribute)hypothesisEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1130,6 +1157,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS);
 		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__NAME);
 		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS);
+		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT);
+		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT);
+		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__ANY);
 
 		holdsAtEClass = createEClass(HOLDS_AT);
 		createEAttribute(holdsAtEClass, HOLDS_AT__TIME);
@@ -1186,6 +1216,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(hypothesisEClass, HYPOTHESIS__HOLDS_AT_BETWEENS);
 		createEAttribute(hypothesisEClass, HYPOTHESIS__NAME);
 		createEAttribute(hypothesisEClass, HYPOTHESIS__TIME_INSTANTS);
+		createEAttribute(hypothesisEClass, HYPOTHESIS__ANY);
+		createEAttribute(hypothesisEClass, HYPOTHESIS__FIRST_TIME_INSTANT);
+		createEAttribute(hypothesisEClass, HYPOTHESIS__SECOND_TIME_INSTANT);
 
 		generalParamEClass = createEClass(GENERAL_PARAM);
 		createEReference(generalParamEClass, GENERAL_PARAM__GENERAL_TYPE);
@@ -1196,15 +1229,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		agentReferenceEClass = createEClass(AGENT_REFERENCE);
 		createEReference(agentReferenceEClass, AGENT_REFERENCE__REFERENCE);
-		createEAttribute(agentReferenceEClass, AGENT_REFERENCE__TYPE_NAME);
 
 		observerReferenceEClass = createEClass(OBSERVER_REFERENCE);
 		createEReference(observerReferenceEClass, OBSERVER_REFERENCE__REFERENCE);
-		createEAttribute(observerReferenceEClass, OBSERVER_REFERENCE__TYPE_NAME);
 
 		generalTypeReferenceEClass = createEClass(GENERAL_TYPE_REFERENCE);
 		createEReference(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__REFERENCE);
-		createEAttribute(generalTypeReferenceEClass, GENERAL_TYPE_REFERENCE__TYPE_NAME);
 	}
 
 	/**
@@ -1280,6 +1310,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getBehaviouralDescription_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBehaviouralDescription_Name(), ecorePackage.getEString(), "name", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBehaviouralDescription_TimeInstants(), ecorePackage.getEInt(), "timeInstants", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviouralDescription_SecondTimeInstant(), ecorePackage.getEInt(), "secondTimeInstant", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviouralDescription_FirstTimeInstant(), ecorePackage.getEInt(), "firstTimeInstant", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviouralDescription_Any(), ecorePackage.getEBoolean(), "any", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(holdsAtEClass, HoldsAt.class, "HoldsAt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHoldsAt_Time(), ecorePackage.getEInt(), "time", null, 0, 1, HoldsAt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1336,6 +1369,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getHypothesis_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHypothesis_Name(), ecorePackage.getEString(), "name", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHypothesis_TimeInstants(), ecorePackage.getEInt(), "timeInstants", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypothesis_Any(), ecorePackage.getEBoolean(), "any", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypothesis_FirstTimeInstant(), ecorePackage.getEInt(), "firstTimeInstant", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypothesis_SecondTimeInstant(), ecorePackage.getEInt(), "secondTimeInstant", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalParamEClass, GeneralParam.class, "GeneralParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeneralParam_GeneralType(), this.getType(), null, "generalType", null, 0, 1, GeneralParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1346,15 +1382,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(agentReferenceEClass, AgentReference.class, "AgentReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgentReference_Reference(), this.getAgent(), null, "reference", null, 0, 1, AgentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgentReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, AgentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(observerReferenceEClass, ObserverReference.class, "ObserverReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObserverReference_Reference(), this.getObserver(), null, "reference", null, 0, 1, ObserverReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getObserverReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ObserverReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalTypeReferenceEClass, GeneralTypeReference.class, "GeneralTypeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeneralTypeReference_Reference(), this.getType(), null, "reference", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGeneralTypeReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, GeneralTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

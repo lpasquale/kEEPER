@@ -488,13 +488,40 @@ public interface ModelPackage extends EPackage {
 	int BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Second Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT = 5;
+
+	/**
+	 * The feature id for the '<em><b>First Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Any</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__ANY = 7;
+
+	/**
 	 * The number of structural features of the '<em>Behavioural Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 5;
+	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Behavioural Description</em>' class.
@@ -1146,13 +1173,40 @@ public interface ModelPackage extends EPackage {
 	int HYPOTHESIS__TIME_INSTANTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Any</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__ANY = 5;
+
+	/**
+	 * The feature id for the '<em><b>First Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__FIRST_TIME_INSTANT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Second Time Instant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__SECOND_TIME_INSTANT = 7;
+
+	/**
 	 * The number of structural features of the '<em>Hypothesis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYPOTHESIS_FEATURE_COUNT = 5;
+	int HYPOTHESIS_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Hypothesis</em>' class.
@@ -1303,22 +1357,13 @@ public interface ModelPackage extends EPackage {
 	int AGENT_REFERENCE__REFERENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT_REFERENCE__TYPE_NAME = 1;
-
-	/**
 	 * The number of structural features of the '<em>Agent Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_REFERENCE_FEATURE_COUNT = 2;
+	int AGENT_REFERENCE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Agent Reference</em>' class.
@@ -1349,22 +1394,13 @@ public interface ModelPackage extends EPackage {
 	int OBSERVER_REFERENCE__REFERENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVER_REFERENCE__TYPE_NAME = 1;
-
-	/**
 	 * The number of structural features of the '<em>Observer Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVER_REFERENCE_FEATURE_COUNT = 2;
+	int OBSERVER_REFERENCE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Observer Reference</em>' class.
@@ -1396,22 +1432,13 @@ public interface ModelPackage extends EPackage {
 	int GENERAL_TYPE_REFERENCE__REFERENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERAL_TYPE_REFERENCE__TYPE_NAME = 1;
-
-	/**
 	 * The number of structural features of the '<em>General Type Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERAL_TYPE_REFERENCE_FEATURE_COUNT = 2;
+	int GENERAL_TYPE_REFERENCE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>General Type Reference</em>' class.
@@ -1733,6 +1760,39 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBehaviouralDescription_TimeInstants();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.BehaviouralDescription#getSecondTimeInstant <em>Second Time Instant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Second Time Instant</em>'.
+	 * @see model.BehaviouralDescription#getSecondTimeInstant()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EAttribute getBehaviouralDescription_SecondTimeInstant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.BehaviouralDescription#getFirstTimeInstant <em>First Time Instant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Time Instant</em>'.
+	 * @see model.BehaviouralDescription#getFirstTimeInstant()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EAttribute getBehaviouralDescription_FirstTimeInstant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.BehaviouralDescription#isAny <em>Any</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Any</em>'.
+	 * @see model.BehaviouralDescription#isAny()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EAttribute getBehaviouralDescription_Any();
 
 	/**
 	 * Returns the meta object for class '{@link model.HoldsAt <em>Holds At</em>}'.
@@ -2221,17 +2281,6 @@ public interface ModelPackage extends EPackage {
 	EReference getAgentReference_Reference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.AgentReference#getTypeName <em>Type Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Name</em>'.
-	 * @see model.AgentReference#getTypeName()
-	 * @see #getAgentReference()
-	 * @generated
-	 */
-	EAttribute getAgentReference_TypeName();
-
-	/**
 	 * Returns the meta object for class '{@link model.ObserverReference <em>Observer Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2253,17 +2302,6 @@ public interface ModelPackage extends EPackage {
 	EReference getObserverReference_Reference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.ObserverReference#getTypeName <em>Type Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Name</em>'.
-	 * @see model.ObserverReference#getTypeName()
-	 * @see #getObserverReference()
-	 * @generated
-	 */
-	EAttribute getObserverReference_TypeName();
-
-	/**
 	 * Returns the meta object for class '{@link model.GeneralTypeReference <em>General Type Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2283,17 +2321,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGeneralTypeReference_Reference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link model.GeneralTypeReference#getTypeName <em>Type Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Name</em>'.
-	 * @see model.GeneralTypeReference#getTypeName()
-	 * @see #getGeneralTypeReference()
-	 * @generated
-	 */
-	EAttribute getGeneralTypeReference_TypeName();
 
 	/**
 	 * Returns the meta object for class '{@link model.Agent <em>Agent</em>}'.
@@ -2369,6 +2396,39 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHypothesis_TimeInstants();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Hypothesis#isAny <em>Any</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Any</em>'.
+	 * @see model.Hypothesis#isAny()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EAttribute getHypothesis_Any();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Hypothesis#getFirstTimeInstant <em>First Time Instant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Time Instant</em>'.
+	 * @see model.Hypothesis#getFirstTimeInstant()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EAttribute getHypothesis_FirstTimeInstant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Hypothesis#getSecondTimeInstant <em>Second Time Instant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Second Time Instant</em>'.
+	 * @see model.Hypothesis#getSecondTimeInstant()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EAttribute getHypothesis_SecondTimeInstant();
 
 	/**
 	 * Returns the meta object for class '{@link model.GeneralParam <em>General Param</em>}'.
@@ -2661,6 +2721,30 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS = eINSTANCE.getBehaviouralDescription_TimeInstants();
+
+		/**
+		 * The meta object literal for the '<em><b>Second Time Instant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOURAL_DESCRIPTION__SECOND_TIME_INSTANT = eINSTANCE.getBehaviouralDescription_SecondTimeInstant();
+
+		/**
+		 * The meta object literal for the '<em><b>First Time Instant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOURAL_DESCRIPTION__FIRST_TIME_INSTANT = eINSTANCE.getBehaviouralDescription_FirstTimeInstant();
+
+		/**
+		 * The meta object literal for the '<em><b>Any</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOURAL_DESCRIPTION__ANY = eINSTANCE.getBehaviouralDescription_Any();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.HoldsAtImpl <em>Holds At</em>}' class.
@@ -3041,14 +3125,6 @@ public interface ModelPackage extends EPackage {
 		EReference AGENT_REFERENCE__REFERENCE = eINSTANCE.getAgentReference_Reference();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AGENT_REFERENCE__TYPE_NAME = eINSTANCE.getAgentReference_TypeName();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.ObserverReferenceImpl <em>Observer Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3067,14 +3143,6 @@ public interface ModelPackage extends EPackage {
 		EReference OBSERVER_REFERENCE__REFERENCE = eINSTANCE.getObserverReference_Reference();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OBSERVER_REFERENCE__TYPE_NAME = eINSTANCE.getObserverReference_TypeName();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.GeneralTypeReferenceImpl <em>General Type Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3091,14 +3159,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GENERAL_TYPE_REFERENCE__REFERENCE = eINSTANCE.getGeneralTypeReference_Reference();
-
-		/**
-		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERAL_TYPE_REFERENCE__TYPE_NAME = eINSTANCE.getGeneralTypeReference_TypeName();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.
@@ -3159,6 +3219,30 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HYPOTHESIS__TIME_INSTANTS = eINSTANCE.getHypothesis_TimeInstants();
+
+		/**
+		 * The meta object literal for the '<em><b>Any</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPOTHESIS__ANY = eINSTANCE.getHypothesis_Any();
+
+		/**
+		 * The meta object literal for the '<em><b>First Time Instant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPOTHESIS__FIRST_TIME_INSTANT = eINSTANCE.getHypothesis_FirstTimeInstant();
+
+		/**
+		 * The meta object literal for the '<em><b>Second Time Instant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPOTHESIS__SECOND_TIME_INSTANT = eINSTANCE.getHypothesis_SecondTimeInstant();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.GeneralParamImpl <em>General Param</em>}' class.
