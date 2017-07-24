@@ -173,6 +173,17 @@ public class HypothesisFigure extends Shape {
         		graphics.drawString(h.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
 	        }
         }
+       
+        if ((h.isAny())&&(h.getFirstTimeInstant() > 0)&&(h.getFirstTimeInstant() < h.getTimeInstants()) && (h.getSecondTimeInstant() > 1) && (h.getSecondTimeInstant() <= h.getTimeInstants()) && (h.getSecondTimeInstant() > h.getFirstTimeInstant())){
+    		graphics.setForegroundColor(new Color(null, 0, 0, 0));
+    		int anyRectangleX = mainX + length * h.getFirstTimeInstant() -10;
+    		int anyRectangleY = mainY +30;
+    		graphics.drawRectangle(anyRectangleX , anyRectangleY, length*(h.getSecondTimeInstant()-h.getFirstTimeInstant()) + 20, mainHeight -60);
+    		graphics.drawRectangle(anyRectangleX, anyRectangleY, 40, 15);
+    		Point label = new Point(anyRectangleX +11, anyRectangleY + 4);
+    		graphics.drawString("ANY", label);
+        }
+        
     }
 
     @Override

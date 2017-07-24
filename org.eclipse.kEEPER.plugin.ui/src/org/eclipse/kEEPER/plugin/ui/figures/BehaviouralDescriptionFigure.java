@@ -180,8 +180,20 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        		graphics.drawString(bd.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
 		        }
 	        }   
-	    }
+	    
+	        if ((bd.isAny())&&(bd.getFirstTimeInstant() > 0)&&(bd.getFirstTimeInstant() < bd.getTimeInstants()) && (bd.getSecondTimeInstant() > 1) && (bd.getSecondTimeInstant() <= bd.getTimeInstants()) && (bd.getSecondTimeInstant() > bd.getFirstTimeInstant())){
+        		graphics.setForegroundColor(new Color(null, 0, 0, 0));
+        		int anyRectangleX = mainX + length * bd.getFirstTimeInstant() -10;
+        		int anyRectangleY = mainY +30;
+        		graphics.drawRectangle(anyRectangleX , anyRectangleY, length*(bd.getSecondTimeInstant()-bd.getFirstTimeInstant()) + 20, mainHeight -60);
+        		graphics.drawRectangle(anyRectangleX, anyRectangleY, 40, 15);
+        		Point label = new Point(anyRectangleX +11, anyRectangleY + 4);
+        		graphics.drawString("ANY", label);
+	        }
+		
+		}
 
+		
 	    @Override
 	    public void paintFigure(Graphics graphics) {
 	        // TODO Auto-generated method stub
