@@ -13,13 +13,13 @@ import initial.model.diagram.providers.ModelElementTypes;
 /**
  * @generated
  */
-public class InstanceItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
+public class Instance2ItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public InstanceItemSemanticEditPolicy() {
-		super(ModelElementTypes.Instance_3002);
+	public Instance2ItemSemanticEditPolicy() {
+		super(ModelElementTypes.Instance_2002);
 	}
 
 	/**

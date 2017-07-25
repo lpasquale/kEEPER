@@ -25,11 +25,11 @@ import model.Initially;
 /**
  * @generated
  */
-public class InitiallyNameLabelExpressionLabelParser implements IParser {
+public class InitiallyLabelExpressionLabelParser implements IParser {
 	/**
 	* @generated
 	*/
-	public InitiallyNameLabelExpressionLabelParser() {
+	public InitiallyLabelExpressionLabelParser() {
 	}
 
 	/**

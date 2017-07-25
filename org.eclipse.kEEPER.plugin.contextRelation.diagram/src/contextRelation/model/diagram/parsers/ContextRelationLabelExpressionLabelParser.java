@@ -113,10 +113,14 @@ public class ContextRelationLabelExpressionLabelParser implements IParser {
 	*/
 	private String evaluatePrintExpression(EObject self) {
 		String s = "";
+		if (!((ContextRelation) self).getTypes().isEmpty())
+			s = "  (";
 		for (int i = 0; i < ((ContextRelation) self).getTypes().size(); i++) {
-			s = s + "  - " + ((ContextRelation) self).getTypes().get(i).getName() + "  ";
+			if (i < ((ContextRelation) self).getTypes().size() - 1)
+				s = s + ((ContextRelation) self).getTypes().get(i).getName() + "  ";
+			else
+				s = s + ((ContextRelation) self).getTypes().get(i).getName() + ")";
 		}
-		System.out.println(s);
 		return s;
 	}
 

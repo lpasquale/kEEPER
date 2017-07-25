@@ -100,19 +100,20 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 	* @generated
 	*/
 	public void addPages() {
-		diagramModelFilePage = new ModelCreationWizardPage("DiagramModelFile", getSelection(), "initialModel_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage = new ModelCreationWizardPage("DiagramModelFile", getSelection(), //$NON-NLS-1$
+				"initiallyModel_diagram"); //$NON-NLS-1$
 		diagramModelFilePage.setTitle(Messages.ModelCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(Messages.ModelCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new ModelCreationWizardPage("DomainModelFile", getSelection(), "initialModel") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new ModelCreationWizardPage("DomainModelFile", getSelection(), "initiallyModel") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".initialModel_diagram".length()); //$NON-NLS-1$
-					setFileName(
-							ModelDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "initialModel")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".initiallyModel_diagram".length()); //$NON-NLS-1$
+					setFileName(ModelDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
+							"initiallyModel")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

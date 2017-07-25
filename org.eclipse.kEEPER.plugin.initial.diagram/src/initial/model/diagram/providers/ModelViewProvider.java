@@ -29,18 +29,20 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
+import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
+import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
+import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
-import initial.model.diagram.edit.parts.WrappingLabel2EditPart;
-import initial.model.diagram.edit.parts.WrappingLabel3EditPart;
-import initial.model.diagram.edit.parts.WrappingLabelEditPart;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -125,7 +127,9 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				}
 				switch (visualID) {
 				case InitiallyEditPart.VISUAL_ID:
+				case ContextRelationEditPart.VISUAL_ID:
 				case InstanceEditPart.VISUAL_ID:
+				case Instance2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -136,7 +140,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				}
 			}
 		}
-		return InitiallyEditPart.VISUAL_ID == visualID || InstanceEditPart.VISUAL_ID == visualID;
+		return InitiallyEditPart.VISUAL_ID == visualID || Instance2EditPart.VISUAL_ID == visualID
+				|| ContextRelationEditPart.VISUAL_ID == visualID || InstanceEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -187,8 +192,12 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		switch (visualID) {
 		case InitiallyEditPart.VISUAL_ID:
 			return createInitially_2001(domainElement, containerView, index, persisted, preferencesHint);
-		case InstanceEditPart.VISUAL_ID:
+		case Instance2EditPart.VISUAL_ID:
 			return createInstance_2002(domainElement, containerView, index, persisted, preferencesHint);
+		case ContextRelationEditPart.VISUAL_ID:
+			return createContextRelation_3003(domainElement, containerView, index, persisted, preferencesHint);
+		case InstanceEditPart.VISUAL_ID:
+			return createInstance_3002(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -212,7 +221,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	public Node createInitially_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(ModelVisualIDRegistry.getType(InitiallyEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -220,11 +232,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -240,9 +247,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5001 = createLabel(node, ModelVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
-		Node label5002 = createLabel(node, ModelVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
-		Node label5003 = createLabel(node, ModelVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+		createCompartment(node, ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
+		createCompartment(node, ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartment2EditPart.VISUAL_ID),
+				false, false, true, true);
 		return node;
 	}
 
@@ -253,7 +261,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
+		node.setType(ModelVisualIDRegistry.getType(Instance2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -279,6 +287,32 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createInstance_3002(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		node.setType(ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createContextRelation_3003(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		node.setType(ModelVisualIDRegistry.getType(ContextRelationEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
 		return node;
 	}
 
@@ -297,8 +331,28 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	private Node createLabel(View owner, String hint) {
-		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
+	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
+			boolean canFilter) {
+		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
+		//rv.setShowTitle(showTitle);
+		//rv.setCollapsed(isCollapsed);
+		Node rv;
+		if (canCollapse) {
+			rv = NotationFactory.eINSTANCE.createBasicCompartment();
+		} else {
+			rv = NotationFactory.eINSTANCE.createDecorationNode();
+		}
+		if (hasTitle) {
+			TitleStyle ts = NotationFactory.eINSTANCE.createTitleStyle();
+			ts.setShowTitle(true);
+			rv.getStyles().add(ts);
+		}
+		if (canSort) {
+			rv.getStyles().add(NotationFactory.eINSTANCE.createSortingStyle());
+		}
+		if (canFilter) {
+			rv.getStyles().add(NotationFactory.eINSTANCE.createFilteringStyle());
+		}
 		rv.setType(hint);
 		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
 		return rv;

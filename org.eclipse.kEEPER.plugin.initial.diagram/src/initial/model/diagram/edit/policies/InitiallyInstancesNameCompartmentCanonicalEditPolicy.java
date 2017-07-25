@@ -2,13 +2,10 @@ package initial.model.diagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -24,7 +21,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramUpdater;
@@ -35,12 +32,7 @@ import model.ModelPackage;
 /**
  * @generated
  */
-public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
-
-	/**
-	* @generated
-	*/
-	private Set<EStructuralFeature> myFeaturesToSynchronize;
+public class InitiallyInstancesNameCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	* @generated
@@ -57,13 +49,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
-	protected Set getFeaturesToSynchronize() {
-		if (myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Initials());
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Instances());
-		}
-		return myFeaturesToSynchronize;
+	protected EStructuralFeature getFeatureToSynchronize() {
+		return ModelPackage.eINSTANCE.getInitially_ContextRelation();
 	}
 
 	/**
@@ -75,7 +62,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<ModelNodeDescriptor> childDescriptors = ModelDiagramUpdater
-				.getEnvironment_1000SemanticChildren(viewObject);
+				.getInitiallyInstancesNameCompartment_7001SemanticChildren(viewObject);
 		for (ModelNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -93,8 +80,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	private boolean isMyDiagramElement(View view) {
-		int visualID = ModelVisualIDRegistry.getVisualID(view);
-		return visualID == InitiallyEditPart.VISUAL_ID || visualID == Instance2EditPart.VISUAL_ID;
+		return ContextRelationEditPart.VISUAL_ID == ModelVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -106,7 +92,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<ModelNodeDescriptor> childDescriptors = ModelDiagramUpdater
-				.getEnvironment_1000SemanticChildren((View) getHost().getModel());
+				.getInitiallyInstancesNameCompartment_7001SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -171,7 +157,6 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
-
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
@@ -180,35 +165,5 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 
 		makeViewsImmutable(createdViews);
-	}
-
-	/**
-	* @generated
-	*/
-	@SuppressWarnings("serial")
-	protected static class Domain2Notation extends HashMap<EObject, View> {
-		/**
-		* @generated
-		*/
-		public boolean containsDomainElement(EObject domainElement) {
-			return this.containsKey(domainElement);
-		}
-
-		/**
-		* @generated
-		*/
-		public View getHinted(EObject domainEObject, String hint) {
-			return this.get(domainEObject);
-		}
-
-		/**
-		* @generated
-		*/
-		public void putView(EObject domainElement, View view) {
-			if (!containsKey(view.getElement())) {
-				this.put(domainElement, view);
-			}
-		}
-
 	}
 }

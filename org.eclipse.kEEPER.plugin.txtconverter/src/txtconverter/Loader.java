@@ -93,7 +93,7 @@ public class Loader {
 		Resource r3 = rs.createResource(URI.createFileURI(filePath +"/default.eventModel"));
 		Resource r4 = rs.createResource(URI.createFileURI(filePath +"/default.bdModel"));	
 		Resource r5 = rs.createResource(URI.createFileURI(filePath +"/default.hypothesisModel"));		
-		Resource r6 = rs.createResource(URI.createFileURI(filePath +"/default.initialModel"));		
+		Resource r6 = rs.createResource(URI.createFileURI(filePath +"/default.initiallyModel"));		
 
 		r1.load(null);
 		r2.load(null);

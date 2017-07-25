@@ -26,9 +26,6 @@
             xsi:type="gmfgraph:Label"
             name="ContextRelationTypes"
             text="Define the types..."/>
-        <children
-            xsi:type="gmfgraph:Polyline"
-            name="segment"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>

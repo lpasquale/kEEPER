@@ -14,8 +14,10 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
+import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
+import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramEditorPlugin;
 import model.ModelPackage;
@@ -67,6 +69,18 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType Instance_3002 = getElementType(
+			"org.eclipse.kEEPER.plugin.initial.diagram.Instance_3002"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType ContextRelation_3003 = getElementType(
+			"org.eclipse.kEEPER.plugin.initial.diagram.ContextRelation_3003"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -107,6 +121,10 @@ public class ModelElementTypes {
 			elements.put(Initially_2001, ModelPackage.eINSTANCE.getInitially());
 
 			elements.put(Instance_2002, ModelPackage.eINSTANCE.getInstance());
+
+			elements.put(ContextRelation_3003, ModelPackage.eINSTANCE.getContextRelation());
+
+			elements.put(Instance_3002, ModelPackage.eINSTANCE.getInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -127,6 +145,8 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(Initially_2001);
 			KNOWN_ELEMENT_TYPES.add(Instance_2002);
+			KNOWN_ELEMENT_TYPES.add(ContextRelation_3003);
+			KNOWN_ELEMENT_TYPES.add(Instance_3002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -140,8 +160,12 @@ public class ModelElementTypes {
 			return Environment_1000;
 		case InitiallyEditPart.VISUAL_ID:
 			return Initially_2001;
-		case InstanceEditPart.VISUAL_ID:
+		case Instance2EditPart.VISUAL_ID:
 			return Instance_2002;
+		case ContextRelationEditPart.VISUAL_ID:
+			return ContextRelation_3003;
+		case InstanceEditPart.VISUAL_ID:
+			return Instance_3002;
 		}
 		return null;
 	}

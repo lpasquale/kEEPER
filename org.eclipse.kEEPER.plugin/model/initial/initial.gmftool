@@ -11,7 +11,7 @@
         title="Nodes">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Initial">
+          title="Initially">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

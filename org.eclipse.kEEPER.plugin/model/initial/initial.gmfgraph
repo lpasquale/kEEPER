@@ -10,25 +10,33 @@
     <descriptors
         name="InitialFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Initial">
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="Initially"
+          lineWidth="3"
+          cornerWidth="20"
+          cornerHeight="20">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            majorAlignment="CENTER"
+            minorAlignment="CENTER"/>
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"
+            blue="255"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="InitialName"
-            text="--Context Relation name--"/>
+            xsi:type="gmfgraph:Rectangle"
+            name="InitialNameFigure"
+            outline="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+        </children>
         <children
-            xsi:type="gmfgraph:Label"
-            name="InitialTitle"
-            text="&lt;&lt;Initial>>"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InstancesName"
-            text="Define the instances..."/>
+            xsi:type="gmfgraph:Rectangle"
+            name="InstancesListFigure">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+        </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
@@ -36,28 +44,46 @@
         name="InstanceFigure">
       <actualFigure
           xsi:type="gmfgraph:InvisibleRectangle"
-          name="Instance"/>
+          name="InstanceRectangleFigure"/>
+    </descriptors>
+  </figures>
+  <figures
+      name="labels">
+    <descriptors
+        name="InstancesNameLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="InstancesNameLabelFigure"
+          text="Instances names..."/>
+    </descriptors>
+    <descriptors
+        name="InitialNameLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="InitialNameLabelFigure"
+          text="---Context Relation name---">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            vertical="true"
+            majorAlignment="CENTER"
+            minorAlignment="CENTER"/>
+      </actualFigure>
     </descriptors>
   </figures>
   <nodes
+      name="InitialNode"
+      figure="InitialFigure"/>
+  <nodes
       name="InstanceNode"
       figure="InstanceFigure"/>
-  <nodes
-      name="InitialNode"
+  <compartments
+      name="InstancesNameCompartment"
       figure="InitialFigure"/>
   <labels
       name="InitialNameLabel"
-      figure="InitialFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+      figure="InitialNameLabelFigure"
+      elementIcon="false"/>
   <labels
-      name="InitialTitleLabel"
-      figure="InitialFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels
-      name="InitialInstancesNameLabel"
-      figure="InitialFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      name="InstanceLabel"
+      figure="InstancesNameLabelFigure"/>
 </gmfgraph:Canvas>

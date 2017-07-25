@@ -3,6 +3,7 @@ package initial.model.diagram.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -10,9 +11,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
+import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.requests.DirectEditRequest;
+import org.eclipse.gef.requests.SelectionRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
@@ -21,11 +24,14 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ListItemComponentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
+import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -34,7 +40,6 @@ import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
-import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
@@ -44,7 +49,8 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
-import initial.model.diagram.edit.policies.ModelTextSelectionEditPolicy;
+import initial.model.diagram.edit.policies.ContextRelationItemSemanticEditPolicy;
+import initial.model.diagram.edit.policies.ModelTextNonResizableEditPolicy;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
 import initial.model.diagram.providers.ModelParserProvider;
@@ -52,12 +58,12 @@ import initial.model.diagram.providers.ModelParserProvider;
 /**
  * @generated
  */
-public class WrappingLabelEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ContextRelationEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5001;
+	public static final int VISUAL_ID = 3003;
 
 	/**
 	* @generated
@@ -87,8 +93,18 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	/**
 	* @generated
 	*/
-	public WrappingLabelEditPart(View view) {
+	public ContextRelationEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	* @generated
+	*/
+	public DragTracker getDragTracker(Request request) {
+		if (request instanceof SelectionRequest && ((SelectionRequest) request).getLastButtonPressed() == 3) {
+			return null;
+		}
+		return new DragEditPartsTrackerEx(this);
 	}
 
 	/**
@@ -96,9 +112,10 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ModelTextSelectionEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ContextRelationItemSemanticEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ModelTextNonResizableEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 	}
 
 	/**
@@ -158,7 +175,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	/**
 	* @generated
 	*/
-	public void setLabel(WrappingLabel figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -288,8 +305,8 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.Initially_2001, getParserElement(),
-					ModelVisualIDRegistry.getType(initial.model.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+			parser = ModelParserProvider.getParser(ModelElementTypes.ContextRelation_3003, getParserElement(),
+					ModelVisualIDRegistry.getType(initial.model.diagram.edit.parts.ContextRelationEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -578,8 +595,50 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	* @generated
 	*/
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel() method
-		return null;
+		IFigure label = createFigurePrim();
+		defaultText = getLabelTextHelper(label);
+		return label;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IFigure createFigurePrim() {
+		return new InitialNameLabelFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class InitialNameLabelFigure extends WrappingLabel {
+
+		/**
+		 * @generated
+		 */
+		public InitialNameLabelFigure() {
+
+			FlowLayout layoutThis = new FlowLayout();
+			layoutThis.setStretchMinorAxis(false);
+			layoutThis.setMinorAlignment(FlowLayout.ALIGN_CENTER);
+
+			layoutThis.setMajorAlignment(FlowLayout.ALIGN_CENTER);
+			layoutThis.setMajorSpacing(5);
+			layoutThis.setMinorSpacing(5);
+			layoutThis.setHorizontal(false);
+
+			this.setLayoutManager(layoutThis);
+
+			this.setText("---Context Relation name---");
+		}
+
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public boolean isSelectable() {
+		return getFigure().isShowing();
 	}
 
 }

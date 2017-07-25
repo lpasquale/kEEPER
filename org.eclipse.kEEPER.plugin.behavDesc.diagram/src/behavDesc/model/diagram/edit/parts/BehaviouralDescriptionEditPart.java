@@ -250,12 +250,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
-		/*	SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), bd,
-					ModelPackage.eINSTANCE.getBehaviouralDescription_TimeInstants(), ((BehaviouralDescriptionFigure) shape).getTimeInstants());
-			SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
-			editor.getDiagramEditDomain().getDiagramCommandStack()
-					.execute(new ICommandProxy(propertyOperation));
-		*/
 		return figure;
 	}
 

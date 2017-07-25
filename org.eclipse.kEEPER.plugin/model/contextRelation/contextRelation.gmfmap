@@ -28,7 +28,7 @@
         <diagramLabel
             href="contextRelation.gmfgraph#ContextRelationTypes"/>
         <viewExpression
-            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((ContextRelation) self).getTypes().get(i).getName() + &quot;\n&quot;;&#xA;}&#xA;return s;"
+            body="String s = &quot;&quot;;&#xA;if (!((ContextRelation) self).getTypes().isEmpty())&#xA;&#x9;s = &quot;  (&quot;;&#xA;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++) {&#xA;&#x9;if (i &lt; ((ContextRelation) self).getTypes().size() -1)&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;  &quot;;&#xA;&#x9;else&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;)&quot;;&#xA;}&#xA;return s;"
             language="java"/>
       </labelMappings>
       <tool

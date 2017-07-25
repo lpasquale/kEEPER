@@ -73,9 +73,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Initially">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
-        eType="#//ContextRelation"/>
+        eType="#//ContextRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//Instance"/>
+        eType="#//Instance" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Environment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"

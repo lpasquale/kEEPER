@@ -7,11 +7,16 @@ import java.util.Map;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -24,16 +29,22 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.graphics.Color;
@@ -44,6 +55,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
 import initial.model.diagram.edit.policies.InitiallyItemSemanticEditPolicy;
+import initial.model.diagram.edit.policies.ModelTextSelectionEditPolicy;
 import initial.model.diagram.part.ModelDiagramEditor;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
@@ -114,6 +126,8 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ModelVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitiallyItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -125,17 +139,14 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
-				}
-				return result;
+		FlowLayoutEditPolicy lep = new FlowLayoutEditPolicy() {
+
+			protected Command createAddCommand(EditPart child, EditPart after) {
+				return null;
 			}
 
-			protected Command getMoveChildrenCommand(Request request) {
+			protected Command createMoveChildCommand(EditPart child, EditPart after) {
 				return null;
 			}
 
@@ -158,68 +169,6 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	*/
 	public InitialFigure getPrimaryShape() {
 		return (InitialFigure) primaryShape;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabelEditPart) {
-			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialTitle());
-			return true;
-		}
-		if (childEditPart instanceof WrappingLabel2EditPart) {
-			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialName());
-			return true;
-		}
-		if (childEditPart instanceof WrappingLabel3EditPart) {
-			((WrappingLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstancesName());
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabelEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof WrappingLabel2EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof WrappingLabel3EditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	* @generated
-	*/
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		return getContentPane();
 	}
 
 	/**
@@ -311,80 +260,87 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ModelVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ModelElementTypes.ContextRelation_3003) {
+				return getChildBySemanticHint(
+						ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartmentEditPart.VISUAL_ID));
+			}
+			if (type == ModelElementTypes.Instance_3002) {
+				return getChildBySemanticHint(
+						ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartment2EditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
-	public class InitialFigure extends RectangleFigure {
+	public class InitialFigure extends RoundedRectangle {
 
 		/**
 		* @generated
 		*/
-		private WrappingLabel fFigureInstancesName;
-		/**
-			* @generated
-			*/
-		private WrappingLabel fFigureInitialTitle;
-		/**
-			 * @generated
-			 */
-		private WrappingLabel fFigureInitialName;
+		private RectangleFigure fFigureInitialNameFigure;
 
 		/**
-		 * @generated
-		 */
+				 * @generated
+				 */
 		public InitialFigure() {
+
+			FlowLayout layoutThis = new FlowLayout();
+			layoutThis.setStretchMinorAxis(false);
+			layoutThis.setMinorAlignment(FlowLayout.ALIGN_CENTER);
+
+			layoutThis.setMajorAlignment(FlowLayout.ALIGN_CENTER);
+			layoutThis.setMajorSpacing(5);
+			layoutThis.setMinorSpacing(5);
+			layoutThis.setHorizontal(false);
+
+			this.setLayoutManager(layoutThis);
+
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
+			this.setLineWidth(3);
+			this.setForegroundColor(THIS_FORE);
 			createContents();
 		}
 
 		/**
-		 * @generated NOT
+		 * @generated
 		 */
 		private void createContents() {
 
-			fFigureInitialName = new WrappingLabel();
-			fFigureInitialName.setText("--Context Relation name--");
-			fFigureInitialName.setAlignment(PositionConstants.CENTER);
+			fFigureInitialNameFigure = new RectangleFigure();
 
-			fFigureInitialTitle = new WrappingLabel();
-			fFigureInitialTitle.setText("<<Initial>>");
-			fFigureInitialTitle.setAlignment(PositionConstants.CENTER);
+			fFigureInitialNameFigure.setOutline(false);
 
-			fFigureInstancesName = new WrappingLabel();
-			fFigureInstancesName.setText("Define the instances...");
-			fFigureInstancesName.setAlignment(PositionConstants.CENTER);
+			this.add(fFigureInitialNameFigure);
+			fFigureInitialNameFigure.setLayoutManager(new StackLayout());
 
-			this.add(fFigureInitialTitle);
-			this.add(fFigureInitialName);
-			this.add(fFigureInstancesName);
+			RectangleFigure instancesListFigure0 = new RectangleFigure();
+
+			this.add(instancesListFigure0);
+			instancesListFigure0.setLayoutManager(new StackLayout());
 
 		}
 
 		/**
 		* @generated
 		*/
-		public WrappingLabel getFigureInstancesName() {
-			return fFigureInstancesName;
-		}
-
-		/**
-			* @generated
-			*/
-		public WrappingLabel getFigureInitialTitle() {
-			return fFigureInitialTitle;
-		}
-
-		/**
-			 * @generated
-			 */
-		public WrappingLabel getFigureInitialName() {
-			return fFigureInitialName;
+		public RectangleFigure getFigureInitialNameFigure() {
+			return fFigureInitialNameFigure;
 		}
 
 	}
+
+	/**
+	* @generated
+	*/
+	static final Color THIS_FORE = new Color(null, 0, 0, 255);
 
 	@Override
 	public void performRequest(Request req) {

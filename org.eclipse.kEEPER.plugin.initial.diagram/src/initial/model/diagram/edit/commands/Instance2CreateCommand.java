@@ -20,12 +20,12 @@ import model.ModelFactory;
 /**
  * @generated
  */
-public class InstanceCreateCommand extends EditElementCommand {
+public class Instance2CreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
 	*/
-	public InstanceCreateCommand(CreateElementRequest req) {
+	public Instance2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -55,7 +55,7 @@ public class InstanceCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Instance newElement = ModelFactory.eINSTANCE.createInstance();
 
-		Initially owner = (Initially) getElementToEdit();
+		Environment owner = (Environment) getElementToEdit();
 		owner.getInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);

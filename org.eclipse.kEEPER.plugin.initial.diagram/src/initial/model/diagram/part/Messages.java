@@ -248,7 +248,17 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Initial1CreationTool_title;
+	public static String Initially1CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String InitiallyInstancesNameCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String InitiallyInstancesNameCompartment2EditPart_title;
 
 	/**
 	* @generated
@@ -259,6 +269,11 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	* @generated
+	*/
+	public static String MessageFormatParser_InvalidInputError;
 
 	/**
 	* @generated

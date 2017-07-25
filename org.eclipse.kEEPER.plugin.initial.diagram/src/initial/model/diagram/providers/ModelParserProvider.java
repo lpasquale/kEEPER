@@ -1,6 +1,7 @@
 package initial.model.diagram.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -12,11 +13,13 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
-import initial.model.diagram.edit.parts.WrappingLabel2EditPart;
-import initial.model.diagram.edit.parts.WrappingLabel3EditPart;
-import initial.model.diagram.parsers.InitiallyInstancesLabelExpressionLabelParser;
-import initial.model.diagram.parsers.InitiallyNameLabelExpressionLabelParser;
+import initial.model.diagram.edit.parts.ContextRelationEditPart;
+import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.parsers.InitiallyLabelExpressionLabelParser;
+import initial.model.diagram.parsers.InstanceExpressionLabelParser;
+import initial.model.diagram.parsers.MessageFormatParser;
 import initial.model.diagram.part.ModelVisualIDRegistry;
+import model.ModelPackage;
 
 /**
  * @generated
@@ -26,31 +29,35 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private InitiallyNameLabelExpressionLabelParser initiallyLabel_5002Parser;
+	private IParser instance_3002Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getInitiallyLabel_5002Parser() {
-		if (initiallyLabel_5002Parser == null) {
-			initiallyLabel_5002Parser = new InitiallyNameLabelExpressionLabelParser();
+	private IParser getInstance_3002Parser() {
+		if (instance_3002Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getInstance_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			instance_3002Parser = parser;
 		}
-		return initiallyLabel_5002Parser;
+		return instance_3002Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private InitiallyInstancesLabelExpressionLabelParser initiallyLabel_5003Parser;
+	private IParser contextRelation_3003Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getInitiallyLabel_5003Parser() {
-		if (initiallyLabel_5003Parser == null) {
-			initiallyLabel_5003Parser = new InitiallyInstancesLabelExpressionLabelParser();
+	private IParser getContextRelation_3003Parser() {
+		if (contextRelation_3003Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getContextRelation_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			contextRelation_3003Parser = parser;
 		}
-		return initiallyLabel_5003Parser;
+		return contextRelation_3003Parser;
 	}
 
 	/**
@@ -58,10 +65,10 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case WrappingLabel2EditPart.VISUAL_ID:
-			return getInitiallyLabel_5002Parser();
-		case WrappingLabel3EditPart.VISUAL_ID:
-			return getInitiallyLabel_5003Parser();
+		case ContextRelationEditPart.VISUAL_ID:
+			return getContextRelation_3003Parser();
+		case InstanceEditPart.VISUAL_ID:
+			return getInstance_3002Parser();
 		}
 		return null;
 	}

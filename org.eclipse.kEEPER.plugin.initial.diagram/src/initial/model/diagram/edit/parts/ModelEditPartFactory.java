@@ -28,17 +28,20 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case InitiallyEditPart.VISUAL_ID:
 				return new InitiallyEditPart(view);
 
-			case WrappingLabelEditPart.VISUAL_ID:
-				return new WrappingLabelEditPart(view);
+			case Instance2EditPart.VISUAL_ID:
+				return new Instance2EditPart(view);
 
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new WrappingLabel2EditPart(view);
-
-			case WrappingLabel3EditPart.VISUAL_ID:
-				return new WrappingLabel3EditPart(view);
+			case ContextRelationEditPart.VISUAL_ID:
+				return new ContextRelationEditPart(view);
 
 			case InstanceEditPart.VISUAL_ID:
 				return new InstanceEditPart(view);
+
+			case InitiallyInstancesNameCompartmentEditPart.VISUAL_ID:
+				return new InitiallyInstancesNameCompartmentEditPart(view);
+
+			case InitiallyInstancesNameCompartment2EditPart.VISUAL_ID:
+				return new InitiallyInstancesNameCompartment2EditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

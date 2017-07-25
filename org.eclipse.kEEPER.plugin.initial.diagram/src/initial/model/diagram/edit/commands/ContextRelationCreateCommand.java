@@ -12,20 +12,19 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import model.Environment;
+import model.ContextRelation;
 import model.Initially;
-import model.Instance;
 import model.ModelFactory;
 
 /**
  * @generated
  */
-public class InstanceCreateCommand extends EditElementCommand {
+public class ContextRelationCreateCommand extends EditElementCommand {
 
 	/**
 	* @generated
 	*/
-	public InstanceCreateCommand(CreateElementRequest req) {
+	public ContextRelationCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -45,6 +44,10 @@ public class InstanceCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	public boolean canExecute() {
+		Initially container = (Initially) getElementToEdit();
+		if (container.getContextRelation() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -53,10 +56,10 @@ public class InstanceCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Instance newElement = ModelFactory.eINSTANCE.createInstance();
+		ContextRelation newElement = ModelFactory.eINSTANCE.createContextRelation();
 
 		Initially owner = (Initially) getElementToEdit();
-		owner.getInstances().add(newElement);
+		owner.setContextRelation(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -67,7 +70,7 @@ public class InstanceCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(Instance newElement, IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(ContextRelation newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);

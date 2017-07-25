@@ -11,33 +11,58 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Initially"/>
-      <labelMappings>
-        <diagramLabel
-            href="initial.gmfgraph#InitialTitleLabel"/>
-      </labelMappings>
-      <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping"
-          readOnly="true">
-        <diagramLabel
-            href="initial.gmfgraph#InitialNameLabel"/>
-        <viewExpression
-            body="String s=&quot;&quot;;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if (((Initially) self).getContextRelation() != null){&#xA;&#x9;&#x9;&#x9;s = ((Initially) self).getContextRelation().getName();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return s;"
-            language="java"/>
-      </labelMappings>
-      <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping"
-          readOnly="true">
-        <diagramLabel
-            href="initial.gmfgraph#InitialInstancesNameLabel"/>
-        <viewExpression
-            body="String s =&quot;&quot;;&#xA;for (int i = 0; i &lt; ((Initially) self).getInstances().size(); i++){&#xA;&#x9;s = s + &quot;  - &quot; + ((Initially) self).getInstances().get(i).getName() + &quot;   &quot;;&#xA;}&#xA;return s;"
-            language="java"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="initial.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="initial.gmfgraph#InitialNode"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="../model.ecore#//Initially/contextRelation"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../model.ecore#//ContextRelation"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="">
+            <diagramLabel
+                href="initial.gmfgraph#InitialNameLabel"/>
+            <features
+                href="../model.ecore#//ContextRelation/name"/>
+          </labelMappings>
+          <diagramNode
+              href="initial.gmfgraph#InitialNameLabel"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../model.ecore#//Initially/instances"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../model.ecore#//Instance"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="initial.gmfgraph#InstanceLabel"/>
+            <features
+                href="../model.ecore#//Instance/name"/>
+          </labelMappings>
+          <diagramNode
+              href="initial.gmfgraph#InstanceLabel"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0">
+        <compartment
+            href="initial.gmfgraph#InstancesNameCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.1">
+        <compartment
+            href="initial.gmfgraph#InstancesNameCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>

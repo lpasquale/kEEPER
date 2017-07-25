@@ -30,17 +30,17 @@ public class ModelPaletteFactory {
 	private PaletteContainer createNodes1Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.Nodes1Group_title);
 		paletteContainer.setId("createNodes1Group"); //$NON-NLS-1$
-		paletteContainer.add(createInitial1CreationTool());
+		paletteContainer.add(createInitially1CreationTool());
 		return paletteContainer;
 	}
 
 	/**
 	* @generated
 	*/
-	private ToolEntry createInitial1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Initial1CreationTool_title, null,
+	private ToolEntry createInitially1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Initially1CreationTool_title, null,
 				Collections.singletonList(ModelElementTypes.Initially_2001));
-		entry.setId("createInitial1CreationTool"); //$NON-NLS-1$
+		entry.setId("createInitially1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Initially_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
