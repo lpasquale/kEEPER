@@ -58,6 +58,7 @@ public class InitiallyInstancesNameCompartmentEditPart extends ListCompartmentEd
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
+		result.setSize(200, 300);
 		result.setBorder(null);
 
 		return result;

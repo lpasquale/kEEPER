@@ -5,54 +5,34 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.Shape;
-import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
-import org.eclipse.gef.DragTracker;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
-import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef.requests.DirectEditRequest;
-import org.eclipse.gef.requests.SelectionRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ListItemComponentEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
-import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -66,8 +46,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
-import initial.model.diagram.edit.policies.InstanceItemSemanticEditPolicy;
-import initial.model.diagram.edit.policies.ModelTextNonResizableEditPolicy;
+import initial.model.diagram.edit.policies.ModelTextSelectionEditPolicy;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
 import initial.model.diagram.providers.ModelParserProvider;
@@ -75,12 +54,12 @@ import initial.model.diagram.providers.ModelParserProvider;
 /**
  * @generated
  */
-public class InstanceEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class InstanceNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 5002;
 
 	/**
 	* @generated
@@ -110,18 +89,17 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 	/**
 	* @generated
 	*/
-	public InstanceEditPart(View view) {
-		super(view);
+	static {
+		registerSnapBackPosition(
+				ModelVisualIDRegistry.getType(initial.model.diagram.edit.parts.InstanceNameEditPart.VISUAL_ID),
+				new Point(0, 0));
 	}
 
 	/**
 	* @generated
 	*/
-	public DragTracker getDragTracker(Request request) {
-		if (request instanceof SelectionRequest && ((SelectionRequest) request).getLastButtonPressed() == 3) {
-			return null;
-		}
-		return new DragEditPartsTrackerEx(this);
+	public InstanceNameEditPart(View view) {
+		super(view);
 	}
 
 	/**
@@ -129,10 +107,31 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ModelTextNonResizableEditPolicy());
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ModelTextSelectionEditPolicy());
+	}
+
+	/**
+	* @generated
+	*/
+	public IBorderItemLocator getBorderItemLocator() {
+		IFigure parentFigure = getFigure().getParent();
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
+			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
+			return (IBorderItemLocator) constraint;
+		}
+		return null;
+	}
+
+	/**
+	* @generated
+	*/
+	public void refreshBounds() {
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		getBorderItemLocator().setConstraint(new Rectangle(x, y, width, height));
 	}
 
 	/**
@@ -327,7 +326,7 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 	public IParser getParser() {
 		if (parser == null) {
 			parser = ModelParserProvider.getParser(ModelElementTypes.Instance_3002, getParserElement(),
-					ModelVisualIDRegistry.getType(initial.model.diagram.edit.parts.InstanceEditPart.VISUAL_ID));
+					ModelVisualIDRegistry.getType(initial.model.diagram.edit.parts.InstanceNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -564,22 +563,6 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 	/**
 	* @generated
 	*/
-	protected void addNotationalListeners() {
-		super.addNotationalListeners();
-		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
-	}
-
-	/**
-	* @generated
-	*/
-	protected void removeNotationalListeners() {
-		super.removeNotationalListeners();
-		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
-	}
-
-	/**
-	* @generated
-	*/
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -629,8 +612,8 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class InstancesNameLabelFigure extends WrappingLabel {
 
 		/**
@@ -640,14 +623,6 @@ public class InstanceEditPart extends CompartmentEditPart implements ITextAwareE
 			this.setText("Instances names...");
 		}
 
-	}
-
-	/**
-	* @generated
-	*/
-	@Override
-	public boolean isSelectable() {
-		return getFigure().isShowing();
 	}
 
 }

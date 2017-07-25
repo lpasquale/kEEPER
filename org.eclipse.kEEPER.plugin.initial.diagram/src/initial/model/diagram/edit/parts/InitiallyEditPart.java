@@ -25,6 +25,7 @@ import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -180,6 +181,18 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* @generated
+	*/
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
+		return result;
+	}
+
+	/**
 	* Creates figure for this edit part.
 	* 
 	* Body of this method does not depend on settings in generation model
@@ -304,7 +317,7 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			this.setLineWidth(3);
+			this.setLineWidth(2);
 			this.setForegroundColor(THIS_FORE);
 			createContents();
 		}
@@ -340,7 +353,7 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	static final Color THIS_FORE = new Color(null, 0, 0, 255);
+	static final Color THIS_FORE = new Color(null, 0, 0, 0);
 
 	@Override
 	public void performRequest(Request req) {

@@ -12,7 +12,7 @@
       <actualFigure
           xsi:type="gmfgraph:RoundedRectangle"
           name="Initially"
-          lineWidth="3"
+          lineWidth="2"
           cornerWidth="20"
           cornerHeight="20">
         <layout
@@ -21,8 +21,7 @@
             majorAlignment="CENTER"
             minorAlignment="CENTER"/>
         <foregroundColor
-            xsi:type="gmfgraph:RGBColor"
-            blue="255"/>
+            xsi:type="gmfgraph:RGBColor"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="InitialNameFigure"

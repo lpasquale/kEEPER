@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
+import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
@@ -37,12 +38,14 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
+import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
 import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
 /**

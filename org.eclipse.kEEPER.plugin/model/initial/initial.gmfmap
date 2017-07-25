@@ -17,7 +17,7 @@
       <diagramNode
           href="initial.gmfgraph#InitialNode"/>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1">
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../model.ecore#//Initially/contextRelation"/>
         <ownedChild>
@@ -36,7 +36,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
         <containmentFeature
             href="../model.ecore#//Initially/instances"/>
         <ownedChild>

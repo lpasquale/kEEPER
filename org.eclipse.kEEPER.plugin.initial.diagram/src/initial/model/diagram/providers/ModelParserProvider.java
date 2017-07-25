@@ -14,7 +14,9 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
+import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import initial.model.diagram.parsers.InitiallyLabelExpressionLabelParser;
 import initial.model.diagram.parsers.InstanceExpressionLabelParser;
 import initial.model.diagram.parsers.MessageFormatParser;
@@ -25,23 +27,6 @@ import model.ModelPackage;
  * @generated
  */
 public class ModelParserProvider extends AbstractProvider implements IParserProvider {
-
-	/**
-	* @generated
-	*/
-	private IParser instance_3002Parser;
-
-	/**
-	* @generated
-	*/
-	private IParser getInstance_3002Parser() {
-		if (instance_3002Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getInstance_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			instance_3002Parser = parser;
-		}
-		return instance_3002Parser;
-	}
 
 	/**
 	* @generated
@@ -58,6 +43,23 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 			contextRelation_3003Parser = parser;
 		}
 		return contextRelation_3003Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser instance_3002Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getInstance_3002Parser() {
+		if (instance_3002Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getInstance_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			instance_3002Parser = parser;
+		}
+		return instance_3002Parser;
 	}
 
 	/**

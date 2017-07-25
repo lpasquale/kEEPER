@@ -17,10 +17,12 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
+import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
+import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import initial.model.diagram.part.ModelDiagramEditorPlugin;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
