@@ -329,8 +329,6 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 
 			fFigureInitialNameFigure = new RectangleFigure();
 
-			fFigureInitialNameFigure.setOutline(false);
-
 			this.add(fFigureInitialNameFigure);
 			fFigureInitialNameFigure.setLayoutManager(new StackLayout());
 

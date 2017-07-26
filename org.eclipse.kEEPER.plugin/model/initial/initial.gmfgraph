@@ -24,8 +24,7 @@
             xsi:type="gmfgraph:RGBColor"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="InitialNameFigure"
-            outline="false">
+            name="InitialNameFigure">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
         </children>
@@ -60,13 +59,7 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="InitialNameLabelFigure"
-          text="---Context Relation name---">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            majorAlignment="CENTER"
-            minorAlignment="CENTER"/>
-      </actualFigure>
+          text="---Context Relation name---"/>
     </descriptors>
   </figures>
   <nodes

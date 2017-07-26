@@ -634,18 +634,6 @@ public class ContextRelationEditPart extends CompartmentEditPart implements ITex
 		 * @generated
 		 */
 		public InitialNameLabelFigure() {
-
-			FlowLayout layoutThis = new FlowLayout();
-			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(FlowLayout.ALIGN_CENTER);
-
-			layoutThis.setMajorAlignment(FlowLayout.ALIGN_CENTER);
-			layoutThis.setMajorSpacing(5);
-			layoutThis.setMinorSpacing(5);
-			layoutThis.setHorizontal(false);
-
-			this.setLayoutManager(layoutThis);
-
 			this.setText("---Context Relation name---");
 		}
 

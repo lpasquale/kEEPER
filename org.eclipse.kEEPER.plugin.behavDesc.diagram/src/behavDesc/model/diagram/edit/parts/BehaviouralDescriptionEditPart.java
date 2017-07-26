@@ -72,6 +72,8 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
@@ -309,6 +311,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		}
 	}
 
+
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
@@ -317,7 +320,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				MessageDialog.openError(null, "Error", "You must define the number of time instants before!");
 				return;
 			}
-			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
+			CustomListDialog dialog = new CustomListDialog(null, new LabelProvider());
 			dialog.setElements(
 					new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });
 			dialog.setMultipleSelection(false);
@@ -391,7 +394,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			Event ev = null;
 
 			// Creating second dialog to show the list of the available events
-			ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
+			CustomListDialog showEventsDialog = new CustomListDialog(null, new LabelProvider());
 			String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
 			for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
 				eventsNameArray[i] = loadEvents.getEnvironment().getEvents().get(i).getName();
@@ -492,7 +495,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
-			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
+			CustomListDialog showContextRelationsDialog = new CustomListDialog(null,
 					new LabelProvider());
 			String[] contextRelationsNameArray = new String[loadContextRelations.getEnvironment().getContextRelations()
 					.size()];
@@ -592,7 +595,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					editFilesPath + "/default.contextRelationModel");
 
 			// Creating second dialog to show the list of the available events
-			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
+			CustomListDialog showContextRelationsDialog = new CustomListDialog(null,
 					new LabelProvider());
 			String[] contextRelationsNameArray = new String[loadContextRelations.getEnvironment().getContextRelations()
 					.size()];
@@ -693,7 +696,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	 */
 	public int createSingleTimeInstantsDialog() {
 		// Creating third dialog
-		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
+		CustomListDialog timeInstantDialog = new CustomListDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[bd.getTimeInstants()];
 		System.out.println("NUMBERS: " + bd.getTimeInstants());
 		for (int i = 0; i < bd.getTimeInstants(); i++) {
@@ -717,7 +720,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	 */
 	public int[] createMultipleTimeInstantsDialog() {
 		// Creating third dialog
-		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
+		CustomListDialog timeInstantDialog = new CustomListDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[bd.getTimeInstants()];
 		for (int i = 0; i < bd.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
