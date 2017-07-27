@@ -23,7 +23,7 @@
         <children
             xsi:type="gmfgraph:Label"
             name="ContextRelationTypesLabel"
-            text="Choose the types..."/>
+            text="Choose the types...."/>
         <template/>
         <template
             x="340"/>

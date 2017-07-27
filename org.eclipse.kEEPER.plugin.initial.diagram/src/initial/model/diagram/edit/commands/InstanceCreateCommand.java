@@ -13,7 +13,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import model.Environment;
-import model.Initially;
 import model.Instance;
 import model.ModelFactory;
 
@@ -55,7 +54,7 @@ public class InstanceCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Instance newElement = ModelFactory.eINSTANCE.createInstance();
 
-		Initially owner = (Initially) getElementToEdit();
+		Environment owner = (Environment) getElementToEdit();
 		owner.getInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);

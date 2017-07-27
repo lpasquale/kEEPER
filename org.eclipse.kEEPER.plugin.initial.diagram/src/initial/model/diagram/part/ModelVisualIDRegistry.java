@@ -7,12 +7,8 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
-import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
-import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import model.Environment;
 import model.ModelPackage;
@@ -119,21 +115,11 @@ public class ModelVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case EnvironmentEditPart.VISUAL_ID:
-			if (ModelPackage.eINSTANCE.getInitially().isSuperTypeOf(domainElement.eClass())) {
-				return InitiallyEditPart.VISUAL_ID;
-			}
-			if (ModelPackage.eINSTANCE.getInstance().isSuperTypeOf(domainElement.eClass())) {
-				return Instance2EditPart.VISUAL_ID;
-			}
-			break;
-		case InitiallyInstancesNameCompartmentEditPart.VISUAL_ID:
-			if (ModelPackage.eINSTANCE.getContextRelation().isSuperTypeOf(domainElement.eClass())) {
-				return ContextRelationEditPart.VISUAL_ID;
-			}
-			break;
-		case InitiallyInstancesNameCompartment2EditPart.VISUAL_ID:
 			if (ModelPackage.eINSTANCE.getInstance().isSuperTypeOf(domainElement.eClass())) {
 				return InstanceEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getInitially().isSuperTypeOf(domainElement.eClass())) {
+				return InitiallyEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -160,28 +146,10 @@ public class ModelVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case EnvironmentEditPart.VISUAL_ID:
-			if (InitiallyEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Instance2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case InitiallyEditPart.VISUAL_ID:
-			if (InitiallyInstancesNameCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InitiallyInstancesNameCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case InitiallyInstancesNameCompartmentEditPart.VISUAL_ID:
-			if (ContextRelationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case InitiallyInstancesNameCompartment2EditPart.VISUAL_ID:
 			if (InstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InitiallyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -225,13 +193,6 @@ public class ModelVisualIDRegistry {
 	* @generated
 	*/
 	public static boolean isCompartmentVisualID(int visualID) {
-		switch (visualID) {
-		case InitiallyInstancesNameCompartmentEditPart.VISUAL_ID:
-		case InitiallyInstancesNameCompartment2EditPart.VISUAL_ID:
-			return true;
-		default:
-			break;
-		}
 		return false;
 	}
 
@@ -242,9 +203,8 @@ public class ModelVisualIDRegistry {
 		switch (visualID) {
 		case EnvironmentEditPart.VISUAL_ID:
 			return false;
-		case Instance2EditPart.VISUAL_ID:
+		case InitiallyEditPart.VISUAL_ID:
 		case InstanceEditPart.VISUAL_ID:
-		case ContextRelationEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

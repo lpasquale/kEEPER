@@ -8,7 +8,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 import initial.model.diagram.edit.commands.InitiallyCreateCommand;
-import initial.model.diagram.edit.commands.Instance2CreateCommand;
 import initial.model.diagram.edit.commands.InstanceCreateCommand;
 import initial.model.diagram.providers.ModelElementTypes;
 
@@ -28,11 +27,11 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
+		if (ModelElementTypes.Instance_2002 == req.getElementType()) {
+			return getGEFWrapper(new InstanceCreateCommand(req));
+		}
 		if (ModelElementTypes.Initially_2001 == req.getElementType()) {
 			return getGEFWrapper(new InitiallyCreateCommand(req));
-		}
-		if (ModelElementTypes.Instance_2002 == req.getElementType()) {
-			return getGEFWrapper(new Instance2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -19,7 +19,7 @@ public class InstanceItemSemanticEditPolicy extends ModelBaseItemSemanticEditPol
 	* @generated
 	*/
 	public InstanceItemSemanticEditPolicy() {
-		super(ModelElementTypes.Instance_3002);
+		super(ModelElementTypes.Instance_2002);
 	}
 
 	/**

@@ -194,7 +194,6 @@ public class ContextRelationItemProvider
 
 		switch (notification.getFeatureID(ContextRelation.class)) {
 			case ModelPackage.CONTEXT_RELATION__NAME:
-			case ModelPackage.CONTEXT_RELATION__TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

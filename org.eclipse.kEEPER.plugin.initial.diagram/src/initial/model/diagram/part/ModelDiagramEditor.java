@@ -284,7 +284,7 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 				PreferencesHint.USE_DEFAULTS);
 		org.eclipse.gef.commands.Command command = parent.getCommand(actionRequest);
 		command.execute();
-		System.out.println("Command executed");
 		return command;
 	}
+
 }

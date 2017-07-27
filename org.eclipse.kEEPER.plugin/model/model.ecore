@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialComplexEvent" eType="#//ComplexEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endingComplexEvent" eType="#//ComplexEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-        eType="#//Type" containment="true"/>
+        eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -73,9 +73,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Initially">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
-        eType="#//ContextRelation" containment="true"/>
+        eType="#//ContextRelation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//Instance" containment="true"/>
+        eType="#//Instance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Environment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"

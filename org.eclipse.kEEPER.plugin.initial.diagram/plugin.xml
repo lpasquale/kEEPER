@@ -217,7 +217,7 @@
       <viewProvider class="initial.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Initially Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,3003,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2001"/>
       </viewProvider>
    </extension>
 
@@ -229,7 +229,7 @@
             <method name="getType()" value="Initially Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,3003,3002"/>
+            <method name="getType()" value="2002,2001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
@@ -238,7 +238,7 @@
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002"/>
+            <method name="getType()" value=""/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -252,25 +252,15 @@
          <object class="initial.model.diagram.edit.parts.EnvironmentEditPart" id="Environment_1000"/>
          <context elements="Environment_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstanceEditPart">
+         <Priority name="Lowest"/>
+         <object class="initial.model.diagram.edit.parts.InstanceEditPart" id="Instance_2002"/>
+         <context elements="Instance_2002"/>
+      </modelingAssistantProvider>
             <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInitiallyEditPart">
          <Priority name="Lowest"/>
          <object class="initial.model.diagram.edit.parts.InitiallyEditPart" id="Initially_2001"/>
          <context elements="Initially_2001"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstance2EditPart">
-         <Priority name="Lowest"/>
-         <object class="initial.model.diagram.edit.parts.Instance2EditPart" id="Instance_2002"/>
-         <context elements="Instance_2002"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfContextRelationEditPart">
-         <Priority name="Lowest"/>
-         <object class="initial.model.diagram.edit.parts.ContextRelationEditPart" id="ContextRelation_3003"/>
-         <context elements="ContextRelation_3003"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="initial.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="initial.model.diagram.edit.parts.InstanceEditPart" id="Instance_3002"/>
-         <context elements="Instance_3002"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -297,41 +287,22 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
+               id="org.eclipse.kEEPER.plugin.initial.diagram.Instance_2002"
+               name="%metatype.name.Instance_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Instance"
+               edithelper="initial.model.diagram.edit.helpers.InstanceEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
                id="org.eclipse.kEEPER.plugin.initial.diagram.Initially_2001"
                name="%metatype.name.Initially_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Initially"
                edithelper="initial.model.diagram.edit.helpers.InitiallyEditHelper">
             <param name="semanticHint" value="2001"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <specializationType
-               id="org.eclipse.kEEPER.plugin.initial.diagram.Instance_2002"
-               name="%metatype.name.Instance_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.kEEPER.plugin.initial.diagram.Instance_3002"/>
-            <param name="semanticHint" value="2002"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <metamodelType
-               id="org.eclipse.kEEPER.plugin.initial.diagram.ContextRelation_3003"
-               name="%metatype.name.ContextRelation_3003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ContextRelation"
-               edithelper="initial.model.diagram.edit.helpers.ContextRelationEditHelper">
-            <param name="semanticHint" value="3003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <metamodelType
-               id="org.eclipse.kEEPER.plugin.initial.diagram.Instance_3002"
-               name="%metatype.name.Instance_3002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Instance"
-               edithelper="initial.model.diagram.edit.helpers.InstanceEditHelper">
-            <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -347,10 +318,8 @@
       </clientContext> 
       <binding context="org.eclipse.kEEPER.plugin.initial.diagram.TypeContext">
          <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Environment_1000"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Initially_2001"/>
          <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Instance_2002"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.ContextRelation_3003"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Instance_3002"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.initial.diagram.Initially_2001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -517,12 +486,6 @@
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
-   </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <?gmfgen generated="true"?>
-      <ParserProvider class="initial.model.diagram.providers.ModelParserProvider">
-         <Priority name="Lowest"/>
-      </ParserProvider>
    </extension>
 
 

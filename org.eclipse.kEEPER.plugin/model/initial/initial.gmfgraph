@@ -8,74 +8,23 @@
   <figures
       name="nodes">
     <descriptors
-        name="InitialFigure">
+        name="InitiallyFigure">
       <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="Initially"
-          lineWidth="2"
-          cornerWidth="20"
-          cornerHeight="20">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            majorAlignment="CENTER"
-            minorAlignment="CENTER"/>
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InitialNameFigure">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InstancesListFigure">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-        </children>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          xsi:type="gmfgraph:CustomFigure"
+          name="InitiallyFigure"
+          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.InitiallyFigure"/>
     </descriptors>
     <descriptors
         name="InstanceFigure">
       <actualFigure
           xsi:type="gmfgraph:InvisibleRectangle"
-          name="InstanceRectangleFigure"/>
-    </descriptors>
-  </figures>
-  <figures
-      name="labels">
-    <descriptors
-        name="InstancesNameLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="InstancesNameLabelFigure"
-          text="Instances names..."/>
-    </descriptors>
-    <descriptors
-        name="InitialNameLabelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="InitialNameLabelFigure"
-          text="---Context Relation name---"/>
+          name="InstanceFigure"/>
     </descriptors>
   </figures>
   <nodes
-      name="InitialNode"
-      figure="InitialFigure"/>
+      name="InitiallyNode"
+      figure="InitiallyFigure"/>
   <nodes
       name="InstanceNode"
       figure="InstanceFigure"/>
-  <compartments
-      name="InstancesNameCompartment"
-      figure="InitialFigure"/>
-  <labels
-      name="InitialNameLabel"
-      figure="InitialNameLabelFigure"
-      elementIcon="false"/>
-  <labels
-      name="InstanceLabel"
-      figure="InstancesNameLabelFigure"/>
 </gmfgraph:Canvas>

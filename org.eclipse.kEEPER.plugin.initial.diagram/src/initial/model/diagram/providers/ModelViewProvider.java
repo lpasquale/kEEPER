@@ -20,29 +20,22 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Shape;
-import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
-import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
@@ -127,10 +120,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case InitiallyEditPart.VISUAL_ID:
-				case ContextRelationEditPart.VISUAL_ID:
 				case InstanceEditPart.VISUAL_ID:
-				case Instance2EditPart.VISUAL_ID:
+				case InitiallyEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -141,8 +132,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				}
 			}
 		}
-		return InitiallyEditPart.VISUAL_ID == visualID || Instance2EditPart.VISUAL_ID == visualID
-				|| ContextRelationEditPart.VISUAL_ID == visualID || InstanceEditPart.VISUAL_ID == visualID;
+		return InstanceEditPart.VISUAL_ID == visualID || InitiallyEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -191,14 +181,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			visualID = ModelVisualIDRegistry.getVisualID(semanticHint);
 		}
 		switch (visualID) {
+		case InstanceEditPart.VISUAL_ID:
+			return createInstance_2002(domainElement, containerView, index, persisted, preferencesHint);
 		case InitiallyEditPart.VISUAL_ID:
 			return createInitially_2001(domainElement, containerView, index, persisted, preferencesHint);
-		case Instance2EditPart.VISUAL_ID:
-			return createInstance_2002(domainElement, containerView, index, persisted, preferencesHint);
-		case ContextRelationEditPart.VISUAL_ID:
-			return createContextRelation_3003(domainElement, containerView, index, persisted, preferencesHint);
-		case InstanceEditPart.VISUAL_ID:
-			return createInstance_3002(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -222,47 +208,9 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	public Node createInitially_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(InitiallyEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-		createCompartment(node, ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartmentEditPart.VISUAL_ID),
-				false, false, true, true);
-		createCompartment(node, ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartment2EditPart.VISUAL_ID),
-				false, false, true, true);
-		return node;
-	}
-
-	/**
-	* @generated
-	*/
-	public Node createInstance_2002(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ModelVisualIDRegistry.getType(Instance2EditPart.VISUAL_ID));
+		node.setType(ModelVisualIDRegistry.getType(InitiallyEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -294,26 +242,36 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createInstance_3002(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createInstance_2002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
-		return node;
-	}
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 
-	/**
-	* @generated
-	*/
-	public Node createContextRelation_3003(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		node.setType(ModelVisualIDRegistry.getType(ContextRelationEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		return node;
 	}
 
@@ -327,36 +285,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			shortcutAnnotation.getDetails().put("modelID", EnvironmentEditPart.MODEL_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
-	}
-
-	/**
-	* @generated
-	*/
-	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
-			boolean canFilter) {
-		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
-		//rv.setShowTitle(showTitle);
-		//rv.setCollapsed(isCollapsed);
-		Node rv;
-		if (canCollapse) {
-			rv = NotationFactory.eINSTANCE.createBasicCompartment();
-		} else {
-			rv = NotationFactory.eINSTANCE.createDecorationNode();
-		}
-		if (hasTitle) {
-			TitleStyle ts = NotationFactory.eINSTANCE.createTitleStyle();
-			ts.setShowTitle(true);
-			rv.getStyles().add(ts);
-		}
-		if (canSort) {
-			rv.getStyles().add(NotationFactory.eINSTANCE.createSortingStyle());
-		}
-		if (canFilter) {
-			rv.getStyles().add(NotationFactory.eINSTANCE.createFilteringStyle());
-		}
-		rv.setType(hint);
-		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
-		return rv;
 	}
 
 	/**

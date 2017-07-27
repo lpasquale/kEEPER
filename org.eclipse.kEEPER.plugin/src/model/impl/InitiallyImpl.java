@@ -9,15 +9,13 @@ import model.Instance;
 import model.ModelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initially {
 	/**
-	 * The cached value of the '{@link #getContextRelation() <em>Context Relation</em>}' containment reference.
+	 * The cached value of the '{@link #getContextRelation() <em>Context Relation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContextRelation()
@@ -45,7 +43,7 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	protected ContextRelation contextRelation;
 
 	/**
-	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
+	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstances()
@@ -79,6 +77,14 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * @generated
 	 */
 	public ContextRelation getContextRelation() {
+		if (contextRelation != null && contextRelation.eIsProxy()) {
+			InternalEObject oldContextRelation = (InternalEObject)contextRelation;
+			contextRelation = (ContextRelation)eResolveProxy(oldContextRelation);
+			if (contextRelation != oldContextRelation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.INITIALLY__CONTEXT_RELATION, oldContextRelation, contextRelation));
+			}
+		}
 		return contextRelation;
 	}
 
@@ -87,14 +93,8 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetContextRelation(ContextRelation newContextRelation, NotificationChain msgs) {
-		ContextRelation oldContextRelation = contextRelation;
-		contextRelation = newContextRelation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.INITIALLY__CONTEXT_RELATION, oldContextRelation, newContextRelation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public ContextRelation basicGetContextRelation() {
+		return contextRelation;
 	}
 
 	/**
@@ -103,17 +103,10 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * @generated
 	 */
 	public void setContextRelation(ContextRelation newContextRelation) {
-		if (newContextRelation != contextRelation) {
-			NotificationChain msgs = null;
-			if (contextRelation != null)
-				msgs = ((InternalEObject)contextRelation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.INITIALLY__CONTEXT_RELATION, null, msgs);
-			if (newContextRelation != null)
-				msgs = ((InternalEObject)newContextRelation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.INITIALLY__CONTEXT_RELATION, null, msgs);
-			msgs = basicSetContextRelation(newContextRelation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INITIALLY__CONTEXT_RELATION, newContextRelation, newContextRelation));
+		ContextRelation oldContextRelation = contextRelation;
+		contextRelation = newContextRelation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INITIALLY__CONTEXT_RELATION, oldContextRelation, contextRelation));
 	}
 
 	/**
@@ -123,25 +116,9 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 */
 	public EList<Instance> getInstances() {
 		if (instances == null) {
-			instances = new EObjectContainmentEList<Instance>(Instance.class, this, ModelPackage.INITIALLY__INSTANCES);
+			instances = new EObjectResolvingEList<Instance>(Instance.class, this, ModelPackage.INITIALLY__INSTANCES);
 		}
 		return instances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModelPackage.INITIALLY__CONTEXT_RELATION:
-				return basicSetContextRelation(null, msgs);
-			case ModelPackage.INITIALLY__INSTANCES:
-				return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -153,7 +130,8 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.INITIALLY__CONTEXT_RELATION:
-				return getContextRelation();
+				if (resolve) return getContextRelation();
+				return basicGetContextRelation();
 			case ModelPackage.INITIALLY__INSTANCES:
 				return getInstances();
 		}

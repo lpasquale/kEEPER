@@ -7,6 +7,16 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
+        href="../model.ecore#//Environment/instances"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Instance"/>
+      <diagramNode
+          href="initial.gmfgraph#InstanceNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
         href="../model.ecore#//Environment/initials"/>
     <ownedChild>
       <domainMetaElement
@@ -15,64 +25,7 @@
           xsi:type="gmftool:CreationTool"
           href="initial.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="initial.gmfgraph#InitialNode"/>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="../model.ecore#//Initially/contextRelation"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../model.ecore#//ContextRelation"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="">
-            <diagramLabel
-                href="initial.gmfgraph#InitialNameLabel"/>
-            <features
-                href="../model.ecore#//ContextRelation/name"/>
-          </labelMappings>
-          <diagramNode
-              href="initial.gmfgraph#InitialNameLabel"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1">
-        <containmentFeature
-            href="../model.ecore#//Initially/instances"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../model.ecore#//Instance"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="initial.gmfgraph#InstanceLabel"/>
-            <features
-                href="../model.ecore#//Instance/name"/>
-          </labelMappings>
-          <diagramNode
-              href="initial.gmfgraph#InstanceLabel"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
-        <compartment
-            href="initial.gmfgraph#InstancesNameCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.1">
-        <compartment
-            href="initial.gmfgraph#InstancesNameCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/instances"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../model.ecore#//Instance"/>
-      <diagramNode
-          href="initial.gmfgraph#InstanceNode"/>
+          href="initial.gmfgraph#InitiallyNode"/>
     </ownedChild>
   </nodes>
   <diagram>

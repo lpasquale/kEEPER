@@ -16,8 +16,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -62,77 +60,8 @@ public class EnvironmentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAgentReferencesPropertyDescriptor(object);
-			addObserverReferencesPropertyDescriptor(object);
-			addGeneralTypeReferencesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Agent References feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAgentReferencesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Environment_agentReferences_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_agentReferences_feature", "_UI_Environment_type"),
-				 ModelPackage.Literals.ENVIRONMENT__AGENT_REFERENCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Observer References feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addObserverReferencesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Environment_observerReferences_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_observerReferences_feature", "_UI_Environment_type"),
-				 ModelPackage.Literals.ENVIRONMENT__OBSERVER_REFERENCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the General Type References feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGeneralTypeReferencesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Environment_generalTypeReferences_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Environment_generalTypeReferences_feature", "_UI_Environment_type"),
-				 ModelPackage.Literals.ENVIRONMENT__GENERAL_TYPE_REFERENCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -163,6 +92,9 @@ public class EnvironmentItemProvider
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HYPOTHESIS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENT_PARAMS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVER_PARAMS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENT_REFERENCES);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVER_REFERENCES);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__GENERAL_TYPE_REFERENCES);
 		}
 		return childrenFeatures;
 	}
@@ -231,6 +163,9 @@ public class EnvironmentItemProvider
 			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 			case ModelPackage.ENVIRONMENT__AGENT_PARAMS:
 			case ModelPackage.ENVIRONMENT__OBSERVER_PARAMS:
+			case ModelPackage.ENVIRONMENT__AGENT_REFERENCES:
+			case ModelPackage.ENVIRONMENT__OBSERVER_REFERENCES:
+			case ModelPackage.ENVIRONMENT__GENERAL_TYPE_REFERENCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -352,6 +287,21 @@ public class EnvironmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVER_PARAMS,
 				 ModelFactory.eINSTANCE.createObserverParam()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENT_REFERENCES,
+				 ModelFactory.eINSTANCE.createAgentReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__OBSERVER_REFERENCES,
+				 ModelFactory.eINSTANCE.createObserverReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__GENERAL_TYPE_REFERENCES,
+				 ModelFactory.eINSTANCE.createGeneralTypeReference()));
 	}
 
 	/**

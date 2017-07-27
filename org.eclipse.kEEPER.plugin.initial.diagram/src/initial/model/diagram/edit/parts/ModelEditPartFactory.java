@@ -25,23 +25,11 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case EnvironmentEditPart.VISUAL_ID:
 				return new EnvironmentEditPart(view);
 
-			case InitiallyEditPart.VISUAL_ID:
-				return new InitiallyEditPart(view);
-
-			case Instance2EditPart.VISUAL_ID:
-				return new Instance2EditPart(view);
-
-			case ContextRelationEditPart.VISUAL_ID:
-				return new ContextRelationEditPart(view);
-
 			case InstanceEditPart.VISUAL_ID:
 				return new InstanceEditPart(view);
 
-			case InitiallyInstancesNameCompartmentEditPart.VISUAL_ID:
-				return new InitiallyInstancesNameCompartmentEditPart(view);
-
-			case InitiallyInstancesNameCompartment2EditPart.VISUAL_ID:
-				return new InitiallyInstancesNameCompartment2EditPart(view);
+			case InitiallyEditPart.VISUAL_ID:
+				return new InitiallyEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

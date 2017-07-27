@@ -232,7 +232,7 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -735,7 +735,7 @@ public interface ModelPackage extends EPackage {
 	int INITIALLY = 11;
 
 	/**
-	 * The feature id for the '<em><b>Context Relation</b></em>' containment reference.
+	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -744,7 +744,7 @@ public interface ModelPackage extends EPackage {
 	int INITIALLY__CONTEXT_RELATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1568,10 +1568,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getContextRelation_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.ContextRelation#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the reference list '{@link model.ContextRelation#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Types</em>'.
+	 * @return the meta object for the reference list '<em>Types</em>'.
 	 * @see model.ContextRelation#getTypes()
 	 * @see #getContextRelation()
 	 * @generated
@@ -1967,10 +1967,10 @@ public interface ModelPackage extends EPackage {
 	EClass getInitially();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link model.Initially#getContextRelation <em>Context Relation</em>}'.
+	 * Returns the meta object for the reference '{@link model.Initially#getContextRelation <em>Context Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Context Relation</em>'.
+	 * @return the meta object for the reference '<em>Context Relation</em>'.
 	 * @see model.Initially#getContextRelation()
 	 * @see #getInitially()
 	 * @generated
@@ -1978,10 +1978,10 @@ public interface ModelPackage extends EPackage {
 	EReference getInitially_ContextRelation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link model.Initially#getInstances <em>Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link model.Initially#getInstances <em>Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instances</em>'.
+	 * @return the meta object for the reference list '<em>Instances</em>'.
 	 * @see model.Initially#getInstances()
 	 * @see #getInitially()
 	 * @generated
@@ -2571,7 +2571,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute CONTEXT_RELATION__NAME = eINSTANCE.getContextRelation_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2883,7 +2883,7 @@ public interface ModelPackage extends EPackage {
 		EClass INITIALLY = eINSTANCE.getInitially();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Relation</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2891,7 +2891,7 @@ public interface ModelPackage extends EPackage {
 		EReference INITIALLY__CONTEXT_RELATION = eINSTANCE.getInitially_ContextRelation();
 
 		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

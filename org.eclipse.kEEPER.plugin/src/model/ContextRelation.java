@@ -53,7 +53,7 @@ public interface ContextRelation extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Types</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Types</b></em>' reference list.
 	 * The list contents are of type {@link model.Type}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -61,9 +61,9 @@ public interface ContextRelation extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' containment reference list.
+	 * @return the value of the '<em>Types</em>' reference list.
 	 * @see model.ModelPackage#getContextRelation_Types()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Type> getTypes();

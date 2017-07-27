@@ -26,119 +26,18 @@
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
         href="../model.genmodel#//model/Environment"/>
-    <childNodes
-        xsi:type="gmfgen:GenChildLabelNode"
-        visualID="3003"
-        editPartClassName="ContextRelationEditPart"
-        itemSemanticEditPolicyClassName="ContextRelationItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ContextRelationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ContextRelationGraphicalNodeEditPolicy"
-        createCommandClassName="ContextRelationCreateCommand"
-        containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ContextRelationEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="InitialNameLabelFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialNameLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialNameLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;---Context Relation name---&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/ContextRelation"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Initially/contextRelation"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Initially/contextRelation"/>
-      </modelFacet>
-      <labelModelFacet
-          xsi:type="gmfgen:FeatureLabelModelFacet"
-          parser="//@labelParsers/@implementations.0"
-          viewPattern="">
-        <metaFeatures
-            href="../model.genmodel#//model/ContextRelation/name"/>
-      </labelModelFacet>
-    </childNodes>
-    <childNodes
-        xsi:type="gmfgen:GenChildLabelNode"
-        visualID="3002"
+    <topLevelNodes
+        visualID="2002"
         editPartClassName="InstanceEditPart"
         itemSemanticEditPolicyClassName="InstanceItemSemanticEditPolicy"
         canonicalEditPolicyClassName="InstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InstanceGraphicalNodeEditPolicy"
-        createCommandClassName="InstanceCreateCommand"
-        containers="//@diagram/@compartments.1"
-        labelElementIcon="true">
+        createCommandClassName="InstanceCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="InstanceEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="InstancesNameLabelFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InstancesNameLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InstancesNameLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Instances names...&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/Instance"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Initially/instances"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Initially/instances"/>
-      </modelFacet>
-      <labelModelFacet
-          xsi:type="gmfgen:FeatureLabelModelFacet"
-          parser="//@labelParsers/@implementations.0">
-        <metaFeatures
-            href="../model.genmodel#//model/Instance/name"/>
-      </labelModelFacet>
-    </childNodes>
-    <topLevelNodes
-        visualID="2001"
-        editPartClassName="InitiallyEditPart"
-        itemSemanticEditPolicyClassName="InitiallyItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="InitiallyCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
-        graphicalNodeEditPolicyClassName="InitiallyGraphicalNodeEditPolicy"
-        createCommandClassName="InitiallyCreateCommand">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="InitiallyEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="InitialFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInitialNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(false);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialNameFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureInitialNameFigure);&#xA;fFigureInitialNameFigure.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure instancesListFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(instancesListFigure0);&#xA;instancesListFigure0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInitialNameFigure() {&#xA;&#x9;&#x9;return fFigureInitialNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/Initially"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/initials"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Environment/initials"/>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2002"
-        editPartClassName="Instance2EditPart"
-        itemSemanticEditPolicyClassName="Instance2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="Instance2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Instance2GraphicalNodeEditPolicy"
-        createCommandClassName="Instance2CreateCommand">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.1/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
@@ -151,55 +50,37 @@
             href="../model.genmodel#//model/Environment/instances"/>
       </modelFacet>
     </topLevelNodes>
-    <compartments
-        visualID="7001"
-        editPartClassName="InitiallyInstancesNameCompartmentEditPart"
-        itemSemanticEditPolicyClassName="InitiallyInstancesNameCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="InitiallyInstancesNameCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0"
-        title="InstancesNameCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+    <topLevelNodes
+        visualID="2001"
+        editPartClassName="InitiallyEditPart"
+        itemSemanticEditPolicyClassName="InitiallyItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="InitiallyCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InitiallyGraphicalNodeEditPolicy"
+        createCommandClassName="InitiallyCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="InitiallyEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="InitialFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInitialNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(false);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialNameFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureInitialNameFigure);&#xA;fFigureInitialNameFigure.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure instancesListFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(instancesListFigure0);&#xA;instancesListFigure0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInitialNameFigure() {&#xA;&#x9;&#x9;return fFigureInitialNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
-    </compartments>
-    <compartments
-        visualID="7002"
-        editPartClassName="InitiallyInstancesNameCompartment2EditPart"
-        itemSemanticEditPolicyClassName="InitiallyInstancesNameCompartment2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="InitiallyInstancesNameCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.1"
-        title="InstancesNameCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="InitialFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInitialNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(false);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setLineWidth(2);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialNameFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureInitialNameFigure);&#xA;fFigureInitialNameFigure.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure instancesListFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(instancesListFigure0);&#xA;instancesListFigure0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInitialNameFigure() {&#xA;&#x9;&#x9;return fFigureInitialNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
-    </compartments>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.InitiallyFigure"/>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/Initially"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/initials"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/initials"/>
+      </modelFacet>
+    </topLevelNodes>
     <palette>
       <groups
           title="Nodes">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Initially"
-            genNodes="//@diagram/@topLevelNodes.0"/>
+            genNodes="//@diagram/@topLevelNodes.1"/>
       </groups>
     </palette>
     <preferencePages
@@ -240,12 +121,6 @@
     <childReferences
         child="//@diagram"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
@@ -274,12 +149,6 @@
   </propertySheet>
   <domainGenModel
       href="../model.genmodel#/"/>
-  <labelParsers
-      extensibleViaService="true">
-    <implementations
-        xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@childNodes.1/@labelModelFacet"/>
-  </labelParsers>
   <contextMenus
       context="//@diagram">
     <items

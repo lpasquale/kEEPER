@@ -16,19 +16,14 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
-import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
-import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
-import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
@@ -217,27 +212,10 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			Diagram sv = (Diagram) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(InitiallyEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(Instance2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			return result.toArray();
-		}
-
-		case InitiallyEditPart.VISUAL_ID: {
-			LinkedList<ModelAbstractNavigatorItem> result = new LinkedList<ModelAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					ModelVisualIDRegistry.getType(ContextRelationEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
 					ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(InitiallyEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}

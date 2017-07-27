@@ -1,8 +1,5 @@
 package initial.model.diagram.navigator;
 
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -16,15 +13,12 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import initial.model.diagram.edit.parts.ContextRelationEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
-import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramEditorPlugin;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 import initial.model.diagram.providers.ModelElementTypes;
-import initial.model.diagram.providers.ModelParserProvider;
 import model.Instance;
 
 /**
@@ -85,15 +79,9 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case InitiallyEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Initially", //$NON-NLS-1$
 					ModelElementTypes.Initially_2001);
-		case Instance2EditPart.VISUAL_ID:
+		case InstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Instance", //$NON-NLS-1$
 					ModelElementTypes.Instance_2002);
-		case InstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?https://github.com/mlatona/minorityReportPlugin?Instance", //$NON-NLS-1$
-					ModelElementTypes.Instance_3002);
-		case ContextRelationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?https://github.com/mlatona/minorityReportPlugin?ContextRelation", //$NON-NLS-1$
-					ModelElementTypes.ContextRelation_3003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -148,12 +136,8 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEnvironment_1000Text(view);
 		case InitiallyEditPart.VISUAL_ID:
 			return getInitially_2001Text(view);
-		case Instance2EditPart.VISUAL_ID:
-			return getInstance_2002Text(view);
 		case InstanceEditPart.VISUAL_ID:
-			return getInstance_3002Text(view);
-		case ContextRelationEditPart.VISUAL_ID:
-			return getContextRelation_3003Text(view);
+			return getInstance_2002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -181,38 +165,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return domainModelElement.getName();
 		} else {
 			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getInstance_3002Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Instance_3002,
-				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(InstanceEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3002); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getContextRelation_3003Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.ContextRelation_3003,
-				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(ContextRelationEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -14,10 +14,12 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -49,6 +51,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.kEEPER.plugin.ui.figures.InitiallyFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbench;
@@ -56,7 +59,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
-import initial.model.diagram.edit.policies.EnlargeContainerEditPolicy;
 import initial.model.diagram.edit.policies.InitiallyItemSemanticEditPolicy;
 import initial.model.diagram.edit.policies.ModelTextSelectionEditPolicy;
 import initial.model.diagram.part.ModelDiagramEditor;
@@ -130,8 +132,6 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(ModelVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitiallyItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -143,14 +143,17 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-		FlowLayoutEditPolicy lep = new FlowLayoutEditPolicy() {
-
-			protected Command createAddCommand(EditPart child, EditPart after) {
-				return null;
+			protected EditPolicy createChildEditPolicy(EditPart child) {
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
+				}
+				return result;
 			}
 
-			protected Command createMoveChildCommand(EditPart child, EditPart after) {
+			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
@@ -162,17 +165,17 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
-	protected IFigure createNodeShape() {
-		return primaryShape = new InitialFigure();
+	protected IFigure createNodeShape(RoundedRectangle r) {
+		return primaryShape = new InitiallyFigure(r, in);
 	}
 
 	/**
 	* @generated
 	*/
-	public InitialFigure getPrimaryShape() {
-		return (InitialFigure) primaryShape;
+	public InitiallyFigure getPrimaryShape() {
+		return (InitiallyFigure) primaryShape;
 	}
 
 	/**
@@ -184,29 +187,22 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
-	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NONE);
-		}
-		return result;
-	}
-
-	/**
 	* Creates figure for this edit part.
 	* 
 	* Body of this method does not depend on settings in generation model
 	* so you may safely remove <i>generated</i> tag and modify it.
 	* 
-	* @generated
+	* @generated NOT
 	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
-		IFigure shape = createNodeShape();
+		RoundedRectangle r = new RoundedRectangle();
+		r.setLineWidth(2);
+		r.setSize(100, 100);
+		r.setCornerDimensions(new Dimension(15, 15));
+		figure.add(r);
+		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
@@ -219,11 +215,6 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(5);
-			nodeShape.setLayoutManager(layout);
-		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -273,94 +264,6 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 		}
 	}
 
-	/**
-	* @generated
-	*/
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == ModelElementTypes.ContextRelation_3003) {
-				return getChildBySemanticHint(
-						ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartmentEditPart.VISUAL_ID));
-			}
-			if (type == ModelElementTypes.Instance_3002) {
-				return getChildBySemanticHint(
-						ModelVisualIDRegistry.getType(InitiallyInstancesNameCompartment2EditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
-	}
-
-	@Override
-	public void refresh() {
-		//changeLayoutCompartment();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class InitialFigure extends RoundedRectangle {
-
-		/**
-		* @generated
-		*/
-		private RectangleFigure fFigureInitialNameFigure;
-
-		/**
-				 * @generated
-				 */
-		public InitialFigure() {
-
-			FlowLayout layoutThis = new FlowLayout();
-			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(FlowLayout.ALIGN_CENTER);
-
-			layoutThis.setMajorAlignment(FlowLayout.ALIGN_CENTER);
-			layoutThis.setMajorSpacing(5);
-			layoutThis.setMinorSpacing(5);
-			layoutThis.setHorizontal(false);
-
-			this.setLayoutManager(layoutThis);
-
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
-			this.setLineWidth(2);
-			this.setForegroundColor(THIS_FORE);
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureInitialNameFigure = new RectangleFigure();
-
-			this.add(fFigureInitialNameFigure);
-			fFigureInitialNameFigure.setLayoutManager(new StackLayout());
-
-			RectangleFigure instancesListFigure0 = new RectangleFigure();
-
-			this.add(instancesListFigure0);
-			instancesListFigure0.setLayoutManager(new StackLayout());
-
-		}
-
-		/**
-		* @generated
-		*/
-		public RectangleFigure getFigureInitialNameFigure() {
-			return fFigureInitialNameFigure;
-		}
-
-	}
-
-	/**
-	* @generated
-	*/
-	static final Color THIS_FORE = new Color(null, 0, 0, 0);
-
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
@@ -389,6 +292,8 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 			}
 
 			updateModel(id.getResults());
+			
+			getPrimaryShape().repaint();
 		}
 	}
 

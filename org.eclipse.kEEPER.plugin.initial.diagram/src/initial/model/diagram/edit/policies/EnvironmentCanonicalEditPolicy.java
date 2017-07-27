@@ -7,8 +7,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Set;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -25,7 +25,6 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import initial.model.diagram.edit.parts.InitiallyEditPart;
-import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
 import initial.model.diagram.part.ModelDiagramUpdater;
 import initial.model.diagram.part.ModelNodeDescriptor;
@@ -60,8 +59,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Initials());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Instances());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Initials());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -94,7 +93,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ModelVisualIDRegistry.getVisualID(view);
-		return visualID == InitiallyEditPart.VISUAL_ID || visualID == Instance2EditPart.VISUAL_ID;
+		return visualID == InstanceEditPart.VISUAL_ID || visualID == InitiallyEditPart.VISUAL_ID;
 	}
 
 	/**
