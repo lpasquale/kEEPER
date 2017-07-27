@@ -9,6 +9,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FlowLayout;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -55,6 +56,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
+import initial.model.diagram.edit.policies.EnlargeContainerEditPolicy;
 import initial.model.diagram.edit.policies.InitiallyItemSemanticEditPolicy;
 import initial.model.diagram.edit.policies.ModelTextSelectionEditPolicy;
 import initial.model.diagram.part.ModelDiagramEditor;
@@ -121,6 +123,7 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 
 		this.view = view;
 		this.in = (Initially) view.getElement();
+
 	}
 
 	/**
@@ -288,6 +291,11 @@ public class InitiallyEditPart extends ShapeNodeEditPart {
 			}
 		}
 		return super.getTargetEditPart(request);
+	}
+
+	@Override
+	public void refresh() {
+		//changeLayoutCompartment();
 	}
 
 	/**

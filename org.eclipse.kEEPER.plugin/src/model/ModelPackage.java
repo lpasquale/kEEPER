@@ -232,7 +232,7 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' reference list.
+	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1568,10 +1568,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getContextRelation_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.ContextRelation#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the containment reference list '{@link model.ContextRelation#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Types</em>'.
+	 * @return the meta object for the containment reference list '<em>Types</em>'.
 	 * @see model.ContextRelation#getTypes()
 	 * @see #getContextRelation()
 	 * @generated
@@ -2571,7 +2571,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute CONTEXT_RELATION__NAME = eINSTANCE.getContextRelation_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

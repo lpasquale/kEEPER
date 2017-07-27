@@ -10,6 +10,7 @@ import model.ModelPackage;
 import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,7 +18,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,7 +79,7 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	protected ComplexEvent endingComplexEvent;
 
 	/**
-	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypes()
@@ -133,9 +135,23 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Type> getTypes() {
 		if (types == null) {
-			types = new EObjectResolvingEList<Type>(Type.class, this, ModelPackage.CONTEXT_RELATION__TYPES);
+			types = new EObjectContainmentEList<Type>(Type.class, this, ModelPackage.CONTEXT_RELATION__TYPES);
 		}
 		return types;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModelPackage.CONTEXT_RELATION__TYPES:
+				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

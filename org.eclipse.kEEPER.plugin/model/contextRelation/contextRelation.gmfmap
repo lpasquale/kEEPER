@@ -11,14 +11,15 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//ContextRelation"/>
-      <labelMappings>
+      <labelMappings
+          readOnly="true">
         <diagramLabel
-            href="contextRelation.gmfgraph#ContextRelationTitle"/>
+            href="contextRelation.gmfgraph#ContextRelationTitleLabel"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="contextRelation.gmfgraph#ContextRelationName"/>
+            href="contextRelation.gmfgraph#ContextRelationNameLabel"/>
         <features
             href="../model.ecore#//ContextRelation/name"/>
       </labelMappings>
@@ -26,16 +27,16 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="contextRelation.gmfgraph#ContextRelationTypes"/>
+            href="contextRelation.gmfgraph#ContextRelationTypesLabel"/>
         <viewExpression
-            body="String s = &quot;&quot;;&#xA;if (!((ContextRelation) self).getTypes().isEmpty())&#xA;&#x9;s = &quot;  (&quot;;&#xA;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++) {&#xA;&#x9;if (i &lt; ((ContextRelation) self).getTypes().size() -1)&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;  &quot;;&#xA;&#x9;else&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;)&quot;;&#xA;}&#xA;return s;"
+            body="&#x9;&#x9;String s = &quot;&quot;;&#xA;&#x9;&#x9;if (((ContextRelation) self).getTypes().size() > 0)&#xA;&#x9;&#x9;&#x9;s = &quot;(&quot;;&#xA;&#x9;&#x9;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++) {&#xA;&#x9;&#x9;&#x9;if (i &lt; ((ContextRelation) self).getTypes().size() - 1)&#xA;&#x9;&#x9;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;  &quot;;&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;)&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return s;"
             language="java"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="contextRelation.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="contextRelation.gmfgraph#ContextrelationNode"/>
+          href="contextRelation.gmfgraph#ContextRelationNode"/>
     </ownedChild>
   </nodes>
   <diagram>

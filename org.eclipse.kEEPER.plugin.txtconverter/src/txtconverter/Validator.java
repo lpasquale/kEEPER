@@ -15,6 +15,8 @@ public class Validator {
 	
 	public boolean validate(){
 		
+		// Check if all files have been created
+		
 		// Validate Types and Instances
 		for (int i = 0; i < env.getInstances().size(); i++){
 			if (env.getInstances().get(i).getName() == null){

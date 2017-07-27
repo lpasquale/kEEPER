@@ -66,6 +66,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
+import initial.model.diagram.edit.policies.EnlargeContainerEditPolicy;
 import initial.model.diagram.edit.policies.InstanceItemSemanticEditPolicy;
 import initial.model.diagram.edit.policies.ModelTextNonResizableEditPolicy;
 import initial.model.diagram.part.ModelVisualIDRegistry;

@@ -40,9 +40,8 @@
           editHelperClassName="ContextRelationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
           className="ContextRelationFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContextRelationFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationTitle; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationTypes; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContextRelationFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureContextRelationName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationName.setText(&quot;-- Insert name of Context Relation --&quot;);&#xA;&#xA;this.add(fFigureContextRelationName);&#xA;&#xA;&#xA;&#xA;fFigureContextRelationTitle = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationTitle.setText(&quot;&lt;&lt;Context Relation>>&quot;);&#xA;&#xA;this.add(fFigureContextRelationTitle);&#xA;&#xA;&#xA;&#xA;fFigureContextRelationTypes = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationTypes.setText(&quot;Define the types...&quot;);&#xA;&#xA;this.add(fFigureContextRelationTypes);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationTitle() {&#xA;&#x9;&#x9;return fFigureContextRelationTitle;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationTypes() {&#xA;&#x9;&#x9;return fFigureContextRelationTypes;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationName() {&#xA;&#x9;&#x9;return fFigureContextRelationName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContextRelationFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationTitleLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextRelationTypesLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContextRelationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(340)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(340)&#xA;, getMapMode().DPtoLP(600)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(600)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(200)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(340)&#xA;, getMapMode().DPtoLP(200)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(200)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureContextRelationTitleLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationTitleLabel.setText(&quot;&lt;&lt;&lt;Context Relation>>>&quot;);&#xA;&#xA;this.add(fFigureContextRelationTitleLabel);&#xA;&#xA;&#xA;&#xA;fFigureContextRelationNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationNameLabel.setText(&quot;Define the name...&quot;);&#xA;&#xA;this.add(fFigureContextRelationNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureContextRelationTypesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContextRelationTypesLabel.setText(&quot;Choose the types...&quot;);&#xA;&#xA;this.add(fFigureContextRelationTypesLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationTitleLabel() {&#xA;&#x9;&#x9;return fFigureContextRelationTitleLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationNameLabel() {&#xA;&#x9;&#x9;return fFigureContextRelationNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextRelationTypesLabel() {&#xA;&#x9;&#x9;return fFigureContextRelationTypesLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedForeground="true"/>
@@ -59,12 +58,13 @@
           visualID="5001"
           editPartClassName="ContextRelationNameEditPart"
           itemSemanticEditPolicyClassName="ContextRelationNameItemSemanticEditPolicy"
+          readOnly="true"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureContextRelationTitle"
+            getterName="getFigureContextRelationTitleLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             parser="//@labelParsers/@implementations.0"/>
@@ -77,7 +77,7 @@
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureContextRelationName"
+            getterName="getFigureContextRelationNameLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -95,7 +95,7 @@
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureContextRelationTypes"
+            getterName="getFigureContextRelationTypesLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
@@ -180,7 +180,7 @@
         xsi:type="gmfgen:GenJavaExpressionProvider"
         injectExpressionBody="true">
       <expressions
-          body="String s = &quot;&quot;;&#xA;if (!((ContextRelation) self).getTypes().isEmpty())&#xA;&#x9;s = &quot;  (&quot;;&#xA;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++) {&#xA;&#x9;if (i &lt; ((ContextRelation) self).getTypes().size() -1)&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;  &quot;;&#xA;&#x9;else&#xA;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;)&quot;;&#xA;}&#xA;return s;"/>
+          body="&#x9;&#x9;String s = &quot;&quot;;&#xA;&#x9;&#x9;if (((ContextRelation) self).getTypes().size() > 0)&#xA;&#x9;&#x9;&#x9;s = &quot;(&quot;;&#xA;&#x9;&#x9;for (int i = 0; i &lt; ((ContextRelation) self).getTypes().size(); i++) {&#xA;&#x9;&#x9;&#x9;if (i &lt; ((ContextRelation) self).getTypes().size() - 1)&#xA;&#x9;&#x9;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;  &quot;;&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;s = s + ((ContextRelation) self).getTypes().get(i).getName() + &quot;)&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return s;"/>
     </providers>
   </expressionProviders>
   <labelParsers

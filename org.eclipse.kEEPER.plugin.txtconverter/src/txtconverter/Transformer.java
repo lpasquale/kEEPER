@@ -1,6 +1,7 @@
 package txtconverter;
 
 import model.AgentParam;
+import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ContextRelation;
 import model.Environment;
@@ -156,283 +157,286 @@ public class Transformer {
 		
 		// BEHAVIOURAL DESCRIPTIONS OUTPUT ALGORITHM
 		
-		writer.println("% ***** Composite Definitions *****\n");
-		
-		// TODO: Better version of the algorithm
-	/*	for (int i = 0; i < env.getEvents().size(); i++){
-			if (env.getEvents().get(i) instanceof ComplexEvent){
-				for (int j = 0; j < (((ComplexEvent) (env.getEvents().get(i))).getBehaviouralDescriptions().size()); j++){
-		*/	
+		writer.println("% ***** Composite Definitions *****\n");	
 		
 		for (int i = 0; i < env.getBehavDescriptions().size(); i++){
-			System.out.println("BEHAV DESC: " + env.getBehavDescriptions().get(i).getName());
-			ComplexEvent event = new ComplexEventImpl(); //Because it is a complexEvent for sure
-			writer.printf("happens("+ env.getBehavDescriptions().get(i).getName());
-			for (int j = 0; j < env.getEvents().size(); j++){
-				if (env.getEvents().get(j).getName().equals(env.getBehavDescriptions().get(i).getName())){
-					event = (ComplexEvent) env.getEvents().get(j); //Casting to ComplexEvent because for sure is a complex event
-				}	
-			} 
-			if (event != null){
-				writeEventParameters(event, writer);
-			}
 			
+			//TODO: implementing algorithm any 
 			
-			// Computing the maximum time between context relations and events of a specified complex event and
-			// memorizing the integer found in the arraylist for later computations
-			int timeMax = -1;
-			ArrayList<Integer> times = new ArrayList<Integer>();
-			for (Happens h: env.getBehavDescriptions().get(i).getHappens()){
-				if (h.getTime() > timeMax)
-					timeMax = h.getTime();
+			// Counting how many predicates there are between the two time Instants
+	        if ((env.getBehavDescriptions().get(i).isAny())&&(env.getBehavDescriptions().get(i).getFirstTimeInstant() > 0)&&(env.getBehavDescriptions().get(i).getFirstTimeInstant() < env.getBehavDescriptions().get(i).getTimeInstants()) && (env.getBehavDescriptions().get(i).getSecondTimeInstant() > 1) && (env.getBehavDescriptions().get(i).getSecondTimeInstant() <= env.getBehavDescriptions().get(i).getTimeInstants()) && (env.getBehavDescriptions().get(i).getSecondTimeInstant() > env.getBehavDescriptions().get(i).getFirstTimeInstant())){        	
+	        	writeAnyBehavDesc(env.getBehavDescriptions().get(i));        	
+	        }
+	        else{
+				System.out.println("BEHAV DESC: " + env.getBehavDescriptions().get(i).getName());
+				ComplexEvent event = new ComplexEventImpl(); //Because it is a complexEvent for sure
+				writer.printf("happens("+ env.getBehavDescriptions().get(i).getName());
+				for (int j = 0; j < env.getEvents().size(); j++){
+					if (env.getEvents().get(j).getName().equals(env.getBehavDescriptions().get(i).getName())){
+						event = (ComplexEvent) env.getEvents().get(j); //Casting to ComplexEvent because for sure is a complex event
+					}	
+				} 
+				if (event != null){
+					writeEventParameters(event, writer);
+				}
 				
-				int timesCounter = 0;
-				for (int j = 0; j < times.size(); j++){
-					if (h.getTime() == times.get(j))
-						timesCounter++;
-				}
-				if (timesCounter == 0)
-					times.add(h.getTime());
-			}
-			for (HoldsAt h: env.getBehavDescriptions().get(i).getHoldsAts()){
-				if (h.getTime() > timeMax)
-					timeMax = h.getTime();
 				
-				int timesCounter = 0;
-				for (int j = 0; j < times.size(); j++){
-					if (h.getTime() == times.get(j))
-						timesCounter++;
-				}
-				if (timesCounter == 0)
-					times.add(h.getTime());
-			}
-			for (HoldsAtBetween h: env.getBehavDescriptions().get(i).getHoldsAtBetweens()){
-				if (h.getInitialTime() > timeMax)
-					timeMax = h.getInitialTime();
-				if (h.getEndingTime() > timeMax)
-					timeMax = h.getEndingTime();
-				
-				int timesCounter = 0;
-				for (int j = 0; j < times.size(); j++){
-					if (h.getInitialTime() == times.get(j))
-						timesCounter++;
-				}
-				if (timesCounter == 0)
-					times.add(h.getInitialTime());
-				timesCounter = 0;
-				for (int j = 0; j < times.size(); j++){
-					if (h.getEndingTime() == times.get(j))
-						timesCounter++;
-				}
-				if (timesCounter == 0)
-					times.add(h.getEndingTime());				
-			}
-			
-			// Writing the computed maximum time instant
-			writer.println(",T" + timeMax + ",TR):-");
-			writer.println("\ttrace(TR),");
-			
-			// Memorizing all the types of events and context relations related to the behavioural description
-			//HashSet<Parameter> behTypes = new HashSet<Parameter>();
-			ArrayList<Parameter> behTypes = new ArrayList<Parameter>();
-			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAts().size(); n++){
-				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters().size(); m++){
-					System.out.println(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters());
-					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters().get(m));
-
-				}
-			}
-			
-			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); n++){
-				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getParameters().size(); m++){
-					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getParameters().get(m));
-				}
-			}
-			for (int n = 0; n < env.getBehavDescriptions().get(i).getHappens().size(); n++){
-				for (int m = 0; m < env.getBehavDescriptions().get(i).getHappens().get(n).getParameters().size(); m++){
-					behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getParameters().get(m));
-				}
-			}
-			
-			// Removing doubles
-			for (int j = 0; j < behTypes.size(); j++){
-				int h = 0;
-				while (h < behTypes.size()){
-					if ((behTypes.get(j).getName().equals(behTypes.get(h).getName()))&&(h!=j)){
-						behTypes.remove(h);
-						h--;
-					}
-					h++;
-				}
-			} 
-			
-			// Writing all the types on file
-			Iterator<Parameter> iter = behTypes.iterator();
-			System.out.println(iter.hasNext());
-			while(iter.hasNext()){
-				Parameter param = iter.next();
-			//	System.out.println(type.toString());
-				if (param instanceof AgentParam)
-					writer.println("\t"+((AgentParam)param).getAgent().getName()+"("+ param.getName() +"),"); 
+				// Computing the maximum time between context relations and events of a specified complex event and
+				// memorizing the integer found in the arraylist for later computations
+				int timeMax = -1;
+				ArrayList<Integer> times = new ArrayList<Integer>();
+				for (Happens h: env.getBehavDescriptions().get(i).getHappens()){
+					if (h.getTime() > timeMax)
+						timeMax = h.getTime();
 					
-				if (param instanceof ObserverParam)
-					writer.println("\t"+((ObserverParam)param).getObserver().getName()+"("+ param.getName() +"),");
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getTime());
+				}
+				for (HoldsAt h: env.getBehavDescriptions().get(i).getHoldsAts()){
+					if (h.getTime() > timeMax)
+						timeMax = h.getTime();
+					
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getTime());
+				}
+				for (HoldsAtBetween h: env.getBehavDescriptions().get(i).getHoldsAtBetweens()){
+					if (h.getInitialTime() > timeMax)
+						timeMax = h.getInitialTime();
+					if (h.getEndingTime() > timeMax)
+						timeMax = h.getEndingTime();
+					
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getInitialTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getInitialTime());
+					timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getEndingTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getEndingTime());				
+				}
 				
-				if (param instanceof GeneralParam)
-					writer.println("\t"+((GeneralParam)param).getGeneralType().getName()+"("+ param.getName() +"),"); 
-			}
-			
-			// Writing all time instants
-			for (int j = 0; j < times.size(); j++){
-				writer.println("\ttime(T"+times.get(j)+"),");				
-			}
-			
-			
-			// Writing all the time constraints
-			for (int j = 0; j < times.size(); j++){
-				for (int m = 0; m < times.size(); m++){
-					if (times.get(j) < times.get(m)){
-						writer.println("\tT"+times.get(j)+"<T"+times.get(m)+",");
+				// Writing the computed maximum time instant
+				writer.println(",T" + timeMax + ",TR):-");
+				writer.println("\ttrace(TR),");
+				
+				// Memorizing all the types of events and context relations related to the behavioural description
+				//HashSet<Parameter> behTypes = new HashSet<Parameter>();
+				ArrayList<Parameter> behTypes = new ArrayList<Parameter>();
+				for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAts().size(); n++){
+					for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters().size(); m++){
+						System.out.println(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters());
+						behTypes.add(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getParameters().get(m));
+	
 					}
 				}
-			}
-			
-			// Writing all the predicates
-			
-			// HOLDS AT
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){
-				HoldsAt h = env.getBehavDescriptions().get(i).getHoldsAts().get(j);
-				if (h.isIsHolding()){
-					writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());	
-				}
-				else if (!h.isIsHolding()){
-					writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
-				}
-				writeHoldsAtDynParameters(env.getBehavDescriptions().get(i).getHoldsAts().get(j), writer);
-				writer.printf(",T"+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getTime() +",TR)");
-				if (j < env.getBehavDescriptions().get(i).getHoldsAts().size() - 1)
-					writer.printf(",\n");
-				else if (j == env.getBehavDescriptions().get(i).getHoldsAts().size() - 1){
-					if (env.getBehavDescriptions().get(i).getHappens().size() == 0 && env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() == 0)
-						writer.printf(".");
-					else
-						writer.printf(",\n");
-				}
-			}
-			
-			// HAPPENS
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHappens().size(); j++){
-				writer.printf("\thappens("+env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().getName());
-				writeHappensDynParameters(env.getBehavDescriptions().get(i).getHappens().get(j), writer);
-				writer.printf(",T"+env.getBehavDescriptions().get(i).getHappens().get(j).getTime() +",TR)");
-				if (j < env.getBehavDescriptions().get(i).getHappens().size() - 1)
-					writer.printf(",\n");
-				else if (j == env.getBehavDescriptions().get(i).getHappens().size() - 1){
-					if (env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() == 0)
-						writer.printf(".");
-					else
-						writer.printf(",\n");
-				}
-			}
-			
-			// HOLDS AT BETWEEN
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); j++){
-				HoldsAtBetween h = env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(j);
-				if (h.isIsHolding()){
-					writer.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
-
-				}
-				else if (!h.isIsHolding()){
-					writer.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
-				}
-				writeHoldsAtBetweenDynParameters(h, writer);
-				writer.printf(",T"+h.getEndingTime() +",TR)");
-				if (j < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() - 1){
-					writer.printf(",\n");
-				}
-				else if (j == env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() - 1){
-					writer.printf(".");
-				}
-			}
-
-			writer.println();
-			writer.println();
-			
-	 	} // Behavioural Descriptions 
-		
-		// INITIATES OUTPUT ALGORITHM
-		
-		writer.println("\n\n% +++ Context Relation Definitions +++\n");
-		for (int i = 0; i < env.getContextRelations().size(); i++){
-			if (env.getContextRelations().get(i).getInitialComplexEvent() != null){
-				writer.printf("initiates("+ env.getContextRelations().get(i).getInitialComplexEvent().getName());
-				writeEventParameters(env.getContextRelations().get(i).getInitialComplexEvent(),writer);
-				writer.printf(",");
-				writer.printf(env.getContextRelations().get(i).getName());
-				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
-				writer.printf(", T):-\n");
 				
-				HashSet<Type> crTypes = new HashSet<Type>();
-				for (int n = 0; n < env.getContextRelations().get(i).getInitialComplexEvent().getTypes().size(); n++){
-					crTypes.add(env.getContextRelations().get(i).getInitialComplexEvent().getTypes().get(n).getReference());
+				for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); n++){
+					for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getParameters().size(); m++){
+						behTypes.add(env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getParameters().get(m));
+					}
 				}
-				for (int n = 0; n < env.getContextRelations().get(i).getTypes().size(); n++){
-					crTypes.add(env.getContextRelations().get(i).getTypes().get(n));
+				for (int n = 0; n < env.getBehavDescriptions().get(i).getHappens().size(); n++){
+					for (int m = 0; m < env.getBehavDescriptions().get(i).getHappens().get(n).getParameters().size(); m++){
+						behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getParameters().get(m));
+					}
 				}
 				
-				Iterator<Type> iter = crTypes.iterator();
+				// Removing doubles
+				for (int j = 0; j < behTypes.size(); j++){
+					int h = 0;
+					while (h < behTypes.size()){
+						if ((behTypes.get(j).getName().equals(behTypes.get(h).getName()))&&(h!=j)){
+							behTypes.remove(h);
+							h--;
+						}
+						h++;
+					}
+				} 
+				
+				// Writing all the types on file
+				Iterator<Parameter> iter = behTypes.iterator();
+				System.out.println(iter.hasNext());
 				while(iter.hasNext()){
-					Type type = iter.next();
-					writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+					Parameter param = iter.next();
+				//	System.out.println(type.toString());
+					if (param instanceof AgentParam)
+						writer.println("\t"+((AgentParam)param).getAgent().getName()+"("+ param.getName() +"),"); 
+						
+					if (param instanceof ObserverParam)
+						writer.println("\t"+((ObserverParam)param).getObserver().getName()+"("+ param.getName() +"),");
+					
+					if (param instanceof GeneralParam)
+						writer.println("\t"+((GeneralParam)param).getGeneralType().getName()+"("+ param.getName() +"),"); 
 				}
-				writer.printf(" time(T).\n");
 				
-			}
+				// Writing all time instants
+				for (int j = 0; j < times.size(); j++){
+					writer.println("\ttime(T"+times.get(j)+"),");				
+				}
+				
+				
+				// Writing all the time constraints
+				for (int j = 0; j < times.size(); j++){
+					for (int m = 0; m < times.size(); m++){
+						if (times.get(j) < times.get(m)){
+							writer.println("\tT"+times.get(j)+"<T"+times.get(m)+",");
+						}
+					}
+				}
+				
+				// Writing all the predicates
+				
+				// HOLDS AT
+				for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){
+					HoldsAt h = env.getBehavDescriptions().get(i).getHoldsAts().get(j);
+					if (h.isIsHolding()){
+						writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());	
+					}
+					else if (!h.isIsHolding()){
+						writer.printf("\tnot holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					}
+					writeHoldsAtDynParameters(env.getBehavDescriptions().get(i).getHoldsAts().get(j), writer);
+					writer.printf(",T"+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getTime() +",TR)");
+					if (j < env.getBehavDescriptions().get(i).getHoldsAts().size() - 1)
+						writer.printf(",\n");
+					else if (j == env.getBehavDescriptions().get(i).getHoldsAts().size() - 1){
+						if (env.getBehavDescriptions().get(i).getHappens().size() == 0 && env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() == 0)
+							writer.printf(".");
+						else
+							writer.printf(",\n");
+					}
+				}
+				
+				// HAPPENS
+				for (int j = 0; j < env.getBehavDescriptions().get(i).getHappens().size(); j++){
+					writer.printf("\thappens("+env.getBehavDescriptions().get(i).getHappens().get(j).getEvent().getName());
+					writeHappensDynParameters(env.getBehavDescriptions().get(i).getHappens().get(j), writer);
+					writer.printf(",T"+env.getBehavDescriptions().get(i).getHappens().get(j).getTime() +",TR)");
+					if (j < env.getBehavDescriptions().get(i).getHappens().size() - 1)
+						writer.printf(",\n");
+					else if (j == env.getBehavDescriptions().get(i).getHappens().size() - 1){
+						if (env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() == 0)
+							writer.printf(".");
+						else
+							writer.printf(",\n");
+					}
+				}
+				
+				// HOLDS AT BETWEEN
+				for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); j++){
+					HoldsAtBetween h = env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(j);
+					if (h.isIsHolding()){
+						writer.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+	
+					}
+					else if (!h.isIsHolding()){
+						writer.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					}
+					writeHoldsAtBetweenDynParameters(h, writer);
+					writer.printf(",T"+h.getEndingTime() +",TR)");
+					if (j < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() - 1){
+						writer.printf(",\n");
+					}
+					else if (j == env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() - 1){
+						writer.printf(".");
+					}
+				}
+	
+				writer.println();
+				writer.println();
+				
+		 	}
+		}// Behavioural Descriptions 
 			
-			if (env.getContextRelations().get(i).getEndingComplexEvent() != null){
-				writer.printf("terminates("+ env.getContextRelations().get(i).getEndingComplexEvent().getName());
-				writeEventParameters(env.getContextRelations().get(i).getEndingComplexEvent(),writer);
-				writer.printf(",");
-				writer.printf(env.getContextRelations().get(i).getName());
-				writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
-				writer.printf(", T):-\n");
+			// INITIATES OUTPUT ALGORITHM
+			
+			writer.println("\n\n% +++ Context Relation Definitions +++\n");
+			for (int i = 0; i < env.getContextRelations().size(); i++){
+				if (env.getContextRelations().get(i).getInitialComplexEvent() != null){
+					writer.printf("initiates("+ env.getContextRelations().get(i).getInitialComplexEvent().getName());
+					writeEventParameters(env.getContextRelations().get(i).getInitialComplexEvent(),writer);
+					writer.printf(",");
+					writer.printf(env.getContextRelations().get(i).getName());
+					writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
+					writer.printf(", T):-\n");
+					
+					HashSet<Type> crTypes = new HashSet<Type>();
+					for (int n = 0; n < env.getContextRelations().get(i).getInitialComplexEvent().getTypes().size(); n++){
+						crTypes.add(env.getContextRelations().get(i).getInitialComplexEvent().getTypes().get(n).getReference());
+					}
+					for (int n = 0; n < env.getContextRelations().get(i).getTypes().size(); n++){
+						crTypes.add(env.getContextRelations().get(i).getTypes().get(n));
+					}
+					
+					Iterator<Type> iter = crTypes.iterator();
+					while(iter.hasNext()){
+						Type type = iter.next();
+						writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+					}
+					writer.printf(" time(T).\n");
+					
+				}
 				
-				HashSet<Type> crTypes = new HashSet<Type>();
-				for (int n = 0; n < env.getContextRelations().get(i).getEndingComplexEvent().getTypes().size(); n++){
-					crTypes.add(env.getContextRelations().get(i).getEndingComplexEvent().getTypes().get(n).getReference());
+				if (env.getContextRelations().get(i).getEndingComplexEvent() != null){
+					writer.printf("terminates("+ env.getContextRelations().get(i).getEndingComplexEvent().getName());
+					writeEventParameters(env.getContextRelations().get(i).getEndingComplexEvent(),writer);
+					writer.printf(",");
+					writer.printf(env.getContextRelations().get(i).getName());
+					writeContextRelationParameters(env.getContextRelations().get(i) ,writer);
+					writer.printf(", T):-\n");
+					
+					HashSet<Type> crTypes = new HashSet<Type>();
+					for (int n = 0; n < env.getContextRelations().get(i).getEndingComplexEvent().getTypes().size(); n++){
+						crTypes.add(env.getContextRelations().get(i).getEndingComplexEvent().getTypes().get(n).getReference());
+					}
+					for (int n = 0; n < env.getContextRelations().get(i).getTypes().size(); n++){
+						crTypes.add(env.getContextRelations().get(i).getTypes().get(n));
+					}
+					
+					Iterator<Type> iter = crTypes.iterator();
+					while(iter.hasNext()){
+						Type type = iter.next();
+						writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
+					}
+					writer.printf(" time(T).\n");	
 				}
-				for (int n = 0; n < env.getContextRelations().get(i).getTypes().size(); n++){
-					crTypes.add(env.getContextRelations().get(i).getTypes().get(n));
-				}
-				
-				Iterator<Type> iter = crTypes.iterator();
-				while(iter.hasNext()){
-					Type type = iter.next();
-					writer.printf("\t"+type.getName()+"("+Character.toUpperCase(type.getName().charAt(0))+"),");
-				}
-				writer.printf(" time(T).\n");	
-			}
-		} writer.println();
-		
-		
-		// INITIAL STATES OUTPUT ALGORITHM
-		
-		writer.println("% Initial state \n");
-		
-		for (int i = 0; i < env.getInitials().size(); i++){
-			writer.printf("initially("+ env.getInitials().get(i).getContextRelation().getName());
-			writeInstances(env.getInitials().get(i), writer);
-			writer.printf(").\n");
-		} // Initial states
-		
-		
-		writer.println();
-		writer.println("% Version 3");
-		Calendar rightNow = Calendar.getInstance();
-		writer.println("% Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE)); 
-		writer.close();
-		return true;
-	}
+			} writer.println();
+			
+			
+			// INITIAL STATES OUTPUT ALGORITHM
+			
+			writer.println("% Initial state \n");
+			
+			for (int i = 0; i < env.getInitials().size(); i++){
+				writer.printf("initially("+ env.getInitials().get(i).getContextRelation().getName());
+				writeInstances(env.getInitials().get(i), writer);
+				writer.printf(").\n");
+			} // Initial states
+			
+			
+			writer.println();
+			writer.println("% Version 3");
+			Calendar rightNow = Calendar.getInstance();
+			writer.println("% Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE)); 
+			writer.close();
+			return true;
+		}
 
 	
 	private void writeContextRelationParameters(ContextRelation cr, PrintWriter writer){
@@ -702,6 +706,27 @@ public class Transformer {
 				writer.printf("%s)", h.getParameters().get(j).getName());	
 		}
 	}
+	
+	private void writeAnyBehavDesc(BehaviouralDescription bd){
+		int counter = 0;
+    	for (Happens h: bd.getHappens()){
+    		if ((h.getTime() <= bd.getSecondTimeInstant())&&(h.getTime() >= bd.getFirstTimeInstant())) 
+    			counter++;
+    	}
+    	for (HoldsAt h: bd.getHoldsAts()){
+    		if ((h.getTime() <= bd.getSecondTimeInstant())&&(h.getTime() >= bd.getFirstTimeInstant())) 
+    			counter++;
+    	}
+    	for (HoldsAtBetween h: bd.getHoldsAtBetweens()){
+    		if ((h.getEndingTime() <= bd.getSecondTimeInstant())&&(h.getInitialTime() >= bd.getFirstTimeInstant())) 
+    			counter++;
+    	}
+    	
+    	System.out.println("Predicates compresi nell'any: " + counter);
+	}
+	
+	//TODO: implement all the algorithm. I can create a temporary behavDesc for each one I need to parser
+	
 	
 	public Loader getLoader(){
 		return this.loader;

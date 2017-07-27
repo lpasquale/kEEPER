@@ -1,7 +1,6 @@
 package contextRelation.model.diagram.parsers;
 
 import java.util.Collections;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
@@ -19,7 +18,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-
 import model.ContextRelation;
 
 /**
@@ -113,8 +111,8 @@ public class ContextRelationLabelExpressionLabelParser implements IParser {
 	*/
 	private String evaluatePrintExpression(EObject self) {
 		String s = "";
-		if (!((ContextRelation) self).getTypes().isEmpty())
-			s = "  (";
+		if (((ContextRelation) self).getTypes().size() > 0)
+			s = "(";
 		for (int i = 0; i < ((ContextRelation) self).getTypes().size(); i++) {
 			if (i < ((ContextRelation) self).getTypes().size() - 1)
 				s = s + ((ContextRelation) self).getTypes().get(i).getName() + "  ";

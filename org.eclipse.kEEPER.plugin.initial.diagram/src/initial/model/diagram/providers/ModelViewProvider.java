@@ -38,14 +38,12 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
-import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
 import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
-import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import initial.model.diagram.part.ModelVisualIDRegistry;
 
 /**

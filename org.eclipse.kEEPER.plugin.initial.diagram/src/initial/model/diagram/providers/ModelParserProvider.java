@@ -14,9 +14,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
-import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
-import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import initial.model.diagram.parsers.InitiallyLabelExpressionLabelParser;
 import initial.model.diagram.parsers.InstanceExpressionLabelParser;
 import initial.model.diagram.parsers.MessageFormatParser;

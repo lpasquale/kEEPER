@@ -10,46 +10,59 @@
     <descriptors
         name="ContextRelationFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ContextRelation">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"/>
+          xsi:type="gmfgraph:ScalablePolygon"
+          name="ContextRelationPolygonFigure">
         <children
             xsi:type="gmfgraph:Label"
-            name="ContextRelationName"
-            text="-- Insert name of Context Relation --"/>
+            name="ContextRelationTitleLabel"
+            text="&lt;&lt;&lt;Context Relation>>>"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ContextRelationTitle"
-            text="&lt;&lt;Context Relation>>"/>
+            name="ContextRelationNameLabel"
+            text="Define the name..."/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ContextRelationTypes"
-            text="Define the types..."/>
+            name="ContextRelationTypesLabel"
+            text="Choose the types..."/>
+        <template/>
+        <template
+            x="340"/>
+        <template
+            x="340"
+            y="600"/>
+        <template
+            y="600"/>
+        <template
+            y="200"/>
+        <template
+            x="340"
+            y="200"/>
+        <template
+            y="200"/>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
-      name="ContextrelationNode"
+      name="ContextRelationNode"
       figure="ContextRelationFigure"/>
   <labels
-      name="ContextRelationName"
-      figure="ContextRelationFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
-  <labels
-      name="ContextRelationTypes"
+      name="ContextRelationNameLabel"
       figure="ContextRelationFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
-      name="ContextRelationTitle"
+      name="ContextRelationTitleLabel"
       figure="ContextRelationFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ContextRelationTypesLabel"
+      figure="ContextRelationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
 </gmfgraph:Canvas>

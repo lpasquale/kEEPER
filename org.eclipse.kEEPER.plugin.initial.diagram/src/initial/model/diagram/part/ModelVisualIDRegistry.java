@@ -8,14 +8,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import initial.model.diagram.edit.parts.ContextRelationEditPart;
-import initial.model.diagram.edit.parts.ContextRelationNameEditPart;
 import initial.model.diagram.edit.parts.EnvironmentEditPart;
 import initial.model.diagram.edit.parts.InitiallyEditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartment2EditPart;
 import initial.model.diagram.edit.parts.InitiallyInstancesNameCompartmentEditPart;
 import initial.model.diagram.edit.parts.Instance2EditPart;
 import initial.model.diagram.edit.parts.InstanceEditPart;
-import initial.model.diagram.edit.parts.InstanceNameEditPart;
 import model.Environment;
 import model.ModelPackage;
 
