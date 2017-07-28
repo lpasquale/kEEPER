@@ -616,7 +616,7 @@ public class PrimitiveEventNameEditPart extends LabelEditPart implements ITextAw
 		 * @generated
 		 */
 		public PrimitiveEventNameFigure() {
-			this.setText("Type of parameter");
+			this.setText("Name of event");
 		}
 
 	}

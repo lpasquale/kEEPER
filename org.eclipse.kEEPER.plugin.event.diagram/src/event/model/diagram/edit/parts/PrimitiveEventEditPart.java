@@ -110,24 +110,32 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 
 		this.pe = (PrimitiveEvent) view.getElement();
 
-		Thread thread = new Thread() {
-			public void run() {
-				try {
-					System.out.println("Creating the agent...");
-					Thread.sleep(2000);
-					if (pe.getAgent() == null) {
-						agentCreation();
+		System.out.println(pe.getAgent());
+		System.out.println(pe.getObserver());
+		
+		if ((pe.getAgent() == null) ||(pe.getObserver() == null)){
+			Thread thread = new Thread() {
+				public void run() {
+					try {
+						System.out.println("Creating the agent...");
+						Thread.sleep(2000);
+						if (pe.getAgent() == null) {
+						//	agentCreation();
+						}
+						if (pe.getObserver() == null) {
+						//	observerCreation();
+						} 
+					} catch (InterruptedException v) {
+						System.out.println(v);
+					}catch(NullPointerException e){
+						System.out.println(e);
 					}
-					if (pe.getObserver() == null) {
-						observerCreation();
-					}
-				} catch (InterruptedException v) {
-					System.out.println(v);
 				}
-			}
-		};
+			};
 
-		thread.start();
+			thread.start();
+		} 
+		
 	}
 
 	/**

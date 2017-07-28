@@ -108,21 +108,28 @@ public class ComplexEventEditPart extends AbstractBorderedShapeEditPart {
 
 		this.ce = (ComplexEvent) view.getElement();
 
-		Thread thread = new Thread() {
-			public void run() {
-				try {
-					System.out.println("Creating the agent...");
-					Thread.sleep(2000);
-					if (ce.getAgent() == null) {
-						agentCreation();
+		if (ce.getAgent() == null){
+			Thread thread = new Thread() {
+				public void run() {
+					try {
+						System.out.println("Creating the agent...");
+						Thread.sleep(2000);
+						if (ce.getAgent() == null) {
+						//	agentCreation();
+						}
+					} catch (InterruptedException v) {
+						System.out.println(v);
+					}catch(NullPointerException e){
+						System.out.println("I'm here");
+						System.out.println(e);
+						e.printStackTrace();
 					}
-				} catch (InterruptedException v) {
-					System.out.println(v);
 				}
-			}
-		};
+			};
 
-		thread.start();
+			thread.start();
+		}
+		
 	}
 
 	/**

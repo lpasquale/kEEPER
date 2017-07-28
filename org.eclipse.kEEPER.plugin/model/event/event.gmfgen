@@ -60,7 +60,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="PrimitiveEventNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Type of parameter&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Name of event&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -183,7 +183,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="AddParamNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Type of parameter&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.3"/>
@@ -222,7 +222,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="ComplexEventNameFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;Name of event&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">

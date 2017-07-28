@@ -619,7 +619,7 @@ public class GeneralTypeReferenceTypeNameEditPart extends LabelEditPart
 		 * @generated
 		 */
 		public AddParamNameFigure() {
-			this.setText("NAME");
+			this.setText("Type of parameter");
 		}
 
 	}

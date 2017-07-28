@@ -616,7 +616,7 @@ public class ComplexEventNameEditPart extends LabelEditPart implements ITextAwar
 		 * @generated
 		 */
 		public ComplexEventNameFigure() {
-			this.setText("NAME");
+			this.setText("Name of event");
 		}
 
 	}

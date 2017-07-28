@@ -105,7 +105,7 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="AddParamName"
-          text="NAME"/>
+          text="Type of parameter"/>
     </descriptors>
     <descriptors
         name="AgentNameFigure">
@@ -126,14 +126,14 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="PrimitiveEventName"
-          text="Type of parameter"/>
+          text="Name of event"/>
     </descriptors>
     <descriptors
         name="ComplexEventNameFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="ComplexEventName"
-          text="NAME"/>
+          text="Name of event"/>
     </descriptors>
   </figures>
   <nodes
