@@ -115,7 +115,7 @@ public class ContextRelationLabelExpressionLabelParser implements IParser {
 			s = "(";
 		for (int i = 0; i < ((ContextRelation) self).getTypes().size(); i++) {
 			if (i < ((ContextRelation) self).getTypes().size() - 1)
-				s = s + ((ContextRelation) self).getTypes().get(i).getName() + "  ";
+				s = s + ((ContextRelation) self).getTypes().get(i).getName() + ", ";
 			else
 				s = s + ((ContextRelation) self).getTypes().get(i).getName() + ")";
 		}
