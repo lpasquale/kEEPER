@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="S">
+    <generalType href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="m1">
+    <generalType href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="doc">
+    <generalType href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="m1">
+    <generalType href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.0 //@parameters.1">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.8"/>
+  </holdsAts>
+  <happens time="1" parameters="//@parameters.2 //@parameters.3 //@parameters.4">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.15"/>
+  </happens>
+  <hypothesis holdsAts="//@holdsAts.0" happens="//@happens.0" name="h1" timeInstants="1"/>
+</org.eclipse.minorityReportPlugin:Environment>

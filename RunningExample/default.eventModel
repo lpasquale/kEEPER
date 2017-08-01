@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="highMountCounts" agent="//@agentReferences.0" observer="//@observerReferences.0"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_copy" types="//@generalTypeReferences.0" agent="//@agentReferences.1" observer="//@observerReferences.1"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_mount" agent="//@agentReferences.2" observer="//@observerReferences.2"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Unmount" agent="//@agentReferences.3" observer="//@observerReferences.3"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Login" agent="//@agentReferences.4" observer="//@observerReferences.4"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_Logout" agent="//@agentReferences.5" observer="//@observerReferences.5"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="swipeCard" agent="//@agentReferences.6" observer="//@observerReferences.6"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="cctvAccess" types="//@generalTypeReferences.1" agent="//@agentReferences.7" observer="//@observerReferences.7"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="cctvExit" types="//@generalTypeReferences.2" agent="//@agentReferences.8" observer="//@observerReferences.8"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="enter" types="//@generalTypeReferences.3" agent="//@agentReferences.9"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="exit" types="//@generalTypeReferences.4" agent="//@agentReferences.10"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="mount" types="//@generalTypeReferences.5" agent="//@agentReferences.11"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="unMount" types="//@generalTypeReferences.6" agent="//@agentReferences.12"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="login" types="//@generalTypeReferences.7" agent="//@agentReferences.13"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="logout" types="//@generalTypeReferences.8" agent="//@agentReferences.14"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="copy" types="//@generalTypeReferences.9 //@generalTypeReferences.10" agent="//@agentReferences.15"/>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </agentReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.2"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.1"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.1"/>
+  </observerReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.4"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.4"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+</org.eclipse.minorityReportPlugin:Environment>

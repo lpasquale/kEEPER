@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin" xmi:id="_bqguUHOQEeefi6Ox0qOtUQ" type="TypeInstanceModel" name="default.typeInstanceModel_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_6SRsYHOREeefi6Ox0qOtUQ" type="2012" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6SVWwHOREeefi6Ox0qOtUQ" type="5015"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6SV90HOREeefi6Ox0qOtUQ" type="5016"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Type" href="default.typeInstanceModel#//@types.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6SRsYXOREeefi6Ox0qOtUQ" x="129" y="39"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_6wMXcHOREeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6wMXcnOREeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6wMXc3OREeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6wMXcXOREeefi6Ox0qOtUQ" x="324" y="40"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_-qTckHOREeefi6Ox0qOtUQ" type="2010" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_-qUDoHOREeefi6Ox0qOtUQ" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_-qUDoXOREeefi6Ox0qOtUQ" type="5012"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Observer" href="default.typeInstanceModel#//@types.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-qTckXOREeefi6Ox0qOtUQ" x="124" y="124"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__IP80HOREeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="__IQj4HOREeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="__IQj4XOREeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__IP80XOREeefi6Ox0qOtUQ" x="320" y="128"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_D242MHOSEeefi6Ox0qOtUQ" type="2010" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_D25dQHOSEeefi6Ox0qOtUQ" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_D25dQXOSEeefi6Ox0qOtUQ" type="5012"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Observer" href="default.typeInstanceModel#//@types.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D242MXOSEeefi6Ox0qOtUQ" x="124" y="200"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_EXFZMHOSEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EXFZMnOSEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EXGAQHOSEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EXFZMXOSEeefi6Ox0qOtUQ" x="320" y="204"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_KC6TkHOSEeefi6Ox0qOtUQ" type="2010" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KC66oHOSEeefi6Ox0qOtUQ" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KC66oXOSEeefi6Ox0qOtUQ" type="5012"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Observer" href="default.typeInstanceModel#//@types.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KC6TkXOSEeefi6Ox0qOtUQ" x="120" y="332"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_MzK0sHOSEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MzK0snOSEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_MzK0s3OSEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MzK0sXOSEeefi6Ox0qOtUQ" x="324" y="276"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_NbWPAHOSEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_NbW2EHOSEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_NbW2EXOSEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NbWPAXOSEeefi6Ox0qOtUQ" x="324" y="331"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_N9D08HOSEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_N9EcAHOSEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_N9EcAXOSEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N9D08XOSEeefi6Ox0qOtUQ" x="324" y="388"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vhZR0HOTEeefi6Ox0qOtUQ" type="2012" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vhZ44HOTEeefi6Ox0qOtUQ" type="5015"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vhaf8HOTEeefi6Ox0qOtUQ" type="5016"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Type" href="default.typeInstanceModel#//@types.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vhZR0XOTEeefi6Ox0qOtUQ" x="532" y="40"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wsi2UHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wsjdYHOTEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_wsjdYXOTEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wsi2UXOTEeefi6Ox0qOtUQ" x="684" y="44"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ysxBoHOTEeefi6Ox0qOtUQ" type="2009" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ysxosHOTEeefi6Ox0qOtUQ" type="5009"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ysxosXOTEeefi6Ox0qOtUQ" type="5010"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Agent" href="default.typeInstanceModel#//@types.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ysxBoXOTEeefi6Ox0qOtUQ" x="524" y="185"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zlL3YHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zlL3YnOTEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zlL3Y3OTEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zlL3YXOTEeefi6Ox0qOtUQ" x="696" y="144"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zvcmoHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zvdNsHOTEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zvdNsXOTEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zvcmoXOTEeefi6Ox0qOtUQ" x="700" y="228"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8YI6wHOTEeefi6Ox0qOtUQ" type="2009" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8YI6wnOTEeefi6Ox0qOtUQ" type="5009"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_8YI6w3OTEeefi6Ox0qOtUQ" type="5010"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Agent" href="default.typeInstanceModel#//@types.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8YI6wXOTEeefi6Ox0qOtUQ" x="524" y="320"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9Gf1kHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9Gf1knOTEeefi6Ox0qOtUQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9Gf1k3OTEeefi6Ox0qOtUQ" type="5003"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Gf1kXOTEeefi6Ox0qOtUQ" x="700" y="320"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_bqguUXOQEeefi6Ox0qOtUQ"/>
+  <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.typeInstanceModel#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="___fG0HOREeefi6Ox0qOtUQ" type="4003" source="__IP80HOREeefi6Ox0qOtUQ" target="_-qTckHOREeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="___fG0XOREeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="___fG0nOREeefi6Ox0qOtUQ" points="[0, 0, 147, 10]$[-93, -15, 54, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="___1sIHOREeefi6Ox0qOtUQ" id="(0.02702702702702703,0.575)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_AVWpIHOSEeefi6Ox0qOtUQ" type="4003" source="_6wMXcHOREeefi6Ox0qOtUQ" target="_6SRsYHOREeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_AVWpIXOSEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AVWpInOSEeefi6Ox0qOtUQ" points="[0, 0, 114, 21]$[-103, -24, 11, -3]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AVaTgHOSEeefi6Ox0qOtUQ" id="(0.058823529411764705,0.6)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AVaTgXOSEeefi6Ox0qOtUQ" id="(0.9285714285714286,0.575)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_FXDocHOSEeefi6Ox0qOtUQ" type="4003" source="_EXFZMHOSEeefi6Ox0qOtUQ" target="_D242MHOSEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_FXDocXOSEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FXDocnOSEeefi6Ox0qOtUQ" points="[-106, -10, 115, 9]$[-207, -20, 14, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXGEsHOSEeefi6Ox0qOtUQ" id="(1.0,0.775)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXGEsXOSEeefi6Ox0qOtUQ" id="(0.8715596330275229,0.475)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_QfCpgHOSEeefi6Ox0qOtUQ" type="4003" source="_MzK0sHOSEeefi6Ox0qOtUQ" target="_KC6TkHOSEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_QfCpgXOSEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QfCpgnOSEeefi6Ox0qOtUQ" points="[0, 0, 163, -41]$[-106, 38, 57, -3]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QfFs0HOSEeefi6Ox0qOtUQ" id="(0.039603960396039604,0.75)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_QyrXMHOSEeefi6Ox0qOtUQ" type="4003" source="_NbWPAHOSEeefi6Ox0qOtUQ" target="_KC6TkHOSEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_QyrXMXOSEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QyrXMnOSEeefi6Ox0qOtUQ" points="[0, 0, 121, 15]$[-110, -16, 11, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QytzcHOSEeefi6Ox0qOtUQ" id="(0.039603960396039604,0.55)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QytzcXOSEeefi6Ox0qOtUQ" id="(0.9035087719298246,0.475)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_RKokMHOSEeefi6Ox0qOtUQ" type="4003" source="_N9D08HOSEeefi6Ox0qOtUQ" target="_KC6TkHOSEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_RKokMXOSEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RKokMnOSEeefi6Ox0qOtUQ" points="[0, 0, 163, 25]$[-156, -24, 7, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RKqZYHOSEeefi6Ox0qOtUQ" id="(0.1485148514851485,0.55)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RKqZYXOSEeefi6Ox0qOtUQ" id="(0.9385964912280702,0.775)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_xs8jYHOTEeefi6Ox0qOtUQ" type="4003" source="_wsi2UHOTEeefi6Ox0qOtUQ" target="_vhZR0HOTEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_xs8jYXOTEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xs8jYnOTEeefi6Ox0qOtUQ" points="[-36, -5, 106, 15]$[-104, -16, 38, 4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xs-_oHOTEeefi6Ox0qOtUQ" id="(0.02912621359223301,0.625)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_1bIFUHOTEeefi6Ox0qOtUQ" type="4003" source="_zlL3YHOTEeefi6Ox0qOtUQ" target="_ysxBoHOTEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_1bIFUXOTEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1bIFUnOTEeefi6Ox0qOtUQ" points="[0, 0, 96, -12]$[-80, 14, 16, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1bLvsHOTEeefi6Ox0qOtUQ" id="(0.0,0.9)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1bLvsXOTEeefi6Ox0qOtUQ" id="(0.8279569892473119,0.6)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_1z7m4HOTEeefi6Ox0qOtUQ" type="4003" source="_zvcmoHOTEeefi6Ox0qOtUQ" target="_ysxBoHOTEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_1z7m4XOTEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1z7m4nOTEeefi6Ox0qOtUQ" points="[-33, -19, 104, 58]$[-117, -75, 20, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1z9cEHOTEeefi6Ox0qOtUQ" id="(0.308411214953271,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1z9cEXOTEeefi6Ox0qOtUQ" id="(0.7849462365591398,0.575)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_-RtrgHOTEeefi6Ox0qOtUQ" type="4003" source="_9Gf1kHOTEeefi6Ox0qOtUQ" target="_8YI6wHOTEeefi6Ox0qOtUQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_-RtrgXOTEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-RtrgnOTEeefi6Ox0qOtUQ" points="[0, 0, 135, 14]$[-93, -12, 42, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-RwHwHOTEeefi6Ox0qOtUQ" id="(0.05555555555555555,0.575)"/>
+  </edges>
+</notation:Diagram>

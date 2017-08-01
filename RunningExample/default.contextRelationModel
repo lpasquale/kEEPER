@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <contextRelations name="isAccessedControlledBy">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.2"/>
+  </contextRelations>
+  <contextRelations name="isMonitoredBy">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.1"/>
+  </contextRelations>
+  <contextRelations name="isLocatedIn">
+    <types href="default.typeInstanceModel#//@types.3"/>
+    <types href="default.typeInstanceModel#//@types.0"/>
+  </contextRelations>
+  <contextRelations name="in">
+    <initialComplexEvent href="default.eventModel#//@events.9"/>
+    <endingComplexEvent href="default.eventModel#//@events.10"/>
+    <types href="default.typeInstanceModel#//@types.5"/>
+    <types href="default.typeInstanceModel#//@types.0"/>
+  </contextRelations>
+  <contextRelations name="logged">
+    <initialComplexEvent href="default.eventModel#//@events.13"/>
+    <endingComplexEvent href="default.eventModel#//@events.14"/>
+    <types href="default.typeInstanceModel#//@types.5"/>
+    <types href="default.typeInstanceModel#//@types.3"/>
+  </contextRelations>
+  <contextRelations name="hasBadge">
+    <types href="default.typeInstanceModel#//@types.5"/>
+    <types href="default.typeInstanceModel#//@types.0"/>
+  </contextRelations>
+  <contextRelations name="hasPermission">
+    <types href="default.typeInstanceModel#//@types.5"/>
+    <types href="default.typeInstanceModel#//@types.3"/>
+  </contextRelations>
+  <contextRelations name="isStoredIn">
+    <types href="default.typeInstanceModel#//@types.4"/>
+    <types href="default.typeInstanceModel#//@types.3"/>
+  </contextRelations>
+  <contextRelations name="mounted">
+    <initialComplexEvent href="default.eventModel#//@events.11"/>
+    <endingComplexEvent href="default.eventModel#//@events.12"/>
+    <types href="default.typeInstanceModel#//@types.6"/>
+    <types href="default.typeInstanceModel#//@types.3"/>
+  </contextRelations>
+</org.eclipse.minorityReportPlugin:Environment>

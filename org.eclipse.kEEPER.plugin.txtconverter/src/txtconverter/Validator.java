@@ -68,14 +68,6 @@ public class Validator {
 				MessageDialog.openError(null, "Error", "The Context Relation "+ env.getContextRelations().get(i).getName() + " doesn't have any Type defined");
 				return false;
 			}
-			if (env.getContextRelations().get(i).getInitialComplexEvent() == null){
-				MessageDialog.openError(null, "Error", "The Context Relation "+ env.getContextRelations().get(i).getName() + " doesn't have an Initial Event defined");
-				return false;
-			}
-			if (env.getContextRelations().get(i).getEndingComplexEvent() == null){
-				MessageDialog.openError(null, "Error", "The Context Relation "+ env.getContextRelations().get(i).getName() + " doesn't have an Ending Event defined");
-				return false;
-			}
 		}
 		
 		// Validate Behavioral Descriptions

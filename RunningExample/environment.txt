@@ -1,0 +1,276 @@
+% ****************** Environment Description ******************
+
+% ********* Context Description *********
+
+% ***** Types and Instances *****
+
+loc(r01).
+cam(cctv1).
+read(nfc1).
+comp(m1).
+comp(m2).
+comp(m3).
+fi(doc).
+emp(bob).
+emp(alice).
+st(usb1).
+
+
+% **** Context Relations ****
+
+fluent(isAccessedControlledBy(L,R)):-
+	loc(L), read(R).
+fluent(isMonitoredBy(L,C)):-
+	loc(L), cam(C).
+fluent(isLocatedIn(C,L)):-
+	comp(C), loc(L).
+fluent(in(E,L)):-
+	emp(E), loc(L).
+fluent(logged(E,C)):-
+	emp(E), comp(C).
+fluent(hasBadge(E,L)):-
+	emp(E), loc(L).
+fluent(hasPermission(E,C)):-
+	emp(E), comp(C).
+fluent(isStoredIn(F,C)):-
+	fi(F), comp(C).
+fluent(mounted(S,C)):-
+	st(S), comp(C).
+
+
+% ********* Behaviour Description *********
+
+% ***** Primitive Events *****
+
+event(V):-
+	pe(V).
+
+
+pe(highMountCounts(S, C)):-
+	st(S), comp(C).
+
+pe(sys_copy(E, F, C)):-
+	emp(E), fi(F), comp(C).
+
+pe(sys_mount(S, C)):-
+	st(S), comp(C).
+
+pe(sys_Unmount(S, C)):-
+	st(S), comp(C).
+
+pe(sys_Login(E, C)):-
+	emp(E), comp(C).
+
+pe(sys_Logout(E, C)):-
+	emp(E), comp(C).
+
+pe(swipeCard(E, R)):-
+	emp(E), read(R).
+
+pe(cctvAccess(E, L, C)):-
+	emp(E), loc(L), cam(C).
+
+pe(cctvExit(E, L, C)):-
+	emp(E), loc(L), cam(C).
+
+% ***** Complex Events *****
+
+event(V):-
+ce(V).
+
+ce(enter(E, L)):-
+	emp(E), loc(L).
+
+ce(exit(E, L)):-
+	emp(E), loc(L).
+
+ce(mount(S, C)):-
+	st(S), comp(C).
+
+ce(unMount(S, C)):-
+	st(S), comp(C).
+
+ce(login(E, C)):-
+	emp(E), comp(C).
+
+ce(logout(E, C)):-
+	emp(E), comp(C).
+
+ce(copy(E, F, C)):-
+	emp(E), fi(F), comp(C).
+
+
+% ***** Composite Definitions *****
+
+happens(enter(E, L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T1),
+	time(T2),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T1,TR),
+	holdsAt(isAccessedControlledBy(L,R),T2,TR),
+	holdsAt(isMonitoredBy(L,C),T2,TR),
+	happens(swipeCard(E,R),T1,TR),
+	happens(cctvAccess(E,L,C),T2,TR),
+	neg_holdsAt_between(T1,in(E,L),T2,TR).
+
+happens(enter(E, L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T2),
+	time(T1),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T2,TR),
+	holdsAt(isAccessedControlledBy(L,R),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	happens(swipeCard(E,R),T2,TR),
+	happens(cctvAccess(E,L,C),T1,TR),
+	neg_holdsAt_between(T1,in(E,L),T2,TR).
+
+happens(enter(E, L),T1,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T1),
+	holdsAt(hasBadge(E,L),T1,TR),
+	not holdsAt(in(E,L),T1,TR),
+	holdsAt(isAccessedControlledBy(L,R),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	happens(swipeCard(E,R),T1,TR),
+	happens(cctvAccess(E,L,C),T1,TR).
+
+happens(exit(E, L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T1),
+	time(T2),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T1,TR),
+	holdsAt(isAccessedControlledBy(L,R),T2,TR),
+	holdsAt(isMonitoredBy(L,C),T2,TR),
+	happens(swipeCard(E,R),T1,TR),
+	happens(cctvExit(E,L,C),T2,TR),
+	holdsAt_between(T1,in(E,L),T2,TR).
+
+happens(exit(E, L),T2,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T2),
+	time(T1),
+	T1<T2,
+	holdsAt(hasBadge(E,L),T2,TR),
+	holdsAt(isAccessedControlledBy(L,R),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	happens(swipeCard(E,R),T2,TR),
+	happens(cctvExit(E,L,C),T1,TR),
+	holdsAt_between(T1,in(E,L),T2,TR).
+
+happens(exit(E, L),T1,TR):-
+	trace(TR),
+	emp(E),
+	loc(L),
+	read(R),
+	cam(C),
+	time(T1),
+	holdsAt(hasBadge(E,L),T1,TR),
+	holdsAt(in(E,L),T1,TR),
+	holdsAt(isAccessedControlledBy(L,R),T1,TR),
+	holdsAt(isMonitoredBy(L,C),T1,TR),
+	happens(swipeCard(E,R),T1,TR),
+	happens(cctvExit(E,L,C),T1,TR).
+
+happens(login(E, C),T1,TR):-
+	trace(TR),
+	emp(E2),
+	loc(L),
+	comp(C),
+	emp(E),
+	time(T1),
+	holdsAt(in(E2,L),T1,TR),
+	holdsAt(isLocatedIn(C,L),T1,TR),
+	holdsAt(hasPermission(E,C),T1,TR),
+	happens(sys_Login(E,C),T1,TR).
+
+happens(logout(E, C),T1,TR):-
+	trace(TR),
+	emp(E),
+	comp(C),
+	time(T1),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_Logout(E,C),T1,TR).
+
+happens(mount(S, C),T1,TR):-
+	trace(TR),
+	st(S),
+	comp(C),
+	emp(E),
+	time(T1),
+	not holdsAt(mounted(S,C),T1,TR),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_mount(S,C),T1,TR).
+
+happens(unMount(S, C),T1,TR):-
+	trace(TR),
+	st(S),
+	comp(C),
+	time(T1),
+	holdsAt(mounted(S,C),T1,TR),
+	happens(sys_Unmount(S,C),T1,TR).
+
+happens(copy(E, F, C),T1,TR):-
+	trace(TR),
+	fi(F),
+	comp(C),
+	emp(E),
+	time(T1),
+	holdsAt(isStoredIn(F,C),T1,TR),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_copy(E,F,C),T1,TR).
+
+
+
+% +++ Context Relation Definitions +++
+
+initiates(enter(E, L),in(E,L), T):-
+	emp(E),	loc(L), time(T).
+terminates(exit(E, L),in(E,L), T):-
+	emp(E),	loc(L), time(T).
+initiates(login(E, C),logged(E,C), T):-
+	emp(E),	comp(C), time(T).
+terminates(logout(E, C),logged(E,C), T):-
+	emp(E),	comp(C), time(T).
+initiates(mount(S, C),mounted(S,C), T):-
+	st(S),	comp(C), time(T).
+terminates(unMount(S, C),mounted(S,C), T):-
+	st(S),	comp(C), time(T).
+
+% Initial state 
+
+initially(isMonitoredBy(r01,cctv1)).
+initially(isAccessedControlledBy(r01,nfc1)).
+initially(isLocatedIn(m1,r01)).
+initially(isStoredIn(doc,m1)).
+initially(hasBadge(alice,r01)).
+initially(hasPermission(alice,m1)).
+initially(hasPermission(alice,m3)).
+initially(hasBadge(bob,r01)).
+initially(hasPermission(bob,m1)).
+initially(hasPermission(bob,m2)).
+
+% Version 3
+% Time: 16:30
