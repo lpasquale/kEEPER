@@ -64,8 +64,6 @@ public abstract class EventImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<GeneralTypeReference> types;
-
-	protected ArrayList<Parameter> correctedParams; 
 	
 	/**
 	 * <!-- begin-user-doc -->
