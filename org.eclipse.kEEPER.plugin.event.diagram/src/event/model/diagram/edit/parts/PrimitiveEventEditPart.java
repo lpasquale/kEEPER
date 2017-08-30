@@ -120,10 +120,10 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 						System.out.println("Creating the agent...");
 						Thread.sleep(2000);
 						if (pe.getAgent() == null) {
-						//	agentCreation();
+							agentCreation();
 						}
 						if (pe.getObserver() == null) {
-						//	observerCreation();
+							observerCreation();
 						} 
 					} catch (InterruptedException v) {
 						System.out.println(v);
@@ -330,7 +330,7 @@ public class PrimitiveEventEditPart extends AbstractBorderedShapeEditPart {
 				editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(agentOperation));
 			}
 		}
-		// Refresh the diagram (it allows to render the connection between the Event and the Parameter
+		// Refresh the diagram (it allows to render the connection between the Event and the Parameter)
 		Display.getDefault().asyncExec(new Runnable() {
 			public void run() {
 				editor.getDiagramEditPart().addNotify();

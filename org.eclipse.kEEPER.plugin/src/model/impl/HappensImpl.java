@@ -76,10 +76,6 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 */
 	protected EList<Parameter> parameters;
 
-	protected ArrayList<Parameter> correctedParam;
-	
-	protected boolean parametersChanged;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,20 +104,6 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 		return time;
 	}
 
-	public ArrayList<Parameter> getCorrectedParam() {
-		return correctedParam;
-	}
-
-	public void setCorrectedParam(ArrayList<Parameter> correctedParam) {
-		this.correctedParam = correctedParam;
-	}
-	
-	public boolean haveParametersChanged(){
-		return parametersChanged;
-	}
-	public void setParametersChanged(boolean flag){
-		parametersChanged = flag;
-	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

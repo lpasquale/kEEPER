@@ -94,8 +94,5 @@ public interface Happens extends EObject {
 	 */
 	EList<Parameter> getParameters();
 
-	boolean haveParametersChanged();
-	
-	void setParametersChanged(boolean flag);
 	
 } // Happens

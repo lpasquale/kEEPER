@@ -48,10 +48,7 @@ public interface Parameter extends EObject {
 	 * @generated
 	 */
 	void setPosition(int value);
-
-	void setNewNumber(int newNumber);
-
-	int getNewNumber();
+	
 	/**
 	 * Returns the value of the '<em><b>Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->

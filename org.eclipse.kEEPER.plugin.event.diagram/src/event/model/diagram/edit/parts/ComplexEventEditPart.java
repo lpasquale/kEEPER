@@ -115,7 +115,7 @@ public class ComplexEventEditPart extends AbstractBorderedShapeEditPart {
 						System.out.println("Creating the agent...");
 						Thread.sleep(2000);
 						if (ce.getAgent() == null) {
-						//	agentCreation();
+							agentCreation();
 						}
 					} catch (InterruptedException v) {
 						System.out.println(v);

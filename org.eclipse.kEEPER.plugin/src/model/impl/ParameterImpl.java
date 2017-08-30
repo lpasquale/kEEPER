@@ -49,8 +49,6 @@ public abstract class ParameterImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	protected int position = POSITION_EDEFAULT;
 
-	protected int newNumber;
-	
 	/**
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -121,14 +119,6 @@ public abstract class ParameterImpl extends MinimalEObjectImpl.Container impleme
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__POSITION, oldPosition, position));
 	}
 
-	public void setNewNumber(int newNumber) {
-		this.newNumber = newNumber;
-	}
-	
-	public int getNewNumber(){
-		return newNumber;
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

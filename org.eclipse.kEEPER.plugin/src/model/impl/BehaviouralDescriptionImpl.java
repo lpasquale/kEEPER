@@ -176,8 +176,6 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected boolean any = ANY_EDEFAULT;
 
-				protected Map<String, Integer> m = new HashMap<String, Integer>();
-
 	//private ModelDiagramEditor editor;
 
 	/**
