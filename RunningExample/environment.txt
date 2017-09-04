@@ -247,9 +247,9 @@ happens(copy(E, F, C),T1,TR):-
 % +++ Context Relation Definitions +++
 
 initiates(enter(E, L),in(E,L), T):-
-	emp(E),	loc(L), time(T).
+	loc(L),	emp(E), time(T).
 terminates(exit(E, L),in(E,L), T):-
-	emp(E),	loc(L), time(T).
+	loc(L),	emp(E), time(T).
 initiates(login(E, C),logged(E,C), T):-
 	emp(E),	comp(C), time(T).
 terminates(logout(E, C),logged(E,C), T):-
@@ -273,4 +273,4 @@ initially(hasPermission(bob,m1)).
 initially(hasPermission(bob,m2)).
 
 % Version 3
-% Time: 16:30
+% Time: 16:12

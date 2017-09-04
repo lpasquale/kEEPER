@@ -64,19 +64,19 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_vhZ44HOTEeefi6Ox0qOtUQ" type="5015"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_vhaf8HOTEeefi6Ox0qOtUQ" type="5016"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:Type" href="default.typeInstanceModel#//@types.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vhZR0XOTEeefi6Ox0qOtUQ" x="532" y="40"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vhZR0XOTEeefi6Ox0qOtUQ" x="528" y="40"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_wsi2UHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_wsjdYHOTEeefi6Ox0qOtUQ" type="5001"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_wsjdYXOTEeefi6Ox0qOtUQ" type="5003"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wsi2UXOTEeefi6Ox0qOtUQ" x="684" y="44"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wsi2UXOTEeefi6Ox0qOtUQ" x="696" y="40"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ysxBoHOTEeefi6Ox0qOtUQ" type="2009" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_ysxosHOTEeefi6Ox0qOtUQ" type="5009"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_ysxosXOTEeefi6Ox0qOtUQ" type="5010"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:Agent" href="default.typeInstanceModel#//@types.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ysxBoXOTEeefi6Ox0qOtUQ" x="524" y="185"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ysxBoXOTEeefi6Ox0qOtUQ" x="520" y="184"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_zlL3YHOTEeefi6Ox0qOtUQ" type="2005" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_zlL3YnOTEeefi6Ox0qOtUQ" type="5001"/>
@@ -88,7 +88,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_zvdNsHOTEeefi6Ox0qOtUQ" type="5001"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_zvdNsXOTEeefi6Ox0qOtUQ" type="5003"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zvcmoXOTEeefi6Ox0qOtUQ" x="700" y="228"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zvcmoXOTEeefi6Ox0qOtUQ" x="696" y="228"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_8YI6wHOTEeefi6Ox0qOtUQ" type="2009" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_8YI6wnOTEeefi6Ox0qOtUQ" type="5009"/>
@@ -100,7 +100,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_9Gf1knOTEeefi6Ox0qOtUQ" type="5001"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_9Gf1k3OTEeefi6Ox0qOtUQ" type="5003"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.typeInstanceModel#//@instances.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Gf1kXOTEeefi6Ox0qOtUQ" x="700" y="320"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Gf1kXOTEeefi6Ox0qOtUQ" x="696" y="320"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_bqguUXOQEeefi6Ox0qOtUQ"/>
   <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.typeInstanceModel#/"/>

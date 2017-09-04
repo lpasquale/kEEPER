@@ -355,7 +355,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_AGLV8XOYEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AGKu4XOYEeeHxf0U_KUd8w" x="592" y="1156"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AGKu4XOYEeeHxf0U_KUd8w" x="580" y="1152"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Au8mIHOYEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_Au9NMHOYEeeHxf0U_KUd8w" type="5014">
