@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_e2e" types="//@generalTypeReferences.0 //@generalTypeReferences.1 //@generalTypeReferences.2" agent="//@agentReferences.0" observer="//@observerReferences.0"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_e2ext" types="//@generalTypeReferences.3 //@generalTypeReferences.4 //@generalTypeReferences.5" agent="//@agentReferences.1" observer="//@observerReferences.1"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_ext2ext" types="//@generalTypeReferences.6 //@generalTypeReferences.7" agent="//@agentReferences.2" observer="//@observerReferences.2"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_e2e" types="//@generalTypeReferences.8 //@generalTypeReferences.9" agent="//@agentReferences.3" observer="//@observerReferences.3"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_e2ext" types="//@generalTypeReferences.10 //@generalTypeReferences.11" agent="//@agentReferences.4" observer="//@observerReferences.4"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_ext2e" types="//@generalTypeReferences.12 //@generalTypeReferences.13" agent="//@agentReferences.5" observer="//@observerReferences.5"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_ext2ext" types="//@generalTypeReferences.14 //@generalTypeReferences.15" agent="//@agentReferences.6" observer="//@observerReferences.6"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_login" types="//@generalTypeReferences.16" agent="//@agentReferences.7" observer="//@observerReferences.7"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_logout" agent="//@agentReferences.8" observer="//@observerReferences.8"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_mount" agent="//@agentReferences.9" observer="//@observerReferences.9"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_unmount" agent="//@agentReferences.10" observer="//@observerReferences.10"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_copy" types="//@generalTypeReferences.17" agent="//@agentReferences.11" observer="//@observerReferences.11"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_install" agent="//@agentReferences.12" observer="//@observerReferences.12"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="sys_uninstall" agent="//@agentReferences.13" observer="//@observerReferences.13"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="web_connection" types="//@generalTypeReferences.18" agent="//@agentReferences.14" observer="//@observerReferences.14"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_ext2e" types="//@generalTypeReferences.19 //@generalTypeReferences.20 //@generalTypeReferences.21" agent="//@agentReferences.15" observer="//@observerReferences.15"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="emailSentE2E" types="//@generalTypeReferences.22 //@generalTypeReferences.23 //@generalTypeReferences.24" agent="//@agentReferences.16"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="emailSentE2Ext" types="//@generalTypeReferences.25 //@generalTypeReferences.26 //@generalTypeReferences.27" agent="//@agentReferences.17"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="emailSentExt2ExtS" types="//@generalTypeReferences.28 //@generalTypeReferences.29 //@generalTypeReferences.30" agent="//@agentReferences.18"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="emailSentExt2ExtD" types="//@generalTypeReferences.31 //@generalTypeReferences.32 //@generalTypeReferences.33" agent="//@agentReferences.19"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="recEmailReqE2E" types="//@generalTypeReferences.34 //@generalTypeReferences.35" agent="//@agentReferences.20"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="recEmailReqExt2E" types="//@generalTypeReferences.36 //@generalTypeReferences.37" agent="//@agentReferences.21"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="answerEmailE2E" types="//@generalTypeReferences.38 //@generalTypeReferences.39 //@generalTypeReferences.40 //@generalTypeReferences.41" agent="//@agentReferences.22"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="answerEmailE2Ext" types="//@generalTypeReferences.42 //@generalTypeReferences.43 //@generalTypeReferences.44 //@generalTypeReferences.45" agent="//@agentReferences.23"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="login" types="//@generalTypeReferences.46" agent="//@agentReferences.24"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="logout" types="//@generalTypeReferences.47" agent="//@agentReferences.25"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="mount" types="//@generalTypeReferences.48" agent="//@agentReferences.26"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="unmount" types="//@generalTypeReferences.49" agent="//@agentReferences.27"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="copy" types="//@generalTypeReferences.50 //@generalTypeReferences.51" agent="//@agentReferences.28"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="install" types="//@generalTypeReferences.52" agent="//@agentReferences.29"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="uninstall" types="//@generalTypeReferences.53" agent="//@agentReferences.30"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="webConnection" types="//@generalTypeReferences.54 //@generalTypeReferences.55" agent="//@agentReferences.31"/>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.14"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.14"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.13"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.13"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.2"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.14"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.14"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.13"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.13"/>
+  </agentReferences>
+  <agentReferences>
+    <reference href="default.typeInstanceModel#//@types.2"/>
+  </agentReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <observerReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </observerReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.4"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.7"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.4"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.5"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.7"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.8"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.11"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.1"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.3"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.9"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.0"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.6"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.1"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+</org.eclipse.minorityReportPlugin:Environment>
