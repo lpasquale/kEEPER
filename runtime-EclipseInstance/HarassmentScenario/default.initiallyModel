@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <instances name="lily"/>
+  <instances name="chemistry"/>
+  <instances name="amy"/>
+  <instances name="chemistry"/>
+  <instances name="amy"/>
+  <instances name="aamy"/>
+  <instances name="lily"/>
+  <instances name="alily"/>
+  <instances name="r1"/>
+  <instances name="uni"/>
+  <instances name="r2"/>
+  <instances name="res"/>
+  <instances name="amy"/>
+  <instances name="uni"/>
+  <instances name="amy"/>
+  <instances name="res"/>
+  <instances name="lily"/>
+  <instances name="uni"/>
+  <initials instances="//@instances.0 //@instances.1">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.1"/>
+  </initials>
+  <initials instances="//@instances.2 //@instances.3">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.0"/>
+  </initials>
+  <initials instances="//@instances.4 //@instances.5">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.2"/>
+  </initials>
+  <initials instances="//@instances.6 //@instances.7">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.3"/>
+  </initials>
+  <initials instances="//@instances.8 //@instances.9">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.4"/>
+  </initials>
+  <initials instances="//@instances.10 //@instances.11">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.4"/>
+  </initials>
+  <initials instances="//@instances.12 //@instances.13">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.5"/>
+  </initials>
+  <initials instances="//@instances.14 //@instances.15">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.5"/>
+  </initials>
+  <initials instances="//@instances.16 //@instances.17">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.6"/>
+  </initials>
+</org.eclipse.minorityReportPlugin:Environment>

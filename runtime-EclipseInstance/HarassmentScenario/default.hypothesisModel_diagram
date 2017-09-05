@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin" xmi:id="_34T1UJKTEee0joFU4EaysA" type="Hypothesis Model" name="default.hypothesisModel_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_4paiIJKTEee0joFU4EaysA" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Hypothesis" href="default.hypothesisModel#//@hypothesis.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4paiIZKTEee0joFU4EaysA" x="24" y="20"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_6lxhIJKTEee0joFU4EaysA" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Happens" href="default.hypothesisModel#//@happens.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6lxhIZKTEee0joFU4EaysA" x="324" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8flicJKTEee0joFU4EaysA" type="2005" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:AgentParam" href="default.hypothesisModel#//@parameters.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8flicZKTEee0joFU4EaysA" x="324" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8fvTcJKTEee0joFU4EaysA" type="2006" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:GeneralParam" href="default.hypothesisModel#//@parameters.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8fvTcZKTEee0joFU4EaysA" x="324" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8f2oMJKTEee0joFU4EaysA" type="2006" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:GeneralParam" href="default.hypothesisModel#//@parameters.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8f2oMZKTEee0joFU4EaysA" x="324" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9cXTwJKTEee0joFU4EaysA" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Hypothesis" href="default.hypothesisModel#//@hypothesis.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9cXTwZKTEee0joFU4EaysA" x="312" y="20"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_BJBLsJKUEee0joFU4EaysA" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Happens" href="default.hypothesisModel#//@happens.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BJBLsZKUEee0joFU4EaysA" x="612" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CK11EJKUEee0joFU4EaysA" type="2005" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:AgentParam" href="default.hypothesisModel#//@parameters.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK11EZKUEee0joFU4EaysA" x="612" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CK-X8JKUEee0joFU4EaysA" type="2006" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:GeneralParam" href="default.hypothesisModel#//@parameters.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK-X8ZKUEee0joFU4EaysA" x="612" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CcLcsJKUEee0joFU4EaysA" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Hypothesis" href="default.hypothesisModel#//@hypothesis.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CcLcsZKUEee0joFU4EaysA" x="24" y="248"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_F1jMQJKUEee0joFU4EaysA" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Happens" href="default.hypothesisModel#//@happens.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F1jMQZKUEee0joFU4EaysA" x="291" y="232"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Gyv0UJKUEee0joFU4EaysA" type="2005" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:AgentParam" href="default.hypothesisModel#//@parameters.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gyv0UZKUEee0joFU4EaysA" x="291" y="232"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Gy4XMJKUEee0joFU4EaysA" type="2006" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:GeneralParam" href="default.hypothesisModel#//@parameters.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gy4XMZKUEee0joFU4EaysA" x="291" y="232"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_34T1UZKTEee0joFU4EaysA"/>
+  <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.hypothesisModel#/"/>
+</notation:Diagram>

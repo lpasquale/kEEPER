@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="addr"/>
+  <types name="sendAddr"/>
+  <types name="recAddr"/>
+  <types name="faddr"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="email"/>
+  <types name="course"/>
+  <types name="loc"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Observer" name="rout"/>
+  <types name="ip"/>
+  <types name="sendIp"/>
+  <types name="recIp"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="browser"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="acad"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="stud"/>
+  <instances name="lily" type="//@types.12"/>
+  <instances name="amy" type="//@types.13"/>
+  <instances name="alily" type="//@types.0"/>
+  <instances name="aamy" type="//@types.0"/>
+  <instances name="alily" type="//@types.1"/>
+  <instances name="aamy" type="//@types.1"/>
+  <instances name="alily" type="//@types.2"/>
+  <instances name="aamy" type="//@types.2"/>
+  <instances name="nobodyAtNitrobaDotOrg" type="//@types.3"/>
+  <instances name="e1" type="//@types.4"/>
+  <instances name="chemistry" type="//@types.5"/>
+  <instances name="uni" type="//@types.6"/>
+  <instances name="res" type="//@types.6"/>
+  <instances name="r1" type="//@types.7"/>
+  <instances name="r2" type="//@types.7"/>
+  <instances name="ip1" type="//@types.8"/>
+  <instances name="ip2" type="//@types.8"/>
+  <instances name="ip1" type="//@types.9"/>
+  <instances name="ip2" type="//@types.9"/>
+  <instances name="ip1" type="//@types.10"/>
+  <instances name="ip2" type="//@types.10"/>
+  <instances name="b1" type="//@types.11"/>
+</org.eclipse.minorityReportPlugin:Environment>

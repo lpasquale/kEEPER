@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="P1">
+    <generalType href="default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <happens time="1" parameters="//@parameters.0 //@parameters.1 //@parameters.2">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.6"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.3 //@parameters.4">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.10"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.5 //@parameters.6">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.11"/>
+  </happens>
+  <hypothesis happens="//@happens.0" name="h1" timeInstants="1"/>
+  <hypothesis happens="//@happens.1" name="h2" timeInstants="1"/>
+  <hypothesis happens="//@happens.2" name="h3" timeInstants="1"/>
+</org.eclipse.minorityReportPlugin:Environment>
