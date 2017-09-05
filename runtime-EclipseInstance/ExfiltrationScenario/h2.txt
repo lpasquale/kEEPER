@@ -1,0 +1,11 @@
+hypothesis(h2,T1,TR):-
+	trace(TR),
+	email(E),
+	fi(m57plan),
+	emp(P),
+	extAddr(S),
+	email(E1),
+	time(T1),
+	happens(emailSentE2Ext(E,m57plan,P,S),T1,TR),
+	happens(recEmailReqExt2E(E1,S,P),T1,TR).
+

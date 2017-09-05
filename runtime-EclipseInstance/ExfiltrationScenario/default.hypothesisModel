@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="P2">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="P2">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="S">
+    <generalType href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="E2">
+    <generalType href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="P1">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="5" name="P2">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="E2">
+    <generalType href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="P">
+    <generalType href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="5" name="S">
+    <generalType href="default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="S">
+    <generalType href="default.typeInstanceModel#//@types.14"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="P">
+    <agent href="default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="B">
+    <agent href="default.typeInstanceModel#//@types.2"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="U">
+    <generalType href="default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="U">
+    <generalType href="default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="U">
+    <generalType href="default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="A">
+    <generalType href="default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="A">
+    <agent href="default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="A">
+    <generalType href="default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="m57plan">
+    <generalType href="default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.24 //@parameters.25">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.6"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.29 //@parameters.30">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.2"/>
+  </holdsAts>
+  <holdsAts time="1" parameters="//@parameters.34">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.8"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.35">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.8"/>
+  </holdsAts>
+  <holdsAts time="-1">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.10"/>
+  </holdsAts>
+  <holdsAts time="1" parameters="//@parameters.36 //@parameters.37">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.9"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.40">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.7"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.41 //@parameters.42">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.2"/>
+  </holdsAts>
+  <happens time="1" parameters="//@parameters.0 //@parameters.1 //@parameters.2 //@parameters.3">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.16"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.4 //@parameters.5 //@parameters.6">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.20"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.7 //@parameters.8 //@parameters.9 //@parameters.10">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.17"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.11 //@parameters.12 //@parameters.13">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.21"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.14 //@parameters.15 //@parameters.16 //@parameters.17 //@parameters.18">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.22"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.19 //@parameters.20 //@parameters.21 //@parameters.22 //@parameters.23">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.23"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.26 //@parameters.27 //@parameters.28">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.28"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.31 //@parameters.32 //@parameters.33">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.31"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.38 //@parameters.39">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.29"/>
+  </happens>
+  <hypothesis happens="//@happens.0 //@happens.1" name="h1" timeInstants="1"/>
+  <hypothesis happens="//@happens.2 //@happens.3" name="h2" timeInstants="1"/>
+  <hypothesis happens="//@happens.4" name="h3" timeInstants="1"/>
+  <hypothesis happens="//@happens.5" name="h4" timeInstants="1"/>
+  <hypothesis holdsAts="//@holdsAts.0" happens="//@happens.6" name="h5" timeInstants="1"/>
+  <hypothesis holdsAts="//@holdsAts.1 //@holdsAts.3 //@holdsAts.4 //@holdsAts.5 //@holdsAts.6 //@holdsAts.7" happens="//@happens.7 //@happens.8" name="h6" timeInstants="1"/>
+</org.eclipse.minorityReportPlugin:Environment>

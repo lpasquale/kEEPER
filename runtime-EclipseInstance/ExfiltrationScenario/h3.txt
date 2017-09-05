@@ -1,0 +1,10 @@
+hypothesis(h3,T1,TR):-
+	trace(TR),
+	email(E1),
+	email(E2),
+	fi(m57plan),
+	emp(P1),
+	emp(P2),
+	time(T1),
+	happens(answerEmailE2E(E1,E2,m57plan,P1,P2),T1,TR).
+

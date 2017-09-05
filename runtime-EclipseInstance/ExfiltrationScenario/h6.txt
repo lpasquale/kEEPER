@@ -1,0 +1,19 @@
+hypothesis(h6,T1,TR):-
+	trace(TR),
+	fi(m57plan),
+	comp(C),
+	url(U),
+	app(A),
+	browser(B),
+	time(T1),
+	time(T-1),
+	T-1<T1,
+	holdsAt(isStoredIn(m57plan,C),T1,TR),
+	holdsAt(isBlackListed(U),T1,TR),
+	not holdsAt(isInstalled(,T-1,TR),
+	not holdsAt(installed(A,C),T1,TR),
+	holdsAt(isMalware(A),T1,TR),
+	holdsAt(isStoredIn(m57plan,C),T1,TR),
+	happens(webConnection(B,U,C),T1,TR),
+	happens(install(A,C),T1,TR).
+

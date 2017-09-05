@@ -1,0 +1,429 @@
+% ****************** Environment Description ******************
+
+% ********* Context Description *********
+
+% ***** Types and Instances *****
+
+comp(m1).
+comp(m2).
+emp(alison).
+emp(jean).
+emp(bob).
+url(url1).
+url(url2).
+browser(b1).
+browser(b2).
+addr(aalison).
+addr(ajean).
+extAddr(abob).
+extAddr(atuck).
+email(e1).
+role(president).
+role(cfo).
+pwd(pwdJean).
+pwd(pwdAlison).
+fi(m57plan).
+app(app1).
+app(app2).
+st(usb1).
+
+
+% **** Context Relations ****
+
+fluent(logged(E,C)):-
+	emp(E), comp(C).
+fluent(hasPermission(E,C)):-
+	emp(E), comp(C).
+fluent(isStoredIn(F,C)):-
+	fi(F), comp(C).
+fluent(hasEmail2(E,R)):-
+	emp(E), recAddr(R).
+fluent(hasPwd(E,P)):-
+	emp(E), pwd(P).
+fluent(hasRole(E,R)):-
+	emp(E), role(R).
+fluent(mounted(S,C)):-
+	st(S), comp(C).
+fluent(isMalware(A)):-
+	app(A).
+fluent(isBlackListed(U)):-
+	url(U).
+fluent(installed(A,C)):-
+	app(A), comp(C).
+fluent(isInstalled(B,C)):-
+	browser(B), comp(C).
+fluent(hasEmail(E,S)):-
+	emp(E), sendAddr(S).
+fluent(hasEmail3(E,A)):-
+	emp(E), addr(A).
+
+
+% ********* Behaviour Description *********
+
+% ***** Primitive Events *****
+
+event(V):-
+	pe(V).
+
+
+pe(send_email_e2e(E, F, R, S, C)):-
+	email(E), fi(F), recAddr(R), sendAddr(S), comp(C).
+
+pe(send_email_e2ext(E, F, A, E, C)):-
+	email(E), fi(F), addr(A), extAddr(E), comp(C).
+
+pe(send_email_ext2ext(E, S, R, F, C)):-
+	email(E), sendExtAddr(S), recExtAddr(R), fi(F), comp(C).
+
+pe(rec_email_req_e2e(E, S, R, C)):-
+	email(E), sendAddr(S), recAddr(R), comp(C).
+
+pe(rec_email_req_e2ext(E, A, E, C)):-
+	email(E), addr(A), extAddr(E), comp(C).
+
+pe(rec_email_req_ext2e(E, E, A, C)):-
+	email(E), extAddr(E), addr(A), comp(C).
+
+pe(rec_email_req_ext2ext(E, S, R, C)):-
+	email(E), sendExtAddr(S), recExtAddr(R), comp(C).
+
+pe(sys_login(E, P, C)):-
+	emp(E), pwd(P), comp(C).
+
+pe(sys_logout(E, C)):-
+	emp(E), comp(C).
+
+pe(sys_mount(S, C)):-
+	st(S), comp(C).
+
+pe(sys_unmount(S, C)):-
+	st(S), comp(C).
+
+pe(sys_copy(E, F, C)):-
+	emp(E), fi(F), comp(C).
+
+pe(sys_install(A, C)):-
+	app(A), comp(C).
+
+pe(sys_uninstall(A, C)):-
+	app(A), comp(C).
+
+pe(web_connection(B, U, C)):-
+	browser(B), url(U), comp(C).
+
+pe(send_email_ext2e(E, F, E, A, C)):-
+	email(E), fi(F), extAddr(E), addr(A), comp(C).
+
+% ***** Complex Events *****
+
+event(V):-
+ce(V).
+
+ce(emailSentE2E(E, F, E, E)):-
+	email(E), fi(F), emp(E), emp(E).
+
+ce(emailSentE2Ext(E, F, E, E)):-
+	email(E), fi(F), emp(E), extAddr(E).
+
+ce(emailSentExt2ExtS(E, F, E, E)):-
+	email(E), fi(F), emp(E), extAddr(E).
+
+ce(emailSentExt2ExtD(E, F, E, E)):-
+	email(E), fi(F), emp(E), extAddr(E).
+
+ce(recEmailReqE2E(E, E, E)):-
+	email(E), emp(E), emp(E).
+
+ce(recEmailReqExt2E(E, E, E)):-
+	email(E), extAddr(E), emp(E).
+
+ce(answerEmailE2E(E, E, F, E, E)):-
+	email(E), email(E), fi(F), emp(E), emp(E).
+
+ce(answerEmailE2Ext(E, E, F, E, E)):-
+	email(E), email(E), fi(F), emp(E), extAddr(E).
+
+ce(login(E, C)):-
+	emp(E), comp(C).
+
+ce(logout(E, C)):-
+	emp(E), comp(C).
+
+ce(mount(S, C)):-
+	st(S), comp(C).
+
+ce(unmount(S, C)):-
+	st(S), comp(C).
+
+ce(copy(E, F, C)):-
+	emp(E), fi(F), comp(C).
+
+ce(install(A, C)):-
+	app(A), comp(C).
+
+ce(uninstall(A, C)):-
+	app(A), comp(C).
+
+ce(webConnection(B, U, C)):-
+	browser(B), url(U), comp(C).
+
+
+% ***** Composite Definitions *****
+
+happens(login(E, C),T1,TR):-
+	trace(TR),
+	emp(E),
+	comp(C),
+	pwd(P),
+	time(T1),
+	holdsAt(hasPermission(E,C),T1,TR),
+	holdsAt(hasPwd(E,P),T1,TR),
+	happens(sys_login(E,P,C),T1,TR).
+
+happens(logout(E, C),T1,TR):-
+	trace(TR),
+	emp(E),
+	comp(C),
+	time(T1),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_logout(E,C),T1,TR).
+
+happens(emailSentE2E(E, F, E, E),T1,TR):-
+	trace(TR),
+	emp(P1),
+	sendAddr(S),
+	comp(C),
+	emp(P2),
+	recAddr(R),
+	email(E),
+	fi(A),
+	time(T1),
+	holdsAt(hasEmail(P1,S),T1,TR),
+	holdsAt(logged(P1,C),T1,TR),
+	holdsAt(hasEmail2(P2,R),T1,TR),
+	happens(send_email_e2e(E,A,R,S,C),T1,TR).
+
+happens(emailSentE2E(E, F, E, E),T1,TR):-
+	trace(TR),
+	emp(P2),
+	recAddr(R),
+	emp(P1),
+	comp(C),
+	email(E),
+	fi(A),
+	extAddr(S),
+	time(T1),
+	holdsAt(hasEmail2(P2,R),T1,TR),
+	holdsAt(logged(P1,C),T1,TR),
+	happens(send_email_ext2e(E,A,S,R,C),T1,TR).
+
+happens(emailSentE2Ext(E, F, E, E),T1,TR):-
+	trace(TR),
+	emp(P),
+	addr(S),
+	comp(C),
+	email(E),
+	fi(A),
+	addr(R),
+	time(T1),
+	holdsAt(hasEmail3(P,S),T1,TR),
+	holdsAt(logged(P,C),T1,TR),
+	happens(send_email_e2ext(E,A,R,S,C),T1,TR).
+
+happens(emailSentExt2ExtS(E, F, E, E),T1,TR):-
+	trace(TR),
+	emp(P),
+	comp(C),
+	email(E),
+	sendExtAddr(S),
+	recExtAddr(R),
+	fi(A),
+	time(T1),
+	holdsAt(logged(P,C),T1,TR),
+	happens(send_email_ext2ext(E,S,R,A,C),T1,TR).
+
+happens(emailSentExt2ExtD(E, F, E, E),T1,TR):-
+	trace(TR),
+	emp(P),
+	comp(C),
+	email(E),
+	sendExtAddr(S),
+	recExtAddr(R),
+	fi(A),
+	time(T1),
+	holdsAt(logged(P,C),T1,TR),
+	happens(send_email_ext2ext(E,S,R,A,C),T1,TR).
+
+happens(recEmailReqE2E(E, E, E),T1,TR):-
+	trace(TR),
+	emp(P2),
+	recAddr(R),
+	emp(P1),
+	sendAddr(S),
+	comp(C),
+	email(E),
+	time(T1),
+	holdsAt(hasEmail2(P2,R),T1,TR),
+	holdsAt(hasEmail(P1,S),T1,TR),
+	holdsAt(logged(P2,C),T1,TR),
+	happens(rec_email_req_e2e(E,S,R,C),T1,TR).
+
+happens(recEmailReqExt2E(E, E, E),T1,TR):-
+	trace(TR),
+	emp(P),
+	addr(R),
+	comp(C),
+	email(E),
+	extAddr(S),
+	time(T1),
+	holdsAt(hasEmail3(P,R),T1,TR),
+	holdsAt(logged(P,C),T1,TR),
+	happens(rec_email_req_ext2e(E,S,R,C),T1,TR).
+
+happens(recEmailReqExt2E(E, E, E),T1,TR):-
+	trace(TR),
+	emp(P),
+	comp(C),
+	email(E),
+	sendExtAddr(S),
+	recExtAddr(R),
+	time(T1),
+	holdsAt(logged(P,C),T1,TR),
+	happens(rec_email_req_ext2ext(E,S,R,C),T1,TR).
+
+happens(answerEmailE2E(E, E, F, E, E),T2,TR):-
+	trace(TR),
+	email(E1),
+	emp(P2),
+	emp(P1),
+	email(E2),
+	fi(A),
+	time(T1),
+	time(T2),
+	T1<T2,
+	happens(recEmailReqE2E(E1,P2,P1),T1,TR),
+	happens(emailSentE2E(E2,A,P1,P2),T2,TR).
+
+happens(answerEmailE2Ext(E, E, F, E, E),T2,TR):-
+	trace(TR),
+	email(E2),
+	fi(A),
+	emp(P1),
+	extAddr(S),
+	email(E1),
+	emp(P),
+	time(T2),
+	time(T1),
+	T1<T2,
+	happens(emailSentE2Ext(E2,A,P1,S),T2,TR),
+	happens(recEmailReqExt2E(E1,S,P),T1,TR).
+
+happens(answerEmailE2Ext(E, E, F, E, E),T2,TR):-
+	trace(TR),
+	email(E2),
+	fi(A),
+	emp(P1),
+	extAddr(S),
+	email(E1),
+	emp(P),
+	time(T2),
+	time(T1),
+	T1<T2,
+	happens(emailSentExt2ExtD(E2,A,P1,S),T2,TR),
+	happens(recEmailReqExt2E(E1,S,P),T1,TR).
+
+happens(copy(E, F, C),T1,TR):-
+	trace(TR),
+	fi(F),
+	comp(C),
+	emp(E),
+	time(T1),
+	holdsAt(isStoredIn(F,C),T1,TR),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_copy(E,F,C),T1,TR).
+
+happens(mount(S, C),T1,TR):-
+	trace(TR),
+	st(S),
+	comp(C),
+	emp(E),
+	time(T1),
+	not holdsAt(mounted(S,C),T1,TR),
+	holdsAt(logged(E,C),T1,TR),
+	happens(sys_mount(S,C),T1,TR).
+
+happens(unmount(S, C),T1,TR):-
+	trace(TR),
+	st(S),
+	comp(C),
+	time(T1),
+	holdsAt(mounted(S,C),T1,TR),
+	happens(sys_unmount(S,C),T1,TR).
+
+happens(install(A, C),T1,TR):-
+	trace(TR),
+	emp(P),
+	comp(C),
+	app(A),
+	time(T1),
+	holdsAt(logged(P,C),T1,TR),
+	not holdsAt(installed(A,C),T1,TR),
+	holdsAt(hasPermission(P,C),T1,TR),
+	happens(sys_install(A,C),T1,TR).
+
+happens(uninstall(A, C),T1,TR):-
+	trace(TR),
+	emp(P),
+	comp(C),
+	app(A),
+	time(T1),
+	holdsAt(logged(P,C),T1,TR),
+	holdsAt(installed(A,C),T1,TR),
+	holdsAt(hasPermission(P,C),T1,TR),
+	happens(sys_uninstall(A,C),T1,TR).
+
+happens(webConnection(B, U, C),T1,TR):-
+	trace(TR),
+	browser(B),
+	comp(C),
+	emp(E),
+	url(U),
+	time(T1),
+	holdsAt(isInstalled(B,C),T1,TR),
+	holdsAt(logged(E,C),T1,TR),
+	holdsAt(hasPermission(E,C),T1,TR),
+	happens(web_connection(B,U,C),T1,TR).
+
+
+
+% +++ Context Relation Definitions +++
+
+initiates(login(E, C),logged(E,C), T):-
+	comp(C),	emp(E), time(T).
+terminates(logout(E, C),logged(E,C), T):-
+	comp(C),	emp(E), time(T).
+initiates(mount(S, C),mounted(S,C), T):-
+	st(S),	comp(C), time(T).
+terminates(unmount(S, C),mounted(S,C), T):-
+	st(S),	comp(C), time(T).
+initiates(install(A, C),installed(A,C), T):-
+	app(A),	comp(C), time(T).
+terminates(uninstall(A, C),installed(A,C), T):-
+	app(A),	comp(C), time(T).
+
+% Initial state 
+
+initially(hasPermission(jean,m1)).
+initially(hasPermission(alison,m2)).
+initially(hasEmail(jean,ajean)).
+initially(hasEmail(alison,aalison)).
+initially(hasPwd(jean,pwdJean)).
+initially(hasPwd(alison,pwdAlison)).
+initially(isStoredIn(m57plan,m1)).
+initially(isMalware(app1)).
+initially(isInstalled(b1,m1)).
+initially(isInstalled(b2,m2)).
+initially(isBlackListed(url1)).
+
+% Version 3
+% Time: 21:11

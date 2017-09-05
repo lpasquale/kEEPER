@@ -1,0 +1,10 @@
+hypothesis(h5,T1,TR):-
+	trace(TR),
+	st(S),
+	comp(C),
+	emp(P),
+	fi(m57plan),
+	time(T1),
+	holdsAt(mounted(S,C),T1,TR),
+	happens(copy(P,m57plan,C),T1,TR).
+
