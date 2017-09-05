@@ -18,7 +18,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_dxN_UnOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_dxN_U3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dxN_VHOUEeefi6Ox0qOtUQ" x="200" y="28"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dxN_VHOUEeefi6Ox0qOtUQ" x="192" y="28"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_g-iP4HOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_g-i28HOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -38,7 +38,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_kfXSUnOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_kfXSU3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kfXSVHOUEeefi6Ox0qOtUQ" x="504" y="28"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kfXSVHOUEeefi6Ox0qOtUQ" x="32" y="104"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_n3ymsHOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_n3zNwHOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -48,7 +48,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_n3ymsnOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_n3yms3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n3ymtHOUEeefi6Ox0qOtUQ" x="32" y="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n3ymtHOUEeefi6Ox0qOtUQ" x="192" y="104"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_qbqRoHOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_qbqRpXOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -58,7 +58,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_qbqRonOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_qbqRo3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qbqRpHOUEeefi6Ox0qOtUQ" x="200" y="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qbqRpHOUEeefi6Ox0qOtUQ" x="348" y="104"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_uHXuYHOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_uHYVcHOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -68,7 +68,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_uHXuYnOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_uHXuY3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uHXuZHOUEeefi6Ox0qOtUQ" x="348" y="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uHXuZHOUEeefi6Ox0qOtUQ" x="32" y="184"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_xNDs8HOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_xNEUAHOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -78,7 +78,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_xNDs8nOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_xNDs83OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNDs9HOUEeefi6Ox0qOtUQ" x="504" y="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNDs9HOUEeefi6Ox0qOtUQ" x="192" y="184"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0QnkkHOUEeefi6Ox0qOtUQ" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_0QnklXOUEeefi6Ox0qOtUQ" type="5001"/>
@@ -88,7 +88,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_0QnkknOUEeefi6Ox0qOtUQ" fontName=".SF NS Text"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_0Qnkk3OUEeefi6Ox0qOtUQ"/>
     <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QnklHOUEeefi6Ox0qOtUQ" x="32" y="184"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0QnklHOUEeefi6Ox0qOtUQ" x="348" y="184"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_V_JKIXOUEeefi6Ox0qOtUQ"/>
   <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.contextRelationModel#/"/>

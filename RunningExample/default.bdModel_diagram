@@ -162,7 +162,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_euQTcHbCEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_euQTcXbCEeenWbUlblJwNQ" x="13" y="261"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_euQTcXbCEeenWbUlblJwNQ" x="604" y="32"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_lJeqcHbCEeenWbUlblJwNQ" type="2003" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:HoldsAt" href="default.bdModel#//@holdsAts.6"/>
@@ -242,7 +242,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_uKc7sHbCEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uKc7sXbCEeenWbUlblJwNQ" x="312" y="260"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uKc7sXbCEeenWbUlblJwNQ" x="12" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_wxWFcHbCEeenWbUlblJwNQ" type="2003" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:HoldsAt" href="default.bdModel#//@holdsAts.10"/>
@@ -322,7 +322,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_5OX8IHbCEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5OX8IXbCEeenWbUlblJwNQ" x="16" y="480"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5OX8IXbCEeenWbUlblJwNQ" x="312" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9qSGwHbCEeenWbUlblJwNQ" type="2003" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:HoldsAt" href="default.bdModel#//@holdsAts.13"/>
@@ -402,7 +402,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_F4A9MHbDEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F4A9MXbDEeenWbUlblJwNQ" x="312" y="480"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F4A9MXbDEeenWbUlblJwNQ" x="604" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_KfL8oHbDEeenWbUlblJwNQ" type="2003" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:HoldsAt" href="default.bdModel#//@holdsAts.16"/>
@@ -482,7 +482,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_SfnW4HbDEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SfnW4XbDEeenWbUlblJwNQ" x="16" y="728"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SfnW4XbDEeenWbUlblJwNQ" x="12" y="488"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_JPYsMHbEEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Happens" href="default.bdModel#//@happens.12"/>
@@ -534,7 +534,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RwQhEHbEEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:BehaviouralDescription" href="default.bdModel#//@behavDescriptions.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RwQhEXbEEeenWbUlblJwNQ" x="312" y="728"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RwQhEXbEEeenWbUlblJwNQ" x="312" y="488"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_UePKQHbEEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Happens" href="default.bdModel#//@happens.13"/>

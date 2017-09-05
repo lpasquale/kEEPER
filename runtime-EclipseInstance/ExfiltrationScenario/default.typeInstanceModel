@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="emp"/>
+  <types name="url"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="browser"/>
+  <types name="addr"/>
+  <types name="sendAddr"/>
+  <types name="recAddr"/>
+  <types name="extAddr"/>
+  <types name="sendExtAddr"/>
+  <types name="recExtAddr"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="email"/>
+  <types name="role"/>
+  <types name="pwd"/>
+  <types name="fi"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="app"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Agent" name="st"/>
+  <types xsi:type="org.eclipse.minorityReportPlugin:Observer" name="comp"/>
+  <instances name="m1" type="//@types.15"/>
+  <instances name="m2" type="//@types.15"/>
+  <instances name="alison" type="//@types.0"/>
+  <instances name="jean" type="//@types.0"/>
+  <instances name="bob" type="//@types.0"/>
+  <instances name="url1" type="//@types.1"/>
+  <instances name="url2" type="//@types.1"/>
+  <instances name="b1" type="//@types.2"/>
+  <instances name="b2" type="//@types.2"/>
+  <instances name="aalison" type="//@types.3"/>
+  <instances name="ajean" type="//@types.3"/>
+  <instances name="aalison" type="//@types.4"/>
+  <instances name="ajean" type="//@types.4"/>
+  <instances name="aalison" type="//@types.5"/>
+  <instances name="ajean" type="//@types.5"/>
+  <instances name="abob" type="//@types.6"/>
+  <instances name="atuck" type="//@types.6"/>
+  <instances name="abob" type="//@types.7"/>
+  <instances name="atuck" type="//@types.7"/>
+  <instances name="abob" type="//@types.8"/>
+  <instances name="atuck" type="//@types.8"/>
+  <instances name="e1" type="//@types.9"/>
+  <instances name="president" type="//@types.10"/>
+  <instances name="cfo" type="//@types.10"/>
+  <instances name="pwdJean" type="//@types.11"/>
+  <instances name="pwdAlison" type="//@types.11"/>
+  <instances name="m57plan" type="//@types.12"/>
+  <instances name="app1" type="//@types.13"/>
+  <instances name="app2" type="//@types.13"/>
+  <instances name="usb1" type="//@types.14"/>
+</org.eclipse.minorityReportPlugin:Environment>

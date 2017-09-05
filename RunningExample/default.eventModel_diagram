@@ -5,364 +5,364 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9KkLUXOVEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9KhvEXOVEeeHxf0U_KUd8w" x="71" y="44"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9KhvEXOVEeeHxf0U_KUd8w" x="452" y="500"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9d26wHOVEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9d3h0HOVEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9d3h0XOVEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9d26wXOVEeeHxf0U_KUd8w" x="16" y="152"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9d26wXOVEeeHxf0U_KUd8w" x="424" y="588"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9hMioHOVEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9hNJsHOVEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9hNJsXOVEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9hMioXOVEeeHxf0U_KUd8w" x="136" y="156"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9hMioXOVEeeHxf0U_KUd8w" x="488" y="592"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Or9lgHOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_Or-MkHOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Or-zoHOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Or9lgXOWEeeHxf0U_KUd8w" x="76" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Or9lgXOWEeeHxf0U_KUd8w" x="176" y="167"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_O_NRoHOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_O_N4sHOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_O_N4sXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O_NRoXOWEeeHxf0U_KUd8w" x="12" y="324"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O_NRoXOWEeeHxf0U_KUd8w" x="116" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_PCHbsHOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_PCICwHOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_PCICwXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PCHbsXOWEeeHxf0U_KUd8w" x="168" y="324"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PCHbsXOWEeeHxf0U_KUd8w" x="228" y="256"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_bTbcUHOWEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_bTbcUnOWEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_bTbcU3OWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bTbcUXOWEeeHxf0U_KUd8w" x="88" y="340"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bTbcUXOWEeeHxf0U_KUd8w" x="174" y="278"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_khz3cHOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_khz3cnOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_kh0egHOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khz3cXOWEeeHxf0U_KUd8w" x="328" y="224"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khz3cXOWEeeHxf0U_KUd8w" x="325" y="165"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_k1FYwHOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_k1F_0HOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_k1F_0XOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k1FYwXOWEeeHxf0U_KUd8w" x="275" y="319"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k1FYwXOWEeeHxf0U_KUd8w" x="292" y="252"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_k32Y4HOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_k32Y4nOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_k32_8HOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k32Y4XOWEeeHxf0U_KUd8w" x="387" y="323"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k32Y4XOWEeeHxf0U_KUd8w" x="364" y="252"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_sm8ykHOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_sm9ZoHOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_sm9ZoXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sm8ykXOWEeeHxf0U_KUd8w" x="528" y="220"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sm8ykXOWEeeHxf0U_KUd8w" x="450" y="165"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_s6FxAHOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_s6GYEHOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_s6GYEXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s6FxAXOWEeeHxf0U_KUd8w" x="488" y="324"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s6FxAXOWEeeHxf0U_KUd8w" x="412" y="256"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_s82KEHOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_s82xIHOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_s82xIXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s82KEXOWEeeHxf0U_KUd8w" x="584" y="328"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s82KEXOWEeeHxf0U_KUd8w" x="492" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_x_9eoHOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_x_9eonOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_x_9eo3OWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x_9eoXOWEeeHxf0U_KUd8w" x="64" y="408"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x_9eoXOWEeeHxf0U_KUd8w" x="168" y="340"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yTHrMHOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_yTISQHOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_yTISQXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yTHrMXOWEeeHxf0U_KUd8w" x="16" y="532"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yTHrMXOWEeeHxf0U_KUd8w" x="128" y="432"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yV4rUHOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_yV4rUnOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_yV4rU3OWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yV4rUXOWEeeHxf0U_KUd8w" x="104" y="536"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yV4rUXOWEeeHxf0U_KUd8w" x="204" y="436"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_36Rg8HOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_36Rg8nOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_36SIAHOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36Rg8XOWEeeHxf0U_KUd8w" x="276" y="415"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36Rg8XOWEeeHxf0U_KUd8w" x="312" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_4Nf-8HOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_4NgmAHOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4NgmAXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Nf-8XOWEeeHxf0U_KUd8w" x="236" y="528"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Nf-8XOWEeeHxf0U_KUd8w" x="272" y="432"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_4QNUsHOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_4QNUsnOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4QNUs3OWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4QNUsXOWEeeHxf0U_KUd8w" x="324" y="532"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4QNUsXOWEeeHxf0U_KUd8w" x="352" y="436"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_68etsHOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_68etsnOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_68ets3OWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_68etsXOWEeeHxf0U_KUd8w" x="492" y="424"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_68etsXOWEeeHxf0U_KUd8w" x="444" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_7Pl28HOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_7PmeAHOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_7PmeAXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7Pl28XOWEeeHxf0U_KUd8w" x="440" y="532"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7Pl28XOWEeeHxf0U_KUd8w" x="412" y="432"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_7SSloHOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_7STMsHOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_7STMsXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7SSloXOWEeeHxf0U_KUd8w" x="544" y="532"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7SSloXOWEeeHxf0U_KUd8w" x="488" y="440"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9qAD4HOWEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9qAD4nOWEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9qAq8HOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9qAD4XOWEeeHxf0U_KUd8w" x="96" y="611"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9qAD4XOWEeeHxf0U_KUd8w" x="168" y="500"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_99IbQHOWEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_99JCUXOWEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_99JpYHOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_99JCUHOWEeeHxf0U_KUd8w" x="16" y="712"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_99JCUHOWEeeHxf0U_KUd8w" x="120" y="584"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9_1J8HOWEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9_1xAHOWEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9_1xAXOWEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_1J8XOWEeeHxf0U_KUd8w" x="172" y="716"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_1J8XOWEeeHxf0U_KUd8w" x="212" y="588"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_DtBWQHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_DtBWQnOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_DtBWQ3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DtBWQXOXEeeHxf0U_KUd8w" x="96" y="747"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DtBWQXOXEeeHxf0U_KUd8w" x="168" y="624"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_HN9tcHOXEeeHxf0U_KUd8w" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_HN-UgHOXEeeHxf0U_KUd8w" type="5010">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_HN-UgXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HN9tcXOXEeeHxf0U_KUd8w" x="340" y="633"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HN9tcXOXEeeHxf0U_KUd8w" x="324" y="496"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_HhGr4HOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_HhGr4nOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_HhHS8HOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HhGr4XOXEeeHxf0U_KUd8w" x="272" y="720"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HhGr4XOXEeeHxf0U_KUd8w" x="272" y="588"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_HjyMcHOXEeeHxf0U_KUd8w" type="2017" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_HjyzgHOXEeeHxf0U_KUd8w" type="5013">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_HjyzgXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ObserverReference" href="default.eventModel#//@observerReferences.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HjyMcXOXEeeHxf0U_KUd8w" x="420" y="724"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HjyMcXOXEeeHxf0U_KUd8w" x="372" y="584"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_K4348HOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_K4348nOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_K43483OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K4348XOXEeeHxf0U_KUd8w" x="348" y="768"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K4348XOXEeeHxf0U_KUd8w" x="324" y="624"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ayRakHOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_ayRaknOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_ayRak3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ayRakXOXEeeHxf0U_KUd8w" x="557" y="626"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ayRakXOXEeeHxf0U_KUd8w" x="400" y="892"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_bFc1QHOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_bFdcUHOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_bFdcUXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFc1QXOXEeeHxf0U_KUd8w" x="512" y="728"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bFc1QXOXEeeHxf0U_KUd8w" x="364" y="960"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ediycHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_edjZgHOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_edjZgXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ediycXOXEeeHxf0U_KUd8w" x="604" y="732"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ediycXOXEeeHxf0U_KUd8w" x="436" y="964"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_hnu2gHOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_hnu2gnOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hnu2g3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.10"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hnu2gXOXEeeHxf0U_KUd8w" x="100" y="832"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hnu2gXOXEeeHxf0U_KUd8w" x="168" y="744"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_h65qIHOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_h65qInOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_h65qI3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.10"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h65qIXOXEeeHxf0U_KUd8w" x="44" y="932"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h65qIXOXEeeHxf0U_KUd8w" x="128" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_lJZmcHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_lJZmcnOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_lJZmc3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJZmcXOXEeeHxf0U_KUd8w" x="156" y="936"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lJZmcXOXEeeHxf0U_KUd8w" x="192" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_nAbZgHOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_nAcAkHOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_nAcAkXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.11"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nAbZgXOXEeeHxf0U_KUd8w" x="344" y="836"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nAbZgXOXEeeHxf0U_KUd8w" x="284" y="744"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_nWBPAHOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_nWB2EHOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_nWB2EXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.11"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nWBPAXOXEeeHxf0U_KUd8w" x="296" y="936"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nWBPAXOXEeeHxf0U_KUd8w" x="248" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_pnp6cHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_pnp6cnOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_pnqhgHOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pnp6cXOXEeeHxf0U_KUd8w" x="392" y="936"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pnp6cXOXEeeHxf0U_KUd8w" x="312" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_rqLy4HOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_rqLy4nOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rqMZ8HOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.12"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rqLy4XOXEeeHxf0U_KUd8w" x="556" y="832"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rqLy4XOXEeeHxf0U_KUd8w" x="396" y="744"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_r9VYYHOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_r9V_cHOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_r9V_cXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.12"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r9VYYXOXEeeHxf0U_KUd8w" x="504" y="944"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r9VYYXOXEeeHxf0U_KUd8w" x="364" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_uXCasHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_uXDBwHOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_uXDBwXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uXCasXOXEeeHxf0U_KUd8w" x="596" y="944"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uXCasXOXEeeHxf0U_KUd8w" x="428" y="832"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xjcsUHOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_xjcsUnOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_xjcsU3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.13"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xjcsUXOXEeeHxf0U_KUd8w" x="104" y="1008"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xjcsUXOXEeeHxf0U_KUd8w" x="160" y="888"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_x2nf8HOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_x2oHAHOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_x2oHAXOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.13"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2nf8XOXEeeHxf0U_KUd8w" x="64" y="1104"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x2nf8XOXEeeHxf0U_KUd8w" x="124" y="964"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_1xmHwHOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_1xmu0HOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1xmu0XOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1xmHwXOXEeeHxf0U_KUd8w" x="152" y="1104"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1xmHwXOXEeeHxf0U_KUd8w" x="184" y="964"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_31Is0HOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_31Is0nOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_31JT4HOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.14"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_31Is0XOXEeeHxf0U_KUd8w" x="352" y="1012"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_31Is0XOXEeeHxf0U_KUd8w" x="284" y="892"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_4ITgcHOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_4IUHgHOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4IUukHOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.14"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ITgcXOXEeeHxf0U_KUd8w" x="296" y="1112"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ITgcXOXEeeHxf0U_KUd8w" x="248" y="960"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_6EIT8HOXEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_6EIT8nOXEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6EIT83OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6EIT8XOXEeeHxf0U_KUd8w" x="396" y="1112"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6EIT8XOXEeeHxf0U_KUd8w" x="312" y="960"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9tyiQHOXEeeHxf0U_KUd8w" type="2012" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9tyiQnOXEeeHxf0U_KUd8w" type="5011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_9tyiQ3OXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.15"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9tyiQXOXEeeHxf0U_KUd8w" x="580" y="1024"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9tyiQXOXEeeHxf0U_KUd8w" x="512" y="812"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_-A9V4HOXEeeHxf0U_KUd8w" type="2016" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_-A9V4nOXEeeHxf0U_KUd8w" type="5012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_-A988HOXEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:AgentReference" href="default.eventModel#//@agentReferences.15"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-A9V4XOXEeeHxf0U_KUd8w" x="520" y="1112"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-A9V4XOXEeeHxf0U_KUd8w" x="476" y="872"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_AGKu4HOYEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_AGLV8HOYEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_AGLV8XOYEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AGKu4XOYEeeHxf0U_KUd8w" x="580" y="1152"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AGKu4XOYEeeHxf0U_KUd8w" x="516" y="916"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Au8mIHOYEeeHxf0U_KUd8w" type="2018" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_Au9NMHOYEeeHxf0U_KUd8w" type="5014">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Au9NMXOYEeeHxf0U_KUd8w" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.10"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Au8mIXOYEeeHxf0U_KUd8w" x="652" y="1108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Au8mIXOYEeeHxf0U_KUd8w" x="552" y="872"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_7_uv4HOVEeeHxf0U_KUd8w"/>
   <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.eventModel#/"/>

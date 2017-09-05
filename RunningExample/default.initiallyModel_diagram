@@ -26,7 +26,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_J3LPgHbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J3LPgXbFEeenWbUlblJwNQ" x="336" y="48"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J3LPgXbFEeenWbUlblJwNQ" x="328" y="48"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_LZzf4HbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.4"/>
@@ -38,7 +38,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_LtfQ4HbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LtfQ4XbFEeenWbUlblJwNQ" x="64" y="172"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LtfQ4XbFEeenWbUlblJwNQ" x="460" y="48"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_NPLGEHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.6"/>
@@ -50,7 +50,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_NcM1cHbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.4"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NcM1cXbFEeenWbUlblJwNQ" x="200" y="176"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NcM1cXbFEeenWbUlblJwNQ" x="64" y="168"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_PP95IHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.8"/>
@@ -62,7 +62,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_PfEFEHbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.5"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PfEFEXbFEeenWbUlblJwNQ" x="338" y="178"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PfEFEXbFEeenWbUlblJwNQ" x="196" y="172"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_QhADMHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.10"/>
@@ -74,7 +74,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Q0N6IHbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.6"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q0N6IXbFEeenWbUlblJwNQ" x="64" y="287"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q0N6IXbFEeenWbUlblJwNQ" x="328" y="172"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_R2DxoHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.12"/>
@@ -86,7 +86,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_SEYhgHbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SEYhgXbFEeenWbUlblJwNQ" x="200" y="292"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SEYhgXbFEeenWbUlblJwNQ" x="460" y="172"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_TwCLAHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.14"/>
@@ -98,7 +98,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_T-gr4HbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.8"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T-gr4XbFEeenWbUlblJwNQ" x="344" y="288"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T-gr4XbFEeenWbUlblJwNQ" x="64" y="280"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_VvIU8HbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.16"/>
@@ -110,7 +110,7 @@
   </children>
   <children xmi:type="notation:Shape" xmi:id="_WDkT4HbFEeenWbUlblJwNQ" type="2001" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.9"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDkT4XbFEeenWbUlblJwNQ" x="64" y="400"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDkT4XbFEeenWbUlblJwNQ" x="196" y="280"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Xb3jkHbFEeenWbUlblJwNQ" type="2002" fontName=".SF NS Text">
     <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.18"/>
