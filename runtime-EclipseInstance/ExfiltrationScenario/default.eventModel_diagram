@@ -117,7 +117,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_5YR4Q5JcEeeFNbVQkqHdmQ" y="5"/>
     </children>
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.7"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YR4QZJcEeeFNbVQkqHdmQ" x="172" y="232"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YR4QZJcEeeFNbVQkqHdmQ" x="184" y="236"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9eL9sJJcEeeFNbVQkqHdmQ" type="2011" fontName=".SF NS Text">
     <children xmi:type="notation:DecorationNode" xmi:id="_9eL9spJcEeeFNbVQkqHdmQ" type="5010">
@@ -952,6 +952,13 @@
     <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.55"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mXxCcZJhEeeFNbVQkqHdmQ" x="544" y="1656"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_RRivQJJkEeeFNbVQkqHdmQ" type="2018" fontName=".SF NS Text">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RRivQpJkEeeFNbVQkqHdmQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RRivQ5JkEeeFNbVQkqHdmQ" y="5"/>
+    </children>
+    <element xmi:type="org.eclipse.minorityReportPlugin:GeneralTypeReference" href="default.eventModel#//@generalTypeReferences.56"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RRivQZJkEeeFNbVQkqHdmQ" x="172" y="192"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_GL2G0JJcEeeFNbVQkqHdmQ"/>
   <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.eventModel#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_KTpCoJJcEeeFNbVQkqHdmQ" type="4001" source="_J9UNUJJcEeeFNbVQkqHdmQ" target="_KQirUJJcEeeFNbVQkqHdmQ">
@@ -1477,5 +1484,10 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_mX0FwZJhEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mX0FwpJhEeeFNbVQkqHdmQ" points="[-6, -20, 446, 1552]$[-452, -1572, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_RRnnwJJkEeeFNbVQkqHdmQ" type="4005" source="_wADkoJJcEeeFNbVQkqHdmQ" target="_RRivQJJkEeeFNbVQkqHdmQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_RRnnwZJkEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RRnnwpJkEeeFNbVQkqHdmQ" points="[-9, -20, 83, 200]$[-92, -220, 0, 0]"/>
   </edges>
 </notation:Diagram>

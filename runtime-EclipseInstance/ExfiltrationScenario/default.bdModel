@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.11"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="3" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.11"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="2" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.7"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.8"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.7"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.8"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="4" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.5"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.4"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="4" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.3"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.7"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="R">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.8"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="4" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E2">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="P2">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E2">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E2">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P1">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="4" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E1">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.6"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="E">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="F">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="3" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="F">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.12"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="S">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.14"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="2" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.14"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="S">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.14"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="2" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="S">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.14"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="A">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="2" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="A">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="2" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="A">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="P">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="B">
+    <agent href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.2"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="U">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.1"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="3" name="C">
+    <observer href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="B">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.2"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="1" name="E">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.0"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="C">
+    <generalType href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.typeInstanceModel#//@types.15"/>
+  </parameters>
+  <behavDescriptions holdsAts="//@holdsAts.0 //@holdsAts.1" happens="//@happens.0" name="login" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.2" happens="//@happens.1" name="logout" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.3 //@holdsAts.4 //@holdsAts.5" happens="//@happens.2" name="emailSentE2E" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.6 //@holdsAts.7" happens="//@happens.3" name="emailSentE2E" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.8 //@holdsAts.9" happens="//@happens.4" name="emailSentE2Ext" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.10" happens="//@happens.5" name="emailSentExt2ExtS" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.11" happens="//@happens.6" name="emailSentExt2ExtD" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.12 //@holdsAts.13 //@holdsAts.14" happens="//@happens.7" name="recEmailReqE2E" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.15 //@holdsAts.16" happens="//@happens.8" name="recEmailReqExt2E" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.17" happens="//@happens.9" name="recEmailReqExt2E" timeInstants="1"/>
+  <behavDescriptions happens="//@happens.10 //@happens.11" name="answerEmailE2E" timeInstants="2"/>
+  <behavDescriptions happens="//@happens.12 //@happens.13" name="answerEmailE2Ext" timeInstants="2"/>
+  <behavDescriptions happens="//@happens.14 //@happens.15" name="answerEmailE2Ext" timeInstants="2"/>
+  <behavDescriptions holdsAts="//@holdsAts.18 //@holdsAts.19" happens="//@happens.16" name="copy" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.20 //@holdsAts.21" happens="//@happens.17" name="mount" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.22" happens="//@happens.18" name="unmount" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.23 //@holdsAts.24 //@holdsAts.25" happens="//@happens.19" name="install" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.26 //@holdsAts.27 //@holdsAts.28" happens="//@happens.20" name="uninstall" timeInstants="1"/>
+  <behavDescriptions holdsAts="//@holdsAts.29 //@holdsAts.30 //@holdsAts.31" happens="//@happens.21" name="webConnection" timeInstants="1"/>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.3 //@parameters.4">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.1"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.5 //@parameters.6">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.4"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.9 //@parameters.10">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.16 //@parameters.17">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.11"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.18 //@parameters.19">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.20 //@parameters.21">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.3"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.27 //@parameters.28">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.3"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.29 //@parameters.30">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.36 //@parameters.37">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.12"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.38 //@parameters.39">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.45 //@parameters.46">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.52 //@parameters.53">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.58 //@parameters.59">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.3"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.60 //@parameters.61">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.11"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.62 //@parameters.63">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.68 //@parameters.69">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.12"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.70 //@parameters.71">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.76 //@parameters.77">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.102 //@parameters.103">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.2"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.104 //@parameters.105">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" parameters="//@parameters.108 //@parameters.109">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.6"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.110 //@parameters.111">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.114 //@parameters.115">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.6"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.118 //@parameters.119">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" parameters="//@parameters.120 //@parameters.121">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.9"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.122 //@parameters.123">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.1"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.126 //@parameters.127">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.128 //@parameters.129">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.9"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.130 //@parameters.131">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.1"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.135 //@parameters.136">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.10"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.137 //@parameters.138">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.0"/>
+  </holdsAts>
+  <holdsAts time="1" isHolding="true" parameters="//@parameters.139 //@parameters.140">
+    <contextRelation href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.contextRelationModel#//@contextRelations.1"/>
+  </holdsAts>
+  <happens time="1" parameters="//@parameters.0 //@parameters.1 //@parameters.2">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.7"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.7 //@parameters.8">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.8"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.11 //@parameters.12 //@parameters.13 //@parameters.14 //@parameters.15">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.0"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.22 //@parameters.23 //@parameters.24 //@parameters.25 //@parameters.26">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.15"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.31 //@parameters.32 //@parameters.33 //@parameters.34 //@parameters.35">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.1"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.40 //@parameters.41 //@parameters.42 //@parameters.43 //@parameters.44">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.2"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.47 //@parameters.48 //@parameters.49 //@parameters.50 //@parameters.51">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.2"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.54 //@parameters.55 //@parameters.56 //@parameters.57">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.3"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.64 //@parameters.65 //@parameters.66 //@parameters.67">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.5"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.72 //@parameters.73 //@parameters.74 //@parameters.75">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.6"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.78 //@parameters.79 //@parameters.80">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.20"/>
+  </happens>
+  <happens time="2" parameters="//@parameters.81 //@parameters.82 //@parameters.83 //@parameters.84">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.16"/>
+  </happens>
+  <happens time="2" parameters="//@parameters.85 //@parameters.86 //@parameters.87 //@parameters.88">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.17"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.89 //@parameters.90 //@parameters.91">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.21"/>
+  </happens>
+  <happens time="2" parameters="//@parameters.92 //@parameters.93 //@parameters.94 //@parameters.95">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.19"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.96 //@parameters.97 //@parameters.98">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.21"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.99 //@parameters.100 //@parameters.101">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.11"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.106 //@parameters.107">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.9"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.112 //@parameters.113">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.10"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.116 //@parameters.117">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.12"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.124 //@parameters.125">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.13"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.132 //@parameters.133 //@parameters.134">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="file:/Users/marco/Documents/ThesisWorkspaceV2/kEEPER/runtime-EclipseInstance/ExfiltrationScenario/default.eventModel#//@events.14"/>
+  </happens>
+</org.eclipse.minorityReportPlugin:Environment>

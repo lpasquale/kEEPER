@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin" xmi:id="_b2SZAJJnEeeFNbVQkqHdmQ" type="Initially Model" name="default.initiallyModel_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_cLAEwJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cLAr0JJnEeeFNbVQkqHdmQ" x="48" y="32"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_fUlr4JJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fUlr4ZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_fUp9UJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fUp9UZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_fk0gQJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fk0gQZJnEeeFNbVQkqHdmQ" x="168" y="32"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hYqccJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hYqccZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hYtfwJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hYtfwZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hiwzoJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hiwzoZJnEeeFNbVQkqHdmQ" x="280" y="32"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_q7WToJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q7WToZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_q7ZW8JJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q7ZW8ZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_rKrJEJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rKrJEZJnEeeFNbVQkqHdmQ" x="392" y="32"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_s6AYsJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s6AYsZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_s6FRMJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s6FRMZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_tKPNEJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tKPNEZJnEeeFNbVQkqHdmQ" x="48" y="144"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_uvIuUJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvIuUZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_uvLxoJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvLxoZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vFUZsJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vFUZsZJnEeeFNbVQkqHdmQ" x="168" y="144"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_w2ljAJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.10"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2ljAZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_w2pNYJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.11"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w2pNYZJnEeeFNbVQkqHdmQ" x="298" y="189"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_xHRDUJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xHRDUZJnEeeFNbVQkqHdmQ" x="280" y="144"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zAICYJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.12"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zAICYZJnEeeFNbVQkqHdmQ" x="410" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zAM64JJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.13"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zAM64ZJnEeeFNbVQkqHdmQ" x="410" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zL-tEJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zL-tEZJnEeeFNbVQkqHdmQ" x="392" y="144"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_1iHeAJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.14"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1iHeAZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_1v73kJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1v73kZJnEeeFNbVQkqHdmQ" x="48" y="256"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3cvXoJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.15"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3cvXoZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3c0QIJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.16"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3c0QIZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3sXIAJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3sXIAZJnEeeFNbVQkqHdmQ" x="172" y="260"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5TXiEJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.17"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5TXiEZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5TalYJJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.18"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5TalYZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5g3ykJJnEeeFNbVQkqHdmQ" type="2001" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Initially" href="default.initiallyModel#//@initials.10"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5g3ykZJnEeeFNbVQkqHdmQ" x="284" y="260"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_7BzZ0JJnEeeFNbVQkqHdmQ" type="2002" fontName=".SF NS Text">
+    <element xmi:type="org.eclipse.minorityReportPlugin:Instance" href="default.initiallyModel#//@instances.19"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7BzZ0ZJnEeeFNbVQkqHdmQ" x="522" y="194"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_b2SZAZJnEeeFNbVQkqHdmQ"/>
+  <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.initiallyModel#/"/>
+</notation:Diagram>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <instances name="jean"/>
+  <instances name="m1"/>
+  <instances name="alison"/>
+  <instances name="m2"/>
+  <instances name="jean"/>
+  <instances name="ajean"/>
+  <instances name="alison"/>
+  <instances name="aalison"/>
+  <instances name="jean"/>
+  <instances name="pwdJean"/>
+  <instances name="alison"/>
+  <instances name="pwdAlison"/>
+  <instances name="m57plan"/>
+  <instances name="m1"/>
+  <instances name="app1"/>
+  <instances name="b1"/>
+  <instances name="m1"/>
+  <instances name="b2"/>
+  <instances name="m2"/>
+  <instances name="url1"/>
+  <initials instances="//@instances.0 //@instances.1">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.1"/>
+  </initials>
+  <initials instances="//@instances.2 //@instances.3">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.1"/>
+  </initials>
+  <initials instances="//@instances.4 //@instances.5">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.11"/>
+  </initials>
+  <initials instances="//@instances.6 //@instances.7">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.11"/>
+  </initials>
+  <initials instances="//@instances.8 //@instances.9">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.4"/>
+  </initials>
+  <initials instances="//@instances.10 //@instances.11">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.4"/>
+  </initials>
+  <initials instances="//@instances.12 //@instances.13">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.2"/>
+  </initials>
+  <initials instances="//@instances.14">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.7"/>
+  </initials>
+  <initials instances="//@instances.15 //@instances.16">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.10"/>
+  </initials>
+  <initials instances="//@instances.17 //@instances.18">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.10"/>
+  </initials>
+  <initials instances="//@instances.19">
+    <contextRelation href="default.contextRelationModel#//@contextRelations.8"/>
+  </initials>
+</org.eclipse.minorityReportPlugin:Environment>

@@ -2,7 +2,7 @@
 <org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
   <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_e2e" types="//@generalTypeReferences.0 //@generalTypeReferences.1 //@generalTypeReferences.2" agent="//@agentReferences.0" observer="//@observerReferences.0"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_e2ext" types="//@generalTypeReferences.3 //@generalTypeReferences.4 //@generalTypeReferences.5" agent="//@agentReferences.1" observer="//@observerReferences.1"/>
-  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_ext2ext" types="//@generalTypeReferences.6 //@generalTypeReferences.7" agent="//@agentReferences.2" observer="//@observerReferences.2"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="send_email_ext2ext" types="//@generalTypeReferences.6 //@generalTypeReferences.7 //@generalTypeReferences.56" agent="//@agentReferences.2" observer="//@observerReferences.2"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_e2e" types="//@generalTypeReferences.8 //@generalTypeReferences.9" agent="//@agentReferences.3" observer="//@observerReferences.3"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_e2ext" types="//@generalTypeReferences.10 //@generalTypeReferences.11" agent="//@agentReferences.4" observer="//@observerReferences.4"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" name="rec_email_req_ext2e" types="//@generalTypeReferences.12 //@generalTypeReferences.13" agent="//@agentReferences.5" observer="//@observerReferences.5"/>
@@ -198,7 +198,7 @@
     <reference href="default.typeInstanceModel#//@types.7"/>
   </generalTypeReferences>
   <generalTypeReferences>
-    <reference href="default.typeInstanceModel#//@types.5"/>
+    <reference href="default.typeInstanceModel#//@types.8"/>
   </generalTypeReferences>
   <generalTypeReferences>
     <reference href="default.typeInstanceModel#//@types.4"/>
@@ -343,5 +343,8 @@
   </generalTypeReferences>
   <generalTypeReferences>
     <reference href="default.typeInstanceModel#//@types.15"/>
+  </generalTypeReferences>
+  <generalTypeReferences>
+    <reference href="default.typeInstanceModel#//@types.12"/>
   </generalTypeReferences>
 </org.eclipse.minorityReportPlugin:Environment>
