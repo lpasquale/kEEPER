@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.minorityReportPlugin:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin">
+  <contextRelations name="logged">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="hasPermission">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="isStoredIn">
+    <types href="default.typeInstanceModel#//@types.12"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="hasEmail">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.5"/>
+  </contextRelations>
+  <contextRelations name="hasPwd">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.11"/>
+  </contextRelations>
+  <contextRelations name="hasRole">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.10"/>
+  </contextRelations>
+  <contextRelations name="mounted">
+    <types href="default.typeInstanceModel#//@types.14"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="isMalware">
+    <types href="default.typeInstanceModel#//@types.13"/>
+  </contextRelations>
+  <contextRelations name="isBlackListed">
+    <types href="default.typeInstanceModel#//@types.1"/>
+  </contextRelations>
+  <contextRelations name="installed">
+    <types href="default.typeInstanceModel#//@types.13"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="isInstalled">
+    <types href="default.typeInstanceModel#//@types.2"/>
+    <types href="default.typeInstanceModel#//@types.15"/>
+  </contextRelations>
+  <contextRelations name="hasEmail">
+    <types href="default.typeInstanceModel#//@types.0"/>
+    <types href="default.typeInstanceModel#//@types.4"/>
+  </contextRelations>
+</org.eclipse.minorityReportPlugin:Environment>

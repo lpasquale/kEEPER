@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.eclipse.minorityReportPlugin="https://github.com/mlatona/minorityReportPlugin" xmi:id="_wwOIMJJaEeeFNbVQkqHdmQ" type="ContextRelation Model" name="default.contextRelationModel_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_yiYpYJJaEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yiZQcJJaEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yiZQcZJaEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yiZQcpJaEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_yiYpYZJaEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_yiYpYpJaEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_yiYpY5JaEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yiYpZJJaEeeFNbVQkqHdmQ" x="32" y="28"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ErFUIJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ErF7MJJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ErF7MZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ErF7MpJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_ErFUIZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ErFUIpJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_ErFUI5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ErFUJJJbEeeFNbVQkqHdmQ" x="180" y="28"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_JAcK0JJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JAcK1ZJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JAcK1pJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JAcK15JbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_JAcK0ZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_JAcK0pJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_JAcK05JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JAcK1JJbEeeFNbVQkqHdmQ" x="328" y="28"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_OEFq4JJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_OEGR8JJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_OEGR8ZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_OEGR8pJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_OEFq4ZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_OEFq4pJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_OEFq45JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OEFq5JJbEeeFNbVQkqHdmQ" x="480" y="28"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_RNBKsJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RNBKtZJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_RNBKtpJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_RNBKt5JbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_RNBKsZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RNBKspJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_RNBKs5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RNBKtJJbEeeFNbVQkqHdmQ" x="32" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_WULRwJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_WUL41JJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WUL41ZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WUL41pJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_WUL40JJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_WUL40ZJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_WUL40pJbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WUL405JbEeeFNbVQkqHdmQ" x="180" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_bBNBkJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_bBNooJJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_bBNooZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_bBNoopJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_bBNBkZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_bBNBkpJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_bBNBk5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bBNBlJJbEeeFNbVQkqHdmQ" x="328" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_eOigQJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_eOigRZJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_eOigRpJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_eOigR5JbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_eOigQZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_eOigQpJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_eOigQ5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eOigRJJbEeeFNbVQkqHdmQ" x="480" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_glQgAJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_glQgBZJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_glQgBpJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_glQgB5JbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_glQgAZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_glQgApJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_glQgA5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glQgBJJbEeeFNbVQkqHdmQ" x="32" y="168"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_jqvDMJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jqvqQJJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jqvqQZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jqvqQpJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_jqvDMZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_jqvDMpJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_jqvDM5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jqvDNJJbEeeFNbVQkqHdmQ" x="180" y="168"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_mTa8sJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mTbjwJJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mTbjwZJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mTbjwpJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_mTa8sZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mTa8spJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_mTa8s5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.10"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mTa8tJJbEeeFNbVQkqHdmQ" x="328" y="168"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_0Q1SwJJbEeeFNbVQkqHdmQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Q1SxZJbEeeFNbVQkqHdmQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Q150JJbEeeFNbVQkqHdmQ" type="5002"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Q150ZJbEeeFNbVQkqHdmQ" type="5003"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_0Q1SwZJbEeeFNbVQkqHdmQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0Q1SwpJbEeeFNbVQkqHdmQ" fontName=".SF NS Text"/>
+    <styles xmi:type="notation:FillStyle" xmi:id="_0Q1Sw5JbEeeFNbVQkqHdmQ"/>
+    <element xmi:type="org.eclipse.minorityReportPlugin:ContextRelation" href="default.contextRelationModel#//@contextRelations.11"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Q1SxJJbEeeFNbVQkqHdmQ" x="480" y="168"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_wwOIMZJaEeeFNbVQkqHdmQ"/>
+  <element xmi:type="org.eclipse.minorityReportPlugin:Environment" href="default.contextRelationModel#/"/>
+</notation:Diagram>
