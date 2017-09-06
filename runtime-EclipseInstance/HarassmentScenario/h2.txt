@@ -1,0 +1,7 @@
+hypothesis(h2,T1,TR):-
+	trace(TR),
+	email(E),
+	stud(P1),
+	time(T1),
+	happens(sendANonHarassEmail(E,P1),T1,TR).
+

@@ -1,0 +1,217 @@
+% ****************** Environment Description ******************
+
+% ********* Context Description *********
+
+% ***** Types and Instances *****
+
+acad(lily).
+stud(amy).
+addr(alily).
+addr(aamy).
+faddr(nobodyAtNitrobaDotOrg).
+email(e1).
+course(chemistry).
+loc(uni).
+loc(res).
+rout(r1).
+rout(r2).
+ip(ip1).
+ip(ip2).
+browser(b1).
+
+
+% **** Context Relations ****
+
+fluent(attend(S,C)):-
+	stud(S), course(C).
+fluent(teach(A,C)):-
+	acad(A), course(C).
+fluent(studEmail(S,A)):-
+	stud(S), addr(A).
+fluent(acadEmail(A,A)):-
+	acad(A), addr(A).
+fluent(isLocatedIn(R,L)):-
+	rout(R), loc(L).
+fluent(hasBadgeS(S,L)):-
+	stud(S), loc(L).
+fluent(hasBadgeA(A,L)):-
+	acad(A), loc(L).
+fluent(cookieSet(A,S,R)):-
+	addr(A), sendIp(S), recIp(R).
+
+
+% ********* Behaviour Description *********
+
+% ***** Primitive Events *****
+
+event(V):-
+	pe(V).
+
+
+pe(send_email(E, S, R, I, R)):-
+	email(E), sendAddr(S), recAddr(R), ip(I), rout(R).
+
+pe(send_fake_email(E, F, A, I, R)):-
+	email(E), faddr(F), addr(A), ip(I), rout(R).
+
+pe(set_cookie(A, S, R, R)):-
+	addr(A), sendIp(S), recIp(R), rout(R).
+
+pe(exchange_msg(B, S, R, R)):-
+	browser(B), sendIp(S), recIp(R), rout(R).
+
+pe(send_anon_email(B, S, R, R)):-
+	browser(B), sendIp(S), recIp(R), rout(R).
+
+% ***** Complex Events *****
+
+event(V):-
+ce(V).
+
+ce(harassEmailSent(E, S, A)):-
+	email(E), stud(S), acad(A).
+
+ce(fakeHarassEmailSent(E, F, A)):-
+	email(E), faddr(F), acad(A).
+
+ce(initCookie(A, S, R)):-
+	addr(A), sendIp(S), recIp(R).
+
+ce(acadSendMsg(A, B, S)):-
+	acad(A), browser(B), sendIp(S).
+
+ce(studSendMsg(S, B, S)):-
+	stud(S), browser(B), sendIp(S).
+
+ce(sendANonHarassEmail(E, S)):-
+	email(E), stud(S).
+
+ce(sendANonHarassEmail2(E, S)):-
+	email(E), sendIp(S).
+
+
+% ***** Composite Definitions *****
+
+happens(sendANonHarassEmail2(E, S),T2,TR):-
+	trace(TR),
+	acad(P2),
+	browser(B),
+	sendIp(S),
+	stud(P1),
+	recIp(D),
+	rout(R),
+	time(T1),
+	time(T2),
+	T1<T2,
+	happens(acadSendMsg(P2,B,S),T1,TR),
+	happens(studSendMsg(P1,B,S),T1,TR),
+	happens(send_anon_email(B,S,D,R),T2,TR).
+
+happens(acadSendMsg(A, B, S),T1,TR):-
+	trace(TR),
+	addr(E),
+	sendIp(S),
+	recIp(D),
+	acad(P),
+	loc(L1),
+	rout(R),
+	browser(B),
+	time(T1),
+	holdsAt(cookieSet(E,S,D),T1,TR),
+	holdsAt(hasBadgeA(P,L1),T1,TR),
+	holdsAt(isLocatedIn(R,L1),T1,TR),
+	holdsAt(acadEmail(P,E),T1,TR),
+	happens(exchange_msg(B,S,D,R),T1,TR).
+
+happens(studSendMsg(S, B, S),T1,TR):-
+	trace(TR),
+	stud(P),
+	addr(E),
+	loc(L1),
+	rout(R),
+	sendIp(S),
+	recIp(D),
+	browser(B),
+	time(T1),
+	holdsAt(studEmail(P,E),T1,TR),
+	holdsAt(hasBadgeS(P,L1),T1,TR),
+	holdsAt(isLocatedIn(R,L1),T1,TR),
+	holdsAt(cookieSet(E,S,D),T1,TR),
+	happens(exchange_msg(B,S,D,R),T1,TR).
+
+happens(initCookie(A, S, R),T1,TR):-
+	trace(TR),
+	addr(E),
+	sendIp(S),
+	recIp(D),
+	rout(R),
+	time(T1),
+	not holdsAt(cookieSet(E,S,D),T1,TR),
+	happens(set_cookie(E,S,D,R),T1,TR).
+
+happens(harassEmailSent(E, S, A),T1,TR):-
+	trace(TR),
+	stud(P1),
+	addr(S),
+	acad(P2),
+	addr(R),
+	loc(L1),
+	rout(W),
+	course(C),
+	email(E),
+	ip(A),
+	time(T1),
+	holdsAt(studEmail(P1,S),T1,TR),
+	holdsAt(acadEmail(P2,R),T1,TR),
+	holdsAt(hasBadgeS(P1,L1),T1,TR),
+	holdsAt(isLocatedIn(W,L1),T1,TR),
+	holdsAt(teach(P2,C),T1,TR),
+	holdsAt(attend(P1,C),T1,TR),
+	happens(send_email(E,S,R,A,W),T1,TR).
+
+happens(fakeHarassEmailSent(E, F, A),T1,TR):-
+	trace(TR),
+	acad(P),
+	addr(R),
+	email(E),
+	faddr(S),
+	ip(A),
+	rout(W),
+	time(T1),
+	holdsAt(acadEmail(P,R),T1,TR),
+	happens(send_fake_email(E,S,R,A,W),T1,TR).
+
+happens(sendANonHarassEmail(E, S),T2,TR):-
+	trace(TR),
+	stud(P1),
+	browser(B),
+	sendIp(S),
+	recIp(D),
+	rout(R),
+	time(T1),
+	time(T2),
+	T1<T2,
+	happens(studSendMsg(P1,B,S),T1,TR),
+	happens(send_anon_email(B,S,D,R),T2,TR).
+
+
+
+% +++ Context Relation Definitions +++
+
+initiates(initCookie(A, S, R),cookieSet(A,S,R), T):-
+	sendIp(S),	recIp(R),	addr(A), time(T).
+
+% Initial state 
+
+initially(teach(lily,chemistry)).
+initially(attend(amy,chemistry)).
+initially(studEmail(amy,aamy)).
+initially(acadEmail(lily,alily)).
+initially(isLocatedIn(r1,uni)).
+initially(isLocatedIn(r2,res)).
+initially(hasBadgeS(amy,uni)).
+initially(hasBadgeS(amy,res)).
+initially(hasBadgeA(lily,uni)).
+
+% Version 3
+% Time: 12:38

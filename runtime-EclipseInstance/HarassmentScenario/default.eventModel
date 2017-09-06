@@ -10,7 +10,7 @@
   <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="initCookie" types="//@generalTypeReferences.16 //@generalTypeReferences.17" agent="//@agentReferences.7"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="acadSendMsg" types="//@generalTypeReferences.18 //@generalTypeReferences.19" agent="//@agentReferences.8"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="studSendMsg" types="//@generalTypeReferences.20 //@generalTypeReferences.21" agent="//@agentReferences.9"/>
-  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="sendAnonHarassEmail" types="//@generalTypeReferences.22" agent="//@agentReferences.10"/>
+  <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="sendANonHarassEmail" types="//@generalTypeReferences.22" agent="//@agentReferences.10"/>
   <events xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" name="sendANonHarassEmail2" types="//@generalTypeReferences.23" agent="//@agentReferences.11"/>
   <agentReferences>
     <reference href="default.typeInstanceModel#//@types.4"/>

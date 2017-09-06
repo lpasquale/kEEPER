@@ -252,13 +252,34 @@
   <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="5" name="W">
     <observer href="default.typeInstanceModel#//@types.7"/>
   </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="P1">
+    <agent href="default.typeInstanceModel#//@types.13"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="B">
+    <generalType href="default.typeInstanceModel#//@types.11"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="S">
+    <generalType href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:AgentParam" position="1" name="B">
+    <agent href="default.typeInstanceModel#//@types.11"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="2" name="S">
+    <generalType href="default.typeInstanceModel#//@types.9"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:GeneralParam" position="3" name="D">
+    <generalType href="default.typeInstanceModel#//@types.10"/>
+  </parameters>
+  <parameters xsi:type="org.eclipse.minorityReportPlugin:ObserverParam" position="4" name="R">
+    <observer href="default.typeInstanceModel#//@types.7"/>
+  </parameters>
   <behavDescriptions happens="//@happens.3 //@happens.4 //@happens.5" name="sendANonHarassEmail2" timeInstants="2"/>
-  <behavDescriptions happens="//@happens.6 //@happens.7" name="sendANonHarassEmail" timeInstants="2"/>
   <behavDescriptions holdsAts="//@holdsAts.0 //@holdsAts.1 //@holdsAts.2 //@holdsAts.3" happens="//@happens.8" name="acadSendMsg" timeInstants="1"/>
   <behavDescriptions holdsAts="//@holdsAts.4 //@holdsAts.5 //@holdsAts.6 //@holdsAts.7" happens="//@happens.9" name="studSendMsg" timeInstants="1"/>
   <behavDescriptions holdsAts="//@holdsAts.8" happens="//@happens.10" name="initCookie" timeInstants="1"/>
   <behavDescriptions holdsAts="//@holdsAts.9 //@holdsAts.10 //@holdsAts.11 //@holdsAts.12 //@holdsAts.13 //@holdsAts.14" happens="//@happens.11" name="harassEmailSent" timeInstants="1"/>
   <behavDescriptions holdsAts="//@holdsAts.15" happens="//@happens.12" name="fakeHarassEmailSent" timeInstants="1"/>
+  <behavDescriptions happens="//@happens.13 //@happens.14" name="sendANonHarassEmail" timeInstants="2"/>
   <holdsAts time="1" isHolding="true" parameters="//@parameters.31 //@parameters.32 //@parameters.33">
     <contextRelation href="default.contextRelationModel#//@contextRelations.7"/>
   </holdsAts>
@@ -345,5 +366,11 @@
   </happens>
   <happens time="1" parameters="//@parameters.79 //@parameters.80 //@parameters.81 //@parameters.82 //@parameters.83">
     <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.1"/>
+  </happens>
+  <happens time="1" parameters="//@parameters.84 //@parameters.85 //@parameters.86">
+    <event xsi:type="org.eclipse.minorityReportPlugin:ComplexEvent" href="default.eventModel#//@events.9"/>
+  </happens>
+  <happens time="2" parameters="//@parameters.87 //@parameters.88 //@parameters.89 //@parameters.90">
+    <event xsi:type="org.eclipse.minorityReportPlugin:PrimitiveEvent" href="default.eventModel#//@events.4"/>
   </happens>
 </org.eclipse.minorityReportPlugin:Environment>
